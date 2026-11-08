@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#4a423c"/>
+      <stop offset="1" stop-color="#1f1b18"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#fbe7b0"/>
+      <stop offset="0.55" stop-color="#efc36a"/>
+      <stop offset="1" stop-color="#d4983c"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f6cf7a" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#f6cf7a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3e3bb"/>
+      <stop offset="1" stop-color="#e2cd99"/>
+    </linearGradient>
+    <clipPath id="clip"><rect x="0" y="0" width="512" height="512"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="512" height="512" fill="url(#bg)"/>
+    <circle cx="256" cy="222" r="200" fill="url(#glow)"/>
+    <circle cx="256" cy="228" r="92" fill="url(#sun)"/>
+    <!-- Jerusalem on the far hill: the wall and its towers, the Temple platform, the sanctuary -->
+    <g fill="#3b322b">
+      <path d="M140 304 L140 286 L148 286 L148 280 L156 280 L156 286 L164 286 L164 292 L348 292 L348 286 L356 286 L356 280 L364 280 L364 286 L372 286 L372 304 Z"/>
+      <rect x="176" y="284" width="6" height="8"/><rect x="194" y="284" width="6" height="8"/><rect x="312" y="284" width="6" height="8"/><rect x="330" y="284" width="6" height="8"/>
+      <rect x="208" y="272" width="96" height="20"/>
+      <rect x="208" y="268" width="96" height="5" fill="#2f2822"/>
+      <path d="M232 272 L232 236 L226 236 L226 226 L286 226 L286 236 L280 236 L280 272 Z"/>
+      <rect x="250" y="246" width="12" height="26" fill="#d4983c" opacity="0.55"/>
+    </g>
+    <!-- three ranges of hills, far to near -->
+    <path d="M0 312 C 70 286, 150 290, 220 300 C 300 312, 380 280, 512 296 L512 512 L0 512 Z" fill="#6a5746"/>
+    <path d="M0 360 C 90 330, 170 336, 236 352 C 320 372, 420 330, 512 344 L512 512 L0 512 Z" fill="#8b7154"/>
+    <path d="M0 420 C 100 392, 190 402, 256 416 C 330 432, 430 398, 512 408 L512 512 L0 512 Z" fill="#a98c62"/>
+    <!-- the way: a road winding up toward the city -->
+    <path d="M196 512 C 220 452, 318 438, 300 392 C 286 356, 238 350, 248 318 C 252 306, 256 302, 258 300
+             L 262 300 C 262 304, 262 310, 262 318 C 264 346, 312 354, 322 392 C 336 448, 268 468, 316 512 Z" fill="url(#road)"/>
+    <path d="M258 300 L262 300 L262 318 C 264 346, 312 354, 322 392" fill="none" stroke="#c9b07c" stroke-width="3" opacity="0.5"/>
+  </g>
+  <rect x="26" y="26" width="460" height="460" rx="92" fill="none" stroke="#c9973f" stroke-width="4" opacity="0.8"/>
+</svg>

@@ -1,0 +1,557 @@
+/* The Way — content data.
+   Scripture quotations: World English Bible (WEB), public domain (see scripture.js).
+   Rule of the project: Scripture is never altered. Anything invented is labelled "Dramatization". */
+window.TW = window.TW || {};
+(function (TW) {
+  const D = {};
+
+  D.translation = 'World English Bible (public domain)';
+
+  D.timeline = { start: 25, end: 100 };
+
+  D.events = [
+    { year: 28, label: 'Ministry in Galilee begins', approx: true },
+    { year: 30, label: 'Cross and resurrection (AD 30 or 33)', approx: true },
+    { year: 34, label: 'Saul meets the risen Jesus', approx: true },
+    { year: 49, label: 'Council at Jerusalem', approx: true },
+    { year: 62, label: 'James, brother of Jesus, killed', approx: false },
+    { year: 64, label: 'Fire of Rome, Nero’s persecution', approx: false },
+    { year: 70, label: 'Jerusalem and the Temple destroyed', approx: false },
+    { year: 95, label: 'John on Patmos', approx: true },
+  ];
+
+  D.eras = [
+    {
+      id: 'galilee', num: 'I', title: 'The Ministry in Galilee', dates: 'c. AD 28–29',
+      span: [28, 30], open: true, view: 'A skeptical scribe',
+      summary:
+        'Luke dates John the Baptist’s ministry to the fifteenth year of Tiberius (Luke 3:1), about AD 28–29. Soon after, Jesus makes Capernaum his base (Matthew 4:13). You arrive from Jerusalem as a young scribe, sent to watch him.',
+      world: [
+        ['Emperor', 'Tiberius (AD 14–37)'],
+        ['Tetrarch of Galilee', 'Herod Antipas (4 BC–AD 39)'],
+        ['Prefect of Judea', 'Pontius Pilate (AD 26–36)'],
+        ['High priest', 'Joseph Caiaphas (c. AD 18–36)'],
+      ],
+      episodes: ['capernaum', 'levi', 'sabbath', 'legion', 'nain'],
+    },
+    {
+      id: 'passion', num: 'II', title: 'The Road to Jerusalem', dates: 'c. AD 30 or 33',
+      span: [30, 33], open: true, view: 'A troubled witness',
+      summary:
+        'You are home in Jerusalem for Passover, and so is the teacher from Galilee. From his entry into the city to the empty tomb, these events are witnessed, never played: you watch, you choose how your heart answers, and the story unfolds exactly as it is written. Scholars place the crucifixion at Passover in AD 30 or AD 33.',
+      world: [
+        ['Prefect of Judea', 'Pontius Pilate'],
+        ['High priest', 'Joseph Caiaphas'],
+        ['Tetrarch of Galilee', 'Herod Antipas'],
+      ],
+      episodes: [
+        'entry', 'temple',
+        { title: 'The Council by Night', ref: 'Mark 14:53–65' },
+        { title: 'The Cross', ref: 'Mark 15:20–41' },
+        { title: 'The Burial', ref: 'John 19:38–42' },
+        { title: 'The Empty Tomb', ref: 'Mark 16:1–8' },
+        { title: 'The Ascension', ref: 'Acts 1:6–12' },
+      ],
+    },
+    {
+      id: 'church', num: 'III', title: 'The Jerusalem Church', dates: 'c. AD 30–36',
+      span: [33, 36], view: 'A new believer',
+      summary:
+        'Pentecost, the apostles’ teaching in the Temple courts, the sharing of goods, and the death of Stephen. Healing comes through prayer in Jesus’ name, never by technique (Acts 3:6, 19:13–16).',
+      world: [['Prefect of Judea', 'Pontius Pilate'], ['High priest', 'Caiaphas, with Annas (Acts 4:6)']],
+      episodes: [
+        { title: 'Pentecost', ref: 'Acts 2' },
+        { title: 'The Beautiful Gate', ref: 'Acts 3:1–10' },
+        { title: 'Stephen', ref: 'Acts 6:8–7:60' },
+      ],
+    },
+    {
+      id: 'spread', num: 'IV', title: 'The Spreading Word', dates: 'c. AD 36–62',
+      span: [36, 62], view: 'A believer sent out',
+      summary:
+        'Samaria, Antioch, the council at Jerusalem, and Paul’s journeys across the Mediterranean. The overworld widens from Galilee to the empire.',
+      world: [['Emperors', 'Caligula, Claudius, Nero']],
+      episodes: [
+        { title: 'Samaria', ref: 'Acts 8' },
+        { title: 'Antioch', ref: 'Acts 11:19–30' },
+        { title: 'The Council', ref: 'Acts 15' },
+        { title: 'Ephesus', ref: 'Acts 19' },
+      ],
+    },
+    {
+      id: 'war', num: 'V', title: 'Fire and War', dates: 'AD 64–70',
+      span: [64, 70], view: 'An elder of the church',
+      summary:
+        'Nero blames Christians for the fire of Rome. In Judea, revolt against Rome ends with Jerusalem and the Temple destroyed in AD 70, as Jesus foretold (Mark 13:1–2).',
+      world: [['Emperors', 'Nero, then Vespasian'], ['Roman general', 'Titus']],
+      episodes: [{ title: 'Flight from Jerusalem', ref: 'Luke 21:20–24' }],
+    },
+    {
+      id: 'patmos', num: 'VI', title: 'Patmos and the Seven Churches', dates: 'c. AD 95',
+      span: [94, 96], view: 'The next generation',
+      summary:
+        'John, exiled on Patmos, writes to seven churches in Asia (Revelation 1:9–11). Most date this to Domitian’s reign; some argue for the late 60s.',
+      world: [['Emperor', 'Domitian (AD 81–96)']],
+      episodes: [{ title: 'Letters to Seven Churches', ref: 'Revelation 2–3' }],
+    },
+  ];
+
+  // ---------- Episodes of Era I ----------
+  D.episodes = {
+    capernaum: {
+      num: 'I', title: 'At Home in Capernaum', ref: 'Mark 2:1–12', passage: 'mark2a', place: 'capernaum',
+      scene: 'Capernaum, Mark 2:1–12', parallels: 'Matthew 9:1–8, Luke 5:17–26',
+      question: { id: 'forgive', text: 'Who can forgive sins but God alone?', ref: 'Mark 2:7' },
+      hearts: ['You asked who can forgive sins but God alone.', 'You wondered who he thinks he is.', 'You kept silent and watched.'],
+      conclusions: [
+        'He speaks blasphemy. Only God can forgive sins.',
+        'He claimed what belongs to God alone, and the lame man walked. I do not know what to make of it.',
+        'I must see more before I write anything certain.',
+      ],
+      notes: [
+        ['“In the house” (v. 1)', 'Capernaum had become Jesus’ base (Matthew 4:13). Mark earlier mentions the house of Simon and Andrew here (Mark 1:29), so many readers connect the two. A house that early Christians venerated now lies under a fifth-century octagonal church.'],
+        ['The roof (v. 4)', 'Mark says the friends dug through the roof. Excavated houses in Capernaum had basalt walls and roofs of beams, branches and packed earth, reached by outside stairs. Luke says they lowered him “through the tiles” (Luke 5:19), a detail familiar to a wider Greco-Roman audience.'],
+        ['The scribes’ objection (v. 7)', 'Their premise comes from Scripture: God himself blots out transgressions (Isaiah 43:25). They are right that only God forgives sin. That is exactly what makes Jesus’ words so startling.'],
+        ['“Which is easier?” (v. 9)', 'Anyone could say “your sins are forgiven” with nothing to show for it. Healing could be checked on the spot. Jesus does the visible thing to show his authority for the invisible one.'],
+        ['“Son of Man” (v. 10)', 'Jesus’ most common name for himself. It echoes Daniel 7:13–14, where one like a son of man receives authority and an everlasting kingdom from the Ancient of Days.'],
+      ],
+      reflect: [
+        'Jesus “saw” the four friends’ faith (v. 5). What did it look like?',
+        'The scribes reasoned silently, yet Jesus answered them. What does that say about him?',
+        'Why might Jesus speak to the man’s sins before his paralysis?',
+      ],
+    },
+    levi: {
+      num: 'II', title: 'The Tax Booth', ref: 'Mark 2:13–17', passage: 'mark2b', place: 'capernaum',
+      scene: 'Capernaum, Mark 2:13–17', parallels: 'Matthew 9:9–13, Luke 5:27–32',
+      question: { id: 'sinners', text: 'Why does he eat with tax collectors and sinners?', ref: 'Mark 2:16' },
+      hearts: ['You thought he should repent before any teacher ate with him.', 'You wondered whether leaving the booth was repentance.', 'You waited to see what the teacher would do.'],
+      conclusions: [
+        'He makes himself unclean by eating with sinners.',
+        'He calls sinners and they come. I have never seen a teacher do this.',
+        'I cannot tell yet whether he excuses sin or heals it.',
+      ],
+      reveal: 'Roads to the coast and to Samaria are now on your map of the Land.',
+      notes: [
+        ['The tax office (v. 14)', 'Levi most likely collected tolls on goods crossing between Herod Antipas’s Galilee and Philip’s territory. Collectors bought the right to collect and kept what they took above it, so they were widely distrusted.'],
+        ['Levi and Matthew', 'Matthew’s Gospel tells the same call with the name Matthew (Matthew 9:9). Most readers take them to be the same man.'],
+        ['Reclining at the table (v. 15)', 'At a formal meal guests reclined on mats or couches, leaning on one elbow. Sharing a table was a sign of acceptance and friendship.'],
+        ['Scribes and Pharisees (v. 16)', 'Pharisees tried to keep purity in everyday life, especially at meals. Eating with people known as sinners seemed to them to make light of God’s law.'],
+        ['“A physician” (v. 17)', 'Jesus does not say his hosts are well. He says that is exactly why he is with them. A physician goes where the sick are.'],
+      ],
+      reflect: [
+        'What did it cost Levi to stand up from the booth?',
+        'Whom would you avoid sitting at a table with, and why?',
+        'Why might Jesus’ answer have stung the scribes who heard it?',
+      ],
+    },
+    sabbath: {
+      num: 'III', title: 'Lord of the Sabbath', ref: 'Mark 2:23–3:6', passage: 'mark2c', place: 'capernaum',
+      scene: 'Galilee, Mark 2:23–3:6', parallels: 'Matthew 12:1–14, Luke 6:1–11',
+      question: { id: 'sabbathlord', text: 'Who is this Son of Man who is lord even of the Sabbath?', ref: 'Mark 2:28' },
+      hearts: ['You stayed silent, afraid of the men beside you.', 'You stayed silent because you had no answer.', 'You stayed silent though you knew the answer.'],
+      conclusions: [
+        'He breaks the Sabbath and teaches others to break it.',
+        'He kept the purpose of the Sabbath better than we did.',
+        'My own colleagues now plot against him, and I do not know where I stand.',
+      ],
+      reveal: 'Crowds came from Judea, Idumaea, beyond the Jordan, Tyre and Sidon. Those lands are now on your map.',
+      notes: [
+        ['Plucking grain (2:23)', 'The Law let a hungry traveler pluck grain by hand from a neighbor’s field (Deuteronomy 23:25). The question was the day. Pharisees counted plucking as reaping, one of the kinds of work later listed in the Mishnah as forbidden on the Sabbath.'],
+        ['David and the bread (2:25–26)', 'The story is in 1 Samuel 21:1–6, where the priest is Ahimelech, Abiathar’s father. Why Mark names Abiathar has long been discussed; it may point to the section of Scripture known by his name.'],
+        ['“Made for man” (2:27)', 'God gave the Sabbath as rest and as a reminder of freedom from slavery (Exodus 20:8–11, Deuteronomy 5:12–15).'],
+        ['The synagogue (3:1)', 'First-century synagogues found at Magdala and Gamla had stepped benches along the walls facing a central floor. The white limestone synagogue at Capernaum today was built centuries later, over older basalt foundations.'],
+        ['“They watched him” (3:2)', 'Jewish teaching agreed that saving a life overrides the Sabbath (later written in Mishnah Yoma 8:6). A withered hand was not life-threatening, so healing it could be argued to be work that could wait a day.'],
+        ['The Herodians (3:6)', 'Supporters of Herod Antipas’s rule. Pharisees and Herodians made unlikely partners, which shows how threatening Jesus had become to both.'],
+      ],
+      reflect: [
+        'Jesus asked a direct question and no one answered. Why do you think they were silent?',
+        'Is it possible to keep a rule carefully and miss its purpose?',
+        'Mark says Jesus was angry and grieved at the same time (3:5). What grieved him?',
+      ],
+    },
+    legion: {
+      num: 'IV', title: 'Across the Lake', ref: 'Mark 4:35–5:20', passage: 'mark4', place: 'capernaum', endNode: 'kursi',
+      scene: 'The Sea of Galilee, Mark 4:35–5:20', parallels: 'Matthew 8:23–34, Luke 8:22–39',
+      question: { id: 'windsea', text: 'Who then is this, that even the wind and the sea obey him?', ref: 'Mark 4:41' },
+      hearts: ['You remembered that only God stills the sea (Psalm 107:29).', 'You thought of the prophets, like Elijah.', 'You were too afraid to think at all.'],
+      conclusions: [
+        'He has power over the sea and over unclean spirits. I am afraid of him.',
+        'Only God commands the sea. I do not know how to write about this man.',
+        'I must see more, but I no longer think he is an ordinary teacher.',
+      ],
+      reveal: 'The healed man told his story across the Decapolis. Its cities are now on your map.',
+      notes: [
+        ['Sudden storms (4:37)', 'The lake lies about 210 m below sea level, ringed by hills. Cool air can pour down the slopes and raise steep waves very quickly.'],
+        ['“Asleep on the cushion” (4:38)', 'A fishing boat from this period, found near Magdala in 1986, is about 8 m long. The stern was where the helmsman sat.'],
+        ['“Peace! Be still!” (4:39)', 'In the Scriptures, God alone rules the raging sea (Psalm 89:9, Psalm 107:28–29). That is why the disciples’ question in verse 41 matters so much.'],
+        ['The other side (5:1)', 'This was largely Gentile country. Tombs, pigs and an unclean spirit: a devout Jew would avoid all three.'],
+        ['Legion (5:9)', 'A Roman legion was a unit of roughly five thousand soldiers.'],
+        ['The place name', 'Manuscripts read Gadarenes, Gerasenes or Gergesenes. Gadara lay about 10 km from the shore and Gerasa much farther. Kursi, on the shore below steep slopes, is the traditional site.'],
+        ['Decapolis (5:20)', 'A league of Greek-speaking cities, mostly east of the Jordan. The healed man became the first to tell about Jesus there.'],
+      ],
+      reflect: [
+        'The disciples were more afraid after the calm than during the storm (4:41). Why?',
+        'The townspeople begged Jesus to leave. What were they afraid of losing?',
+        'Why might Jesus send the healed man home instead of letting him follow?',
+      ],
+    },
+    nain: {
+      num: 'V', title: 'The Widow of Nain', ref: 'Luke 7:11–17', passage: 'luke7', place: 'nain',
+      scene: 'Nain, Luke 7:11–17', parallels: 'told only by Luke',
+      question: { id: 'prophet', text: 'A great prophet, or more than a prophet?', ref: 'Luke 7:16' },
+      hearts: ['You cried out, “A great prophet has arisen among us!”', 'You cried out, “God has visited his people!”', 'You had no words left.'],
+      conclusions: [
+        'A great prophet has arisen among us.',
+        'God has visited his people.',
+        'He is more than a prophet. I am not yet ready to write what I think.',
+      ],
+      reveal: 'The report spread through all Judea. The whole land is now on your map.',
+      final: true,
+      notes: [
+        ['Nain and Shunem', 'Nain sits on the Hill of Moreh. On the other side of the same hill lies Shunem, where Elisha raised a woman’s son (2 Kings 4:8–37).'],
+        ['A widow’s only son (7:12)', 'Without a husband or son, a widow had lost her support and her family’s future. Elijah also raised a widow’s son, and “gave him to his mother” (1 Kings 17:17–24), the same words Luke uses in 7:15.'],
+        ['Funerals', 'Burial usually took place the day of death. The body was wrapped and carried on an open bier outside the town to the tombs. Later Jewish tradition says even the poorest family hired flute players and a wailing woman (Mishnah Ketubot 4:4).'],
+        ['Touching the bier (7:14)', 'Under the Law of Moses, contact with the dead made a person unclean (Numbers 19:11–16). Jesus touches it, and life goes the other way.'],
+        ['“God has visited his people” (7:16)', 'The crowd echoes Zechariah’s song at the birth of John the Baptist (Luke 1:68).'],
+      ],
+      reflect: [
+        'Jesus spoke to the widow before anyone asked him for anything. What does that tell you?',
+        'The crowd called him a great prophet. Was that enough?',
+        'Why do you think Luke made a point of telling us she was a widow?',
+      ],
+    },
+  };
+  Object.assign(D.episodes, {
+    entry: {
+      num: 'VI', title: 'The Entry', ref: 'Mark 11:1–11', passage: 'mark11a', place: 'olivet', region: 'jerusalem', era: 'passion',
+      scene: 'The Mount of Olives, Mark 11:1–11', parallels: 'Matthew 21:1–11, Luke 19:28–44, John 12:12–19',
+      question: { id: 'king', text: 'Is he the king who comes in the name of the Lord?', ref: 'Mark 11:9–10' },
+      hearts: ['You spread your mantle on the road.', 'You kept your mantle on your shoulders and watched.', 'You stepped back, because scribes from the Temple were watching you.'],
+      conclusions: [
+        'The crowd hails him as David’s heir. This will end in Roman swords.',
+        'He came as a king, but on a young donkey. I do not understand what kind of king.',
+        'I have watched him for a year. I am no longer sure I am only watching.',
+      ],
+      notes: [
+        ['Bethphage and Bethany (v. 1)', 'Two villages on the eastern slope of the Mount of Olives, on the road up from Jericho. Most manuscripts spell the first Bethphage; the WEB follows those that read Bethsphage. Bethany was the home of Mary, Martha and Lazarus (John 11:1).'],
+        ['A young donkey (v. 2)', 'Kings rode horses to war. Zechariah 9:9 pictures Zion’s king coming “lowly, and riding on a donkey.” Mark does not quote the prophecy; Matthew 21:5 and John 12:15 do.'],
+        ['Garments on the road (v. 8)', 'When Jehu was proclaimed king, the people spread their garments under him (2 Kings 9:13). The gesture said: this is our king.'],
+        ['“Hosanna!” (v. 9)', 'A Hebrew cry meaning “save us, we pray.” The words come from Psalm 118:25–26, one of the psalms sung by pilgrims at the great feasts.'],
+        ['The view of the city', 'From the Mount of Olives the whole Temple lay open across the Kidron Valley. Josephus wrote that from a distance it looked like a mountain covered with snow, where it was not plated with gold.'],
+        ['He looked around (v. 11)', 'Mark’s Jesus enters the Temple, looks at everything, and leaves. The next day he will come back to act on what he saw.'],
+      ],
+      reflect: [
+        'The crowd spread their garments for him. What would it have cost you to spread yours?',
+        'What kind of king rides a borrowed young donkey?',
+        'Why do you think Jesus only looked around the Temple that first evening?',
+      ],
+    },
+    temple: {
+      num: 'VII', title: 'The Temple', ref: 'Mark 11:15–18; 12:28–34', passage: 'mark11b', place: 'temple', region: 'jerusalem', era: 'passion',
+      scene: 'The Temple courts, Mark 11–12', parallels: 'Matthew 21:12–17; 22:34–40, Luke 19:45–48; 10:25–28',
+      question: { id: 'notfar', text: 'Am I far from the Kingdom of God?', ref: 'Mark 12:34' },
+      hearts: ['You thought he had no right to touch the high priest’s court.', 'You asked yourself whether the prophets he quoted were wrong.', 'You realized the court of the nations had become a market and you had never noticed.'],
+      conclusions: [
+        'He has made enemies of every chief priest in the city. They will not let him live.',
+        'He spoke the Shema as I have spoken it every day of my life, and he meant it more than I do.',
+        'He told one of us that he was not far from the Kingdom. I keep wondering how far I am.',
+      ],
+      notes: [
+        ['The Court of the Gentiles', 'Herod’s Temple sat on a vast platform. Its outer court was open to everyone, including Gentiles. A low barrier marked where they could go no farther; two of its Greek warning inscriptions have been found, threatening death to any foreigner who passed it.'],
+        ['Money changers (11:15)', 'The yearly Temple tax had to be paid in silver shekels of Tyre, prized for their purity. Pilgrims from everywhere changed their coins here, for a fee.'],
+        ['Doves (11:15)', 'Doves were the offering of the poor. A mother who could not afford a lamb brought two doves or pigeons (Leviticus 12:8), as Mary did (Luke 2:24).'],
+        ['“A house of prayer for all the nations” (11:17)', 'Jesus joins Isaiah 56:7, a promise that foreigners would worship there, with Jeremiah 7:11, a warning to people who thought the Temple would protect them however they lived.'],
+        ['The greatest commandment (12:29–31)', 'Jesus answers with the Shema (Deuteronomy 6:4–5), recited by devout Jews every morning and evening, and joins it to Leviticus 19:18.'],
+        ['“Not far from the Kingdom” (12:34)', 'The only scribe in Mark whom Jesus praises. Not far is not the same as in. Mark leaves the man there, close, with nothing more said.'],
+      ],
+      reflect: [
+        'What made the market in the outer court so wrong, when every stall served the Temple?',
+        'The scribe said love is worth more than every sacrifice. Why did that answer please Jesus?',
+        'What do you think the scribe still lacked?',
+      ],
+    },
+  });
+  D.eraOrder = ['capernaum', 'levi', 'sabbath', 'legion', 'nain', 'entry', 'temple'];
+
+  const galPlaces = [
+    {
+      id: 'capernaum', name: 'Capernaum', alt: 'Kefar Nahum, “village of Nahum”',
+      lon: 35.575, lat: 32.886, kind: 'episode', episodes: ['capernaum', 'levi', 'sabbath', 'legion'], label: 'r',
+      text:
+        'A fishing village of black basalt on the north shore, perhaps a thousand people or so. Jesus made it his base (Matthew 4:13). A customs post stood here near the border with Philip’s territory.',
+    },
+    {
+      id: 'chorazin', name: 'Chorazin', alt: 'Korazim', lon: 35.564, lat: 32.912, kind: 'locked', label: 'l',
+      ref: 'Matthew 11:21',
+      text: 'A basalt village in the hills above Capernaum. Jesus rebuked it for not repenting after seeing his works.',
+    },
+    {
+      id: 'bethsaida', name: 'Bethsaida', alt: '“House of fishing”', lon: 35.631, lat: 32.910, kind: 'locked', label: 'r',
+      ref: 'Mark 8:22–26',
+      text:
+        'Home of Philip, Andrew and Peter (John 1:44), just across the Jordan in Philip the tetrarch’s territory. Its exact site is still debated.',
+    },
+    {
+      id: 'magdala', name: 'Magdala', alt: 'Migdal', lon: 35.510, lat: 32.826, kind: 'locked', label: 'l',
+      ref: 'Luke 8:1–3',
+      text:
+        'A prosperous lakeside town known for salted fish, and home of Mary called Magdalene (Luke 8:2). Excavations since 2009 have uncovered a first-century synagogue.',
+    },
+    {
+      id: 'tiberias', name: 'Tiberias', alt: 'Antipas’s new capital', lon: 35.528, lat: 32.792, kind: 'history', label: 'l',
+      ref: 'John 6:23',
+      text:
+        'Founded by Herod Antipas around AD 20 and named for the emperor. Josephus says it was built partly over graves, which observant Jews avoided. The Gospels never record Jesus entering it.',
+    },
+    {
+      id: 'kursi', name: 'Country of the Gadarenes', short: 'Gadarenes', alt: 'Kursi, on the eastern shore', lon: 35.652, lat: 32.826, kind: 'episode', episodes: ['legion'], label: 'r',
+      text:
+        'Largely Gentile country across the lake, with tombs in the hills and herds of pigs. Kursi is the traditional site of the Legion account. Manuscripts name the region differently: Gadarenes, Gerasenes or Gergesenes.',
+    },
+    {
+      id: 'hippos', name: 'Hippos', alt: 'Sussita, a city of the Decapolis', lon: 35.661, lat: 32.778, kind: 'history', label: 'r',
+      text:
+        'A Greek city on a ridge above the eastern shore, one of the ten cities of the Decapolis (Mark 5:20). Its temples were visible from the Jewish villages across the water.',
+    },
+    {
+      id: 'arbel', name: 'Mount Arbel', alt: 'Cliffs above Gennesaret', lon: 35.495, lat: 32.818, kind: 'history', label: 'b',
+      text:
+        'Sheer cliffs over the lake. Josephus records Herod the Great lowering soldiers in chests to drive rebels out of its caves, around 38 BC.',
+    },
+    {
+      id: 'cana', name: 'Cana', alt: 'Khirbet Qana (debated)', lon: 35.322, lat: 32.796, kind: 'locked', label: 'r',
+      ref: 'John 2:1–11',
+      text:
+        'Where Jesus turned water into wine. Khirbet Qana, on the edge of the Beit Netofa valley, is a leading candidate for the site.',
+    },
+    {
+      id: 'sepphoris', name: 'Sepphoris', alt: 'Tzippori', lon: 35.279, lat: 32.753, kind: 'history', label: 'l',
+      text:
+        'Antipas rebuilt this city as his first capital after Roman troops burned it in 4 BC. Only about 6 km from Nazareth, it is never mentioned in the Gospels.',
+    },
+    {
+      id: 'nazareth', name: 'Nazareth', alt: 'A small hill village', lon: 35.297, lat: 32.702, kind: 'locked', label: 'r',
+      ref: 'Luke 4:16–30',
+      text:
+        'Where Jesus grew up. A village of perhaps a few hundred people on a ridge above the Jezreel Valley. Its synagogue would reject him.',
+    },
+    {
+      id: 'tabor', name: 'Mount Tabor', alt: '575 m', lon: 35.390, lat: 32.687, kind: 'history', label: 'r',
+      text:
+        'An isolated dome rising above the plain. From the fourth century, tradition placed the Transfiguration here; the Gospels say only “a high mountain” (Mark 9:2).',
+    },
+    {
+      id: 'nain', name: 'Nain', alt: 'On the Hill of Moreh', lon: 35.348, lat: 32.630, kind: 'episode', episodes: ['nain'], label: 'r',
+      text: 'A small village on the slope of the Hill of Moreh, looking north across the valley to Mount Tabor.',
+    },
+    {
+      id: 'meron', name: 'Mount Meron', alt: '1,208 m', lon: 35.410, lat: 32.998, kind: 'history', label: 'r',
+      text: 'The highest peak in Galilee, in the rugged Upper Galilee. Few roads crossed these hills.',
+    },
+  ];
+
+  // Road and boat network (invisible waypoints included)
+  const galNodes = {
+    jv: { lon: 35.555, lat: 32.612, name: 'Road from Jerusalem' },
+    w1: { lon: 35.545, lat: 32.712 },
+    g1: { lon: 35.522, lat: 32.872 },
+    n1: { lon: 35.605, lat: 32.897 },
+    a1: { lon: 35.455, lat: 32.812 },
+    a2: { lon: 35.455, lat: 32.745 },
+    a3: { lon: 35.470, lat: 32.955 },
+    h1: { lon: 35.647, lat: 32.790 },
+  };
+  galPlaces.forEach((p) => { galNodes[p.id] = { lon: p.lon, lat: p.lat, name: p.name }; });
+
+  const galEdges = [
+    ['jv', 'w1'], ['w1', 'tiberias'], ['tiberias', 'magdala'], ['magdala', 'g1'], ['g1', 'capernaum'],
+    ['capernaum', 'chorazin'], ['capernaum', 'n1'], ['n1', 'bethsaida'],
+    ['magdala', 'arbel'], ['arbel', 'a1'], ['a1', 'cana'], ['cana', 'sepphoris'], ['sepphoris', 'nazareth'],
+    ['nazareth', 'nain'], ['nazareth', 'tabor'], ['tabor', 'nain'], ['tabor', 'a2'], ['a2', 'tiberias'],
+    ['chorazin', 'a3'], ['a3', 'meron'], ['kursi', 'h1'], ['h1', 'hippos'],
+    ['capernaum', 'kursi', 'boat'], ['magdala', 'kursi', 'boat'],
+  ];
+
+  const galLabels = [
+    { text: 'Sea of Galilee', lon: 35.592, lat: 32.818, style: 'water' },
+    { text: 'Jordan', lon: 35.583, lat: 32.655, style: 'river' },
+    { text: 'Upper Galilee', lon: 35.30, lat: 32.985, style: 'region' },
+    { text: 'Lower Galilee', lon: 35.42, lat: 32.765, style: 'region' },
+    { text: 'Gaulanitis', lon: 35.705, lat: 32.95, style: 'region' },
+    { text: 'Decapolis', lon: 35.71, lat: 32.72, style: 'region' },
+    { text: 'Jezreel Valley', lon: 35.255, lat: 32.632, style: 'region' },
+    { text: 'Beit Netofa', lon: 35.385, lat: 32.815, style: 'small' },
+    { text: 'Gennesaret', lon: 35.538, lat: 32.852, style: 'small' },
+  ];
+
+
+  // ---------- The Land: Galilee to Idumaea, the coast to the Transjordan plateau ----------
+  // reveal: the episode after which a place appears through the fog ('start' = known from the beginning)
+  const landPlaces = [
+    { id: 'jerusalem', name: 'Jerusalem', alt: 'The holy city, about 750 m up in the Judean hills', lon: 35.235, lat: 31.778, kind: 'zoom', zoom: 'jerusalem', reveal: 'start', label: 'r',
+      text: 'Your home, and the home of the Temple that Herod the Great rebuilt on a vast platform. Pilgrims crowded the city at Passover. Every road in this game eventually leads back here.' },
+    { id: 'bethlehem', name: 'Bethlehem', alt: 'The town of David', lon: 35.202, lat: 31.700, kind: 'history', reveal: 'start', label: 'l', ref: 'Luke 2:4; Micah 5:2',
+      text: 'A small town about 9 km south of Jerusalem. Luke records that Jesus was born here, in the city of David.' },
+    { id: 'jericho', name: 'Jericho', alt: 'City of palms, about 250 m below sea level', lon: 35.444, lat: 31.857, kind: 'history', reveal: 'start', label: 'l', ref: 'Luke 19:1–10',
+      text: 'An oasis on the road from Galilee to Jerusalem. Pilgrims from Galilee often came down the Jordan valley and climbed from here up to the city, some 1,000 m higher.' },
+    { id: 'qumran', name: 'Qumran', alt: 'Above the Salt Sea', lon: 35.459, lat: 31.741, kind: 'history', reveal: 'nain', label: 'r',
+      text: 'A settlement on a dry terrace above the Dead Sea. The scrolls found in nearby caves from 1947 onward include the oldest known copies of books of the Hebrew Bible.' },
+    { id: 'masada', name: 'Masada', alt: 'Herod’s desert fortress', lon: 35.354, lat: 31.316, kind: 'history', reveal: 'nain', label: 'l',
+      text: 'A mesa-top palace fortress built by Herod the Great. Rebels held it after Jerusalem fell, until the Romans took it in AD 73 or 74.' },
+    { id: 'hebron', name: 'Hebron', alt: 'The hills of Idumaea and Judea', lon: 35.095, lat: 31.530, kind: 'history', reveal: 'sabbath', label: 'l',
+      text: 'Burial place of Abraham, Isaac and Jacob (Genesis 23, 49:29–31). Herod the Great built the massive stone enclosure over the cave that still stands.' },
+    { id: 'beersheba', name: 'Beersheba', alt: 'Edge of the Negev', lon: 34.840, lat: 31.245, kind: 'history', reveal: 'sabbath', label: 'l',
+      text: 'The old southern limit of Israel, as in the saying “from Dan to Beersheba.” South of here the hills give way to desert.' },
+    { id: 'gaza', name: 'Gaza', alt: 'On the road to Egypt', lon: 34.462, lat: 31.505, kind: 'history', reveal: 'nain', label: 'r', ref: 'Acts 8:26',
+      text: 'A port city on the coastal road to Egypt. Later, Philip will meet an Ethiopian official on the desert road leading here.' },
+    { id: 'emmaus', name: 'Emmaus', alt: 'Site debated', lon: 34.990, lat: 31.840, kind: 'locked', reveal: 'nain', label: 'l', ref: 'Luke 24:13–35',
+      text: 'A village west of Jerusalem where the risen Jesus was recognized at a meal. Several sites have been proposed; this marker shows Emmaus Nicopolis.' },
+    { id: 'joppa', name: 'Joppa', alt: 'Jerusalem’s old port', lon: 34.752, lat: 32.054, kind: 'locked', reveal: 'levi', label: 'l', ref: 'Acts 9:36–10:23',
+      text: 'An ancient harbor on the coast. Peter will raise Tabitha here and receive a vision that sends him to a Gentile’s house.' },
+    { id: 'caesarea', name: 'Caesarea', alt: 'Caesarea Maritima', lon: 34.890, lat: 32.500, kind: 'history', reveal: 'levi', label: 'l', ref: 'Acts 10',
+      text: 'Herod the Great’s harbor city and the seat of the Roman prefects. A stone found here in 1961 bears Pontius Pilate’s name. Taxes from the province flowed through Roman officials based here.' },
+    { id: 'samaria', name: 'Sebaste', alt: 'The city of Samaria', lon: 35.192, lat: 32.276, kind: 'history', reveal: 'levi', label: 'l', ref: 'Acts 8:5',
+      text: 'The old capital of the northern kingdom, rebuilt by Herod the Great and renamed for Augustus (Sebastos in Greek).' },
+    { id: 'sychar', name: 'Sychar', alt: 'Jacob’s well, below Mount Gerizim', lon: 35.285, lat: 32.213, kind: 'locked', reveal: 'levi', label: 'r', ref: 'John 4:1–42',
+      text: 'Samaritans worshiped on Mount Gerizim rather than in Jerusalem. Many Galileans traveling to Jerusalem went around Samaria by the Jordan valley.' },
+    { id: 'ptolemais', name: 'Ptolemais', alt: 'Akko', lon: 35.080, lat: 32.925, kind: 'history', reveal: 'levi', label: 'l', ref: 'Acts 21:7',
+      text: 'A busy harbor north of Mount Carmel, linked by road to the cities of Galilee.' },
+    { id: 'tyre', name: 'Tyre', alt: 'Phoenicia', lon: 35.196, lat: 33.272, kind: 'locked', reveal: 'sabbath', label: 'l', ref: 'Mark 7:24–30',
+      text: 'An old Phoenician island city, joined to the mainland since Alexander the Great built a causeway in 332 BC. People from here came to hear Jesus (Mark 3:8).' },
+    { id: 'sidon', name: 'Sidon', alt: 'Phoenicia', lon: 35.385, lat: 33.560, kind: 'history', reveal: 'sabbath', label: 'l', ref: 'Mark 3:8',
+      text: 'A Phoenician port city about 35 km north of Tyre, known for glass and purple dye.' },
+    { id: 'machaerus', name: 'Machaerus', alt: 'Herod’s fortress in Perea', lon: 35.626, lat: 31.565, kind: 'history', reveal: 'sabbath', label: 'r', ref: 'Mark 6:17–29',
+      text: 'A fortress above the Dead Sea. Josephus names it as the place where Herod Antipas imprisoned and executed John the Baptist.' },
+    { id: 'bethabara', name: 'Bethany beyond the Jordan', short: 'Bethany beyond Jordan', alt: 'Where John baptized', lon: 35.553, lat: 31.837, kind: 'history', reveal: 'sabbath', label: 'r', ref: 'John 1:28',
+      text: 'John baptized across the Jordan from Jericho. The traditional site lies near the river, a few kilometers north of the Dead Sea.' },
+    { id: 'scythopolis', name: 'Scythopolis', alt: 'Beth Shean', lon: 35.500, lat: 32.500, kind: 'history', reveal: 'start', label: 'l',
+      text: 'The largest city of the Decapolis and the only one west of the Jordan, on the valley road between Galilee and Judea.' },
+    { id: 'gadara', name: 'Gadara', alt: 'A city of the Decapolis', lon: 35.680, lat: 32.655, kind: 'history', reveal: 'legion', label: 'r', ref: 'Matthew 8:28',
+      text: 'A Greek city on the heights south of the lake, about 10 km from the shore. Matthew calls the area where the Legion was cast out “the country of the Gadarenes.”' },
+    { id: 'gerasa', name: 'Gerasa', alt: 'Jerash', lon: 35.891, lat: 32.280, kind: 'history', reveal: 'legion', label: 'r',
+      text: 'A prosperous Decapolis city in the hills of Gilead, some 50 km from the lake. Some manuscripts of Mark name the region after it.' },
+    { id: 'hippos2', name: 'Hippos', alt: 'Sussita', lon: 35.661, lat: 32.778, kind: 'history', reveal: 'legion', label: 'r',
+      text: 'A Decapolis city on a ridge above the eastern shore of the lake.' },
+    { id: 'caesphil', name: 'Caesarea Philippi', short: 'Caesarea Philippi', alt: 'At the springs of the Jordan', lon: 35.694, lat: 33.248, kind: 'locked', reveal: 'capernaum', label: 'r', ref: 'Mark 8:27–30',
+      text: 'Philip the tetrarch’s capital, beside a spring and a cave shrine to the god Pan. Here Peter will say, “You are the Christ.”' },
+    { id: 'hermon', name: 'Mount Hermon', alt: '2,814 m', lon: 35.857, lat: 33.416, kind: 'history', reveal: 'capernaum', label: 'r',
+      text: 'The highest mountain of the region, snow-capped much of the year. Its snowmelt feeds the springs of the Jordan.' },
+    { id: 'capernaum', name: 'Capernaum', alt: 'Your base in Galilee', lon: 35.572, lat: 32.896, kind: 'zoom', zoom: 'galilee', reveal: 'start', label: 'r',
+      text: 'Open the Galilee map to see the villages around the lake up close.' },
+    { id: 'nazareth', name: 'Nazareth', alt: 'Lower Galilee', lon: 35.297, lat: 32.702, kind: 'zoom', zoom: 'galilee', reveal: 'start', label: 'l',
+      text: 'Where Jesus grew up. Open the Galilee map to see it up close.' },
+    { id: 'tiberias', name: 'Tiberias', alt: 'Antipas’s capital', lon: 35.530, lat: 32.790, kind: 'zoom', zoom: 'galilee', reveal: 'start', label: 'l',
+      text: 'Herod Antipas’s capital on the lake. Open the Galilee map to see it up close.' },
+  ];
+  const landNodes = {
+    j1: { lon: 35.232, lat: 31.930 }, j2: { lon: 35.300, lat: 32.460 }, j3: { lon: 35.560, lat: 32.640 },
+    j4: { lon: 35.540, lat: 32.200 }, c1: { lon: 34.960, lat: 32.660 }, c2: { lon: 35.130, lat: 32.720 },
+    e1: { lon: 35.365, lat: 31.470 }, e0: { lon: 35.430, lat: 31.660 }, m1: { lon: 35.505, lat: 32.830 }, g1: { lon: 35.525, lat: 32.873 },
+    s2: { lon: 34.830, lat: 32.210 }, s3: { lon: 34.880, lat: 32.360 }, n1: { lon: 35.120, lat: 33.090 }, n2: { lon: 35.230, lat: 33.170 },
+    n3: { lon: 35.280, lat: 33.350 }, n4: { lon: 35.380, lat: 33.470 }, p1: { lon: 35.810, lat: 31.800 }, d1: { lon: 35.615, lat: 32.450 },
+    t1: { lon: 35.620, lat: 33.050 }, s1: { lon: 34.950, lat: 31.700 },
+  };
+  landPlaces.forEach((p) => { landNodes[p.id] = { lon: p.lon, lat: p.lat, name: p.name }; });
+  const landEdges = [
+    ['jerusalem', 'bethlehem'], ['bethlehem', 'hebron'], ['hebron', 'beersheba'], ['beersheba', 'gaza'],
+    ['jerusalem', 'j1'], ['j1', 'sychar'], ['sychar', 'samaria'], ['sychar', 'j2'], ['j2', 'nazareth'],
+    ['jerusalem', 'jericho'], ['jericho', 'qumran'], ['qumran', 'e0'], ['e0', 'e1'], ['e1', 'masada'],
+    ['jericho', 'bethabara'], ['bethabara', 'p1'], ['p1', 'machaerus'],
+    ['jericho', 'j4'], ['j4', 'scythopolis'], ['scythopolis', 'j3'], ['j3', 'tiberias'], ['tiberias', 'm1'], ['m1', 'g1'], ['g1', 'capernaum'],
+    ['jerusalem', 'emmaus'], ['emmaus', 'joppa'], ['joppa', 's2'], ['s2', 's3'], ['s3', 'caesarea'], ['caesarea', 'samaria'], ['caesarea', 'c1'],
+    ['c1', 'c2'], ['c2', 'ptolemais'], ['c2', 'nazareth'], ['ptolemais', 'n1'], ['n1', 'n2'], ['n2', 'tyre'], ['tyre', 'n3'], ['n3', 'n4'], ['n4', 'sidon'], ['caesphil', 'hermon'],
+    ['nazareth', 'tiberias'], ['capernaum', 't1'], ['t1', 'caesphil'],
+    ['j3', 'gadara'], ['gadara', 'd1'], ['d1', 'gerasa'], ['scythopolis', 'd1'], ['gaza', 's1'], ['s1', 'emmaus'],
+    ['capernaum', 'hippos2', 'boat'],
+  ];
+  const landLabels = [
+    { text: 'Galilee', lon: 35.33, lat: 32.86, style: 'region' },
+    { text: 'Samaria', lon: 35.06, lat: 32.40, style: 'region' },
+    { text: 'Judea', lon: 34.93, lat: 31.74, style: 'region' },
+    { text: 'Idumaea', lon: 34.98, lat: 31.38, style: 'region' },
+    { text: 'Perea', lon: 35.78, lat: 31.98, style: 'region' },
+    { text: 'Decapolis', lon: 35.98, lat: 32.52, style: 'region' },
+    { text: 'Gaulanitis', lon: 35.80, lat: 32.95, style: 'region' },
+    { text: 'Phoenicia', lon: 35.38, lat: 33.38, style: 'region' },
+    { text: 'The Great Sea', lon: 34.55, lat: 32.55, style: 'water' },
+    { text: 'Salt Sea', lon: 35.495, lat: 31.48, style: 'water' },
+    { text: 'Jordan', lon: 35.60, lat: 32.30, style: 'river' },
+    { text: 'Plain of Sharon', lon: 34.92, lat: 32.30, style: 'small' },
+    { text: 'Jezreel Valley', lon: 35.28, lat: 32.60, style: 'small' },
+    { text: 'Wilderness of Judea', lon: 35.30, lat: 31.53, style: 'small' },
+  ];
+
+
+  // ---------- Jerusalem and the Mount of Olives ----------
+  const jerPlaces = [
+    { id: 'temple', name: 'The Temple', alt: 'Herod’s Temple on its great platform', lon: 35.2356, lat: 31.7781, kind: 'episode', episodes: ['entry', 'temple'], label: 'r',
+      text: 'Herod the Great began rebuilding the Temple around 20 BC, and work was still going on in Jesus’ day (John 2:20). Its platform covered about 14 hectares, one of the largest sacred precincts in the Roman world.' },
+    { id: 'olivet', name: 'Mount of Olives road', short: 'Olivet road', alt: 'The descent toward the city', lon: 35.2428, lat: 31.7784, kind: 'episode', episodes: ['entry'], label: 'r',
+      text: 'The road from Bethany crosses the ridge and drops toward the Kidron Valley. Here the whole city suddenly comes into view.' },
+    { id: 'antonia', name: 'Antonia Fortress', short: 'Antonia', alt: 'Roman garrison', lon: 35.2341, lat: 31.7809, kind: 'history', label: 'l',
+      text: 'A fortress Herod named for Mark Antony, overlooking the Temple courts. Roman soldiers watched the crowds from it, especially at the feasts (Acts 21:31–35).' },
+    { id: 'bethesda', name: 'Pool of Bethesda', short: 'Bethesda', alt: 'Two pools by the Sheep Gate', lon: 35.2362, lat: 31.7818, kind: 'locked', label: 'r', ref: 'John 5:1–15',
+      text: 'John describes a pool with five porches. Excavations north of the Temple uncovered two large pools with porticoes, matching his description.' },
+    { id: 'gethsemane', name: 'Gethsemane', alt: '“Oil press”', lon: 35.2397, lat: 31.7795, kind: 'locked', label: 'r', ref: 'Mark 14:32–50',
+      text: 'An olive grove at the foot of the Mount of Olives, just across the Kidron from the Temple.' },
+    { id: 'summit', name: 'Mount of Olives', alt: 'About 820 m', lon: 35.2455, lat: 31.7790, kind: 'locked', label: 'r', ref: 'Acts 1:12',
+      text: 'The ridge east of the city, covered with olive groves and tombs. From here Luke places the ascension (Acts 1:12).' },
+    { id: 'bethphage', name: 'Bethphage', alt: 'Village on the eastern slope', lon: 35.2532, lat: 31.7790, kind: 'history', label: 'r', ref: 'Mark 11:1',
+      text: 'A small village on the road from Jericho, just over the ridge from Jerusalem.' },
+    { id: 'bethany', name: 'Bethany', alt: 'Home of Mary, Martha and Lazarus', lon: 35.2615, lat: 31.7712, kind: 'locked', label: 'l', ref: 'John 11',
+      text: 'A village about 3 km from Jerusalem on the road to Jericho. Jesus stayed here during the week before Passover (Mark 11:11).' },
+    { id: 'siloam', name: 'Pool of Siloam', short: 'Siloam', alt: 'At the foot of the City of David', lon: 35.2352, lat: 31.7707, kind: 'locked', label: 'r', ref: 'John 9:1–11',
+      text: 'A pool fed by Hezekiah’s tunnel. The steps of the first-century pool were uncovered in 2004.' },
+    { id: 'palace', name: 'Herod’s Palace', short: 'Herod’s Palace', alt: 'Likely the Praetorium', lon: 35.2284, lat: 31.7762, kind: 'locked', label: 'l', ref: 'Mark 15:16',
+      text: 'Herod the Great’s palace and towers on the western hill. Many historians think Pilate stayed and judged here when he came up for the feasts.' },
+    { id: 'upperroom', name: 'The Upper Room', alt: 'Traditional site on Mount Zion', lon: 35.2288, lat: 31.7714, kind: 'history', label: 'l', ref: 'Mark 14:15',
+      text: 'Mark says the disciples found “a large upper room furnished and ready.” Tradition places it on Mount Zion; the vaulted hall shown there today was built by Crusaders in the twelfth century.' },
+    { id: 'highpriest', name: 'House of the High Priest', short: 'High priest’s house', alt: 'The Upper City', lon: 35.2314, lat: 31.7733, kind: 'locked', label: 'r', ref: 'Mark 14:53–65',
+      text: 'The priestly families lived in fine houses on the western hill. Its exact location is not known.' },
+    { id: 'golgotha', name: 'Golgotha', alt: '“The place of a skull,” outside the wall', lon: 35.2296, lat: 31.7786, kind: 'locked', label: 'l', ref: 'Mark 15:22',
+      text: 'An old quarry just outside the city wall of the time. The Church of the Holy Sepulchre has marked this site since the fourth century, covering both Golgotha and a rock-cut tomb.' },
+  ];
+  const jerNodes = {
+    u1: { lon: 35.2310, lat: 31.7748, name: 'Upper City' }, t2: { lon: 35.2341, lat: 31.7760 }, l1: { lon: 35.2350, lat: 31.7735 },
+    k1: { lon: 35.2386, lat: 31.7793 }, eg: { lon: 35.2377, lat: 31.7790 }, w1: { lon: 35.2290, lat: 31.7774 }, nb: { lon: 35.2352, lat: 31.7810 },
+  };
+  jerPlaces.forEach((p) => { jerNodes[p.id] = { lon: p.lon, lat: p.lat, name: p.name }; });
+  const jerEdges = [
+    ['bethany', 'bethphage'], ['bethphage', 'summit'], ['summit', 'olivet'], ['olivet', 'gethsemane'], ['gethsemane', 'k1'], ['k1', 'eg'], ['eg', 'temple'],
+    ['temple', 't2'], ['t2', 'l1'], ['l1', 'siloam'], ['t2', 'u1'], ['u1', 'palace'], ['u1', 'highpriest'], ['u1', 'upperroom'], ['palace', 'w1'], ['w1', 'golgotha'],
+    ['temple', 'antonia'], ['antonia', 'nb'], ['nb', 'bethesda'],
+  ];
+  const jerLabels = [
+    { text: 'Kidron Valley', lon: 35.2392, lat: 31.7742, style: 'small' },
+    { text: 'Hinnom Valley', lon: 35.2262, lat: 31.7712, style: 'small' },
+    { text: 'Upper City', lon: 35.2296, lat: 31.7742, style: 'region' },
+    { text: 'City of David', lon: 35.2360, lat: 31.7722, style: 'small' },
+    { text: 'Mount of Olives', lon: 35.2462, lat: 31.7745, style: 'region' },
+    { text: 'To Jericho', lon: 35.2640, lat: 31.7690, style: 'small' },
+  ];
+
+  D.regions = {
+    galilee: {
+      id: 'galilee', title: 'Galilee', lon0: 35.20, lon1: 35.75, lat0: 32.60, lat1: 33.05, w: 256, h: 250,
+      texelKm: 0.2, scaleKm: 5, start: 'jv', places: galPlaces, nodes: galNodes, edges: galEdges, labels: galLabels,
+    },
+    land: {
+      id: 'land', title: 'The Land', lon0: 34.20, lon1: 36.40, lat0: 30.95, lat1: 33.65, w: 192, h: 300,
+      texelKm: 1.0, scaleKm: 20, start: 'capernaum', fog: true, places: landPlaces, nodes: landNodes, edges: landEdges, labels: landLabels,
+      // the Galilee map, outlined on this one
+      box: { lon0: 35.20, lon1: 35.75, lat0: 32.60, lat1: 33.05 },
+    },
+    jerusalem: {
+      id: 'jerusalem', title: 'Jerusalem', lon0: 35.2150, lon1: 35.2680, lat0: 31.7570, lat1: 31.8000, w: 250, h: 238,
+      texelKm: 0.02, scaleKm: 0.5, start: 'u1', places: jerPlaces, nodes: jerNodes, edges: jerEdges, labels: jerLabels, city: true,
+    },
+  };
+  D.regions.galilee.subtitle = 'c. AD 28';
+  D.regions.land.subtitle = 'c. AD 28–30';
+  D.regions.jerusalem.subtitle = 'Passover, c. AD 30';
+  // map ids shared between the two regions (for keeping the traveller in the same place)
+  D.sameNode = { capernaum: 'capernaum', tiberias: 'tiberias', nazareth: 'nazareth', hippos: 'hippos2' };
+
+  TW.D = D;
+})(window.TW);
