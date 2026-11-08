@@ -18,7 +18,7 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/util.js` – math, noise, colour helpers, save game (localStorage, guarded)
 - `js/audio.js` – all sound, synthesized live with Web Audio (no audio files): period music in moods (title, galilee, land, reflect, tension, wonder, lament, jerusalem, night, storm), ambience beds (shore, wind, birds, crowd, room, night, fire, storm) and effects. Stages set their soundscape with an `audio` property; `TW.Audio.music(mood)` and `TW.Audio.sfx(name)` handle story beats.
 - `js/role.js` – who you play: Eleazar (a young scribe), Elisheva (Nicodemus's niece), or Both (choose the voice before each scene). Holds exact phrase swaps for Elisheva's dramatized text (never Scripture) and each episode's vantage points
-- `js/scripture.js`, `js/scripture2.js`, `js/scripture3.js` (Acts 1–9, Acts 22 and John 14, 20), `js/scripture4.js` (Acts 9:32–12:17) – every Scripture passage, word for word from the WEB (scripture2 also holds Mark 14–16 and John 19 for the coming Passion episodes)
+- `js/scripture.js`, `js/scripture2.js`, `js/scripture3.js` (Acts 1–9, Acts 22 and John 14, 20), `js/scripture4.js` (Acts 9:32–13:13) – every Scripture passage, word for word from the WEB (scripture2 also holds Mark 14–16 and John 19 for the coming Passion episodes)
 - `js/data.js` – eras, timeline, episode registry (notes, reflections, report choices), both map regions, reveal schedule
 - `js/geo.js` – simplified real elevations: Galilee in detail, the whole Land, and Jerusalem with its valleys and the Mount of Olives
 - `js/sprites.js` – procedural pixel people, the man on the mat, pigs, bier, boats, map walker
@@ -53,6 +53,7 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/geo-east.js` – geography of Syria, Cilicia and Cyprus (coastline, Cyprus, Lebanon and Anti-Lebanon, Amanus, Taurus, Orontes)
 - `js/antioch.js` – Episode XXIII, Antioch (Acts 11:19–30), with Tarsus
 - `js/rhoda.js` – Episode XXIV, Rhoda at the Gate (Acts 12:1–17), with Peter's escape as his memory
+- `js/cyprus.js` – Episode XXV, Cyprus (Acts 13:1–13): the sending at Antioch, a sea voyage, and Paphos
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
 - `js/vignettes.js` – memory scenes: sepia flashbacks that act out each testimony answer in step with its verses
 - `js/main.js` – game controller
@@ -88,7 +89,8 @@ washing back over pebbles), `crowd` and `city` voices (murmured syllables throug
 (stonemasons' hammers, sheep, passing footsteps), `doves`, `village` (dogs, goats, voices), `birds`, `night` (crickets,
 an owl), and travel: `steps` while walking on a map and `oars` while crossing water (`TW.Audio.travel('walk'|'boat'|'')`).
 A stage chooses its soundscape with `audio: { music, amb: { layer: level } }`. The sea is heard only at real shorelines.
-Taps and scene transitions are soft lyre notes. `TW.Audio._spec()` returns [energy above 3 kHz, total] for testing.
+Taps and scene transitions are soft lyre notes. Footsteps are low tonal thuds, never noise; the reverb is darkened so
+echoes never hiss; distant voices play only where a crowd is in the scene (the `crowd` layer). `TW.Audio._spec()` returns [energy above 3 kHz, total] for testing.
 
 ## Three playthroughs
 - **Eleazar**, a young scribe who studies under Nicodemus.

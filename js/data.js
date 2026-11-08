@@ -65,8 +65,7 @@ window.TW = window.TW || {};
         'Scattered from Jerusalem, the believers carry the word into Samaria, down the desert road, and north to Damascus, where the persecutor meets the one he persecuted. Then Antioch, the council at Jerusalem, and Paul’s journeys across the Mediterranean.',
       world: [['Emperors', 'Tiberius, Caligula, Claudius, Nero'], ['Prefect of Judea', 'Pontius Pilate, then Marcellus (from AD 36)']],
       episodes: [
-        'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda',
-        { title: 'Cyprus', ref: 'Acts 13:1–12' },
+        'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda', 'cyprus',
         { title: 'The Council', ref: 'Acts 15' },
         { title: 'Ephesus', ref: 'Acts 19' },
       ],
@@ -698,6 +697,35 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder.push('antioch', 'rhoda');
+  Object.assign(D.episodes, {
+    cyprus: {
+      num: 'XXV', title: 'Cyprus', ref: 'Acts 13:1–13', passage: 'acts13', place: 'antioch', region: 'east', era: 'spread',
+      scene: 'Antioch, the sea, and Paphos, Acts 13', parallels: 'told only in Acts',
+      question: { id: 'paul', text: 'Why does Saul now go by the name Paul?', ref: 'Acts 13:9' },
+      hearts: ['You told the governor what you had seen with your own eyes.', 'You let Paul answer for both of you.', 'You handed the governor your scroll and let him read.'],
+      conclusions: [
+        'The Spirit said, “Separate Barnabas and Saul for me,” and the church laid hands on them and let them go.',
+        'A Roman proconsul believed, astonished at the teaching of the Lord.',
+        'Saul, who is also called Paul. The name changes as the road turns toward the nations.',
+      ],
+      notes: [
+        ['Prophets and teachers (13:1)', 'A mixed company: Simeon called Niger (Latin for “black”), Lucius from Cyrene in Africa, Manaen who was raised with Herod Antipas, a Levite from Cyprus, and a Pharisee from Tarsus.'],
+        ['Seleucia (13:4)', 'Antioch’s seaport, about 25 km away at the mouth of the Orontes.'],
+        ['Cyprus', 'Barnabas’s home (4:36). Salamis was its chief city in the east; Paphos, the Roman capital, lay about 150 km away on the west coast.'],
+        ['The proconsul (13:7)', 'Cyprus was a senatorial province, ruled by a proconsul: Luke uses exactly the right title. An inscription from Cyprus names a proconsul Paulus; whether he is this man is debated.'],
+        ['“Saul, who is also called Paul” (13:9)', 'Paulus was his Roman name. As a Roman citizen he probably bore both from birth. From here on, as the mission turns to the Gentile world, Luke calls him Paul.'],
+        ['Blind for a season (13:11)', 'The persecutor who was once led by the hand into Damascus now pronounces blindness on another man, but only “for a season.”'],
+        ['John Mark (13:13)', 'He turned back at Perga. Later Paul would refuse to take him again, and Paul and Barnabas would part over it (15:37–39).'],
+      ],
+      reflect: [
+        'The church at Antioch gave away its two best teachers. What does that cost a church?',
+        'A Roman governor wanted to hear the word of God. Who opposed it, and why?',
+        'What is the difference between Paul’s power and Elymas’s sorcery?',
+      ],
+    },
+  });
+  D.eraOrder.push('cyprus');
+
 
 
 
@@ -1001,7 +1029,7 @@ window.TW = window.TW || {};
     { id: 'sidon', name: 'Sidon', alt: 'Phoenician port', lon: 35.370, lat: 33.560, kind: 'history', label: 'l', ref: 'Acts 27:3', text: 'A Phoenician harbor city on the road north to Syria.' },
     { id: 'damascus', name: 'Damascus', alt: 'Where Saul received his sight', lon: 36.292, lat: 33.513, kind: 'history', label: 'r', ref: 'Acts 9',
       text: 'The oasis city where Saul was led blind into Straight Street, and later let down the wall in a basket (Acts 9:25).' },
-    { id: 'antioch', name: 'Antioch', alt: 'Capital of Syria, third city of the empire', lon: 36.160, lat: 36.200, kind: 'episode', episodes: ['antioch'], label: 'r',
+    { id: 'antioch', name: 'Antioch', alt: 'Capital of Syria, third city of the empire', lon: 36.160, lat: 36.200, kind: 'episode', episodes: ['antioch', 'cyprus'], label: 'r',
       text: 'Antioch on the Orontes, seat of the governor of Syria, with perhaps a quarter of a million people and a large Jewish community.' },
     { id: 'seleucia', name: 'Seleucia', alt: 'Antioch’s port', lon: 35.930, lat: 36.120, kind: 'history', label: 'l', ref: 'Acts 13:4', text: 'The harbor at the mouth of the Orontes, from which Barnabas and Saul would one day sail for Cyprus.' },
     { id: 'tarsus', name: 'Tarsus', alt: 'Chief city of Cilicia', lon: 34.900, lat: 36.920, kind: 'history', label: 'l', ref: 'Acts 9:30; 11:25',

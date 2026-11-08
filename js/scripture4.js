@@ -113,4 +113,19 @@ window.TW = window.TW || {};
     ['12:16', 'But Peter continued knocking. When they had opened, they saw him, and were amazed.'],
     ['12:17', 'But he, beckoning to them with his hand to be silent, declared to them how the Lord had brought him out of the prison. He said, “Tell these things to James, and to the brothers.” Then he departed, and went to another place.'],
   ]);
+  add('acts13', 'Acts', [
+    ['13:1', 'Now in the assembly that was at Antioch there were some prophets and teachers: Barnabas, Simeon who was called Niger, Lucius of Cyrene, Manaen the foster brother of Herod the tetrarch, and Saul.'],
+    ['13:2', 'As they served the Lord and fasted, the Holy Spirit said, “Separate Barnabas and Saul for me, for the work to which I have called them.”'],
+    ['13:3', 'Then, when they had fasted and prayed and laid their hands on them, they sent them away.'],
+    ['13:4', 'So, being sent out by the Holy Spirit, they went down to Seleucia. From there they sailed to Cyprus.'],
+    ['13:5', 'When they were at Salamis, they proclaimed the word of God in the Jewish synagogues. They had also John as their attendant.'],
+    ['13:6', 'When they had gone through the island to Paphos, they found a certain sorcerer, a false prophet, a Jew, whose name was Bar Jesus,'],
+    ['13:7', 'who was with the proconsul, Sergius Paulus, a man of understanding. This man summoned Barnabas and Saul, and sought to hear the word of God.'],
+    ['13:8', 'But Elymas the sorcerer (for so is his name by interpretation) withstood them, seeking to turn aside the proconsul from the faith.'],
+    ['13:9', 'But Saul, who is also called Paul, filled with the Holy Spirit, fastened his eyes on him,'],
+    ['13:10', 'and said, “Full of all deceit and all cunning, you son of the devil, you enemy of all righteousness, will you not cease to pervert the right ways of the Lord?'],
+    ['13:11', 'Now, behold, the hand of the Lord is on you, and you will be blind, not seeing the sun for a season!” Immediately a mist and darkness fell on him. He went around seeking someone to lead him by the hand.'],
+    ['13:12', 'Then the proconsul, when he saw what was done, believed, being astonished at the teaching of the Lord.'],
+    ['13:13', 'Now Paul and his company set sail from Paphos, and came to Perga in Pamphylia. John departed from them and returned to Jerusalem.'],
+  ]);
 })(window.TW);

@@ -41,6 +41,7 @@ window.TW = window.TW || {};
     cornelius: ['scribe', 'A scribe crossing a Gentile’s threshold', 'Answering the gate at the tanner’s house'],
     antioch: ['scribe', 'Traveling with Barnabas, and to Tarsus for Saul', 'Traveling with Barnabas’s party, and at a Greek table'],
     rhoda: ['niece', 'Praying in the crowded room', 'Beside Rhoda, at the gate'],
+    cyprus: ['scribe', 'A Jerusalem scribe before a Roman governor', 'A woman of Jerusalem before a Roman governor'],
   };
   R.look = {
     scribe: { skin: '#b07a50', hair: '#2a1a12', beard: '#2a1a12', tunic: '#ddd0b0', mantle: '#4e5a72', fringe: '#9cc0e0', phylactery: true, belt: null },

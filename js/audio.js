@@ -13,11 +13,18 @@ window.TW = window.TW || {};
   const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
   // ---------- setup ----------
+  // A warm room: the echo is darkened noise (a one-pole lowpass, about 1.4 kHz) so its tail never hisses.
   function impulse(sec, decay) {
     const len = Math.floor(ctx.sampleRate * sec), b = ctx.createBuffer(2, len, ctx.sampleRate);
+    const k = Math.min(0.5, (2 * Math.PI * 1400) / ctx.sampleRate);
     for (let c = 0; c < 2; c++) {
       const d = b.getChannelData(c);
-      for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, decay);
+      let lp = 0;
+      for (let i = 0; i < len; i++) {
+        lp += ((Math.random() * 2 - 1) - lp) * k;
+        const env = Math.pow(1 - i / len, decay) * Math.min(1, i / (ctx.sampleRate * 0.01));
+        d[i] = lp * env * 2.4;
+      }
     }
     return b;
   }
@@ -29,7 +36,7 @@ window.TW = window.TW || {};
     comp.threshold.value = -16; comp.ratio.value = 4;
     master = ctx.createGain(); master.gain.value = 0.9;
     master.connect(comp); comp.connect(ctx.destination);
-    reverb = ctx.createConvolver(); reverb.buffer = impulse(3.4, 2.4);
+    reverb = ctx.createConvolver(); reverb.buffer = impulse(2.4, 2.8);
     const revOut = ctx.createGain(); revOut.gain.value = 0.5;
     reverb.connect(revOut); revOut.connect(master);
     musicBus = ctx.createGain(); musicBus.gain.value = 0.2;
@@ -100,7 +107,7 @@ window.TW = window.TW || {};
     wind() {
       const out = gain(0), lp = filt('lowpass', 360), g = gain(0.45);
       noise(true).connect(lp).connect(g).connect(out);
-      lfo(0.07, 0.3, g.gain, 0.45); lfo(0.13, 110, lp.frequency, 340);
+      lfo(0.05, 0.08, g.gain, 0.4); lfo(0.09, 40, lp.frequency, 330);
       return out;
     },
     room() { const out = gain(0); noise(true).connect(filt('lowpass', 170)).connect(gain(0.9)).connect(out); return out; },
@@ -268,7 +275,7 @@ window.TW = window.TW || {};
     if (!ctx.createStereoPanner) return dest;
     const sp = ctx.createStereoPanner(); sp.pan.value = p; sp.connect(dest); return sp;
   };
-  const toRev = (node, v) => { const g = gain(v); node.connect(g); g.connect(reverb); };
+  const toRev = (node, v) => { const g = gain(v * 0.35); node.connect(g); g.connect(reverb); };
   function chirp(t, dest) {
     const o = ctx.createOscillator(), g = ctx.createGain(), base0 = rand(2600, 4000), n = 2 + Math.floor(Math.random() * 4);
     o.type = 'sine';
@@ -327,13 +334,13 @@ window.TW = window.TW || {};
   // a distant voice: a few murmured syllables, a sawtooth through two moving vowel formants
   function voice(t, dest, loud) {
     const o = ctx.createOscillator(); o.type = 'sawtooth';
-    const pitch = rand(90, 215), f1 = filt('bandpass', 600, 5), f2 = filt('bandpass', 1300, 6), g = ctx.createGain(), g2 = gain(0.35), lp = filt('lowpass', 1500);
+    const pitch = rand(90, 215), f1 = filt('bandpass', 600, 5), f2 = filt('bandpass', 1300, 6), g = ctx.createGain(), g2 = gain(0.25), lp = filt('lowpass', 1000);
     o.connect(f1).connect(g); o.connect(f2).connect(g2).connect(g);
     const out = pan(dest, rand(-0.8, 0.8));
     g.connect(lp).connect(out); toRev(lp, 0.5);
     g.gain.value = 0.0001;
     let tt = t;
-    const syl = 2 + Math.floor(Math.random() * 5), v = (loud || 1) * rand(0.03, 0.055);
+    const syl = 2 + Math.floor(Math.random() * 5), v = (loud || 1) * rand(0.022, 0.04);
     for (let i = 0; i < syl; i++) {
       const d = rand(0.08, 0.2);
       o.frequency.setValueAtTime(pitch * rand(0.92, 1.16), tt); o.frequency.linearRampToValueAtTime(pitch * rand(0.86, 1.08), tt + d);
@@ -380,13 +387,16 @@ window.TW = window.TW || {};
       o.connect(filt('bandpass', 800, 1.5)).connect(g).connect(out); toRev(g, 0.6); o.start(s); o.stop(s + 0.16);
     }
   }
-  function step(t, side, dest, soft) {
-    const n = noise(true), g = ctx.createGain();
-    g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(soft ? 0.05 : 0.13, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.09);
-    n.connect(filt('lowpass', 650)).connect(g).connect(pan(dest, side * 0.15)); n.stop(t + 0.1);
-    const n2 = noise(), g2 = ctx.createGain();
-    g2.gain.setValueAtTime(soft ? 0.008 : 0.02, t + 0.01); g2.gain.exponentialRampToValueAtTime(0.0001, t + 0.05);
-    n2.connect(filt('bandpass', 500, 1)).connect(g2).connect(dest); n2.stop(t + 0.06);
+  // a footstep: a soft, low thud of a sandal on packed earth (no noise, so it never hisses)
+  function step(t, side, dest) {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = 'sine'; o.frequency.setValueAtTime(rand(100, 125), t); o.frequency.exponentialRampToValueAtTime(55, t + 0.07);
+    g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(0.16, t + 0.008); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.1);
+    o.connect(g).connect(pan(dest, side * 0.15)); o.start(t); o.stop(t + 0.12);
+    const o2 = ctx.createOscillator(), g2 = ctx.createGain();
+    o2.type = 'triangle'; o2.frequency.setValueAtTime(rand(260, 320), t); o2.frequency.exponentialRampToValueAtTime(180, t + 0.03);
+    g2.gain.setValueAtTime(0.02, t); g2.gain.exponentialRampToValueAtTime(0.0001, t + 0.04);
+    o2.connect(g2).connect(dest); o2.start(t); o2.stop(t + 0.05);
   }
   let last = 0, nextWave = 0, nextStep = 0, nextOar = 0, side = 1;
   function tick() {
@@ -405,14 +415,13 @@ window.TW = window.TW || {};
     if (L('city')) {
       if (chance(0.35)) hammer(soon(), beds.city);
       if (chance(0.05)) bleat(soon(), false, beds.city);
-      if (chance(1.2)) voice(soon(), beds.city, 0.7);
-      if (chance(0.25)) { const sd = Math.random() < 0.5 ? -1 : 1; for (let i = 0; i < 4; i++) step(now + 0.1 + i * 0.4, sd * 3, beds.city, true); }
+      if (L('crowd') && chance(1.0)) voice(soon(), beds.city, 0.6);
     }
     if (L('doves') && chance(0.12)) coo(soon(), beds.doves);
     if (L('village')) {
       if (chance(0.04)) bark(soon(), beds.village);
       if (chance(0.05)) bleat(soon(), true, beds.village);
-      if (chance(0.6)) voice(soon(), beds.village, 0.6);
+      if (L('crowd') && chance(0.5)) voice(soon(), beds.village, 0.5);
     }
     if (L('steps') && now > nextStep) { step(now + 0.02, side, beds.steps); side = -side; nextStep = now + 0.42; }
     if (L('oars') && now > nextOar) { oar(now + 0.02); nextOar = now + 1.7; }

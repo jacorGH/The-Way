@@ -27,9 +27,10 @@ window.TW = window.TW || {};
   }));
   syncSound();
   const REGION_SOUND = {
-    galilee: { music: 'galilee', amb: { wind: 0.35, birds: 0.55, village: 0.15 } },
-    land: { music: 'land', amb: { wind: 0.55, birds: 0.2 } },
-    jerusalem: { music: 'jerusalem', amb: { city: 0.45, doves: 0.3, birds: 0.2, wind: 0.15 } },
+    galilee: { music: 'galilee', amb: { wind: 0.2, birds: 0.55, village: 0.15 } },
+    land: { music: 'land', amb: { wind: 0.25, birds: 0.3 } },
+    jerusalem: { music: 'jerusalem', amb: { city: 0.4, doves: 0.3, birds: 0.25 } },
+    east: { music: 'land', amb: { birds: 0.3, village: 0.15, wind: 0.1 } },
   };
   TW.game = game;
   const persist = () => U.store(game.save);
@@ -210,7 +211,7 @@ window.TW = window.TW || {};
     det.appendChild(dl);
     if (era.id === 'galilee' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era II, The Road to Jerusalem, comes next.'));
     if (era.id === 'passion' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era III, The Jerusalem Church, comes next.'));
-    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: Cyprus, the council at Jerusalem, and Paul’s journeys.'));
+    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: Galatia, the council at Jerusalem, and Paul’s journeys west.'));
     if (era.id === 'church' && game.save.completed.seven) det.appendChild(el('p', 'era-done', 'Service is open: look for people who need you on the Jerusalem map.'));
     const ol = el('ol', 'episodes');
     const next = nextEpisode();
