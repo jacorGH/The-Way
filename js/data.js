@@ -65,8 +65,8 @@ window.TW = window.TW || {};
         'Scattered from Jerusalem, the believers carry the word into Samaria, down the desert road, and north to Damascus, where the persecutor meets the one he persecuted. Then Antioch, the council at Jerusalem, and Paul’s journeys across the Mediterranean.',
       world: [['Emperors', 'Tiberius, Caligula, Claudius, Nero'], ['Prefect of Judea', 'Pontius Pilate, then Marcellus (from AD 36)']],
       episodes: [
-        'samaria', 'desert', 'damascus', 'tabitha', 'cornelius',
-        { title: 'Antioch', ref: 'Acts 11:19–30' },
+        'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda',
+        { title: 'Cyprus', ref: 'Acts 13:1–12' },
         { title: 'The Council', ref: 'Acts 15' },
         { title: 'Ephesus', ref: 'Acts 19' },
       ],
@@ -645,6 +645,60 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder.push('tabitha', 'cornelius');
+  Object.assign(D.episodes, {
+    antioch: {
+      num: 'XXIII', title: 'Antioch', ref: 'Acts 11:19–30', passage: 'acts11', from: '11:19', to: '11:30', place: 'antioch', region: 'east', era: 'spread',
+      scene: 'Antioch on the Orontes, Acts 11', parallels: 'told only in Acts',
+      question: { id: 'christian', text: 'What does it mean to be called by his name?', ref: 'Acts 11:26' },
+      hearts: ['You ate at the Greeks’ table, whatever was on it.', 'You ate their bread and nothing else.', 'You thanked them, and ate later, alone.'],
+      conclusions: [
+        'Men from Cyprus and Cyrene told Greeks about the Lord Jesus, and a great number believed.',
+        'Barnabas went to Tarsus and came back with Saul. For a whole year they taught together.',
+        'In Antioch they call us Christians: the people of the Christ. The name is meant as a label. We are wearing it.',
+      ],
+      answers: { nations: ['The Greeks of Antioch, who believed and turned to the Lord.', 'Acts 11:20–21'] },
+      notes: [
+        ['Antioch (11:19)', 'Capital of the Roman province of Syria and one of the three greatest cities of the empire, with a large and long-established Jewish community.'],
+        ['Hellenists (11:20)', 'Here it means Greek-speaking Gentiles. Until now the scattered believers had spoken “to Jews only” (11:19).'],
+        ['Barnabas (11:22–24)', 'Sent by Jerusalem to look into the news, “he was glad.” Acts calls him a good man, full of the Holy Spirit and of faith.'],
+        ['Tarsus (11:25)', 'Saul had been sent home there for his safety (9:30). Barnabas had to go looking for him.'],
+        ['“Christians” (11:26)', 'Christianoi, “Christ’s people.” The ending is a Latin-style one used for a leader’s followers, and the name was probably given by outsiders.'],
+        ['The famine (11:28)', 'Ancient historians record food shortages in several provinces during the reign of Claudius (AD 41–54).'],
+      ],
+      reflect: [
+        'The first preachers to Greeks are not named. Why might that be fitting?',
+        'Barnabas “saw the grace of God” and was glad. What would he have seen?',
+        'The church at Antioch sent help to Jerusalem. What does that say about the new family?',
+      ],
+    },
+    rhoda: {
+      num: 'XXIV', title: 'Rhoda at the Gate', ref: 'Acts 12:1–17', passage: 'acts12', place: 'upperroom', region: 'jerusalem', era: 'spread',
+      scene: 'The house of Mary, mother of John Mark, Acts 12', parallels: 'told only in Acts',
+      question: { id: 'prayer', text: 'Why were they so astonished when their prayer was answered?', ref: 'Acts 12:15–16' },
+      hearts: ['You believed Rhoda and ran with her to the gate.', 'You said what the others said: it must be his angel.', 'You kept praying, and did not look up until the gate was opened.'],
+      conclusions: [
+        'We prayed all night for Peter, and when he knocked we told the girl she was mad.',
+        'The chains fell from his hands and the iron gate opened by itself.',
+        'Herod killed James with the sword. Peter is alive. I do not know why, and I thank God for both men.',
+      ],
+      notes: [
+        ['Herod the king (12:1)', 'Herod Agrippa I, grandson of Herod the Great, who ruled Judea as king from AD 41 to 44.'],
+        ['James (12:2)', 'James son of Zebedee, the brother of John, one of the three closest to Jesus, and the first of the Twelve to die for him.'],
+        ['Sixteen soldiers (12:4)', 'Four squads of four, taking the watches of the night in turn.'],
+        ['Mary’s house (12:12)', 'Large enough to have a gate and a serving girl, and to hold many people praying. Her son John Mark would travel with Barnabas and Saul (12:25).'],
+        ['Rhoda (12:13)', 'Her name means “Rose.” A household servant, and the first to recognize that the prayer had been answered.'],
+        ['“His angel” (12:15)', 'Many Jews of the time believed that a person had a guardian angel who could resemble them.'],
+        ['James (12:17)', 'Not the apostle who had died, but James the brother of the Lord, who led the Jerusalem church.'],
+      ],
+      reflect: [
+        'Why do you think God rescued Peter but not James?',
+        'They were praying for Peter, and did not believe he was at the door. Where do you see yourself in that?',
+        'Who would be the “Rhoda” in your church: the one nobody believes?',
+      ],
+    },
+  });
+  D.eraOrder.push('antioch', 'rhoda');
+
 
 
 
@@ -814,6 +868,7 @@ window.TW = window.TW || {};
       text: 'Philip the tetrarch’s capital, beside a spring and a cave shrine to the god Pan. Here Peter will say, “You are the Christ.”' },
     { id: 'hermon', name: 'Mount Hermon', alt: '2,814 m', lon: 35.857, lat: 33.416, kind: 'history', reveal: 'capernaum', label: 'r',
       text: 'The highest mountain of the region, snow-capped much of the year. Its snowmelt feeds the springs of the Jordan.' },
+    { id: 'tosyria', name: 'North to Syria', short: 'To Syria', alt: 'Phoenicia, Antioch, Tarsus and Cyprus', lon: 35.700, lat: 33.600, kind: 'zoom', zoom: 'east', reveal: 'stephen', label: 'r' },
     { id: 'desertroad', name: 'The desert road', short: 'Desert road', alt: 'From Jerusalem down to Gaza', lon: 34.800, lat: 31.600, kind: 'episode', episodes: ['desert'], reveal: 'stephen', label: 'l',
       text: 'The road that drops from the Judean hills through dry country to Gaza and the coastal road to Egypt. Acts 8:26 calls it “a desert.”' },
     { id: 'azotus', name: 'Azotus', alt: 'Ashdod', lon: 34.648, lat: 31.800, kind: 'history', reveal: 'stephen', label: 'l', ref: 'Acts 8:40',
@@ -849,7 +904,7 @@ window.TW = window.TW || {};
     ['j3', 'gadara'], ['gadara', 'd1'], ['d1', 'gerasa'], ['scythopolis', 'd1'], ['gaza', 's1'], ['s1', 'emmaus'],
     ['capernaum', 'hippos2', 'boat'],
     ['s1', 'desertroad'], ['desertroad', 'gaza'], ['gaza', 'azotus'], ['azotus', 'joppa'],
-    ['caesphil', 'dm1'], ['dm1', 'dm2'], ['dm2', 'damascus'],
+    ['caesphil', 'dm1'], ['dm1', 'dm2'], ['dm2', 'damascus'], ['dm1', 'tosyria'],
   ];
   const landLabels = [
     { text: 'Galilee', lon: 35.33, lat: 32.86, style: 'region' },
@@ -891,7 +946,7 @@ window.TW = window.TW || {};
       text: 'A pool fed by Hezekiah’s tunnel. The steps of the first-century pool were uncovered in 2004.' },
     { id: 'palace', name: 'Herod’s Palace', short: 'Herod’s Palace', alt: 'Likely the Praetorium', lon: 35.2284, lat: 31.7762, kind: 'locked', label: 'l', ref: 'Mark 15:16',
       text: 'Herod the Great’s palace and towers on the western hill. Many historians think Pilate stayed and judged here when he came up for the feasts.' },
-    { id: 'upperroom', name: 'The Upper Room', alt: 'Traditional site on Mount Zion', lon: 35.2288, lat: 31.7714, kind: 'episode', episodes: ['forty', 'seven'], label: 'l',
+    { id: 'upperroom', name: 'The Upper Room', alt: 'Traditional site on Mount Zion', lon: 35.2288, lat: 31.7714, kind: 'episode', episodes: ['forty', 'seven', 'rhoda'], label: 'l',
       text: 'Mark says the disciples found “a large upper room furnished and ready.” Tradition places it on Mount Zion; the vaulted hall shown there today was built by Crusaders in the twelfth century.' },
     { id: 'highpriest', name: 'House of the High Priest', short: 'High priest’s house', alt: 'The Upper City', lon: 35.2314, lat: 31.7733, kind: 'episode', episodes: ['council'], label: 'r',
       text: 'The priestly families lived in fine houses on the western hill. Its exact location is not known.' },
@@ -935,6 +990,53 @@ window.TW = window.TW || {};
       texelKm: 0.02, scaleKm: 0.5, start: 'u1', places: jerPlaces, nodes: jerNodes, edges: jerEdges, labels: jerLabels, city: true,
     },
   };
+  // ---------- Era IV: Syria, Cilicia and Cyprus ----------
+  const eastPlaces = [
+    { id: 'toland', name: 'Judea, Samaria and Galilee', short: 'The Land', alt: 'Back to the map of the Land', lon: 35.25, lat: 32.10, kind: 'zoom', zoom: 'land', label: 'r' },
+    { id: 'caesarea', name: 'Caesarea', alt: 'The governors’ harbor city', lon: 34.890, lat: 32.500, kind: 'history', label: 'l', ref: 'Acts 10:1',
+      text: 'Herod’s great harbor, where Peter preached to Cornelius. The believers later brought Saul down here to send him home to Tarsus (Acts 9:30).' },
+    { id: 'ptolemais', name: 'Ptolemais', alt: 'Akko', lon: 35.070, lat: 32.925, kind: 'history', label: 'l', ref: 'Acts 21:7', text: 'An old Phoenician port on the coastal road north.' },
+    { id: 'tyre', name: 'Tyre', alt: 'The island city of the Phoenicians', lon: 35.200, lat: 33.270, kind: 'history', label: 'l', ref: 'Acts 11:19',
+      text: 'Phoenicia was one of the first places the scattered believers reached (Acts 11:19). Jesus had once gone to the region of Tyre and Sidon (Mark 7:24).' },
+    { id: 'sidon', name: 'Sidon', alt: 'Phoenician port', lon: 35.370, lat: 33.560, kind: 'history', label: 'l', ref: 'Acts 27:3', text: 'A Phoenician harbor city on the road north to Syria.' },
+    { id: 'damascus', name: 'Damascus', alt: 'Where Saul received his sight', lon: 36.292, lat: 33.513, kind: 'history', label: 'r', ref: 'Acts 9',
+      text: 'The oasis city where Saul was led blind into Straight Street, and later let down the wall in a basket (Acts 9:25).' },
+    { id: 'antioch', name: 'Antioch', alt: 'Capital of Syria, third city of the empire', lon: 36.160, lat: 36.200, kind: 'episode', episodes: ['antioch'], label: 'r',
+      text: 'Antioch on the Orontes, seat of the governor of Syria, with perhaps a quarter of a million people and a large Jewish community.' },
+    { id: 'seleucia', name: 'Seleucia', alt: 'Antioch’s port', lon: 35.930, lat: 36.120, kind: 'history', label: 'l', ref: 'Acts 13:4', text: 'The harbor at the mouth of the Orontes, from which Barnabas and Saul would one day sail for Cyprus.' },
+    { id: 'tarsus', name: 'Tarsus', alt: 'Chief city of Cilicia', lon: 34.900, lat: 36.920, kind: 'history', label: 'l', ref: 'Acts 9:30; 11:25',
+      text: 'Saul’s home city, “a citizen of no insignificant city” (Acts 21:39). After Damascus and Jerusalem he went home here, until Barnabas came looking for him.' },
+    { id: 'salamis', name: 'Salamis', alt: 'Cyprus', lon: 33.900, lat: 35.180, kind: 'history', label: 'r', ref: 'Acts 13:5', text: 'The chief port of eastern Cyprus. Barnabas was a Levite of Cyprus (Acts 4:36), and believers from Cyprus first preached to Greeks in Antioch (11:20).' },
+    { id: 'paphos', name: 'Paphos', alt: 'Seat of the governor of Cyprus', lon: 32.420, lat: 34.760, kind: 'history', label: 'l', ref: 'Acts 13:6', text: 'The Roman capital of Cyprus, on its western coast.' },
+  ];
+  const eastNodes = {
+    e1: { lon: 35.500, lat: 33.890 }, e2: { lon: 35.640, lat: 34.120 }, e3: { lon: 35.840, lat: 34.440 }, e4: { lon: 35.820, lat: 35.400 },
+    e5: { lon: 36.000, lat: 35.900 }, e6: { lon: 36.200, lat: 36.480 }, e7: { lon: 36.170, lat: 36.620 }, e8: { lon: 36.180, lat: 36.850 },
+    e9: { lon: 35.320, lat: 36.990 }, e10: { lon: 35.850, lat: 33.600 }, c1: { lon: 33.350, lat: 35.050 },
+  };
+  const eastEdges = [
+    ['toland', 'caesarea'], ['caesarea', 'ptolemais'], ['ptolemais', 'tyre'], ['tyre', 'sidon'], ['sidon', 'e1'], ['e1', 'e2'], ['e2', 'e3'], ['e3', 'e4'], ['e4', 'e5'], ['e5', 'antioch'],
+    ['antioch', 'seleucia'], ['antioch', 'e6'], ['e6', 'e7'], ['e7', 'e8'], ['e8', 'e9'], ['e9', 'tarsus'],
+    ['sidon', 'e10'], ['e10', 'damascus'], ['toland', 'damascus'],
+    ['seleucia', 'salamis', 'boat'], ['salamis', 'c1'], ['c1', 'paphos'], ['caesarea', 'seleucia', 'boat'],
+  ];
+  const eastLabels = [
+    { text: 'Syria', lon: 36.75, lat: 35.05, style: 'region' },
+    { text: 'Phoenicia', lon: 35.95, lat: 33.95, style: 'small' },
+    { text: 'Cilicia', lon: 34.30, lat: 37.12, style: 'region' },
+    { text: 'Cyprus', lon: 33.15, lat: 34.95, style: 'small' },
+    { text: 'The Great Sea', lon: 33.30, lat: 33.30, style: 'water' },
+    { text: 'Orontes', lon: 36.55, lat: 35.45, style: 'river' },
+    { text: 'Taurus', lon: 33.40, lat: 37.20, style: 'small' },
+    { text: 'Amanus', lon: 36.62, lat: 36.70, style: 'small' },
+  ];
+  eastPlaces.forEach((p) => { eastNodes[p.id] = { lon: p.lon, lat: p.lat, name: p.name }; });
+  D.regions.east = {
+    id: 'east', title: 'Syria, Cilicia and Cyprus', lon0: 31.60, lon1: 37.20, lat0: 31.60, lat1: 37.40, w: 220, h: 282,
+    texelKm: 2.3, scaleKm: 50, start: 'tyre', places: eastPlaces, nodes: eastNodes, edges: eastEdges, labels: eastLabels,
+    box: { lon0: 34.20, lon1: 36.40, lat0: 31.60, lat1: 33.65 }, boxZoom: 'land', boxLabel: 'Tap to open the map of the Land',
+  };
+  D.regions.east.subtitle = 'c. AD 36–46';
   D.regions.galilee.subtitle = 'c. AD 28';
   D.regions.land.subtitle = 'c. AD 28–30';
   D.regions.jerusalem.subtitle = 'Passover, c. AD 30';

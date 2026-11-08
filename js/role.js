@@ -39,6 +39,8 @@ window.TW = window.TW || {};
     damascus: ['scribe', 'Face to face with Saul', 'Face to face with Saul'],
     tabitha: ['niece', 'At the door of the upper room', 'Among the widows holding up her garments'],
     cornelius: ['scribe', 'A scribe crossing a Gentile’s threshold', 'Answering the gate at the tanner’s house'],
+    antioch: ['scribe', 'Traveling with Barnabas, and to Tarsus for Saul', 'Traveling with Barnabas’s party, and at a Greek table'],
+    rhoda: ['niece', 'Praying in the crowded room', 'Beside Rhoda, at the gate'],
   };
   R.look = {
     scribe: { skin: '#b07a50', hair: '#2a1a12', beard: '#2a1a12', tunic: '#ddd0b0', mantle: '#4e5a72', fringe: '#9cc0e0', phylactery: true, belt: null },

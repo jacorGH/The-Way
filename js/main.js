@@ -210,7 +210,7 @@ window.TW = window.TW || {};
     det.appendChild(dl);
     if (era.id === 'galilee' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era II, The Road to Jerusalem, comes next.'));
     if (era.id === 'passion' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era III, The Jerusalem Church, comes next.'));
-    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: Antioch, Peter freed from prison, and Paul’s journeys.'));
+    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: Cyprus, the council at Jerusalem, and Paul’s journeys.'));
     if (era.id === 'church' && game.save.completed.seven) det.appendChild(el('p', 'era-done', 'Service is open: look for people who need you on the Jerusalem map.'));
     const ol = el('ol', 'episodes');
     const next = nextEpisode();
@@ -291,7 +291,7 @@ window.TW = window.TW || {};
       node: game.region === 'land' ? game.save.landNode : game.region === 'jerusalem' ? game.save.jerNode : game.save.mapNode,
       revealed: revealedSet(),
       onPlace: (id, arrived) => game.previewPlace(id, arrived),
-      onBox: () => game.switchRegion('galilee'),
+      onBox: () => game.switchRegion(D.regions[game.region].boxZoom || 'galilee'),
       status: placeStatus,
       badge: (pl) => game.badge(game.region, pl),
     });

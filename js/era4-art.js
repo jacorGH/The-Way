@@ -61,12 +61,15 @@ window.TW = window.TW || {};
   };
 
   // ---------- Damascus: Straight Street ----------
-  let STR = null;
-  K.straightArt = function () {
-    if (STR) return STR;
+  const STRS = {};
+  K.straightArt = function (opt) {
+    const key = opt && opt.hills ? 'hills' : 'snow';
+    if (STRS[key]) return STRS[key];
+    const snow = key === 'snow';
     const W = 320, c = U.makeCanvas(W, 160), x = c.getContext('2d');
     skyAnd(x, W, { top: 52, f: 0.025, seed: 6.2, amp: 16, color: '#a7a6a2' });
-    for (let i = 0; i < W; i++) { const top = 52 + Math.round((U.fbm(i * 0.025, 6.2, 7, 3) - 0.5) * 16); R(x, i, top, 1, 4, '#ecebe6'); }
+    if (snow) for (let i = 0; i < W; i++) { const top = 52 + Math.round((U.fbm(i * 0.025, 6.2, 7, 3) - 0.5) * 16); R(x, i, top, 1, 4, '#ecebe6'); }
+    else for (let i = 0; i < W; i++) { const top = 58 + Math.round((U.fbm(i * 0.03, 2.7, 7, 3) - 0.5) * 22); R(x, i, top, 1, 50, i % 7 ? '#9a8a6a' : '#8f7f62'); }
     // houses behind the colonnade
     for (let k = 0; k < 22; k++) { const hx = k * 15, h = 26 + (k % 3) * 8; R(x, hx, 104 - h, 14, h, k % 2 ? '#d6cbb2' : '#c8bc9f'); R(x, hx, 104 - h, 14, 1, '#e4dbc6'); R(x, hx + 4, 98 - h + 12, 4, 6, '#3a2e24'); }
     R(x, 0, 104, W, 22, '#cdbf9f');
@@ -74,7 +77,7 @@ window.TW = window.TW || {};
     R(x, 0, 70, W, 3, '#e6dfcc');
     for (let k = 0; k < 10; k++) { R(x, 18 + k * 30, 108, 12, 14, '#3a2e24'); R(x, 18 + k * 30, 106, 12, 2, ['#8a3a2a', '#3d5a7a', '#c99a3a'][k % 3]); }
     for (let y = 126; y < 160; y++) for (let i = 0; i < W; i++) R(x, i, y, 1, 1, K.rnd(i * 3, y) > 0.8 ? '#a89a7c' : (Math.floor(i / 12) + Math.floor(y / 6)) % 2 ? '#b8aa8c' : '#c0b296');
-    STR = c;
+    STRS[key] = c;
     return c;
   };
 

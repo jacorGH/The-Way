@@ -50,6 +50,9 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/coast-art.js` – Joppa, Simon the tanner's racks, Cornelius's atrium in Caesarea, Peter's sheet
 - `js/tabitha.js` – Episode XXI, Tabitha (Acts 9:32–43)
 - `js/cornelius.js` – Episode XXII, Peter and Cornelius (Acts 10:1–11:18)
+- `js/geo-east.js` – geography of Syria, Cilicia and Cyprus (coastline, Cyprus, Lebanon and Anti-Lebanon, Amanus, Taurus, Orontes)
+- `js/antioch.js` – Episode XXIII, Antioch (Acts 11:19–30), with Tarsus
+- `js/rhoda.js` – Episode XXIV, Rhoda at the Gate (Acts 12:1–17), with Peter's escape as his memory
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
 - `js/vignettes.js` – memory scenes: sepia flashbacks that act out each testimony answer in step with its verses
 - `js/main.js` – game controller

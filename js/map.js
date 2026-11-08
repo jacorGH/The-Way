@@ -419,7 +419,7 @@ window.TW = window.TW || {};
       ctx.font = 'italic ' + 11.5 * V.dpr + 'px "EB Garamond", Georgia, serif';
       ctx.textAlign = 'left'; ctx.textBaseline = 'top';
       ctx.fillStyle = 'rgba(244,214,140,0.95)';
-      ctx.fillText('Tap to open the Galilee map', pa[0] + 4 * V.dpr, pb[1] + 3 * V.dpr);
+      ctx.fillText(R.boxLabel || 'Tap to open the Galilee map', pa[0] + 4 * V.dpr, pb[1] + 3 * V.dpr);
     }
 
     drawLabels(ctx, k);
