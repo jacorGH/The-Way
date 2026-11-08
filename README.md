@@ -75,5 +75,10 @@ Service visits live in `D.service` (in `js/service.js`). Each has `listen`, `car
 (healed, slow recovery, comfort, death in peace, prayer not answered as asked). Prayers quote Scripture word for word.
 
 ## Audio notes
-All ambience is built from 8-second pink and brown noise buffers with faded loop seams, through a 3 kHz lowpass on the
-ambience bus. There is no sound on dialog taps. `TW.Audio._spec()` returns [energy above 3 kHz, total energy] for testing.
+Ambience has two kinds of layer. Beds are only low, soft brown-noise textures: `wind` (gusts), `room`, `fire`, `storm`,
+and a low `crowd` presence. Everything else is a distinct event, scheduled live: `shore` (lake wavelets lapping and
+washing back over pebbles), `crowd` and `city` voices (murmured syllables through moving vowel formants), `city`
+(stonemasons' hammers, sheep, passing footsteps), `doves`, `village` (dogs, goats, voices), `birds`, `night` (crickets,
+an owl), and travel: `steps` while walking on a map and `oars` while crossing water (`TW.Audio.travel('walk'|'boat'|'')`).
+A stage chooses its soundscape with `audio: { music, amb: { layer: level } }`. The sea is heard only at real shorelines.
+Taps and scene transitions are soft lyre notes. `TW.Audio._spec()` returns [energy above 3 kHz, total] for testing.

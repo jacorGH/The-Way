@@ -8,7 +8,7 @@ window.TW = window.TW || {};
 
   EP.run = async function (game) {
     const P0 = K.sprites();
-    SC.load({ width: 320, audio: { music: 'galilee', amb: { crowd: 0.5, wind: 0.3, birds: 0.3 } }, bg(ctx, t, cam) { ctx.drawImage(K.sebasteArt(), -cam, 0); } });
+    SC.load({ width: 320, audio: { music: 'galilee', amb: { crowd: 0.45, city: 0.4, birds: 0.3, wind: 0.15 } }, bg(ctx, t, cam) { ctx.drawImage(K.sebasteArt(), -cam, 0); } });
     SC.cam = 0; SC.camGoal = 0;
     const philip = SC.add({ frames: K.who('philip'), x: -10, y: 146, facing: 1, speed: 22 });
     const me = SC.add({ id: 'player', frames: P0.player, x: -30, y: 148, facing: 1, speed: 22 });
@@ -80,7 +80,7 @@ window.TW = window.TW || {};
 
     // Peter and John, and Simon's offer
     await K.fade(async () => {
-      SC.load({ width: 320, audio: { music: 'reflect', amb: { crowd: 0.45, wind: 0.3 } }, bg(ctx, t, cam) { ctx.drawImage(K.sebasteArt(), -cam, 0); } });
+      SC.load({ width: 320, audio: { music: 'reflect', amb: { crowd: 0.4, city: 0.3, birds: 0.3 } }, bg(ctx, t, cam) { ctx.drawImage(K.sebasteArt(), -cam, 0); } });
       SC.cam = 64; SC.camGoal = 64;
     });
     const bel = [];

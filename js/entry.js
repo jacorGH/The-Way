@@ -165,7 +165,7 @@ window.TW = window.TW || {};
   function courtStage(evening) {
     const st = {
       width: 320, hotspots: [], walkLimits: [10, 300], birds: [],
-      audio: evening ? { music: 'reflect', amb: { crowd: 0.25, wind: 0.2 } } : { music: 'jerusalem', amb: { crowd: 0.6, wind: 0.2, birds: 0.25 } },
+      audio: evening ? { music: 'reflect', amb: { crowd: 0.2, city: 0.3, doves: 0.3, wind: 0.1 } } : { music: 'jerusalem', amb: { crowd: 0.5, city: 0.6, doves: 0.5, wind: 0.1 } },
       bg(ctx) { ctx.drawImage(courtArt(), -Math.round(SC.cam), 0); },
       fx(fc, k, t, cam) {
         if (evening) {

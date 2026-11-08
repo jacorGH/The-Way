@@ -40,7 +40,7 @@ window.TW = window.TW || {};
 
   EP.run = async function (game) {
     const P0 = K.sprites();
-    SC.load({ width: 320, audio: { music: 'land', amb: { crowd: 0.45, wind: 0.2, birds: 0.2 } }, bg(ctx, t, cam) { ctx.drawImage(K.straightArt(), -cam, 0); } });
+    SC.load({ width: 320, audio: { music: 'land', amb: { crowd: 0.45, city: 0.55, doves: 0.2, birds: 0.15 } }, bg(ctx, t, cam) { ctx.drawImage(K.straightArt(), -cam, 0); } });
     SC.cam = 0; SC.camGoal = 0;
     const me = SC.add({ id: 'player', frames: P0.player, x: -10, y: 148, facing: 1, speed: 24 });
     for (let i = 0; i < 6; i++) SC.add({ frames: K.villager(1610 + i, i % 2 === 0), x: 60 + i * 40, y: 146 + (i % 3), facing: i % 2 ? -1 : 1 });

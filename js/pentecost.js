@@ -31,19 +31,19 @@ window.TW = window.TW || {};
   EP.run = async function (game) {
     const P0 = K.sprites();
     const st = K.courtStage(false);
-    st.audio = { music: 'jerusalem', amb: { crowd: 0.6, wind: 0.2 } };
+    st.audio = { music: 'jerusalem', amb: { crowd: 0.6, city: 0.5, doves: 0.4 } };
     SC.load(st); SC.cam = 0; SC.camGoal = 0;
     const crowd = [];
     for (let i = 0; i < 12; i++) crowd.push(SC.add({ frames: pilgrim(i), x: 70 + i * 17 + (i % 2) * 5, y: 147 + (i % 3), facing: i % 2 ? -1 : 1, speed: 22 }));
     const me = SC.add({ id: 'player', frames: P0.player, x: 150, y: 152, facing: 1, speed: 22 });
     await SC.say({ kind: 'history', text: 'Pentecost, the Feast of Weeks: fifty days after Passover. The city is crowded again with pilgrims from every land where Jews have settled, from Persia to Rome.' });
     await SC.say({ kind: 'drama', text: 'It is the third hour of the morning. You are in the Temple courts among the pilgrims when the sound begins.' });
-    AU() && (AU().amb({ wind: 1, crowd: 0.4 }), AU().sfx('whoosh'), AU().sfx('whoosh', 0.6), AU().sfx('whoosh', 1.2));
+    AU() && (AU().amb({ wind: 1, storm: 0.5, crowd: 0.4, city: 0.3 }), AU().sfx('thunder'));
     SC.shake(900);
     for (let i = 0; i < 40; i++) SC.dust(Math.random() * 320, 120 + Math.random() * 30, 1, { up: true, spread: 4, color: '#e8e0cc' });
     crowd.forEach((c) => { c.facing = -1; });
     await sayS('2:1', '2:4');
-    AU() && AU().amb({ wind: 0.3, crowd: 0.7 });
+    AU() && AU().amb({ wind: 0.2, crowd: 0.8, city: 0.4, doves: 0.3 });
     // the apostles come out among the crowd
     const twelve = [];
     ['peter', 'john', 'thomas'].concat([0, 1, 2, 3, 4, 5, 6, 7, 8]).forEach((n, i) => {
@@ -89,7 +89,7 @@ window.TW = window.TW || {};
     // baptism in the immersion pools
     await K.fade(async () => {
       const b = K.courtStage(false);
-      b.audio = { music: 'wonder', amb: { crowd: 0.5, wind: 0.15 } };
+      b.audio = { music: 'wonder', amb: { crowd: 0.5, city: 0.4, doves: 0.3 } };
       const bg0 = b.bg;
       b.bg = function (ctx, t, cam) {
         bg0.call(b, ctx, t, cam);

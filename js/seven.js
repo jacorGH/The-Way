@@ -87,7 +87,7 @@ window.TW = window.TW || {};
     // the assembly
     await K.fade(async () => {
       const a = K.courtStage(false);
-      a.audio = { music: 'reflect', amb: { crowd: 0.55, wind: 0.2 } };
+      a.audio = { music: 'reflect', amb: { crowd: 0.55, city: 0.4, doves: 0.3 } };
       SC.load(a); SC.cam = 0; SC.camGoal = 0;
     });
     const crowd = [];

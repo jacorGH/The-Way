@@ -11,7 +11,7 @@ window.TW = window.TW || {};
     const P0 = K.sprites();
     const st = {
       width: 320, dark: 0, black: 0,
-      audio: { music: 'lament', amb: { wind: 0.5, crowd: 0.35 } },
+      audio: { music: 'lament', amb: { wind: 0.45, crowd: 0.3, city: 0.2 } },
       bg(ctx, t, cam) { ctx.drawImage(K.gateArt(), -cam, 0); },
       fx(fc, k) {
         if (st.dark > 0) { fc.fillStyle = 'rgba(20,16,24,' + st.dark + ')'; fc.fillRect(0, 0, 256 * k, 160 * k); }

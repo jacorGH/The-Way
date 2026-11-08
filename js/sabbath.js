@@ -70,7 +70,7 @@ window.TW = window.TW || {};
     // ---- the grain fields ----
     SC.load({
       width: 256,
-      audio: { music: 'galilee', amb: { wind: 0.7, birds: 0.7 } },
+      audio: { music: 'galilee', amb: { wind: 0.5, birds: 0.7, village: 0.15 } },
       bg(ctx) { ctx.drawImage(fieldArt(), 0, 0); },
       fg(ctx, t) { wheatFront(ctx, t); },
       fx(fc, k) {

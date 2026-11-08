@@ -358,6 +358,8 @@ window.TW = window.TW || {};
       }
     }
     V.boat = V.isWater(V.pos.x, V.pos.y);
+    const snd = V.moving ? (V.boat ? 'boat' : 'walk') : '';
+    if (snd !== V._snd && TW.Audio) { V._snd = snd; TW.Audio.travel(snd); }
     if (V.follow) {
       const k = 1 - Math.pow(0.002, dt);
       V.cam.x += (V.pos.x - V.cam.x) * k; V.cam.y += (V.pos.y - V.cam.y) * k;

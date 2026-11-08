@@ -137,7 +137,7 @@ window.TW = window.TW || {};
 
   // ---------- the visit ----------
   function stageFor(v) {
-    if (v.set === 'court') { const st = K.courtStage(false); st.audio = { music: 'reflect', amb: { crowd: 0.45, wind: 0.2 } }; return st; }
+    if (v.set === 'court') { const st = K.courtStage(false); st.audio = { music: 'reflect', amb: { crowd: 0.4, city: 0.5, doves: 0.4 } }; return st; }
     if (v.set === 'gate') {
       const st = { width: 320, audio: { music: 'tension', amb: { wind: 0.6, night: 0.3 } }, bg(ctx, t, cam) { ctx.drawImage(K.gateArt(), -cam, 0); } };
       return K.nightWrap(st, { dark: 0.35, lights: [{ x: 230, y: 130, r: 46, c: 'rgba(255,160,80,0.4)' }] });

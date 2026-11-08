@@ -51,7 +51,7 @@ window.TW = window.TW || {};
     // remembered places keep the current music and bring their own sounds
     const base = (st.audio && st.audio.amb) || {};
     st.audio = { amb: o.night ? { night: 0.6, room: kind === 'house' ? 0.4 : 0, wind: kind === 'olives' ? 0.35 : 0, fire: o.fire ? 0.6 : 0 }
-      : kind === 'village' ? { wind: 0.5, birds: 0.5, crowd: 0.2 } : kind === 'field' ? { wind: 0.6, birds: 0.6, crowd: 0.2 }
+      : kind === 'village' ? { wind: 0.3, birds: 0.5, village: 0.5 } : kind === 'field' ? { wind: 0.5, birds: 0.6, crowd: 0.2 }
       : kind === 'syn' ? { room: 0.6, crowd: 0.1 } : base };
     const bg0 = st.bg;
     st.bg = function (ctx, t, cam, sc) { bg0.call(st, ctx, t, cam, sc); st.props.forEach((p) => p(ctx, t, cam)); };

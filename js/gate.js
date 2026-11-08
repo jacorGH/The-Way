@@ -10,7 +10,7 @@ window.TW = window.TW || {};
   EP.run = async function (game) {
     const P0 = K.sprites();
     const st = K.courtStage(false);
-    st.audio = { music: 'jerusalem', amb: { crowd: 0.55, wind: 0.2, birds: 0.2 } };
+    st.audio = { music: 'jerusalem', amb: { crowd: 0.5, city: 0.6, doves: 0.5 } };
     SC.load(st); SC.cam = 64; SC.camGoal = 64;
     const lame = SC.add({ frames: K.who('lame'), x: 214, y: 127, pose: 'sit', facing: 1, speed: 30 });
     const bowl = SC.add({ x: 0, y: 0, z: 128, draw(ctx) { if (lame.pose === 'sit') { const x = Math.round(lame.x - SC.cam) + 8; R(ctx, x, 124, 5, 2, '#8a5a3a'); } } });

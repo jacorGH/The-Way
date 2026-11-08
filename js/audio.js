@@ -75,8 +75,7 @@ window.TW = window.TW || {};
     if (!ctx && !build()) return;
     if (ctx.state === 'suspended') ctx.resume();
     try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) { /* not supported */ }
-    const lv = Object.assign({}, levels);
-    if (Object.keys(lv).length) A.amb(lv);
+    if (Object.keys(base).length) applyLevels(travelLevels());
     if (pending) { const p = pending; pending = null; A.scene(p); }
   };
   A.setOn = function (on) {
@@ -90,53 +89,51 @@ window.TW = window.TW || {};
     if (document.hidden) ctx.suspend(); else if (A.on) ctx.resume();
   });
 
-  // ---------- ambience beds ----------
-  const BED_VOL = { shore: 0.9, wind: 0.6, crowd: 0.55, room: 0.7, storm: 1.1, fire: 0.5, birds: 1, night: 1 };
+  // ---------- ambience ----------
+  // Continuous layers are only low, soft textures (brown noise, never hiss). Everything you can pick out is a distinct
+  // event: a wave on the stones, a voice, a hammer, a dove, a dog, a footstep. Each layer has its own gain node.
+  const BED_VOL = { shore: 1, wind: 0.5, crowd: 1, room: 0.7, storm: 1.1, fire: 0.5, birds: 1, night: 1, city: 1, village: 1, doves: 1, steps: 1, oars: 1 };
   const beds = {};
   const levels = {};
+  let base = {};
   const makeBed = {
-    shore() {
-      const out = gain(0), g1 = gain(0.5), g2 = gain(0.1);
-      noise(true).connect(filt('lowpass', 600)).connect(g1); lfo(0.11, 0.4, g1.gain, 0.55);
-      noise().connect(filt('bandpass', 900, 0.7)).connect(g2); lfo(0.11, 0.05, g2.gain, 0.06);
-      g1.connect(out); g2.connect(out); return out;
-    },
     wind() {
-      const out = gain(0), bp = filt('bandpass', 500, 0.8), g = gain(0.5);
-      noise().connect(bp).connect(g).connect(out); lfo(0.06, 260, bp.frequency, 520); lfo(0.13, 0.25, g.gain, 0.45);
+      const out = gain(0), lp = filt('lowpass', 360), g = gain(0.45);
+      noise(true).connect(lp).connect(g).connect(out);
+      lfo(0.07, 0.3, g.gain, 0.45); lfo(0.13, 110, lp.frequency, 340);
       return out;
-    },
-    crowd() {
-      const out = gain(0), lp = filt('lowpass', 1800);
-      lp.connect(out);
-      const voices = [];
-      for (let i = 0; i < 4; i++) {
-        const bp = filt('bandpass', rand(300, 800), 3), g = gain(0.25);
-        noise().connect(bp).connect(g).connect(lp); voices.push({ bp, g });
-      }
-      out.voices = voices; return out;
     },
     room() { const out = gain(0); noise(true).connect(filt('lowpass', 170)).connect(gain(0.9)).connect(out); return out; },
     storm() {
-      const out = gain(0), howl = filt('bandpass', 700, 3);
-      noise(true).connect(filt('lowpass', 900)).connect(gain(0.8)).connect(out);
-      noise().connect(filt('bandpass', 1600, 0.5)).connect(gain(0.1)).connect(out);
-      noise().connect(howl).connect(gain(0.5)).connect(out); lfo(0.17, 300, howl.frequency, 650);
+      const out = gain(0), g = gain(0.8);
+      noise(true).connect(filt('lowpass', 900)).connect(g).connect(out); lfo(0.17, 0.3, g.gain, 0.75);
+      noise().connect(filt('bandpass', 1400, 0.5)).connect(gain(0.08)).connect(out);
       return out;
     },
     fire() { const out = gain(0); noise(true).connect(filt('lowpass', 260)).connect(gain(0.6)).connect(out); return out; },
-    birds() { return gain(0); },
-    night() { return gain(0); },
+    // a crowd is a low presence plus many separate voices (events), never filtered hiss
+    crowd() { const out = gain(0); noise(true).connect(filt('lowpass', 220)).connect(gain(0.3)).connect(out); return out; },
   };
-  A.amb = function (lv) {
+  const eventBed = () => gain(0);
+  function applyLevels(lv) {
     Object.keys(BED_VOL).forEach((name) => {
       const v = lv[name] || 0;
       levels[name] = v;
       if (!ctx) return;
-      if (v > 0 && !beds[name]) { beds[name] = makeBed[name](); beds[name].connect(ambBus); }
+      if (v > 0 && !beds[name]) { beds[name] = (makeBed[name] || eventBed)(); beds[name].connect(ambBus); }
       if (beds[name]) beds[name].gain.setTargetAtTime(v * BED_VOL[name], ctx.currentTime, 1.1);
     });
-  };
+  }
+  let travelMode = '';
+  A.amb = function (lv) { base = Object.assign({}, lv); applyLevels(travelLevels()); };
+  function travelLevels() {
+    const lv = Object.assign({}, base);
+    if (travelMode === 'walk') lv.steps = 0.9;
+    if (travelMode === 'boat') { lv.oars = 0.9; lv.shore = Math.max(lv.shore || 0, 0.7); }
+    return lv;
+  }
+  // footsteps on the road, or oars on the lake, while the marker moves on the map
+  A.travel = function (mode) { if (mode === travelMode) return; travelMode = mode; applyLevels(travelLevels()); };
 
   // ---------- music ----------
   const DOR = [0, 2, 3, 5, 7, 9, 10], PHR = [0, 1, 3, 5, 7, 8, 10], PDOM = [0, 1, 4, 5, 7, 8, 10], MIX = [0, 2, 4, 5, 7, 9, 10], AEO = [0, 2, 3, 5, 7, 8, 10];
@@ -267,40 +264,158 @@ window.TW = window.TW || {};
   }
 
   // ---------- ambient events and the scheduler ----------
-  function chirp(t) {
-    const o = ctx.createOscillator(), g = ctx.createGain(), base = rand(2600, 4200), n = 2 + Math.floor(Math.random() * 4);
+  const pan = (dest, p) => {
+    if (!ctx.createStereoPanner) return dest;
+    const sp = ctx.createStereoPanner(); sp.pan.value = p; sp.connect(dest); return sp;
+  };
+  const toRev = (node, v) => { const g = gain(v); node.connect(g); g.connect(reverb); };
+  function chirp(t, dest) {
+    const o = ctx.createOscillator(), g = ctx.createGain(), base0 = rand(2600, 4000), n = 2 + Math.floor(Math.random() * 4);
     o.type = 'sine';
     g.gain.setValueAtTime(0.0001, t);
     for (let i = 0; i < n; i++) {
       const s = t + i * 0.09;
-      o.frequency.setValueAtTime(base, s); o.frequency.exponentialRampToValueAtTime(base * rand(1.2, 1.6), s + 0.05);
-      g.gain.setValueAtTime(0.0001, s); g.gain.linearRampToValueAtTime(0.05, s + 0.01); g.gain.linearRampToValueAtTime(0.0001, s + 0.06);
+      o.frequency.setValueAtTime(base0, s); o.frequency.exponentialRampToValueAtTime(base0 * rand(1.2, 1.5), s + 0.05);
+      g.gain.setValueAtTime(0.0001, s); g.gain.linearRampToValueAtTime(0.04, s + 0.01); g.gain.linearRampToValueAtTime(0.0001, s + 0.06);
     }
-    o.connect(g); g.connect(ambBus); o.start(t); o.stop(t + n * 0.09 + 0.1);
+    o.connect(g); g.connect(pan(dest, rand(-0.8, 0.8))); o.start(t); o.stop(t + n * 0.09 + 0.1);
   }
-  function cricket(t) {
+  function cricket(t, dest) {
     const o = ctx.createOscillator(), g = ctx.createGain();
     o.frequency.value = rand(4300, 4700); g.gain.value = 0.0001;
-    for (let i = 0; i < 3; i++) { const s = t + i * 0.045; g.gain.setValueAtTime(0.025, s); g.gain.setValueAtTime(0.0001, s + 0.025); }
-    o.connect(g); g.connect(ambBus); o.start(t); o.stop(t + 0.2);
+    for (let i = 0; i < 3; i++) { const s = t + i * 0.045; g.gain.setValueAtTime(0.02, s); g.gain.setValueAtTime(0.0001, s + 0.025); }
+    o.connect(g); g.connect(pan(dest, rand(-0.9, 0.9))); o.start(t); o.stop(t + 0.2);
   }
-  function crackle(t, v) {
+  function owl(t, dest) {
+    [0, 0.5].forEach((d, i) => {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.frequency.setValueAtTime(i ? 340 : 380, t + d); o.frequency.linearRampToValueAtTime(i ? 320 : 360, t + d + 0.35);
+      g.gain.setValueAtTime(0.0001, t + d); g.gain.linearRampToValueAtTime(0.03, t + d + 0.08); g.gain.linearRampToValueAtTime(0.0001, t + d + 0.4);
+      o.connect(g); g.connect(dest); toRev(g, 0.6); o.start(t + d); o.stop(t + d + 0.45);
+    });
+  }
+  function crackle(t, v, dest) {
     const n = noise(), g = ctx.createGain();
     g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.03);
-    n.connect(filt('bandpass', 1100, 1.5)).connect(g); g.connect(ambBus); n.stop(t + 0.04);
+    n.connect(filt('bandpass', 1000, 1.5)).connect(g); g.connect(dest); n.stop(t + 0.04);
   }
-  let last = 0;
+  // one wavelet on the lakeshore: the water draws up, laps the stones, and slides back
+  function wavelet(t, big) {
+    const d = big ? rand(2.6, 3.6) : rand(1.6, 2.6), peak = t + d * 0.35;
+    const n = noise(true), lp = filt('lowpass', 220), g = ctx.createGain();
+    lp.frequency.setValueAtTime(200, t); lp.frequency.linearRampToValueAtTime(big ? 1000 : 760, peak); lp.frequency.linearRampToValueAtTime(240, t + d);
+    g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(big ? 0.55 : 0.36, peak); g.gain.exponentialRampToValueAtTime(0.0001, t + d);
+    const out = pan(beds.shore, rand(-0.5, 0.5));
+    n.connect(lp).connect(g).connect(out); n.stop(t + d + 0.05);
+    // the soft fizz of water running back through pebbles
+    const n2 = noise(), bp = filt('bandpass', 650, 0.9), g2 = ctx.createGain();
+    g2.gain.setValueAtTime(0.0001, peak); g2.gain.linearRampToValueAtTime(big ? 0.07 : 0.045, peak + d * 0.15); g2.gain.exponentialRampToValueAtTime(0.0001, t + d * 0.95);
+    n2.connect(bp).connect(g2).connect(out); n2.stop(t + d);
+  }
+  function oar(t) {
+    const n = noise(true), lp = filt('lowpass', 500), g = ctx.createGain();
+    lp.frequency.setValueAtTime(300, t); lp.frequency.linearRampToValueAtTime(700, t + 0.15);
+    g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(0.3, t + 0.06); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.45);
+    n.connect(lp).connect(g).connect(beds.oars); n.stop(t + 0.5);
+    for (let i = 0; i < 3; i++) {
+      const s = t + 0.5 + i * rand(0.08, 0.16), o = ctx.createOscillator(), gg = ctx.createGain();
+      o.frequency.setValueAtTime(rand(900, 1400), s); o.frequency.exponentialRampToValueAtTime(rand(500, 700), s + 0.04);
+      gg.gain.setValueAtTime(0.012, s); gg.gain.exponentialRampToValueAtTime(0.0001, s + 0.06);
+      o.connect(gg).connect(beds.oars); o.start(s); o.stop(s + 0.07);
+    }
+  }
+  // a distant voice: a few murmured syllables, a sawtooth through two moving vowel formants
+  function voice(t, dest, loud) {
+    const o = ctx.createOscillator(); o.type = 'sawtooth';
+    const pitch = rand(90, 215), f1 = filt('bandpass', 600, 5), f2 = filt('bandpass', 1300, 6), g = ctx.createGain(), g2 = gain(0.35), lp = filt('lowpass', 1500);
+    o.connect(f1).connect(g); o.connect(f2).connect(g2).connect(g);
+    const out = pan(dest, rand(-0.8, 0.8));
+    g.connect(lp).connect(out); toRev(lp, 0.5);
+    g.gain.value = 0.0001;
+    let tt = t;
+    const syl = 2 + Math.floor(Math.random() * 5), v = (loud || 1) * rand(0.03, 0.055);
+    for (let i = 0; i < syl; i++) {
+      const d = rand(0.08, 0.2);
+      o.frequency.setValueAtTime(pitch * rand(0.92, 1.16), tt); o.frequency.linearRampToValueAtTime(pitch * rand(0.86, 1.08), tt + d);
+      f1.frequency.setValueAtTime(rand(350, 800), tt); f2.frequency.setValueAtTime(rand(1000, 1800), tt);
+      g.gain.setValueAtTime(0.0001, tt); g.gain.linearRampToValueAtTime(v, tt + 0.03); g.gain.linearRampToValueAtTime(0.0001, tt + d);
+      tt += d + rand(0.02, 0.09);
+    }
+    o.start(t); o.stop(tt + 0.05);
+  }
+  // a stonemason's hammer: the Temple was still being built
+  function hammer(t, dest) {
+    const n = 1 + Math.floor(Math.random() * 3), out = pan(dest, rand(-0.8, 0.8));
+    for (let i = 0; i < n; i++) {
+      const s = t + i * rand(0.35, 0.5), o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'triangle'; o.frequency.setValueAtTime(rand(900, 1250), s); o.frequency.exponentialRampToValueAtTime(600, s + 0.06);
+      g.gain.setValueAtTime(0.05, s); g.gain.exponentialRampToValueAtTime(0.0001, s + 0.12);
+      o.connect(g).connect(out); toRev(g, 0.5); o.start(s); o.stop(s + 0.14);
+    }
+  }
+  function bleat(t, goat, dest) {
+    const o = ctx.createOscillator(), vib = ctx.createOscillator(), f = goat ? rand(420, 520) : rand(270, 330);
+    o.type = 'sawtooth'; o.frequency.value = f; vib.frequency.value = goat ? 9 : 6;
+    const vg = gain(f * 0.05); vib.connect(vg).connect(o.frequency);
+    const g = ctx.createGain(), d = rand(0.5, 0.8);
+    g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(0.03, t + 0.06); g.gain.setValueAtTime(0.03, t + d * 0.7); g.gain.linearRampToValueAtTime(0.0001, t + d);
+    o.connect(filt('bandpass', goat ? 1100 : 850, 3)).connect(g).connect(pan(dest, rand(-0.8, 0.8))); toRev(g, 0.5);
+    o.start(t); vib.start(t); o.stop(t + d + 0.05); vib.stop(t + d + 0.05);
+  }
+  function coo(t, dest) {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    g.gain.value = 0.0001;
+    [[0, 0.22, 520], [0.32, 0.42, 560], [0.85, 0.3, 480]].forEach((nt) => {
+      o.frequency.setValueAtTime(nt[2], t + nt[0]); o.frequency.linearRampToValueAtTime(nt[2] * 0.9, t + nt[0] + nt[1]);
+      g.gain.setValueAtTime(0.0001, t + nt[0]); g.gain.linearRampToValueAtTime(0.035, t + nt[0] + 0.06); g.gain.linearRampToValueAtTime(0.0001, t + nt[0] + nt[1]);
+    });
+    o.connect(filt('lowpass', 900)).connect(g).connect(pan(dest, rand(-0.6, 0.6))); o.start(t); o.stop(t + 1.3);
+  }
+  function bark(t, dest) {
+    const out = pan(dest, rand(-0.8, 0.8));
+    for (let i = 0; i < 1 + Math.floor(Math.random() * 2); i++) {
+      const s = t + i * 0.28, o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sawtooth'; o.frequency.setValueAtTime(rand(300, 380), s); o.frequency.exponentialRampToValueAtTime(180, s + 0.12);
+      g.gain.setValueAtTime(0.0001, s); g.gain.linearRampToValueAtTime(0.04, s + 0.015); g.gain.exponentialRampToValueAtTime(0.0001, s + 0.14);
+      o.connect(filt('bandpass', 800, 1.5)).connect(g).connect(out); toRev(g, 0.6); o.start(s); o.stop(s + 0.16);
+    }
+  }
+  function step(t, side, dest, soft) {
+    const n = noise(true), g = ctx.createGain();
+    g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(soft ? 0.05 : 0.13, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.09);
+    n.connect(filt('lowpass', 650)).connect(g).connect(pan(dest, side * 0.15)); n.stop(t + 0.1);
+    const n2 = noise(), g2 = ctx.createGain();
+    g2.gain.setValueAtTime(soft ? 0.008 : 0.02, t + 0.01); g2.gain.exponentialRampToValueAtTime(0.0001, t + 0.05);
+    n2.connect(filt('bandpass', 500, 1)).connect(g2).connect(dest); n2.stop(t + 0.06);
+  }
+  let last = 0, nextWave = 0, nextStep = 0, nextOar = 0, side = 1;
   function tick() {
     if (!ctx || ctx.state !== 'running') return;
     const now = ctx.currentTime, dt = last ? now - last : 0.06;
     last = now;
-    if ((levels.birds || 0) > 0 && Math.random() < dt * 0.45 * levels.birds) chirp(now + rand(0, 0.2));
-    if ((levels.night || 0) > 0 && Math.random() < dt * 1.2 * levels.night) cricket(now + rand(0, 0.2));
-    if ((levels.fire || 0) > 0 && Math.random() < dt * 3 * levels.fire) crackle(now + rand(0, 0.1), 0.04);
-    if ((levels.room || 0) > 0 && Math.random() < dt * 0.25 * levels.room) crackle(now + rand(0, 0.1), 0.02);
-    if (beds.crowd && (levels.crowd || 0) > 0) beds.crowd.voices.forEach((v) => {
-      if (Math.random() < dt * 1.5) { v.bp.frequency.setTargetAtTime(rand(280, 850), now, 0.25); v.g.gain.setTargetAtTime(rand(0.12, 0.35), now, 0.3); }
-    });
+    const L = (k) => (beds[k] && (levels[k] || 0) > 0 ? levels[k] : 0);
+    const chance = (rate) => Math.random() < dt * rate;
+    const soon = () => now + rand(0.02, 0.25);
+    if (L('birds') && chance(0.45 * L('birds'))) chirp(soon(), beds.birds);
+    if (L('night')) { if (chance(1.2 * L('night'))) cricket(soon(), beds.night); if (chance(0.03)) owl(soon(), beds.night); }
+    if (L('fire') && chance(3 * L('fire'))) crackle(soon(), 0.04, beds.fire);
+    if (L('room') && chance(0.2 * L('room'))) crackle(soon(), 0.015, beds.room);
+    if (L('shore') && now > nextWave) { wavelet(now + 0.05, Math.random() < 0.2); nextWave = now + rand(1.5, 3.6); }
+    if (L('crowd') && chance(3.5 * L('crowd'))) voice(soon(), beds.crowd);
+    if (L('city')) {
+      if (chance(0.35)) hammer(soon(), beds.city);
+      if (chance(0.05)) bleat(soon(), false, beds.city);
+      if (chance(1.2)) voice(soon(), beds.city, 0.7);
+      if (chance(0.25)) { const sd = Math.random() < 0.5 ? -1 : 1; for (let i = 0; i < 4; i++) step(now + 0.1 + i * 0.4, sd * 3, beds.city, true); }
+    }
+    if (L('doves') && chance(0.12)) coo(soon(), beds.doves);
+    if (L('village')) {
+      if (chance(0.04)) bark(soon(), beds.village);
+      if (chance(0.05)) bleat(soon(), true, beds.village);
+      if (chance(0.6)) voice(soon(), beds.village, 0.6);
+    }
+    if (L('steps') && now > nextStep) { step(now + 0.02, side, beds.steps); side = -side; nextStep = now + 0.42; }
+    if (L('oars') && now > nextOar) { oar(now + 0.02); nextOar = now + 1.7; }
     if (mood) {
       while (nextBeat < now + 0.25) {
         if (nextBeat < now - 0.5) nextBeat = now + 0.05;
@@ -328,9 +443,9 @@ window.TW = window.TW || {};
   };
   const SFX = {
     tap(t) { pluck(79, t, 0.05, sfxBus); },
-    page() { /* silent: a sound on every tap became tiring */ },
+    page(t) { pluck(88, t, 0.016, sfxBus); },
     chime(t) { pluck(86, t, 0.07, sfxBus); pluck(93, t + 0.12, 0.05, sfxBus); },
-    whoosh(t) { burst(t, 260, 700, 0.5, 0.035, 'lowpass'); },
+    whoosh(t) { pluck(74, t, 0.03, sfxBus); pluck(71, t + 0.08, 0.026, sfxBus); pluck(67, t + 0.16, 0.022, sfxBus); },
     dig(t) { for (let i = 0; i < 4; i++) burst(t + i * 0.18 + rand(0, 0.05), 600, 350, 0.12, 0.1, 'lowpass'); },
     crumble(t) { burst(t, 800, 200, 0.9, 0.22, 'lowpass'); for (let i = 0; i < 6; i++) burst(t + rand(0, 0.6), 1200, 700, 0.05, 0.05); },
     crash(t) {
@@ -380,6 +495,7 @@ window.TW = window.TW || {};
     return Math.sqrt(s / d.length);
   };
 
+  A._levels = () => Object.assign({}, levels);
   // test helper: energy above 3 kHz and total energy at the output
   A._spec = function () {
     if (!ctx) return [0, 0];

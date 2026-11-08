@@ -27,9 +27,9 @@ window.TW = window.TW || {};
   }));
   syncSound();
   const REGION_SOUND = {
-    galilee: { music: 'galilee', amb: { wind: 0.45, birds: 0.55, shore: 0.25 } },
-    land: { music: 'land', amb: { wind: 0.7, birds: 0.25 } },
-    jerusalem: { music: 'jerusalem', amb: { wind: 0.4, birds: 0.3, crowd: 0.2 } },
+    galilee: { music: 'galilee', amb: { wind: 0.35, birds: 0.55, village: 0.15 } },
+    land: { music: 'land', amb: { wind: 0.55, birds: 0.2 } },
+    jerusalem: { music: 'jerusalem', amb: { city: 0.45, doves: 0.3, birds: 0.2, wind: 0.15 } },
   };
   TW.game = game;
   const persist = () => U.store(game.save);
@@ -43,7 +43,7 @@ window.TW = window.TW || {};
     screens.forEach((s) => $('#s-' + s).classList.toggle('active', s === name));
     closeOverlays();
     game.screen = name;
-    if (name === 'title' || name === 'prologue' || name === 'timeline') AU.scene({ music: 'title', amb: { wind: 0.45, shore: name === 'title' ? 0.35 : 0 } });
+    if (name === 'title' || name === 'prologue' || name === 'timeline') AU.scene({ music: 'title', amb: { wind: 0.35, birds: 0.3 } });
     if (name === 'title') showTitle();
     if (name === 'prologue') renderPrologue();
     if (name === 'timeline') renderTimeline();
@@ -240,6 +240,7 @@ window.TW = window.TW || {};
   // ---------- map ----------
   game.region = game.save.region || 'galilee';
   function showMap() {
+    AU.travel('');
     MV.init($('#map-canvas'));
     hideCard();
     const R = D.regions[game.region];

@@ -242,7 +242,7 @@ window.TW = window.TW || {};
     const A = art();
     return {
       width: 480,
-      audio: { music: 'galilee', amb: { shore: 0.7, birds: 0.6, crowd: 0.3, wind: 0.2 } },
+      audio: { music: 'galilee', amb: { shore: 0.8, birds: 0.6, crowd: 0.3, village: 0.4, wind: 0.15 } },
       walkLimits: [12, 468],
       hotspots: [],
       bg(ctx, t, cam) {

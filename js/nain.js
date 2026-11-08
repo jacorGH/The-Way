@@ -53,7 +53,7 @@ window.TW = window.TW || {};
     const P0 = K.sprites();
     SC.load({
       width: 256, hotspots: [],
-      audio: { music: 'lament', amb: { wind: 0.5, birds: 0.4, crowd: 0.35 } },
+      audio: { music: 'lament', amb: { wind: 0.35, birds: 0.4, crowd: 0.35, village: 0.4 } },
       bg(ctx) { ctx.drawImage(nainArt(), 0, 0); },
       fg(ctx) { R(ctx, 0, 140, 22, 2, '#3d3835'); },
       fx(fc, k) {
