@@ -372,6 +372,57 @@ window.TW = window.TW || {};
     ['19:42', 'Then because of the Jews’ Preparation Day (for the tomb was near at hand) they laid Jesus there.'],
   ]);
 
+  add('john3', 'John', [
+    ['3:1', 'Now there was a man of the Pharisees named Nicodemus, a ruler of the Jews.'],
+    ['3:2', 'The same came to him by night, and said to him, “Rabbi, we know that you are a teacher come from God, for no one can do these signs that you do, unless God is with him.”'],
+    ['3:3', 'Jesus answered him, “Most certainly, I tell you, unless one is born anew, he can’t see the Kingdom of God.”'],
+    ['3:4', 'Nicodemus said to him, “How can a man be born when he is old? Can he enter a second time into his mother’s womb, and be born?”'],
+    ['3:5', 'Jesus answered, “Most certainly I tell you, unless one is born of water and spirit, he can’t enter into the Kingdom of God!'],
+    ['3:6', 'That which is born of the flesh is flesh. That which is born of the Spirit is spirit.'],
+    ['3:7', 'Don’t marvel that I said to you, ‘You must be born anew.’'],
+    ['3:8', 'The wind blows where it wants to, and you hear its sound, but don’t know where it comes from and where it is going. So is everyone who is born of the Spirit.”'],
+    ['3:9', 'Nicodemus answered him, “How can these things be?”'],
+    ['3:10', 'Jesus answered him, “Are you the teacher of Israel, and don’t understand these things?'],
+    ['3:11', 'Most certainly I tell you, we speak that which we know, and testify of that which we have seen, and you don’t receive our witness.'],
+    ['3:12', 'If I told you earthly things and you don’t believe, how will you believe if I tell you heavenly things?'],
+    ['3:13', 'No one has ascended into heaven, but he who descended out of heaven, the Son of Man, who is in heaven.'],
+    ['3:14', 'As Moses lifted up the serpent in the wilderness, even so must the Son of Man be lifted up,'],
+    ['3:15', 'that whoever believes in him should not perish, but have eternal life.'],
+    ['3:16', 'For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.'],
+  ]);
+
+  add('john7n', 'John', [
+    ['7:45', 'The officers therefore came to the chief priests and Pharisees, and they said to them, “Why didn’t you bring him?”'],
+    ['7:46', 'The officers answered, “No man ever spoke like this man!”'],
+    ['7:47', 'The Pharisees therefore answered them, “You aren’t also led astray, are you?'],
+    ['7:48', 'Have any of the rulers believed in him, or of the Pharisees?'],
+    ['7:49', 'But this multitude that doesn’t know the law is accursed.”'],
+    ['7:50', 'Nicodemus (he who came to him by night, being one of them) said to them,'],
+    ['7:51', '“Does our law judge a man, unless it first hears from him personally and knows what he does?”'],
+    ['7:52', 'They answered him, “Are you also from Galilee? Search, and see that no prophet has arisen out of Galilee.”'],
+  ]);
+
+  add('john20', 'John', [
+    ['20:1', 'Now on the first day of the week, Mary Magdalene went early, while it was still dark, to the tomb, and saw the stone taken away from the tomb.'],
+    ['20:2', 'Therefore she ran and came to Simon Peter, and to the other disciple whom Jesus loved, and said to them, “They have taken away the Lord out of the tomb, and we don’t know where they have laid him!”'],
+    ['20:3', 'Therefore Peter and the other disciple went out, and they went toward the tomb.'],
+    ['20:4', 'They both ran together. The other disciple outran Peter, and came to the tomb first.'],
+    ['20:5', 'Stooping and looking in, he saw the linen cloths lying, yet he didn’t enter in.'],
+    ['20:6', 'Then Simon Peter came, following him, and entered into the tomb. He saw the linen cloths lying,'],
+    ['20:7', 'and the cloth that had been on his head, not lying with the linen cloths, but rolled up in a place by itself.'],
+    ['20:8', 'So then the other disciple who came first to the tomb also entered in, and he saw and believed.'],
+    ['20:9', 'For as yet they didn’t know the Scripture, that he must rise from the dead.'],
+    ['20:10', 'So the disciples went away again to their own homes.'],
+    ['20:11', 'But Mary was standing outside at the tomb weeping. So, as she wept, she stooped and looked into the tomb,'],
+    ['20:12', 'and she saw two angels in white sitting, one at the head, and one at the feet, where the body of Jesus had lain.'],
+    ['20:13', 'They told her, “Woman, why are you weeping?” She said to them, “Because they have taken away my Lord, and I don’t know where they have laid him.”'],
+    ['20:14', 'When she had said this, she turned around and saw Jesus standing, and didn’t know that it was Jesus.'],
+    ['20:15', 'Jesus said to her, “Woman, why are you weeping? Who are you looking for?” She, supposing him to be the gardener, said to him, “Sir, if you have carried him away, tell me where you have laid him, and I will take him away.”'],
+    ['20:16', 'Jesus said to her, “Mary.” She turned and said to him, “Rhabbouni!” which is to say, “Teacher!”'],
+    ['20:17', 'Jesus said to her, “Don’t touch me, for I haven’t yet ascended to my Father; but go to my brothers, and tell them, ‘I am ascending to my Father and your Father, to my God and your God.’”'],
+    ['20:18', 'Mary Magdalene came and told the disciples that she had seen the Lord, and that he had said these things to her.'],
+  ]);
+
   // Reference string for a range of a stored passage, e.g. "John 13:4–10" or "Mark 14:66–72".
   P.ref = function (key, a, b) {
     const book = P[key].book;

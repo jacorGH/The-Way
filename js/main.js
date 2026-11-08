@@ -176,7 +176,7 @@ window.TW = window.TW || {};
     era.world.forEach((w) => { dl.appendChild(el('dt', '', w[0])); dl.appendChild(el('dd', '', w[1])); });
     det.appendChild(dl);
     if (era.id === 'galilee' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era II, The Road to Jerusalem, comes next.'));
-    if (era.id === 'passion') det.appendChild(el('p', 'era-done', 'Era II is being built. The Entry and The Temple are ready to play.'));
+    if (era.id === 'passion') det.appendChild(el('p', 'era-done', 'The Ascension, which closes this era, is still being built.'));
     const ol = el('ol', 'episodes');
     const next = nextEpisode();
     era.episodes.forEach((raw) => {
@@ -547,21 +547,29 @@ window.TW = window.TW || {};
   };
 
   function openStudy(ep, fresh) {
-    const E = D.episodes[ep], P = TW.P[E.passage];
+    const E = D.episodes[ep];
     openOverlay('#o-study');
     const b = $('#study-body');
     b.innerHTML = '';
     b.appendChild(el('p', 'study-kicker', fresh ? 'Your report is sealed. Now read the passage.' : 'Study'));
     b.appendChild(el('h2', 'scroll-title', E.title));
     b.appendChild(el('p', 'study-ref', E.ref + ', World English Bible. ' + (E.parallels.startsWith('told') ? 'This account is ' + E.parallels + '.' : 'Also told in ' + E.parallels + '.')));
-    const pass = el('div', 'passage');
-    P.verses.forEach((v) => {
-      const s = el('span', 'v');
-      s.appendChild(el('sup', '', v[0]));
-      s.appendChild(document.createTextNode(v[1] + ' '));
-      pass.appendChild(s);
+    // one or more passages, each optionally limited to a verse range
+    const parts = E.passages || [[E.passage, E.from, E.to]];
+    parts.forEach((pt) => {
+      const src = TW.P[pt[0]].verses;
+      const i = pt[1] ? src.findIndex((v) => v[0] === pt[1]) : 0;
+      const j = pt[2] ? src.findIndex((v) => v[0] === pt[2]) : src.length - 1;
+      if (parts.length > 1) b.appendChild(el('p', 'study-ref', TW.P.ref ? (TW.P[pt[0]].book ? TW.P.ref(pt[0], src[i][0], src[j][0]) : TW.P[pt[0]].ref) : ''));
+      const pass = el('div', 'passage');
+      src.slice(i, j + 1).forEach((v) => {
+        const s = el('span', 'v');
+        s.appendChild(el('sup', '', v[0]));
+        s.appendChild(document.createTextNode(v[1] + ' '));
+        pass.appendChild(s);
+      });
+      b.appendChild(pass);
     });
-    b.appendChild(pass);
     b.appendChild(el('h3', '', 'Background'));
     E.notes.forEach((n) => {
       const d = el('div', 'note');
@@ -595,8 +603,13 @@ window.TW = window.TW || {};
     }
     if (fresh && E.final) {
       const d = el('div', 'reveal-note');
-      d.appendChild(el('p', 'plabel', 'Era I complete'));
-      d.appendChild(el('p', '', 'You have finished The Ministry in Galilee. Your road now turns south, toward Jerusalem.'));
+      if (E.final === 'passion') {
+        d.appendChild(el('p', 'plabel', 'The Road to Jerusalem'));
+        d.appendChild(el('p', '', 'You have watched him die, helped to bury him, and stood at an empty tomb. Era III, The Jerusalem Church, begins with the Ascension and the coming of the Spirit.'));
+      } else {
+        d.appendChild(el('p', 'plabel', 'Era I complete'));
+        d.appendChild(el('p', '', 'You have finished The Ministry in Galilee. Your road now turns south, toward Jerusalem.'));
+      }
       b.appendChild(d);
     }
     const home = E.region || 'galilee';

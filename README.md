@@ -30,6 +30,11 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/nain.js` – Episode V, The Widow of Nain (Luke 7:11–17)
 - `js/entry.js` – Episode VI, The Entry (Mark 11:1–11); also builds the shared Temple courts set
 - `js/temple.js` – Episode VII, The Temple (Mark 11:15–18; 12:28–34)
+- `js/passion-art.js` – shared Passion art: the city gate and Golgotha, the garden tomb, night lighting, distant crosses, character looks
+- `js/council.js` – Episode VIII, The Council by Night (Mark 14:53–72)
+- `js/cross.js` – Episode IX, The Cross (Mark 15:16–41), shown with restraint from a distance
+- `js/burial.js` – Episode X, The Burial (Mark 15:42–47; John 19:38–42), with Nicodemus’s memories of John 3 and John 7
+- `js/tomb.js` – Episode XI, The Empty Tomb (Mark 16:1–8; John 20:1–18)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
 - `js/vignettes.js` – memory scenes: sepia flashbacks that act out each testimony answer in step with its verses
 - `js/main.js` – game controller

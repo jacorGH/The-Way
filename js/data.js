@@ -45,11 +45,7 @@ window.TW = window.TW || {};
         ['Tetrarch of Galilee', 'Herod Antipas'],
       ],
       episodes: [
-        'entry', 'temple',
-        { title: 'The Council by Night', ref: 'Mark 14:53–65' },
-        { title: 'The Cross', ref: 'Mark 15:20–41' },
-        { title: 'The Burial', ref: 'John 19:38–42' },
-        { title: 'The Empty Tomb', ref: 'Mark 16:1–8' },
+        'entry', 'temple', 'council', 'cross', 'burial', 'tomb',
         { title: 'The Ascension', ref: 'Acts 1:6–12' },
       ],
     },
@@ -273,6 +269,109 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder = ['capernaum', 'levi', 'sabbath', 'legion', 'nain', 'entry', 'temple'];
+  Object.assign(D.episodes, {
+    council: {
+      num: 'VIII', title: 'The Council by Night', ref: 'Mark 14:53–72', passage: 'mark14', from: '14:53', place: 'highpriest', region: 'jerusalem', era: 'passion',
+      scene: 'The high priest’s house, Mark 14:53–72', parallels: 'Matthew 26:57–75, Luke 22:54–71, John 18:12–27',
+      question: { id: 'christ', text: 'Is he the Christ, the Son of the Blessed?', ref: 'Mark 14:61' },
+      hearts: ['You kept your eyes on the high priest, as you were trained to.', 'You looked at the floor.', 'You looked at him, and he was already looking at you.'],
+      conclusions: [
+        'He condemned himself with two words: “I am.”',
+        'They condemned him for the very claim I first heard in Capernaum.',
+        'The witnesses lied, and no one cared. I am ashamed of my teachers.',
+      ],
+      notes: [
+        ['The council (14:55)', 'The Sanhedrin, Jerusalem’s high court of chief priests, elders and scribes, met under the high priest. Later tradition says it sat in a half circle so that its members could see one another.'],
+        ['Witnesses (14:56–59)', 'The Law required two or three witnesses who agreed (Deuteronomy 19:15). Mark stresses twice that their testimony did not agree.'],
+        ['“I am” (14:62)', 'Jesus joins two Scriptures: the one who sits at God’s right hand (Psalm 110:1) and one like a son of man coming with the clouds (Daniel 7:13).'],
+        ['Tearing his clothes (14:63)', 'An old sign of grief or horror at blasphemy (2 Kings 18:37). The charge is the same one the scribes thought in silence in Capernaum (Mark 2:7).'],
+        ['A trial at night', 'Rules later written in the Mishnah forbid capital trials at night or on the eve of a feast. Whether those rules were followed in Jesus’ day is debated.'],
+        ['Peter below (14:54, 66–72)', 'Mark sets the two scenes side by side: upstairs Jesus confesses who he is, downstairs Peter denies knowing him.'],
+      ],
+      reflect: [
+        'Jesus said nothing to the false witnesses, but answered the high priest plainly. Why then?',
+        'Where else in this story has someone been accused of blasphemy for speaking as God speaks?',
+        'Peter wept. What is the difference between his failure and the council’s?',
+      ],
+    },
+    cross: {
+      num: 'IX', title: 'The Cross', ref: 'Mark 15:16–41', passage: 'mark15', from: '15:16', to: '15:41', place: 'golgotha', region: 'jerusalem', era: 'passion',
+      scene: 'Golgotha, Mark 15:16–41', parallels: 'Matthew 27:27–56, Luke 23:26–49, John 19:16–37',
+      question: { id: 'forsaken', text: 'Why did he cry, “My God, my God, why have you forsaken me?”', ref: 'Mark 15:34' },
+      hearts: ['You said nothing while your teachers mocked him.', 'You turned your back on the men you had studied with.', 'You stayed, and kept your eyes on him to the end.'],
+      conclusions: [
+        '“He saved others. He can’t save himself.” My teachers said it. I keep hearing it.',
+        'A Roman soldier said what my teachers would not: “Truly this man was the Son of God!”',
+        'I have no words. I watched him die.',
+      ],
+      notes: [
+        ['Simon of Cyrene (15:21)', 'Cyrene was a city in North Africa with a large Jewish community. Mark names Simon’s sons, Alexander and Rufus, as if his readers knew them.'],
+        ['Golgotha (15:22)', 'Aramaic for “skull.” The Latin word, calvaria, gives us “Calvary.” It lay outside the city wall but near the city (John 19:20).'],
+        ['Crucifixion', 'Rome reserved crucifixion for slaves, rebels and the lowest criminals. It was meant to be public, slow and shameful.'],
+        ['“The King of the Jews” (15:26)', 'The written charge. In Roman eyes it was treason: claiming a throne Caesar had not given.'],
+        ['“My God, my God” (15:34)', 'Jesus prays the first line of Psalm 22, a psalm that moves from abandonment to the nations turning to the Lord (22:27–28).'],
+        ['The veil (15:38)', 'The curtain before the Most Holy Place, which only the high priest entered, once a year (Leviticus 16).'],
+        ['The centurion (15:39)', 'A Gentile soldier says what Mark announced in his first line: “the Son of God” (Mark 1:1).'],
+        ['The women (15:40–41)', 'They had followed him from Galilee. They will watch his death, his burial, and the tomb.'],
+      ],
+      reflect: [
+        'The mockers said he could not save himself. In what sense were they right?',
+        'Why might Mark want a Roman soldier to be the first person to say it?',
+        'Read Psalm 22 to the end. How does that change the cry from the cross?',
+      ],
+    },
+    burial: {
+      num: 'X', title: 'The Burial', ref: 'John 19:38–42; Mark 15:42–47', passage: 'john19b', passages: [['mark15', '15:42', '15:47'], ['john19b'], ['john3', '3:1', '3:16']], place: 'golgotha', region: 'jerusalem', era: 'passion',
+      scene: 'The garden tomb, John 19:38–42', parallels: 'Matthew 27:57–61, Mark 15:42–47, Luke 23:50–56',
+      question: { id: 'born', text: 'How can a man be born when he is old?', ref: 'John 3:4' },
+      hearts: ['You carried him with Nicodemus, and gave up your Passover.', 'You carried the spices, and kept yourself clean for the feast.', 'You held back, and watched from the garden wall.'],
+      conclusions: [
+        'It is finished. We buried him before the Sabbath began.',
+        'Nicodemus came to him by night once. Today he came in daylight, and so did I.',
+        'I helped bury him, and I do not understand why I still hope.',
+      ],
+      notes: [
+        ['Joseph of Arimathea', 'A respected member of the council (Mark 15:43) and a secret disciple (John 19:38). Asking Pilate for the body was a public risk.'],
+        ['A hundred pounds (19:39)', 'About 33 kg of myrrh and aloes: an amount fit for a king’s burial.'],
+        ['Before the Sabbath', 'The Law did not allow a hanged body to remain overnight (Deuteronomy 21:22–23), and the Sabbath began at sunset.'],
+        ['Unclean for the feast', 'Touching the dead made a person unclean for seven days (Numbers 19:11). Those who were unclean could keep the Passover a month later (Numbers 9:6–11).'],
+        ['Nicodemus in John', 'He appears three times: coming by night (3:1–21), asking that Jesus be given a hearing (7:50–51), and bringing the spices (19:39).'],
+        ['A new tomb (19:41)', 'A rock-cut tomb in a garden near the place of crucifixion. Mark says a stone was rolled across its door (15:46).'],
+      ],
+      reflect: [
+        'Nicodemus came by night at first. What do you think changed in him?',
+        'What did it cost Joseph and Nicodemus to do this, and what did it say?',
+        'Read John 3:14–16 again. Why might those words have come back to Nicodemus that evening?',
+      ],
+    },
+    tomb: {
+      num: 'XI', title: 'The Empty Tomb', ref: 'Mark 16:1–8; John 20:1–18', passage: 'mark16', passages: [['mark16'], ['john20']], place: 'golgotha', region: 'jerusalem', era: 'passion',
+      scene: 'The garden tomb at dawn, Mark 16; John 20', parallels: 'Matthew 28:1–10, Luke 24:1–12',
+      question: { id: 'risen', text: 'He has risen. What does that mean for everything I have seen?', ref: 'Mark 16:6' },
+      hearts: ['You stooped and looked in, as the first disciple did.', 'You went inside, as Peter did.', 'You could not make yourself look.'],
+      conclusions: [
+        'The tomb is empty. I saw the linen cloths myself.',
+        'Mary of Magdala says she has seen the Lord. I believe she is telling the truth.',
+        'He is risen. Every question in my scroll looks different this morning.',
+      ],
+      final: 'passion',
+      notes: [
+        ['The first day of the week (16:2)', 'Sunday. The Sabbath ended at sunset on Saturday, and the women bought spices then (16:1).'],
+        ['The women as witnesses', 'In that culture a woman’s testimony often counted for less. Many historians note that a made-up story would hardly have chosen women as its first witnesses.'],
+        ['“He has risen” (16:6)', 'The young man in white points to the empty place where the body had lain.'],
+        ['The ending of Mark (16:8)', 'The oldest manuscripts of Mark end with the women afraid and silent. Verses 9–20, found in most later manuscripts, were probably added early to complete the account.'],
+        ['The linen cloths (John 20:5–7)', 'Grave robbers would not unwrap a body and leave the cloths behind, the head cloth rolled up by itself.'],
+        ['“Rhabbouni” (John 20:16)', 'Aramaic for “my teacher.” She knew him the moment he said her name.'],
+      ],
+      reflect: [
+        'The women ran away afraid and told no one, at first. Why might Mark end there?',
+        'The disciple “saw and believed.” What did he see?',
+        'Mary did not recognize him until he spoke her name. What does that tell you?',
+      ],
+    },
+  });
+  D.eraOrder.push('council', 'cross', 'burial', 'tomb');
+
 
   const galPlaces = [
     {
@@ -507,9 +606,9 @@ window.TW = window.TW || {};
       text: 'Herod the Great’s palace and towers on the western hill. Many historians think Pilate stayed and judged here when he came up for the feasts.' },
     { id: 'upperroom', name: 'The Upper Room', alt: 'Traditional site on Mount Zion', lon: 35.2288, lat: 31.7714, kind: 'history', label: 'l', ref: 'Mark 14:15',
       text: 'Mark says the disciples found “a large upper room furnished and ready.” Tradition places it on Mount Zion; the vaulted hall shown there today was built by Crusaders in the twelfth century.' },
-    { id: 'highpriest', name: 'House of the High Priest', short: 'High priest’s house', alt: 'The Upper City', lon: 35.2314, lat: 31.7733, kind: 'locked', label: 'r', ref: 'Mark 14:53–65',
+    { id: 'highpriest', name: 'House of the High Priest', short: 'High priest’s house', alt: 'The Upper City', lon: 35.2314, lat: 31.7733, kind: 'episode', episodes: ['council'], label: 'r',
       text: 'The priestly families lived in fine houses on the western hill. Its exact location is not known.' },
-    { id: 'golgotha', name: 'Golgotha', alt: '“The place of a skull,” outside the wall', lon: 35.2296, lat: 31.7786, kind: 'locked', label: 'l', ref: 'Mark 15:22',
+    { id: 'golgotha', name: 'Golgotha', alt: '“The place of a skull,” outside the wall', lon: 35.2296, lat: 31.7786, kind: 'episode', episodes: ['cross', 'burial', 'tomb'], label: 'l',
       text: 'An old quarry just outside the city wall of the time. The Church of the Holy Sepulchre has marked this site since the fourth century, covering both Golgotha and a rock-cut tomb.' },
   ];
   const jerNodes = {
