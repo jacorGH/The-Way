@@ -29,13 +29,15 @@ window.TW = window.TW || {};
   let SPR = null;
   function sprites() {
     if (SPR) return SPR;
+    const players = {};
     SPR = {
-      player: S.person({ skin: '#b07a50', hair: '#2a1a12', beard: '#2a1a12', tunic: '#ddd0b0', mantle: '#4e5a72', fringe: '#9cc0e0', phylactery: true, belt: null }),
       scribe: (n) => S.person({ skin: pick(SKINS, n, 1), hair: pick(HAIRS, n, 2), beard: pick(HAIRS, n, 2), tunic: '#d8ccae', mantle: pick(['#5a4a3a', '#4a4a5a', '#6a5a42'], n, 3), fringe: '#9cc0e0', phylactery: true, belt: null }),
       jesus: S.person({ skin: '#a26c44', hair: '#24160e', beard: '#24160e', tunic: '#d6c8a6', stripe: '#7a5232', mantle: '#8b6140', fringe: '#cdb98a' }),
       healed: S.person({ skin: '#9a6440', hair: '#3a2416', beard: '#3a2416', tunic: '#8a7a5a' }),
       lying: S.lying({ skin: '#9a6440', hair: '#3a2416', beard: '#3a2416', tunic: '#8a7a5a' }),
     };
+    // the player is Eleazar or Elisheva, chosen on the title screen
+    Object.defineProperty(SPR, 'player', { get() { const r = TW.Role && TW.Role.is() ? 'niece' : 'scribe'; return players[r] || (players[r] = S.person(TW.Role.look[r])); } });
     return SPR;
   }
 
@@ -355,7 +357,7 @@ window.TW = window.TW || {};
   }
 
   // ---------- helpers ----------
-  const GOAL1 = 'Find the house where the teacher is staying. Tap the street to walk; tap people to talk.';
+  const GOAL1 = 'Find the house where Jesus is staying. Tap the street to walk; tap people to talk.';
   const GOAL2 = 'Go down to the shore by the boat and write your report.';
 
   function matCarried(f1, f2) {
@@ -432,7 +434,7 @@ window.TW = window.TW || {};
     };
     fisher.onTap = talk(async () => {
       fisher.facing = player.x < fisher.x ? -1 : 1;
-      await SC.say({ kind: 'drama', speaker: 'A fisherman mending nets', text: 'Looking for the teacher? Follow the noise. Half the village has been at that door since dawn.' });
+      await SC.say({ kind: 'drama', speaker: 'A fisherman mending nets', text: 'Looking for Jesus of Nazareth? Follow the noise. Half the village has been at that door since dawn.' });
       game.observe('capernaum', 'fisher', 'A fisherman said half the village had waited at one door since dawn.');
       fisher.facing = -1;
     });
@@ -486,7 +488,8 @@ window.TW = window.TW || {};
     [28, 44, 60, 76, 92].forEach((x, i) => SC.add({ frames: villager(120 + i, i === 2), pose: 'sit', x: x, y: 147, facing: 1 }));
     [172, 186, 200, 216, 232, 246].forEach((x, i) => SC.add({ frames: i < 3 ? P.scribe(10 + i) : villager(300 + i, i === 4), x: x, y: 136, facing: -1 }));
     [176, 212, 230].forEach((x, i) => SC.add({ frames: P.scribe(20 + i), pose: 'sit', x: x, y: 147, facing: -1 }));
-    const me = SC.add({ id: 'player', frames: P.player, pose: 'sit', x: 194, y: 148, facing: -1 });
+    const niece = TW.Role && TW.Role.is();
+    const me = SC.add({ id: 'player', frames: P.player, pose: niece ? 'stand' : 'sit', x: niece ? 114 : 194, y: niece ? 137 : 148, facing: niece ? 1 : -1 });
     const jesus = SC.add({ id: 'jesus', frames: P.jesus, pose: 'sit', x: 152, y: 143, facing: -1 });
     const everyone = SC.ents.filter((e) => e !== jesus && e !== me);
 

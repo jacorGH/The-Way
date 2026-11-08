@@ -38,7 +38,7 @@ window.TW = window.TW || {};
       id: 'passion', num: 'II', title: 'The Road to Jerusalem', dates: 'c. AD 30 or 33',
       span: [30, 33], open: true, view: 'A troubled witness',
       summary:
-        'You are home in Jerusalem for Passover, and so is the teacher from Galilee. From his entry into the city to the empty tomb, these events are witnessed, never played: you watch, you choose how your heart answers, and the story unfolds exactly as it is written. Scholars place the crucifixion at Passover in AD 30 or AD 33.',
+        'You are home in Jerusalem for Passover, and so is Jesus of Nazareth. From his entry into the city to the empty tomb, these events are witnessed, never played: you watch, you choose how your heart answers, and the story unfolds exactly as it is written. Scholars place the crucifixion at Passover in AD 30 or AD 33.',
       world: [
         ['Prefect of Judea', 'Pontius Pilate'],
         ['High priest', 'Joseph Caiaphas'],
@@ -65,8 +65,7 @@ window.TW = window.TW || {};
         'Scattered from Jerusalem, the believers carry the word into Samaria, down the desert road, and north to Damascus, where the persecutor meets the one he persecuted. Then Antioch, the council at Jerusalem, and Paul’s journeys across the Mediterranean.',
       world: [['Emperors', 'Tiberius, Caligula, Claudius, Nero'], ['Prefect of Judea', 'Pontius Pilate, then Marcellus (from AD 36)']],
       episodes: [
-        'samaria', 'desert', 'damascus',
-        { title: 'Peter and Cornelius', ref: 'Acts 10' },
+        'samaria', 'desert', 'damascus', 'tabitha', 'cornelius',
         { title: 'Antioch', ref: 'Acts 11:19–30' },
         { title: 'The Council', ref: 'Acts 15' },
         { title: 'Ephesus', ref: 'Acts 19' },
@@ -119,7 +118,7 @@ window.TW = window.TW || {};
       num: 'II', title: 'The Tax Booth', ref: 'Mark 2:13–17', passage: 'mark2b', place: 'capernaum',
       scene: 'Capernaum, Mark 2:13–17', parallels: 'Matthew 9:9–13, Luke 5:27–32',
       question: { id: 'sinners', text: 'Why does he eat with tax collectors and sinners?', ref: 'Mark 2:16' },
-      hearts: ['You thought he should repent before any teacher ate with him.', 'You wondered whether leaving the booth was repentance.', 'You waited to see what the teacher would do.'],
+      hearts: ['You thought he should repent before any teacher ate with him.', 'You wondered whether leaving the booth was repentance.', 'You waited to see what Jesus would do.'],
       conclusions: [
         'He makes himself unclean by eating with sinners.',
         'He calls sinners and they come. I have never seen a teacher do this.',
@@ -595,6 +594,58 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder.push('samaria', 'desert', 'damascus');
+  Object.assign(D.episodes, {
+    tabitha: {
+      num: 'XXI', title: 'Tabitha', ref: 'Acts 9:32–43', passage: 'acts9c', place: 'joppa', region: 'land', era: 'spread',
+      scene: 'Joppa, Acts 9', parallels: 'compare Mark 5:35–43',
+      question: { id: 'mercy', text: 'What does a life full of good works and acts of mercy look like?', ref: 'Acts 9:36' },
+      hearts: ['You sat with the widows and let them show you what she had made.', 'You asked them about Tabitha.', 'You went down to the gate to watch the road for Peter.'],
+      conclusions: [
+        'The widows showed Peter the coats Tabitha made them. Then he put everyone out and prayed.',
+        '“Tabitha, get up!” She opened her eyes and sat up.',
+        'Peter is staying with a tanner by the sea. He is already crossing lines I was taught never to cross.',
+      ],
+      notes: [
+        ['Tabitha and Dorcas (9:36)', 'Tabitha is Aramaic and Dorcas is Greek; both mean “gazelle.” She is the only woman in the New Testament called a disciple with the feminine form of the word.'],
+        ['Washed and laid out (9:37)', 'The body was washed for burial and laid in an upper room. Burial normally followed quickly, which is why they sent for Peter at once.'],
+        ['“Tabitha, get up!” (9:40)', 'Very close to Jesus’ words to Jairus’s daughter, “Talitha cumi” (Mark 5:41). Peter had been in that room (Mark 5:37), and like Jesus he sent everyone out before he spoke.'],
+        ['Simon the tanner (9:43)', 'Tanners worked with the hides of dead animals, and their work was smelly and ritually unclean. Later Jewish law kept tanneries well away from towns. Acts says his house was by the sea.'],
+        ['Joppa', 'Jerusalem’s old port, where Jonah once boarded a ship to flee from a mission to Gentiles (Jonah 1:3).'],
+      ],
+      reflect: [
+        'The widows did not describe Tabitha. They held up what she had made. What would people hold up for you?',
+        'Why might Peter have sent everyone out of the room?',
+        'Jonah ran from Joppa to avoid the Gentiles. What will happen to Peter here?',
+      ],
+    },
+    cornelius: {
+      num: 'XXII', title: 'Peter and Cornelius', ref: 'Acts 10:1–11:18', passage: 'acts10', passages: [['acts10'], ['acts11', '11:1', '11:18']], place: 'joppa', region: 'land', era: 'spread',
+      scene: 'Joppa and Caesarea, Acts 10', parallels: 'Acts 11:1–18; 15:7–11',
+      question: { id: 'nations', text: 'If God shows no favoritism, who else have I been calling unclean?', ref: 'Acts 10:28, 34' },
+      hearts: ['You stepped over the threshold of a Gentile’s house for the first time, behind Peter.', 'You waited in the doorway until the Spirit fell, and then went in.', 'You went in ahead of Peter, so that he would not be the only one.'],
+      conclusions: [
+        '“What God has cleansed, you must not call unclean.” The vision was not about food alone.',
+        'The Holy Spirit fell on Gentiles before anyone had laid a hand on them, as on us at the beginning.',
+        'A Roman centurion and his household were baptized in the name of Jesus Christ. God shows no favoritism.',
+      ],
+      answers: { sinners: ['God shows no favoritism. What God has cleansed, you must not call unclean.', 'Acts 10:15, 34'] },
+      notes: [
+        ['Cornelius (10:1–2)', 'A centurion commanded about eighty men. He was a “God-fearer”: a Gentile who worshiped the God of Israel, prayed and gave alms, but had not become a Jew.'],
+        ['The Italian Regiment (10:1)', 'An auxiliary cohort of Roman citizens. Inscriptions show such a unit stationed in Syria in the first century.'],
+        ['The sheet (10:11–16)', 'The Law divided animals into clean and unclean (Leviticus 11). The vision repeated three times, as Peter had once denied Jesus three times and been asked three times, “Do you love me?” (John 21:15–17).'],
+        ['“Unlawful” (10:28)', 'The Law of Moses did not forbid all contact with Gentiles, but many Jews of the time avoided entering Gentile homes or eating with Gentiles, because of food laws and idolatry.'],
+        ['The Spirit first (10:44)', 'This time the Spirit came before baptism and before any laying on of hands, so that no one could doubt that God himself had accepted them.'],
+        ['Caesarea', 'Herod the Great’s harbor city and the seat of the Roman governors of Judea: the most Roman city in the land.'],
+      ],
+      reflect: [
+        'Peter needed a vision three times before he understood. What would it take to change your mind about someone?',
+        'Cornelius was already devout and generous. What did he still need?',
+        'Why did God pour out the Spirit before Peter had finished speaking?',
+      ],
+    },
+  });
+  D.eraOrder.push('tabitha', 'cornelius');
+
 
 
 
@@ -733,7 +784,7 @@ window.TW = window.TW || {};
       text: 'A port city on the coastal road to Egypt. Later, Philip will meet an Ethiopian official on the desert road leading here.' },
     { id: 'emmaus', name: 'Emmaus', alt: 'Site debated', lon: 34.990, lat: 31.840, kind: 'locked', reveal: 'nain', label: 'l', ref: 'Luke 24:13–35',
       text: 'A village west of Jerusalem where the risen Jesus was recognized at a meal. Several sites have been proposed; this marker shows Emmaus Nicopolis.' },
-    { id: 'joppa', name: 'Joppa', alt: 'Jerusalem’s old port', lon: 34.752, lat: 32.054, kind: 'locked', reveal: 'levi', label: 'l', ref: 'Acts 9:36–10:23',
+    { id: 'joppa', name: 'Joppa', alt: 'Jerusalem’s old port', lon: 34.752, lat: 32.054, kind: 'episode', episodes: ['tabitha', 'cornelius'], reveal: 'levi', label: 'l', ref: 'Acts 9:36–10:23',
       text: 'An ancient harbor on the coast. Peter will raise Tabitha here and receive a vision that sends him to a Gentile’s house.' },
     { id: 'caesarea', name: 'Caesarea', alt: 'Caesarea Maritima', lon: 34.890, lat: 32.500, kind: 'history', reveal: 'levi', label: 'l', ref: 'Acts 10',
       text: 'Herod the Great’s harbor city and the seat of the Roman prefects. A stone found here in 1961 bears Pontius Pilate’s name. Taxes from the province flowed through Roman officials based here.' },

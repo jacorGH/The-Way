@@ -15,7 +15,7 @@ window.TW = window.TW || {};
     const annas = SC.add({ frames: K.who('annas'), x: 196, y: 152, facing: -1 });
     const caiaphas = SC.add({ frames: K.who('caiaphas'), x: 212, y: 153, facing: -1 });
     const nic = SC.add({ frames: K.who('nicodemus'), x: 56, y: 152, facing: 1 });
-    const me = SC.add({ id: 'player', frames: P0.player, x: 72, y: 153, facing: 1, speed: 24 });
+    const me = SC.add({ id: 'player', frames: P0.player, x: TW.Role.is() ? 12 : 72, y: 153, facing: 1, speed: 24 });
     void annas; void caiaphas; void nic;
     await SC.say({ kind: 'drama', text: 'The next morning you take your place among the scribes. A year ago you sat in this room through the night trial. Today you are one of the five thousand, and no one here knows it.' });
     await s4('4:5', '4:6');

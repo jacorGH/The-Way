@@ -17,7 +17,8 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `css/style.css` – basalt, papyrus, lapis, madder, ochre; Cinzel + EB Garamond
 - `js/util.js` – math, noise, colour helpers, save game (localStorage, guarded)
 - `js/audio.js` – all sound, synthesized live with Web Audio (no audio files): period music in moods (title, galilee, land, reflect, tension, wonder, lament, jerusalem, night, storm), ambience beds (shore, wind, birds, crowd, room, night, fire, storm) and effects. Stages set their soundscape with an `audio` property; `TW.Audio.music(mood)` and `TW.Audio.sfx(name)` handle story beats.
-- `js/scripture.js`, `js/scripture2.js`, `js/scripture3.js` (Acts 1–9, Acts 22 and John 14, 20) – every Scripture passage, word for word from the WEB (scripture2 also holds Mark 14–16 and John 19 for the coming Passion episodes)
+- `js/role.js` – who you play: Eleazar (a young scribe), Elisheva (Nicodemus's niece), or Both (choose the voice before each scene). Holds exact phrase swaps for Elisheva's dramatized text (never Scripture) and each episode's vantage points
+- `js/scripture.js`, `js/scripture2.js`, `js/scripture3.js` (Acts 1–9, Acts 22 and John 14, 20), `js/scripture4.js` (Acts 9:32–12:17) – every Scripture passage, word for word from the WEB (scripture2 also holds Mark 14–16 and John 19 for the coming Passion episodes)
 - `js/data.js` – eras, timeline, episode registry (notes, reflections, report choices), both map regions, reveal schedule
 - `js/geo.js` – simplified real elevations: Galilee in detail, the whole Land, and Jerusalem with its valleys and the Mount of Olives
 - `js/sprites.js` – procedural pixel people, the man on the mat, pigs, bier, boats, map walker
@@ -46,6 +47,9 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/samaria.js` – Episode XVIII, Philip in Samaria (Acts 8:4–25)
 - `js/desert.js` – Episode XIX, The Desert Road (Acts 8:26–40)
 - `js/damascus.js` – Episode XX, The Road to Damascus (Acts 9:1–31)
+- `js/coast-art.js` – Joppa, Simon the tanner's racks, Cornelius's atrium in Caesarea, Peter's sheet
+- `js/tabitha.js` – Episode XXI, Tabitha (Acts 9:32–43)
+- `js/cornelius.js` – Episode XXII, Peter and Cornelius (Acts 10:1–11:18)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
 - `js/vignettes.js` – memory scenes: sepia flashbacks that act out each testimony answer in step with its verses
 - `js/main.js` – game controller
@@ -82,3 +86,11 @@ washing back over pebbles), `crowd` and `city` voices (murmured syllables throug
 an owl), and travel: `steps` while walking on a map and `oars` while crossing water (`TW.Audio.travel('walk'|'boat'|'')`).
 A stage chooses its soundscape with `audio: { music, amb: { layer: level } }`. The sea is heard only at real shorelines.
 Taps and scene transitions are soft lyre notes. `TW.Audio._spec()` returns [energy above 3 kHz, total] for testing.
+
+## Three playthroughs
+- **Eleazar**, a young scribe who studies under Nicodemus.
+- **Elisheva**, Nicodemus's niece, taught to read and write in his house. Where women went with Jesus (Galilee, the cross,
+  the spices, the tomb), she goes; where they could not (the council benches, a banquet couch), she stands at the door.
+- **Both**: before each episode, testimony or service visit, choose whose eyes to see it through (`TW.Role.VIEW` lists
+  each vantage and recommends the richer one).
+`TW.Role.is()` is true whenever the current voice is Elisheva. Add swaps to `TW.Role.MAP` as `[Eleazar's text, Elisheva's]`.

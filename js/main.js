@@ -61,9 +61,26 @@ window.TW = window.TW || {};
 
   // ---------- title ----------
   let titleRunning = false;
+  let pickRole = 'scribe';
+  const ROLE_NOTE = {
+    scribe: 'A young scribe, trained in the Law of Moses. His teacher Nicodemus sends him north with other teachers to watch the man from Nazareth.',
+    niece: 'Few women in Judea could read and write, but some daughters of learned households did. Nicodemus taught his niece so she could keep his accounts. Where women went with Jesus, she goes; where they could not, she stands at the door.',
+    both: 'Two accounts, one story. Before each scene you choose whose eyes to see it through: Eleazar on the scribes’ bench, or Elisheva among the women who followed Jesus. Between them you see what neither could see alone.',
+  };
+  function setRole(r) {
+    const nameEl = $('#name-input');
+    if (nameEl.value.trim() === TW.Role.defaultName(pickRole) || !nameEl.value.trim()) nameEl.value = TW.Role.defaultName(r);
+    pickRole = r;
+    $('.name-field').hidden = r === 'both';
+    document.querySelectorAll('.role-btn').forEach((b) => b.setAttribute('aria-pressed', b.dataset.role === r));
+    $('#role-note').textContent = ROLE_NOTE[r];
+  }
+  document.querySelectorAll('.role-btn').forEach((b) => b.addEventListener('click', () => setRole(b.dataset.role)));
   function showTitle() {
     const s = game.save;
-    $('#name-input').value = s.name || 'Eleazar';
+    pickRole = s.role || 'scribe';
+    $('#name-input').value = s.name || TW.Role.defaultName(pickRole);
+    setRole(pickRole);
     $('#btn-continue').hidden = !s.started;
     $('#btn-begin').classList.toggle('primary', !s.started);
     const c = $('#title-vista'), ctx = c.getContext('2d');
@@ -76,7 +93,7 @@ window.TW = window.TW || {};
     };
     requestAnimationFrame(loop);
   }
-  const readName = () => ($('#name-input').value.trim() || 'Eleazar').slice(0, 20);
+  const readName = () => ($('#name-input').value.trim() || TW.Role.defaultName(pickRole)).slice(0, 20);
   let armed = null;
   $('#btn-begin').addEventListener('click', () => {
     const btn = $('#btn-begin');
@@ -89,6 +106,7 @@ window.TW = window.TW || {};
     clearTimeout(armed); armed = null;
     btn.textContent = 'Begin the journey';
     game.save = U.defaultSave();
+    game.save.role = pickRole;
     game.save.name = readName();
     game.save.started = true;
     game.region = 'galilee';
@@ -96,6 +114,7 @@ window.TW = window.TW || {};
     game.show('prologue');
   });
   $('#btn-continue').addEventListener('click', () => {
+    if (pickRole !== (game.save.role || 'scribe')) { setRole(game.save.role || 'scribe'); $('#role-note').textContent = 'Your saved journey is as ' + game.save.name + '. To play as the other character, begin a new journey.'; return; }
     game.save.name = readName();
     persist();
     game.show('timeline');
@@ -112,7 +131,21 @@ window.TW = window.TW || {};
     const b = $('#prologue-body');
     b.innerHTML = '';
     const n = game.save.name;
-    b.appendChild(block('drama', 'Dramatization', 'Jerusalem, in the reign of Tiberius Caesar. You are ' + n + ', a young scribe trained in the Law of Moses. Word has come south of a teacher in Galilee who heals the sick and casts out unclean spirits. People say something about him that unsettles the teachers of Jerusalem.'));
+    if (TW.Role.both()) {
+      b.appendChild(block('drama', 'Dramatization', 'Jerusalem, in the reign of Tiberius Caesar. Word has come south of a teacher from Nazareth named Jesus, who heals the sick in Galilee and casts out unclean spirits. People say something about him that unsettles the teachers of Jerusalem.'));
+      b.appendChild(block('scripture', 'Scripture, Mark 1:22', 'They were astonished at his teaching, for he taught them as having authority, and not as the scribes.', 'verse'));
+      b.appendChild(block('history', 'History', 'Nicodemus was a Pharisee and a ruler of the Jews (John 3:1). Mark records scribes coming down from Jerusalem to observe Jesus (Mark 3:22), and Luke records women who followed Jesus in Galilee and supported him (Luke 8:1–3).'));
+      b.appendChild(block('drama', 'Dramatization', 'Nicodemus sends two people north. Eleazar, a young scribe who studies under him, goes with the other teachers of the Law. Elisheva, his niece, whom he taught to read and write, goes to stay with his cousin’s family in Capernaum. “Watch him closely,” he tells them both. “Write to me what you see. Only what you see.”'));
+      return;
+    }
+    if (TW.Role.is()) {
+      b.appendChild(block('drama', 'Dramatization', 'Jerusalem, in the reign of Tiberius Caesar. You are ' + n + ', niece of Nicodemus. You grew up in his house, and he taught you to read and write so that you could keep his accounts and copy his letters. Word has come south of a teacher from Nazareth named Jesus, who heals the sick in Galilee and casts out unclean spirits. People say something about him that unsettles the teachers of Jerusalem.'));
+      b.appendChild(block('scripture', 'Scripture, Mark 1:22', 'They were astonished at his teaching, for he taught them as having authority, and not as the scribes.', 'verse'));
+      b.appendChild(block('history', 'History', 'Nicodemus was a Pharisee and a ruler of the Jews (John 3:1). Few women in Judea could read and write, but some in learned households did. Luke records that women followed Jesus in Galilee and supported him from their own means (Luke 8:1–3).'));
+      b.appendChild(block('drama', 'Dramatization', 'Nicodemus sends you north to stay with his cousin’s family in Capernaum. “Watch him closely,” he says. “Write to me what you see. Only what you see.”'));
+      return;
+    }
+    b.appendChild(block('drama', 'Dramatization', 'Jerusalem, in the reign of Tiberius Caesar. You are ' + n + ', a young scribe trained in the Law of Moses. Word has come south of a teacher from Nazareth named Jesus, who heals the sick in Galilee and casts out unclean spirits. People say something about him that unsettles the teachers of Jerusalem.'));
     b.appendChild(block('scripture', 'Scripture, Mark 1:22', 'They were astonished at his teaching, for he taught them as having authority, and not as the scribes.', 'verse'));
     b.appendChild(block('history', 'History', 'Nicodemus was a Pharisee and a ruler of the Jews (John 3:1). Mark records scribes coming down from Jerusalem to observe Jesus (Mark 3:22).'));
     b.appendChild(block('drama', 'Dramatization', 'Nicodemus sends you north with other teachers of the Law. “Watch him closely,” he says. “Write down what you see. Only what you see.”'));
@@ -170,14 +203,14 @@ window.TW = window.TW || {};
     const det = $('#era-detail');
     det.innerHTML = '';
     det.appendChild(el('h3', 'era-title', era.title));
-    det.appendChild(el('p', 'era-meta', era.dates + '. You play as ' + era.view.toLowerCase() + '.'));
-    det.appendChild(el('p', 'era-summary', era.summary));
+    det.appendChild(el('p', 'era-meta', era.dates + '. You play as ' + TW.Role.G(era.view).toLowerCase().replace('nicodemus', 'Nicodemus') + '.'));
+    det.appendChild(el('p', 'era-summary', TW.Role.G(era.summary)));
     const dl = el('dl', 'world');
     era.world.forEach((w) => { dl.appendChild(el('dt', '', w[0])); dl.appendChild(el('dd', '', w[1])); });
     det.appendChild(dl);
     if (era.id === 'galilee' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era II, The Road to Jerusalem, comes next.'));
     if (era.id === 'passion' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era III, The Jerusalem Church, comes next.'));
-    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: Peter and Cornelius, Antioch, and Paul’s journeys.'));
+    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: Antioch, Peter freed from prison, and Paul’s journeys.'));
     if (era.id === 'church' && game.save.completed.seven) det.appendChild(el('p', 'era-done', 'Service is open: look for people who need you on the Jerusalem map.'));
     const ol = el('ol', 'episodes');
     const next = nextEpisode();
@@ -418,15 +451,17 @@ window.TW = window.TW || {};
     game.observe('s:' + id, 'log', D.service[id].log, false, true);
     persist();
   };
-  game.enterService = function (id) {
+  game.enterService = function (id) { chooseVoice('s:' + id, 'Service: ' + D.service[id].title, () => startService(id)); };
+  function startService(id) {
     game.show('scene');
     game.current = 's:' + id;
     $('#scene-title').textContent = 'Service: ' + D.service[id].title;
     SC.init(sceneEls); SC.begin(); SC.start();
     TW.Service.run(game, id);
-  };
+  }
   game.hear = (id, n) => { game.save.heard[id] = Math.max(game.save.heard[id] || 0, n || 1); persist(); };
-  game.enterTestimony = function (id) {
+  game.enterTestimony = function (id) { chooseVoice('t:' + id, 'Testimony: ' + D.testimonies[id].title, () => startTestimony(id)); };
+  function startTestimony(id) {
     const T = D.testimonies[id];
     game.show('scene');
     game.current = 't:' + id;
@@ -435,7 +470,7 @@ window.TW = window.TW || {};
     SC.begin();
     SC.start();
     TW.Testimony.run(game, id);
-  };
+  }
   const epTitle = (k) => (k.startsWith('t:') ? 'Testimony: ' + D.testimonies[k.slice(2)].title : k.startsWith('s:') ? 'Service: ' + D.service[k.slice(2)].title : D.episodes[k].title);
 
   // ---------- episodes ----------
@@ -444,9 +479,37 @@ window.TW = window.TW || {};
     speaker: $('#dlg-speaker'), text: $('#dlg-text'), choices: $('#dlg-choices'), next: $('#dlg-next'),
     toast: $('#toast'), veil: $('#veil'), stage: $('#stage'), memchip: $('#memchip'),
   };
+  // In the mixed account, ask whose eyes this scene is seen through.
+  function chooseVoice(key, title, go) {
+    if (!TW.Role.both()) { go(); return; }
+    const V = TW.Role.VIEW[key] || ['scribe', 'Eleazar asks the questions', 'Elisheva asks the questions'];
+    const wrap = el('div', 'voice-card');
+    wrap.appendChild(el('p', 'voice-kicker', 'Whose account?'));
+    wrap.appendChild(el('h2', 'voice-title', title));
+    [['scribe', 'Eleazar', V[1]], ['niece', 'Elisheva', V[2]]].forEach((o) => {
+      const b = el('button', 'voice-btn' + (V[0] === o[0] ? ' rec' : ''));
+      b.type = 'button';
+      b.appendChild(el('span', 'voice-name', o[1] + (V[0] === o[0] ? '  ·  Recommended' : '')));
+      b.appendChild(el('span', 'voice-where', o[2]));
+      b.addEventListener('click', () => { game.save.cur = o[0]; persist(); ov.remove(); go(); });
+      wrap.appendChild(b);
+    });
+    const back = el('button', 'btn-text', 'Back');
+    back.type = 'button';
+    back.addEventListener('click', () => ov.remove());
+    wrap.appendChild(back);
+    const ov = el('div', 'voice-overlay');
+    ov.id = 'o-voice';
+    ov.appendChild(wrap);
+    document.body.appendChild(ov);
+    wrap.querySelector('.voice-btn.rec, .voice-btn').focus();
+  }
   function enterEpisode(id) {
     const ep = TW.Episodes[id];
     if (!ep) return;
+    chooseVoice(id, D.episodes[id].title, () => startEpisode(id, ep));
+  }
+  function startEpisode(id, ep) {
     game.show('scene');
     game.current = id;
     $('#scene-title').textContent = D.episodes[id].scene;
@@ -459,6 +522,7 @@ window.TW = window.TW || {};
   $('#btn-leave').addEventListener('click', () => game.show('map'));
 
   game.observe = function (ep, id, text, showText, auto) {
+    text = TW.Role.G(text);
     const list = (game.save.obs[ep] = game.save.obs[ep] || []);
     if (list.find((o) => o.id === id)) return;
     list.push({ id, text, auto: !!auto });
@@ -492,6 +556,7 @@ window.TW = window.TW || {};
   }
 
   function openJournal(tab) {
+    document.querySelector('[data-tab=reports]').textContent = TW.Role.is() ? 'Letters' : 'Reports';
     openOverlay('#o-journal');
     renderJournal(tab);
   }
@@ -546,11 +611,11 @@ window.TW = window.TW || {};
       body.appendChild(ul);
     } else {
       const eps = D.eraOrder.filter((id) => s.reports[id]);
-      if (!eps.length) { body.appendChild(el('p', 'empty', 'No reports sealed yet. Finish an episode to write one.')); return; }
+      if (!eps.length) { body.appendChild(el('p', 'empty', TW.Role.is() ? 'No letters sealed yet. Finish an episode to write one.' : 'No reports sealed yet. Finish an episode to write one.')); return; }
       eps.forEach((id) => {
         const E = D.episodes[id], r = s.reports[id];
         body.appendChild(el('h3', '', E.num + '. ' + E.title));
-        if (s.heart[id] !== undefined) body.appendChild(el('p', 'heart', E.hearts[s.heart[id]]));
+        if (s.heart[id] !== undefined) body.appendChild(el('p', 'heart', TW.Role.G(E.hearts[s.heart[id]])));
         const ul = el('ul', 'notes');
         r.obs.forEach((t) => ul.appendChild(el('li', '', t)));
         body.appendChild(ul);
@@ -565,7 +630,12 @@ window.TW = window.TW || {};
   game.openReport = function (ep) {
     const E = D.episodes[ep];
     openOverlay('#o-report');
-    $('#report-from').textContent = 'From ' + game.save.name + ', a scribe. ' + E.scene + '.';
+    const ltr = TW.Role.is();
+    document.querySelector('#o-report .scroll-title').textContent = ltr ? 'Letter to Nicodemus' : 'Report to Nicodemus';
+    document.querySelector('#o-report .help').textContent = ltr ? 'Choose what goes in your letter.' : 'Choose what goes in your report.';
+    $('#btn-seal').textContent = ltr ? 'Seal the letter' : 'Seal the report';
+    document.querySelector('[data-tab=reports]').textContent = ltr ? 'Letters' : 'Reports';
+    $('#report-from').textContent = TW.Role.is() ? 'From ' + TW.Role.voiceName() + ', to her uncle Nicodemus. ' + E.scene + '.' : 'From ' + TW.Role.voiceName() + ', a scribe. ' + E.scene + '.';
     const box = $('#report-obs');
     box.innerHTML = '';
     (game.save.obs[ep] || []).forEach((o, i) => {
@@ -586,7 +656,7 @@ window.TW = window.TW || {};
       r.type = 'radio'; r.name = 'conc'; r.value = i;
       r.addEventListener('change', () => { seal.disabled = false; });
       lab.appendChild(r);
-      lab.appendChild(el('span', '', c));
+      lab.appendChild(el('span', '', TW.Role.G(c)));
       rc.appendChild(lab);
     });
     seal.onclick = () => {
@@ -594,7 +664,7 @@ window.TW = window.TW || {};
       const all = game.save.obs[ep] || [];
       const picked = [...box.querySelectorAll('input:checked')].map((c) => all[+c.value].text);
       const ci = +rc.querySelector('input:checked').value;
-      game.save.reports[ep] = { obs: picked, conclusion: E.conclusions[ci] };
+      game.save.reports[ep] = { obs: picked, conclusion: TW.Role.G(E.conclusions[ci]) };
       game.save.completed[ep] = true;
       if (E.endNode) { game.save.mapNode = E.endNode; game.save.region = game.region = 'galilee'; }
       if (E.region === 'jerusalem') { game.save.jerNode = E.place; game.save.region = game.region = 'jerusalem'; }
@@ -610,7 +680,7 @@ window.TW = window.TW || {};
     openOverlay('#o-study');
     const b = $('#study-body');
     b.innerHTML = '';
-    b.appendChild(el('p', 'study-kicker', fresh ? 'Your report is sealed. Now read the passage.' : 'Study'));
+    b.appendChild(el('p', 'study-kicker', fresh ? (TW.Role.is() ? 'Your letter is sealed. Now read the passage.' : 'Your report is sealed. Now read the passage.') : 'Study'));
     b.appendChild(el('h2', 'scroll-title', E.title));
     b.appendChild(el('p', 'study-ref', E.ref + ', World English Bible. ' + (E.parallels.startsWith('told') ? 'This account is ' + E.parallels + '.' : 'Also told in ' + E.parallels + '.')));
     // one or more passages, each optionally limited to a verse range

@@ -218,7 +218,9 @@ window.TW = window.TW || {};
   };
   let pending = null, typing = null;
 
+  const G = (x) => (TW.Role ? TW.Role.G(x) : x);
   SC.say = function (o) {
+    if (o && o.kind !== 'scripture') o = Object.assign({}, o, { text: G(o.text), speaker: G(o.speaker) });
     const el = SC.el;
     SC.mode = 'script';
     el.dialog.className = 'dialog kind-' + o.kind;
@@ -254,6 +256,7 @@ window.TW = window.TW || {};
   }
 
   SC.choose = function (prompt, options, label) {
+    prompt = G(prompt); options = options.map(G);
     const el = SC.el;
     SC.mode = 'script';
     el.dialog.className = 'dialog kind-choice';
@@ -282,6 +285,7 @@ window.TW = window.TW || {};
   };
 
   SC.goal = function (text) {
+    text = G(text);
     const el = SC.el;
     clearInterval(typing); typing = null; pending = null;
     el.dialog.className = 'dialog kind-goal';
@@ -293,6 +297,7 @@ window.TW = window.TW || {};
   };
 
   SC.prompt = function (text, label, mode) {
+    text = G(text); label = G(label);
     SC.goal(text);
     SC.mode = mode || 'script';
     return new Promise((res) => {
@@ -333,6 +338,7 @@ window.TW = window.TW || {};
   };
 
   SC.toast = function (text) {
+    text = G(text);
     TW.Audio && TW.Audio.sfx('chime');
     const t = SC.el.toast;
     t.textContent = text;

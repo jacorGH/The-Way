@@ -28,7 +28,7 @@ window.TW = window.TW || {};
     const fisher = SC.add({ frames: K.villager(3), x: 226, y: 150, facing: -1 });
     const colleagues = [[290, 51], [302, 52]].map((c) => SC.add({ frames: P0.scribe(c[1]), x: c[0], y: 146, facing: -1 }));
 
-    const GOAL = 'Walk through the outer court. The teacher from Galilee has not come yet.';
+    const GOAL = 'Walk through the outer court. Jesus has not come yet.';
     let start;
     const started = new Promise((r) => { start = r; });
     const goal = () => K.freeGoal(GOAL, 'Wait by the tables', async () => {
@@ -112,7 +112,7 @@ window.TW = window.TW || {};
     const asker = SC.add({ frames: P0.scribe(70), x: 250, y: 147, facing: -1, speed: 22 });
     const me = SC.add({ id: 'player', frames: P0.player, x: 226, y: 150, facing: -1 });
     void circle; void me;
-    await SC.say({ kind: 'drama', text: 'A few days later the teacher is back in the courts, answering questions from priests, Pharisees and Sadducees one after another. A scribe you know by sight has been listening at your elbow.' });
+    await SC.say({ kind: 'drama', text: 'A few days later Jesus is back in the courts, answering questions from priests, Pharisees and Sadducees one after another. A scribe you know by sight has been listening at your elbow.' });
     await SC.walk(asker, 186);
     asker.facing = -1;
     await SC.say({ kind: 'scripture', ref: 'Mark 12:28', text: P.vs('mark11b', '12:28') });

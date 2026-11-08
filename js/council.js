@@ -49,7 +49,7 @@ window.TW = window.TW || {};
     const caiaphas = SC.add({ frames: K.who('caiaphas'), x: 196, y: 152, facing: -1, speed: 18 });
     const j2 = SC.add({ frames: P0.jesus, x: 128, y: 152, facing: 1 });
     [SC.add({ frames: K.villager(943), x: 108, y: 152, facing: 1 }), SC.add({ frames: K.villager(944), x: 146, y: 153, facing: -1 })];
-    const me2 = SC.add({ id: 'player', frames: P0.player, x: 78, y: 153, facing: 1 });
+    const me2 = SC.add({ id: 'player', frames: P0.player, x: TW.Role.is() ? 12 : 78, y: 153, facing: 1 });
     void nic; void me2;
     await SC.say({ kind: 'drama', text: 'The council sits in a half circle in the lamplight. Your teacher Nicodemus stands at the end of a bench. He does not look at you.' });
     await say('14:55', '14:56');

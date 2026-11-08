@@ -64,6 +64,7 @@ window.TW = window.TW || {};
   const KEY = 'the-way.save.v1';
   U.defaultSave = () => ({
     name: 'Eleazar',
+    role: 'scribe',
     started: false,
     completed: {},
     obs: {},

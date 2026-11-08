@@ -67,7 +67,7 @@ window.TW = window.TW || {};
     SC.add({ frames: K.who('caiaphas'), x: 200, y: 152, facing: -1 });
     const st2 = SC.add({ frames: K.who('stephen'), x: 128, y: 152, facing: 1 });
     const wit = [SC.add({ frames: K.villager(1420), x: 96, y: 152, facing: 1 }), SC.add({ frames: K.villager(1421), x: 82, y: 153, facing: 1 })];
-    SC.add({ id: 'player', frames: P0.player, x: outsider ? 8 : 64, y: 153, facing: 1 });
+    SC.add({ id: 'player', frames: P0.player, x: outsider || TW.Role.is() ? 8 : 64, y: 153, facing: 1 });
     if (outsider) await SC.say({ kind: 'drama', text: 'You are no longer welcome on the scribes’ bench. You stand in the doorway and watch.' });
     else await SC.say({ kind: 'drama', text: 'You take your seat on the scribes’ bench. No one here knows that you break bread with the man on trial.' });
     wit[0].pose = 'out';

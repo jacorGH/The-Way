@@ -116,6 +116,30 @@ canvas.pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
 .title-actions { display: flex; flex-direction: column; gap: 0.6rem; align-items: center; }
 #s-title .btn { color: var(--papyrus); border-color: var(--papyrus); min-width: 15em; }
 #s-title .btn.primary { background: var(--papyrus); color: var(--ink); }
+.role-pick { display: flex; gap: 0.6rem; justify-content: center; margin: 1rem auto 0.4rem; max-width: 22rem; }
+.role-btn {
+  backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); background-color: rgba(28, 22, 18, 0.55) !important;
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 0.15rem; padding: 0.55rem 0.4rem;
+  background: transparent; border: 1px solid rgba(233, 214, 173, 0.35); border-radius: 3px; color: var(--on-basalt-soft); cursor: pointer;
+  font: inherit; min-height: 44px;
+}
+.role-btn[aria-pressed="true"] { border-color: var(--ochre); background-color: rgba(110, 82, 32, 0.78) !important; color: var(--on-basalt); }
+.role-name { font-family: Cinzel, "Trajan Pro", Georgia, serif; letter-spacing: 0.08em; font-size: 1.05rem; }
+.role-sub { font-style: italic; font-size: 0.85rem; }
+.role-pick { max-width: 24rem; }
+.role-btn { min-width: 0; }
+.voice-overlay { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; padding: 1rem; background: rgba(20, 16, 12, 0.72); }
+.voice-card { width: min(26rem, 100%); background: var(--papyrus, #ecdfbf); color: #2a2016; border-radius: 4px; padding: 1.1rem 1.1rem 0.8rem; box-shadow: 0 8px 30px rgba(0,0,0,0.4); text-align: left; }
+.voice-kicker { margin: 0; font-style: italic; color: #7a6a52; }
+.voice-title { margin: 0.15rem 0 0.8rem; font-family: Cinzel, Georgia, serif; font-size: 1.2rem; letter-spacing: 0.04em; }
+.voice-btn { display: block; width: 100%; text-align: left; margin: 0 0 0.6rem; padding: 0.7rem 0.8rem; min-height: 56px; border: 1px solid #b8a67e; border-radius: 3px; background: #f6edd6; color: inherit; font: inherit; cursor: pointer; }
+.voice-btn.rec { border-color: #9a7428; background: #f1e1b6; }
+.voice-name { display: block; font-weight: 600; }
+.voice-where { display: block; font-style: italic; color: #5a4a36; margin-top: 0.15rem; }
+.role-note {
+  max-width: 22rem; margin: 0.2rem auto 0.6rem; padding: 0.5rem 0.7rem; font-size: 0.88rem; font-style: italic; line-height: 1.4;
+  color: var(--on-basalt); background: rgba(28, 22, 18, 0.72); border-radius: 3px;
+}
 .sound-toggle { color: inherit; opacity: 0.85; margin-top: 0.8rem; }
 #s-title .sound-toggle { color: var(--on-basalt-soft); }
 .ov-actions { display: flex; gap: 0.8rem; align-items: baseline; }

@@ -37,7 +37,7 @@ window.TW = window.TW || {};
     const merchant = SC.add({ frames: K.villager(260), x: 228, y: 148, facing: -1, pose: 'out' });
     const colleague = SC.add({ frames: P0.scribe(31), x: 330, y: 147, facing: -1 });
 
-    const GOAL = 'The teacher is by the water again. Go and listen.';
+    const GOAL = 'Jesus is by the water again. Go and listen.';
     const goal = () => K.freeGoal(GOAL, 'Go to the shore', async () => {
       SC.busy = true; await SC.walk(player, 176); SC.busy = false; reach();
     });
@@ -85,7 +85,7 @@ window.TW = window.TW || {};
     const heart = await SC.choose('A toll collector, of all people. What do you think?', [
       'He should repent before any teacher eats with him.',
       'If he truly leaves the booth, perhaps that is repentance.',
-      'Wait and see what this teacher does with him.',
+      'Wait and see what Jesus does with him.',
     ]);
     game.setHeart('levi', heart);
     SC.camGoal = null;
@@ -134,7 +134,7 @@ window.TW = window.TW || {};
     await SC.say({ kind: 'scripture', ref: 'Mark 2:15', text: P.vs('mark2b', 15) });
     await SC.say({ kind: 'drama', text: 'You and the other scribes stand just inside the door. None of you sits down.' });
     const obs = [
-      { id: 'guests', x0: 40, x1: 112, y0: 118, y1: 156, text: 'Toll collectors and known sinners recline at the same table as the teacher.' },
+      { id: 'guests', x0: 40, x1: 112, y0: 118, y1: 156, text: 'Toll collectors and known sinners recline at the same table as Jesus.' },
       { id: 'friends', x0: 112, x1: 140, y0: 118, y1: 156, text: 'He eats with them as if they were old friends.' },
       { id: 'meal', x0: 140, x1: 220, y0: 118, y1: 156, text: 'Bread, fish and wine. A full feast, not a hurried meal.' },
     ];

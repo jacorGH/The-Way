@@ -10,7 +10,7 @@ window.TW = window.TW || {};
     attendant: {
       title: 'The synagogue attendant', witness: 'The synagogue attendant', place: 'capernaum', region: 'galilee', era: 'galilee', after: 'capernaum', set: 'synagogue',
       look: { skin: '#a06a42', hair: '#5f5048', beard: '#5f5048', tunic: '#cdbb94', mantle: '#6a5a42' },
-      intro: [['n', 'The old man who keeps the scrolls in Capernaum’s synagogue is sweeping out the hall. He remembers the first Sabbath the teacher spoke here.']],
+      intro: [['n', 'The old man who keeps the scrolls in Capernaum’s synagogue is sweeping out the hall. He remembers the first Sabbath Jesus spoke here.']],
       asks: [
         { id: 'taught', scene: 'syn_teach', q: 'What was it like when he first taught here?', say: [['s', 'mark1b', '1:21', '1:22'], ['d', 'I have handed the scroll to a hundred teachers. They tell you what other teachers said. He did not.']], note: 'In Capernaum’s synagogue he taught as one having authority, not as the scribes (Mark 1:22).' },
         { id: 'spirit', scene: 'syn_spirit', q: 'They say a man cried out during the service.', say: [['c', 'cry'], ['s', 'mark1b', '1:23', '1:24'], ['c', 'rebuke'], ['s', 'mark1b', '1:25', '1:26'], ['c', 'calm'], ['s', 'mark1b', '1:27', '1:28']], note: 'He silenced an unclean spirit with a word, and the spirit obeyed (Mark 1:25–27).' },
@@ -20,7 +20,7 @@ window.TW = window.TW || {};
     motherinlaw: {
       title: 'Simon’s wife’s mother', witness: 'Simon’s wife’s mother', place: 'capernaum', region: 'galilee', era: 'galilee', after: 'capernaum', set: 'street',
       look: { skin: '#a8724a', hair: '#5f5048', tunic: '#7a5a3a', veil: '#6a4e3a' },
-      intro: [['n', 'An older woman is sweeping the threshold of a house near the synagogue. When you ask about the teacher, she sets her broom against the wall.']],
+      intro: [['n', 'An older woman is sweeping the threshold of a house near the synagogue. When you ask about Jesus, she sets her broom against the wall.']],
       asks: [
         { id: 'fever', scene: 'mil_fever', q: 'They say you were sick when he first came here.', say: [['d', 'I was burning with fever. I could not lift my head.'], ['c', 'enter'], ['s', 'mark1b', '1:29', '1:30'], ['c', 'raise'], ['s', 'mark1b', '1:31', '1:31'], ['c', 'serve']], note: 'He took Simon’s mother-in-law by the hand, and the fever left her (Mark 1:31).' },
         { id: 'evening', scene: 'mil_evening', q: 'What happened that evening?', say: [['s', 'mark1b', '1:32', '1:33'], ['c', 'heal'], ['s', 'mark1b', '1:34', '1:34'], ['d', 'The whole town at our door. I have never seen this street so full, before or since.']], note: 'At sunset the whole town brought their sick to the door of Simon’s house (Mark 1:32–34).' },
@@ -30,7 +30,7 @@ window.TW = window.TW || {};
     jairus: {
       title: 'Jairus', witness: 'Jairus, a ruler of the synagogue', place: 'capernaum', region: 'galilee', era: 'galilee', after: 'legion', set: 'house',
       look: { skin: '#a8724a', hair: '#2a1a12', beard: '#2a1a12', tunic: '#d8ccae', mantle: '#4a4a5a', fringe: '#9cc0e0' },
-      intro: [['n', 'Jairus is one of the rulers of the synagogue. Men like him rarely talk about this teacher to a scribe from Jerusalem. He talks to you anyway, while a girl’s voice drifts in from the next room.']],
+      intro: [['n', 'Jairus is one of the rulers of the synagogue. Men like him rarely talk about Jesus to a scribe from Jerusalem. He talks to you anyway, while a girl’s voice drifts in from the next room.']],
       asks: [
         { id: 'begged', scene: 'jai_beg', q: 'Why did a ruler of the synagogue go to him?', say: [['s', 'mark5b', '5:21', '5:21'], ['c', 'kneel'], ['s', 'mark5b', '5:22', '5:23'], ['c', 'go'], ['s', 'mark5b', '5:24', '5:24'], ['d', 'I did not care who saw me on my knees. She was twelve.']], note: 'Jairus fell at his feet and begged him to come to his dying daughter (Mark 5:22–23).' },
         { id: 'woman', scene: 'jai_woman', q: 'What held him up on the way?', say: [['s', 'mark5b', '5:25', '5:26'], ['c', 'touch'], ['s', 'mark5b', '5:27', '5:29'], ['c', 'turn'], ['s', 'mark5b', '5:30', '5:32'], ['c', 'kneel'], ['s', 'mark5b', '5:33', '5:34'], ['d', 'He stopped. With my daughter dying, he stopped for her. I did not understand then.']], note: 'A woman ill for twelve years touched his clothes and was healed; he called her “Daughter” (Mark 5:25–34).' },
@@ -41,7 +41,7 @@ window.TW = window.TW || {};
     cana: {
       title: 'A servant from the wedding', witness: 'A servant from the wedding at Cana', place: 'cana', region: 'galilee', era: 'galilee', after: 'capernaum', set: 'village',
       look: { skin: '#9a6440', hair: '#2a1a12', tunic: '#b49a6a' },
-      intro: [['n', 'In Cana you find a man who served at a wedding there. When you mention the teacher from Nazareth, he laughs out loud.']],
+      intro: [['n', 'In Cana you find a man who served at a wedding there. When you mention Jesus of Nazareth, he laughs out loud.']],
       asks: [
         { id: 'wine', scene: 'cana_feast', q: 'What happened at the wedding?', say: [['s', 'john2', '2:1', '2:2'], ['c', 'mary'], ['s', 'john2', '2:3', '2:4'], ['c', 'servants'], ['s', 'john2', '2:5', '2:5'], ['d', 'To run out of wine at your own wedding! The family would never have lived it down.']], note: 'At a wedding in Cana the wine ran out, and his mother told the servants, “Whatever he says to you, do it” (John 2:3–5).' },
         { id: 'jars', scene: 'cana_jars', q: 'What did he tell you to do?', say: [['s', 'john2', '2:6', '2:7'], ['c', 'fill'], ['s', 'john2', '2:8', '2:8'], ['c', 'draw'], ['h', 'The stone jars held water for ritual washing, and each held roughly 75 to 115 litres. Stone, unlike pottery, was thought not to become unclean.']], note: 'He had the servants fill six stone purification jars with water and draw some out (John 2:6–8).' },

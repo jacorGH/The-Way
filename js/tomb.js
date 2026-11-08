@@ -53,23 +53,41 @@ window.TW = window.TW || {};
     K.tombStone(st);
     const me = SC.add({ id: 'player', frames: P0.player, x: -10, y: 149, facing: 1, speed: 18 });
     const women = ['magdalene', 'maryj', 'salome'].map((n, i) => SC.add({ frames: K.who(n), x: -40 - i * 14, y: 147 + (i % 2), facing: 1, speed: 16, pose: 'carry' }));
+    const niece = TW.Role.is();
     await SC.say({ kind: 'history', text: 'The Sabbath ended at sunset yesterday. This is the first day of the week, before the sun is fully up.' });
-    await SC.say({ kind: 'drama', text: 'You have not slept. Before dawn you find yourself walking back to the garden, though you could not say why.' });
     SC.tween(9000, (p) => { st.dawn = 0.6 * (1 - p); AU() && p > 0.5 && AU().amb({ birds: 0.6, wind: 0.25 }); });
-    women.forEach((w, i) => SC.walk(w, 120 + i * 12));
-    await SC.walk(me, 30);
+    if (niece) {
+      await SC.say({ kind: 'drama', text: 'Before dawn you go with Mary of Magdala, Mary the mother of James, and Salome. You carry a jar of the spices you helped prepare.' });
+      await SC.say({ kind: 'history', text: 'Mark names three women. Luke adds Joanna and “the other women with them” (Luke 24:10).' });
+      me.x = -84; me.pose = 'carry';
+      women.forEach((w, i) => SC.walk(w, 120 + i * 12));
+      await SC.walk(me, 104);
+    } else {
+      await SC.say({ kind: 'drama', text: 'You have not slept. Before dawn you find yourself walking back to the garden, though you could not say why.' });
+      women.forEach((w, i) => SC.walk(w, 120 + i * 12));
+      await SC.walk(me, 30);
+    }
     await sayS('mark16', '16:1', '16:3');
-    await SC.say({ kind: 'drama', text: 'From where you stand you can see the stone. It has already been rolled aside.' });
+    await SC.say({ kind: 'drama', text: niece ? 'Then you see it, all of you at once. The stone has already been rolled aside.' : 'From where you stand you can see the stone. It has already been rolled aside.' });
     await sayS('mark16', '16:4', '16:4');
     women.forEach((w) => { w.pose = 'stand'; });
+    if (niece) { me.pose = 'stand'; SC.wait(1000).then(() => SC.walk(me, 184)).then(() => { me.visible = false; }); }
     await Promise.all(women.map((w, i) => SC.wait(i * 300).then(() => SC.walk(w, 184)).then(() => { w.visible = false; })));
     st.glow = 0.4;
+    if (niece) await SC.say({ kind: 'drama', text: 'It is dark inside the tomb. Then it is not.' });
     await sayS('mark16', '16:5', '16:7');
     st.glow = 0;
     women.forEach((w) => { w.visible = true; w.speed = 46; w.facing = -1; });
+    if (niece) { me.visible = true; me.speed = 46; me.facing = -1; SC.walk(me, -30); }
     await Promise.all(women.map((w, i) => SC.wait(i * 150).then(() => SC.walk(w, -30))));
     await sayS('mark16', '16:8', '16:8');
     await SC.say({ kind: 'history', text: 'The oldest manuscripts of Mark end here, with the women afraid and silent. The other Gospels tell what happened next.' });
+    if (niece) {
+      game.observe('tomb', 'inside', 'I went into the tomb with the women. A young man in white said, “He has risen. He is not here” (Mark 16:6).', false, true);
+      await SC.say({ kind: 'drama', text: 'You run with them until you cannot breathe. Then you stop, and turn, and walk back to the garden alone.' });
+      me.speed = 18; me.facing = 1;
+      await SC.walk(me, 30);
+    }
     game.observe('tomb', 'women', 'At dawn the women found the stone rolled back; a young man in white told them, “He has risen” (Mark 16:4–6).', false, true);
 
     // the two disciples run
