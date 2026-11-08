@@ -16,6 +16,7 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `index.html` – screens: title, prologue, timeline, overworld map, scene, plus scroll/report/study overlays
 - `css/style.css` – basalt, papyrus, lapis, madder, ochre; Cinzel + EB Garamond
 - `js/util.js` – math, noise, colour helpers, save game (localStorage, guarded)
+- `js/audio.js` – all sound, synthesized live with Web Audio (no audio files): period music in moods (title, galilee, land, reflect, tension, wonder, lament, jerusalem, night, storm), ambience beds (shore, wind, birds, crowd, room, night, fire, storm) and effects. Stages set their soundscape with an `audio` property; `TW.Audio.music(mood)` and `TW.Audio.sfx(name)` handle story beats.
 - `js/scripture.js`, `js/scripture2.js` – every Scripture passage, word for word from the WEB (scripture2 also holds Mark 14–16 and John 19 for the coming Passion episodes)
 - `js/data.js` – eras, timeline, episode registry (notes, reflections, report choices), both map regions, reveal schedule
 - `js/geo.js` – simplified real elevations: Galilee in detail, the whole Land, and Jerusalem with its valleys and the Mount of Olives

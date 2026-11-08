@@ -12,7 +12,14 @@ window.TW = window.TW || {};
 
   // ---------- the storm ----------
   function stormStage(A) {
-    const st = { width: 256, storm: 0, night: 0, flash: 0, bail: 0 };
+    const st = { width: 256, storm: 0, night: 0, flash: 0, bail: 0, audio: { music: 'night', amb: { shore: 0.6, wind: 0.3 } } };
+    let ambT = 0;
+    st.update = function (dt) {
+      ambT += dt;
+      if (ambT < 0.4 || !TW.Audio) return;
+      ambT = 0;
+      TW.Audio.amb({ storm: st.storm, shore: 0.6 * (1 - st.storm) + 0.15, wind: 0.3 + 0.4 * st.storm, night: st.night > 0.6 && st.storm < 0.2 ? 0.5 : 0 });
+    };
     const wave = (x, layer, t) => {
       const amp = [1.2, 2, 3][layer] + st.storm * [3, 6, 9][layer];
       return amp * Math.sin(x * [0.09, 0.07, 0.05][layer] + t * [1.4, 1.9, 2.4][layer] * (1 + st.storm)) +
@@ -89,7 +96,7 @@ window.TW = window.TW || {};
           fc.moveTo(x, y); fc.lineTo(x - 6 * k, y + 14 * k);
         }
         fc.stroke();
-        if (st.storm > 0.6 && Math.random() < 0.012) st.flash = 1;
+        if (st.storm > 0.6 && Math.random() < 0.012) { st.flash = 1; TW.Audio && TW.Audio.sfx('thunder'); }
       }
       if (st.flash > 0) {
         fc.fillStyle = 'rgba(235,240,255,' + st.flash * 0.55 + ')'; fc.fillRect(0, 0, w, h);
@@ -173,12 +180,14 @@ window.TW = window.TW || {};
     await SC.say({ kind: 'scripture', ref: 'Mark 4:35–36', text: P.vs('mark4', '4:35', '4:36') });
     await SC.say({ kind: 'drama', speaker: 'The fisherman from the beach', text: 'There is room in my boat, scribe, if you want to see where he goes.' });
     await SC.say({ kind: 'history', text: 'The lake lies about 210 m below sea level, ringed by hills. Cool air can pour down the slopes in the evening and raise steep waves very quickly.' });
+    TW.Audio && TW.Audio.music('storm');
     await SC.tween(3500, (p) => { st.storm = p * 0.6; st.night = p * 0.7; });
     await SC.say({ kind: 'scripture', ref: 'Mark 4:37', text: P.vs('mark4', '4:37') });
     await SC.tween(1500, (p) => { st.storm = 0.6 + p * 0.4; st.night = 0.7 + p * 0.3; });
     for (let i = 0; i < 5; i++) {
       await SC.prompt(i === 0 ? 'Water is pouring over the side. Bail, or the boat will sink.' : ['The water is still rising.', 'Again. The fisherman shouts something you cannot hear.', 'Your hands are numb.', 'One more.'][i - 1], 'Bail', 'script');
       SC.dust(186, 128, 10, { up: true, spread: 30, color: '#b8d0cc' });
+      TW.Audio && TW.Audio.sfx('splash');
     }
     await SC.say({ kind: 'scripture', ref: 'Mark 4:38', text: P.vs('mark4', '4:38') });
     st.crew1[0] = { frames: P0.jesus, dx: -24, facing: 1, pose: 'stand', lift: 6 };
@@ -186,6 +195,7 @@ window.TW = window.TW || {};
     st.crew1[0].pose = 'out';
     await SC.say({ kind: 'scripture', ref: 'Mark 4:39', text: P.vs('mark4', '4:39') });
     await SC.tween(900, (p) => { st.storm = 1 - U.smooth(0, 1, p); });
+    TW.Audio && TW.Audio.music('wonder');
     st.crew1[0].pose = 'stand';
     await SC.wait(1200);
     await SC.say({ kind: 'drama', text: 'The water is so still you can see the stars in it. No one in your boat says anything.' });
@@ -206,6 +216,7 @@ window.TW = window.TW || {};
     await K.fade(async () => {
       SC.load({
         width: 256,
+        audio: { music: 'tension', amb: { shore: 0.6, wind: 0.4, birds: 0.3 } },
         bg(ctx, t) {
           ctx.drawImage(shoreArt(A), 0, 0);
           const fr = Math.floor(t * 2);
@@ -261,6 +272,7 @@ window.TW = window.TW || {};
       SC.wait(i * 110).then(async () => {
         await SC.walkPath(p, [[214, 64], [227, 122], [236, 128]]);
         SC.dust(236, 126, 8, { up: true, spread: 8, color: '#d8e6e2' });
+        if (i % 3 === 0) TW.Audio && TW.Audio.sfx('splash');
         p.visible = false;
       });
     });
@@ -277,6 +289,7 @@ window.TW = window.TW || {};
     wild.pose = 'sit';
     const town = [0, 1, 2, 3, 4].map((i) => SC.add({ frames: sitF(670 + i), x: 168 + i * 4, y: 64, facing: -1, speed: 30 }));
     await Promise.all(town.map((t, i) => SC.wait(i * 250).then(() => SC.walkPath(t, [[150, hill(150)], [126 + i * 8, hill(126 + i * 8)]]))));
+    TW.Audio && TW.Audio.music('wonder');
     await SC.say({ kind: 'scripture', ref: 'Mark 5:15–17', text: P.vs('mark4', '5:15', '5:17') });
     j2.facing = -1;
     await SC.walk(j2, 50);

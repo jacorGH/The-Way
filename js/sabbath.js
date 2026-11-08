@@ -70,6 +70,7 @@ window.TW = window.TW || {};
     // ---- the grain fields ----
     SC.load({
       width: 256,
+      audio: { music: 'galilee', amb: { wind: 0.7, birds: 0.7 } },
       bg(ctx) { ctx.drawImage(fieldArt(), 0, 0); },
       fg(ctx, t) { wheatFront(ctx, t); },
       fx(fc, k) {
@@ -117,6 +118,7 @@ window.TW = window.TW || {};
     await K.fade(async () => {
       SC.load({
         width: 256, hotspots: [],
+        audio: { music: 'reflect', amb: { room: 0.6, crowd: 0.15 } },
         bg(ctx) { ctx.drawImage(synArt(), 0, 0); },
         fx(fc, k, t, cam, sc) {
           fc.fillStyle = 'rgba(14,8,3,0.22)'; fc.fillRect(0, 0, 256 * k, 160 * k);
@@ -144,6 +146,7 @@ window.TW = window.TW || {};
     const j2 = SC.add({ id: 'jesus', frames: P0.jesus, x: 146, y: 152, facing: -1 });
 
     await SC.say({ kind: 'history', text: 'First-century synagogues found at Magdala and Gamla had stepped benches along the walls, facing a central floor where Scripture was read. The white limestone synagogue at Capernaum today was built centuries later, over older basalt foundations.' });
+    TW.Audio && TW.Audio.music('tension');
     await SC.say({ kind: 'scripture', ref: 'Mark 3:1–2', text: P.vs('mark2c', '3:1', '3:2') });
     const obs = [
       { id: 'hand', x0: 60, x1: 84, y0: 118, y1: 150, text: 'A man with a withered hand sits near the front.' },
@@ -172,10 +175,12 @@ window.TW = window.TW || {};
     man.pose = 'out'; man.facing = 1;
     await SC.wait(900);
     man.pose = 'raise';
+    TW.Audio && TW.Audio.music('wonder');
     left.forEach((p, i) => { if (i % 2) p.hopping = true; });
     await SC.wait(700);
     game.observe('sabbath', 'restored', 'He told the man to stretch out his hand, and it was restored (Mark 3:5).', false, true);
 
+    TW.Audio && TW.Audio.music('tension');
     await SC.say({ kind: 'scripture', ref: 'Mark 3:6', text: P.vs('mark2c', '3:6') });
     pharisees.forEach((p, i) => { p.pose = 'stand'; SC.wait(i * 150).then(() => SC.walk(p, 300)); });
     const go = await SC.choose('They rise and file out. Your place has always been with them.', [

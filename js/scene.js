@@ -36,6 +36,7 @@ window.TW = window.TW || {};
 
   SC.load = function (stage) {
     SC.stage = stage;
+    if (stage.audio && TW.Audio) TW.Audio.scene(stage.audio);
     SC.ents = []; SC.parts = []; SC.motes = [];
     SC.cam = 0; SC.camGoal = null; SC.player = null;
     SC.mode = 'script';
@@ -229,7 +230,7 @@ window.TW = window.TW || {};
         clearInterval(typing); typing = null;
         el.text.textContent = full;
         el.next.hidden = false;
-        pending = () => { pending = null; res(); };
+        pending = () => { pending = null; TW.Audio && TW.Audio.sfx('page'); res(); };
       };
       if (U.reducedMotion()) { finish(); return; }
       let i = 0;
@@ -266,6 +267,7 @@ window.TW = window.TW || {};
         b.textContent = txt;
         b.addEventListener('click', (ev) => {
           ev.stopPropagation();
+          TW.Audio && TW.Audio.sfx('tap');
           el.choices.innerHTML = '';
           res(i);
         });
@@ -296,6 +298,7 @@ window.TW = window.TW || {};
       b.textContent = label;
       b.addEventListener('click', (ev) => {
         ev.stopPropagation();
+        TW.Audio && TW.Audio.sfx('tap');
         SC.el.choices.innerHTML = '';
         SC.mode = 'script';
         res();
@@ -327,6 +330,7 @@ window.TW = window.TW || {};
   };
 
   SC.toast = function (text) {
+    TW.Audio && TW.Audio.sfx('chime');
     const t = SC.el.toast;
     t.textContent = text;
     t.classList.remove('show');

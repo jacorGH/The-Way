@@ -48,6 +48,11 @@ window.TW = window.TW || {};
       st = { width: 256, bg(ctx) { ctx.drawImage(art(), 0, 0); } };
     }
     st.props = []; st.lights = o.lights || [];
+    // remembered places keep the current music and bring their own sounds
+    const base = (st.audio && st.audio.amb) || {};
+    st.audio = { amb: o.night ? { night: 0.6, room: kind === 'house' ? 0.4 : 0, wind: kind === 'olives' ? 0.35 : 0, fire: o.fire ? 0.6 : 0 }
+      : kind === 'village' ? { wind: 0.5, birds: 0.5, crowd: 0.2 } : kind === 'field' ? { wind: 0.6, birds: 0.6, crowd: 0.2 }
+      : kind === 'syn' ? { room: 0.6, crowd: 0.1 } : base };
     const bg0 = st.bg;
     st.bg = function (ctx, t, cam, sc) { bg0.call(st, ctx, t, cam, sc); st.props.forEach((p) => p(ctx, t, cam)); };
     if (o.night || o.dusk) {
@@ -305,7 +310,7 @@ window.TW = window.TW || {};
     for (let i = 0; i < 16; i++) cr.push(add(K.villager(720 + i, i % 4 === 1), 20 + (i % 8) * 20 + (i >= 8 ? 8 : 0), 140 + (i >= 8 ? 8 : 0), { pose: 'sit', speed: 22 }));
     return {
       baskets: async () => { for (let i = 0; i < 12; i++) { st.baskets = i + 1; await W(170); } },
-      king: async () => { cr.forEach((c, i) => { c.pose = 'raise'; c.hopping = i % 2 === 0; SC.wait(i * 40).then(() => SC.walk(c, 120 + (i % 6) * 10)); }); await W(1200); },
+      king: async () => { TW.Audio && TW.Audio.sfx('cheer'); cr.forEach((c, i) => { c.pose = 'raise'; c.hopping = i % 2 === 0; SC.wait(i * 40).then(() => SC.walk(c, 120 + (i % 6) * 10)); }); await W(1200); },
       withdraw: async () => { j.facing = 1; await SC.walk(j, 300); },
     };
   };
@@ -475,7 +480,7 @@ window.TW = window.TW || {};
       wept: async () => { j.facing = -1; await W(900); j.facing = 1; },
       stone: async () => { people.slice(3).forEach((p, i) => SC.walk(p, 178 + i * 7)); await SC.tween(1800, (q) => { st.stoneX = 208 + q * 40; }); },
       call: async () => { j.pose = 'raise'; await W(900); j.pose = 'stand'; },
-      come: async () => { laz.visible = true; await SC.walk(laz, 206, 152); people.forEach((p) => { p.pose = 'raise'; }); mary.pose = 'stand'; await W(600); },
+      come: async () => { laz.visible = true; TW.Audio && TW.Audio.sfx('cheer', 2.5); await SC.walk(laz, 206, 152); people.forEach((p) => { p.pose = 'raise'; }); mary.pose = 'stand'; await W(600); },
     };
   };
 
@@ -551,11 +556,11 @@ window.TW = window.TW || {};
         await W(900); j.pose = 'stand'; await SC.walk(j, 124); await W(500); await SC.walk(j, 176); j.pose = 'sit'; await W(600);
       },
       torches: async () => { j.pose = 'stand'; lies.forEach((l, i) => { SC.ents = SC.ents.filter((q) => q !== l); three[i].visible = true; }); await Promise.all(mob.map((m, i) => SC.walk(m, 210 + i * 12))); },
-      sword: async () => { const p = three[0]; await SC.walk(p, 196); p.pose = 'out'; SC.dust(p.x + 8, 132, 8, { up: true, spread: 4, color: '#e8e4dc' }); await W(800); p.pose = 'stand'; j.pose = 'out'; await W(600); j.pose = 'stand'; },
+      sword: async () => { const p = three[0]; await SC.walk(p, 196); p.pose = 'out'; TW.Audio && TW.Audio.sfx('crash'); SC.dust(p.x + 8, 132, 8, { up: true, spread: 4, color: '#e8e4dc' }); await W(800); p.pose = 'stand'; j.pose = 'out'; await W(600); j.pose = 'stand'; },
     };
   };
   VG.pet_denial = () => {
-    const st = load('house', { night: true, lights: [{ x: 128, y: 140, r: 60, c: 'rgba(255,150,60,0.55)' }] });
+    const st = load('house', { night: true, fire: true, lights: [{ x: 128, y: 140, r: 60, c: 'rgba(255,150,60,0.55)' }] });
     st.props.push(fireProp(128, 146));
     const p = add(S.person(PETER), 112, 147, { pose: 'sit', facing: 1, speed: 20 });
     const off = [add(K.villager(940), 144, 147, { pose: 'sit', facing: -1 }), add(K.villager(941), 158, 146, { facing: -1 }), add(K.villager(942), 98, 146, { facing: 1 })];
@@ -564,7 +569,7 @@ window.TW = window.TW || {};
       maid: async () => { await SC.walk(maid, 150); maid.pose = 'out'; await W(800); maid.pose = 'stand'; },
       porch: async () => { p.pose = 'stand'; p.facing = -1; await SC.walk(p, 50); p.facing = 1; maid.facing = -1; maid.pose = 'out'; await SC.walk(maid, 80); },
       again: async () => { off.forEach((o) => { o.pose = 'out'; o.facing = -1; }); await W(700); p.pose = 'raise'; p.hopping = true; await W(900); p.hopping = false; p.pose = 'stand'; },
-      crow: async () => { SC.toast('A rooster crows.'); await W(1200); p.facing = -1; await SC.walk(p, 18); p.pose = 'sit'; await W(800); },
+      crow: async () => { TW.Audio && TW.Audio.sfx('rooster'); SC.toast('A rooster crows.'); await W(1200); p.facing = -1; await SC.walk(p, 18); p.pose = 'sit'; await W(800); },
     };
   };
 
@@ -577,6 +582,7 @@ window.TW = window.TW || {};
       saved = { stage: SC.stage, ents: SC.ents, cam: SC.cam, camGoal: SC.camGoal, player: SC.player, parts: SC.parts, motes: SC.motes };
       SC.player = null;
       mem = VG[id]() || {};
+      TW.Audio && TW.Audio.memory(true);
       el.stage.classList.add('memory');
       el.memchip.textContent = 'As remembered by ' + witness.replace(/^The /, 'the ').replace(/^A /, 'a ');
     });
@@ -587,6 +593,7 @@ window.TW = window.TW || {};
     await K.fade(async () => {
       Object.assign(SC, { stage: saved.stage, ents: saved.ents, cam: saved.cam, camGoal: saved.camGoal, player: saved.player, parts: saved.parts, motes: saved.motes });
       el.stage.classList.remove('memory');
+      if (TW.Audio) { TW.Audio.memory(false); if (saved.stage.audio) TW.Audio.amb(saved.stage.audio.amb || {}); }
       saved = null;
     });
   };

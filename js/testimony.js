@@ -147,6 +147,7 @@ window.TW = window.TW || {};
   }
   function upperRoom() {
     const st = K.interiorStage();
+    st.audio = { amb: { room: 0.5, crowd: 0.3, night: 0.3 } };
     const bg0 = st.bg, fx0 = st.fx;
     st.bg = function (ctx, t, cam, sc) {
       bg0(ctx, t, cam, sc);
@@ -172,16 +173,17 @@ window.TW = window.TW || {};
     street: { make: () => K.exteriorStage(), cam: 230, y: 148, w: 300, p: 326, extras: [[262, 146], [380, 147], [410, 149]] },
     house: { make: () => K.interiorStage(), cam: 0, y: 147, w: 110, p: 146, extras: [[40, 136], [200, 136], [226, 147]] },
     upper: { make: upperRoom, cam: 0, y: 147, w: 120, p: 152, sit: true, extras: [[56, 147], [72, 147], [90, 147], [186, 147], [204, 147], [222, 147], [40, 136], [234, 136]] },
-    village: { make: () => ({ width: 256, bg(ctx) { ctx.drawImage(K.nainArt(), 0, 0); }, fx: sunFx }), cam: 0, y: 148, w: 120, p: 150, extras: [[80, 146], [200, 149], [222, 150]] },
-    field: { make: () => ({ width: 256, bg(ctx) { ctx.drawImage(K.fieldArt(), 0, 0); }, fx: sunFx }), cam: 0, y: 146, w: 116, p: 146, extras: [[60, 145], [200, 146]] },
+    village: { make: () => ({ width: 256, audio: { amb: { wind: 0.5, birds: 0.5, crowd: 0.15 } }, bg(ctx) { ctx.drawImage(K.nainArt(), 0, 0); }, fx: sunFx }), cam: 0, y: 148, w: 120, p: 150, extras: [[80, 146], [200, 149], [222, 150]] },
+    field: { make: () => ({ width: 256, audio: { amb: { wind: 0.7, birds: 0.7 } }, bg(ctx) { ctx.drawImage(K.fieldArt(), 0, 0); }, fx: sunFx }), cam: 0, y: 146, w: 116, p: 146, extras: [[60, 145], [200, 146]] },
     court: { make: () => K.courtStage(false), cam: 40, y: 148, w: 160, p: 190, extras: [[120, 150], [230, 147], [262, 148]] },
-    synagogue: { make: () => ({ width: 256, bg(ctx) { ctx.drawImage(K.synArt(), 0, 0); } }), cam: 0, y: 152, w: 118, p: 148, extras: [] },
+    synagogue: { make: () => ({ width: 256, audio: { amb: { room: 0.6 } }, bg(ctx) { ctx.drawImage(K.synArt(), 0, 0); } }), cam: 0, y: 152, w: 118, p: 148, extras: [] },
   };
 
   const run = async function (game, id) {
     const T = D.testimonies[id], SET = SETS[T.set];
     const P0 = K.sprites();
     SC.load(SET.make());
+    TW.Audio && TW.Audio.music(T.set === 'upper' ? 'night' : 'reflect');
     SC.cam = SET.cam;
     (SET.extras || []).forEach((e, i) => SC.add({ frames: K.villager(950 + i * 7 + id.length, i % 3 === 1), x: e[0], y: e[1], facing: e[0] < SET.w ? 1 : -1, pose: SET.sit ? 'sit' : 'stand' }));
     if (T.prop === 'well') {

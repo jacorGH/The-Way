@@ -165,6 +165,7 @@ window.TW = window.TW || {};
   function courtStage(evening) {
     const st = {
       width: 320, hotspots: [], walkLimits: [10, 300], birds: [],
+      audio: evening ? { music: 'reflect', amb: { crowd: 0.25, wind: 0.2 } } : { music: 'jerusalem', amb: { crowd: 0.6, wind: 0.2, birds: 0.25 } },
       bg(ctx) { ctx.drawImage(courtArt(), -Math.round(SC.cam), 0); },
       fx(fc, k, t, cam) {
         if (evening) {
@@ -204,6 +205,7 @@ window.TW = window.TW || {};
     const roadY = 144;
     const st = {
       width: WORLD,
+      audio: { music: 'jerusalem', amb: { crowd: 0.7, birds: 0.5, wind: 0.3 } },
       bg(ctx, t, cam) {
         ctx.drawImage(A.sky, 0, 0);
         ctx.drawImage(cityView(), -Math.round(cam * 0.35), 0);
@@ -288,6 +290,7 @@ window.TW = window.TW || {};
     ride.speed = 13; ahead.forEach((a) => { a.speed = 13; }); behind.forEach((b) => { b.speed = 13; });
     roadside.forEach((p, i) => { p.pose = 'raise'; p.hopping = i % 2 === 0; });
     behind.forEach((b, i) => { b.pose = 'raise'; b.hopping = i % 2 === 1; });
+    TW.Audio && (TW.Audio.sfx('cheer'), TW.Audio.sfx('cheer', 1.6));
     await SC.say({ kind: 'scripture', ref: 'Mark 11:9–10', text: P.vs('mark11a', 9, 10) });
     st.drop = false;
     const IN = SC.stage;

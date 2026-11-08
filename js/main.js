@@ -11,6 +11,26 @@ window.TW = window.TW || {};
   };
 
   const game = { save: U.load(), screen: null, era: 'galilee' };
+  const AU = TW.Audio;
+  // sound: unlocked by the first tap anywhere (browsers require a gesture)
+  document.addEventListener('pointerdown', () => AU.unlock(), { passive: true });
+  function syncSound() {
+    document.querySelectorAll('.sound-toggle').forEach((b) => {
+      b.textContent = AU.on ? 'Sound on' : 'Sound off';
+      b.setAttribute('aria-pressed', AU.on);
+    });
+  }
+  document.querySelectorAll('.sound-toggle').forEach((b) => b.addEventListener('click', (e) => {
+    e.stopPropagation();
+    AU.setOn(!AU.on);
+    syncSound();
+  }));
+  syncSound();
+  const REGION_SOUND = {
+    galilee: { music: 'galilee', amb: { wind: 0.45, birds: 0.55, shore: 0.25 } },
+    land: { music: 'land', amb: { wind: 0.7, birds: 0.25 } },
+    jerusalem: { music: 'jerusalem', amb: { wind: 0.4, birds: 0.3, crowd: 0.2 } },
+  };
   TW.game = game;
   const persist = () => U.store(game.save);
 
@@ -23,6 +43,7 @@ window.TW = window.TW || {};
     screens.forEach((s) => $('#s-' + s).classList.toggle('active', s === name));
     closeOverlays();
     game.screen = name;
+    if (name === 'title' || name === 'prologue' || name === 'timeline') AU.scene({ music: 'title', amb: { wind: 0.45, shore: name === 'title' ? 0.35 : 0 } });
     if (name === 'title') showTitle();
     if (name === 'prologue') renderPrologue();
     if (name === 'timeline') renderTimeline();
@@ -220,6 +241,7 @@ window.TW = window.TW || {};
     MV.init($('#map-canvas'));
     hideCard();
     const R = D.regions[game.region];
+    AU.scene(REGION_SOUND[game.region]);
     $('#map-title').textContent = R.title + ', ' + R.subtitle;
     document.querySelectorAll('.region-switch button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.region === game.region));
     $('#map-hint').hidden = false;

@@ -116,6 +116,10 @@ canvas.pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
 .title-actions { display: flex; flex-direction: column; gap: 0.6rem; align-items: center; }
 #s-title .btn { color: var(--papyrus); border-color: var(--papyrus); min-width: 15em; }
 #s-title .btn.primary { background: var(--papyrus); color: var(--ink); }
+.sound-toggle { color: inherit; opacity: 0.85; margin-top: 0.8rem; }
+#s-title .sound-toggle { color: var(--on-basalt-soft); }
+.ov-actions { display: flex; gap: 0.8rem; align-items: baseline; }
+.ov-actions .sound-toggle { margin-top: 0; }
 .fine { font-size: 0.82rem; color: var(--on-basalt-soft); margin: 1.2rem 0 0; }
 
 /* ---------- scrolls (prologue, overlays) ---------- */

@@ -53,6 +53,7 @@ window.TW = window.TW || {};
     const P0 = K.sprites();
     SC.load({
       width: 256, hotspots: [],
+      audio: { music: 'lament', amb: { wind: 0.5, birds: 0.4, crowd: 0.35 } },
       bg(ctx) { ctx.drawImage(nainArt(), 0, 0); },
       fg(ctx) { R(ctx, 0, 140, 22, 2, '#3d3835'); },
       fx(fc, k) {
@@ -121,6 +122,7 @@ window.TW = window.TW || {};
     bierE.lowered = true;
     await SC.wait(500);
     bierE.risen = true;
+    TW.Audio && TW.Audio.music('wonder');
     await SC.wait(900);
     await SC.say({ kind: 'scripture', ref: 'Luke 7:15', text: P.vs('luke7', '15') });
     const son = SC.add({ frames: S.person({ skin: '#9a6440', hair: '#2a1a12', tunic: '#e6dfcc' }), x: 122, y: at(122), facing: -1, speed: 18 });
@@ -128,6 +130,7 @@ window.TW = window.TW || {};
     bierE.draw = function (ctx, sx, sy) { R(ctx, sx - 17, sy - 3, 34, 1, '#6a4a2c'); R(ctx, sx - 14, sy - 4, 28, 1, '#86603a'); };
     await SC.walk(son, 100);
     widow.pose = 'raise';
+    TW.Audio && TW.Audio.sfx('cheer');
     [...mourners, ...followers, ...bearers].forEach((p, i) => { if (i % 2) p.hopping = true; if (i % 3 === 0) p.pose = 'raise'; });
 
     const heart = await SC.choose('Fear takes hold of everyone. The crowd is crying out. What do you say?', [

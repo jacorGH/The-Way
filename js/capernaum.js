@@ -116,20 +116,21 @@ window.TW = window.TW || {};
       const sx = Math.floor(rnd(i, 5) * 480), sy = 126 + Math.floor(rnd(i, 6) * 32);
       R(gc, sx, sy, 3, 2, '#4f4945'); R(gc, sx, sy, 1, 1, '#6a635d');
     }
-    // beach
+    // beach and beached boat: their own layer, drawn behind the houses so the shore never cuts into the town
+    const bc = U.makeCanvas(480, 160), bx = bc.getContext('2d');
     for (let y = 98; y < 124; y++)
       for (let xx = 0; xx < 164 - (y - 98); xx++) {
         const r = rnd(xx * 3, y);
-        R(gc, xx, y, 1, 1, r > 0.85 ? '#5f584f' : r > 0.7 ? '#958b7d' : '#7a7166');
+        R(bx, xx, y, 1, 1, r > 0.85 ? '#5f584f' : r > 0.7 ? '#958b7d' : '#7a7166');
       }
-    // beached boat
     const hull = [[26, 66], [27, 65], [28, 64], [30, 62], [32, 60], [35, 57]];
     hull.forEach((h, i) => {
-      R(gc, h[0], 108 + i, h[1] - h[0], 1, i === 0 ? '#7a5634' : i % 2 ? '#5a3e26' : '#4c341f');
+      R(bx, h[0], 108 + i, h[1] - h[0], 1, i === 0 ? '#7a5634' : i % 2 ? '#5a3e26' : '#4c341f');
     });
-    R(gc, 44, 92, 1, 16, '#3a2618');
-    R(gc, 40, 93, 9, 2, '#d8ccae');
-    for (let i = 0; i < 6; i++) R(gc, 30 + i * 5, 109, 1, 4, '#3e2a18');
+    R(bx, 44, 92, 1, 16, '#3a2618');
+    R(bx, 40, 93, 9, 2, '#d8ccae');
+    for (let i = 0; i < 6; i++) R(bx, 30 + i * 5, 109, 1, 4, '#3e2a18');
+    ART.beach = bc;
     // net on the beach
     for (let yy = 0; yy < 7; yy++) for (let xx = 0; xx < 18; xx++) if ((xx + yy) % 3 === 0 || (xx - yy) % 3 === 0) R(gc, 96 + xx, 138 + yy, 1, 1, '#b5a582');
     // quern
@@ -241,6 +242,7 @@ window.TW = window.TW || {};
     const A = art();
     return {
       width: 480,
+      audio: { music: 'galilee', amb: { shore: 0.7, birds: 0.6, crowd: 0.3, wind: 0.2 } },
       walkLimits: [12, 468],
       hotspots: [],
       bg(ctx, t, cam) {
@@ -248,8 +250,7 @@ window.TW = window.TW || {};
         ctx.drawImage(A.hills, -Math.round(cam * 0.25), 0);
         lakeBand(ctx, t, cam);
         R(ctx, 0, 98, 256, 26, '#7a7166');
-        ctx.drawImage(A.town, -Math.round(cam * 0.85), 0);
-        ctx.drawImage(A.ground, -cam, 0);
+        ctx.drawImage(A.beach, -cam, 0);
         const fr = Math.floor(t * 2);
         for (let x = 0; x < 166; x++) {
           const sx = x - cam;
@@ -257,6 +258,8 @@ window.TW = window.TW || {};
           if (U.hash(x >> 1, 7, fr) > 0.55) R(ctx, sx, 98, 1, 1, '#d2ddd4');
           if (U.hash(x >> 1, 8, fr) > 0.8) R(ctx, sx, 99, 1, 1, '#b9cbc4');
         }
+        ctx.drawImage(A.town, -Math.round(cam * 0.85), 0);
+        ctx.drawImage(A.ground, -cam, 0);
       },
       fg(ctx, t, cam) { ctx.drawImage(A.front, -Math.round(cam * 1.2), 0); },
       fx(fc, k, t) {
@@ -282,6 +285,7 @@ window.TW = window.TW || {};
     const A = art();
     const st = {
       width: 256, hole: 0, beam: 0, digging: false, hotspots: [],
+      audio: { amb: { room: 0.7, crowd: 0.35 } },
       bg(ctx, t) {
         ctx.drawImage(A.inside, 0, 0);
         if (st.hole > 0) {
@@ -333,6 +337,7 @@ window.TW = window.TW || {};
           const ph = Math.floor(sc.t * 3.5);
           st.diggers.forEach((d, i) => { if (st.digging) d.pose = (ph + i) % 2 ? 'out' : 'stand'; });
         }
+        if (st.digging && Math.random() < dt * 1.1) TW.Audio && TW.Audio.sfx('dig');
         if (st.digging && Math.random() < dt * 14) {
           SC.dust(108 + Math.random() * 32, 77, 1, { spread: 2 });
           SC.dust(108 + Math.random() * 32, 56, 1, { spread: 2, up: true });
@@ -511,6 +516,7 @@ window.TW = window.TW || {};
     IN.digging = true;
     everyone.forEach((e) => { if (Math.random() > 0.4) e.facing = e.x < 124 ? 1 : -1; });
     await SC.say({ kind: 'drama', text: 'Something scrapes overhead. Dust sifts down between the beams. One by one, faces turn upward.' });
+    TW.Audio && TW.Audio.sfx('crumble');
     await SC.tween(2600, (p) => { IN.hole = p; IN.beam = U.smooth(0.15, 1, p); });
     IN.digging = false;
     rf.forEach((f) => { f.pose = 'out'; });
@@ -560,6 +566,7 @@ window.TW = window.TW || {};
     const healed = SC.add({ id: 'healed', frames: P.healed, pose: 'sit', x: 124, y: 144, facing: -1, speed: 24 });
     await SC.wait(900);
     healed.pose = 'stand';
+    TW.Audio && TW.Audio.music('wonder');
     await SC.wait(700);
     SC.ents = SC.ents.filter((e) => e !== mat);
     healed.pose = 'carry';
@@ -567,6 +574,7 @@ window.TW = window.TW || {};
     everyone.forEach((e, i) => { e.hopping = i % 2 === 0; if (e.pose === 'stand' && i % 3 === 0) e.pose = 'raise'; });
     rf.forEach((f, i) => { f.pose = i % 2 ? 'raise' : 'stand'; f.hopping = i % 2 === 0; });
     SC.walk(healed, 12).then(() => { healed.visible = false; });
+    TW.Audio && TW.Audio.sfx('cheer');
     await SC.say({ kind: 'scripture', ref: 'Mark 2:12', text: TW.P.vs('mark2a', 12, 12) });
     game.observe('capernaum', 'forgive', 'He told the paralyzed man his sins were forgiven (Mark 2:5).', false, true);
     game.observe('capernaum', 'knew', 'He answered what the scribes were thinking before anyone spoke (Mark 2:8).', false, true);
@@ -634,6 +642,7 @@ window.TW = window.TW || {};
   }
 
   async function fade(fn) {
+    TW.Audio && TW.Audio.sfx('whoosh');
     const v = SC.el.veil;
     v.classList.add('on');
     await SC.wait(U.reducedMotion() ? 50 : 450);
