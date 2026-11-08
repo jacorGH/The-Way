@@ -17,7 +17,7 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `css/style.css` – basalt, papyrus, lapis, madder, ochre; Cinzel + EB Garamond
 - `js/util.js` – math, noise, colour helpers, save game (localStorage, guarded)
 - `js/audio.js` – all sound, synthesized live with Web Audio (no audio files): period music in moods (title, galilee, land, reflect, tension, wonder, lament, jerusalem, night, storm), ambience beds (shore, wind, birds, crowd, room, night, fire, storm) and effects. Stages set their soundscape with an `audio` property; `TW.Audio.music(mood)` and `TW.Audio.sfx(name)` handle story beats.
-- `js/scripture.js`, `js/scripture2.js`, `js/scripture3.js` (Acts 1–9 and John 20) – every Scripture passage, word for word from the WEB (scripture2 also holds Mark 14–16 and John 19 for the coming Passion episodes)
+- `js/scripture.js`, `js/scripture2.js`, `js/scripture3.js` (Acts 1–9, Acts 22 and John 14, 20) – every Scripture passage, word for word from the WEB (scripture2 also holds Mark 14–16 and John 19 for the coming Passion episodes)
 - `js/data.js` – eras, timeline, episode registry (notes, reflections, report choices), both map regions, reveal schedule
 - `js/geo.js` – simplified real elevations: Galilee in detail, the whole Land, and Jerusalem with its valleys and the Mount of Olives
 - `js/sprites.js` – procedural pixel people, the man on the mat, pigs, bier, boats, map walker
@@ -39,6 +39,13 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/pentecost.js` – Episode XIII, Pentecost (Acts 2): opens Era III; the scribe is baptized
 - `js/gate.js` – Episode XIV, The Beautiful Gate (Acts 3:1–4:4)
 - `js/trial.js` – Episode XV, Before the Council (Acts 4:5–37)
+- `js/seven.js` – Episode XVI, The Seven (Acts 6:1–7), with the daily bread distribution as gameplay
+- `js/stephen.js` – Episode XVII, Stephen (Acts 6:8–8:4), told with restraint; closes Era III
+- `js/service.js` – Service visits (listen, care, pray) with honest outcomes; opens after The Seven
+- `js/era4-art.js` – Era IV art: Sebaste, the desert road, Straight Street in Damascus, a horse-drawn carriage
+- `js/samaria.js` – Episode XVIII, Philip in Samaria (Acts 8:4–25)
+- `js/desert.js` – Episode XIX, The Desert Road (Acts 8:26–40)
+- `js/damascus.js` – Episode XX, The Road to Damascus (Acts 9:1–31)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
 - `js/vignettes.js` – memory scenes: sepia flashbacks that act out each testimony answer in step with its verses
 - `js/main.js` – game controller
@@ -61,3 +68,12 @@ Give the question a `scene` (a function in `vignettes.js` that builds the rememb
 ## Questions and answers
 Each episode can open a question in the scroll (`question`) and answer earlier ones (`answers: { id: [answer, ref] }`).
 Call `TW.Kit.answerAll(game, episodeId)` at the moment in the episode where the answer lands.
+
+## Service
+Service visits live in `D.service` (in `js/service.js`). Each has `listen`, `care` and `pray` choices and a fixed
+`outcome`. The player's choices change how well they serve, never whether God heals: outcomes are written honestly
+(healed, slow recovery, comfort, death in peace, prayer not answered as asked). Prayers quote Scripture word for word.
+
+## Audio notes
+All ambience is built from 8-second pink and brown noise buffers with faded loop seams, through a 3 kHz lowpass on the
+ambience bus. There is no sound on dialog taps. `TW.Audio._spec()` returns [energy above 3 kHz, total energy] for testing.

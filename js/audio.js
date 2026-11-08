@@ -7,7 +7,7 @@ window.TW = window.TW || {};
   const KEY = 'the-way.sound';
   try { A.on = localStorage.getItem(KEY) !== 'off'; } catch (e) { /* storage unavailable */ }
 
-  let ctx = null, master, musicBus, musicFilter, ambBus, sfxBus, reverb, noiseBuf, timer = null;
+  let ctx = null, master, musicBus, musicFilter, ambBus, ambOut, sfxBus, reverb, noiseBuf, brownBuf, timer = null;
   const mtof = (m) => 440 * Math.pow(2, (m - 69) / 12);
   const rand = (a, b) => a + Math.random() * (b - a);
   const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
@@ -36,18 +36,31 @@ window.TW = window.TW || {};
     musicFilter = ctx.createBiquadFilter(); musicFilter.type = 'lowpass'; musicFilter.frequency.value = 16000;
     musicBus.connect(musicFilter); musicFilter.connect(master);
     const mRev = ctx.createGain(); mRev.gain.value = 0.55; musicFilter.connect(mRev); mRev.connect(reverb);
-    ambBus = ctx.createGain(); ambBus.gain.value = 0.42; ambBus.connect(master);
+    ambBus = ctx.createGain(); ambBus.gain.value = 0.34;
+    ambOut = ctx.createBiquadFilter(); ambOut.type = 'lowpass'; ambOut.frequency.value = 3000; ambOut.Q.value = 0.5;
+    ambBus.connect(ambOut); ambOut.connect(master);
     sfxBus = ctx.createGain(); sfxBus.gain.value = 0.55; sfxBus.connect(master);
     const sRev = ctx.createGain(); sRev.gain.value = 0.3; sfxBus.connect(sRev); sRev.connect(reverb);
-    const len = ctx.sampleRate * 2;
+    const len = ctx.sampleRate * 8;
     noiseBuf = ctx.createBuffer(1, len, ctx.sampleRate);
-    const d = noiseBuf.getChannelData(0);
-    for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+    brownBuf = ctx.createBuffer(1, len, ctx.sampleRate);
+    const d = noiseBuf.getChannelData(0), br = brownBuf.getChannelData(0);
+    let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0, last = 0;
+    for (let i = 0; i < len; i++) {
+      const w = Math.random() * 2 - 1;
+      b0 = 0.99886 * b0 + w * 0.0555179; b1 = 0.99332 * b1 + w * 0.0750759; b2 = 0.969 * b2 + w * 0.153852;
+      b3 = 0.8665 * b3 + w * 0.3104856; b4 = 0.55 * b4 + w * 0.5329522; b5 = -0.7616 * b5 - w * 0.016898;
+      d[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + w * 0.5362) * 0.11; b6 = w * 0.115926;
+      last = (last + 0.02 * w) / 1.02; br[i] = last * 3.5;
+    }
+    // fade the loop seam so the repeat point is silent
+    const fade = Math.floor(ctx.sampleRate * 0.05);
+    for (let i = 0; i < fade; i++) { const k = i / fade; d[i] *= k; d[len - 1 - i] *= k; br[i] *= k; br[len - 1 - i] *= k; }
     A.ready = true;
     timer = setInterval(tick, 60);
     return true;
   }
-  const noise = () => { const s = ctx.createBufferSource(); s.buffer = noiseBuf; s.loop = true; s.start(0, Math.random() * 1.9); return s; };
+  const noise = (brown) => { const s = ctx.createBufferSource(); s.buffer = brown ? brownBuf : noiseBuf; s.loop = true; s.start(0, Math.random() * 7.5); return s; };
   const filt = (type, f, q) => { const b = ctx.createBiquadFilter(); b.type = type; b.frequency.value = f; if (q) b.Q.value = q; return b; };
   const gain = (v) => { const g = ctx.createGain(); g.gain.value = v; return g; };
   const lfo = (rate, depth, target, offset) => {
@@ -84,8 +97,8 @@ window.TW = window.TW || {};
   const makeBed = {
     shore() {
       const out = gain(0), g1 = gain(0.5), g2 = gain(0.1);
-      noise().connect(filt('lowpass', 520)).connect(g1); lfo(0.11, 0.4, g1.gain, 0.55);
-      noise().connect(filt('bandpass', 2400, 0.6)).connect(g2); lfo(0.11, 0.09, g2.gain, 0.1);
+      noise(true).connect(filt('lowpass', 600)).connect(g1); lfo(0.11, 0.4, g1.gain, 0.55);
+      noise().connect(filt('bandpass', 900, 0.7)).connect(g2); lfo(0.11, 0.05, g2.gain, 0.06);
       g1.connect(out); g2.connect(out); return out;
     },
     wind() {
@@ -98,20 +111,20 @@ window.TW = window.TW || {};
       lp.connect(out);
       const voices = [];
       for (let i = 0; i < 4; i++) {
-        const bp = filt('bandpass', rand(350, 1100), 5), g = gain(0.3);
+        const bp = filt('bandpass', rand(300, 800), 3), g = gain(0.25);
         noise().connect(bp).connect(g).connect(lp); voices.push({ bp, g });
       }
       out.voices = voices; return out;
     },
-    room() { const out = gain(0); noise().connect(filt('lowpass', 170)).connect(gain(0.9)).connect(out); return out; },
+    room() { const out = gain(0); noise(true).connect(filt('lowpass', 170)).connect(gain(0.9)).connect(out); return out; },
     storm() {
       const out = gain(0), howl = filt('bandpass', 700, 3);
-      noise().connect(filt('lowpass', 1100)).connect(gain(0.8)).connect(out);
-      noise().connect(filt('highpass', 4200)).connect(gain(0.3)).connect(out);
+      noise(true).connect(filt('lowpass', 900)).connect(gain(0.8)).connect(out);
+      noise().connect(filt('bandpass', 1600, 0.5)).connect(gain(0.1)).connect(out);
       noise().connect(howl).connect(gain(0.5)).connect(out); lfo(0.17, 300, howl.frequency, 650);
       return out;
     },
-    fire() { const out = gain(0); noise().connect(filt('lowpass', 260)).connect(gain(0.6)).connect(out); return out; },
+    fire() { const out = gain(0); noise(true).connect(filt('lowpass', 260)).connect(gain(0.6)).connect(out); return out; },
     birds() { return gain(0); },
     night() { return gain(0); },
   };
@@ -188,7 +201,7 @@ window.TW = window.TW || {};
     } else {
       const n = noise(), g = ctx.createGain();
       g.gain.setValueAtTime(v * 0.5, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.09);
-      n.connect(filt('highpass', 2200)).connect(g); g.connect(musicBus); n.stop(t + 0.1);
+      n.connect(filt('bandpass', 1400, 1.2)).connect(g); g.connect(musicBus); n.stop(t + 0.1);
     }
   }
   function startDrone(notes) {
@@ -274,7 +287,7 @@ window.TW = window.TW || {};
   function crackle(t, v) {
     const n = noise(), g = ctx.createGain();
     g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.03);
-    n.connect(filt('highpass', 1800)).connect(g); g.connect(ambBus); n.stop(t + 0.04);
+    n.connect(filt('bandpass', 1100, 1.5)).connect(g); g.connect(ambBus); n.stop(t + 0.04);
   }
   let last = 0;
   function tick() {
@@ -283,10 +296,10 @@ window.TW = window.TW || {};
     last = now;
     if ((levels.birds || 0) > 0 && Math.random() < dt * 0.45 * levels.birds) chirp(now + rand(0, 0.2));
     if ((levels.night || 0) > 0 && Math.random() < dt * 1.2 * levels.night) cricket(now + rand(0, 0.2));
-    if ((levels.fire || 0) > 0 && Math.random() < dt * 6 * levels.fire) crackle(now + rand(0, 0.1), 0.06);
+    if ((levels.fire || 0) > 0 && Math.random() < dt * 3 * levels.fire) crackle(now + rand(0, 0.1), 0.04);
     if ((levels.room || 0) > 0 && Math.random() < dt * 0.25 * levels.room) crackle(now + rand(0, 0.1), 0.02);
     if (beds.crowd && (levels.crowd || 0) > 0) beds.crowd.voices.forEach((v) => {
-      if (Math.random() < dt * 3) { v.bp.frequency.setTargetAtTime(rand(300, 1200), now, 0.08); v.g.gain.setTargetAtTime(rand(0.1, 0.45), now, 0.1); }
+      if (Math.random() < dt * 1.5) { v.bp.frequency.setTargetAtTime(rand(280, 850), now, 0.25); v.g.gain.setTargetAtTime(rand(0.12, 0.35), now, 0.3); }
     });
     if (mood) {
       while (nextBeat < now + 0.25) {
@@ -315,11 +328,11 @@ window.TW = window.TW || {};
   };
   const SFX = {
     tap(t) { pluck(79, t, 0.05, sfxBus); },
-    page(t) { burst(t, 3200, 2400, 0.06, 0.05); },
+    page() { /* silent: a sound on every tap became tiring */ },
     chime(t) { pluck(86, t, 0.07, sfxBus); pluck(93, t + 0.12, 0.05, sfxBus); },
-    whoosh(t) { burst(t, 350, 1400, 0.45, 0.06); },
-    dig(t) { for (let i = 0; i < 4; i++) burst(t + i * 0.18 + rand(0, 0.05), 700, 400, 0.12, 0.12, 'lowpass'); },
-    crumble(t) { burst(t, 900, 200, 0.9, 0.25, 'lowpass'); for (let i = 0; i < 6; i++) burst(t + rand(0, 0.6), 2400, 1200, 0.05, 0.08); },
+    whoosh(t) { burst(t, 260, 700, 0.5, 0.035, 'lowpass'); },
+    dig(t) { for (let i = 0; i < 4; i++) burst(t + i * 0.18 + rand(0, 0.05), 600, 350, 0.12, 0.1, 'lowpass'); },
+    crumble(t) { burst(t, 800, 200, 0.9, 0.22, 'lowpass'); for (let i = 0; i < 6; i++) burst(t + rand(0, 0.6), 1200, 700, 0.05, 0.05); },
     crash(t) {
       const o = ctx.createOscillator(), g = ctx.createGain();
       o.frequency.setValueAtTime(140, t); o.frequency.exponentialRampToValueAtTime(50, t + 0.2);
@@ -333,9 +346,9 @@ window.TW = window.TW || {};
         g.gain.setValueAtTime(0.03, s); g.gain.exponentialRampToValueAtTime(0.0001, s + 0.12); o.connect(g); g.connect(sfxBus); o.start(s); o.stop(s + 0.13);
       }
     },
-    flutter(t) { for (let i = 0; i < 14; i++) burst(t + i * 0.045, 1500, 1200, 0.035, 0.07); },
-    splash(t) { burst(t, 1400, 260, 0.8, 0.3); },
-    thunder(t) { burst(t, 3000, 800, 0.15, 0.22, 'highpass'); burst(t + 0.05, 220, 60, 2.6, 0.6, 'lowpass'); },
+    flutter(t) { for (let i = 0; i < 14; i++) burst(t + i * 0.045, 1000, 800, 0.035, 0.05); },
+    splash(t) { burst(t, 1000, 240, 0.8, 0.22); },
+    thunder(t) { burst(t, 1400, 600, 0.15, 0.16); burst(t + 0.05, 220, 60, 2.6, 0.6, 'lowpass'); },
     cheer(t) {
       const n = noise(), b = filt('bandpass', 900, 0.7), g = ctx.createGain();
       g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(0.22, t + 0.5); g.gain.linearRampToValueAtTime(0.0001, t + 2.4);
@@ -365,6 +378,17 @@ window.TW = window.TW || {};
     analyser.getFloatTimeDomainData(d);
     let s = 0; for (let i = 0; i < d.length; i++) s += d[i] * d[i];
     return Math.sqrt(s / d.length);
+  };
+
+  // test helper: energy above 3 kHz and total energy at the output
+  A._spec = function () {
+    if (!ctx) return [0, 0];
+    A.level();
+    if (!A._an) { A._an = ctx.createAnalyser(); A._an.fftSize = 4096; master.connect(A._an); }
+    const f = new Float32Array(A._an.frequencyBinCount); A._an.getFloatFrequencyData(f);
+    const hz = ctx.sampleRate / A._an.fftSize; let hi = 0, all = 0;
+    for (let i = 1; i < f.length; i++) { const p = Math.pow(10, f[i] / 10); all += p; if (i * hz > 3000) hi += p; }
+    return [hi, all];
   };
 
   TW.Audio = A;

@@ -177,7 +177,8 @@ window.TW = window.TW || {};
     det.appendChild(dl);
     if (era.id === 'galilee' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era II, The Road to Jerusalem, comes next.'));
     if (era.id === 'passion' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era III, The Jerusalem Church, comes next.'));
-    if (era.id === 'church') det.appendChild(el('p', 'era-done', 'Still being built: The Seven and Stephen.'));
+    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: Peter and Cornelius, Antioch, and Paul’s journeys.'));
+    if (era.id === 'church' && game.save.completed.seven) det.appendChild(el('p', 'era-done', 'Service is open: look for people who need you on the Jerusalem map.'));
     const ol = el('ol', 'episodes');
     const next = nextEpisode();
     era.episodes.forEach((raw) => {
@@ -343,6 +344,27 @@ window.TW = window.TW || {};
     } else if (arrived) {
       act.appendChild(el('p', 'sheet-note', pl.kind === 'locked' ? 'This story comes in a later episode.' : 'You have arrived.'));
     }
+    const svl = serviceAt(game.region, pl.id).filter(sOpen);
+    if (svl.length) {
+      const box = el('div', 'sheet-episodes sheet-testimonies');
+      box.appendChild(el('p', 'sheet-kind', 'People who need you'));
+      svl.forEach((k) => {
+        const V = D.service[k];
+        const row = el('div', 'ep-row');
+        const t = el('div', 'ep-text');
+        t.appendChild(el('span', 'ep-title', V.title));
+        t.appendChild(el('span', 'ep-ref', game.save.served[k] ? 'served' : 'waiting'));
+        row.appendChild(t);
+        if (here) {
+          const b = el('button', 'btn small' + (game.save.served[k] ? '' : ' primary'), game.save.served[k] ? 'Again' : 'Go');
+          b.addEventListener('click', () => game.enterService(k));
+          row.appendChild(b);
+        }
+        box.appendChild(row);
+      });
+      act.appendChild(box);
+      if (!here && !act.querySelector('.btn')) act.appendChild(travelBtn(pl, true));
+    }
     const tl = testimoniesAt(game.region, pl.id);
     if (tl.length) {
       const box = el('div', 'sheet-episodes sheet-testimonies');
@@ -382,10 +404,25 @@ window.TW = window.TW || {};
     return T.region === region && T.place === place;
   });
   const tOpen = (k) => { const T = D.testimonies[k]; return !T.after || !!game.save.completed[T.after]; };
+  const serviceAt = (region, place) => Object.keys(D.service || {}).filter((k) => D.service[k].region === region && D.service[k].place === place);
+  const sOpen = (k) => !!game.save.completed[D.service[k].after];
   game.badge = (region, pl) => {
     const list = testimoniesAt(region, pl.id).filter(tOpen);
-    if (!list.length) return null;
-    return list.some((k) => !game.save.heard[k]) ? 'new' : 'heard';
+    const sv = serviceAt(region, pl.id).filter(sOpen);
+    if (!list.length && !sv.length) return null;
+    return list.some((k) => !game.save.heard[k]) || sv.some((k) => !game.save.served[k]) ? 'new' : 'heard';
+  };
+  game.serve = (id, details) => {
+    game.save.served[id] = details;
+    game.observe('s:' + id, 'log', D.service[id].log, false, true);
+    persist();
+  };
+  game.enterService = function (id) {
+    game.show('scene');
+    game.current = 's:' + id;
+    $('#scene-title').textContent = 'Service: ' + D.service[id].title;
+    SC.init(sceneEls); SC.begin(); SC.start();
+    TW.Service.run(game, id);
   };
   game.hear = (id, n) => { game.save.heard[id] = Math.max(game.save.heard[id] || 0, n || 1); persist(); };
   game.enterTestimony = function (id) {
@@ -398,7 +435,7 @@ window.TW = window.TW || {};
     SC.start();
     TW.Testimony.run(game, id);
   };
-  const epTitle = (k) => (k.startsWith('t:') ? 'Testimony: ' + D.testimonies[k.slice(2)].title : D.episodes[k].title);
+  const epTitle = (k) => (k.startsWith('t:') ? 'Testimony: ' + D.testimonies[k.slice(2)].title : k.startsWith('s:') ? 'Service: ' + D.service[k.slice(2)].title : D.episodes[k].title);
 
   // ---------- episodes ----------
   const sceneEls = {
@@ -465,13 +502,24 @@ window.TW = window.TW || {};
     body.innerHTML = '';
     const s = game.save;
     if (tab === 'obs') {
-      const eps = D.eraOrder.filter((id) => (s.obs[id] || []).length).concat(Object.keys(s.obs).filter((k) => k.startsWith('t:') && s.obs[k].length));
+      const eps = D.eraOrder.filter((id) => (s.obs[id] || []).length).concat(Object.keys(s.obs).filter((k) => (k.startsWith('t:') || k.startsWith('s:')) && s.obs[k].length));
       if (!eps.length) { body.appendChild(el('p', 'empty', 'Nothing written yet. In each place, tap people and things to note what you see.')); return; }
       eps.forEach((id) => {
         body.appendChild(el('h3', '', epTitle(id)));
         const ul = el('ul', 'notes');
         s.obs[id].forEach((o) => ul.appendChild(el('li', '', o.text)));
         body.appendChild(ul);
+      });
+    } else if (tab === 'service') {
+      const all = Object.keys(D.service || {});
+      const done = all.filter((k) => s.served[k]);
+      if (!done.length) { body.appendChild(el('p', 'empty', game.save.completed.seven ? 'No one served yet. Look for people who need you on the Jerusalem map.' : 'Service opens in Era III, after the Seven are chosen.')); return; }
+      body.appendChild(el('p', 'empty', 'Served ' + done.length + ' of ' + all.length + '. You cannot make God heal. You can listen, care, and pray.'));
+      done.forEach((k) => {
+        const V = D.service[k], r = s.served[k];
+        body.appendChild(el('h3', '', V.title));
+        body.appendChild(el('p', '', V.log));
+        body.appendChild(el('p', 'heart', 'You chose to: ' + [r.listen, r.care, r.pray].map((x) => x.replace(/\.$/, '').toLowerCase()).join('; ') + '.'));
       });
     } else if (tab === 'testimonies') {
       const all = Object.keys(D.testimonies);
@@ -613,7 +661,10 @@ window.TW = window.TW || {};
     }
     if (fresh && E.final) {
       const d = el('div', 'reveal-note');
-      if (E.final === 'passion') {
+      if (E.final === 'church') {
+        d.appendChild(el('p', 'plabel', 'The Jerusalem Church'));
+        d.appendChild(el('p', '', 'You were baptized, served the widows and the sick, and watched Stephen die. The believers are scattering. Era IV, The Way Spreads, follows them into Samaria and out to the nations, and a light on the Damascus road is coming.'));
+      } else if (E.final === 'passion') {
         d.appendChild(el('p', 'plabel', 'The Road to Jerusalem'));
         d.appendChild(el('p', '', 'You watched him die, helped to bury him, stood at an empty tomb, and heard from those who saw him alive. Era III, The Jerusalem Church, begins at Pentecost.'));
       } else {

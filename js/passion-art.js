@@ -24,6 +24,8 @@ window.TW = window.TW || {};
     guard: { skin: '#b07a50', hair: '#2a1a12', beard: '#2a1a12', tunic: '#6a6a52', belt: '#3a2a1a', mantle: '#4a4a3a' },
     barnabas: { skin: '#b07a50', hair: '#3a2416', beard: '#3a2416', tunic: '#cdbb94', mantle: '#3d6a6a' },
     lame: { skin: '#9a6440', hair: '#2a1a12', beard: '#2a1a12', tunic: '#8a7a5a' },
+    stephen: { skin: '#b07a50', hair: '#3a2416', beard: '#3a2416', tunic: '#d8ccae', mantle: '#3d5a7a' },
+    saul: { skin: '#b07a50', hair: '#2a1a12', beard: '#2a1a12', tunic: '#e8e0cc', mantle: '#5a4a3a', fringe: '#9cc0e0', phylactery: true },
   };
   const cache = {};
   K.who = (name) => cache[name] || (cache[name] = S.person(K.looks[name]));

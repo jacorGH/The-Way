@@ -55,19 +55,18 @@ window.TW = window.TW || {};
         'Pentecost, the apostles’ teaching in the Temple courts, the sharing of goods, and the death of Stephen. Your scribe is still a scribe, and still sits in the council, but he is no longer only watching. Healing comes through prayer in Jesus’ name, never by technique (Acts 3:6, 19:13–16).',
       world: [['Prefect of Judea', 'Pontius Pilate'], ['High priest', 'Caiaphas, with Annas (Acts 4:6)']],
       episodes: [
-        'pentecost', 'gate', 'trial',
-        { title: 'The Seven', ref: 'Acts 6:1–7' },
-        { title: 'Stephen', ref: 'Acts 6:8–8:4' },
+        'pentecost', 'gate', 'trial', 'seven', 'stephen',
       ],
     },
     {
       id: 'spread', num: 'IV', title: 'The Spreading Word', dates: 'c. AD 36–62',
-      span: [36, 62], view: 'A believer sent out',
+      span: [36, 62], view: 'A believer sent out', open: true,
       summary:
-        'Samaria, Antioch, the council at Jerusalem, and Paul’s journeys across the Mediterranean. The overworld widens from Galilee to the empire.',
-      world: [['Emperors', 'Caligula, Claudius, Nero']],
+        'Scattered from Jerusalem, the believers carry the word into Samaria, down the desert road, and north to Damascus, where the persecutor meets the one he persecuted. Then Antioch, the council at Jerusalem, and Paul’s journeys across the Mediterranean.',
+      world: [['Emperors', 'Tiberius, Caligula, Claudius, Nero'], ['Prefect of Judea', 'Pontius Pilate, then Marcellus (from AD 36)']],
       episodes: [
-        { title: 'Samaria', ref: 'Acts 8' },
+        'samaria', 'desert', 'damascus',
+        { title: 'Peter and Cornelius', ref: 'Acts 10' },
         { title: 'Antioch', ref: 'Acts 11:19–30' },
         { title: 'The Council', ref: 'Acts 15' },
         { title: 'Ephesus', ref: 'Acts 19' },
@@ -471,6 +470,133 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder.push('forty', 'pentecost', 'gate', 'trial');
+  Object.assign(D.episodes, {
+    seven: {
+      num: 'XVI', title: 'The Seven', ref: 'Acts 6:1–7', passage: 'acts6', from: '6:1', to: '6:7', place: 'upperroom', region: 'jerusalem', era: 'church',
+      scene: 'The daily distribution, Acts 6:1–7', parallels: 'told only in Acts',
+      question: { id: 'serve', text: 'What does it mean to serve tables and the word?', ref: 'Acts 6:2–4' },
+      hearts: ['You gave out bread by the order of the line, as you were told.', 'You asked each widow about her household and gave by need.', 'You went to the back of the line first, where the Greek-speaking widows stood.'],
+      conclusions: [
+        'The widows who spoke Greek were being missed. Now seven men will see that no one is.',
+        'Stephen asked me to keep the lists. A scribe’s hand has found new work.',
+        'Even priests are believing now. The word keeps growing.',
+      ],
+      notes: [
+        ['Hellenists and Hebrews (6:1)', 'Both groups were Jewish believers. The Hellenists spoke Greek and often came from the cities of the Dispersion; the Hebrews spoke Aramaic and were mostly from the land itself.'],
+        ['The daily service (6:1)', 'Widows without family had no income. The believers shared food daily so that no one lacked (4:34).'],
+        ['The Seven (6:5)', 'All seven names are Greek. The church answered a complaint from Greek speakers by putting Greek speakers in charge.'],
+        ['Laying on of hands (6:6)', 'A sign of blessing and of handing on a task, as Moses did for Joshua (Numbers 27:18–23).'],
+        ['A great company of the priests (6:7)', 'Even members of the Temple priesthood were becoming believers.'],
+      ],
+      reflect: [
+        'Who might be overlooked in your own community, and why?',
+        'The apostles did not solve the problem themselves. Why was that wise?',
+        'Is serving tables less spiritual than prayer and preaching?',
+      ],
+    },
+    stephen: {
+      num: 'XVII', title: 'Stephen', ref: 'Acts 6:8–8:4', passage: 'acts6', passages: [['acts6', '6:8', '6:15'], ['acts7', '7:1', '8:4']], place: 'freedmen', region: 'jerusalem', era: 'church',
+      scene: 'Jerusalem, Acts 6–8', parallels: 'told only in Acts',
+      question: { id: 'saul', text: 'Who is the young man named Saul?', ref: 'Acts 7:58' },
+      hearts: ['You stood far off with the believers, praying.', 'You stood near the young man guarding the cloaks, and saw his face.', 'You could not watch.'],
+      conclusions: [
+        'Stephen saw the heavens opened. His last words were a prayer for the men who killed him.',
+        'He died as Jesus died: “Receive my spirit,” and “Don’t hold this sin against them.”',
+        'A young man named Saul watched it all and approved. The believers are scattering.',
+      ],
+      final: 'church',
+      notes: [
+        ['The Freedmen (6:9)', 'Descendants of Jews taken to Rome as slaves and later freed. A first-century Greek inscription found in Jerusalem in 1913 records a synagogue built for Jews from abroad; some connect it with this one.'],
+        ['Cilicia (6:9)', 'The province whose chief city was Tarsus. Acts later tells us Saul was from Tarsus in Cilicia (21:39), though it does not say he was in this debate.'],
+        ['Stephen’s speech (7:2–53)', 'The longest speech in Acts: a retelling of Israel’s story showing how God was with his people outside the land and outside any building, and how the prophets were rejected.'],
+        ['The Son of Man standing (7:56)', 'Elsewhere he is pictured seated at God’s right hand. Here he stands, as if to welcome his witness.'],
+        ['Echoes of the cross (7:59–60)', 'Stephen commits his spirit to Jesus and prays for his killers, as Jesus did (Luke 23:34, 46).'],
+        ['Scattered (8:1–4)', 'Persecution did what the believers had not yet done: it sent them out into Judea and Samaria, as Jesus had said (1:8).'],
+      ],
+      reflect: [
+        'Stephen was chosen to serve tables. How did that become the work of a witness?',
+        'What did Stephen see that his judges could not?',
+        'How could a man pray for the people killing him?',
+      ],
+    },
+  });
+  D.eraOrder.push('seven', 'stephen');
+  Object.assign(D.episodes, {
+    samaria: {
+      num: 'XVIII', title: 'Philip in Samaria', ref: 'Acts 8:4–25', passage: 'acts8', from: '8:5', to: '8:25', place: 'samaria', region: 'land', era: 'spread',
+      scene: 'The city of Samaria, Acts 8', parallels: 'told only in Acts',
+      question: { id: 'sorcery', text: 'What is the difference between power and the gift of God?', ref: 'Acts 8:20' },
+      hearts: ['You ate at a Samaritan table for the first time in your life.', 'You hesitated at the door, then went in.', 'You let the woman from Sychar lead you in by the sleeve.'],
+      conclusions: [
+        'Samaritans are being baptized in the name of Jesus. Jews and Samaritans eat at one table.',
+        'Simon the sorcerer tried to buy the gift of God. Peter told him his heart was not right.',
+        'Persecution scattered us, and the word went with us, as he said: “Judea and Samaria.”',
+      ],
+      notes: [
+        ['Samaria (8:5)', 'Jews and Samaritans shared the five books of Moses but had been bitterly divided for centuries over where God should be worshiped (John 4:20).'],
+        ['Philip (8:5)', 'Not the apostle, but one of the Seven chosen to serve tables (6:5). Later called “Philip the evangelist” (21:8).'],
+        ['Simon (8:9–24)', 'Later Christian writers made him the father of heresies, but Acts says only that he practiced sorcery, believed, was baptized, and tried to buy spiritual power. The word “simony,” the buying of church office, comes from his name.'],
+        ['Peter and John (8:14–17)', 'The apostles came from Jerusalem, so that the Samaritan believers were joined to the same church, not a rival one.'],
+        ['John in Samaria', 'The same John once wanted to call down fire on a Samaritan village (Luke 9:54). Now he prays for Samaritans to receive the Spirit.'],
+      ],
+      reflect: [
+        'What walls did the gospel have to cross to reach Samaria?',
+        'Simon believed and was baptized, yet his heart was not right. How can both be true?',
+        'Who are the “Samaritans” you were raised to avoid?',
+      ],
+    },
+    desert: {
+      num: 'XIX', title: 'The Desert Road', ref: 'Acts 8:26–40', passage: 'acts8', from: '8:26', to: '8:40', place: 'desertroad', region: 'land', era: 'spread',
+      scene: 'The road from Jerusalem to Gaza, Acts 8', parallels: 'told only in Acts',
+      question: { id: 'isaiah', text: 'Who is the prophet talking about?', ref: 'Acts 8:34' },
+      hearts: ['“Nothing,” you said, before Philip could.', 'You thought of the Law that kept men like him from the assembly, and said nothing.', 'You remembered Isaiah’s promise to the eunuch who holds fast to the covenant.'],
+      conclusions: [
+        'An official of the queen of Ethiopia was baptized in a desert pool, and went on his way rejoicing.',
+        '“He was led as a sheep to the slaughter.” I watched it happen, and never knew Isaiah had written it.',
+        'Philip vanished, and the eunuch did not need him any more. He had what he came for.',
+      ],
+      notes: [
+        ['Ethiopia and the Candace (8:27)', 'Greeks called the kingdom of Kush, on the Nile south of Egypt, “Ethiopia.” Its queen mother bore the title Kandake.'],
+        ['A eunuch at the Temple', 'The Law kept eunuchs from the assembly of the Lord (Deuteronomy 23:1). Isaiah promised that eunuchs who hold fast to God’s covenant would have a place in his house and a name better than sons and daughters (Isaiah 56:3–5).'],
+        ['Isaiah 53 (8:32–33)', 'He was reading the Greek translation of Isaiah, which is why the wording differs slightly from Hebrew-based translations.'],
+        ['Verse 37', 'The confession “I believe that Jesus Christ is the Son of God” appears only in later manuscripts. The WEB, like most modern translations, leaves it in a footnote.'],
+        ['Azotus (8:40)', 'Old Ashdod, one of the five Philistine cities, on the coastal road north toward Caesarea, where Philip later lived (21:8).'],
+      ],
+      reflect: [
+        'The eunuch had gone all the way to Jerusalem to worship. What do you think he found there, and what did he find on the road?',
+        'Philip began “from this Scripture.” Where would you begin?',
+        'Why might Luke want this story right before Saul’s?',
+      ],
+    },
+    damascus: {
+      num: 'XX', title: 'The Road to Damascus', ref: 'Acts 9:1–31', passage: 'acts9', passages: [['acts9', '9:1', '9:9'], ['acts9b', '9:10', '9:22'], ['acts9', '9:17', '9:27']], place: 'damascus', region: 'land', era: 'spread',
+      scene: 'Damascus, Acts 9', parallels: 'Acts 22:3–16; 26:9–18; Galatians 1:13–17',
+      question: { id: 'chosen', text: 'How can the man who guarded the cloaks be a chosen vessel?', ref: 'Acts 9:15' },
+      hearts: ['You told Ananias you were afraid too.', 'You went with Ananias without a word.', 'You prayed for Saul, not knowing he was praying too.'],
+      conclusions: [
+        'Saul of Tarsus is blind and praying on Straight Street. Ananias called him “Brother.”',
+        '“I am Jesus, whom you are persecuting.” To persecute the believers was to persecute him.',
+        'The man who guarded the cloaks at Stephen’s death is preaching that Jesus is the Son of God.',
+      ],
+      answers: { saul: ['Saul of Tarsus, a Pharisee, who met the risen Jesus on the road and became his chosen vessel.', 'Acts 9:15'] },
+      notes: [
+        ['The Way (9:2)', 'One of the earliest names for the believers: those who followed “the Way” (also 19:9, 22:4, 24:14).'],
+        ['Damascus', 'An ancient city about 220 km north of Jerusalem with a large Jewish community. A long colonnaded Roman street, the “Straight Street,” still crosses the old city.'],
+        ['Three tellings', 'Luke tells Saul’s conversion three times (Acts 9, 22, 26). Paul himself mentions it in Galatians 1:15–17.'],
+        ['“Why do you persecute me?” (9:4)', 'Jesus does not say “my followers.” He so identifies with his people that what is done to them is done to him.'],
+        ['Ananias (9:10–17)', 'An ordinary disciple, known only from this story. His first words to his enemy were “Brother Saul.”'],
+        ['Barnabas (9:26–27)', 'When the Jerusalem believers were afraid of Saul, the Son of Encouragement vouched for him.'],
+      ],
+      reflect: [
+        'Ananias was afraid, and said so. What did he do with his fear?',
+        'What did Saul lose on the road, and what did he gain?',
+        'Is there someone you have written off as beyond change?',
+      ],
+    },
+  });
+  D.eraOrder.push('samaria', 'desert', 'damascus');
+
+
 
 
 
@@ -611,7 +737,7 @@ window.TW = window.TW || {};
       text: 'An ancient harbor on the coast. Peter will raise Tabitha here and receive a vision that sends him to a Gentile’s house.' },
     { id: 'caesarea', name: 'Caesarea', alt: 'Caesarea Maritima', lon: 34.890, lat: 32.500, kind: 'history', reveal: 'levi', label: 'l', ref: 'Acts 10',
       text: 'Herod the Great’s harbor city and the seat of the Roman prefects. A stone found here in 1961 bears Pontius Pilate’s name. Taxes from the province flowed through Roman officials based here.' },
-    { id: 'samaria', name: 'Sebaste', alt: 'The city of Samaria', lon: 35.192, lat: 32.276, kind: 'history', reveal: 'levi', label: 'l', ref: 'Acts 8:5',
+    { id: 'samaria', name: 'Sebaste', alt: 'The city of Samaria', lon: 35.192, lat: 32.276, kind: 'episode', episodes: ['samaria'], reveal: 'levi', label: 'l',
       text: 'The old capital of the northern kingdom, rebuilt by Herod the Great and renamed for Augustus (Sebastos in Greek).' },
     { id: 'sychar', name: 'Sychar', alt: 'Jacob’s well, below Mount Gerizim', lon: 35.285, lat: 32.213, kind: 'locked', reveal: 'levi', label: 'r', ref: 'John 4:1–42',
       text: 'Samaritans worshiped on Mount Gerizim rather than in Jerusalem. Many Galileans traveling to Jerusalem went around Samaria by the Jordan valley.' },
@@ -637,6 +763,12 @@ window.TW = window.TW || {};
       text: 'Philip the tetrarch’s capital, beside a spring and a cave shrine to the god Pan. Here Peter will say, “You are the Christ.”' },
     { id: 'hermon', name: 'Mount Hermon', alt: '2,814 m', lon: 35.857, lat: 33.416, kind: 'history', reveal: 'capernaum', label: 'r',
       text: 'The highest mountain of the region, snow-capped much of the year. Its snowmelt feeds the springs of the Jordan.' },
+    { id: 'desertroad', name: 'The desert road', short: 'Desert road', alt: 'From Jerusalem down to Gaza', lon: 34.800, lat: 31.600, kind: 'episode', episodes: ['desert'], reveal: 'stephen', label: 'l',
+      text: 'The road that drops from the Judean hills through dry country to Gaza and the coastal road to Egypt. Acts 8:26 calls it “a desert.”' },
+    { id: 'azotus', name: 'Azotus', alt: 'Ashdod', lon: 34.648, lat: 31.800, kind: 'history', reveal: 'stephen', label: 'l', ref: 'Acts 8:40',
+      text: 'One of the old Philistine cities on the coast. Philip was found here after the desert road, and preached his way north to Caesarea.' },
+    { id: 'damascus', name: 'Damascus', alt: 'Capital of an ancient kingdom, 220 km north of Jerusalem', lon: 36.292, lat: 33.513, kind: 'episode', episodes: ['damascus'], reveal: 'stephen', label: 'l',
+      text: 'An oasis city at the foot of the Anti-Lebanon, with many synagogues. Saul came here with letters from the high priest to arrest anyone “of the Way.”' },
     { id: 'capernaum', name: 'Capernaum', alt: 'Your base in Galilee', lon: 35.572, lat: 32.896, kind: 'zoom', zoom: 'galilee', reveal: 'start', label: 'r',
       text: 'Open the Galilee map to see the villages around the lake up close.' },
     { id: 'nazareth', name: 'Nazareth', alt: 'Lower Galilee', lon: 35.297, lat: 32.702, kind: 'zoom', zoom: 'galilee', reveal: 'start', label: 'l',
@@ -651,6 +783,7 @@ window.TW = window.TW || {};
     s2: { lon: 34.830, lat: 32.210 }, s3: { lon: 34.880, lat: 32.360 }, n1: { lon: 35.120, lat: 33.090 }, n2: { lon: 35.230, lat: 33.170 },
     n3: { lon: 35.280, lat: 33.350 }, n4: { lon: 35.380, lat: 33.470 }, p1: { lon: 35.810, lat: 31.800 }, d1: { lon: 35.615, lat: 32.450 },
     t1: { lon: 35.620, lat: 33.050 }, s1: { lon: 34.950, lat: 31.700 },
+    dm1: { lon: 35.950, lat: 33.330 }, dm2: { lon: 36.120, lat: 33.430 },
   };
   landPlaces.forEach((p) => { landNodes[p.id] = { lon: p.lon, lat: p.lat, name: p.name }; });
   const landEdges = [
@@ -664,6 +797,8 @@ window.TW = window.TW || {};
     ['nazareth', 'tiberias'], ['capernaum', 't1'], ['t1', 'caesphil'],
     ['j3', 'gadara'], ['gadara', 'd1'], ['d1', 'gerasa'], ['scythopolis', 'd1'], ['gaza', 's1'], ['s1', 'emmaus'],
     ['capernaum', 'hippos2', 'boat'],
+    ['s1', 'desertroad'], ['desertroad', 'gaza'], ['gaza', 'azotus'], ['azotus', 'joppa'],
+    ['caesphil', 'dm1'], ['dm1', 'dm2'], ['dm2', 'damascus'],
   ];
   const landLabels = [
     { text: 'Galilee', lon: 35.33, lat: 32.86, style: 'region' },
@@ -705,10 +840,12 @@ window.TW = window.TW || {};
       text: 'A pool fed by Hezekiah’s tunnel. The steps of the first-century pool were uncovered in 2004.' },
     { id: 'palace', name: 'Herod’s Palace', short: 'Herod’s Palace', alt: 'Likely the Praetorium', lon: 35.2284, lat: 31.7762, kind: 'locked', label: 'l', ref: 'Mark 15:16',
       text: 'Herod the Great’s palace and towers on the western hill. Many historians think Pilate stayed and judged here when he came up for the feasts.' },
-    { id: 'upperroom', name: 'The Upper Room', alt: 'Traditional site on Mount Zion', lon: 35.2288, lat: 31.7714, kind: 'episode', episodes: ['forty'], label: 'l',
+    { id: 'upperroom', name: 'The Upper Room', alt: 'Traditional site on Mount Zion', lon: 35.2288, lat: 31.7714, kind: 'episode', episodes: ['forty', 'seven'], label: 'l',
       text: 'Mark says the disciples found “a large upper room furnished and ready.” Tradition places it on Mount Zion; the vaulted hall shown there today was built by Crusaders in the twelfth century.' },
     { id: 'highpriest', name: 'House of the High Priest', short: 'High priest’s house', alt: 'The Upper City', lon: 35.2314, lat: 31.7733, kind: 'episode', episodes: ['council'], label: 'r',
       text: 'The priestly families lived in fine houses on the western hill. Its exact location is not known.' },
+    { id: 'freedmen', name: 'Synagogue of the Freedmen', short: 'Freedmen’s synagogue', alt: 'Site unknown; shown in the City of David', lon: 35.2358, lat: 31.7742, kind: 'episode', episodes: ['stephen'], label: 'r',
+      text: 'Where Stephen debated Jews from Cyrene, Alexandria, Cilicia and Asia. Its location is unknown; a synagogue inscription found here in the City of David in 1913 may belong to it.' },
     { id: 'golgotha', name: 'Golgotha', alt: '“The place of a skull,” outside the wall', lon: 35.2296, lat: 31.7786, kind: 'episode', episodes: ['cross', 'burial', 'tomb'], label: 'l',
       text: 'An old quarry just outside the city wall of the time. The Church of the Holy Sepulchre has marked this site since the fourth century, covering both Golgotha and a rock-cut tomb.' },
   ];
@@ -719,7 +856,7 @@ window.TW = window.TW || {};
   jerPlaces.forEach((p) => { jerNodes[p.id] = { lon: p.lon, lat: p.lat, name: p.name }; });
   const jerEdges = [
     ['bethany', 'bethphage'], ['bethphage', 'summit'], ['summit', 'olivet'], ['olivet', 'gethsemane'], ['gethsemane', 'k1'], ['k1', 'eg'], ['eg', 'temple'],
-    ['temple', 't2'], ['t2', 'l1'], ['l1', 'siloam'], ['t2', 'u1'], ['u1', 'palace'], ['u1', 'highpriest'], ['u1', 'upperroom'], ['palace', 'w1'], ['w1', 'golgotha'],
+    ['temple', 't2'], ['t2', 'freedmen'], ['freedmen', 'l1'], ['t2', 'l1'], ['l1', 'siloam'], ['t2', 'u1'], ['u1', 'palace'], ['u1', 'highpriest'], ['u1', 'upperroom'], ['palace', 'w1'], ['w1', 'golgotha'],
     ['temple', 'antonia'], ['antonia', 'nb'], ['nb', 'bethesda'],
   ];
   const jerLabels = [

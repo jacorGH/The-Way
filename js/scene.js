@@ -233,7 +233,7 @@ window.TW = window.TW || {};
         clearInterval(typing); typing = null;
         el.text.textContent = full;
         el.next.hidden = false;
-        pending = () => { pending = null; TW.Audio && TW.Audio.sfx('page'); res(); };
+        pending = () => { pending = null; res(); };
       };
       if (U.reducedMotion()) { finish(); return; }
       let i = 0;

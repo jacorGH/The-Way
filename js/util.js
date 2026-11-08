@@ -71,6 +71,7 @@ window.TW = window.TW || {};
     reports: {},
     heart: {},
     heard: {},
+    served: {},
     mapNode: 'jv',
     landNode: 'capernaum',
     jerNode: 'u1',

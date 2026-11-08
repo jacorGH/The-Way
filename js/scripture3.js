@@ -216,4 +216,81 @@ window.TW = window.TW || {};
     ['9:26', 'When Saul had come to Jerusalem, he tried to join himself to the disciples; but they were all afraid of him, not believing that he was a disciple.'],
     ['9:27', 'But Barnabas took him, and brought him to the apostles, and declared to them how he had seen the Lord in the way, and that he had spoken to him, and how at Damascus he had preached boldly in the name of Jesus.'],
   ]);
+  add('john14', 'John', [
+    ['14:1', '“Don’t let your heart be troubled. Believe in God. Believe also in me.'],
+    ['14:2', 'In my Father’s house are many homes. If it weren’t so, I would have told you. I am going to prepare a place for you.'],
+    ['14:3', 'If I go and prepare a place for you, I will come again, and will receive you to myself; that where I am, you may be there also.'],
+    ['14:27', 'Peace I leave with you. My peace I give to you; not as the world gives, give I to you. Don’t let your heart be troubled, neither let it be fearful.'],
+  ]);
+  add('mark9b', 'Mark', [
+    ['9:23', 'Jesus said to him, “If you can believe, all things are possible to him who believes.”'],
+    ['9:24', 'Immediately the father of the child cried out with tears, “I believe. Help my unbelief!”'],
+    ['9:29', 'He said to them, “This kind can come out by nothing, except by prayer and fasting.”'],
+  ]);
+  add('mark10c', 'Mark', [
+    ['10:14', 'But when Jesus saw it, he was moved with indignation, and said to them, “Allow the little children to come to me! Don’t forbid them, for the Kingdom of God belongs to such as these.'],
+    ['10:16', 'He took them in his arms, and blessed them, laying his hands on them.'],
+  ]);
+  add('mark1c', 'Mark', [
+    ['1:41', 'Being moved with compassion, he stretched out his hand, and touched him, and said to him, “I want to. Be made clean.”'],
+  ]);
+  add('acts8', 'Acts', [
+    ['8:5', 'Philip went down to the city of Samaria, and proclaimed to them the Christ.'],
+    ['8:6', 'The multitudes listened with one accord to the things that were spoken by Philip, when they heard and saw the signs which he did.'],
+    ['8:7', 'For unclean spirits came out of many of those who had them. They came out, crying with a loud voice. Many who had been paralyzed and lame were healed.'],
+    ['8:8', 'There was great joy in that city.'],
+    ['8:9', 'But there was a certain man, Simon by name, who used to practice sorcery in the city, and amazed the people of Samaria, making himself out to be some great one,'],
+    ['8:10', 'to whom they all listened, from the least to the greatest, saying, “This man is that great power of God.”'],
+    ['8:11', 'They listened to him, because for a long time he had amazed them with his sorceries.'],
+    ['8:12', 'But when they believed Philip preaching good news concerning the Kingdom of God and the name of Jesus Christ, they were baptized, both men and women.'],
+    ['8:13', 'Simon himself also believed. Being baptized, he continued with Philip. Seeing signs and great miracles occurring, he was amazed.'],
+    ['8:14', 'Now when the apostles who were at Jerusalem heard that Samaria had received the word of God, they sent Peter and John to them,'],
+    ['8:15', 'who, when they had come down, prayed for them, that they might receive the Holy Spirit;'],
+    ['8:16', 'for as yet he had fallen on none of them. They had only been baptized in the name of Christ Jesus.'],
+    ['8:17', 'Then they laid their hands on them, and they received the Holy Spirit.'],
+    ['8:18', 'Now when Simon saw that the Holy Spirit was given through the laying on of the apostles’ hands, he offered them money,'],
+    ['8:19', 'saying, “Give me also this power, that whoever I lay my hands on may receive the Holy Spirit.”'],
+    ['8:20', 'But Peter said to him, “May your silver perish with you, because you thought you could obtain the gift of God with money!'],
+    ['8:21', 'You have neither part nor lot in this matter, for your heart isn’t right before God.'],
+    ['8:22', 'Repent therefore of this, your wickedness, and ask God if perhaps the thought of your heart may be forgiven you.'],
+    ['8:23', 'For I see that you are in the gall of bitterness and in the bondage of iniquity.”'],
+    ['8:24', 'Simon answered, “Pray for me to the Lord, that none of the things which you have spoken happen to me.”'],
+    ['8:25', 'They therefore, when they had testified and spoken the word of the Lord, returned to Jerusalem, and preached the Good News to many villages of the Samaritans.'],
+    ['8:26', 'But an angel of the Lord spoke to Philip, saying, “Arise, and go toward the south to the way that goes down from Jerusalem to Gaza. This is a desert.”'],
+    ['8:27', 'He arose and went; and behold, there was a man of Ethiopia, a eunuch of great authority under Candace, queen of the Ethiopians, who was over all her treasure, who had come to Jerusalem to worship.'],
+    ['8:28', 'He was returning and sitting in his chariot, and was reading the prophet Isaiah.'],
+    ['8:29', 'The Spirit said to Philip, “Go near, and join yourself to this chariot.”'],
+    ['8:30', 'Philip ran to him, and heard him reading Isaiah the prophet, and said, “Do you understand what you are reading?”'],
+    ['8:31', 'He said, “How can I, unless someone explains it to me?” He begged Philip to come up and sit with him.'],
+    ['8:32', 'Now the passage of the Scripture which he was reading was this, “He was led as a sheep to the slaughter. As a lamb before his shearer is silent, so he doesn’t open his mouth.'],
+    ['8:33', 'In his humiliation, his judgment was taken away. Who will declare His generation? For his life is taken from the earth.”'],
+    ['8:34', 'The eunuch answered Philip, “Who is the prophet talking about? About himself, or about someone else?”'],
+    ['8:35', 'Philip opened his mouth, and beginning from this Scripture, preached to him Jesus.'],
+    ['8:36', 'As they went on the way, they came to some water, and the eunuch said, “Behold, here is water. What is keeping me from being baptized?”'],
+    ['8:38', 'He commanded the chariot to stand still, and they both went down into the water, both Philip and the eunuch, and he baptized him.'],
+    ['8:39', 'When they came up out of the water, the Spirit of the Lord caught Philip away, and the eunuch didn’t see him any more, for he went on his way rejoicing.'],
+    ['8:40', 'But Philip was found at Azotus. Passing through, he preached the Good News to all the cities, until he came to Caesarea.'],
+  ]);
+  add('acts9b', 'Acts', [
+    ['9:10', 'Now there was a certain disciple at Damascus named Ananias. The Lord said to him in a vision, “Ananias!” He said, “Behold, it’s me, Lord.”'],
+    ['9:11', 'The Lord said to him, “Arise, and go to the street which is called Straight, and inquire in the house of Judah for one named Saul, a man of Tarsus. For behold, he is praying,'],
+    ['9:12', 'and in a vision he has seen a man named Ananias coming in, and laying his hands on him, that he might receive his sight.”'],
+    ['9:13', 'But Ananias answered, “Lord, I have heard from many about this man, how much evil he did to your saints at Jerusalem.'],
+    ['9:14', 'Here he has authority from the chief priests to bind all who call on your name.”'],
+    ['9:15', 'But the Lord said to him, “Go your way, for he is my chosen vessel to bear my name before the nations and kings, and the children of Israel.'],
+    ['9:16', 'For I will show him how many things he must suffer for my name’s sake.”'],
+    ['9:19', 'He took food and was strengthened. Saul stayed several days with the disciples who were at Damascus.'],
+    ['9:20', 'Immediately in the synagogues he proclaimed the Christ, that he is the Son of God.'],
+    ['9:21', 'All who heard him were amazed, and said, “Isn’t this he who in Jerusalem made havoc of those who called on this name? And he had come here intending to bring them bound before the chief priests!”'],
+    ['9:22', 'But Saul increased more in strength, and confounded the Jews who lived at Damascus, proving that this is the Christ.'],
+  ]);
+  add('acts22', 'Acts', [
+    ['22:6', 'It happened that, as I made my journey, and came close to Damascus, about noon, suddenly there shone from the sky a great light around me.'],
+    ['22:7', 'I fell to the ground, and heard a voice saying to me, ‘Saul, Saul, why are you persecuting me?’'],
+    ['22:8', 'I answered, ‘Who are you, Lord?’ He said to me, ‘I am Jesus of Nazareth, whom you persecute.’'],
+    ['22:9', '“Those who were with me indeed saw the light and were afraid, but they didn’t understand the voice of him who spoke to me.'],
+    ['22:10', 'I said, ‘What shall I do, Lord?’ The Lord said to me, ‘Arise, and go into Damascus. There you will be told about all things which are appointed for you to do.’'],
+    ['22:11', 'When I couldn’t see for the glory of that light, being led by the hand of those who were with me, I came into Damascus.'],
+    ['22:20', 'When the blood of Stephen, your witness, was shed, I also was standing by, and consenting to his death, and guarding the cloaks of those who killed him.’'],
+  ]);
 })(window.TW);
