@@ -79,6 +79,7 @@ window.TW = window.TW || {};
 
   function update(dt) {
     SC.t += dt;
+    if (SC.shakeT > 0) SC.shakeT -= dt;
     SC.ents.forEach((e) => {
       if (e.target) {
         const dx = e.target.x - e.x, dy = e.target.y - e.y;
@@ -130,8 +131,9 @@ window.TW = window.TW || {};
     return e.facing < 0 ? f.l : f.r;
   }
 
+  SC.shake = function (ms) { SC.shakeT = (ms || 800) / 1000; };
   function draw() {
-    const ctx = SC.px, cam = Math.round(SC.cam);
+    const ctx = SC.px, cam = Math.round(SC.cam + (SC.shakeT > 0 ? (Math.random() - 0.5) * 5 : 0));
     ctx.imageSmoothingEnabled = false;
     SC.stage.bg(ctx, SC.t, cam, SC);
     const list = SC.ents.filter((e) => e.visible).sort((a, b) => (a.z || a.y) - (b.z || b.y));
@@ -212,6 +214,7 @@ window.TW = window.TW || {};
     history: () => 'History',
     observe: () => 'Added to your scroll',
     goal: () => 'What to do',
+    answer: () => 'A question in your scroll is answered',
   };
   let pending = null, typing = null;
 

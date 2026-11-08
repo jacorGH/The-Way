@@ -632,6 +632,17 @@ window.TW = window.TW || {};
     goal2();
   };
 
+  // answer the open questions this episode resolves, one by one
+  async function answerAll(game, ep) {
+    const A = (TW.D.episodes[ep] || {}).answers || {};
+    for (const id of Object.keys(A)) {
+      const q = game.answer(id, A[id][0], A[id][1]);
+      if (!q) continue;
+      TW.Audio && TW.Audio.sfx('chime');
+      await SC.say({ kind: 'answer', text: '“' + q.text + '” (' + q.ref + ')\n\n' + A[id][0] + ' (' + A[id][1] + ')' });
+    }
+  }
+
   // end of an episode: one button leads to the report
   function finish(game, ep, text) {
     SC.prompt(text || 'Find a quiet place and write down what you saw.', 'Write your report', 'script').then(() => game.openReport(ep));
@@ -664,7 +675,7 @@ window.TW = window.TW || {};
         if (U.hash((x + Math.floor(cam * 2)) >> 2, y, Math.floor(t * 3)) > 0.88) R(ctx, x, y, 3, 1, '#7aa3a4');
   };
 
-  TW.Kit = { R, rnd, pick, villager, sprites, art, basalt, mudRoof, exteriorStage, interiorStage, lakeBand, fade, freeGoal, finish, SKINS, HAIRS, TUNICS, VEILS };
+  TW.Kit = { R, rnd, pick, villager, sprites, art, basalt, mudRoof, exteriorStage, interiorStage, lakeBand, fade, freeGoal, finish, answerAll, SKINS, HAIRS, TUNICS, VEILS };
 
   TW.Episodes = TW.Episodes || {};
   TW.Episodes.capernaum = EP;

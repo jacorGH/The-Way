@@ -45,20 +45,19 @@ window.TW = window.TW || {};
         ['Tetrarch of Galilee', 'Herod Antipas'],
       ],
       episodes: [
-        'entry', 'temple', 'council', 'cross', 'burial', 'tomb',
-        { title: 'The Ascension', ref: 'Acts 1:6–12' },
+        'entry', 'temple', 'council', 'cross', 'burial', 'tomb', 'forty',
       ],
     },
     {
       id: 'church', num: 'III', title: 'The Jerusalem Church', dates: 'c. AD 30–36',
-      span: [33, 36], view: 'A new believer',
+      span: [33, 36], open: true, view: 'A new believer',
       summary:
-        'Pentecost, the apostles’ teaching in the Temple courts, the sharing of goods, and the death of Stephen. Healing comes through prayer in Jesus’ name, never by technique (Acts 3:6, 19:13–16).',
+        'Pentecost, the apostles’ teaching in the Temple courts, the sharing of goods, and the death of Stephen. Your scribe is still a scribe, and still sits in the council, but he is no longer only watching. Healing comes through prayer in Jesus’ name, never by technique (Acts 3:6, 19:13–16).',
       world: [['Prefect of Judea', 'Pontius Pilate'], ['High priest', 'Caiaphas, with Annas (Acts 4:6)']],
       episodes: [
-        { title: 'Pentecost', ref: 'Acts 2' },
-        { title: 'The Beautiful Gate', ref: 'Acts 3:1–10' },
-        { title: 'Stephen', ref: 'Acts 6:8–7:60' },
+        'pentecost', 'gate', 'trial',
+        { title: 'The Seven', ref: 'Acts 6:1–7' },
+        { title: 'Stephen', ref: 'Acts 6:8–8:4' },
       ],
     },
     {
@@ -354,7 +353,6 @@ window.TW = window.TW || {};
         'Mary of Magdala says she has seen the Lord. I believe she is telling the truth.',
         'He is risen. Every question in my scroll looks different this morning.',
       ],
-      final: 'passion',
       notes: [
         ['The first day of the week (16:2)', 'Sunday. The Sabbath ended at sunset on Saturday, and the women bought spices then (16:1).'],
         ['The women as witnesses', 'In that culture a woman’s testimony often counted for less. Many historians note that a made-up story would hardly have chosen women as its first witnesses.'],
@@ -371,6 +369,109 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder.push('council', 'cross', 'burial', 'tomb');
+  Object.assign(D.episodes, {
+    forty: {
+      num: 'XII', title: 'Forty Days', ref: 'John 20:19–29; Acts 1:1–14', passage: 'john20b', passages: [['john20b', '20:19', '20:31'], ['acts1', '1:1', '1:14']], place: 'upperroom', region: 'jerusalem', era: 'passion',
+      scene: 'The upper room, John 20; Acts 1', parallels: 'Luke 24:36–53, Mark 16:19',
+      question: { id: 'witness', text: 'He said, “You will be witnesses to me.” Does that mean me?', ref: 'Acts 1:8' },
+      hearts: ['You heard “Blessed are those who have not seen,” and knew he meant you.', 'You still wanted to see him for yourself, as Thomas had.', 'You had no answer, only tears.'],
+      conclusions: [
+        'Thomas doubted as I doubted, and he called him “My Lord and my God.”',
+        'He was taken up from the Mount of Olives. They are waiting in Jerusalem, as he told them.',
+        'I have been writing reports for a year. He calls them testimony.',
+      ],
+      final: 'passion',
+      answers: { forgive: ['Thomas called him “My Lord and my God!”', 'John 20:28'], risen: ['He showed himself alive by many proofs over forty days.', 'Acts 1:3'], prophet: ['More than a prophet: “My Lord and my God!”', 'John 20:28'] },
+      notes: [
+        ['Locked doors (John 20:19)', 'The disciples hid for fear of the authorities. The risen Jesus came and stood among them anyway, and his first word was “Peace.”'],
+        ['Thomas (20:24–29)', 'Called Didymus, “the Twin.” He refused to believe on someone else’s word, and then made the fullest confession in the Gospel: “My Lord and my God!”'],
+        ['Those who have not seen (20:29)', 'John wrote for readers who would never see Jesus with their own eyes, so that they too might believe (20:31).'],
+        ['Forty days (Acts 1:3)', 'Luke, who also wrote Acts, says Jesus appeared over forty days, teaching about God’s Kingdom.'],
+        ['Witnesses (1:8)', 'The outline of all of Acts: Jerusalem, Judea and Samaria, the ends of the earth.'],
+        ['A Sabbath day’s journey (1:12)', 'About a kilometer, the distance later tradition allowed on the Sabbath. Olivet is that close to the city.'],
+      ],
+      reflect: [
+        'Thomas wanted to see and touch. Was that wrong?',
+        'Why might the first thing the risen Jesus said be “Peace”?',
+        'The disciples asked about the kingdom for Israel, and Jesus answered with a mission to the world. Why?',
+      ],
+    },
+    pentecost: {
+      num: 'XIII', title: 'Pentecost', ref: 'Acts 2', passage: 'acts2', place: 'temple', region: 'jerusalem', era: 'church',
+      scene: 'Jerusalem at the feast, Acts 2',
+      parallels: 'told only in Acts',
+      question: { id: 'spirit', text: 'What does it mean to receive the gift of the Holy Spirit?', ref: 'Acts 2:38' },
+      hearts: ['You went down into the water at once, cut to the heart.', 'You waited and went down last, after watching thousands go before you.'],
+      conclusions: [
+        'I was baptized in the name of Jesus Christ today, with about three thousand others.',
+        'Peter, who denied him by the fire, stood up and preached him to the whole city.',
+        'The promise is for me, and for all who are far off.',
+      ],
+      answers: { christ: ['God has made him both Lord and Christ.', 'Acts 2:36'], king: ['God raised him up to sit on David’s throne.', 'Acts 2:30–36'], notfar: ['“Repent, and be baptized… the promise is to you.”', 'Acts 2:38–39'], born: ['Born of water and the Spirit.', 'John 3:5; Acts 2:38'] },
+      notes: [
+        ['Pentecost (2:1)', 'The Feast of Weeks, fifty days after Passover, a harvest festival that brought pilgrims to Jerusalem from across the world.'],
+        ['Wind and fire (2:2–3)', 'In the Scriptures God’s presence often came with wind and fire, as at Sinai (Exodus 19:18). In Hebrew and Greek the same word means wind and spirit.'],
+        ['Every nation (2:9–11)', 'Luke’s list runs from Persia in the east to Rome in the west: a preview of the gospel going to the ends of the earth.'],
+        ['Joel (2:17–21)', 'Peter quotes Joel 2:28–32: God’s Spirit poured out on all flesh, young and old, men and women, servants too.'],
+        ['Where it happened', 'Acts says only “the house” and the gathered crowd. Many ritual immersion pools have been excavated near the Temple’s southern steps, where a crowd of thousands could have been baptized.'],
+        ['The first church (2:42–47)', 'Teaching, fellowship, breaking bread and prayer, daily in the Temple and in homes.'],
+      ],
+      reflect: [
+        'Peter denied Jesus to a servant girl, and now preaches him to thousands. What changed?',
+        'Why does it matter that everyone heard in their own language?',
+        'Which of the four things in 2:42 do you find hardest to keep?',
+      ],
+    },
+    gate: {
+      num: 'XIV', title: 'The Beautiful Gate', ref: 'Acts 3:1–4:4', passage: 'acts3', passages: [['acts3', '3:1', '3:19'], ['acts4', '4:1', '4:4']], place: 'temple', region: 'jerusalem', era: 'church',
+      scene: 'The Temple courts, Acts 3', parallels: 'told only in Acts',
+      question: { id: 'name', text: 'What is it about his name?', ref: 'Acts 3:16' },
+      hearts: ['You gave the lame man a coin, as you always had.', 'You passed him by, as you always had.', 'You had nothing to give, and stopped anyway.'],
+      conclusions: [
+        '“Silver and gold have I none.” Peter gave him something better.',
+        'The man I passed every day at the gate is walking, leaping and praising God.',
+        'They were arrested for proclaiming the resurrection. I did nothing to stop it.',
+      ],
+      notes: [
+        ['The ninth hour (3:1)', 'About three in the afternoon, the time of the afternoon sacrifice and prayer.'],
+        ['The Beautiful Gate (3:2)', 'Not named elsewhere. Many identify it with the great bronze gate between the outer court and the inner courts, which Josephus describes as more splendid than the gold-plated gates.'],
+        ['Gifts for the needy (3:2)', 'Giving alms was a central act of Jewish piety, and beggars sat where the devout passed.'],
+        ['“In the name of Jesus Christ” (3:6)', 'Peter claims no power of his own (3:12). The healing is done in Jesus’ name, through faith in him (3:16).'],
+        ['Solomon’s porch (3:11)', 'A colonnade along the eastern side of the Temple courts, where Jesus had walked (John 10:23) and the believers gathered (Acts 5:12).'],
+      ],
+      reflect: [
+        'The man asked for money and received something else. What do you usually ask God for?',
+        'Peter said, “Why do you fasten your eyes on us?” Why did he refuse the credit?',
+        'What does the man’s leaping say about what had happened to him?',
+      ],
+    },
+    trial: {
+      num: 'XV', title: 'Before the Council', ref: 'Acts 4:5–37', passage: 'acts4', from: '4:5', place: 'temple', region: 'jerusalem', era: 'church',
+      scene: 'The council, Acts 4', parallels: 'told only in Acts',
+      question: { id: 'boldness', text: 'Where does boldness like theirs come from?', ref: 'Acts 4:13, 31' },
+      hearts: ['You said nothing, as you had said nothing a year ago.', 'You asked, as Nicodemus once did, that the council hear before it judge.', 'You stood up and walked out with them.'],
+      conclusions: [
+        '“We can’t help telling the things which we saw and heard.” Neither can I.',
+        'They recognized that these men had been with Jesus. I hope someone will say that of me.',
+        'The place was shaken where we prayed. I was there.',
+      ],
+      notes: [
+        ['Annas and Caiaphas (4:6)', 'Annas had been high priest years before and still held great influence; Caiaphas, his son-in-law, held the office.'],
+        ['“Unlearned and ignorant” (4:13)', 'Meaning they had no formal training as scribes. The council noticed what training could not explain: they had been with Jesus.'],
+        ['The cornerstone (4:11)', 'Peter quotes Psalm 118:22, the psalm the crowds sang when Jesus entered Jerusalem.'],
+        ['“We can’t help telling” (4:20)', 'The heart of this whole game: what they saw and heard, they had to testify.'],
+        ['The prayer (4:24–31)', 'They did not pray for safety, but for boldness, and that God would stretch out his hand to heal.'],
+        ['Barnabas (4:36–37)', 'Joseph, a Levite from Cyprus, called “Son of Encouragement.” He will later bring Saul to the apostles (9:27).'],
+      ],
+      reflect: [
+        'The council could not deny the miracle. Why did they still forbid them to speak?',
+        'What did the believers ask for when they prayed? What would you have asked for?',
+        'What is one thing you have “seen and heard” that you cannot help telling?',
+      ],
+    },
+  });
+  D.eraOrder.push('forty', 'pentecost', 'gate', 'trial');
+
 
 
   const galPlaces = [
@@ -584,7 +685,7 @@ window.TW = window.TW || {};
 
   // ---------- Jerusalem and the Mount of Olives ----------
   const jerPlaces = [
-    { id: 'temple', name: 'The Temple', alt: 'Herod’s Temple on its great platform', lon: 35.2356, lat: 31.7781, kind: 'episode', episodes: ['entry', 'temple'], label: 'r',
+    { id: 'temple', name: 'The Temple', alt: 'Herod’s Temple on its great platform', lon: 35.2356, lat: 31.7781, kind: 'episode', episodes: ['entry', 'temple', 'pentecost', 'gate', 'trial'], label: 'r',
       text: 'Herod the Great began rebuilding the Temple around 20 BC, and work was still going on in Jesus’ day (John 2:20). Its platform covered about 14 hectares, one of the largest sacred precincts in the Roman world.' },
     { id: 'olivet', name: 'Mount of Olives road', short: 'Olivet road', alt: 'The descent toward the city', lon: 35.2428, lat: 31.7784, kind: 'episode', episodes: ['entry'], label: 'r',
       text: 'The road from Bethany crosses the ridge and drops toward the Kidron Valley. Here the whole city suddenly comes into view.' },
@@ -604,7 +705,7 @@ window.TW = window.TW || {};
       text: 'A pool fed by Hezekiah’s tunnel. The steps of the first-century pool were uncovered in 2004.' },
     { id: 'palace', name: 'Herod’s Palace', short: 'Herod’s Palace', alt: 'Likely the Praetorium', lon: 35.2284, lat: 31.7762, kind: 'locked', label: 'l', ref: 'Mark 15:16',
       text: 'Herod the Great’s palace and towers on the western hill. Many historians think Pilate stayed and judged here when he came up for the feasts.' },
-    { id: 'upperroom', name: 'The Upper Room', alt: 'Traditional site on Mount Zion', lon: 35.2288, lat: 31.7714, kind: 'history', label: 'l', ref: 'Mark 14:15',
+    { id: 'upperroom', name: 'The Upper Room', alt: 'Traditional site on Mount Zion', lon: 35.2288, lat: 31.7714, kind: 'episode', episodes: ['forty'], label: 'l',
       text: 'Mark says the disciples found “a large upper room furnished and ready.” Tradition places it on Mount Zion; the vaulted hall shown there today was built by Crusaders in the twelfth century.' },
     { id: 'highpriest', name: 'House of the High Priest', short: 'High priest’s house', alt: 'The Upper City', lon: 35.2314, lat: 31.7733, kind: 'episode', episodes: ['council'], label: 'r',
       text: 'The priestly families lived in fine houses on the western hill. Its exact location is not known.' },

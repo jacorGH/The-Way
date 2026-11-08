@@ -176,7 +176,8 @@ window.TW = window.TW || {};
     era.world.forEach((w) => { dl.appendChild(el('dt', '', w[0])); dl.appendChild(el('dd', '', w[1])); });
     det.appendChild(dl);
     if (era.id === 'galilee' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era II, The Road to Jerusalem, comes next.'));
-    if (era.id === 'passion') det.appendChild(el('p', 'era-done', 'The Ascension, which closes this era, is still being built.'));
+    if (era.id === 'passion' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era III, The Jerusalem Church, comes next.'));
+    if (era.id === 'church') det.appendChild(el('p', 'era-done', 'Still being built: The Seven and Stephen.'));
     const ol = el('ol', 'episodes');
     const next = nextEpisode();
     era.episodes.forEach((raw) => {
@@ -432,6 +433,14 @@ window.TW = window.TW || {};
     persist();
   };
   game.setHeart = function (ep, i) { game.save.heart[ep] = i; persist(); };
+  // an open question in the scroll receives its answer
+  game.answer = function (id, text, ref) {
+    const q = game.save.questions.find((x) => x.id === id);
+    if (!q || !q.open) return null;
+    q.open = false; q.answer = text; q.answerRef = ref;
+    persist();
+    return q;
+  };
 
   // ---------- overlays ----------
   function closeOverlays() { document.querySelectorAll('.overlay').forEach((o) => { o.hidden = true; }); }
@@ -482,6 +491,7 @@ window.TW = window.TW || {};
         const li = el('li', q.open ? 'open' : 'answered');
         li.appendChild(el('span', 'q-text', q.text));
         li.appendChild(el('span', 'q-ref', q.ref + (q.open ? ', still open' : ', answered')));
+        if (!q.open && q.answer) li.appendChild(el('span', 'q-answer', q.answer + ' (' + q.answerRef + ')'));
         ul.appendChild(li);
       });
       body.appendChild(ul);
@@ -605,7 +615,7 @@ window.TW = window.TW || {};
       const d = el('div', 'reveal-note');
       if (E.final === 'passion') {
         d.appendChild(el('p', 'plabel', 'The Road to Jerusalem'));
-        d.appendChild(el('p', '', 'You have watched him die, helped to bury him, and stood at an empty tomb. Era III, The Jerusalem Church, begins with the Ascension and the coming of the Spirit.'));
+        d.appendChild(el('p', '', 'You watched him die, helped to bury him, stood at an empty tomb, and heard from those who saw him alive. Era III, The Jerusalem Church, begins at Pentecost.'));
       } else {
         d.appendChild(el('p', 'plabel', 'Era I complete'));
         d.appendChild(el('p', '', 'You have finished The Ministry in Galilee. Your road now turns south, toward Jerusalem.'));

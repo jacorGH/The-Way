@@ -17,7 +17,7 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `css/style.css` – basalt, papyrus, lapis, madder, ochre; Cinzel + EB Garamond
 - `js/util.js` – math, noise, colour helpers, save game (localStorage, guarded)
 - `js/audio.js` – all sound, synthesized live with Web Audio (no audio files): period music in moods (title, galilee, land, reflect, tension, wonder, lament, jerusalem, night, storm), ambience beds (shore, wind, birds, crowd, room, night, fire, storm) and effects. Stages set their soundscape with an `audio` property; `TW.Audio.music(mood)` and `TW.Audio.sfx(name)` handle story beats.
-- `js/scripture.js`, `js/scripture2.js` – every Scripture passage, word for word from the WEB (scripture2 also holds Mark 14–16 and John 19 for the coming Passion episodes)
+- `js/scripture.js`, `js/scripture2.js`, `js/scripture3.js` (Acts 1–9 and John 20) – every Scripture passage, word for word from the WEB (scripture2 also holds Mark 14–16 and John 19 for the coming Passion episodes)
 - `js/data.js` – eras, timeline, episode registry (notes, reflections, report choices), both map regions, reveal schedule
 - `js/geo.js` – simplified real elevations: Galilee in detail, the whole Land, and Jerusalem with its valleys and the Mount of Olives
 - `js/sprites.js` – procedural pixel people, the man on the mat, pigs, bier, boats, map walker
@@ -35,6 +35,10 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/cross.js` – Episode IX, The Cross (Mark 15:16–41), shown with restraint from a distance
 - `js/burial.js` – Episode X, The Burial (Mark 15:42–47; John 19:38–42), with Nicodemus’s memories of John 3 and John 7
 - `js/tomb.js` – Episode XI, The Empty Tomb (Mark 16:1–8; John 20:1–18)
+- `js/forty.js` – Episode XII, Forty Days (John 20:19–29; Acts 1:1–14): Thomas and the Ascension as memories; closes Era II
+- `js/pentecost.js` – Episode XIII, Pentecost (Acts 2): opens Era III; the scribe is baptized
+- `js/gate.js` – Episode XIV, The Beautiful Gate (Acts 3:1–4:4)
+- `js/trial.js` – Episode XV, Before the Council (Acts 4:5–37)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
 - `js/vignettes.js` – memory scenes: sepia flashbacks that act out each testimony answer in step with its verses
 - `js/main.js` – game controller
@@ -53,3 +57,7 @@ a set (street, house, upper, village, field, court, synagogue), and a list of qu
 `['s', passage, from, to]` shows Scripture word for word; `['d', text]` is the witness speaking (dramatization);
 `['n', text]` is narration; `['h', text]` is a history note; `['c', cue]` plays the next step of the answer's memory scene.
 Give the question a `scene` (a function in `vignettes.js` that builds the remembered place and returns its cues).
+
+## Questions and answers
+Each episode can open a question in the scroll (`question`) and answer earlier ones (`answers: { id: [answer, ref] }`).
+Call `TW.Kit.answerAll(game, episodeId)` at the moment in the episode where the answer lands.

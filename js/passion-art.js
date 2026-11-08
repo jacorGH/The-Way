@@ -18,6 +18,12 @@ window.TW = window.TW || {};
     peter: { skin: '#9a6440', hair: '#3a2416', beard: '#5f5048', tunic: '#8a7a5a', mantle: '#6a4a32' },
     john: { skin: '#b8845a', hair: '#3a2416', tunic: '#9a8a6a', mantle: '#4a5a72' },
     young: { skin: '#e8e2d4', hair: '#e8e2d4', tunic: '#f4f0e6', belt: '#e0dace' },
+    thomas: { skin: '#a06a42', hair: '#2a1a12', beard: '#2a1a12', tunic: '#7a6a4a', mantle: '#4a5a42' },
+    marymother: { skin: '#a8724a', hair: '#5f5048', tunic: '#5a6a8a', veil: '#3d4f6a' },
+    annas: { skin: '#a8724a', hair: '#b8b0a4', beard: '#c8c0b4', tunic: '#e8e0cc', mantle: '#4a3a5a', stripe: '#d8b04a', fringe: '#d8b04a' },
+    guard: { skin: '#b07a50', hair: '#2a1a12', beard: '#2a1a12', tunic: '#6a6a52', belt: '#3a2a1a', mantle: '#4a4a3a' },
+    barnabas: { skin: '#b07a50', hair: '#3a2416', beard: '#3a2416', tunic: '#cdbb94', mantle: '#3d6a6a' },
+    lame: { skin: '#9a6440', hair: '#2a1a12', beard: '#2a1a12', tunic: '#8a7a5a' },
   };
   const cache = {};
   K.who = (name) => cache[name] || (cache[name] = S.person(K.looks[name]));
@@ -124,6 +130,7 @@ window.TW = window.TW || {};
       fc.fillRect(0, 0, 256 * k, 160 * k);
       fc.globalCompositeOperation = 'lighter';
       st.lights.forEach((L) => {
+        if (L.ent && L.ent.visible === false) return;
         const lx = L.ent ? L.ent.x : L.x, ly = L.ent ? L.ent.y - (L.dy || 26) : L.y;
         const fl = 1 + Math.sin(t * 9 + lx) * 0.08;
         const g = fc.createRadialGradient((lx - cam) * k, ly * k, 0, (lx - cam) * k, ly * k, (L.r || 40) * k * fl);

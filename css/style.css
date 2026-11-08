@@ -275,6 +275,11 @@ canvas.pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
 .dialog.kind-drama .dlg-text { font-style: italic; }
 .dialog.kind-history { border-top-color: var(--olive); }
 .dialog.kind-history .dlg-label { color: var(--olive); }
+.dialog.kind-answer { border-top-color: var(--ochre); background-color: #efe2bd; }
+.dialog.kind-answer .dlg-label { color: #8a6420; font-weight: 600; }
+.dialog.kind-answer .dlg-text { white-space: pre-line; }
+.q-answer { display: block; margin-top: 0.3rem; color: var(--olive); font-style: italic; }
+.questions li.answered { border-left-color: var(--olive); }
 .dialog.kind-goal, .dialog.kind-choice { border-top-color: var(--madder); cursor: default; }
 .dialog.kind-goal .dlg-label, .dialog.kind-choice .dlg-label { color: var(--madder); }
 .dlg-next {
