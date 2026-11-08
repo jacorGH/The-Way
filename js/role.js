@@ -41,6 +41,8 @@ window.TW = window.TW || {};
     cornelius: ['scribe', 'A scribe crossing a Gentile’s threshold', 'Answering the gate at the tanner’s house'],
     antioch: ['scribe', 'Traveling with Barnabas, and to Tarsus for Saul', 'Traveling with Barnabas’s party, and at a Greek table'],
     rhoda: ['niece', 'Praying in the crowded room', 'Beside Rhoda, at the gate'],
+    pisidia: ['scribe', 'Among the men of the synagogue', 'Among the devout women of the city'],
+    lystra: ['niece', 'In the crowd at the gate', 'Kneeling in the dust beside Paul'],
     cyprus: ['scribe', 'A Jerusalem scribe before a Roman governor', 'A woman of Jerusalem before a Roman governor'],
   };
   R.look = {

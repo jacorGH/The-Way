@@ -236,6 +236,12 @@ window.TW = window.TW || {};
     drone = startDrone(mood.drone);
     if (nextBeat < ctx.currentTime) nextBeat = ctx.currentTime + 0.1;
   };
+  // lower the music and ambience while a line is read aloud
+  A.duck = function (on) {
+    if (!ctx) return;
+    musicBus.gain.setTargetAtTime(on ? 0.08 : 0.2, ctx.currentTime, 0.25);
+    ambBus.gain.setTargetAtTime(on ? 0.2 : 0.34, ctx.currentTime, 0.25);
+  };
   A.memory = function (on) {
     if (!ctx) return;
     musicFilter.frequency.setTargetAtTime(on ? 1100 : 16000, ctx.currentTime, 0.5);

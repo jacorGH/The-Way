@@ -140,6 +140,10 @@ canvas.pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
   max-width: 22rem; margin: 0.2rem auto 0.6rem; padding: 0.5rem 0.7rem; font-size: 0.88rem; font-style: italic; line-height: 1.4;
   color: var(--on-basalt); background: rgba(28, 22, 18, 0.72); border-radius: 3px;
 }
+.audio-toggles { display: flex; gap: 1.2rem; justify-content: center; }
+.read-toggle { color: inherit; opacity: 0.85; margin-top: 0.8rem; }
+#s-title .read-toggle { color: var(--on-basalt-soft); }
+.ov-actions .read-toggle { margin-top: 0; }
 .sound-toggle { color: inherit; opacity: 0.85; margin-top: 0.8rem; }
 #s-title .sound-toggle { color: var(--on-basalt-soft); }
 .ov-actions { display: flex; gap: 0.8rem; align-items: baseline; }

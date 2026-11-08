@@ -65,7 +65,7 @@ window.TW = window.TW || {};
         'Scattered from Jerusalem, the believers carry the word into Samaria, down the desert road, and north to Damascus, where the persecutor meets the one he persecuted. Then Antioch, the council at Jerusalem, and Paul’s journeys across the Mediterranean.',
       world: [['Emperors', 'Tiberius, Caligula, Claudius, Nero'], ['Prefect of Judea', 'Pontius Pilate, then Marcellus (from AD 36)']],
       episodes: [
-        'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda', 'cyprus',
+        'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda', 'cyprus', 'pisidia', 'lystra',
         { title: 'The Council', ref: 'Acts 15' },
         { title: 'Ephesus', ref: 'Acts 19' },
       ],
@@ -725,6 +725,59 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder.push('cyprus');
+  Object.assign(D.episodes, {
+    pisidia: {
+      num: 'XXVI', title: 'Antioch of Pisidia', ref: 'Acts 13:14–52', passage: 'acts13b', place: 'pisidia', region: 'east', era: 'spread',
+      scene: 'Antioch of Pisidia, Acts 13', parallels: 'told only in Acts',
+      question: { id: 'light', text: 'What does it mean to be a light for the Gentiles?', ref: 'Acts 13:47' },
+      hearts: ['You rejoiced with the Gentiles who had begged to hear more.', 'You grieved for your own people, who would not.', 'You did both, and could not have said which was stronger.'],
+      conclusions: [
+        'Paul told the story of Israel from Egypt to David to Jesus, and said that through him everyone who believes is justified.',
+        'The Gentiles begged to hear it again, and the next Sabbath almost the whole city came.',
+        'They were thrown out of the city, shook the dust off their feet, and were filled with joy.',
+      ],
+      notes: [
+        ['Antioch of Pisidia (13:14)', 'A Roman colony founded by Augustus for veteran soldiers, high on the Anatolian plateau. Not the same city as Antioch in Syria.'],
+        ['A word of exhortation (13:15)', 'After the readings from the Law and the Prophets, a visiting teacher could be invited to speak.'],
+        ['Those who fear God (13:16)', 'Gentiles who worshiped Israel’s God and attended the synagogue without becoming Jews, like Cornelius.'],
+        ['Justified (13:39)', 'Paul’s first recorded use in Acts of the language he would develop in his letters to the Galatians and the Romans.'],
+        ['A light for the Gentiles (13:47)', 'Isaiah 49:6, spoken of the Servant of the Lord. Simeon had spoken of the infant Jesus as a light for the nations (Luke 2:32).'],
+        ['Shaking off the dust (13:51)', 'Jesus told his disciples to do this when a town rejected them (Luke 9:5).'],
+      ],
+      reflect: [
+        'Why do you think the Gentiles were so eager to hear Paul again?',
+        'Paul turned to the Gentiles, but in the next city he went to the synagogue first again (14:1). Why?',
+        'How can people be thrown out of a city and be filled with joy?',
+      ],
+    },
+    lystra: {
+      num: 'XXVII', title: 'Lystra', ref: 'Acts 14', passage: 'acts14', place: 'lystra', region: 'east', era: 'spread',
+      scene: 'Iconium, Lystra and home, Acts 14', parallels: 'compare Acts 3:1–10; 2 Timothy 3:11',
+      question: { id: 'afflictions', text: 'Why must we enter the Kingdom of God through many afflictions?', ref: 'Acts 14:22' },
+      hearts: ['You knelt in the dust beside him and prayed.', 'You ran for water.', 'You stood with the disciples in a ring around him, and waited.'],
+      conclusions: [
+        'A man who had never walked leaped up and walked. Within the hour the crowd wanted to worship Paul and Barnabas as gods.',
+        'They stoned Paul and dragged him out of the city. He got up and walked back in.',
+        'God opened a door of faith to the nations. I went through it with them.',
+      ],
+      answers: { light: ['God opened a door of faith to the nations.', 'Acts 14:27'] },
+      notes: [
+        ['Iconium (14:1–6)', 'Modern Konya. The city split over the message, and the apostles fled before they could be stoned.'],
+        ['The man who never walked (14:8–10)', 'Luke tells it in nearly the same words as Peter’s healing at the Beautiful Gate (3:1–10): the same Lord, at work through both apostles.'],
+        ['Zeus and Hermes (14:11–13)', 'The WEB uses their Latin names, Jupiter and Mercury. The poet Ovid tells a legend, set in neighboring Phrygia, of these two gods visiting in human form and of the old couple who alone welcomed them.'],
+        ['Tearing their clothes (14:14)', 'The Jewish sign of horror at blasphemy, the same act as the high priest’s at Jesus’ trial (Mark 14:63).'],
+        ['Stoned and left for dead (14:19)', 'Paul later listed it among his sufferings: “Once I was stoned” (2 Corinthians 11:25). He reminded Timothy, who was from Lystra, of what happened there (2 Timothy 3:11).'],
+        ['Elders in every assembly (14:23)', 'On the way home they went back through the cities that had driven them out, to strengthen the new believers and appoint leaders.'],
+      ],
+      reflect: [
+        'The crowd moved from worshiping Paul to stoning him. What does that say about crowds?',
+        'Why would Paul walk back into the city that had just stoned him?',
+        'What “door of faith” has been opened to you?',
+      ],
+    },
+  });
+  D.eraOrder.push('pisidia', 'lystra');
+
 
 
 
@@ -1036,17 +1089,28 @@ window.TW = window.TW || {};
       text: 'Saul’s home city, “a citizen of no insignificant city” (Acts 21:39). After Damascus and Jerusalem he went home here, until Barnabas came looking for him.' },
     { id: 'salamis', name: 'Salamis', alt: 'Cyprus', lon: 33.900, lat: 35.180, kind: 'history', label: 'r', ref: 'Acts 13:5', text: 'The chief port of eastern Cyprus. Barnabas was a Levite of Cyprus (Acts 4:36), and believers from Cyprus first preached to Greeks in Antioch (11:20).' },
     { id: 'paphos', name: 'Paphos', alt: 'Seat of the governor of Cyprus', lon: 32.420, lat: 34.760, kind: 'history', label: 'l', ref: 'Acts 13:6', text: 'The Roman capital of Cyprus, on its western coast.' },
+    { id: 'perga', name: 'Perga', alt: 'Pamphylia', lon: 30.854, lat: 36.961, kind: 'history', label: 'r', ref: 'Acts 13:13; 14:25', text: 'A Greek city on the Pamphylian plain, where John Mark turned back.' },
+    { id: 'attalia', name: 'Attalia', alt: 'The port of Pamphylia', lon: 30.704, lat: 36.886, kind: 'history', label: 'l', ref: 'Acts 14:25–26', text: 'The harbor from which Paul and Barnabas sailed home to Syrian Antioch.' },
+    { id: 'pisidia', name: 'Antioch of Pisidia', alt: 'A Roman colony in the highlands', lon: 31.189, lat: 38.306, kind: 'episode', episodes: ['pisidia'], label: 'r',
+      text: 'A Roman colony settled by veteran soldiers, over 1,000 m up on the plateau, with a Jewish community and its synagogue.' },
+    { id: 'iconium', name: 'Iconium', alt: 'Konya', lon: 32.494, lat: 37.874, kind: 'history', label: 'r', ref: 'Acts 14:1–6', text: 'A prosperous city where a great multitude of Jews and Greeks believed, and the city was divided.' },
+    { id: 'lystra', name: 'Lystra', alt: 'A Roman colony in Lycaonia', lon: 32.330, lat: 37.580, kind: 'episode', episodes: ['lystra'], label: 'l',
+      text: 'A small Roman colony on the Lycaonian plain, home of Timothy and his mother and grandmother (Acts 16:1; 2 Timothy 1:5).' },
+    { id: 'derbe', name: 'Derbe', alt: 'The edge of Lycaonia', lon: 33.360, lat: 37.350, kind: 'history', label: 'r', ref: 'Acts 14:20–21', text: 'The farthest city of the first journey, where many became disciples.' },
   ];
   const eastNodes = {
     e1: { lon: 35.500, lat: 33.890 }, e2: { lon: 35.640, lat: 34.120 }, e3: { lon: 35.840, lat: 34.440 }, e4: { lon: 35.820, lat: 35.400 },
     e5: { lon: 36.000, lat: 35.900 }, e6: { lon: 36.200, lat: 36.480 }, e7: { lon: 36.170, lat: 36.620 }, e8: { lon: 36.180, lat: 36.850 },
     e9: { lon: 35.320, lat: 36.990 }, e10: { lon: 35.850, lat: 33.600 }, c1: { lon: 33.350, lat: 35.050 },
+    g1: { lon: 30.950, lat: 37.400 }, g2: { lon: 31.900, lat: 38.050 }, g3: { lon: 34.750, lat: 37.280 },
   };
   const eastEdges = [
     ['toland', 'caesarea'], ['caesarea', 'ptolemais'], ['ptolemais', 'tyre'], ['tyre', 'sidon'], ['sidon', 'e1'], ['e1', 'e2'], ['e2', 'e3'], ['e3', 'e4'], ['e4', 'e5'], ['e5', 'antioch'],
     ['antioch', 'seleucia'], ['antioch', 'e6'], ['e6', 'e7'], ['e7', 'e8'], ['e8', 'e9'], ['e9', 'tarsus'],
     ['sidon', 'e10'], ['e10', 'damascus'], ['toland', 'damascus'],
     ['seleucia', 'salamis', 'boat'], ['salamis', 'c1'], ['c1', 'paphos'], ['caesarea', 'seleucia', 'boat'],
+    ['paphos', 'perga', 'boat'], ['perga', 'attalia'], ['attalia', 'seleucia', 'boat'], ['perga', 'g1'], ['g1', 'pisidia'],
+    ['pisidia', 'g2'], ['g2', 'iconium'], ['iconium', 'lystra'], ['lystra', 'derbe'], ['derbe', 'g3'], ['g3', 'tarsus'],
   ];
   const eastLabels = [
     { text: 'Syria', lon: 36.75, lat: 35.05, style: 'region' },
@@ -1057,14 +1121,18 @@ window.TW = window.TW || {};
     { text: 'Orontes', lon: 36.55, lat: 35.45, style: 'river' },
     { text: 'Taurus', lon: 33.40, lat: 37.20, style: 'small' },
     { text: 'Amanus', lon: 36.62, lat: 36.70, style: 'small' },
+    { text: 'Pamphylia', lon: 31.30, lat: 36.98, style: 'small' },
+    { text: 'Pisidia', lon: 30.95, lat: 37.70, style: 'small' },
+    { text: 'Lycaonia', lon: 33.10, lat: 37.80, style: 'small' },
+    { text: 'Galatia', lon: 32.20, lat: 38.45, style: 'region' },
   ];
   eastPlaces.forEach((p) => { eastNodes[p.id] = { lon: p.lon, lat: p.lat, name: p.name }; });
   D.regions.east = {
-    id: 'east', title: 'Syria, Cilicia and Cyprus', lon0: 31.60, lon1: 37.20, lat0: 31.60, lat1: 37.40, w: 220, h: 282,
-    texelKm: 2.3, scaleKm: 50, start: 'tyre', places: eastPlaces, nodes: eastNodes, edges: eastEdges, labels: eastLabels,
+    id: 'east', title: 'The Roman East', lon0: 29.60, lon1: 37.20, lat0: 31.60, lat1: 38.60, w: 250, h: 292,
+    texelKm: 2.7, scaleKm: 50, start: 'tyre', places: eastPlaces, nodes: eastNodes, edges: eastEdges, labels: eastLabels,
     box: { lon0: 34.20, lon1: 36.40, lat0: 31.60, lat1: 33.65 }, boxZoom: 'land', boxLabel: 'Tap to open the map of the Land',
   };
-  D.regions.east.subtitle = 'c. AD 36–46';
+  D.regions.east.subtitle = 'c. AD 36–49';
   D.regions.galilee.subtitle = 'c. AD 28';
   D.regions.land.subtitle = 'c. AD 28–30';
   D.regions.jerusalem.subtitle = 'Passover, c. AD 30';

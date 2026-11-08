@@ -24,6 +24,20 @@ window.TW = window.TW || {};
     e.stopPropagation();
     AU.setOn(!AU.on);
     syncSound();
+  function syncRead() {
+    document.querySelectorAll('.read-toggle').forEach((b) => {
+      b.hidden = !TW.Speech.available;
+      b.textContent = TW.Speech.on ? 'Read aloud on' : 'Read aloud off';
+      b.setAttribute('aria-pressed', TW.Speech.on);
+      b.title = TW.Speech.on && !TW.Speech.hasQualityVoice() ? 'For a more natural voice, download an Enhanced or Premium voice in your device’s Spoken Content settings.' : '';
+    });
+  }
+  document.querySelectorAll('.read-toggle').forEach((b) => b.addEventListener('click', (e) => {
+    e.stopPropagation();
+    TW.Speech.setOn(!TW.Speech.on);
+    syncRead();
+  }));
+  syncRead();
   }));
   syncSound();
   // Jerusalem: market bustle at the center, thinning toward the walls; gardens, flocks and birds on the slopes;
@@ -55,6 +69,7 @@ window.TW = window.TW || {};
   // ---------- screens ----------
   const screens = ['title', 'prologue', 'timeline', 'map', 'scene'];
   game.show = function (name) {
+    if (name !== 'scene' && TW.Speech) TW.Speech.stop();
     if (game.screen === 'map' && name !== 'map') MV.stop();
     if (game.screen === 'scene' && name !== 'scene') { SC.stop(); SC.begin(); }
     if (game.screen === 'title' && name !== 'title') titleRunning = false;
@@ -228,7 +243,7 @@ window.TW = window.TW || {};
     det.appendChild(dl);
     if (era.id === 'galilee' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era II, The Road to Jerusalem, comes next.'));
     if (era.id === 'passion' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era III, The Jerusalem Church, comes next.'));
-    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: Galatia, the council at Jerusalem, and Paul’s journeys west.'));
+    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: the council at Jerusalem, and Paul’s journeys west to Philippi, Athens, Corinth and Ephesus.'));
     if (era.id === 'church' && game.save.completed.seven) det.appendChild(el('p', 'era-done', 'Service is open: look for people who need you on the Jerusalem map.'));
     const ol = el('ol', 'episodes');
     const next = nextEpisode();

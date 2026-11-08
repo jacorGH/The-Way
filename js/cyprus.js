@@ -147,7 +147,7 @@ window.TW = window.TW || {};
     game.observe('cyprus', 'proconsul', 'At Paphos the proconsul Sergius Paulus believed, astonished at the teaching of the Lord (Acts 13:12).', false, true);
     game.observe('cyprus', 'paul', 'From Paphos on, Saul is called Paul (Acts 13:9).', false, true);
     await s13('13:13', '13:13');
-    await SC.say({ kind: 'drama', text: 'At the harbor John Mark says he is going home. Paul says nothing, and his silence is louder than anything he could have said. You go back to Antioch with letters, and they go on to the mountains of Galatia.' });
+    await SC.say({ kind: 'drama', text: 'At the harbor John Mark says he is going home. Paul says nothing, and his silence is louder than anything he could have said. Barnabas asks whether you will go on with them, up into the mountains. You do.' });
     game.addQuestion(TW.D.episodes.cyprus.question);
     SC.toast('A question is now open in your scroll');
     K.finish(game, 'cyprus', 'Write it down. Begin with the name.');

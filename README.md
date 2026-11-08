@@ -18,7 +18,7 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/util.js` – math, noise, colour helpers, save game (localStorage, guarded)
 - `js/audio.js` – all sound, synthesized live with Web Audio (no audio files): period music in moods (title, galilee, land, reflect, tension, wonder, lament, jerusalem, night, storm), ambience beds (shore, wind, birds, crowd, room, night, fire, storm) and effects. Stages set their soundscape with an `audio` property; `TW.Audio.music(mood)` and `TW.Audio.sfx(name)` handle story beats.
 - `js/role.js` – who you play: Eleazar (a young scribe), Elisheva (Nicodemus's niece), or Both (choose the voice before each scene). Holds exact phrase swaps for Elisheva's dramatized text (never Scripture) and each episode's vantage points
-- `js/scripture.js`, `js/scripture2.js`, `js/scripture3.js` (Acts 1–9, Acts 22 and John 14, 20), `js/scripture4.js` (Acts 9:32–13:13) – every Scripture passage, word for word from the WEB (scripture2 also holds Mark 14–16 and John 19 for the coming Passion episodes)
+- `js/scripture.js`, `js/scripture2.js`, `js/scripture3.js` (Acts 1–9, Acts 22 and John 14, 20), `js/scripture4.js` (Acts 9:32–13:13), `js/scripture5.js` (Acts 13:14–16:40) – every Scripture passage, word for word from the WEB (scripture2 also holds Mark 14–16 and John 19 for the coming Passion episodes)
 - `js/data.js` – eras, timeline, episode registry (notes, reflections, report choices), both map regions, reveal schedule
 - `js/geo.js` – simplified real elevations: Galilee in detail, the whole Land, and Jerusalem with its valleys and the Mount of Olives
 - `js/sprites.js` – procedural pixel people, the man on the mat, pigs, bier, boats, map walker
@@ -54,6 +54,9 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/antioch.js` – Episode XXIII, Antioch (Acts 11:19–30), with Tarsus
 - `js/rhoda.js` – Episode XXIV, Rhoda at the Gate (Acts 12:1–17), with Peter's escape as his memory
 - `js/cyprus.js` – Episode XXV, Cyprus (Acts 13:1–13): the sending at Antioch, a sea voyage, and Paphos
+- `js/pisidia.js` – Episode XXVI, Antioch of Pisidia (Acts 13:14–52)
+- `js/lystra.js` – Episode XXVII, Lystra (Acts 14), with Iconium and the report at Antioch
+- `js/speech.js` – read aloud with the device's built-in voices (narrator, Scripture and character voices)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
 - `js/vignettes.js` – memory scenes: sepia flashbacks that act out each testimony answer in step with its verses
 - `js/main.js` – game controller
@@ -103,3 +106,10 @@ of the Mount of Olives. See `cityAmbience` in `js/main.js`. `TW.Audio._spec()` r
 - **Both**: before each episode, testimony or service visit, choose whose eyes to see it through (`TW.Role.VIEW` lists
   each vantage and recommends the richer one).
 `TW.Role.is()` is true whenever the current voice is Elisheva. Add swaps to `TW.Role.MAP` as `[Eleazar's text, Elisheva's]`.
+
+## Read aloud
+`TW.Speech` speaks each line with the device's voices: narration in the player's voice (male for Eleazar, female for
+Elisheva), Scripture more slowly in a second voice, and characters in stable voices matched to whether the speaker is a
+man or a woman. Music and ambience dip while a line is spoken. On iPhone, Enhanced or Premium voices (Settings >
+Accessibility > Spoken Content > Voices) sound far more natural. Studio-quality dubs are best generated from the final
+text in one pass, after translation.

@@ -41,7 +41,10 @@
         <button id="btn-continue" class="btn primary" hidden>Continue the journey</button>
         <button id="btn-begin" class="btn">Begin the journey</button>
       </div>
-      <button class="sound-toggle btn-text" type="button" aria-pressed="true">Sound on</button>
+      <div class="audio-toggles">
+        <button class="sound-toggle btn-text" type="button" aria-pressed="true">Sound on</button>
+        <button class="read-toggle btn-text" type="button" aria-pressed="false">Read aloud off</button>
+      </div>
       <p class="fine">Scripture quotations are from the World English Bible, which is in the public domain.</p>
     </div>
   </section>
@@ -83,7 +86,7 @@
         <button data-region="galilee" aria-pressed="true">Galilee</button>
         <button data-region="land" aria-pressed="false">The Land</button>
         <button data-region="jerusalem" aria-pressed="false">Jerusalem</button>
-        <button data-region="east" aria-pressed="false">Syria</button>
+        <button data-region="east" aria-pressed="false">The East</button>
       </div>
       <p class="map-hint" id="map-hint">Tap a place. Drag to look around.</p>
       <div class="sheet" id="place-card" hidden>
@@ -130,6 +133,7 @@
         <h2 class="scroll-title">Your scroll</h2>
         <span class="ov-actions">
           <button class="sound-toggle btn-text" type="button" aria-pressed="true">Sound on</button>
+          <button class="read-toggle btn-text" type="button" aria-pressed="false">Read aloud off</button>
           <button class="btn-text" data-close>Close</button>
         </span>
       </header>
@@ -165,10 +169,12 @@
 <script src="js/util.js"></script>
 <script src="js/role.js"></script>
 <script src="js/audio.js"></script>
+<script src="js/speech.js"></script>
 <script src="js/scripture.js"></script>
 <script src="js/scripture2.js"></script>
 <script src="js/scripture3.js"></script>
 <script src="js/scripture4.js"></script>
+<script src="js/scripture5.js"></script>
 <script src="js/data.js"></script>
 <script src="js/geo.js"></script>
 <script src="js/geo-east.js"></script>
@@ -206,6 +212,8 @@
 <script src="js/antioch.js"></script>
 <script src="js/rhoda.js"></script>
 <script src="js/cyprus.js"></script>
+<script src="js/pisidia.js"></script>
+<script src="js/lystra.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

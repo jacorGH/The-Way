@@ -221,6 +221,7 @@ window.TW = window.TW || {};
   const G = (x) => (TW.Role ? TW.Role.G(x) : x);
   SC.say = function (o) {
     if (o && o.kind !== 'scripture') o = Object.assign({}, o, { text: G(o.text), speaker: G(o.speaker) });
+    if (TW.Speech && o && o.kind !== 'goal') TW.Speech.say(o.kind, o.text, o.speaker);
     const el = SC.el;
     SC.mode = 'script';
     el.dialog.className = 'dialog kind-' + o.kind;
@@ -235,7 +236,7 @@ window.TW = window.TW || {};
         clearInterval(typing); typing = null;
         el.text.textContent = full;
         el.next.hidden = false;
-        pending = () => { pending = null; TW.Audio && TW.Audio.sfx('page'); res(); };
+        pending = () => { pending = null; TW.Audio && TW.Audio.sfx('page'); TW.Speech && TW.Speech.stop(); res(); };
       };
       if (U.reducedMotion()) { finish(); return; }
       let i = 0;
@@ -257,6 +258,7 @@ window.TW = window.TW || {};
 
   SC.choose = function (prompt, options, label) {
     prompt = G(prompt); options = options.map(G);
+    if (TW.Speech) TW.Speech.say('drama', prompt);
     const el = SC.el;
     SC.mode = 'script';
     el.dialog.className = 'dialog kind-choice';
