@@ -99,7 +99,7 @@ window.TW = window.TW || {};
   // ---------- ambience ----------
   // Continuous layers are only low, soft textures (brown noise, never hiss). Everything you can pick out is a distinct
   // event: a wave on the stones, a voice, a hammer, a dove, a dog, a footstep. Each layer has its own gain node.
-  const BED_VOL = { shore: 1, wind: 0.5, crowd: 1, room: 0.7, storm: 1.1, fire: 0.5, birds: 1, night: 1, city: 1, village: 1, doves: 1, steps: 1, oars: 1 };
+  const BED_VOL = { shore: 1, wind: 0.5, crowd: 1, room: 0.7, storm: 1.1, fire: 0.5, birds: 1, night: 1, city: 1, village: 1, doves: 1, steps: 1, oars: 1, market: 1, pasture: 1, desert: 1 };
   const beds = {};
   const levels = {};
   let base = {};
@@ -152,7 +152,7 @@ window.TW = window.TW || {};
     tension: { root: 62, mode: PHR, bpm: 54, drone: [38], lyre: 0.35, flute: 0, drum: 0.5, heart: true },
     wonder: { root: 67, mode: MIX, bpm: 58, drone: [43, 50], lyre: 0.55, flute: 0.8, drum: 0, pad: true },
     lament: { root: 62, mode: PDOM, bpm: 50, drone: [38, 45], lyre: 0.3, flute: 0.85, drum: 0 },
-    jerusalem: { root: 57, mode: AEO, bpm: 76, drone: [33, 40], lyre: 0.8, flute: 0.45, drum: 0.75 },
+    jerusalem: { root: 57, mode: AEO, bpm: 76, drone: [33, 40], lyre: 0.8, flute: 0.45, drum: 0.45 },
     night: { root: 62, mode: DOR, bpm: 48, drone: [38], lyre: 0.3, flute: 0.2, drum: 0 },
     storm: { root: 62, mode: PHR, bpm: 96, drone: [38, 39], lyre: 0, flute: 0, drum: 1, roll: true },
     silence: { root: 62, mode: DOR, bpm: 60, drone: [], lyre: 0, flute: 0, drum: 0 },
@@ -182,11 +182,13 @@ window.TW = window.TW || {};
     vib.connect(vg); vg.connect(o.frequency);
     const g = ctx.createGain();
     g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(v, t + 0.12); g.gain.setValueAtTime(v, t + d); g.gain.linearRampToValueAtTime(0.0001, t + d + 0.25);
-    const br = noise(), bg = ctx.createGain();
-    bg.gain.setValueAtTime(0, t); bg.gain.linearRampToValueAtTime(v * 0.12, t + 0.08); bg.gain.linearRampToValueAtTime(0, t + d + 0.25);
-    br.connect(filt('bandpass', f * 1.5, 1.2)).connect(bg); bg.connect(musicBus);
+    // a short tuned 'chiff' at the start of the note instead of breath noise
+    const ch = ctx.createOscillator(), cg = ctx.createGain();
+    ch.frequency.value = f * 3;
+    cg.gain.setValueAtTime(v * 0.08, t); cg.gain.exponentialRampToValueAtTime(0.0001, t + 0.05);
+    ch.connect(cg); cg.connect(musicBus); ch.start(t); ch.stop(t + 0.06);
     o.connect(g); o2.connect(g2); g2.connect(g); g.connect(musicBus);
-    [o, o2, vib].forEach((x) => { x.start(t); x.stop(t + d + 0.35); }); br.stop(t + d + 0.35);
+    [o, o2, vib].forEach((x) => { x.start(t); x.stop(t + d + 0.35); });
   }
   function pad(ms, t, d, v) {
     ms.forEach((m) => {
@@ -203,9 +205,14 @@ window.TW = window.TW || {};
       g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.5);
       o.connect(g); g.connect(musicBus); o.start(t); o.stop(t + 0.55);
     } else {
-      const n = noise(), g = ctx.createGain();
-      g.gain.setValueAtTime(v * 0.5, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.09);
-      n.connect(filt('bandpass', 1400, 1.2)).connect(g); g.connect(musicBus); n.stop(t + 0.1);
+      // the tek: a tuned tap near the rim of the frame drum. No noise, so it never sounds like a hiss.
+      const o = ctx.createOscillator(), g = ctx.createGain(), o2 = ctx.createOscillator(), g2 = ctx.createGain();
+      o.type = 'triangle'; o.frequency.setValueAtTime(420, t); o.frequency.exponentialRampToValueAtTime(300, t + 0.05);
+      g.gain.setValueAtTime(v * 0.45, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.07);
+      o2.type = 'sine'; o2.frequency.setValueAtTime(840, t);
+      g2.gain.setValueAtTime(v * 0.12, t); g2.gain.exponentialRampToValueAtTime(0.0001, t + 0.03);
+      o.connect(g); g.connect(musicBus); o2.connect(g2); g2.connect(musicBus);
+      o.start(t); o.stop(t + 0.08); o2.start(t); o2.stop(t + 0.04);
     }
   }
   function startDrone(notes) {
@@ -398,6 +405,57 @@ window.TW = window.TW || {};
     g2.gain.setValueAtTime(0.02, t); g2.gain.exponentialRampToValueAtTime(0.0001, t + 0.04);
     o2.connect(g2).connect(dest); o2.start(t); o2.stop(t + 0.05);
   }
+  // ---------- the market: carts, donkeys, coins, merchants calling ----------
+  function cart(t, dest) {
+    const out = pan(dest, rand(-0.8, 0.8)), n = 2 + Math.floor(Math.random() * 3);
+    for (let i = 0; i < n; i++) {
+      const s = t + i * rand(0.35, 0.5), o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sawtooth'; o.frequency.setValueAtTime(rand(480, 620), s); o.frequency.linearRampToValueAtTime(rand(380, 450), s + 0.16);
+      g.gain.setValueAtTime(0.0001, s); g.gain.linearRampToValueAtTime(0.01, s + 0.03); g.gain.linearRampToValueAtTime(0.0001, s + 0.18);
+      o.connect(filt('bandpass', 900, 4)).connect(g).connect(out); o.start(s); o.stop(s + 0.2);
+      const th = ctx.createOscillator(), tg = ctx.createGain();
+      th.frequency.setValueAtTime(80, s); th.frequency.exponentialRampToValueAtTime(50, s + 0.06);
+      tg.gain.setValueAtTime(0.04, s); tg.gain.exponentialRampToValueAtTime(0.0001, s + 0.08);
+      th.connect(tg).connect(out); th.start(s); th.stop(s + 0.09);
+    }
+  }
+  function bray(t, dest) {
+    const out = pan(dest, rand(-0.9, 0.9));
+    [[0, 0.35, 520, 440], [0.38, 0.45, 260, 220], [0.9, 0.35, 500, 430], [1.28, 0.45, 250, 210]].forEach((b) => {
+      const s = t + b[0], o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sawtooth'; o.frequency.setValueAtTime(b[2], s); o.frequency.linearRampToValueAtTime(b[3], s + b[1]);
+      g.gain.setValueAtTime(0.0001, s); g.gain.linearRampToValueAtTime(0.014, s + 0.05); g.gain.linearRampToValueAtTime(0.0001, s + b[1]);
+      o.connect(filt('bandpass', b[2] * 1.8, 2)).connect(g).connect(out); toRev(g, 0.4); o.start(s); o.stop(s + b[1] + 0.02);
+    });
+  }
+  function clink(t, dest) {
+    const out = pan(dest, rand(-0.7, 0.7));
+    for (let i = 0; i < 2 + Math.floor(Math.random() * 3); i++) {
+      const s = t + i * rand(0.06, 0.14), o = ctx.createOscillator(), g = ctx.createGain();
+      o.frequency.value = rand(2300, 3400);
+      g.gain.setValueAtTime(0.008, s); g.gain.exponentialRampToValueAtTime(0.0001, s + 0.12);
+      o.connect(g).connect(out); o.start(s); o.stop(s + 0.13);
+    }
+  }
+  // ---------- the slopes and the wilderness: goat bells, a hawk ----------
+  function bell(t, dest) {
+    const f = rand(900, 1300), out = pan(dest, rand(-0.9, 0.9));
+    [1, 2.76, 5.4].forEach((m, i) => {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.frequency.value = f * m;
+      g.gain.setValueAtTime(0.01 / (i + 1), t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.7 / (i + 1));
+      o.connect(g).connect(out); o.start(t); o.stop(t + 0.75);
+    });
+  }
+  function hawk(t, dest) {
+    const out = pan(dest, rand(-0.9, 0.9));
+    [0, 0.7].forEach((d) => {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.frequency.setValueAtTime(2300, t + d); o.frequency.exponentialRampToValueAtTime(1600, t + d + 0.55);
+      g.gain.setValueAtTime(0.0001, t + d); g.gain.linearRampToValueAtTime(0.012, t + d + 0.05); g.gain.linearRampToValueAtTime(0.0001, t + d + 0.55);
+      o.connect(g).connect(out); toRev(g, 0.6); o.start(t + d); o.stop(t + d + 0.6);
+    });
+  }
   let last = 0, nextWave = 0, nextStep = 0, nextOar = 0, side = 1;
   function tick() {
     if (!ctx || ctx.state !== 'running') return;
@@ -418,6 +476,20 @@ window.TW = window.TW || {};
       if (L('crowd') && chance(1.0)) voice(soon(), beds.city, 0.6);
     }
     if (L('doves') && chance(0.12)) coo(soon(), beds.doves);
+    if (L('market')) {
+      const m = L('market');
+      if (chance(2.4 * m)) voice(soon(), beds.market, 0.8);
+      if (chance(0.3 * m)) voice(soon(), beds.market, 1.5);
+      if (chance(0.14 * m)) cart(soon(), beds.market);
+      if (chance(0.03 * m)) bray(soon(), beds.market);
+      if (chance(0.16 * m)) clink(soon(), beds.market);
+    }
+    if (L('pasture')) {
+      if (chance(0.35)) { const n = 2 + Math.floor(Math.random() * 4); let tt = now + 0.05; for (let i = 0; i < n; i++) { bell(tt, beds.pasture); tt += rand(0.15, 0.45); } }
+      if (chance(0.05)) bleat(soon(), true, beds.pasture);
+      if (chance(0.03)) bleat(soon(), false, beds.pasture);
+    }
+    if (L('desert') && chance(0.035)) hawk(soon(), beds.desert);
     if (L('village')) {
       if (chance(0.04)) bark(soon(), beds.village);
       if (chance(0.05)) bleat(soon(), true, beds.village);

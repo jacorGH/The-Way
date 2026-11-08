@@ -90,7 +90,11 @@ washing back over pebbles), `crowd` and `city` voices (murmured syllables throug
 an owl), and travel: `steps` while walking on a map and `oars` while crossing water (`TW.Audio.travel('walk'|'boat'|'')`).
 A stage chooses its soundscape with `audio: { music, amb: { layer: level } }`. The sea is heard only at real shorelines.
 Taps and scene transitions are soft lyre notes. Footsteps are low tonal thuds, never noise; the reverb is darkened so
-echoes never hiss; distant voices play only where a crowd is in the scene (the `crowd` layer). `TW.Audio._spec()` returns [energy above 3 kHz, total] for testing.
+echoes never hiss; distant voices play only where a crowd is in the scene (the `crowd` layer). The music engine contains no noise at all
+(the frame drum's tek is a tuned tap; the flute has a tuned chiff instead of breath).
+On the Jerusalem map the ambience follows the marker: `market` bustle (voices, merchants, carts, donkeys, coins) at the
+center, thinning toward the walls; `pasture` (goat bells, flocks) and birds on the slopes; `desert` (wind, a hawk) east
+of the Mount of Olives. See `cityAmbience` in `js/main.js`. `TW.Audio._spec()` returns [energy above 3 kHz, total] for testing.
 
 ## Three playthroughs
 - **Eleazar**, a young scribe who studies under Nicodemus.

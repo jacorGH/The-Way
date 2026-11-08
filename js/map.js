@@ -264,7 +264,7 @@ window.TW = window.TW || {};
   V.start = function (opts) {
     V.G = regionData(opts.region);
     V.R = V.G.R;
-    V.onPlace = opts.onPlace; V.onBox = opts.onBox; V.status = opts.status || (() => null); V.badge = opts.badge || (() => null);
+    V.onPlace = opts.onPlace; V.onBox = opts.onBox; V.onPos = opts.onPos; V._ambT = 1; V.status = opts.status || (() => null); V.badge = opts.badge || (() => null);
     if (V.R.fog) {
       V.fogSet = opts.revealed;
       const key = [...opts.revealed].sort().join(',');
@@ -358,6 +358,8 @@ window.TW = window.TW || {};
       }
     }
     V.boat = V.isWater(V.pos.x, V.pos.y);
+    V._ambT = (V._ambT || 1) + dt;
+    if (V._ambT > 0.8 && V.onPos) { V._ambT = 0; const RR = V.R; V.onPos(RR.lon0 + (V.pos.x / RR.w) * (RR.lon1 - RR.lon0), RR.lat1 - (V.pos.y / RR.h) * (RR.lat1 - RR.lat0), RR.id); }
     const snd = V.moving ? (V.boat ? 'boat' : 'walk') : '';
     if (snd !== V._snd && TW.Audio) { V._snd = snd; TW.Audio.travel(snd); }
     if (V.follow) {

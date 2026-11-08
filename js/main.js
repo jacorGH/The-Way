@@ -26,6 +26,23 @@ window.TW = window.TW || {};
     syncSound();
   }));
   syncSound();
+  // Jerusalem: market bustle at the center, thinning toward the walls; gardens, flocks and birds on the slopes;
+  // wind and wilderness east of the Mount of Olives.
+  let lastCity = null;
+  function cityAmbience(lon, lat) {
+    const km = Math.hypot((lon - 35.2325) * 94.8, (lat - 31.7765) * 111);
+    const cf = 1 - U.smooth(0.5, 1.5, km);
+    const df = U.smooth(35.246, 35.262, lon);
+    const nf = (1 - cf) * (1 - df);
+    const lv = {
+      market: 0.75 * cf, crowd: 0.45 * cf, city: 0.08 + 0.45 * cf, doves: 0.1 + 0.4 * cf,
+      birds: 0.12 + 0.5 * nf + 0.08 * df, pasture: 0.5 * nf + 0.25 * df, wind: 0.04 + 0.12 * nf + 0.4 * df, desert: df,
+    };
+    const key = Object.values(lv).map((v) => v.toFixed(2)).join();
+    if (key === lastCity) return;
+    lastCity = key;
+    AU.amb(lv);
+  }
   const REGION_SOUND = {
     galilee: { music: 'galilee', amb: { wind: 0.2, birds: 0.55, village: 0.15 } },
     land: { music: 'land', amb: { wind: 0.25, birds: 0.3 } },
@@ -293,6 +310,7 @@ window.TW = window.TW || {};
       revealed: revealedSet(),
       onPlace: (id, arrived) => game.previewPlace(id, arrived),
       onBox: () => game.switchRegion(D.regions[game.region].boxZoom || 'galilee'),
+      onPos: (lon, lat, rid) => { if (rid === 'jerusalem') cityAmbience(lon, lat); },
       status: placeStatus,
       badge: (pl) => game.badge(game.region, pl),
     });
