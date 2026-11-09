@@ -71,6 +71,9 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/corinth.js` – Episode XXXIII, Corinth (Acts 18:1–18)
 - `js/artemis.js` – Episode XXXIV, Great Is Artemis (Acts 18:24–19:41)
 - `js/farewell.js` – Episode XXXV, Farewell at Miletus (Acts 20)
+- `js/rome-art.js` – the Fortress Antonia and its stairs, horsemen, and looks for Agabus, James, the tribune and others
+- `js/arrest.js` – Episode XXXVI, On the Stairs (Acts 21–22)
+- `js/plot.js` – Episode XXXVII, The Forty Who Swore (Acts 23)
 - `js/scripture6.js` – WEB passages: Acts 18:24–24:26
 - `js/about.js` – copyright holder, contact and license summary shown in the game (fill in your name here)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)

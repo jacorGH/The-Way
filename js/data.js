@@ -67,7 +67,7 @@ window.TW = window.TW || {};
       world: [['Emperors', 'Tiberius, Caligula, Claudius, Nero'], ['Prefect of Judea', 'Pontius Pilate, then Marcellus (from AD 36)']],
       episodes: [
         'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda', 'cyprus', 'pisidia', 'lystra', 'jcouncil', 'lydia', 'jailer', 'berea', 'athens', 'corinth', 'artemis', 'farewell',
-        { title: 'Ephesus', ref: 'Acts 19' },
+        'arrest', 'plot',
       ],
     },
     {
@@ -986,6 +986,61 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder.push('artemis', 'farewell');
+  Object.assign(D.episodes, {
+    arrest: {
+      num: 'XXXVI', title: 'On the Stairs', ref: 'Acts 21–22', passage: 'acts21', place: 'antonia', region: 'jerusalem', era: 'spread',
+      scene: 'Caesarea and Jerusalem, Acts 21–22', parallels: 'compare John 19:15; Acts 9:1–19',
+      question: { id: 'gentiles', text: 'Why did the crowd listen to Paul until he spoke of the Gentiles?', ref: 'Acts 22:21–22' },
+      hearts: ['You stayed at the foot of the stairs and listened to every word.', 'You pushed toward the barracks gate to stay close to him.', 'You ran to tell James and the elders.'],
+      conclusions: [
+        'Agabus bound his own hands and feet with Paul’s belt. Paul said he was ready to die in Jerusalem.',
+        'A rumor about a Greek in the Temple set the whole city running. Roman soldiers carried Paul up the stairs to save his life.',
+        'Paul told the crowd what happened on the Damascus road. They listened until he said “the Gentiles.”',
+      ],
+      notes: [
+        ['Philip’s daughters (21:9)', 'Four unmarried daughters who prophesied: Luke mentions them in passing, a glimpse of women’s ministry in the early church.'],
+        ['Agabus (21:10–11)', 'The same prophet who foretold the famine at Antioch (11:28). Like the old prophets, he acted his message out.'],
+        ['The Temple warning (21:28)', 'Stone inscriptions on the barrier around the inner courts warned Gentiles not to pass on pain of death. Two such inscriptions have been found.'],
+        ['The commander (21:31)', 'A tribune over a cohort of up to a thousand soldiers, stationed in the Fortress Antonia beside the Temple. Acts later gives his name: Claudius Lysias (23:26).'],
+        ['“Away with him!” (21:36)', 'The same cry the crowd raised against Jesus before Pilate (John 19:15).'],
+        ['The Egyptian (21:38)', 'A false prophet who led a large following to the Mount of Olives a few years earlier; the historian Josephus also tells of him.'],
+        ['Born a Roman (22:28)', 'Roman citizens could not be flogged to extract a confession. The commander had bought his citizenship; Paul was born with his.'],
+      ],
+      reflect: [
+        'Paul’s friends begged him not to go. Was he right to go anyway?',
+        'The crowd listened to Paul’s whole story until one word. What words make people stop listening today?',
+        'Paul used his Roman citizenship to protect himself. When is it right to claim your rights?',
+      ],
+    },
+    plot: {
+      num: 'XXXVII', title: 'The Forty Who Swore', ref: 'Acts 23', passage: 'acts23', place: 'antonia', region: 'jerusalem', era: 'spread',
+      scene: 'Jerusalem to Caesarea, Acts 23', parallels: 'compare Mark 14:53–65',
+      question: { id: 'rome', text: '“You must testify also at Rome.” How would a prisoner get to Rome?', ref: 'Acts 23:11' },
+      hearts: ['You stood up with the scribes of the Pharisees: “We find no evil in this man.”', 'You stayed seated, and watched the council tear itself apart.', 'You slipped out to wait by the barracks.'],
+      conclusions: [
+        'Paul stood before the same council that condemned Jesus, and cried out that he was on trial for the hope of the resurrection.',
+        'Some of the scribes of the Pharisees stood up for him: “If a spirit or angel has spoken to him, let’s not fight against God!”',
+        'More than forty men swore to kill him. A boy, Paul’s nephew, heard of it, and four hundred and seventy soldiers took Paul to Caesarea by night.',
+      ],
+      answers: { afraid: ['The Lord stood by him in the barracks at night and said, “Cheer up, Paul.”', 'Acts 23:11'] },
+      notes: [
+        ['The council (23:1)', 'The Sanhedrin, the same high court that had tried Jesus and Stephen.'],
+        ['Ananias (23:2)', 'High priest about AD 47–59. The historian Josephus remembers him as greedy and violent.'],
+        ['Pharisees and Sadducees (23:6–8)', 'The Sadducees, the party of the leading priests, denied the resurrection and angels; the Pharisees believed in both. Paul’s cry split the council along that line.'],
+        ['Paul’s nephew (23:16)', 'The only mention of Paul’s family in the New Testament: a sister living in Jerusalem and her son.'],
+        ['Four hundred and seventy (23:23)', 'Two hundred soldiers, seventy horsemen and two hundred spearmen: the commander took no chances with a Roman citizen.'],
+        ['Antipatris (23:31)', 'About 60 km from Jerusalem, a night’s forced march. From there the horsemen alone went on to Caesarea.'],
+        ['Herod’s palace (23:35)', 'Herod the Great’s seaside palace at Caesarea, now the Roman governor’s headquarters.'],
+      ],
+      reflect: [
+        'Why do you think some Pharisees defended Paul?',
+        'The Lord said “Cheer up” to a man in a cell. What would it take for you to hear that?',
+        'A boy who overheard something saved Paul’s life. What small faithfulness might matter more than you know?',
+      ],
+    },
+  });
+  D.eraOrder.push('arrest', 'plot');
+
 
 
 
@@ -1220,6 +1275,8 @@ window.TW = window.TW || {};
 
   // ---------- Jerusalem and the Mount of Olives ----------
   const jerPlaces = [
+    { id: 'antonia', name: 'Fortress Antonia', alt: 'The Roman barracks over the Temple courts', lon: 35.2334, lat: 31.7803, kind: 'episode', episodes: ['arrest', 'plot'], label: 'l',
+      text: 'Herod’s fortress at the northwest corner of the Temple platform, garrisoned by a Roman cohort. Stairs led down from it into the Temple courts.' },
     { id: 'temple', name: 'The Temple', alt: 'Herod’s Temple on its great platform', lon: 35.2356, lat: 31.7781, kind: 'episode', episodes: ['entry', 'temple', 'pentecost', 'gate', 'trial'], label: 'r',
       text: 'Herod the Great began rebuilding the Temple around 20 BC, and work was still going on in Jesus’ day (John 2:20). Its platform covered about 14 hectares, one of the largest sacred precincts in the Roman world.' },
     { id: 'olivet', name: 'Mount of Olives road', short: 'Olivet road', alt: 'The descent toward the city', lon: 35.2428, lat: 31.7784, kind: 'episode', episodes: ['entry'], label: 'r',

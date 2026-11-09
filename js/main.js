@@ -246,7 +246,7 @@ window.TW = window.TW || {};
     det.appendChild(dl);
     if (era.id === 'galilee' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era II, The Road to Jerusalem, comes next.'));
     if (era.id === 'passion' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era III, The Jerusalem Church, comes next.'));
-    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: Paul’s arrest in Jerusalem, his trials, and the road to Rome.'));
+    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: Paul before Felix, Festus and Agrippa, the shipwreck, and Rome.'));
     if (era.id === 'church' && game.save.completed.seven) det.appendChild(el('p', 'era-done', 'Service is open: look for people who need you on the Jerusalem map.'));
     const ol = el('ol', 'episodes');
     const next = nextEpisode();
@@ -1025,6 +1025,8 @@ window.TW = window.TW || {};
   }
 
   // ---------- boot ----------
+  // Settings straight from the title screen
+  $('#btn-title-settings').addEventListener('click', (e) => { e.stopPropagation(); openJournal('settings'); });
   relabel();
   game.show('title');
 })(window.TW);

@@ -77,6 +77,8 @@ file in the Files app (long-press → Get Info). In the game, set **Recordings a
 extension (for example `.m4a` or `.wav`); the manifest the Studio writes uses it.
 
 #### Troubleshooting
+- **An If block never matches:** type the tag as plain text, `N`, with no quote marks. Shortcuts compares the exact
+  characters, so `'N'` or `"N"` will never equal `N`.
 - **No file appears:** check Set Name's input is *Spoken Audio* (simple version) or the *Audio* variable (full version),
   and Save File's input is *Renamed Item*. Make sure the **The Way Audio** folder exists.
 - **One file keeps being overwritten:** Set Name is not using the `ID` variable, so every file gets the same name.

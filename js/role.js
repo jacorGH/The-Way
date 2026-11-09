@@ -42,6 +42,8 @@ window.TW = window.TW || {};
     cornelius: ['scribe', 'A scribe crossing a Gentile’s threshold', 'Answering the gate at the tanner’s house'],
     antioch: ['scribe', 'Traveling with Barnabas, and to Tarsus for Saul', 'Traveling with Barnabas’s party, and at a Greek table'],
     rhoda: ['niece', 'Praying in the crowded room', 'Beside Rhoda, at the gate'],
+    arrest: ['scribe', 'In the Temple courts, then at the foot of the stairs', 'In the Court of the Women, then at the foot of the stairs'],
+    plot: ['scribe', 'Among the scribes of the Pharisees in the council', 'At the barracks gate, where a boy comes running'],
     artemis: ['niece', 'In the theater with the crowd', 'With Priscilla, and then in the theater'],
     farewell: ['scribe', 'Among the elders on the shore', 'Among the believers on the shore'],
     corinth: ['niece', 'At the workbench with Aquila', 'At the workbench with Priscilla'],

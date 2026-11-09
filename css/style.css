@@ -88,13 +88,14 @@ canvas.pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
 .bar.dark .btn-text { color: var(--on-basalt-soft); }
 
 /* ---------- title ---------- */
-#s-title { background: var(--basalt); color: var(--on-basalt); justify-content: flex-end; }
-#title-vista { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+#s-title { background: var(--basalt); color: var(--on-basalt); justify-content: flex-start; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+#title-vista { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 #s-title::after {
-  content: ""; position: absolute; inset: 0;
+  content: ""; position: fixed; inset: 0; pointer-events: none;
   background: linear-gradient(180deg, rgba(36, 30, 26, 0) 25%, rgba(36, 30, 26, 0.72) 58%, var(--basalt) 88%);
 }
-.title-block { position: relative; z-index: 1; padding: 0 1.5rem 2rem; max-width: 34rem; width: 100%; margin: 0 auto; text-align: center; }
+/* margin-top: auto keeps the block low over the landscape when there is room, and lets it scroll from the top when there is not */
+.title-block { position: relative; z-index: 1; padding: calc(env(safe-area-inset-top, 0px) + 1.25rem) 1.5rem calc(env(safe-area-inset-bottom, 0px) + 2rem); max-width: 34rem; width: 100%; margin: auto auto 0; text-align: center; box-sizing: border-box; }
 .wordmark {
   font-family: Cinzel, "Trajan Pro", Georgia, serif; font-weight: 700; margin: 0;
   font-size: clamp(3rem, 15vw, 5.4rem); letter-spacing: 0.14em; line-height: 1; padding-left: 0.14em;
@@ -412,3 +413,5 @@ html.selectable .dialog, html.selectable .dialog * { -webkit-user-select: text; 
 .set-downloads { display: flex; flex-direction: column; gap: 0.45rem; margin: 0.6rem 0; }
 .set-downloads .btn { text-align: left; }
 .studio-box { width: 100%; box-sizing: border-box; font-family: ui-monospace, Menlo, monospace; font-size: 0.75rem; }
+#btn-title-settings { color: var(--on-basalt-soft); margin-top: 0.8rem; }
+.audio-toggles { flex-wrap: wrap; row-gap: 0.4rem; }
