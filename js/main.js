@@ -24,6 +24,8 @@ window.TW = window.TW || {};
     e.stopPropagation();
     AU.setOn(!AU.on);
     syncSound();
+  }));
+  syncSound();
   function syncRead() {
     document.querySelectorAll('.read-toggle').forEach((b) => {
       b.hidden = !TW.Speech.available;
@@ -38,8 +40,6 @@ window.TW = window.TW || {};
     syncRead();
   }));
   syncRead();
-  }));
-  syncSound();
   // Jerusalem: market bustle at the center, thinning toward the walls; gardens, flocks and birds on the slopes;
   // wind and wilderness east of the Mount of Olives.
   let lastCity = null;
@@ -610,6 +610,35 @@ window.TW = window.TW || {};
         s.obs[id].forEach((o) => ul.appendChild(el('li', '', o.text)));
         body.appendChild(ul);
       });
+    } else if (tab === 'voices') {
+      const SP = TW.Speech;
+      SP.reload();
+      if (!SP.available) { body.appendChild(el('p', 'empty', 'This browser has no built-in voices.')); return; }
+      const list = SP.list();
+      body.appendChild(el('p', '', 'Read aloud uses the voices on your device. Choose one for the narrator and one for Scripture, and tap Test to hear it.'));
+      if (!SP.hasQualityVoice()) {
+        body.appendChild(el('p', 'heart', 'For natural-sounding voices on iPhone, go to Settings → Accessibility → Spoken Content → Voices → English. Tap a voice such as Ava, Zoe, Evan or Nathan and download its Enhanced or Premium version. Then come back here. (Apple does not let web pages use the Siri voices.)'));
+      }
+      if (!list.length) { body.appendChild(el('p', 'empty', 'No voices are available yet. Turn Read aloud on once, then reopen this tab.')); return; }
+      [['narrator', 'Narrator', 'drama'], ['scripture', 'Scripture', 'scripture']].forEach((slot) => {
+        const row = el('div', 'voice-row');
+        const lab = el('label', 'voice-label', slot[1]);
+        const sel = el('select', 'voice-select');
+        list.forEach((v) => {
+          const o = el('option', '', v.name.replace(/\s*\((enhanced|premium)\)/i, '') + ' · ' + SP.quality(v) + ' · ' + v.lang);
+          o.value = v.name;
+          if (v.name === SP.chosen(slot[0])) o.selected = true;
+          sel.appendChild(o);
+        });
+        sel.addEventListener('change', () => { SP.choose(slot[0], sel.value); SP.test(sel.value, slot[2]); });
+        const test = el('button', 'btn small', 'Test');
+        test.type = 'button';
+        test.addEventListener('click', () => SP.test(sel.value, slot[2]));
+        lab.appendChild(sel);
+        row.appendChild(lab); row.appendChild(test);
+        body.appendChild(row);
+      });
+      body.appendChild(el('p', 'empty', list.length + ' voices found. Characters use the best voices of the right kind automatically.'));
     } else if (tab === 'service') {
       const all = Object.keys(D.service || {});
       const done = all.filter((k) => s.served[k]);
