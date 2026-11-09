@@ -21,7 +21,7 @@ if (!input) { console.error('Usage: node tools/import-bible.mjs <file> --id ASV 
 const ctx = { console, localStorage: { getItem: () => null, setItem() {} } };
 ctx.window = ctx;
 vm.createContext(ctx);
-for (const f of ['scripture', 'scripture2', 'scripture3', 'scripture4', 'scripture5', 'scripture6', 'scripture7', 'bible']) vm.runInContext(fs.readFileSync(path.join(root, 'js', f + '.js'), 'utf8'), ctx);
+for (const f of ['scripture', 'scripture2', 'scripture3', 'scripture4', 'scripture5', 'scripture6', 'scripture7', 'scripture8', 'bible']) vm.runInContext(fs.readFileSync(path.join(root, 'js', f + '.js'), 'utf8'), ctx);
 const B = ctx.TW.Bible;
 const all = B.parse(fs.readFileSync(input, 'utf8'));
 const kept = args.includes('--all') ? { text: all, matched: Object.values(all).reduce((n, b) => n + Object.keys(b).length, 0), needed: B.needed().length } : B.filter(all);

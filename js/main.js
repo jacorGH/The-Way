@@ -64,6 +64,7 @@ window.TW = window.TW || {};
     jerusalem: { music: 'jerusalem', amb: { city: 0.4, doves: 0.3, birds: 0.25 } },
     east: { music: 'land', amb: { birds: 0.3, village: 0.15, wind: 0.1 } },
     aegean: { music: 'land', amb: { birds: 0.3, village: 0.1, wind: 0.12 } },
+    west: { music: 'land', amb: { birds: 0.2, wind: 0.15 } },
   };
   TW.game = game;
   const persist = () => U.store(game.save);
@@ -246,7 +247,7 @@ window.TW = window.TW || {};
     det.appendChild(dl);
     if (era.id === 'galilee' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era II, The Road to Jerusalem, comes next.'));
     if (era.id === 'passion' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era III, The Jerusalem Church, comes next.'));
-    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: the voyage, the shipwreck on Malta, and Rome.'));
+    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Acts is complete. Still to come: the letters, the fall of Jerusalem, and Revelation.'));
     if (era.id === 'church' && game.save.completed.seven) det.appendChild(el('p', 'era-done', 'Service is open: look for people who need you on the Jerusalem map.'));
     const ol = el('ol', 'episodes');
     const next = nextEpisode();

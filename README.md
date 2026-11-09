@@ -74,6 +74,11 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/rome-art.js` – the Fortress Antonia and its stairs, horsemen, and looks for Agabus, James, the tribune and others
 - `js/arrest.js` – Episode XXXVI, On the Stairs (Acts 21–22)
 - `js/plot.js` – Episode XXXVII, The Forty Who Swore (Acts 23)
+- `js/geo-west.js` – geography of the central Mediterranean (Italy, Sicily, Malta, Greece, Crete, Lycia, Africa)
+- `js/storm.js` – Episode XL, The Storm (Acts 27)
+- `js/malta.js` – Episode XLI, Malta (Acts 28:1–10)
+- `js/rome.js` – Episode XLII, Rome (Acts 28:11–31), the end of Acts
+- `js/scripture8.js` – WEB passages: Acts 27–28
 - `js/felix.js` – Episode XXXVIII, Two Years in Caesarea (Acts 24:1–25:12)
 - `js/agrippa.js` – Episode XXXIX, Almost Persuaded (Acts 25:13–26:32)
 - `js/scripture7.js` – WEB passages: Acts 25–26

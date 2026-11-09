@@ -67,7 +67,7 @@ window.TW = window.TW || {};
       world: [['Emperors', 'Tiberius, Caligula, Claudius, Nero'], ['Prefect of Judea', 'Pontius Pilate, then Marcellus (from AD 36)']],
       episodes: [
         'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda', 'cyprus', 'pisidia', 'lystra', 'jcouncil', 'lydia', 'jailer', 'berea', 'athens', 'corinth', 'artemis', 'farewell',
-        'arrest', 'plot', 'felix', 'agrippa',
+        'arrest', 'plot', 'felix', 'agrippa', 'storm', 'malta', 'rome',
       ],
     },
     {
@@ -1093,6 +1093,84 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder.push('felix', 'agrippa');
+  Object.assign(D.episodes, {
+    storm: {
+      num: 'XL', title: 'The Storm', ref: 'Acts 27', passage: 'acts27', place: 'fairhavens', region: 'west', era: 'spread',
+      scene: 'From Caesarea to the shipwreck, Acts 27', parallels: 'compare Jonah 1; Mark 4:35–41',
+      question: { id: 'cheer', text: '“Cheer up! For I believe God.” How could Paul say that in the middle of a storm?', ref: 'Acts 27:25' },
+      hearts: ['You took the bread he gave thanks for, and ate.', 'You gave your piece to the frightened ship’s boy beside you.', 'You kept watch at the rail while the others ate.'],
+      conclusions: [
+        'Paul warned them not to sail on from Crete. The master and the owner overruled him.',
+        'Fourteen days without sun or stars. Then an angel stood by Paul: God had granted him everyone who sailed with him.',
+        'He broke bread and gave thanks before all of us. The ship broke apart, and all two hundred seventy-six reached the land.',
+      ],
+      notes: [
+        ['Julius (27:1)', 'A centurion of an imperial cohort. He treated Paul kindly throughout, and in the end saved his life (27:3, 43).'],
+        ['A ship of Alexandria (27:6)', 'One of the great grain ships that carried Egypt’s wheat to Rome. Its cargo was the wheat they finally threw overboard (27:38).'],
+        ['The Fast (27:9)', 'The Day of Atonement, in late September or October. Sailing was risky after mid-September and the open sea was all but closed by November.'],
+        ['Euroclydon (27:14)', 'A violent northeast wind sweeping down from Crete’s mountains.'],
+        ['The Syrtis (27:17)', 'The shoals and quicksands off the coast of Libya, dreaded by every sailor.'],
+        ['The Adriatic Sea (27:27)', 'In ancient usage the name covered the open sea between Greece, Italy and Sicily, not only today’s Adriatic.'],
+        ['Fourteen days (27:27)', 'A nineteenth-century yachtsman and scholar, James Smith, calculated that a ship drifting before a northeaster from Clauda would reach Malta in about fourteen days.'],
+      ],
+      reflect: [
+        'Paul was a prisoner, yet by the end everyone on the ship was listening to him. Why?',
+        'What does it mean to “believe God” when everything around you says otherwise?',
+        'Why do you think Luke tells the storm in such detail?',
+      ],
+    },
+    malta: {
+      num: 'XLI', title: 'Malta', ref: 'Acts 28:1–10', passage: 'acts28', from: '28:1', to: '28:10', place: 'malta', region: 'west', era: 'spread',
+      scene: 'The island of Malta, Acts 28', parallels: 'compare Mark 16:18; Luke 10:19',
+      question: { id: 'kindness', text: 'The islanders showed “uncommon kindness” to strangers washed up from the sea. Who has shown you kindness like that?', ref: 'Acts 28:2' },
+      hearts: ['You prayed, out loud, for the first time in front of strangers.', 'You reached for the snake.', 'You froze, like everyone else.'],
+      conclusions: [
+        'Strangers who did not speak our language built a fire for us in the rain.',
+        'A viper fastened on Paul’s hand. He shook it into the fire, and they decided he was a god. He was not.',
+        'Paul prayed for the father of Publius, laid his hands on him, and he was healed. Then the sick of the whole island came.',
+      ],
+      notes: [
+        ['The natives (28:2)', 'Luke’s Greek word means people who did not speak Greek. The Maltese spoke a language descended from Phoenician.'],
+        ['The viper (28:3)', 'Malta has no venomous snakes today. Some suggest they died out as the island was cleared; others that this was a snake the islanders believed deadly.'],
+        ['Justice (28:4)', 'The islanders spoke of Justice as a goddess who pursues the guilty, and assumed the sea had only delayed her.'],
+        ['Publius (28:7)', 'Luke calls him “the chief man of the island.” Inscriptions found on Malta use this same title for the island’s leading official.'],
+        ['Fever and dysentery (28:8)', 'Some doctors have suggested “Malta fever,” long spread on the island through goats’ milk.'],
+        ['The Twin Brothers (28:11)', 'Castor and Pollux, sons of Zeus in Greek myth, believed to protect sailors. Their figures were carved on the next ship’s prow.'],
+      ],
+      reflect: [
+        'The islanders went from “murderer” to “god” in an afternoon. What do you notice about how people judge?',
+        'Paul gathered sticks for the fire. What does that say about him?',
+        'How could you show uncommon kindness to a stranger this week?',
+      ],
+    },
+    rome: {
+      num: 'XLII', title: 'Rome', ref: 'Acts 28:11–31', passage: 'acts28', from: '28:11', to: '28:31', place: 'rome', region: 'west', era: 'spread',
+      scene: 'The Appian Way and Rome, Acts 28', parallels: 'compare Romans 1:8–15; Philippians 1:12–14',
+      question: { id: 'unfinished', text: 'Acts ends with Paul teaching “without hindrance,” and does not say what happened next. Why might Luke end there?', ref: 'Acts 28:30–31' },
+      hearts: ['You gave your scroll to Luke.', 'You read it aloud to the believers in Rome.', 'You kept writing.'],
+      answers: { rome: ['“So we came to Rome”: as a prisoner, by storm and shipwreck, at the emperor’s expense.', 'Acts 28:14'] },
+      conclusions: [
+        'The believers walked out along the Appian Way to meet a prisoner in chains, and when Paul saw them, he thanked God and took courage.',
+        'Chained to a soldier in a rented house, he told the leaders of the Jews that he was bound “because of the hope of Israel.”',
+        'For two whole years he welcomed everyone who came, teaching about the Lord Jesus with all boldness, without hindrance.',
+      ],
+      notes: [
+        ['Puteoli (28:13)', 'The main port of Italy for the grain ships from Alexandria, on the Bay of Naples. There were already believers there.'],
+        ['The Appian Way (28:15)', 'The great paved road south from Rome. The Market of Appius lay about 65 km from the city, the Three Taverns about 50.'],
+        ['Under guard (28:16)', 'Paul lived in rented rooms under house arrest, probably chained at the wrist to a soldier who changed with each watch.'],
+        ['Letters from prison', 'Philippians, Colossians, Philemon and Ephesians all speak of Paul’s chains; many believe some or all were written during these two years in Rome.'],
+        ['Isaiah 6 (28:26–27)', 'The same words Jesus used of those who heard his parables and did not understand (Mark 4:12).'],
+        ['Without hindrance (28:31)', 'In Greek the very last word of Acts. Early Christian writers say Paul was later put to death in Rome under Nero, but Luke ends with the word still going out.'],
+      ],
+      reflect: [
+        'Acts began in Jerusalem and ends in Rome. Look back: how did the word travel?',
+        'Why do you think the book ends without telling us Paul’s fate?',
+        'You have followed the Way from a roof in Capernaum to a rented house in Rome. What do you believe now?',
+      ],
+    },
+  });
+  D.eraOrder.push('storm', 'malta', 'rome');
+
 
 
 
@@ -1420,6 +1498,7 @@ window.TW = window.TW || {};
     { id: 'iconium', name: 'Iconium', alt: 'Konya', lon: 32.494, lat: 37.874, kind: 'history', label: 'r', ref: 'Acts 14:1–6', text: 'A prosperous city where a great multitude of Jews and Greeks believed, and the city was divided.' },
     { id: 'lystra', name: 'Lystra', alt: 'A Roman colony in Lycaonia', lon: 32.330, lat: 37.580, kind: 'episode', episodes: ['lystra'], label: 'l',
       text: 'A small Roman colony on the Lycaonian plain, home of Timothy and his mother and grandmother (Acts 16:1; 2 Timothy 1:5).' },
+    { id: 'towest', name: 'West to Rome', short: 'Rome', alt: 'Crete, Malta, Sicily and Italy', lon: 29.85, lat: 36.55, kind: 'zoom', zoom: 'west', label: 'r' },
     { id: 'toaegean', name: 'West to Asia and Macedonia', short: 'The Aegean', alt: 'Troas, Philippi, Athens, Corinth and Ephesus', lon: 29.90, lat: 38.45, kind: 'zoom', zoom: 'aegean', label: 'r' },
     { id: 'derbe', name: 'Derbe', alt: 'The edge of Lycaonia', lon: 33.360, lat: 37.350, kind: 'history', label: 'r', ref: 'Acts 14:20–21', text: 'The farthest city of the first journey, where many became disciples.' },
   ];
@@ -1436,6 +1515,7 @@ window.TW = window.TW || {};
     ['seleucia', 'salamis', 'boat'], ['salamis', 'c1'], ['c1', 'paphos'], ['caesarea', 'seleucia', 'boat'],
     ['paphos', 'perga', 'boat'], ['perga', 'attalia'], ['attalia', 'seleucia', 'boat'], ['perga', 'g1'], ['g1', 'pisidia'],
     ['pisidia', 'g2'], ['g2', 'iconium'], ['iconium', 'lystra'], ['lystra', 'derbe'], ['derbe', 'g3'], ['g3', 'tarsus'],
+    ['pisidia', 'toaegean'], ['attalia', 'towest', 'boat'],
   ];
   const eastLabels = [
     { text: 'Syria', lon: 36.75, lat: 35.05, style: 'region' },
@@ -1498,6 +1578,43 @@ window.TW = window.TW || {};
     texelKm: 2.3, scaleKm: 50, start: 'troas', places: aegPlaces, nodes: aegNodes, edges: aegEdges, labels: aegLabels,
   };
   D.regions.aegean.subtitle = 'c. AD 49–57';
+  // ---------- Era IV: the voyage to Rome ----------
+  const westPlaces = [
+    { id: 'toeastw', name: 'East to Pamphylia and Syria', short: 'The East', alt: 'Back to the map of the Roman East', lon: 30.15, lat: 37.20, kind: 'zoom', zoom: 'east', label: 'l' },
+    { id: 'myra', name: 'Myra', alt: 'A port of Lycia', lon: 29.98, lat: 36.26, kind: 'history', label: 'l', ref: 'Acts 27:5–6', text: 'Where the centurion found a grain ship of Alexandria bound for Italy.' },
+    { id: 'cnidus', name: 'Cnidus', alt: 'A headland of Caria', lon: 27.37, lat: 36.68, kind: 'history', label: 'l', ref: 'Acts 27:7', text: 'Here the northwest wind stopped them, and they ran south for the shelter of Crete.' },
+    { id: 'salmone', name: 'Salmone', alt: 'The eastern cape of Crete', lon: 26.30, lat: 35.30, kind: 'history', label: 'r', ref: 'Acts 27:7', text: 'They rounded Crete’s eastern point and crept along its southern shore.' },
+    { id: 'fairhavens', name: 'Fair Havens', alt: 'Near Lasea, on Crete’s south coast', lon: 24.80, lat: 34.93, kind: 'episode', episodes: ['storm'], label: 'r',
+      text: 'A small open bay on the south coast of Crete, poor shelter for a winter. Paul warned them not to sail on.' },
+    { id: 'phoenix', name: 'Phoenix', alt: 'The harbor they never reached', lon: 24.08, lat: 35.20, kind: 'history', label: 'l', ref: 'Acts 27:12', text: 'A better harbor further west, where they hoped to spend the winter.' },
+    { id: 'clauda', name: 'Clauda', alt: 'Gavdos', lon: 24.08, lat: 34.84, kind: 'history', label: 'l', ref: 'Acts 27:16', text: 'A small island in whose lee they hauled in the ship’s boat and bound the hull with cables.' },
+    { id: 'malta', name: 'Malta', alt: 'Melita', lon: 14.43, lat: 35.90, kind: 'episode', episodes: ['malta'], label: 'r',
+      text: 'Where the ship ran aground after fourteen days adrift, and all 276 aboard reached land.' },
+    { id: 'syracuse', name: 'Syracuse', alt: 'The great city of Sicily', lon: 15.29, lat: 37.07, kind: 'history', label: 'r', ref: 'Acts 28:12', text: 'An old Greek city and harbor, where they stayed three days.' },
+    { id: 'rhegium', name: 'Rhegium', alt: 'Reggio, on the toe of Italy', lon: 15.65, lat: 38.11, kind: 'history', label: 'r', ref: 'Acts 28:13', text: 'On the straits between Sicily and Italy.' },
+    { id: 'puteoli', name: 'Puteoli', alt: 'The port for Rome’s grain', lon: 14.12, lat: 40.82, kind: 'history', label: 'r', ref: 'Acts 28:13–14', text: 'The great harbor on the Bay of Naples where the grain ships of Alexandria unloaded. Believers were already here.' },
+    { id: 'forumappii', name: 'The Market of Appius', alt: 'Forum Appii, on the Appian Way', lon: 13.04, lat: 41.43, kind: 'history', label: 'r', ref: 'Acts 28:15', text: 'A market town about 65 km from Rome, where believers came out to meet Paul.' },
+    { id: 'threetaverns', name: 'The Three Taverns', alt: 'A way station on the Appian Way', lon: 12.86, lat: 41.66, kind: 'history', label: 'l', ref: 'Acts 28:15', text: 'About 50 km from Rome, where a second group of believers met him.' },
+    { id: 'rome', name: 'Rome', alt: 'The city of the emperor', lon: 12.48, lat: 41.89, kind: 'episode', episodes: ['rome'], label: 'l',
+      text: 'The capital of the empire, a city of perhaps a million people, with a Jewish community and a church that had existed for years before Paul came.' },
+  ];
+  const westNodes = { w1: { lon: 20.0, lat: 35.2 }, w2: { lon: 17.0, lat: 35.6 } };
+  westPlaces.forEach((p) => { westNodes[p.id] = { lon: p.lon, lat: p.lat, name: p.name }; });
+  const westEdges = [
+    ['toeastw', 'myra'], ['myra', 'cnidus', 'boat'], ['cnidus', 'salmone', 'boat'], ['salmone', 'fairhavens', 'boat'], ['fairhavens', 'phoenix', 'boat'], ['fairhavens', 'clauda', 'boat'],
+    ['clauda', 'w1', 'boat'], ['w1', 'w2', 'boat'], ['w2', 'malta', 'boat'], ['malta', 'syracuse', 'boat'], ['syracuse', 'rhegium', 'boat'], ['rhegium', 'puteoli', 'boat'],
+    ['puteoli', 'forumappii'], ['forumappii', 'threetaverns'], ['threetaverns', 'rome'],
+  ];
+  const westLabels = [
+    { text: 'Italia', lon: 15.4, lat: 41.2, style: 'region' }, { text: 'Sicilia', lon: 14.1, lat: 37.4, style: 'small' }, { text: 'Achaia', lon: 21.9, lat: 37.6, style: 'region' },
+    { text: 'Creta', lon: 25.0, lat: 35.62, style: 'small' }, { text: 'Lycia', lon: 29.4, lat: 36.75, style: 'small' }, { text: 'Africa', lon: 13.0, lat: 32.7, style: 'small' },
+    { text: 'Sea of Adria', lon: 18.8, lat: 37.3, style: 'water' }, { text: 'Mare Nostrum', lon: 21.0, lat: 34.0, style: 'water' }, { text: 'Via Appia', lon: 13.7, lat: 41.15, style: 'river' },
+  ];
+  D.regions.west = {
+    id: 'west', title: 'The Voyage to Rome', lon0: 11.0, lon1: 30.6, lat0: 32.4, lat1: 42.6, w: 280, h: 190,
+    texelKm: 6.0, scaleKm: 200, start: 'myra', places: westPlaces, nodes: westNodes, edges: westEdges, labels: westLabels,
+  };
+  D.regions.west.subtitle = 'c. AD 59–62';
   D.regions.galilee.subtitle = 'c. AD 28';
   D.regions.land.subtitle = 'c. AD 28–30';
   D.regions.jerusalem.subtitle = 'Passover, c. AD 30';
