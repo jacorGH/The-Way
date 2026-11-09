@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — Bible versions.
    Scripture is stored once, by passage, in the WEB (scripture*.js). Every other version is a plain lookup:
      text[Book][chapter:verse] = 'verse text'

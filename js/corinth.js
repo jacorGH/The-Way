@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XXXIII: Corinth (Acts 18:1–18). The beating of Sosthenes is told, not shown. */
 window.TW = window.TW || {};
 (function (TW) {

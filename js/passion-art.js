@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — shared art for the Passion episodes.
    The crucifixion is shown reverently: from a distance, as dark silhouettes against the sky, with no wounds or gore. */
 window.TW = window.TW || {};

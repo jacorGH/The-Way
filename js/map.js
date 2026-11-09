@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — overworld maps (Galilee in detail, and the whole Land with fog that lifts as the story goes on) */
 window.TW = window.TW || {};
 (function (TW) {

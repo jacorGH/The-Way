@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — Testimonies: the scribe seeks out eyewitnesses and hears their accounts.
    Rule: what a witness recounts is shown as Scripture, word for word. Only the framing around it is dramatization. */
 window.TW = window.TW || {};

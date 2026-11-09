@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — memory scenes. When a witness tells what happened, the stage fades into a remembered scene
    that plays out in step with the Scripture. Cues in the testimony data (['c', name]) drive each step. */
 window.TW = window.TW || {};

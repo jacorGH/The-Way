@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — geography of Syria, Cilicia and Cyprus, for Era IV.
    Hand-placed coastline, islands, ranges and rivers at roughly true positions; heights are approximate. */
 window.TW = window.TW || {};

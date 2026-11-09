@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XII: Forty Days (John 20:19–29; Acts 1:1–14).
    The scribe is welcomed into the upper room and hears what the disciples saw: the locked room, Thomas, the Ascension. */
 window.TW = window.TW || {};

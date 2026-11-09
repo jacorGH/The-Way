@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — interface language. t('English text') returns the current language's version, or the English.
    Static labels in index.html carry data-i18n; they are translated whenever the language changes. */
 window.TW = window.TW || {};

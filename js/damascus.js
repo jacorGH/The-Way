@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XX: The Road to Damascus (Acts 9:1–31).
    The scribe comes north to warn the believers, and arrives to find Saul blind and praying. Saul's account of the road
    plays as his own memory. */

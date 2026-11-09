@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — content data.
    Scripture quotations: World English Bible (WEB), public domain (see scripture.js).
    Rule of the project: Scripture is never altered. Anything invented is labelled "Dramatization". */
@@ -66,7 +66,7 @@ window.TW = window.TW || {};
         'Scattered from Jerusalem, the believers carry the word into Samaria, down the desert road, and north to Damascus, where the persecutor meets the one he persecuted. Then Antioch, the council at Jerusalem, and Paul’s journeys across the Mediterranean.',
       world: [['Emperors', 'Tiberius, Caligula, Claudius, Nero'], ['Prefect of Judea', 'Pontius Pilate, then Marcellus (from AD 36)']],
       episodes: [
-        'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda', 'cyprus', 'pisidia', 'lystra', 'jcouncil', 'lydia', 'jailer', 'berea', 'athens', 'corinth',
+        'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda', 'cyprus', 'pisidia', 'lystra', 'jcouncil', 'lydia', 'jailer', 'berea', 'athens', 'corinth', 'artemis', 'farewell',
         { title: 'Ephesus', ref: 'Acts 19' },
       ],
     },
@@ -933,6 +933,60 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder.push('corinth');
+  Object.assign(D.episodes, {
+    artemis: {
+      num: 'XXXIV', title: 'Great Is Artemis', ref: 'Acts 18:24–19:41', passage: 'acts19', place: 'ephesus', region: 'aegean', era: 'spread',
+      scene: 'Ephesus, Acts 19', parallels: 'compare 1 Corinthians 15:32; 16:8–9',
+      question: { id: 'name', text: 'What is the difference between using the name of Jesus and knowing him?', ref: 'Acts 19:13–15' },
+      hearts: ['You stayed hidden in the crowd and prayed.', 'You pushed toward Gaius and Aristarchus in the middle of the theater.', 'You helped the disciples hold Paul back at the gate.'],
+      conclusions: [
+        'Priscilla and Aquila took Apollos aside and taught him the way of God more accurately. The teacher was taught.',
+        'Those who practiced magic burned their books in the sight of all: fifty thousand pieces of silver.',
+        'For two hours a city shouted “Great is Artemis!” A town clerk quieted them, and no one was harmed.',
+      ],
+      notes: [
+        ['Apollos (18:24)', 'A learned Jew from Alexandria in Egypt, a great center of learning. Paul later wrote, “I planted. Apollos watered. But God gave the increase” (1 Corinthians 3:6).'],
+        ['Priscilla and Aquila (18:26)', 'Luke often names Priscilla first. Here a woman and her husband take a gifted preacher aside and teach him privately.'],
+        ['The school of Tyrannus (19:9)', 'A lecture hall. One ancient manuscript adds that Paul taught there from about 11 in the morning to 4 in the afternoon, the hot hours when others rested.'],
+        ['Fifty thousand pieces of silver (19:19)', 'Probably drachmas: about a day’s wage each, so the books were worth the wages of a laborer for some 160 years.'],
+        ['Artemis of the Ephesians (19:24)', 'Her temple at Ephesus was one of the Seven Wonders of the ancient world, and a great center of pilgrimage, banking and trade.'],
+        ['The theater (19:29)', 'Its ruins still stand at the foot of Mount Pion and held around 24,000 people.'],
+        ['The Asiarchs (19:31)', 'Leading men of the province of Asia. That some were Paul’s friends shows how widely his teaching had reached.'],
+        ['The town clerk (19:35)', 'The chief officer of the city’s assembly, responsible to Rome for keeping order.'],
+      ],
+      reflect: [
+        'What made the sons of Sceva different from Paul?',
+        'The book-burners counted the cost. What would it cost you to give something up for Christ?',
+        'The riot was about money as much as religion. Where do those two still get mixed up?',
+      ],
+    },
+    farewell: {
+      num: 'XXXV', title: 'Farewell at Miletus', ref: 'Acts 20', passage: 'acts20', place: 'miletus', region: 'aegean', era: 'spread',
+      scene: 'Troas and Miletus, Acts 20', parallels: 'compare 2 Timothy 4:6–8',
+      question: { id: 'give', text: '“It is more blessed to give than to receive.” Why did Paul end with these words?', ref: 'Acts 20:35' },
+      hearts: ['You held him and wept with the elders.', 'You knelt on the shore and prayed with them.', 'You carried his things down to the ship, because someone had to.'],
+      conclusions: [
+        'At Troas a young man fell from a window during the meeting and was taken up alive. We broke bread until dawn.',
+        'At Miletus Paul said he did not hold his life dear, so that he might finish his race with joy.',
+        'They wept because they would not see his face again. He knelt on the shore and prayed with them all.',
+      ],
+      notes: [
+        ['The first day of the week (20:7)', 'One of the earliest mentions of believers gathering on Sunday, the day of the resurrection, to break bread.'],
+        ['Eutychus (20:9)', 'His name means “fortunate” or “lucky.”'],
+        ['Hurrying to Jerusalem (20:16)', 'Paul was carrying a collection from the Gentile churches for the poor believers in Jerusalem (Romans 15:25–26; 1 Corinthians 16:1–4).'],
+        ['Miletus (20:17)', 'About 50 km south of Ephesus. The elders had to make a long journey to meet him.'],
+        ['Elders and overseers (20:17, 28)', 'Paul calls the same leaders both “elders” and “overseers,” and gives them a shepherd’s work.'],
+        ['“More blessed to give” (20:35)', 'A saying of Jesus that is not found in the four Gospels. Paul had heard it from those who knew him.'],
+      ],
+      reflect: [
+        'Paul knew what was waiting for him in Jerusalem, and went anyway. Why?',
+        'What does it mean to “finish the race with joy”?',
+        'Who would weep at the shore for you? For whom would you?',
+      ],
+    },
+  });
+  D.eraOrder.push('artemis', 'farewell');
+
 
 
 
@@ -1308,8 +1362,8 @@ window.TW = window.TW || {};
     { id: 'athens', name: 'Athens', alt: 'The city of the philosophers', lon: 23.727, lat: 37.972, kind: 'episode', episodes: ['athens'], label: 'r', text: 'Past its greatest days but still the home of philosophy, full of temples and statues. Paul spoke at the Areopagus.' },
     { id: 'corinth', name: 'Corinth', alt: 'Capital of Achaia', lon: 22.880, lat: 37.906, kind: 'episode', episodes: ['corinth'], label: 'l', text: 'A rich Roman colony on the isthmus between two seas, where Paul stayed eighteen months with Priscilla and Aquila.' },
     { id: 'cenchreae', name: 'Cenchreae', alt: 'Corinth’s eastern port', lon: 22.990, lat: 37.884, kind: 'history', label: 'r', ref: 'Acts 18:18; Romans 16:1', text: 'Home of Phoebe, a servant of the church there (Romans 16:1).' },
-    { id: 'ephesus', name: 'Ephesus', alt: 'Chief city of Asia', lon: 27.341, lat: 37.940, kind: 'history', label: 'r', ref: 'Acts 18:19–20:1', text: 'A great harbor city with the temple of Artemis, one of the wonders of the world. Paul taught here for two years.' },
-    { id: 'miletus', name: 'Miletus', alt: 'An old Ionian port', lon: 27.278, lat: 37.530, kind: 'history', label: 'r', ref: 'Acts 20:15–38', text: 'Where Paul said farewell to the elders of Ephesus.' },
+    { id: 'ephesus', name: 'Ephesus', alt: 'Chief city of Asia', lon: 27.341, lat: 37.940, kind: 'episode', episodes: ['artemis'], label: 'r', text: 'A great harbor city with the temple of Artemis, one of the wonders of the world. Paul taught here for two years.' },
+    { id: 'miletus', name: 'Miletus', alt: 'An old Ionian port', lon: 27.278, lat: 37.530, kind: 'episode', episodes: ['farewell'], label: 'r', text: 'Where Paul said farewell to the elders of Ephesus.' },
     { id: 'thyatira', name: 'Thyatira', alt: 'A city of dyers', lon: 27.837, lat: 38.918, kind: 'history', label: 'r', ref: 'Acts 16:14; Revelation 2:18', text: 'Lydia’s home city, known for its trade guilds and its purple dye.' },
     { id: 'smyrna', name: 'Smyrna', alt: 'İzmir', lon: 27.140, lat: 38.420, kind: 'history', label: 'l', ref: 'Revelation 2:8', text: 'A great harbor city of Asia, one of the seven churches of Revelation.' },
     { id: 'assos', name: 'Assos', alt: 'A harbor on the Troad', lon: 26.337, lat: 39.488, kind: 'history', label: 'r', ref: 'Acts 20:13–14', text: 'Paul walked here overland from Troas to meet the ship.' },

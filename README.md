@@ -69,6 +69,9 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/berea.js` – Episode XXXI, Thessalonica and Berea (Acts 17:1–15)
 - `js/athens.js` – Episode XXXII, The Unknown God (Acts 17:16–34)
 - `js/corinth.js` – Episode XXXIII, Corinth (Acts 18:1–18)
+- `js/artemis.js` – Episode XXXIV, Great Is Artemis (Acts 18:24–19:41)
+- `js/farewell.js` – Episode XXXV, Farewell at Miletus (Acts 20)
+- `js/scripture6.js` – WEB passages: Acts 18:24–24:26
 - `js/about.js` – copyright holder, contact and license summary shown in the game (fill in your name here)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
 - `js/vignettes.js` – memory scenes: sepia flashbacks that act out each testimony answer in step with its verses
@@ -175,7 +178,7 @@ play it and share links or complete, unchanged copies free of charge; no one may
 art, music or story, or use them to train AI models, without permission. Scripture texts are public domain and are not
 covered.
 
-Before publishing, put your name and a contact in `LICENSE.md` and `js/about.js` (they appear in the game's title screen
+Copyright © 2026 Jacob Cooper. Before publishing, add a contact to `LICENSE.md` and `js/about.js` (they appear in the game's title screen
 and Settings). Notes:
 - A web game necessarily sends its code to every player's browser. The license is what protects it legally.
 - If the GitHub repository is public, GitHub's own Terms of Service let other GitHub users view and fork it on GitHub,

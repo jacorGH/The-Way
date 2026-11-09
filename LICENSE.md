@@ -1,6 +1,6 @@
 # The Way: An Eyewitness Account — License
 
-Copyright © 2026 [Your name]. All rights reserved, except as granted below.
+Copyright © 2026 Jacob Cooper. All rights reserved, except as granted below.
 
 This license lets anyone play and share the game freely. It does not let anyone take the game, its code or its content
 and use them in something else.
@@ -13,7 +13,7 @@ and use them in something else.
 - **Show** the game: take screenshots, record or stream play, and use it in teaching or small-group study, crediting
   "The Way: An Eyewitness Account".
 
-## 2. You may not, without written permission from the copyright holder
+## 2. You may not, without written permission from the copyright holder, Jacob Cooper
 
 - Copy, modify, adapt, translate, decompile or build on the game's source code, art, music, sound, story, characters,
   maps, study notes or other original content, or use any part of them in another work or project.

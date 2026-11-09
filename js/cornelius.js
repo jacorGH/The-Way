@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XXII: Peter and Cornelius (Acts 10:1–11:18). */
 window.TW = window.TW || {};
 (function (TW) {

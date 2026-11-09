@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — art for the coast: Joppa, Simon the tanner's house, Cornelius's house in Caesarea, Peter's sheet. */
 window.TW = window.TW || {};
 (function (TW) {

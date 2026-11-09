@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — geography of the Aegean world, for Paul's journeys (Acts 16–20).
    Hand-placed coasts at roughly true positions: mainland Greece and Thrace, western Asia Minor, the gulfs of Corinth,
    Saros and the Hellespont, the Sea of Marmara, and the larger islands. Heights are approximate. */

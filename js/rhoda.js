@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XXIV: Rhoda at the Gate (Acts 12:1–17). */
 window.TW = window.TW || {};
 (function (TW) {

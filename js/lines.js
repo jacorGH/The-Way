@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — permanent line IDs, translations by ID, and recorded voices (dubs).
    A line's ID comes from its kind and its exact words, so it never needs hand-numbering. If the words change, the ID
    changes, so an old recording or translation is never played over new text by mistake.

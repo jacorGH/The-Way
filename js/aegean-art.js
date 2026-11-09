@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — art for the Aegean episodes: the river outside Philippi, the prison, and a crossing by sea. */
 window.TW = window.TW || {};
 (function (TW) {
@@ -98,4 +98,43 @@ window.TW = window.TW || {};
   };
   // the bema, the raised judgment seat in the forum
   K.bema = (bx, by) => SC.add({ x: bx, y: by, z: by - 6, draw(ctx, sx, sy) { R(ctx, sx - 22, sy - 10, 44, 10, '#d8d0bc'); R(ctx, sx - 24, sy - 12, 48, 3, '#e6dfcc'); for (let k = 0; k < 3; k++) R(ctx, sx - 30 + k * 2, sy - 3 - k * 3, 8, 3, '#cfc4a8'); R(ctx, sx - 6, sy - 20, 12, 8, '#8a6a42'); } });
+  // the theater at Ephesus, cut into the hillside, tier above tier
+  let THE = null;
+  K.theaterArt = function () {
+    if (THE) return THE;
+    const W = 320, c = U.makeCanvas(W, 160), x = c.getContext('2d'), A = K.art();
+    x.drawImage(A.sky, 0, 0); x.drawImage(A.sky, 100, 0, 64, 80, 256, 0, 64, 80);
+    for (let i = 0; i < W; i++) { const t = 18 + Math.round((U.fbm(i * 0.02, 9.1, 3, 3) - 0.5) * 20); R(x, i, t, 1, 60, '#8a8f6a'); }
+    for (let i = 0; i < W; i++) R(x, i, 26, 1, 86, '#8f826a');
+    for (let row = 0; row < 16; row++) {
+      const y = 30 + row * 5, half = 150 - row * 3;
+      for (let i = 160 - half; i < 160 + half; i++) {
+        const yy = y + Math.round(Math.pow((i - 160) / half, 2) * -10);
+        R(x, i, yy, 1, 4, row % 2 ? '#cfc4a8' : '#c2b699'); R(x, i, yy + 4, 1, 1, '#9a8e74');
+      }
+    }
+    for (let k = 0; k < 7; k++) { const sx = 160 + (k - 3) * 40; R(x, sx, 26, 2, 84, '#b3a78c'); }
+    for (let y = 110; y < 160; y++) R(x, 0, y, W, 1, y < 112 ? '#e6dfcc' : '#cdbf9f');
+    R(x, 60, 112, 200, 3, '#b8ab8e');
+    THE = c;
+    return c;
+  };
+  // a shore with a ship waiting offshore
+  K.shoreStage = function (opts) {
+    const A = K.art(), st = { width: 256, audio: { music: 'reflect', amb: { shore: 0.8, wind: 0.25, birds: 0.2 } },
+      bg(ctx, t) {
+        ctx.drawImage(A.sky, 0, 0);
+        for (let i = 0; i < 256; i++) { const h = Math.round(6 + (U.fbm(i * 0.04, 2.2, 3, 3) - 0.3) * 10); R(ctx, i, 82 - h, 1, h, '#9a9888'); }
+        for (let y = 82; y < 122; y++) R(ctx, 0, y, 256, 1, y % 4 ? '#3f7a88' : '#4a8592');
+        const fr = Math.floor(t * 3);
+        for (let i = 0; i < 40; i++) if (U.hash(i, 9, fr) > 0.55) R(ctx, Math.floor(U.hash(i, 2, 0) * 256), 86 + Math.floor(U.hash(i, 3, 0) * 34), 3, 1, '#8fbcc0');
+        const sx = 190, sy = 104 + Math.round(Math.sin(t * 1.4));
+        for (let i = 0; i < 4; i++) R(ctx, sx - 18 + i, sy + i, 36 - i * 2, 1, '#5a3e26');
+        R(ctx, sx, sy - 24, 1, 24, '#4a3420'); for (let r = 0; r < 16; r++) R(ctx, sx - 9, sy - 23 + r, 19, 1, Math.floor(r / 4) % 2 ? '#e6dcc4' : '#a83a2a');
+        for (let y = 122; y < 160; y++) R(ctx, 0, y, 256, 1, y < 124 ? '#d8ecec' : y % 3 ? '#cdb98e' : '#c4ae82');
+      } };
+    Object.assign(st, opts || {});
+    SC.load(st); SC.cam = 0;
+    return st;
+  };
 })(window.TW);

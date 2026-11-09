@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XXX: Midnight in Philippi (Acts 16:16–40).
    The beating is told, not shown. The jailer's despair is shown no further than Scripture's own words. */
 window.TW = window.TW || {};

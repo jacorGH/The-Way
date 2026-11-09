@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — who you play.
    Eleazar: a young scribe, a student of Nicodemus.
    Elisheva: Nicodemus's niece, raised in his house and taught to read and write so she could keep his accounts and copy
@@ -42,6 +42,8 @@ window.TW = window.TW || {};
     cornelius: ['scribe', 'A scribe crossing a Gentile’s threshold', 'Answering the gate at the tanner’s house'],
     antioch: ['scribe', 'Traveling with Barnabas, and to Tarsus for Saul', 'Traveling with Barnabas’s party, and at a Greek table'],
     rhoda: ['niece', 'Praying in the crowded room', 'Beside Rhoda, at the gate'],
+    artemis: ['niece', 'In the theater with the crowd', 'With Priscilla, and then in the theater'],
+    farewell: ['scribe', 'Among the elders on the shore', 'Among the believers on the shore'],
     corinth: ['niece', 'At the workbench with Aquila', 'At the workbench with Priscilla'],
     berea: ['scribe', 'A scribe examining the Scriptures with the Bereans', 'With the prominent Greek women of Berea'],
     athens: ['scribe', 'On the Areopagus beside Paul', 'Among the listeners, near a woman named Damaris'],

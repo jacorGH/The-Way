@@ -1,4 +1,4 @@
-/* Copyright © 2026. All rights reserved; see LICENSE.md. */
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — Era IV art: the city of Samaria (Sebaste), the desert road to Gaza, and Straight Street in Damascus. */
 window.TW = window.TW || {};
 (function (TW) {
