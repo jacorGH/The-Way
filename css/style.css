@@ -43,7 +43,7 @@ html { height: 100%; background: var(--basalt); scroll-padding-top: env(safe-are
 body {
   height: 100%; margin: 0; background: var(--basalt); color: var(--ink);
   font-family: "EB Garamond", Georgia, "Times New Roman", serif;
-  font-size: 17px; line-height: 1.5;
+  font-size: 1.0625rem; line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   overscroll-behavior: none;
 }
@@ -382,3 +382,29 @@ canvas.pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
 }
 .veil { transition: none; }
 }
+
+/* ---------- settings: text size, contrast, calm, selectable ---------- */
+html { font-size: 100%; }
+html[data-size="s"] { font-size: 90%; }
+html[data-size="l"] { font-size: 115%; }
+html[data-size="xl"] { font-size: 132%; }
+html.contrast { --ink: #120d08; }
+html.contrast .dialog, html.contrast .scroll, html.contrast .overlay .scroll { color: #120d08; }
+html.contrast .dialog { border-top-width: 3px; }
+html.contrast .btn, html.contrast .btn-text, html.contrast .voice-select, html.contrast .set-text { border-color: #2a2016; }
+html.contrast .empty, html.contrast .heart, html.contrast .q-ref { color: #2a2016; }
+html.calm *, html.calm *::before, html.calm *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+html.selectable .dialog, html.selectable .dialog * { -webkit-user-select: text; user-select: text; }
+.tabs { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.set-head { margin: 1.2rem 0 0.3rem; font-family: Cinzel, Georgia, serif; font-size: 1rem; letter-spacing: 0.06em; }
+.set-row { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; margin: 0.45rem 0; }
+.set-row .voice-select { flex: 0 1 60%; }
+.set-label { flex: 1; }
+.set-check { display: flex; align-items: center; gap: 0.6rem; margin: 0.45rem 0; min-height: 44px; }
+.set-check input { width: 22px; height: 22px; accent-color: #9a7428; flex: none; }
+.set-import { margin: 0.6rem 0; padding: 0.5rem 0.7rem; border: 1px solid #b8a67e; border-radius: 3px; background: rgba(246, 237, 214, 0.5); }
+.set-import summary { cursor: pointer; font-weight: 600; min-height: 32px; }
+.set-import input, .set-import select { display: block; width: 100%; margin: 0.4rem 0; box-sizing: border-box; }
+.set-text { font: inherit; padding: 0.45rem; min-height: 44px; border: 1px solid #b8a67e; border-radius: 3px; background: #f6edd6; color: #2a2016; }
+.set-buttons { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0; }

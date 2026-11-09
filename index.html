@@ -25,27 +25,27 @@
     <div class="title-block">
       <img class="emblem" src="icons/icon-192.png" alt="" width="84" height="84">
       <h1 class="wordmark">The Way</h1>
-      <p class="subtitle">An Eyewitness Account</p>
+      <p class="subtitle" data-i18n>An Eyewitness Account</p>
       <p class="greek" lang="grc">ἡ ὁδός</p>
-      <p class="tagline">Walk through the Gospels and the early church as one who was not yet convinced.</p>
+      <p class="tagline" data-i18n>Walk through the Gospels and the early church as one who was not yet convinced.</p>
       <div class="role-pick" role="group" aria-label="Who you play">
-        <button type="button" class="role-btn" data-role="scribe" aria-pressed="true"><span class="role-name">Eleazar</span><span class="role-sub">a young scribe</span></button>
-        <button type="button" class="role-btn" data-role="niece" aria-pressed="false"><span class="role-name">Elisheva</span><span class="role-sub">Nicodemus’s niece</span></button>
-        <button type="button" class="role-btn" data-role="both" aria-pressed="false"><span class="role-name">Both</span><span class="role-sub">two accounts</span></button>
+        <button type="button" class="role-btn" data-role="scribe" aria-pressed="true"><span class="role-name">Eleazar</span><span class="role-sub" data-i18n>a young scribe</span></button>
+        <button type="button" class="role-btn" data-role="niece" aria-pressed="false"><span class="role-name">Elisheva</span><span class="role-sub" data-i18n>Nicodemus’s niece</span></button>
+        <button type="button" class="role-btn" data-role="both" aria-pressed="false"><span class="role-name" data-i18n>Both</span><span class="role-sub" data-i18n>two accounts</span></button>
       </div>
       <p class="role-note" id="role-note"></p>
-      <label class="name-field">Your name
+      <label class="name-field"><span data-i18n>Your name</span>
         <input id="name-input" maxlength="20" autocomplete="off" spellcheck="false">
       </label>
       <div class="title-actions">
-        <button id="btn-continue" class="btn primary" hidden>Continue the journey</button>
-        <button id="btn-begin" class="btn">Begin the journey</button>
+        <button id="btn-continue" class="btn primary" hidden data-i18n>Continue the journey</button>
+        <button id="btn-begin" class="btn" data-i18n>Begin the journey</button>
       </div>
       <div class="audio-toggles">
         <button class="sound-toggle btn-text" type="button" aria-pressed="true">Sound on</button>
         <button class="read-toggle btn-text" type="button" aria-pressed="false">Read aloud off</button>
       </div>
-      <p class="fine">Scripture quotations are from the World English Bible, which is in the public domain.</p>
+      <p class="fine" id="bible-credit">Scripture quotations are from the World English Bible, which is in the public domain.</p>
     </div>
   </section>
 
@@ -130,19 +130,19 @@
   <section id="o-journal" class="overlay" hidden>
     <div class="scroll">
       <header class="ov-head">
-        <h2 class="scroll-title">Your scroll</h2>
+        <h2 class="scroll-title" data-i18n>Your scroll</h2>
         <span class="ov-actions">
           <button class="sound-toggle btn-text" type="button" aria-pressed="true">Sound on</button>
           <button class="read-toggle btn-text" type="button" aria-pressed="false">Read aloud off</button>
-          <button class="btn-text" data-close>Close</button>
+          <button class="btn-text" data-close data-i18n>Close</button>
         </span>
       </header>
       <div class="tabs" role="tablist">
-        <button role="tab" data-tab="obs" aria-selected="true">Observations</button>
-        <button role="tab" data-tab="testimonies">Testimonies</button>
-        <button role="tab" data-tab="service">Service</button>
-        <button role="tab" data-tab="voices">Voices</button>
-        <button role="tab" data-tab="questions">Questions</button>
+        <button role="tab" data-tab="obs" aria-selected="true" data-i18n>Observations</button>
+        <button role="tab" data-tab="testimonies" data-i18n>Testimonies</button>
+        <button role="tab" data-tab="service" data-i18n>Service</button>
+        <button role="tab" data-tab="settings" data-i18n>Settings</button>
+        <button role="tab" data-tab="questions" data-i18n>Questions</button>
         <button role="tab" data-tab="reports">Reports</button>
       </div>
       <div id="journal-body"></div>
@@ -168,6 +168,9 @@
 
 </div>
 <script src="js/util.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/lines.js"></script>
 <script src="js/role.js"></script>
 <script src="js/audio.js"></script>
 <script src="js/speech.js"></script>
@@ -176,6 +179,10 @@
 <script src="js/scripture3.js"></script>
 <script src="js/scripture4.js"></script>
 <script src="js/scripture5.js"></script>
+<script src="js/bible.js"></script>
+<script src="bible/versions.js"></script>
+<script src="audio/manifest.js"></script>
+<script src="i18n/es-lines.js"></script>
 <script src="js/data.js"></script>
 <script src="js/geo.js"></script>
 <script src="js/geo-east.js"></script>

@@ -18,6 +18,10 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/util.js` – math, noise, colour helpers, save game (localStorage, guarded)
 - `js/audio.js` – all sound, synthesized live with Web Audio (no audio files): period music in moods (title, galilee, land, reflect, tension, wonder, lament, jerusalem, night, storm), ambience beds (shore, wind, birds, crowd, room, night, fire, storm) and effects. Stages set their soundscape with an `audio` property; `TW.Audio.music(mood)` and `TW.Audio.sfx(name)` handle story beats.
 - `js/role.js` – who you play: Eleazar (a young scribe), Elisheva (Nicodemus's niece), or Both (choose the voice before each scene). Holds exact phrase swaps for Elisheva's dramatized text (never Scripture) and each episode's vantage points
+- `js/settings.js` – player settings (text size and speed, auto-advance, reduce motion, contrast, selectable text, language, Bible version)
+- `js/i18n.js` – interface language: `TW.t('English text')`; static labels carry `data-i18n`
+- `js/lines.js` – permanent line IDs, translations by ID, and recorded voices (`TW.Dubs`)
+- `js/bible.js` – swappable Bible versions, WEB fallback, localized book names, and the importer
 - `js/scripture.js`, `js/scripture2.js`, `js/scripture3.js` (Acts 1–9, Acts 22 and John 14, 20), `js/scripture4.js` (Acts 9:32–13:13), `js/scripture5.js` (Acts 13:14–16:40) – every Scripture passage, word for word from the WEB (scripture2 also holds Mark 14–16 and John 19 for the coming Passion episodes)
 - `js/data.js` – eras, timeline, episode registry (notes, reflections, report choices), both map regions, reveal schedule
 - `js/geo.js` – simplified real elevations: Galilee in detail, the whole Land, and Jerusalem with its valleys and the Mount of Olives
@@ -113,3 +117,37 @@ Elisheva), Scripture more slowly in a second voice, and characters in stable voi
 man or a woman. Music and ambience dip while a line is spoken. On iPhone, Enhanced or Premium voices (Settings >
 Accessibility > Spoken Content > Voices) sound far more natural. Studio-quality dubs are best generated from the final
 text in one pass, after translation.
+
+## Future-proofing: versions, languages, voices
+
+### Line IDs
+Every line shown gets a permanent ID from its kind and its exact words (`js/lines.js`):
+`d-xxxxxxxx` for story and history lines, `s-<VERSION>-xxxxxxxx` for Scripture. If the wording changes, the ID changes,
+so a recording or translation is never played over different words. In the game, Settings → Your progress →
+Export lines saves every line you have seen with its ID, speaker, kind and text.
+
+### Bible versions
+Scripture is stored once, by passage, in the WEB. Other versions are plain lookups (`text[Book]['2:1']`) that fall back
+to the WEB, marked "WEB", for any missing verse. Book names follow the version's language (Marcos, Lucas, Juan, Hechos).
+- **On a phone:** Settings → Bible translation → Add a Bible translation, then choose a verse-per-line text file. It is
+  stored on the device.
+- **In the repo:** `node tools/import-bible.mjs eng-asv_vpl.txt --id ASV --name "American Standard Version" --lang en`,
+  then add `<script src="bible/ASV.js"></script>` after `bible/versions.js` in `index.html`.
+- **Sources:** eBible.org offers public-domain texts in "VPL" (verse per line) format, e.g. the American Standard
+  Version (eng-asv), the King James Version (eng-kjv; public domain in the US, Crown rights in the UK) and the
+  Reina-Valera 1909 (spaRV1909). Re-run the tool when new episodes add passages.
+
+### Spanish and other languages
+- Interface strings: add to the dictionary in `js/i18n.js` (`TW.I18n.add('es', { ... })`).
+- Story text: `i18n/es-lines.js`, keyed by line ID (`TW.Lines.translations.es['d-1a2b3c4d'] = '…'`). Untranslated lines
+  show in English. Spanish Scripture comes from a Spanish Bible version.
+- Elisheva's text variants have their own IDs, so they are translated separately.
+
+### Recorded voices
+Put recordings at `audio/<lang>/<line id>.mp3` and list the IDs in `audio/manifest.js` with
+`TW.Dubs.add('en', [...])`. Read aloud plays a recording when one exists and the device voice otherwise.
+
+### Accessibility and comfort
+Settings: text size (S to XL, everything scales), text speed (to instant), auto-advance (waits for the voice to finish
+when reading aloud), selectable dialog text (for the iPhone's Speak Selection), reduce motion (no typing, shaking or
+long transitions; also follows the system setting), higher contrast, and progress backup and restore.

@@ -13,20 +13,22 @@ window.TW = window.TW || {};
   const synth = window.speechSynthesis || null;
   S.available = !!synth;
   let voices = [];
-  const load = () => { if (synth) voices = synth.getVoices().filter((v) => /^en/i.test(v.lang)); };
+  const wantLang = () => (TW.Settings && TW.Settings.get('lang') === 'es' ? /^es/i : /^en/i);
+  const load = () => { if (synth) voices = synth.getVoices().filter((v) => wantLang().test(v.lang)); };
   if (synth) { load(); if (synth.addEventListener) synth.addEventListener('voiceschanged', load); else synth.onvoiceschanged = load; }
 
   // Apple's joke and robot voices, and the old Eloquence voices
   const NOVELTY = /\b(fred|albert|zarvox|trinoids|whisper|bad news|good news|bells|boing|bubbles|cellos|jester|organ|superstar|wobble|bahh|deranged|hysterical|ralph|kathy|junior|princess|eddy|flo|grandma|grandpa|reed|rocko|sandy|shelley|compact)\b/i;
+  const GOOD_ES = /\b(monica|mónica|paulina|jorge|juan|diego|marisol|isabela|francisca|angelica|angélica)\b/i;
   const GOOD = /\b(ava|zoe|evan|nathan|joelle|noelle|samantha|daniel|karen|moira|tessa|rishi|arthur|martha|catherine|gordon|aaron|nicky|tom|allison|susan|serena|kate|oliver|fiona|alex|jamie|lee|matilda)\b/i;
-  const FEMALE = /\b(ava|zoe|joelle|noelle|samantha|karen|moira|tessa|martha|catherine|nicky|allison|susan|serena|kate|fiona|victoria|matilda|female|woman)\b/i;
-  const MALE = /\b(evan|nathan|daniel|rishi|arthur|gordon|aaron|tom|oliver|alex|lee|jamie|male|man)\b/i;
+  const FEMALE = /\b(monica|mónica|paulina|marisol|isabela|francisca|angelica|angélica|ava|zoe|joelle|noelle|samantha|karen|moira|tessa|martha|catherine|nicky|allison|susan|serena|kate|fiona|victoria|matilda|female|woman)\b/i;
+  const MALE = /\b(jorge|juan|diego|evan|nathan|daniel|rishi|arthur|gordon|aaron|tom|oliver|alex|lee|jamie|male|man)\b/i;
   function score(v) {
     if (NOVELTY.test(v.name)) return -1000;
     let s = 0;
     if (/premium/i.test(v.name)) s += 40;
     if (/enhanced|neural|natural/i.test(v.name)) s += 25;
-    if (GOOD.test(v.name)) s += 10;
+    if (GOOD.test(v.name) || GOOD_ES.test(v.name)) s += 10;
     if (v.localService) s += 2;
     if (/en-(US|GB|AU|IE|CA)/i.test(v.lang)) s += 2;
     return s;
@@ -52,25 +54,46 @@ window.TW = window.TW || {};
   }
   const clean = (t) => String(t).replace(/[“”]/g, '"').replace(/[‘’]/g, "'").replace(/\s*\n+\s*/g, '. ').replace(/\s+/g, ' ').trim();
 
-  let current = null, timer = null;
+  let current = null, timer = null, audio = null, waiters = [];
+  const done = () => { const w = waiters; waiters = []; w.forEach((f) => f()); };
+  S.busy = () => !!(audio && !audio.paused) || !!(synth && (synth.speaking || synth.pending)) || !!timer;
+  S.whenDone = (f) => { if (!S.busy()) setTimeout(f, 0); else waiters.push(f); };
+  // a recorded voice for this line, if one has been made (see lines.js)
+  function playDub(id) {
+    const lang = TW.Settings ? TW.Settings.get('lang') : 'en';
+    if (!id || !TW.Dubs || !TW.Dubs.has(lang, id)) return false;
+    audio = new Audio(TW.Dubs.url(lang, id));
+    audio.onplay = () => TW.Audio && TW.Audio.duck && TW.Audio.duck(true);
+    audio.onended = audio.onerror = () => { TW.Audio && TW.Audio.duck && TW.Audio.duck(false); audio = null; done(); };
+    audio.play().catch(() => { audio = null; done(); });
+    return true;
+  }
   function speakNow(text, v) {
     const u = new SpeechSynthesisUtterance(clean(text));
     if (v.voice) { u.voice = v.voice; u.lang = v.voice.lang; }
     u.pitch = v.pitch; u.rate = v.rate;
     u.onstart = () => TW.Audio && TW.Audio.duck && TW.Audio.duck(true);
-    u.onend = u.onerror = () => { if (current === u) current = null; TW.Audio && TW.Audio.duck && TW.Audio.duck(false); };
+    u.onend = u.onerror = () => { if (current === u) { current = null; done(); } TW.Audio && TW.Audio.duck && TW.Audio.duck(false); };
     current = u;
     if (synth.paused) synth.resume();
     synth.speak(u);
   }
-  S.say = function (kind, text, speaker) {
-    if (!S.on || !synth || !text) return;
+  S.say = function (kind, text, speaker, id) {
+    if (!S.on || !text) return;
+    S.stop(true);
+    if (playDub(id)) return;
+    if (!synth) return;
     const v = pick(kind, speaker);
-    clearTimeout(timer);
-    if (synth.speaking || synth.pending) { synth.cancel(); timer = setTimeout(() => speakNow(text, v), 120); }
+    if (synth.speaking || synth.pending) { synth.cancel(); timer = setTimeout(() => { timer = null; speakNow(text, v); }, 120); }
     else speakNow(text, v);
   };
-  S.stop = function () { clearTimeout(timer); if (synth && (synth.speaking || synth.pending)) synth.cancel(); if (TW.Audio && TW.Audio.duck) TW.Audio.duck(false); };
+  S.stop = function (keepWaiters) {
+    clearTimeout(timer); timer = null;
+    if (audio) { audio.onended = audio.onerror = null; audio.pause(); audio = null; }
+    if (synth && (synth.speaking || synth.pending)) synth.cancel();
+    if (TW.Audio && TW.Audio.duck) TW.Audio.duck(false);
+    if (!keepWaiters) waiters = [];
+  };
   S.setOn = function (on) {
     S.on = on;
     try { localStorage.setItem(KEY, on ? 'on' : 'off'); } catch (e) { /* ignore */ }
@@ -82,7 +105,7 @@ window.TW = window.TW || {};
     const v = byName(name); if (!v || !synth) return;
     clearTimeout(timer); synth.cancel();
     const sample = kind === 'scripture' ? 'In the beginning was the Word, and the Word was with God, and the Word was God.' : 'You are standing in the road outside Capernaum, and the crowd is already gathering.';
-    timer = setTimeout(() => speakNow(sample, { voice: v, pitch: 1, rate: kind === 'scripture' ? 0.9 : 0.98 }), 120);
+    timer = setTimeout(() => { timer = null; speakNow(sample, { voice: v, pitch: 1, rate: kind === 'scripture' ? 0.9 : 0.98 }); }, 120);
   };
   S.choose = function (slot, name) {
     chosen[slot] = name;

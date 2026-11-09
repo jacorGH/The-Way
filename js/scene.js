@@ -131,7 +131,7 @@ window.TW = window.TW || {};
     return e.facing < 0 ? f.l : f.r;
   }
 
-  SC.shake = function (ms) { SC.shakeT = (ms || 800) / 1000; };
+  SC.shake = function (ms) { if (U.reducedMotion()) return; SC.shakeT = (ms || 800) / 1000; };
   function draw() {
     const ctx = SC.px, cam = Math.round(SC.cam + (SC.shakeT > 0 ? (Math.random() - 0.5) * 5 : 0));
     ctx.imageSmoothingEnabled = false;
@@ -208,23 +208,33 @@ window.TW = window.TW || {};
   }
 
   // ---------- dialogue ----------
+  const T = (x) => (TW.t ? TW.t(x) : x);
   const LABELS = {
-    scripture: (r) => 'Scripture, ' + r,
-    drama: () => 'Dramatization',
-    history: () => 'History',
-    observe: () => 'Added to your scroll',
-    goal: () => 'What to do',
-    answer: () => 'A question in your scroll is answered',
+    scripture: (r) => T('Scripture') + ', ' + r,
+    drama: () => T('Dramatization'),
+    history: () => T('History'),
+    observe: () => T('Added to your scroll'),
+    goal: () => T('What to do'),
+    answer: () => T('A question in your scroll is answered'),
   };
   let pending = null, typing = null;
 
   const G = (x) => (TW.Role ? TW.Role.G(x) : x);
   SC.say = function (o) {
     if (o && o.kind !== 'scripture') o = Object.assign({}, o, { text: G(o.text), speaker: G(o.speaker) });
-    if (TW.Speech && o && o.kind !== 'goal') TW.Speech.say(o.kind, o.text, o.speaker);
+    // Scripture references follow the chosen Bible's language; a verse that version lacks is shown from the WEB, marked
+    if (o && o.kind === 'scripture' && TW.Bible) { o = Object.assign({}, o, { ref: TW.Bible.localRef(o.ref) + (TW.Bible.lastFallback ? ' · WEB' : '') }); TW.Bible.lastFallback = false; }
+    // every line has a permanent ID (see lines.js): used for translations and recorded voices
+    const lineId = TW.Lines ? TW.Lines.id(o.kind, o.text) : null;
+    if (lineId) {
+      TW.Lines.note(lineId, o);
+      if (o.kind !== 'scripture') o = Object.assign({}, o, { text: TW.Lines.translate(lineId, o.text), speaker: o.speaker ? T(o.speaker) : o.speaker });
+    }
+    if (TW.Speech && o && o.kind !== 'goal') TW.Speech.say(o.kind, o.text, o.speaker, lineId);
     const el = SC.el;
     SC.mode = 'script';
     el.dialog.className = 'dialog kind-' + o.kind;
+    el.dialog.dataset.line = lineId || '';
     el.label.textContent = LABELS[o.kind](o.ref || '');
     el.speaker.textContent = o.speaker || '';
     el.speaker.hidden = !o.speaker;
@@ -236,9 +246,17 @@ window.TW = window.TW || {};
         clearInterval(typing); typing = null;
         el.text.textContent = full;
         el.next.hidden = false;
-        pending = () => { pending = null; TW.Audio && TW.Audio.sfx('page'); TW.Speech && TW.Speech.stop(); res(); };
+        const mine = () => { pending = null; TW.Audio && TW.Audio.sfx('page'); TW.Speech && TW.Speech.stop(); res(); };
+        pending = mine;
+        // auto-advance: after the voice finishes, or after time enough to read the line
+        if (TW.Settings && TW.Settings.get('autoAdvance')) {
+          const go = () => { if (pending === mine) mine(); };
+          if (TW.Speech && TW.Speech.on && TW.Speech.busy()) TW.Speech.whenDone(() => setTimeout(go, 700));
+          else setTimeout(go, Math.max(1800, full.length * 45));
+        }
       };
-      if (U.reducedMotion()) { finish(); return; }
+      const delay = TW.Settings ? TW.Settings.typeDelay() : 22;
+      if (U.reducedMotion() || !delay) { finish(); return; }
       let i = 0;
       el.text.textContent = '';
       clearInterval(typing);
@@ -246,7 +264,7 @@ window.TW = window.TW || {};
         i += 2;
         el.text.textContent = full.slice(0, i);
         if (i >= full.length) finish();
-      }, 22);
+      }, delay);
       pending = finish;
     });
   };

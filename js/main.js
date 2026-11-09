@@ -16,7 +16,7 @@ window.TW = window.TW || {};
   document.addEventListener('pointerdown', () => AU.unlock(), { passive: true });
   function syncSound() {
     document.querySelectorAll('.sound-toggle').forEach((b) => {
-      b.textContent = AU.on ? 'Sound on' : 'Sound off';
+      b.textContent = TW.t(AU.on ? 'Sound on' : 'Sound off');
       b.setAttribute('aria-pressed', AU.on);
     });
   }
@@ -29,7 +29,7 @@ window.TW = window.TW || {};
   function syncRead() {
     document.querySelectorAll('.read-toggle').forEach((b) => {
       b.hidden = !TW.Speech.available;
-      b.textContent = TW.Speech.on ? 'Read aloud on' : 'Read aloud off';
+      b.textContent = TW.t(TW.Speech.on ? 'Read aloud on' : 'Read aloud off');
       b.setAttribute('aria-pressed', TW.Speech.on);
       b.title = TW.Speech.on && !TW.Speech.hasQualityVoice() ? 'For a more natural voice, download an Enhanced or Premium voice in your device’s Spoken Content settings.' : '';
     });
@@ -155,6 +155,7 @@ window.TW = window.TW || {};
 
   // ---------- prologue ----------
   function block(kind, label, text, cls) {
+    label = /^(Dramatization|History)$/.test(label) ? TW.t(label) : label;
     const wrap = el('div', 'pblock kind-' + kind);
     wrap.appendChild(el('p', 'plabel', label));
     wrap.appendChild(el('p', cls || '', text));
@@ -166,20 +167,20 @@ window.TW = window.TW || {};
     const n = game.save.name;
     if (TW.Role.both()) {
       b.appendChild(block('drama', 'Dramatization', 'Jerusalem, in the reign of Tiberius Caesar. Word has come south of a teacher from Nazareth named Jesus, who heals the sick in Galilee and casts out unclean spirits. People say something about him that unsettles the teachers of Jerusalem.'));
-      b.appendChild(block('scripture', 'Scripture, Mark 1:22', 'They were astonished at his teaching, for he taught them as having authority, and not as the scribes.', 'verse'));
+      b.appendChild(block('scripture', TW.t('Scripture') + ', ' + TW.Bible.localRef('Mark 1:22'), TW.P.singleText('Mark 1:22'), 'verse'));
       b.appendChild(block('history', 'History', 'Nicodemus was a Pharisee and a ruler of the Jews (John 3:1). Mark records scribes coming down from Jerusalem to observe Jesus (Mark 3:22), and Luke records women who followed Jesus in Galilee and supported him (Luke 8:1–3).'));
       b.appendChild(block('drama', 'Dramatization', 'Nicodemus sends two people north. Eleazar, a young scribe who studies under him, goes with the other teachers of the Law. Elisheva, his niece, whom he taught to read and write, goes to stay with his cousin’s family in Capernaum. “Watch him closely,” he tells them both. “Write to me what you see. Only what you see.”'));
       return;
     }
     if (TW.Role.is()) {
       b.appendChild(block('drama', 'Dramatization', 'Jerusalem, in the reign of Tiberius Caesar. You are ' + n + ', niece of Nicodemus. You grew up in his house, and he taught you to read and write so that you could keep his accounts and copy his letters. Word has come south of a teacher from Nazareth named Jesus, who heals the sick in Galilee and casts out unclean spirits. People say something about him that unsettles the teachers of Jerusalem.'));
-      b.appendChild(block('scripture', 'Scripture, Mark 1:22', 'They were astonished at his teaching, for he taught them as having authority, and not as the scribes.', 'verse'));
+      b.appendChild(block('scripture', TW.t('Scripture') + ', ' + TW.Bible.localRef('Mark 1:22'), TW.P.singleText('Mark 1:22'), 'verse'));
       b.appendChild(block('history', 'History', 'Nicodemus was a Pharisee and a ruler of the Jews (John 3:1). Few women in Judea could read and write, but some in learned households did. Luke records that women followed Jesus in Galilee and supported him from their own means (Luke 8:1–3).'));
       b.appendChild(block('drama', 'Dramatization', 'Nicodemus sends you north to stay with his cousin’s family in Capernaum. “Watch him closely,” he says. “Write to me what you see. Only what you see.”'));
       return;
     }
     b.appendChild(block('drama', 'Dramatization', 'Jerusalem, in the reign of Tiberius Caesar. You are ' + n + ', a young scribe trained in the Law of Moses. Word has come south of a teacher from Nazareth named Jesus, who heals the sick in Galilee and casts out unclean spirits. People say something about him that unsettles the teachers of Jerusalem.'));
-    b.appendChild(block('scripture', 'Scripture, Mark 1:22', 'They were astonished at his teaching, for he taught them as having authority, and not as the scribes.', 'verse'));
+    b.appendChild(block('scripture', TW.t('Scripture') + ', ' + TW.Bible.localRef('Mark 1:22'), TW.P.singleText('Mark 1:22'), 'verse'));
     b.appendChild(block('history', 'History', 'Nicodemus was a Pharisee and a ruler of the Jews (John 3:1). Mark records scribes coming down from Jerusalem to observe Jesus (Mark 3:22).'));
     b.appendChild(block('drama', 'Dramatization', 'Nicodemus sends you north with other teachers of the Law. “Watch him closely,” he says. “Write down what you see. Only what you see.”'));
   }
@@ -589,8 +590,142 @@ window.TW = window.TW || {};
     s && (s.scrollTop = 0);
   }
 
+  // ---------- Settings: reading, comfort, language, Bible, voices, progress ----------
+  const T = (x) => TW.t(x);
+  function section(body, title) { body.appendChild(el('h3', 'set-head', T(title))); }
+  function pickRow(body, label, key, opts, after) {
+    const row = el('label', 'set-row');
+    row.appendChild(el('span', 'set-label', T(label)));
+    const sel = el('select', 'voice-select');
+    opts.forEach((o) => { const op = el('option', '', T(o[1])); op.value = o[0]; if (String(TW.Settings.get(key)) === String(o[0])) op.selected = true; sel.appendChild(op); });
+    sel.addEventListener('change', () => { TW.Settings.set(key, sel.value); if (after) after(sel.value); });
+    row.appendChild(sel);
+    body.appendChild(row);
+    return sel;
+  }
+  function checkRow(body, label, key, after) {
+    const row = el('label', 'set-check');
+    const box = el('input'); box.type = 'checkbox'; box.checked = !!TW.Settings.get(key);
+    box.addEventListener('change', () => { TW.Settings.set(key, box.checked); if (after) after(box.checked); });
+    row.appendChild(box); row.appendChild(el('span', '', T(label)));
+    body.appendChild(row);
+  }
+  function download(name, text) {
+    try {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+      a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    } catch (e) { /* fall through to the copy below */ }
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+  }
+  function readFile(input, then) {
+    const f = input.files && input.files[0];
+    if (!f) return;
+    const r = new FileReader();
+    r.onload = () => then(String(r.result), f.name);
+    r.readAsText(f);
+  }
+  function renderSettings(body) {
+    const rerender = () => openJournal('settings');
+    section(body, 'Reading');
+    pickRow(body, 'Text size', 'textSize', [['s', 'Small'], ['m', 'Medium'], ['l', 'Large'], ['xl', 'Extra large']]);
+    pickRow(body, 'Text speed', 'textSpeed', [['slow', 'Slow'], ['normal', 'Normal'], ['fast', 'Fast'], ['instant', 'Instant']]);
+    checkRow(body, 'Move on by itself after each line', 'autoAdvance');
+    checkRow(body, 'Let me select dialog text (for Speak Selection)', 'selectable');
+    section(body, 'Comfort');
+    checkRow(body, 'Reduce motion', 'reduceMotion');
+    checkRow(body, 'Higher contrast', 'contrast');
+    section(body, 'Language');
+    pickRow(body, 'Language', 'lang', [['en', 'English'], ['es', 'Español']], (v) => {
+      if (v === 'es' && TW.Bible.lang() !== 'es') { const sp = TW.Bible.list().find((x) => x.lang === 'es'); if (sp) TW.Settings.set('bible', sp.id); }
+      if (v === 'en' && TW.Bible.lang() !== 'en') TW.Settings.set('bible', 'WEB');
+      TW.Speech.reload(); relabel(); rerender();
+    });
+    if (TW.Settings.get('lang') === 'es') body.appendChild(el('p', 'empty', 'El menú está en español. La historia se mostrará en español a medida que se traduzca; mientras tanto aparece en inglés. Para las Escrituras en español, añade la Reina-Valera 1909 abajo.'));
+    section(body, 'Bible translation');
+    pickRow(body, 'Bible translation', 'bible', TW.Bible.list().map((v) => [v.id, v.name + (v.id === 'WEB' ? '' : ' (' + TW.Bible.count(v.id) + ')')]), () => { relabel(); rerender(); });
+    const cur = TW.Bible.version();
+    body.appendChild(el('p', 'empty', cur.name + ' · ' + (cur.license || '') + (cur.id !== 'WEB' ? ' · ' + TW.Bible.count(cur.id) + ' / ' + TW.Bible.needed().length + ' verses; any missing verse is shown from the WEB, marked “WEB”.' : '')));
+    if (cur.imported) { const rm = el('button', 'btn small', T('Remove')); rm.type = 'button'; rm.addEventListener('click', () => { TW.Bible.remove(cur.id); relabel(); rerender(); }); body.appendChild(rm); }
+    const imp = el('details', 'set-import');
+    imp.appendChild(el('summary', '', T('Add a Bible translation')));
+    imp.appendChild(el('p', '', 'Use a public-domain Bible as a plain text file with one verse per line. On eBible.org, for example, the American Standard Version (eng-asv), the King James Version (eng-kjv) and the Reina-Valera 1909 (spaRV1909) are offered as “VPL” text. Download it, unzip it in the Files app, then choose the .txt file here. Only the verses this game uses are kept.'));
+    const name = el('input', 'set-text'); name.placeholder = 'Name, e.g. American Standard Version';
+    const short = el('input', 'set-text'); short.placeholder = 'Short name, e.g. ASV'; short.maxLength = 10;
+    const lang = el('select', 'voice-select'); [['en', 'English'], ['es', 'Español']].forEach((o) => { const op = el('option', '', o[1]); op.value = o[0]; lang.appendChild(op); });
+    const file = el('input'); file.type = 'file'; file.accept = '.txt,.json,.vpl,text/plain,application/json';
+    const status = el('p', 'empty', '');
+    file.addEventListener('change', () => readFile(file, (text, fname) => {
+      const base = fname.replace(/\.[^.]+$/, '').replace(/_vpl$/i, '');
+      if (!short.value) short.value = base.replace(/^(eng|spa)-?/i, '').toUpperCase().slice(0, 10);
+      if (!name.value) name.value = base;
+      if (/^spa|reina|valera/i.test(fname)) lang.value = 'es';
+      const r = TW.Bible.importText(text, { name: name.value, short: short.value, lang: lang.value });
+      if (!r.ok) { status.textContent = 'No verses this game uses were found in that file. Is it one verse per line, like “MRK 2:1 …”?'; return; }
+      TW.Settings.set('bible', r.id);
+      status.textContent = 'Added ' + r.id + ': ' + r.matched + ' of ' + r.needed + ' verses.' + (r.stored ? '' : ' (It is too large to save on this device, so it will be gone next time.)');
+      relabel(); setTimeout(rerender, 1200);
+    }));
+    [name, short, lang, file, status].forEach((n) => imp.appendChild(n));
+    body.appendChild(imp);
+    section(body, 'Voices');
+    renderVoices(body);
+    section(body, 'Your progress');
+    const row = el('div', 'set-buttons');
+    const back = el('button', 'btn small', T('Back up progress')); back.type = 'button';
+    back.addEventListener('click', () => download('the-way-progress.json', JSON.stringify(game.save)));
+    const restore = el('input'); restore.type = 'file'; restore.accept = '.json,application/json'; restore.hidden = true;
+    const rb = el('button', 'btn small', T('Restore progress')); rb.type = 'button';
+    rb.addEventListener('click', () => restore.click());
+    restore.addEventListener('change', () => readFile(restore, (text) => {
+      try { const sv = JSON.parse(text); if (!sv || typeof sv !== 'object' || !sv.completed) throw new Error(); game.save = Object.assign(U.defaultSave(), sv); persist(); relabel(); rerender(); } catch (e) { alert('That file is not a saved journey.'); }
+    }));
+    const lines = el('button', 'btn small', 'Export lines'); lines.type = 'button';
+    lines.title = 'Every line you have seen, with its permanent ID, for recorded voices or translation';
+    lines.addEventListener('click', () => download('the-way-lines.json', TW.Lines.export()));
+    [back, rb, restore, lines].forEach((n) => row.appendChild(n));
+    body.appendChild(row);
+    body.appendChild(el('p', 'empty', 'Backup copies your journey to a file (and to the clipboard), so you can move it to another device. Export lines lists every line you have seen with its permanent ID, for recording voices or translating.'));
+  }
+  function renderVoices(body) {
+    const SP = TW.Speech;
+    SP.reload();
+    if (!SP.available) { body.appendChild(el('p', 'empty', 'This browser has no built-in voices.')); return; }
+    const list = SP.list();
+    body.appendChild(el('p', 'heart', 'Safari lets web pages use only some of the voices on your phone. Enhanced, Premium and Siri voices you download in Settings → Accessibility → Read & Speak usually do not appear here, even when set as the default. The best voice in this list is chosen automatically, and any recorded voices added to the game are used first.'));
+    if (!list.length) { body.appendChild(el('p', 'empty', 'No voices are available yet. Turn Read aloud on once, then reopen this tab.')); return; }
+    [['narrator', 'Narrator', 'drama'], ['scripture', 'Scripture', 'scripture']].forEach((slot) => {
+      const row = el('div', 'voice-row');
+      const lab = el('label', 'voice-label', T(slot[1]));
+      const sel = el('select', 'voice-select');
+      list.forEach((v) => {
+        const o = el('option', '', v.name.replace(/\s*\((enhanced|premium)\)/i, '') + ' · ' + SP.quality(v) + ' · ' + v.lang);
+        o.value = v.name;
+        if (v.name === SP.chosen(slot[0])) o.selected = true;
+        sel.appendChild(o);
+      });
+      sel.addEventListener('change', () => { SP.choose(slot[0], sel.value); SP.test(sel.value, slot[2]); });
+      const test = el('button', 'btn small', T('Test'));
+      test.type = 'button';
+      test.addEventListener('click', () => SP.test(sel.value, slot[2]));
+      lab.appendChild(sel);
+      row.appendChild(lab); row.appendChild(test);
+      body.appendChild(row);
+    });
+  }
+  // relabel everything that depends on language or Bible version
+  function relabel() {
+    TW.I18n.apply();
+    syncSound(); syncRead();
+    const v = TW.Bible.version();
+    $('#bible-credit').textContent = TW.Settings.get('lang') === 'es'
+      ? 'Las citas bíblicas son de la ' + v.name + (v.license ? ' (' + v.license.toLowerCase().replace('public domain', 'dominio público') + ')' : '') + '.'
+      : 'Scripture quotations are from the ' + v.name + (/public domain/i.test(v.license) ? ', which is in the public domain.' : '.');
+    const rep = document.querySelector('[data-tab=reports]');
+    if (rep) rep.textContent = T(TW.Role.is() ? 'Letters' : 'Reports');
+  }
   function openJournal(tab) {
-    document.querySelector('[data-tab=reports]').textContent = TW.Role.is() ? 'Letters' : 'Reports';
+    document.querySelector('[data-tab=reports]').textContent = TW.t(TW.Role.is() ? 'Letters' : 'Reports');
     openOverlay('#o-journal');
     renderJournal(tab);
   }
@@ -598,6 +733,8 @@ window.TW = window.TW || {};
     b.addEventListener('click', () => renderJournal(b.dataset.tab)));
   function renderJournal(tab) {
     document.querySelectorAll('#o-journal [data-tab]').forEach((b) => b.setAttribute('aria-selected', b.dataset.tab === tab));
+    const selTab = document.querySelector('#o-journal [data-tab="' + tab + '"]');
+    if (selTab && selTab.scrollIntoView) selTab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     const body = $('#journal-body');
     body.innerHTML = '';
     const s = game.save;
@@ -610,35 +747,8 @@ window.TW = window.TW || {};
         s.obs[id].forEach((o) => ul.appendChild(el('li', '', o.text)));
         body.appendChild(ul);
       });
-    } else if (tab === 'voices') {
-      const SP = TW.Speech;
-      SP.reload();
-      if (!SP.available) { body.appendChild(el('p', 'empty', 'This browser has no built-in voices.')); return; }
-      const list = SP.list();
-      body.appendChild(el('p', '', 'Read aloud uses the voices on your device. Choose one for the narrator and one for Scripture, and tap Test to hear it.'));
-      if (!SP.hasQualityVoice()) {
-        body.appendChild(el('p', 'heart', 'For natural-sounding voices on iPhone, go to Settings → Accessibility → Spoken Content → Voices → English. Tap a voice such as Ava, Zoe, Evan or Nathan and download its Enhanced or Premium version. Then come back here. (Apple does not let web pages use the Siri voices.)'));
-      }
-      if (!list.length) { body.appendChild(el('p', 'empty', 'No voices are available yet. Turn Read aloud on once, then reopen this tab.')); return; }
-      [['narrator', 'Narrator', 'drama'], ['scripture', 'Scripture', 'scripture']].forEach((slot) => {
-        const row = el('div', 'voice-row');
-        const lab = el('label', 'voice-label', slot[1]);
-        const sel = el('select', 'voice-select');
-        list.forEach((v) => {
-          const o = el('option', '', v.name.replace(/\s*\((enhanced|premium)\)/i, '') + ' · ' + SP.quality(v) + ' · ' + v.lang);
-          o.value = v.name;
-          if (v.name === SP.chosen(slot[0])) o.selected = true;
-          sel.appendChild(o);
-        });
-        sel.addEventListener('change', () => { SP.choose(slot[0], sel.value); SP.test(sel.value, slot[2]); });
-        const test = el('button', 'btn small', 'Test');
-        test.type = 'button';
-        test.addEventListener('click', () => SP.test(sel.value, slot[2]));
-        lab.appendChild(sel);
-        row.appendChild(lab); row.appendChild(test);
-        body.appendChild(row);
-      });
-      body.appendChild(el('p', 'empty', list.length + ' voices found. Characters use the best voices of the right kind automatically.'));
+    } else if (tab === 'settings') {
+      renderSettings(body);
     } else if (tab === 'service') {
       const all = Object.keys(D.service || {});
       const done = all.filter((k) => s.served[k]);
@@ -697,7 +807,7 @@ window.TW = window.TW || {};
     document.querySelector('#o-report .scroll-title').textContent = ltr ? 'Letter to Nicodemus' : 'Report to Nicodemus';
     document.querySelector('#o-report .help').textContent = ltr ? 'Choose what goes in your letter.' : 'Choose what goes in your report.';
     $('#btn-seal').textContent = ltr ? 'Seal the letter' : 'Seal the report';
-    document.querySelector('[data-tab=reports]').textContent = ltr ? 'Letters' : 'Reports';
+    document.querySelector('[data-tab=reports]').textContent = TW.t(ltr ? 'Letters' : 'Reports');
     $('#report-from').textContent = TW.Role.is() ? 'From ' + TW.Role.voiceName() + ', to her uncle Nicodemus. ' + E.scene + '.' : 'From ' + TW.Role.voiceName() + ', a scribe. ' + E.scene + '.';
     const box = $('#report-obs');
     box.innerHTML = '';
@@ -757,7 +867,7 @@ window.TW = window.TW || {};
       src.slice(i, j + 1).forEach((v) => {
         const s = el('span', 'v');
         s.appendChild(el('sup', '', v[0]));
-        s.appendChild(document.createTextNode(v[1] + ' '));
+        s.appendChild(document.createTextNode(TW.P.verseText(pt[0], v[0]) + ' '));
         pass.appendChild(s);
       });
       b.appendChild(pass);
@@ -817,5 +927,6 @@ window.TW = window.TW || {};
   }
 
   // ---------- boot ----------
+  relabel();
   game.show('title');
 })(window.TW);
