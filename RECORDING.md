@@ -26,32 +26,69 @@ Premium versions of the voices you want. A suggested cast, five voices in all:
 | M | A man speaking | Daniel or Tom (Enhanced) |
 | F | A woman speaking | Joelle (Enhanced) or Zoe |
 
-### Once: build the shortcut "The Way: record"
-In the Shortcuts app, tap **+** and add these actions in order. (Names can differ slightly between iOS versions; search
-for them by the words shown.)
+### Once: make the folder
+In the Files app, open iCloud Drive → Shortcuts and create a folder named **The Way Audio**.
+
+### Once: build the shortcut
+There are two versions. Start with the simple one to check that everything works.
+
+#### Simple version: one voice per run
+In the game's Dub Studio, choose a single voice (for example "N · narrator") before copying a batch. The batch then only
+contains lines for that voice, so the shortcut needs no If blocks:
 
 1. **Get Clipboard**
 2. **Split Text**: split *Clipboard* by **New Lines**
 3. **Repeat with Each** item in *Split Text*. Inside the repeat:
    1. **Split Text**: split *Repeat Item* by **Custom** `|`
-   2. **Get Item from List**: **First Item** of that list → **Set Variable** `ID`
-   3. **Get Item from List**: **Item At Index** `2` of the same list → **Set Variable** `Tag`
-   4. **Get Item from List**: **Last Item** of the same list → **Set Variable** `Line`
-   5. Five **If** blocks, one per voice tag. For the first: **If** `Tag` **is** `N`, add **Make Spoken Audio from Text**
-      with *Line*, tap the arrow to choose the voice (Evan (Enhanced)), then **Set Variable** `Audio`. End If.
-      Repeat for `W`, `S`, `M` and `F` with their voices.
-   6. **Set Name** of `Audio` to `ID` followed by `.m4a` (insert the `ID` variable, then type `.m4a`)
-   7. **Save File**: turn **Ask Where to Save** off, choose the Shortcuts folder in iCloud Drive, set the subpath to
-      `The Way Audio/`, and turn **Overwrite If File Exists** on.
-4. After the repeat: **Show Notification** "Batch recorded".
+   2. **Get Item from List**: **First Item** → then **Set Variable** `ID`
+   3. **Get Item from List**: **Last Item** of the same split list → then **Set Variable** `Line`
+      (tap the list input and choose the *Split Text* from step 3.1, not the first one)
+   4. **Make Spoken Audio from Text**: input *Line*; tap the arrow and choose the voice
+   5. **Set Name**: input *Spoken Audio*, name *ID*
+   6. **Save File**: input *Renamed Item*; **Ask Where to Save** off; destination the Shortcuts folder; subpath
+      `The Way Audio/`; **Overwrite If File Exists** on
+4. After **End Repeat**: **Show Notification** "Batch recorded"
 
-You can also set the speaking rate and pitch in each Make Spoken Audio action (the defaults are fine).
+Make one copy of this shortcut per voice (duplicate it and change the voice), or change the voice before each run.
+
+#### Full version: all five voices in one run
+Steps 1–3.3 as above, also adding after 3.2:
+**Get Item from List**: **Item At Index** `2` of the same split list → **Set Variable** `Tag`.
+
+Then, still inside the repeat, five **If** blocks, one per voice tag:
+
+- **If** `Tag` **is** `N`
+  - **Make Spoken Audio from Text**: input *Line*, voice Evan (Enhanced)
+  - **Set Variable** `Audio`  ← the same name in every block
+- **End If**
+- Repeat for `W`, `S`, `M` and `F`, each with its own voice and each ending in **Set Variable** `Audio`.
+
+After the last **End If**:
+- **Set Name**: input the variable **Audio** (not any of the Make Spoken Audio outputs), name *ID*
+- **Save File**: input *Renamed Item*, set up as in the simple version.
+
+Why the shared variable: each Make Spoken Audio action has its own output, and Set Name can only point at one of them.
+If that branch did not run for a line, there is nothing to save. Setting the same variable, `Audio`, in every branch
+gives Set Name one input that always holds whichever voice just spoke.
+
+#### File names and extensions
+Name each file with just the `ID` variable and let Shortcuts keep its own extension. After your first test, look at the
+file in the Files app (long-press → Get Info). In the game, set **Recordings are … files** in the Dub Studio to that
+extension (for example `.m4a` or `.wav`); the manifest the Studio writes uses it.
+
+#### Troubleshooting
+- **No file appears:** check Set Name's input is *Spoken Audio* (simple version) or the *Audio* variable (full version),
+  and Save File's input is *Renamed Item*. Make sure the **The Way Audio** folder exists.
+- **One file keeps being overwritten:** Set Name is not using the `ID` variable, so every file gets the same name.
+- **The wrong text is spoken, or the ID is read aloud:** the "Last Item" list input points at the wrong Split Text.
+- **Nothing happens at all:** run the Studio's **1 line (a test)** batch, and add **Quick Look** after Set Name to see
+  what the shortcut produced.
 
 ### Each time
 1. Play an episode in the game.
-2. Open your scroll → Settings → **Recorded voices**. Choose the episode and tap **Copy next batch** (10 to 25 lines is
-   kind to the phone).
-3. Run **The Way: record**. Each line becomes `<ID>.m4a` in Files → iCloud Drive → Shortcuts → The Way Audio.
+2. Open your scroll → Settings → **Recorded voices**. Choose the episode (and a single voice, for the simple shortcut)
+   and tap **Copy next batch** (10 to 25 lines is kind to the phone).
+3. Run the shortcut. Each line becomes a file named by its ID in Files → iCloud Drive → Shortcuts → The Way Audio.
 4. Back in the game, tap **Mark batch recorded**.
 5. When you have a few batches, copy the files into the game's `audio/en/` folder (for example with GitMobile), tap
    **Copy manifest**, and paste it into `audio/manifest.js`, replacing any earlier line for `en`.

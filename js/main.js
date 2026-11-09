@@ -760,36 +760,47 @@ window.TW = window.TW || {};
       const o = el('option', '', title(k) + ' · ' + r + ' of ' + n + ' recorded'); o.value = k; sel.appendChild(o);
     });
     const size = el('select', 'voice-select');
-    [10, 25, 50].forEach((n) => { const o = el('option', '', n + ' lines per batch'); o.value = n; if (n === 25) o.selected = true; size.appendChild(o); });
+    [1, 5, 10, 25, 50].forEach((n) => { const o = el('option', '', n + (n === 1 ? ' line (a test)' : ' lines per batch')); o.value = n; if (n === 10) o.selected = true; size.appendChild(o); });
+    // only one voice at a time, for a simple one-voice shortcut
+    const voice = el('select', 'voice-select');
+    [['', 'All voices'], ['N', 'N · narrator, Eleazar’s account'], ['W', 'W · narrator, Elisheva’s account'], ['S', 'S · Scripture'], ['M', 'M · a man speaking'], ['F', 'F · a woman speaking']].forEach((v) => { const o = el('option', '', v[1]); o.value = v[0]; voice.appendChild(o); });
+    // the kind of file the shortcut makes (check one in the Files app)
+    const EXT = 'the-way.dubext';
+    let ext = 'm4a';
+    try { ext = localStorage.getItem(EXT) || 'm4a'; } catch (e) { /* ignore */ }
+    const extSel = el('select', 'voice-select');
+    ['m4a', 'wav', 'aiff', 'caf', 'mp3'].forEach((x) => { const o = el('option', '', 'Recordings are .' + x + ' files'); o.value = x; if (x === ext) o.selected = true; extSel.appendChild(o); });
+    extSel.addEventListener('change', () => { ext = extSel.value; try { localStorage.setItem(EXT, ext); } catch (e) { /* ignore */ } });
     const box = el('textarea', 'set-text studio-box'); box.hidden = true; box.readOnly = true; box.rows = 6;
     const status = el('p', 'empty', '');
     let pending = [];
     const row = el('div', 'set-buttons');
     const next = el('button', 'btn small', 'Copy next batch'); next.type = 'button';
     next.addEventListener('click', () => {
-      const b = L.batch(sel.value, +size.value, lang);
-      if (!b.ids.length) { status.textContent = 'Every line of this episode is recorded.'; return; }
+      const b = L.batch(sel.value, +size.value, lang, voice.value);
+      if (!b.ids.length) { status.textContent = voice.value ? 'No unrecorded lines for that voice in this episode.' : 'Every line of this episode is recorded.'; return; }
       pending = b.ids; copyText(b.text, box);
       status.textContent = b.ids.length + ' lines copied. Run your “The Way: record” shortcut, then tap “Mark batch recorded”.';
     });
     const mark = el('button', 'btn small', 'Mark batch recorded'); mark.type = 'button';
     mark.addEventListener('click', () => { if (!pending.length) { status.textContent = 'Copy a batch first.'; return; } L.markRecorded(lang, pending); status.textContent = pending.length + ' lines marked as recorded.'; pending = []; setTimeout(() => openJournal('settings'), 900); });
     const man = el('button', 'btn small', 'Copy manifest'); man.type = 'button';
-    man.addEventListener('click', () => { copyText(L.manifest(lang, 'm4a'), box); status.textContent = 'Paste this into audio/manifest.js, replacing the line for ' + lang + '. Put the recordings in audio/' + lang + '/.'; });
+    man.addEventListener('click', () => { copyText(L.manifest(lang, ext), box); status.textContent = 'Paste this into audio/manifest.js, replacing the line for ' + lang + '. Put the recordings in audio/' + lang + '/.'; });
     const svc = el('button', 'btn small', 'Copy batch for a voice service'); svc.type = 'button';
     svc.addEventListener('click', () => {
-      const b = L.batch(sel.value, +size.value, lang);
+      const b = L.batch(sel.value, +size.value, lang, voice.value);
       pending = b.ids;
       copyText(JSON.stringify(b.lines.map((r) => ({ id: r.id, voice: L.tag(r), text: r.text })), null, 1), box);
       status.textContent = 'Copied as JSON for tools/dub-openai.mjs (a paid OpenAI service). See RECORDING.md.';
     });
     [next, mark, man, svc].forEach((x) => row.appendChild(x));
-    [sel, size, row, status, box].forEach((x) => body.appendChild(x));
+    [sel, size, voice, extSel, row, status, box].forEach((x) => body.appendChild(x));
     const how = el('details', 'set-import');
     how.appendChild(el('summary', '', 'How to record on iPhone'));
     [
       'Once: in Settings → Accessibility → Read & Speak → Voices → English, download the voices you like (for example Evan (Enhanced) and Ava (Premium)).',
-      'Once: build the “The Way: record” shortcut described in RECORDING.md. It reads each copied line (ID | voice | text), makes spoken audio with the voice for that tag, and saves it as <ID>.m4a in Files → The Way Audio.',
+      'Once: build the “The Way: record” shortcut described in RECORDING.md. It reads each copied line (ID | voice | text), makes spoken audio with the voice for that tag, and saves it named by its ID in Files → iCloud Drive → Shortcuts → The Way Audio. In each voice branch, end with Set Variable “Audio”, and name and save the Audio variable after the If blocks.',
+      'Test with a batch of 1 line first. Then look at the file in the Files app and set “Recordings are … files” above to its extension.',
       'Each time: choose an episode here, tap Copy next batch, run the shortcut, then tap Mark batch recorded. Small batches are kinder to the phone.',
       'When you have a few batches: copy the files into the game’s audio/' + lang + ' folder (for example with GitMobile), tap Copy manifest, and paste it into audio/manifest.js.',
       'Voice tags: N narrator for Eleazar’s account, W narrator for Elisheva’s, S Scripture, M a man speaking, F a woman speaking.',

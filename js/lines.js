@@ -57,8 +57,8 @@ window.TW = window.TW || {};
     return g;
   };
   const one = (t) => String(t).replace(/\s*\n+\s*/g, ' ').replace(/\|/g, '/').trim();
-  L.batch = function (ep, size, lang) {
-    const done = L.recorded(lang), list = (L.groups()[ep] || []).filter((r) => !done.has(r.id) && !TW.Dubs.has(lang, r.id)).slice(0, size);
+  L.batch = function (ep, size, lang, tag) {
+    const done = L.recorded(lang), list = (L.groups()[ep] || []).filter((r) => !done.has(r.id) && !TW.Dubs.has(lang, r.id) && (!tag || L.tag(r) === tag)).slice(0, size);
     return { ids: list.map((r) => r.id), text: list.map((r) => r.id + '|' + L.tag(r) + '|' + one(r.text)).join('\n'), lines: list };
   };
   L.manifest = (lang, ext) => "TW.Dubs.add('" + lang + "', " + JSON.stringify(Array.from(L.recorded(lang))) + ", '" + (ext || 'm4a') + "');";
