@@ -67,7 +67,7 @@ window.TW = window.TW || {};
       world: [['Emperors', 'Tiberius, Caligula, Claudius, Nero'], ['Prefect of Judea', 'Pontius Pilate, then Marcellus (from AD 36)']],
       episodes: [
         'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda', 'cyprus', 'pisidia', 'lystra', 'jcouncil', 'lydia', 'jailer', 'berea', 'athens', 'corinth', 'artemis', 'farewell',
-        'arrest', 'plot',
+        'arrest', 'plot', 'felix', 'agrippa',
       ],
     },
     {
@@ -1040,6 +1040,60 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder.push('arrest', 'plot');
+  Object.assign(D.episodes, {
+    felix: {
+      num: 'XXXVIII', title: 'Two Years in Caesarea', ref: 'Acts 24:1–25:12', passage: 'acts24', passages: [['acts24'], ['acts25', '25:1', '25:12']], place: 'caesarea', region: 'land', era: 'spread',
+      scene: 'Herod’s palace at Caesarea, Acts 24–25', parallels: 'compare Luke 1:1–4',
+      question: { id: 'convenient', text: 'Felix said, “When it is convenient for me, I will summon you.” Is there ever a convenient time?', ref: 'Acts 24:25' },
+      hearts: ['You visited Paul nearly every day.', 'You traveled Judea and Galilee with Luke, finding people who had seen and heard.', 'You copied Paul’s letters for the churches.'],
+      conclusions: [
+        'Before Felix, Paul confessed that he served the God of the fathers “after the Way,” in hope of the resurrection.',
+        'Felix trembled when Paul spoke of righteousness, self-control and the judgment to come, and sent him away until it was convenient. It never was.',
+        'After two years, before a new governor, Paul appealed to Caesar. To Caesar he would go.',
+      ],
+      notes: [
+        ['Tertullus (24:1)', 'A professional orator hired to present the high priest’s case in proper Roman style.'],
+        ['“The sect of the Nazarenes” (24:5)', 'An outsider’s name for the believers. Paul calls it “the Way” (24:14), the name this game takes.'],
+        ['Felix (24:22)', 'Governor of Judea about AD 52–59, a former slave who rose through the favor of the imperial household. The Roman historian Tacitus judged him harshly as a cruel and greedy ruler.'],
+        ['Drusilla (24:24)', 'Daughter of King Herod Agrippa I, who had killed James and imprisoned Peter (Acts 12), and sister of Agrippa II.'],
+        ['Two years (24:27)', 'Paul waited in custody at Caesarea for two years. Many scholars think Luke may have gathered material for his Gospel during this time, from the eyewitnesses he mentions in Luke 1:2.'],
+        ['Festus (25:1)', 'Felix’s successor, governor about AD 59–62, who tried to start his rule on good terms with Jerusalem’s leaders.'],
+        ['I appeal to Caesar (25:11)', 'A Roman citizen could ask to have his case heard by the emperor himself, by then Nero.'],
+      ],
+      reflect: [
+        'Felix was frightened by the truth, and then hoped for a bribe. What do you make of him?',
+        'What would you do with two years of waiting?',
+        'Why do you think Paul appealed to Caesar instead of going back to Jerusalem?',
+      ],
+    },
+    agrippa: {
+      num: 'XXXIX', title: 'Almost Persuaded', ref: 'Acts 25:13–26:32', passage: 'acts26', passages: [['acts25', '25:13', '25:27'], ['acts26']], place: 'caesarea', region: 'land', era: 'spread',
+      scene: 'The hall of hearing at Caesarea, Acts 25–26', parallels: 'Acts 9:1–19; 22:1–21',
+      question: { id: 'corner', text: '“This has not been done in a corner.” What did Paul mean?', ref: 'Acts 26:26' },
+      hearts: ['In your heart you answered him: “I am such as you are.”', 'In your heart you answered: “Almost.”', 'In your heart you answered: “Not yet. But I am still writing.”'],
+      conclusions: [
+        'For the third time in Acts, Paul told how the risen Jesus met him on the road and sent him to open eyes.',
+        'Festus said he was crazy. Agrippa asked if he was trying, with so little, to make him a Christian.',
+        'They agreed he had done nothing worthy of death or chains. He might have been set free, if he had not appealed to Caesar.',
+      ],
+      answers: { gentiles: ['The Christ would “proclaim light both to these people and to the Gentiles.” For Paul that was the hope of Israel itself, not a betrayal of it.', 'Acts 26:23'] },
+      notes: [
+        ['Agrippa and Bernice (25:13)', 'Herod Agrippa II, great-grandson of Herod the Great, ruled lands north and east of Galilee and had charge of the Temple and the choice of high priest. Bernice was his sister.'],
+        ['Great pomp (25:23)', 'Roman officers, city leaders, the king and queen in royal dress: the grandest audience Paul ever had, and he arrived in chains.'],
+        ['The third telling (26:12–18)', 'Luke tells Paul’s conversion three times (chapters 9, 22 and 26), each time to a different audience.'],
+        ['Kicking against the goads (26:14)', 'A proverb about an ox kicking against the pointed stick that drives it: resisting only hurts the one who resists.'],
+        ['“Christian” (26:28)', 'The name first given to the disciples at Antioch (11:26). It appears only three times in the New Testament.'],
+        ['Not done in a corner (26:26)', 'The death and resurrection of Jesus were public events in Jerusalem, at a feast, before crowds, under Roman authority.'],
+      ],
+      reflect: [
+        'Paul spoke to a king as if he were any other person who needed to hear. What does that say about status?',
+        'How would you have answered Paul’s last words?',
+        'Why do you think Luke tells Paul’s conversion three times?',
+      ],
+    },
+  });
+  D.eraOrder.push('felix', 'agrippa');
+
 
 
 
@@ -1189,7 +1243,7 @@ window.TW = window.TW || {};
       text: 'A village west of Jerusalem where the risen Jesus was recognized at a meal. Several sites have been proposed; this marker shows Emmaus Nicopolis.' },
     { id: 'joppa', name: 'Joppa', alt: 'Jerusalem’s old port', lon: 34.752, lat: 32.054, kind: 'episode', episodes: ['tabitha', 'cornelius'], reveal: 'levi', label: 'l', ref: 'Acts 9:36–10:23',
       text: 'An ancient harbor on the coast. Peter will raise Tabitha here and receive a vision that sends him to a Gentile’s house.' },
-    { id: 'caesarea', name: 'Caesarea', alt: 'Caesarea Maritima', lon: 34.890, lat: 32.500, kind: 'history', reveal: 'levi', label: 'l', ref: 'Acts 10',
+    { id: 'caesarea', name: 'Caesarea', alt: 'Caesarea Maritima', lon: 34.890, lat: 32.500, kind: 'episode', episodes: ['felix', 'agrippa'], reveal: 'levi', label: 'l', ref: 'Acts 10',
       text: 'Herod the Great’s harbor city and the seat of the Roman prefects. A stone found here in 1961 bears Pontius Pilate’s name. Taxes from the province flowed through Roman officials based here.' },
     { id: 'samaria', name: 'Sebaste', alt: 'The city of Samaria', lon: 35.192, lat: 32.276, kind: 'episode', episodes: ['samaria'], reveal: 'levi', label: 'l',
       text: 'The old capital of the northern kingdom, rebuilt by Herod the Great and renamed for Augustus (Sebastos in Greek).' },

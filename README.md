@@ -74,6 +74,9 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/rome-art.js` – the Fortress Antonia and its stairs, horsemen, and looks for Agabus, James, the tribune and others
 - `js/arrest.js` – Episode XXXVI, On the Stairs (Acts 21–22)
 - `js/plot.js` – Episode XXXVII, The Forty Who Swore (Acts 23)
+- `js/felix.js` – Episode XXXVIII, Two Years in Caesarea (Acts 24:1–25:12)
+- `js/agrippa.js` – Episode XXXIX, Almost Persuaded (Acts 25:13–26:32)
+- `js/scripture7.js` – WEB passages: Acts 25–26
 - `js/scripture6.js` – WEB passages: Acts 18:24–24:26
 - `js/about.js` – copyright holder, contact and license summary shown in the game (fill in your name here)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
