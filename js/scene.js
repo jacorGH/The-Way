@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — scene engine: low-res pixel stage + full-res light layer + dialogue */
 window.TW = window.TW || {};
 (function (TW) {

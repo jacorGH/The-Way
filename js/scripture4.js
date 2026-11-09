@@ -1,3 +1,4 @@
+/* Scripture text in this file: World English Bible, public domain, not covered by the game license (LICENSE.md). */
 /* The Way — Scripture for Acts 9:32–12:17.
    World English Bible (public domain), via Project Gutenberg #8271. Footnote markers removed; wording unchanged. */
 window.TW = window.TW || {};

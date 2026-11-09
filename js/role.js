@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — who you play.
    Eleazar: a young scribe, a student of Nicodemus.
    Elisheva: Nicodemus's niece, raised in his house and taught to read and write so she could keep his accounts and copy
@@ -41,6 +42,12 @@ window.TW = window.TW || {};
     cornelius: ['scribe', 'A scribe crossing a Gentile’s threshold', 'Answering the gate at the tanner’s house'],
     antioch: ['scribe', 'Traveling with Barnabas, and to Tarsus for Saul', 'Traveling with Barnabas’s party, and at a Greek table'],
     rhoda: ['niece', 'Praying in the crowded room', 'Beside Rhoda, at the gate'],
+    corinth: ['niece', 'At the workbench with Aquila', 'At the workbench with Priscilla'],
+    berea: ['scribe', 'A scribe examining the Scriptures with the Bereans', 'With the prominent Greek women of Berea'],
+    athens: ['scribe', 'On the Areopagus beside Paul', 'Among the listeners, near a woman named Damaris'],
+    jcouncil: ['scribe', 'A Pharisee’s student among the believing Pharisees', 'Among the whole assembly'],
+    lydia: ['niece', 'Sitting with the men by the river', 'Among the women at the place of prayer'],
+    jailer: ['niece', 'At the prison gate at midnight', 'At the prison gate with Lydia, at midnight'],
     pisidia: ['scribe', 'Among the men of the synagogue', 'Among the devout women of the city'],
     lystra: ['niece', 'In the crowd at the gate', 'Kneeling in the dust beside Paul'],
     cyprus: ['scribe', 'A Jerusalem scribe before a Roman governor', 'A woman of Jerusalem before a Roman governor'],

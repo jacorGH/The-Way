@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XVII: Stephen (Acts 6:8–8:4).
    The stoning is shown with restraint: no stones are seen striking, the scene darkens, and the words are Scripture's own. */
 window.TW = window.TW || {};

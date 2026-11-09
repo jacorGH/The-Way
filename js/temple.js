@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode VII: The Temple (Mark 11:15–18; 12:28–34) */
 window.TW = window.TW || {};
 (function (TW) {

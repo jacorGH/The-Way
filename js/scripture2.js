@@ -1,3 +1,4 @@
+/* Scripture text in this file: World English Bible, public domain, not covered by the game license (LICENSE.md). */
 /* The Way — Scripture for testimonies and the Passion.
    World English Bible (public domain), from eBible.org via Project Gutenberg (Mark #8268, John #8270).
    Footnote markers removed; wording unchanged. */

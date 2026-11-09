@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XVI: The Seven (Acts 6:1–7).
    The scribe helps with the daily distribution. Bread is limited; the Greek-speaking widows stand at the back.
    However he serves, the complaint of 6:1 has already been made: Scripture is not changed, only seen from inside. */

@@ -1,3 +1,4 @@
+/* Scripture text in this file: World English Bible, public domain, not covered by the game license (LICENSE.md). */
 /* The Way — Scripture for Era III, The Jerusalem Church.
    World English Bible (public domain), from eBible.org via Project Gutenberg (Acts #8271, John #8270).
    Footnote markers removed; wording unchanged. */

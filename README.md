@@ -61,6 +61,15 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/pisidia.js` – Episode XXVI, Antioch of Pisidia (Acts 13:14–52)
 - `js/lystra.js` – Episode XXVII, Lystra (Acts 14), with Iconium and the report at Antioch
 - `js/speech.js` – read aloud with the device's built-in voices (narrator, Scripture and character voices)
+- `js/geo-aegean.js` – geography of the Aegean (Greece, Thrace, western Asia Minor, gulfs, straits, islands)
+- `js/aegean-art.js` – the river at Philippi, the prison stocks, and a sea crossing
+- `js/jcouncil.js` – Episode XXVIII, The Council at Jerusalem (Acts 15)
+- `js/lydia.js` – Episode XXIX, Lydia (Acts 16:1–15): Timothy, the vision at Troas, Luke, the river
+- `js/jailer.js` – Episode XXX, Midnight in Philippi (Acts 16:16–40)
+- `js/berea.js` – Episode XXXI, Thessalonica and Berea (Acts 17:1–15)
+- `js/athens.js` – Episode XXXII, The Unknown God (Acts 17:16–34)
+- `js/corinth.js` – Episode XXXIII, Corinth (Acts 18:1–18)
+- `js/about.js` – copyright holder, contact and license summary shown in the game (fill in your name here)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
 - `js/vignettes.js` – memory scenes: sepia flashbacks that act out each testimony answer in step with its verses
 - `js/main.js` – game controller
@@ -133,6 +142,11 @@ to the WEB, marked "WEB", for any missing verse. Book names follow the version's
   stored on the device.
 - **In the repo:** `node tools/import-bible.mjs eng-asv_vpl.txt --id ASV --name "American Standard Version" --lang en`,
   then add `<script src="bible/ASV.js"></script>` after `bible/versions.js` in `index.html`.
+- **One-tap downloads:** Settings → Bible translation offers the American Standard Version, the King James Version and
+  the Reina-Valera 1909 (or 1858 if the 1909 is unavailable). The game fetches only the books it uses from getBible.net
+  (a whole book per request) or, failing that, bible-api.com (a chapter per request), keeps only the verses it uses, and
+  stores them on the device. Downloads need an internet connection and do not work inside the in-chat play link, whose
+  security rules block other websites; they work from your own copy, such as GitHub Pages.
 - **Sources:** eBible.org offers public-domain texts in "VPL" (verse per line) format, e.g. the American Standard
   Version (eng-asv), the King James Version (eng-kjv; public domain in the US, Crown rights in the UK) and the
   Reina-Valera 1909 (spaRV1909). Re-run the tool when new episodes add passages.
@@ -144,6 +158,9 @@ to the WEB, marked "WEB", for any missing verse. Book names follow the version's
 - Elisheva's text variants have their own IDs, so they are translated separately.
 
 ### Recorded voices
+See **RECORDING.md** for the free iPhone Shortcuts method and the paid OpenAI method. In the game, Settings → Recorded
+voices is the Dub Studio: it copies batches of lines (ID | voice tag | text), tracks what is recorded, and writes the
+manifest. `tools/dub-openai.mjs` records a batch with OpenAI's speech API.
 Put recordings at `audio/<lang>/<line id>.mp3` and list the IDs in `audio/manifest.js` with
 `TW.Dubs.add('en', [...])`. Read aloud plays a recording when one exists and the device voice otherwise.
 
@@ -151,3 +168,18 @@ Put recordings at `audio/<lang>/<line id>.mp3` and list the IDs in `audio/manife
 Settings: text size (S to XL, everything scales), text speed (to instant), auto-advance (waits for the voice to finish
 when reading aloud), selectable dialog text (for the iPhone's Speak Selection), reduce motion (no typing, shaking or
 long transitions; also follows the system setting), higher contrast, and progress backup and restore.
+
+## License
+The game is **free to play and to share unmodified; all other rights are reserved.** See `LICENSE.md`. In short: anyone may
+play it and share links or complete, unchanged copies free of charge; no one may copy, change, reuse or sell the code,
+art, music or story, or use them to train AI models, without permission. Scripture texts are public domain and are not
+covered.
+
+Before publishing, put your name and a contact in `LICENSE.md` and `js/about.js` (they appear in the game's title screen
+and Settings). Notes:
+- A web game necessarily sends its code to every player's browser. The license is what protects it legally.
+- If the GitHub repository is public, GitHub's own Terms of Service let other GitHub users view and fork it on GitHub,
+  though your license still applies to everything else. To keep the code out of view, keep the repository private
+  (publishing a private repository with GitHub Pages requires a paid GitHub plan).
+- This license is a clear starting point, not legal advice. Have it reviewed if you ever sell the game or license it to
+  others.

@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode IX: The Cross (Mark 15:16–41).
    Shown with restraint: from a distance, the crucified as dark silhouettes, no wounds. The words are Scripture's own. */
 window.TW = window.TW || {};

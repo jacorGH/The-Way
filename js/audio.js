@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — sound. Everything is synthesized live with Web Audio, so there are no sound files to load.
    Music: a plucked lyre (kinnor), a reed flute, a low drone and a frame drum, in modes chosen per mood.
    Ambience: layered beds (waves, wind, birds, crowd, room, night, fire, storm) cross-faded per scene. */

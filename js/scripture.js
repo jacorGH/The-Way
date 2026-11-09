@@ -1,3 +1,4 @@
+/* Scripture text in this file: World English Bible, public domain, not covered by the game license (LICENSE.md). */
 /* The Way — Scripture passages.
    World English Bible (public domain), text as distributed by eBible.org via Project Gutenberg.
    Never edit wording here except to correct it against the WEB. */

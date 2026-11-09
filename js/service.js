@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Service. After the Seven are chosen, the scribe serves with Stephen: listening, caring, praying.
    Outcomes are honest: some are healed, some recover slowly, some find comfort, and one dies in peace.
    The player's choices shape how well he serves, never whether God answers. Prayers quote Scripture word for word. */

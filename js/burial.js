@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode X: The Burial (Mark 15:42–47; John 19:38–42).
    Afterward Nicodemus tells the scribe about the night he first came to Jesus (John 3) and the day he spoke up for him (John 7). */
 window.TW = window.TW || {};

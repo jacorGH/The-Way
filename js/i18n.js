@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — interface language. t('English text') returns the current language's version, or the English.
    Static labels in index.html carry data-i18n; they are translated whenever the language changes. */
 window.TW = window.TW || {};
@@ -22,7 +23,7 @@ window.TW = window.TW || {};
     'Comfort': 'Comodidad', 'Reduce motion': 'Reducir movimiento', 'Higher contrast': 'Más contraste',
     'Language': 'Idioma', 'Bible translation': 'Traducción de la Biblia', 'Voices': 'Voces', 'Your progress': 'Tu progreso',
     'Back up progress': 'Guardar copia del progreso', 'Restore progress': 'Restaurar progreso', 'Add a Bible translation': 'Añadir una traducción de la Biblia',
-    'Test': 'Probar', 'Narrator': 'Narrador', 'Remove': 'Quitar', 'Go': 'Ir', 'Again': 'Otra vez',
+    'Test': 'Probar', 'About and license': 'Acerca de y licencia', 'Narrator': 'Narrador', 'Remove': 'Quitar', 'Go': 'Ir', 'Again': 'Otra vez',
   };
   const DICT = { es: ES };
   const I = {

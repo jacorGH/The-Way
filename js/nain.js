@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode V: The Widow of Nain (Luke 7:11–17) */
 window.TW = window.TW || {};
 (function (TW) {

@@ -1,3 +1,4 @@
+/* Scripture text in this file: World English Bible, public domain, not covered by the game license (LICENSE.md). */
 /* The Way — Scripture for Acts 13:14–16:40.
    World English Bible (public domain), via Project Gutenberg #8271. Footnote markers removed; wording unchanged. */
 window.TW = window.TW || {};
@@ -125,5 +126,62 @@ window.TW = window.TW || {};
     ['16:33', 'He took them the same hour of the night, and washed their stripes, and was immediately baptized, he and all his household.'],
     ['16:34', 'He brought them up into his house, and set food before them, and rejoiced greatly, with all his household, having believed in God.'],
     ['16:40', 'They went out of the prison, and entered into Lydia’s house. When they had seen the brothers, they encouraged them, and departed.'],
+  ]);
+  add('acts17', 'Acts', [
+    ['17:1', 'Now when they had passed through Amphipolis and Apollonia, they came to Thessalonica, where there was a Jewish synagogue.'],
+    ['17:2', 'Paul, as was his custom, went in to them, and for three Sabbath days reasoned with them from the Scriptures,'],
+    ['17:3', 'explaining and demonstrating that the Christ had to suffer and rise again from the dead, and saying, “This Jesus, whom I proclaim to you, is the Christ.”'],
+    ['17:4', 'Some of them were persuaded, and joined Paul and Silas, of the devout Greeks a great multitude, and not a few of the chief women.'],
+    ['17:5', 'But the unpersuaded Jews took along some wicked men from the marketplace, and gathering a crowd, set the city in an uproar. Assaulting the house of Jason, they sought to bring them out to the people.'],
+    ['17:6', 'When they didn’t find them, they dragged Jason and certain brothers before the rulers of the city, crying, “These who have turned the world upside down have come here also,'],
+    ['17:7', 'whom Jason has received. These all act contrary to the decrees of Caesar, saying that there is another king, Jesus!”'],
+    ['17:8', 'The multitude and the rulers of the city were troubled when they heard these things.'],
+    ['17:9', 'When they had taken security from Jason and the rest, they let them go.'],
+    ['17:10', 'The brothers immediately sent Paul and Silas away by night to Beroea. When they arrived, they went into the Jewish synagogue.'],
+    ['17:11', 'Now these were more noble than those in Thessalonica, in that they received the word with all readiness of the mind, examining the Scriptures daily to see whether these things were so.'],
+    ['17:12', 'Many of them therefore believed; also of the prominent Greek women, and not a few men.'],
+    ['17:13', 'But when the Jews of Thessalonica had knowledge that the word of God was proclaimed by Paul at Beroea also, they came there likewise, agitating the multitudes.'],
+    ['17:14', 'Then the brothers immediately sent out Paul to go as far as to the sea, and Silas and Timothy still stayed there.'],
+    ['17:15', 'But those who escorted Paul brought him as far as Athens. Receiving a commandment to Silas and Timothy that they should come to him very quickly, they departed.'],
+    ['17:16', 'Now while Paul waited for them at Athens, his spirit was provoked within him as he saw the city full of idols.'],
+    ['17:17', 'So he reasoned in the synagogue with the Jews and the devout persons, and in the marketplace every day with those who met him.'],
+    ['17:18', 'Some of the Epicurean and Stoic philosophers also were conversing with him. Some said, “What does this babbler want to say?” Others said, “He seems to be advocating foreign deities,” because he preached Jesus and the resurrection.'],
+    ['17:19', 'They took hold of him, and brought him to the Areopagus, saying, “May we know what this new teaching is, which is spoken by you?'],
+    ['17:20', 'For you bring certain strange things to our ears. We want to know therefore what these things mean.”'],
+    ['17:21', 'Now all the Athenians and the strangers living there spent their time in nothing else, but either to tell or to hear some new thing.'],
+    ['17:22', 'Paul stood in the middle of the Areopagus, and said, “You men of Athens, I perceive that you are very religious in all things.'],
+    ['17:23', 'For as I passed along, and observed the objects of your worship, I found also an altar with this inscription: ‘TO AN UNKNOWN GOD.’ What therefore you worship in ignorance, this I announce to you.'],
+    ['17:24', 'The God who made the world and all things in it, he, being Lord of heaven and earth, doesn’t dwell in temples made with hands,'],
+    ['17:25', 'neither is he served by men’s hands, as though he needed anything, seeing he himself gives to all life and breath, and all things.'],
+    ['17:26', 'He made from one blood every nation of men to dwell on all the surface of the earth, having determined appointed seasons, and the boundaries of their dwellings,'],
+    ['17:27', 'that they should seek the Lord, if perhaps they might reach out for him and find him, though he is not far from each one of us.'],
+    ['17:28', '‘For in him we live, and move, and have our being.’ As some of your own poets have said, ‘For we are also his offspring.’'],
+    ['17:29', 'Being then the offspring of God, we ought not to think that the Divine Nature is like gold, or silver, or stone, engraved by art and design of man.'],
+    ['17:30', 'The times of ignorance therefore God overlooked. But now he commands that all people everywhere should repent,'],
+    ['17:31', 'because he has appointed a day in which he will judge the world in righteousness by the man whom he has ordained; of which he has given assurance to all men, in that he has raised him from the dead.”'],
+    ['17:32', 'Now when they heard of the resurrection of the dead, some mocked; but others said, “We want to hear you again concerning this.”'],
+    ['17:33', 'Thus Paul went out from among them.'],
+    ['17:34', 'But certain men joined with him, and believed, among whom also was Dionysius the Areopagite, and a woman named Damaris, and others with them.'],
+  ]);
+
+  add('acts18', 'Acts', [
+    ['18:1', 'After these things Paul departed from Athens, and came to Corinth.'],
+    ['18:2', 'He found a certain Jew named Aquila, a man of Pontus by race, who had recently come from Italy, with his wife Priscilla, because Claudius had commanded all the Jews to depart from Rome. He came to them,'],
+    ['18:3', 'and because he practiced the same trade, he lived with them and worked, for by trade they were tent makers.'],
+    ['18:4', 'He reasoned in the synagogue every Sabbath, and persuaded Jews and Greeks.'],
+    ['18:5', 'But when Silas and Timothy came down from Macedonia, Paul was compelled by the Spirit, testifying to the Jews that Jesus was the Christ.'],
+    ['18:6', 'When they opposed him and blasphemed, he shook out his clothing and said to them, “Your blood be on your own heads! I am clean. From now on, I will go to the Gentiles!”'],
+    ['18:7', 'He departed there, and went into the house of a certain man named Justus, one who worshiped God, whose house was next door to the synagogue.'],
+    ['18:8', 'Crispus, the ruler of the synagogue, believed in the Lord with all his house. Many of the Corinthians, when they heard, believed and were baptized.'],
+    ['18:9', 'The Lord said to Paul in the night by a vision, “Don’t be afraid, but speak and don’t be silent;'],
+    ['18:10', 'for I am with you, and no one will attack you to harm you, for I have many people in this city.”'],
+    ['18:11', 'He lived there a year and six months, teaching the word of God among them.'],
+    ['18:12', 'But when Gallio was proconsul of Achaia, the Jews with one accord rose up against Paul and brought him before the judgment seat,'],
+    ['18:13', 'saying, “This man persuades men to worship God contrary to the law.”'],
+    ['18:14', 'But when Paul was about to open his mouth, Gallio said to the Jews, “If indeed it were a matter of wrong or of wicked crime, you Jews, it would be reasonable that I should bear with you;'],
+    ['18:15', 'but if they are questions about words and names and your own law, look to it yourselves. For I don’t want to be a judge of these matters.”'],
+    ['18:16', 'He drove them from the judgment seat.'],
+    ['18:17', 'Then all the Greeks laid hold on Sosthenes, the ruler of the synagogue, and beat him before the judgment seat. Gallio didn’t care about any of these things.'],
+    ['18:18', 'Paul, having stayed after this many more days, took his leave of the brothers, and sailed from there for Syria, together with Priscilla and Aquila. He shaved his head in Cenchreae, for he had a vow.'],
   ]);
 })(window.TW);

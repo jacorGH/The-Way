@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XXIII: Antioch (Acts 11:19–30). */
 window.TW = window.TW || {};
 (function (TW) {

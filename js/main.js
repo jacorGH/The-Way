@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — game controller */
 window.TW = window.TW || {};
 (function (TW) {
@@ -62,6 +63,7 @@ window.TW = window.TW || {};
     land: { music: 'land', amb: { wind: 0.25, birds: 0.3 } },
     jerusalem: { music: 'jerusalem', amb: { city: 0.4, doves: 0.3, birds: 0.25 } },
     east: { music: 'land', amb: { birds: 0.3, village: 0.15, wind: 0.1 } },
+    aegean: { music: 'land', amb: { birds: 0.3, village: 0.1, wind: 0.12 } },
   };
   TW.game = game;
   const persist = () => U.store(game.save);
@@ -244,7 +246,7 @@ window.TW = window.TW || {};
     det.appendChild(dl);
     if (era.id === 'galilee' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era II, The Road to Jerusalem, comes next.'));
     if (era.id === 'passion' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era III, The Jerusalem Church, comes next.'));
-    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: the council at Jerusalem, and Paul’s journeys west to Philippi, Athens, Corinth and Ephesus.'));
+    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Still being built: Ephesus, Paul’s farewell, and the road to Rome.'));
     if (era.id === 'church' && game.save.completed.seven) det.appendChild(el('p', 'era-done', 'Service is open: look for people who need you on the Jerusalem map.'));
     const ol = el('ol', 'episodes');
     const next = nextEpisode();
@@ -647,6 +649,26 @@ window.TW = window.TW || {};
     const cur = TW.Bible.version();
     body.appendChild(el('p', 'empty', cur.name + ' · ' + (cur.license || '') + (cur.id !== 'WEB' ? ' · ' + TW.Bible.count(cur.id) + ' / ' + TW.Bible.needed().length + ' verses; any missing verse is shown from the WEB, marked “WEB”.' : '')));
     if (cur.imported) { const rm = el('button', 'btn small', T('Remove')); rm.type = 'button'; rm.addEventListener('click', () => { TW.Bible.remove(cur.id); relabel(); rerender(); }); body.appendChild(rm); }
+    // one-tap downloads of public-domain versions
+    const dl = el('div', 'set-downloads');
+    dl.appendChild(el('p', '', 'Download a public-domain translation (only the verses this game uses, about 150 KB):'));
+    const dstatus = el('p', 'empty', '');
+    TW.Bible.DOWNLOADS.forEach((d) => {
+      const have = TW.Bible.versions[d.id] || (d.alt && TW.Bible.versions[d.alt.id]);
+      const b = el('button', 'btn small', (have ? '✓ ' : '') + d.name);
+      b.type = 'button';
+      b.disabled = !!have;
+      b.addEventListener('click', async () => {
+        dl.querySelectorAll('button').forEach((x) => { x.disabled = true; });
+        const r = await TW.Bible.download(d.id, (msg) => { dstatus.textContent = msg; });
+        if (r.ok) { TW.Settings.set('bible', r.id); dstatus.textContent = 'Added ' + r.name + ': ' + r.matched + ' of ' + r.needed + ' verses.' + (r.stored ? '' : ' (Too large to keep on this device.)'); relabel(); setTimeout(rerender, 1500); }
+        else { dstatus.textContent = r.error; dl.querySelectorAll('button').forEach((x) => { x.disabled = false; }); }
+      });
+      dl.appendChild(b);
+    });
+    dl.appendChild(dstatus);
+    dl.appendChild(el('p', 'empty', 'Texts come from getBible.net or bible-api.com. The King James Version is public domain in the US; in the UK the Crown holds rights to it.'));
+    body.appendChild(dl);
     const imp = el('details', 'set-import');
     imp.appendChild(el('summary', '', T('Add a Bible translation')));
     imp.appendChild(el('p', '', 'Use a public-domain Bible as a plain text file with one verse per line. On eBible.org, for example, the American Standard Version (eng-asv), the King James Version (eng-kjv) and the Reina-Valera 1909 (spaRV1909) are offered as “VPL” text. Download it, unzip it in the Files app, then choose the .txt file here. Only the verses this game uses are kept.'));
@@ -670,6 +692,12 @@ window.TW = window.TW || {};
     body.appendChild(imp);
     section(body, 'Voices');
     renderVoices(body);
+    section(body, 'Recorded voices');
+    renderStudio(body);
+    section(body, 'About and license');
+    body.appendChild(el('p', '', TW.ABOUT.title + ' · © ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '.'));
+    body.appendChild(el('p', '', TW.ABOUT.summary));
+    body.appendChild(el('p', 'empty', 'Full terms are in LICENSE.md with the game. For permissions: ' + TW.ABOUT.contact + '.'));
     section(body, 'Your progress');
     const row = el('div', 'set-buttons');
     const back = el('button', 'btn small', T('Back up progress')); back.type = 'button';
@@ -713,6 +741,64 @@ window.TW = window.TW || {};
       body.appendChild(row);
     });
   }
+  // ---------- Dub Studio: record the game's lines on the iPhone, a batch at a time ----------
+  function copyText(text, box) {
+    box.value = text; box.hidden = false;
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => { box.select(); });
+    else box.select();
+  }
+  function renderStudio(body) {
+    const L = TW.Lines, lang = TW.Settings.get('lang') || 'en';
+    const groups = L.groups(), keys = Object.keys(groups);
+    body.appendChild(el('p', '', 'Make your own voice recordings with the iPhone’s Shortcuts app, which can use the Enhanced and Premium voices you download. Play an episode, then record its lines here a batch at a time. See “How to record on iPhone” below, and RECORDING.md in the game folder.'));
+    if (!keys.length) { body.appendChild(el('p', 'empty', 'Play an episode first; its lines will appear here.')); return; }
+    const done = L.recorded(lang);
+    const title = (k) => (D.episodes[k] ? D.episodes[k].num + '. ' + D.episodes[k].title : k.indexOf('t:') === 0 ? 'Testimony: ' + k.slice(2) : k.indexOf('s:') === 0 ? 'Service: ' + k.slice(2) : 'Other');
+    const sel = el('select', 'voice-select');
+    keys.sort((a, b) => (D.eraOrder.indexOf(a) + 1 || 999) - (D.eraOrder.indexOf(b) + 1 || 999)).forEach((k) => {
+      const n = groups[k].length, r = groups[k].filter((x) => done.has(x.id)).length;
+      const o = el('option', '', title(k) + ' · ' + r + ' of ' + n + ' recorded'); o.value = k; sel.appendChild(o);
+    });
+    const size = el('select', 'voice-select');
+    [10, 25, 50].forEach((n) => { const o = el('option', '', n + ' lines per batch'); o.value = n; if (n === 25) o.selected = true; size.appendChild(o); });
+    const box = el('textarea', 'set-text studio-box'); box.hidden = true; box.readOnly = true; box.rows = 6;
+    const status = el('p', 'empty', '');
+    let pending = [];
+    const row = el('div', 'set-buttons');
+    const next = el('button', 'btn small', 'Copy next batch'); next.type = 'button';
+    next.addEventListener('click', () => {
+      const b = L.batch(sel.value, +size.value, lang);
+      if (!b.ids.length) { status.textContent = 'Every line of this episode is recorded.'; return; }
+      pending = b.ids; copyText(b.text, box);
+      status.textContent = b.ids.length + ' lines copied. Run your “The Way: record” shortcut, then tap “Mark batch recorded”.';
+    });
+    const mark = el('button', 'btn small', 'Mark batch recorded'); mark.type = 'button';
+    mark.addEventListener('click', () => { if (!pending.length) { status.textContent = 'Copy a batch first.'; return; } L.markRecorded(lang, pending); status.textContent = pending.length + ' lines marked as recorded.'; pending = []; setTimeout(() => openJournal('settings'), 900); });
+    const man = el('button', 'btn small', 'Copy manifest'); man.type = 'button';
+    man.addEventListener('click', () => { copyText(L.manifest(lang, 'm4a'), box); status.textContent = 'Paste this into audio/manifest.js, replacing the line for ' + lang + '. Put the recordings in audio/' + lang + '/.'; });
+    const svc = el('button', 'btn small', 'Copy batch for a voice service'); svc.type = 'button';
+    svc.addEventListener('click', () => {
+      const b = L.batch(sel.value, +size.value, lang);
+      pending = b.ids;
+      copyText(JSON.stringify(b.lines.map((r) => ({ id: r.id, voice: L.tag(r), text: r.text })), null, 1), box);
+      status.textContent = 'Copied as JSON for tools/dub-openai.mjs (a paid OpenAI service). See RECORDING.md.';
+    });
+    [next, mark, man, svc].forEach((x) => row.appendChild(x));
+    [sel, size, row, status, box].forEach((x) => body.appendChild(x));
+    const how = el('details', 'set-import');
+    how.appendChild(el('summary', '', 'How to record on iPhone'));
+    [
+      'Once: in Settings → Accessibility → Read & Speak → Voices → English, download the voices you like (for example Evan (Enhanced) and Ava (Premium)).',
+      'Once: build the “The Way: record” shortcut described in RECORDING.md. It reads each copied line (ID | voice | text), makes spoken audio with the voice for that tag, and saves it as <ID>.m4a in Files → The Way Audio.',
+      'Each time: choose an episode here, tap Copy next batch, run the shortcut, then tap Mark batch recorded. Small batches are kinder to the phone.',
+      'When you have a few batches: copy the files into the game’s audio/' + lang + ' folder (for example with GitMobile), tap Copy manifest, and paste it into audio/manifest.js.',
+      'Voice tags: N narrator for Eleazar’s account, W narrator for Elisheva’s, S Scripture, M a man speaking, F a woman speaking.',
+    ].forEach((t, i) => how.appendChild(el('p', '', (i + 1) + '. ' + t)));
+    body.appendChild(how);
+    const reset = el('button', 'btn-text', 'Forget which lines were recorded'); reset.type = 'button';
+    reset.addEventListener('click', () => { if (confirm('Forget the record of which lines were recorded? Your audio files are not touched.')) { L.unmark(lang); openJournal('settings'); } });
+    body.appendChild(reset);
+  }
   // relabel everything that depends on language or Bible version
   function relabel() {
     TW.I18n.apply();
@@ -723,6 +809,7 @@ window.TW = window.TW || {};
       : 'Scripture quotations are from the ' + v.name + (/public domain/i.test(v.license) ? ', which is in the public domain.' : '.');
     const rep = document.querySelector('[data-tab=reports]');
     if (rep) rep.textContent = T(TW.Role.is() ? 'Letters' : 'Reports');
+    $('#copyright').textContent = '© ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '. ' + (TW.Settings.get('lang') === 'es' ? 'Libre para jugar y compartir. Todos los demás derechos reservados.' : 'Free to play and share. All other rights reserved.');
   }
   function openJournal(tab) {
     document.querySelector('[data-tab=reports]').textContent = TW.t(TW.Role.is() ? 'Letters' : 'Reports');

@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode: At Home in Capernaum (Mark 2:1–12) */
 window.TW = window.TW || {};
 (function (TW) {

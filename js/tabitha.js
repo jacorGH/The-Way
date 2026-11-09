@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XXI: Tabitha (Acts 9:32–43). */
 window.TW = window.TW || {};
 (function (TW) {

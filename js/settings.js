@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — player settings: reading comfort, accessibility, language and Bible version.
    Stored per device. apply() reflects them on <html> so CSS can respond. */
 window.TW = window.TW || {};

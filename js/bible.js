@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Bible versions.
    Scripture is stored once, by passage, in the WEB (scripture*.js). Every other version is a plain lookup:
      text[Book][chapter:verse] = 'verse text'
@@ -153,6 +154,66 @@ window.TW = window.TW || {};
     return { ok: true, id, matched: f.matched, needed: f.needed, stored };
   };
   B.remove = function (id) { if (B.versions[id] && !B.versions[id].builtin) { delete B.versions[id]; saveStore(); if (B.current() === id && TW.Settings) TW.Settings.set('bible', 'WEB'); } };
+
+  // ---------- downloading a public-domain version straight to the device ----------
+  // getBible.net serves a whole book per request; bible-api.com serves chapters (15 requests per 30 seconds).
+  // Only the books the game uses are fetched, and only the verses it uses are kept.
+  const BOOKNUM = {}; BOOKS.forEach((b, i) => { BOOKNUM[b[1]] = 0; });
+  ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', 'Ruth', '1 Samuel', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Ezra',
+    'Nehemiah', 'Esther', 'Job', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon', 'Isaiah', 'Jeremiah', 'Lamentations', 'Ezekiel', 'Daniel', 'Hosea', 'Joel', 'Amos',
+    'Obadiah', 'Jonah', 'Micah', 'Nahum', 'Habakkuk', 'Zephaniah', 'Haggai', 'Zechariah', 'Malachi', 'Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans', '1 Corinthians',
+    '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians', '2 Thessalonians', '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews',
+    'James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude', 'Revelation'].forEach((n, i) => { BOOKNUM[n] = i + 1; });
+  B.DOWNLOADS = [
+    { id: 'ASV', name: 'American Standard Version (1901)', lang: 'en', getbible: ['asv'], bibleapi: 'asv', license: 'Public domain' },
+    { id: 'KJV', name: 'King James Version (1611/1769)', lang: 'en', getbible: ['kjv'], bibleapi: 'kjv', license: 'Public domain in the US; Crown rights in the UK' },
+    { id: 'RV1909', name: 'Reina-Valera 1909', lang: 'es', getbible: ['valera', 'rv1909'], license: 'Dominio público', alt: { id: 'RV1858', name: 'Reina-Valera 1858', getbible: ['rv1858'] } },
+  ];
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  async function getJSON(url) { const r = await fetch(url); if (!r.ok) throw new Error(r.status + ' ' + url); return r.json(); }
+  async function fromGetBible(codes, books, progress) {
+    for (const code of codes) {
+      try {
+        const out = {};
+        for (let i = 0; i < books.length; i++) {
+          const bk = books[i];
+          progress('Downloading ' + bk + ' (' + (i + 1) + ' of ' + books.length + ')');
+          const j = await getJSON('https://api.getbible.net/v2/' + code + '/' + BOOKNUM[bk] + '.json');
+          (j.chapters || []).forEach((c) => (c.verses || []).forEach((v) => { (out[bk] = out[bk] || {})[(+v.chapter || +c.chapter) + ':' + (+v.verse)] = cleanVerse(v.text); }));
+        }
+        return out;
+      } catch (e) { /* try the next code or source */ }
+    }
+    return null;
+  }
+  async function fromBibleApi(code, needed, progress) {
+    const chapters = [];
+    needed.forEach(([bk, cv]) => { const k = bk + ' ' + cv.split(':')[0]; if (chapters.indexOf(k) < 0) chapters.push(k); });
+    const out = {};
+    for (let i = 0; i < chapters.length; i++) {
+      progress('Downloading ' + chapters[i] + ' (' + (i + 1) + ' of ' + chapters.length + ')');
+      const j = await getJSON('https://bible-api.com/' + encodeURIComponent(chapters[i]) + '?translation=' + code);
+      (j.verses || []).forEach((v) => { const bk = B.canon(v.book_name) || chapters[i].replace(/\s\d+$/, ''); (out[bk] = out[bk] || {})[v.chapter + ':' + v.verse] = cleanVerse(v.text); });
+      await wait(2100);
+    }
+    return out;
+  }
+  B.download = async function (id, progress) {
+    const d = B.DOWNLOADS.find((x) => x.id === id);
+    if (!d) return { ok: false, error: 'Unknown version' };
+    progress = progress || (() => {});
+    const needed = B.needed(), books = [...new Set(needed.map((n) => n[0]))];
+    let meta = d, all = null;
+    try { all = await fromGetBible(d.getbible, books, progress); } catch (e) { all = null; }
+    if (!all && d.alt) { meta = Object.assign({}, d, d.alt); try { all = await fromGetBible(d.alt.getbible, books, progress); } catch (e) { all = null; } }
+    if (!all && d.bibleapi) { meta = d; try { all = await fromBibleApi(d.bibleapi, needed, progress); } catch (e) { all = null; } }
+    if (!all) return { ok: false, error: 'Could not reach a Bible download service. Downloads need an internet connection, and do not work inside the in-chat play link; use your own copy of the game (for example on GitHub Pages).' };
+    const f = B.filter(all);
+    if (!f.matched) return { ok: false, error: 'The download did not contain the verses this game uses.' };
+    B.add({ id: meta.id, name: meta.name, short: meta.id, lang: meta.lang, license: meta.license, imported: true, text: f.text });
+    const stored = saveStore();
+    return { ok: true, id: meta.id, name: meta.name, matched: f.matched, needed: f.needed, stored };
+  };
   try { Object.values(JSON.parse(localStorage.getItem(STORE) || '{}')).forEach((v) => B.add(v)); } catch (e) { /* storage unavailable */ }
 
   TW.Bible = B;

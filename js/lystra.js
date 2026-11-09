@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XXVII: Lystra (Acts 14).
    The stoning is shown as Stephen's was: the scene darkens and no stones are seen. */
 window.TW = window.TW || {};

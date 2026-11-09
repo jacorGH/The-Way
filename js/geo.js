@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — geography: simplified real elevations for each map region */
 window.TW = window.TW || {};
 (function (TW) {

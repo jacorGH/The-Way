@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XIV: The Beautiful Gate (Acts 3:1–4:4). */
 window.TW = window.TW || {};
 (function (TW) {

@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XV: Before the Council (Acts 4:5–37). */
 window.TW = window.TW || {};
 (function (TW) {

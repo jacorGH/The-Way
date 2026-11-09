@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode XI: The Empty Tomb (Mark 16:1–8; John 20:1–18).
    The scribe sees the women flee and the disciples run, and looks in himself. Mary Magdalene's meeting with
    the risen Jesus is hers alone: he hears it from her, as a memory. */

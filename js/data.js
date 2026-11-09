@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — content data.
    Scripture quotations: World English Bible (WEB), public domain (see scripture.js).
    Rule of the project: Scripture is never altered. Anything invented is labelled "Dramatization". */
@@ -65,8 +66,7 @@ window.TW = window.TW || {};
         'Scattered from Jerusalem, the believers carry the word into Samaria, down the desert road, and north to Damascus, where the persecutor meets the one he persecuted. Then Antioch, the council at Jerusalem, and Paul’s journeys across the Mediterranean.',
       world: [['Emperors', 'Tiberius, Caligula, Claudius, Nero'], ['Prefect of Judea', 'Pontius Pilate, then Marcellus (from AD 36)']],
       episodes: [
-        'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda', 'cyprus', 'pisidia', 'lystra',
-        { title: 'The Council', ref: 'Acts 15' },
+        'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda', 'cyprus', 'pisidia', 'lystra', 'jcouncil', 'lydia', 'jailer', 'berea', 'athens', 'corinth',
         { title: 'Ephesus', ref: 'Acts 19' },
       ],
     },
@@ -777,6 +777,165 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder.push('pisidia', 'lystra');
+  Object.assign(D.episodes, {
+    jcouncil: {
+      num: 'XXVIII', title: 'The Council at Jerusalem', ref: 'Acts 15', passage: 'acts15', place: 'upperroom', region: 'jerusalem', era: 'spread',
+      scene: 'Antioch and Jerusalem, Acts 15', parallels: 'compare Galatians 2:1–14',
+      question: { id: 'grace', text: 'Are we really saved through grace, just as they are?', ref: 'Acts 15:11' },
+      hearts: ['You stood with the believing Pharisees: the Law is God’s gift, not a burden.', 'You stood with Peter: saved through grace, just as they are.', 'You listened, and let the apostles and elders decide.'],
+      conclusions: [
+        'Peter said God made no distinction between us and the Gentiles, cleansing their hearts by faith.',
+        'James said we should not trouble the Gentiles who turn to God. The letter was read at Antioch, and they rejoiced.',
+        'Paul and Barnabas could not agree about John Mark, and they parted. Even good men part.',
+      ],
+      notes: [
+        ['Circumcision (15:1)', 'The sign of God’s covenant with Abraham (Genesis 17). The question was whether Gentile believers had to become Jews to belong to the people of God.'],
+        ['Believing Pharisees (15:5)', 'Pharisees who had become disciples of Jesus, and who still held the Law in high honor, as Paul himself did (Acts 23:6).'],
+        ['James (15:13)', 'The brother of the Lord, who led the church in Jerusalem. He quoted Amos 9:11–12: the Gentiles who are called by God’s name.'],
+        ['The four requests (15:20, 29)', 'Avoid food offered to idols, sexual immorality, what is strangled, and blood. Several echo what the Law asked of foreigners living among Israel (Leviticus 17–18), and they made shared meals possible.'],
+        ['A yoke (15:10)', 'Peter did not call the Law evil, but asked why Gentiles should carry what no one had carried perfectly.'],
+        ['The parting (15:36–40)', 'Paul and Barnabas disagreed sharply over Mark. Years later Paul would write that Mark was useful to him for ministry (2 Timothy 4:11).'],
+      ],
+      reflect: [
+        'What does it cost to welcome people without asking them to become like you first?',
+        'How did the council settle a deep disagreement? What can we learn from how they did it?',
+        'Paul and Barnabas parted. Was that a failure, or a way the work spread?',
+      ],
+    },
+    lydia: {
+      num: 'XXIX', title: 'Lydia', ref: 'Acts 16:1–15', passage: 'acts16', from: '16:1', to: '16:15', place: 'philippi', region: 'aegean', era: 'spread',
+      scene: 'Troas and Philippi, Acts 16', parallels: 'told only in Acts',
+      question: { id: 'opened', text: 'What does it mean that the Lord opened her heart?', ref: 'Acts 16:14' },
+      hearts: ['You accepted Lydia’s welcome at once.', 'You looked to Paul before you answered.', 'You hesitated at a Gentile woman’s door, and then went in.'],
+      conclusions: [
+        'A man of Macedonia called us in a vision, and we crossed the sea into Europe.',
+        'There was no synagogue in Philippi, only a place of prayer by the river, and a few women.',
+        'The Lord opened Lydia’s heart. She and her household were baptized, and her house became the church.',
+      ],
+      notes: [
+        ['Timothy (16:1–2)', 'The son of a Jewish believer and a Greek father, from Lystra. Paul’s letters call him his true child in the faith (1 Timothy 1:2).'],
+        ['Forbidden by the Spirit (16:6–7)', 'Twice the way was closed, into Asia and into Bithynia, before the way into Macedonia opened.'],
+        ['“We” (16:10)', 'Here Luke’s account changes from “they” to “we”: most readers take it that the author himself joined Paul at Troas.'],
+        ['Philippi (16:12)', 'A Roman colony, governed like a piece of Rome itself. There seems to have been no synagogue; by later Jewish custom one needed ten Jewish men.'],
+        ['Lydia (16:14)', 'From Thyatira, a city known for purple dye. Selling purple cloth was a trade of some wealth. She already worshiped God.'],
+        ['Her household (16:15)', 'Ancient households included family, servants and workers. Lydia’s house became the meeting place of the church (16:40).'],
+      ],
+      reflect: [
+        'The Spirit closed two doors before opening a third. Has that happened to you?',
+        'The first church in Europe began with a few women praying by a river. What does that say?',
+        'Lydia opened her house. What would that look like for you?',
+      ],
+    },
+    jailer: {
+      num: 'XXX', title: 'Midnight in Philippi', ref: 'Acts 16:16–40', passage: 'acts16', from: '16:16', to: '16:40', place: 'philippi', region: 'aegean', era: 'spread',
+      scene: 'The prison at Philippi, Acts 16', parallels: 'compare Acts 12:6–11',
+      question: { id: 'saved', text: 'What must I do to be saved?', ref: 'Acts 16:30' },
+      hearts: ['You brought bread and water to the prison gate, as friends of prisoners did.', 'You stayed at Lydia’s house and prayed through the night.', 'You walked the streets outside the prison, unable to sleep.'],
+      conclusions: [
+        'A slave girl was freed from a spirit, and her masters had Paul and Silas beaten and thrown into prison.',
+        'At midnight they were singing hymns. Then the earth shook, and every door opened.',
+        'The jailer asked what he must do to be saved, and by morning his whole household had believed.',
+      ],
+      answers: { afflictions: ['Through many afflictions: and at midnight in the stocks, Paul and Silas were singing.', 'Acts 14:22; 16:25'] },
+      notes: [
+        ['A spirit of divination (16:16)', 'Literally “a spirit of Python,” the serpent linked with the oracle of Apollo at Delphi. Her masters made money from her fortune telling.'],
+        ['Beaten with rods (16:22)', 'A Roman punishment carried out by the magistrates’ attendants. Paul later wrote that three times he was beaten with rods (2 Corinthians 11:25).'],
+        ['The inner prison (16:24)', 'The darkest, most secure cell; the stocks held the feet apart for long, painful hours.'],
+        ['Midnight hymns (16:25)', 'Paul would later write to this church from another prison: “Rejoice in the Lord always” (Philippians 4:4).'],
+        ['The jailer (16:27)', 'A guard who lost his prisoners could face their penalty himself. That is why he despaired.'],
+        ['Romans (16:37)', 'Beating a Roman citizen without trial was illegal. Paul’s protest protected the young church after he left.'],
+      ],
+      reflect: [
+        'What do you think the other prisoners thought, hearing hymns at midnight?',
+        'The jailer washed their wounds, and they washed him in baptism. What do you notice?',
+        'Three people were changed in Philippi: a merchant, a slave girl, a jailer. What do they have in common?',
+      ],
+    },
+  });
+  D.eraOrder.push('jcouncil', 'lydia', 'jailer');
+  Object.assign(D.episodes, {
+    berea: {
+      num: 'XXXI', title: 'Thessalonica and Berea', ref: 'Acts 17:1–15', passage: 'acts17', from: '17:1', to: '17:15', place: 'thessalonica', region: 'aegean', era: 'spread',
+      scene: 'Thessalonica and Berea, Acts 17', parallels: 'compare 1 Thessalonians 1–3',
+      question: { id: 'examine', text: 'Do I examine the Scriptures to see whether these things are so?', ref: 'Acts 17:11' },
+      hearts: ['You stood at Jason’s door with him and faced the crowd.', 'You hid Paul and Silas in the back of the house.', 'You slipped out the back to warn the brothers.'],
+      conclusions: [
+        'In Thessalonica they said we had turned the world upside down, and that we say there is another king, Jesus.',
+        'In Berea they did what I was trained to do: they examined the Scriptures daily to see whether these things were so.',
+        'The word goes on even when Paul is sent away by night. It does not depend on him.',
+      ],
+      notes: [
+        ['The Via Egnatia (17:1)', 'The great Roman road across Macedonia, from the Adriatic to Thrace. Amphipolis, Apollonia and Thessalonica lay along it.'],
+        ['The rulers of the city (17:6)', 'Luke calls them politarchs, an unusual title. Inscriptions found in Thessalonica use exactly this word for its magistrates.'],
+        ['Another king (17:7)', 'The charge was treason against Caesar: the same charge written over the cross (Mark 15:26).'],
+        ['Jason (17:5–9)', 'Paul’s host, who paid a security for the believers’ good behavior.'],
+        ['More noble (17:11)', 'The Bereans did not believe Paul because he was Paul; they checked what he said against the Scriptures, every day.'],
+        ['Letters to Thessalonica', 'Soon afterward Paul wrote 1 and 2 Thessalonians, among the earliest of his letters, longing to see the young church he had to leave so quickly.'],
+      ],
+      reflect: [
+        '“Turned the world upside down.” Was the accusation true?',
+        'What would it look like for you to “examine the Scriptures daily”?',
+        'Why might Luke praise the Bereans for checking Paul’s message?',
+      ],
+    },
+    athens: {
+      num: 'XXXII', title: 'The Unknown God', ref: 'Acts 17:16–34', passage: 'acts17', from: '17:16', to: '17:34', place: 'athens', region: 'aegean', era: 'spread',
+      scene: 'Athens, Acts 17', parallels: 'compare Romans 1:18–25',
+      question: { id: 'unknown', text: 'What did the Athenians already know about God, and what did they not know?', ref: 'Acts 17:23' },
+      hearts: ['You turned away from the statues and the altars.', 'You walked with Paul and read the inscriptions with him.', 'You watched the people instead of the statues.'],
+      conclusions: [
+        'Paul found an altar to an unknown God, and told the Athenians who he is.',
+        '“He is not far from each one of us.” Not from a philosopher on the Areopagus, and not from me.',
+        'When he spoke of the resurrection, some mocked. A few believed: a judge of the Areopagus, a woman named Damaris, and others.',
+      ],
+      notes: [
+        ['Athens (17:16)', 'No longer powerful, but still one of the most famous seats of learning in the world, crowded with temples, altars and statues.'],
+        ['Epicureans and Stoics (17:18)', 'Two great schools of philosophy. Epicureans sought a quiet life free of fear, and thought the gods distant; Stoics saw divine reason running through all things.'],
+        ['The Areopagus (17:19)', 'The “hill of Ares,” and also the ancient council that met there and still oversaw matters of religion and teaching in the city.'],
+        ['An unknown god (17:23)', 'Ancient writers mention altars in and around Athens dedicated to unknown or unnamed gods.'],
+        ['Your own poets (17:28)', '“We are also his offspring” comes from the Greek poet Aratus. Paul met the Athenians on their own ground before he spoke of Jesus.'],
+        ['The resurrection (17:31–32)', 'Many Greeks hoped the soul would escape the body. A body raised from the dead seemed foolish to them, as Paul later wrote (1 Corinthians 1:23).'],
+      ],
+      reflect: [
+        'Paul began with what the Athenians already knew. Where would you begin with your friends?',
+        'What “unknown gods” does our own culture build altars to?',
+        'Only a few believed. Was Athens a failure?',
+      ],
+    },
+  });
+  D.eraOrder.push('berea', 'athens');
+  Object.assign(D.episodes, {
+    corinth: {
+      num: 'XXXIII', title: 'Corinth', ref: 'Acts 18:1–18', passage: 'acts18', place: 'corinth', region: 'aegean', era: 'spread',
+      scene: 'Corinth, Acts 18', parallels: 'compare 1 Corinthians 1–2; 2:1–5',
+      question: { id: 'afraid', text: '“Don’t be afraid… for I am with you.” What did that promise mean for Paul, and what does it mean for me?', ref: 'Acts 18:9–10' },
+      hearts: ['You pushed through the crowd toward Sosthenes.', 'You stood back, sick at heart, and did nothing.', 'You prayed for him, a ruler of the synagogue who had stood against you.'],
+      conclusions: [
+        'Paul made tents with Priscilla and Aquila, and reasoned in the synagogue every Sabbath.',
+        'The Lord told him in the night not to be afraid, for he had many people in this city. He stayed a year and a half.',
+        'The proconsul Gallio would not judge “questions about words and names.” The Roman courts let the Way alone.',
+      ],
+      notes: [
+        ['Corinth (18:1)', 'Destroyed by Rome in 146 BC and refounded by Julius Caesar as a Roman colony: rich, crowded, and proud, the capital of Achaia, with a port on each sea.'],
+        ['Claudius’s order (18:2)', 'The Roman historian Suetonius says Claudius expelled the Jews from Rome after disturbances over “Chrestus,” probably around AD 49.'],
+        ['Tentmakers (18:3)', 'Paul worked with his hands so that he would not be a burden to the churches (1 Thessalonians 2:9; 1 Corinthians 9).'],
+        ['Crispus (18:8)', 'A ruler of the synagogue, baptized by Paul himself (1 Corinthians 1:14).'],
+        ['Gallio (18:12)', 'Brother of the philosopher Seneca. An inscription found at Delphi dates his time as proconsul to about AD 51–52, one of the firmest dates in Paul’s life.'],
+        ['The judgment seat (18:12)', 'The Greek word is bema. A raised stone speaker’s platform has been excavated in the forum at Corinth, and is often identified with this one.'],
+        ['Sosthenes (18:17)', 'Paul’s later letter to Corinth is sent from Paul “and our brother Sosthenes” (1 Corinthians 1:1). It may be the same man.'],
+        ['A vow (18:18)', 'Probably a vow like the Nazirite vow (Numbers 6), ended by cutting the hair.'],
+      ],
+      reflect: [
+        'Paul came to Corinth after Athens “in weakness, in fear, and in much trembling” (1 Corinthians 2:3). Why might he have needed that vision?',
+        'Priscilla and Aquila made room for Paul in their work and their home. Who has done that for you?',
+        'Sosthenes may have gone from accuser to brother. What would that take?',
+      ],
+    },
+  });
+  D.eraOrder.push('corinth');
+
+
+
 
 
 
@@ -1027,7 +1186,7 @@ window.TW = window.TW || {};
       text: 'A pool fed by Hezekiah’s tunnel. The steps of the first-century pool were uncovered in 2004.' },
     { id: 'palace', name: 'Herod’s Palace', short: 'Herod’s Palace', alt: 'Likely the Praetorium', lon: 35.2284, lat: 31.7762, kind: 'locked', label: 'l', ref: 'Mark 15:16',
       text: 'Herod the Great’s palace and towers on the western hill. Many historians think Pilate stayed and judged here when he came up for the feasts.' },
-    { id: 'upperroom', name: 'The Upper Room', alt: 'Traditional site on Mount Zion', lon: 35.2288, lat: 31.7714, kind: 'episode', episodes: ['forty', 'seven', 'rhoda'], label: 'l',
+    { id: 'upperroom', name: 'The Upper Room', alt: 'Traditional site on Mount Zion', lon: 35.2288, lat: 31.7714, kind: 'episode', episodes: ['forty', 'seven', 'rhoda', 'jcouncil'], label: 'l',
       text: 'Mark says the disciples found “a large upper room furnished and ready.” Tradition places it on Mount Zion; the vaulted hall shown there today was built by Crusaders in the twelfth century.' },
     { id: 'highpriest', name: 'House of the High Priest', short: 'High priest’s house', alt: 'The Upper City', lon: 35.2314, lat: 31.7733, kind: 'episode', episodes: ['council'], label: 'r',
       text: 'The priestly families lived in fine houses on the western hill. Its exact location is not known.' },
@@ -1096,6 +1255,7 @@ window.TW = window.TW || {};
     { id: 'iconium', name: 'Iconium', alt: 'Konya', lon: 32.494, lat: 37.874, kind: 'history', label: 'r', ref: 'Acts 14:1–6', text: 'A prosperous city where a great multitude of Jews and Greeks believed, and the city was divided.' },
     { id: 'lystra', name: 'Lystra', alt: 'A Roman colony in Lycaonia', lon: 32.330, lat: 37.580, kind: 'episode', episodes: ['lystra'], label: 'l',
       text: 'A small Roman colony on the Lycaonian plain, home of Timothy and his mother and grandmother (Acts 16:1; 2 Timothy 1:5).' },
+    { id: 'toaegean', name: 'West to Asia and Macedonia', short: 'The Aegean', alt: 'Troas, Philippi, Athens, Corinth and Ephesus', lon: 29.90, lat: 38.45, kind: 'zoom', zoom: 'aegean', label: 'r' },
     { id: 'derbe', name: 'Derbe', alt: 'The edge of Lycaonia', lon: 33.360, lat: 37.350, kind: 'history', label: 'r', ref: 'Acts 14:20–21', text: 'The farthest city of the first journey, where many became disciples.' },
   ];
   const eastNodes = {
@@ -1133,6 +1293,46 @@ window.TW = window.TW || {};
     box: { lon0: 34.20, lon1: 36.40, lat0: 31.60, lat1: 33.65 }, boxZoom: 'land', boxLabel: 'Tap to open the map of the Land',
   };
   D.regions.east.subtitle = 'c. AD 36–49';
+  // ---------- Era IV: the Aegean ----------
+  const aegPlaces = [
+    { id: 'toeast', name: 'East to Galatia and Syria', short: 'The East', alt: 'Back to the map of the Roman East', lon: 28.40, lat: 38.70, kind: 'zoom', zoom: 'east', label: 'l' },
+    { id: 'troas', name: 'Troas', alt: 'Alexandria Troas, a port near old Troy', lon: 26.155, lat: 39.752, kind: 'history', label: 'l', ref: 'Acts 16:8–11; 20:6–12',
+      text: 'A Roman colony and harbor on the Aegean. Here Paul saw the man of Macedonia in a vision, and here the “we” of Acts begins.' },
+    { id: 'samothrace', name: 'Samothrace', alt: 'An island on the way', lon: 25.55, lat: 40.47, kind: 'history', label: 'r', ref: 'Acts 16:11', text: 'A mountainous island where ships from Troas put in overnight.' },
+    { id: 'neapolis', name: 'Neapolis', alt: 'Kavala, the port of Philippi', lon: 24.410, lat: 40.937, kind: 'history', label: 'r', ref: 'Acts 16:11', text: 'The harbor where Paul first set foot in Europe.' },
+    { id: 'philippi', name: 'Philippi', alt: 'A Roman colony in Macedonia', lon: 24.287, lat: 41.013, kind: 'episode', episodes: ['lydia', 'jailer'], label: 'l',
+      text: 'A Roman colony on the Via Egnatia, settled with veterans after the battle fought here in 42 BC. Few Jews lived here; there seems to have been no synagogue.' },
+    { id: 'amphipolis', name: 'Amphipolis', alt: 'On the Strymon', lon: 23.845, lat: 40.822, kind: 'history', label: 'r', ref: 'Acts 17:1', text: 'A Macedonian city on the Via Egnatia, passed through on the road to Thessalonica.' },
+    { id: 'thessalonica', name: 'Thessalonica', alt: 'Capital of Macedonia', lon: 22.944, lat: 40.632, kind: 'episode', episodes: ['berea'], label: 'r', text: 'The capital of the province, a great port, where Paul reasoned three Sabbaths in the synagogue.' },
+    { id: 'berea', name: 'Berea', alt: 'Veria', lon: 22.203, lat: 40.524, kind: 'history', label: 'l', ref: 'Acts 17:10–14', text: 'Where the Jews “received the word with all readiness,” examining the Scriptures daily.' },
+    { id: 'athens', name: 'Athens', alt: 'The city of the philosophers', lon: 23.727, lat: 37.972, kind: 'episode', episodes: ['athens'], label: 'r', text: 'Past its greatest days but still the home of philosophy, full of temples and statues. Paul spoke at the Areopagus.' },
+    { id: 'corinth', name: 'Corinth', alt: 'Capital of Achaia', lon: 22.880, lat: 37.906, kind: 'episode', episodes: ['corinth'], label: 'l', text: 'A rich Roman colony on the isthmus between two seas, where Paul stayed eighteen months with Priscilla and Aquila.' },
+    { id: 'cenchreae', name: 'Cenchreae', alt: 'Corinth’s eastern port', lon: 22.990, lat: 37.884, kind: 'history', label: 'r', ref: 'Acts 18:18; Romans 16:1', text: 'Home of Phoebe, a servant of the church there (Romans 16:1).' },
+    { id: 'ephesus', name: 'Ephesus', alt: 'Chief city of Asia', lon: 27.341, lat: 37.940, kind: 'history', label: 'r', ref: 'Acts 18:19–20:1', text: 'A great harbor city with the temple of Artemis, one of the wonders of the world. Paul taught here for two years.' },
+    { id: 'miletus', name: 'Miletus', alt: 'An old Ionian port', lon: 27.278, lat: 37.530, kind: 'history', label: 'r', ref: 'Acts 20:15–38', text: 'Where Paul said farewell to the elders of Ephesus.' },
+    { id: 'thyatira', name: 'Thyatira', alt: 'A city of dyers', lon: 27.837, lat: 38.918, kind: 'history', label: 'r', ref: 'Acts 16:14; Revelation 2:18', text: 'Lydia’s home city, known for its trade guilds and its purple dye.' },
+    { id: 'smyrna', name: 'Smyrna', alt: 'İzmir', lon: 27.140, lat: 38.420, kind: 'history', label: 'l', ref: 'Revelation 2:8', text: 'A great harbor city of Asia, one of the seven churches of Revelation.' },
+    { id: 'assos', name: 'Assos', alt: 'A harbor on the Troad', lon: 26.337, lat: 39.488, kind: 'history', label: 'r', ref: 'Acts 20:13–14', text: 'Paul walked here overland from Troas to meet the ship.' },
+  ];
+  const aegNodes = {
+    a1: { lon: 27.50, lat: 39.60 }, a2: { lon: 23.50, lat: 40.65 }, a3: { lon: 22.55, lat: 40.30 }, a4: { lon: 23.45, lat: 38.02 }, a5: { lon: 27.80, lat: 38.30 },
+  };
+  aegPlaces.forEach((p) => { aegNodes[p.id] = { lon: p.lon, lat: p.lat, name: p.name }; });
+  const aegEdges = [
+    ['toeast', 'a1'], ['a1', 'troas'], ['troas', 'assos'], ['a1', 'thyatira'], ['thyatira', 'smyrna'], ['toeast', 'a5'], ['a5', 'ephesus'], ['ephesus', 'smyrna'], ['ephesus', 'miletus'],
+    ['troas', 'samothrace', 'boat'], ['samothrace', 'neapolis', 'boat'], ['neapolis', 'philippi'], ['philippi', 'amphipolis'], ['amphipolis', 'a2'], ['a2', 'thessalonica'],
+    ['thessalonica', 'berea'], ['berea', 'a3'], ['a3', 'athens', 'boat'], ['athens', 'a4'], ['a4', 'corinth'], ['corinth', 'cenchreae'], ['cenchreae', 'ephesus', 'boat'],
+  ];
+  const aegLabels = [
+    { text: 'Macedonia', lon: 22.90, lat: 41.20, style: 'region' }, { text: 'Achaia', lon: 22.30, lat: 37.55, style: 'region' }, { text: 'Asia', lon: 28.00, lat: 39.20, style: 'region' },
+    { text: 'Thrace', lon: 25.80, lat: 41.30, style: 'small' }, { text: 'Mysia', lon: 27.30, lat: 39.90, style: 'small' }, { text: 'Aegean Sea', lon: 25.10, lat: 38.90, style: 'water' },
+    { text: 'Olympus', lon: 22.15, lat: 40.15, style: 'small' }, { text: 'Hellespont', lon: 26.55, lat: 40.15, style: 'river' },
+  ];
+  D.regions.aegean = {
+    id: 'aegean', title: 'The Aegean', lon0: 21.60, lon1: 28.60, lat0: 36.60, lat1: 41.60, w: 256, h: 238,
+    texelKm: 2.3, scaleKm: 50, start: 'troas', places: aegPlaces, nodes: aegNodes, edges: aegEdges, labels: aegLabels,
+  };
+  D.regions.aegean.subtitle = 'c. AD 49–57';
   D.regions.galilee.subtitle = 'c. AD 28';
   D.regions.land.subtitle = 'c. AD 28–30';
   D.regions.jerusalem.subtitle = 'Passover, c. AD 30';

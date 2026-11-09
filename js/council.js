@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode VIII: The Council by Night (Mark 14:53–72) */
 window.TW = window.TW || {};
 (function (TW) {

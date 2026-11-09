@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — read aloud, with the voices built into the device.
    iPhone: download an Enhanced or Premium voice (Settings > Accessibility > Spoken Content > Voices > English).
    Apple does not let Safari use the Siri voices.

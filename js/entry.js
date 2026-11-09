@@ -1,3 +1,4 @@
+/* Copyright © 2026. All rights reserved; see LICENSE.md. */
 /* The Way — Episode VI: The Entry (Mark 11:1–11). Also builds the Temple courts used in Episode VII. */
 window.TW = window.TW || {};
 (function (TW) {
