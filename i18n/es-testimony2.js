@@ -1,0 +1,70 @@
+/* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
+/* The Way — Spanish (español) for five testimonies: Bartimaeus, the man healed at Bethesda, the man born blind,
+   Martha of Bethany, and Simon Peter. Keyed by line ID. Scripture echoes follow the Reina-Valera. */
+window.TW = window.TW || {};
+(function (TW) {
+  TW.I18n.add('es', { 'The man healed at Bethesda': 'El hombre sanado en Betesda', 'Simon Peter: the Upper Room': 'Simón Pedro: el aposento alto' });
+  Object.assign(TW.Lines.translations.es, {
+    // ---- Bartimaeus ----
+    'd-c5f1e473': 'Bartimeo, hijo de Timeo',
+    'd-21805294': 'Junto a la puerta de Jericó, en el camino de los peregrinos a Jerusalén, un hombre de ojos brillantes e inquietos le cuenta a todo el que se detiene cómo antes se sentaba justo aquí a mendigar.',
+    'd-fb6e23ca': '¿Qué le preguntas a Bartimeo?', 'd-74cac8d7': '¿Eras ciego?',
+    'd-ea06da92': 'Me dijeron que me callara. Grité más fuerte.',
+    'd-7640a516': 'Me preguntó qué quería. No lo que merecía. Lo que quería.',
+    'd-5c7236cb': 'Mira el camino hacia Jerusalén. “Arrojé mi capa cuando me llamó”, dice. “Nunca volví a buscarla.”',
+    'd-4d9e1775': 'El ciego Bartimeo clamó: “¡Jesús, Hijo de David, ten misericordia de mí!” (Marcos 10:47).',
+    'd-7cbc8b0b': 'Le preguntó a Bartimeo: “¿Qué quieres que te haga?”, y le dio la vista (Marcos 10:51–52).',
+    // ---- Bethesda ----
+    'd-bd7e2dde': 'El hombre sanado en Betesda',
+    'd-c3b52bf8': 'En los atrios del Templo te señalan a un hombre delgado. Dicen que pasó casi toda su vida tendido junto al estanque de Betesda.',
+    'd-8df5495a': '¿Qué le preguntas al hombre sanado en Betesda?',
+    'd-05a6c1d6': '¿Cuánto tiempo estuviste tendido junto al estanque?', 'd-be09b4bb': '¿Por qué están enojadas las autoridades?',
+    'd-5d45b68f': '“Treinta y ocho años”, dice, y se aleja por el atrio, despacio, por su propio pie.',
+    'd-c082c6e8': 'Un hombre enfermo desde hacía treinta y ocho años yacía junto al estanque de Betesda (Juan 5:5).',
+    'd-6287579c': 'Le preguntó: “¿Quieres ser sano?”, y le dijo que tomara su lecho y anduviera (Juan 5:6–8).',
+    'd-4bf86853': 'Como era sábado, las autoridades objetaron que el hombre sanado cargara su lecho (Juan 5:10).',
+    'd-8815893b': 'Los manuscritos más antiguos de Juan no tienen el final del versículo 3 ni el versículo 4, sobre el ángel que agitaba el agua. La WEB los incluye.',
+    // ---- the man born blind ----
+    'd-478074cc': 'El ciego de nacimiento',
+    'd-5362a986': 'Los fariseos ya han interrogado dos veces a este hombre. Ahora tú, un escriba, también preguntas. Suspira antes de que empieces.',
+    'd-70e942b7': 'Los fariseos ya han interrogado dos veces a este hombre. Ahora tú, la sobrina de un fariseo, también preguntas. Suspira antes de que empieces.',
+    'd-8de571a4': '¿Qué le preguntas al ciego de nacimiento?',
+    'd-c808e0a7': '¿Es cierto que naciste ciego?', 'd-246d3ca6': '¿Qué dijeron tus vecinos?', 'd-81d0a50e': '¿Qué te preguntaron los fariseos?', 'd-6fb8c625': '¿Lo volviste a ver?',
+    'd-32827bd7': 'Una cosa sé: que habiendo yo sido ciego, ahora veo. Escribe eso, ya que todos los demás lo escriben.',
+    'd-f038dbe1': 'Te mira un largo momento, como si todavía se estuviera acostumbrando a los rostros. “¿Tú también me vas a echar fuera?”',
+    'd-ebd63b24': 'Hizo lodo, untó los ojos de un hombre ciego de nacimiento y lo envió a lavarse en Siloé (Juan 9:6–7).',
+    'd-3560ce49': 'Sus vecinos apenas podían creer que fuera el mismo hombre (Juan 9:8–9).',
+    'd-ddc5b768': '“Una cosa sé, que habiendo yo sido ciego, ahora veo” (Juan 9:25).',
+    'd-2796b8c8': 'Buscó al hombre al que habían echado fuera, y el hombre dijo: “Creo, Señor” (Juan 9:35–38).',
+    'd-ab72e011': { m: 'Juan cuenta la historia de este hombre como una serie de interrogatorios. No eres el primero en preguntarle.', f: 'Juan cuenta la historia de este hombre como una serie de interrogatorios. No eres la primera en preguntarle.' },
+    // ---- Martha of Bethany ----
+    'd-81f3a86e': 'Marta de Betania',
+    'd-6149d63a': 'Betania está llena de gente que ha venido a ver a Lázaro, el hombre que estaba muerto. Su hermana Marta los atiende a todos, y habla contigo mientras trabaja.',
+    'd-cceffd9c': '¿Qué le preguntas a Marta de Betania?',
+    'd-81db0a92': '¿Vino cuando lo mandaste llamar?', 'd-41a38965': '¿Qué pasó en el sepulcro?',
+    'd-5b553984': 'Cuatro días. Le dije exactamente lo que pensaba.',
+    'd-20e4ed28': 'Un hombre se ríe en el patio, una risa grande y llena de vida. Marta lo mira. “Es mi hermano”, dice, y vuelve a su trabajo.',
+    'd-bd2ff16f': 'Jesús llegó cuando Lázaro llevaba cuatro días en el sepulcro (Juan 11:17).',
+    'd-36e89c01': '“Yo soy la resurrección y la vida” (Juan 11:25). Marta dijo: “Tú eres el Cristo, el Hijo de Dios” (Juan 11:27).',
+    'd-c4e7c13d': 'Jesús lloró, y luego clamó: “¡Lázaro, ven fuera!”, y el muerto salió (Juan 11:35, 43–44).',
+    // ---- Simon Peter ----
+    'd-ced11a5b': 'Simón Pedro', 'd-b47c0a77': 'Simón Pedro: el aposento alto',
+    'd-21566a70': 'Semanas después, en un gran aposento alto de la ciudad, las lámparas están encendidas y la sala está llena. Un pescador de anchos hombros al que has visto en la orilla de Capernaúm acepta contarte la última noche.',
+    'd-5378350d': 'Te lo contaré, porque él me ha perdonado, y por eso puedo.',
+    'd-c262d807': '¿Qué le preguntas a Simón Pedro?',
+    'd-d7f1e177': '¿Dónde comieron la Pascua?', 'd-4d2b64ac': '¿Qué hizo durante la cena?', 'd-aacb75f0': '¿Quién lo entregó?', 'd-70473968': '¿Qué dijo sobre el pan y la copa?',
+    'd-7da4117c': '¿Qué les mandó?', 'd-0d17114e': '¿Qué pasó en el huerto?', 'd-ece0481a': '¿Dónde estabas mientras lo juzgaban?',
+    'd-8ffde0bb': 'Le dije que nunca me lavaría los pies. También en eso me equivoqué.',
+    'd-e92a06e0': 'Ahora partimos el pan juntos, de casa en casa, como él lo hizo aquella noche.',
+    'd-bab7120a': 'Canta un gallo.',
+    'd-029da62a': 'Pedro se queda callado un rato. A su alrededor, la gente parte el pan y lo pasa de mano en mano.',
+    'd-0ea0577f': 'Dos discípulos siguieron a un hombre que llevaba un cántaro de agua hasta un gran aposento alto, aderezado y dispuesto (Marcos 14:13–16).',
+    'd-a7602d51': 'Lavó los pies de sus discípulos y dijo: “Ejemplo os he dado” (Juan 13:5, 15).',
+    'd-9cbd6abc': '“Uno de vosotros me ha de entregar.” Judas tomó el pan y salió, y era de noche (Juan 13:21, 30).',
+    'd-e9937238': '“Tomad, esto es mi cuerpo.” “Esto es mi sangre del nuevo pacto, que por muchos es derramada” (Marcos 14:22–24).',
+    'd-0ebb8419': '“Un mandamiento nuevo os doy: Que os améis unos a otros: como os he amado” (Juan 13:34).',
+    'd-297fe095': 'En Getsemaní oró: “No lo que yo quiero, sino lo que tú.” Pedro sacó una espada y se le dijo que la guardara (Marcos 14:36; Juan 18:10–11).',
+    'd-9d0ed4d2': 'En el patio del sumo sacerdote, Pedro lo negó tres veces, luego recordó sus palabras y lloró (Marcos 14:66–72).',
+    'd-83afe1aa': 'Contado después de Pentecostés (Era III). Los primeros escritores cristianos decían que el Evangelio de Marcos conservaba la predicación del propio Pedro. Papías, a comienzos del siglo II, dijo que Marcos fue el intérprete de Pedro.',
+  });
+})(window.TW);

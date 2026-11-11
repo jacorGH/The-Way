@@ -387,7 +387,7 @@ window.TW = window.TW || {};
       return Promise.resolve();
     };
     SC.choose = function (prompt, options, label) {
-      prompt = line('prompt', G(prompt)); options = options.map((x) => line('option', G(x)));
+      prompt = line('prompt', G(prompt)); options = options.map((x) => line('option', G(x))); if (label) label = TW.t ? TW.t(G(label)) : label;
       if (TW.TURBO) { const n = options.length, i = TW.TURBO_CYCLE ? (TW.TURBO_SEQ = (TW.TURBO_SEQ || 0) + 1) % n : Math.min(n - 1, TW.TURBO_CHOICE || 0); return Promise.resolve(i); }
       return choose0(prompt, options, label);
     };
