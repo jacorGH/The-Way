@@ -2,116 +2,139 @@
  {
   "id": "d-0c10c236",
   "voice": "N",
-  "text": "You come down the stairs into the courtyard, your notes under your arm. The Galilean is still at the fire."
+  "text": "You come down the stairs into the courtyard, your notes under your arm. The Galilean is still at the fire.",
+  "kind": "drama"
  },
  {
   "id": "d-101f0087",
   "voice": "N",
-  "text": "The council sits in a half circle in the lamplight. Your teacher Nicodemus stands at the end of a bench. He does not look at you."
+  "text": "The council sits in a half circle in the lamplight. Your teacher Nicodemus stands at the end of a bench. He does not look at you.",
+  "kind": "drama"
  },
  {
   "id": "d-68690ada",
   "voice": "N",
-  "text": "You are a junior scribe; no one asks for your vote. Every hand around you goes up. In Capernaum you thought the same word in silence: blasphemy."
+  "text": "You are a junior scribe; no one asks for your vote. Every hand around you goes up. In Capernaum you thought the same word in silence: blasphemy.",
+  "kind": "drama"
  },
  {
   "id": "d-7fc926c1",
   "voice": "N",
-  "text": "By the fire sits a big Galilean you have seen before, on the shore at Capernaum. He keeps his face to the flames."
+  "text": "By the fire sits a big Galilean you have seen before, on the shore at Capernaum. He keeps his face to the flames.",
+  "kind": "drama"
  },
  {
   "id": "d-9b7b4953",
   "voice": "N",
-  "text": "Past midnight, a servant of the high priest pounds on your door. The council is gathering at once, and every scribe who can take notes is wanted."
+  "text": "Past midnight, a servant of the high priest pounds on your door. The council is gathering at once, and every scribe who can take notes is wanted.",
+  "kind": "drama"
  },
  {
   "id": "d-b102ab79",
   "voice": "W",
-  "text": "He is already looking at you across the room, the way he looked to the doorway in Capernaum."
+  "text": "He is already looking at you across the room, the way he looked to the doorway in Capernaum.",
+  "kind": "drama"
  },
  {
   "id": "d-ba7c8469",
   "voice": "N",
-  "text": "The room waits for his answer. Where are your eyes?"
+  "text": "The room waits for his answer. Where are your eyes?",
+  "kind": "prompt"
  },
  {
   "id": "d-d3adca65",
   "voice": "N",
-  "text": "He is already looking at you, the way he looked along the row of scribes in Capernaum."
+  "text": "He is already looking at you, the way he looked along the row of scribes in Capernaum.",
+  "kind": "drama"
  },
  {
   "id": "d-dce7b36b",
   "voice": "N",
-  "text": "He goes out into the dark, weeping. For a moment you want to follow him."
+  "text": "He goes out into the dark, weeping. For a moment you want to follow him.",
+  "kind": "drama"
  },
  {
   "id": "d-eee81a5a",
   "voice": "W",
-  "text": "You stand by the door with the servants of the house, holding your uncle’s writing case. The council sits in a half circle in the lamplight. Nicodemus does not look at you."
+  "text": "You stand by the door with the servants of the house, holding your uncle’s writing case. The council sits in a half circle in the lamplight. Nicodemus does not look at you.",
+  "kind": "drama"
  },
  {
   "id": "d-f7fdc491",
   "voice": "W",
-  "text": "Past midnight, a servant of the high priest pounds on your uncle’s door. The council is gathering at once. Nicodemus takes you with him to carry his writing case; you will wait with the servants of the house."
+  "text": "Past midnight, a servant of the high priest pounds on your uncle’s door. The council is gathering at once. Nicodemus takes you with him to carry his writing case; you will wait with the servants of the house.",
+  "kind": "drama"
  },
  {
   "id": "d-f91f3f4a",
   "voice": "W",
-  "text": "No one in this room would ask a woman by the door what she thinks. Every hand on the benches goes up. In Capernaum you heard the same word muttered by the scribes: blasphemy."
+  "text": "No one in this room would ask a woman by the door what she thinks. Every hand on the benches goes up. In Capernaum you heard the same word muttered by the scribes: blasphemy.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-1bb3e300",
   "voice": "S",
-  "text": "As Peter was in the courtyard below, one of the maids of the high priest came, and seeing Peter warming himself, she looked at him, and said, “You were also with the Nazarene, Jesus!” But he denied it, saying, “I neither know, nor understand what you are saying.” He went out on the porch, and the rooster crowed."
+  "text": "As Peter was in the courtyard below, one of the maids of the high priest came, and seeing Peter warming himself, she looked at him, and said, “You were also with the Nazarene, Jesus!” But he denied it, saying, “I neither know, nor understand what you are saying.” He went out on the porch, and the rooster crowed.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-455b33c4",
   "voice": "S",
-  "text": "The high priest tore his clothes, and said, “What further need have we of witnesses? You have heard the blasphemy! What do you think?” They all condemned him to be worthy of death."
+  "text": "The high priest tore his clothes, and said, “What further need have we of witnesses? You have heard the blasphemy! What do you think?” They all condemned him to be worthy of death.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-45a00cdb",
   "voice": "S",
-  "text": "Some stood up, and gave false testimony against him, saying, “We heard him say, ‘I will destroy this temple that is made with hands, and in three days I will build another made without hands.’” Even so, their testimony did not agree."
+  "text": "Some stood up, and gave false testimony against him, saying, “We heard him say, ‘I will destroy this temple that is made with hands, and in three days I will build another made without hands.’” Even so, their testimony did not agree.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-7d7b0300",
   "voice": "S",
-  "text": "But he began to curse, and to swear, “I don’t know this man of whom you speak!”"
+  "text": "But he began to curse, and to swear, “I don’t know this man of whom you speak!”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9157e02d",
   "voice": "S",
-  "text": "Jesus said, “I am. You will see the Son of Man sitting at the right hand of Power, and coming with the clouds of the sky.”"
+  "text": "Jesus said, “I am. You will see the Son of Man sitting at the right hand of Power, and coming with the clouds of the sky.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9c65c6e0",
   "voice": "S",
-  "text": "The maid saw him, and began again to tell those who stood by, “This is one of them.” But he again denied it. After a little while again those who stood by said to Peter, “You truly are one of them, for you are a Galilean, and your speech shows it.”"
+  "text": "The maid saw him, and began again to tell those who stood by, “This is one of them.” But he again denied it. After a little while again those who stood by said to Peter, “You truly are one of them, for you are a Galilean, and your speech shows it.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-ad985c6c",
   "voice": "S",
-  "text": "They led Jesus away to the high priest. All the chief priests, the elders, and the scribes came together with him. Peter had followed him from a distance, until he came into the court of the high priest. He was sitting with the officers, and warming himself in the light of the fire."
+  "text": "They led Jesus away to the high priest. All the chief priests, the elders, and the scribes came together with him. Peter had followed him from a distance, until he came into the court of the high priest. He was sitting with the officers, and warming himself in the light of the fire.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-ae37d150",
   "voice": "S",
-  "text": "The high priest stood up in the midst, and asked Jesus, “Have you no answer? What is it which these testify against you?” But he stayed quiet, and answered nothing. Again the high priest asked him, “Are you the Christ, the Son of the Blessed?”"
+  "text": "The high priest stood up in the midst, and asked Jesus, “Have you no answer? What is it which these testify against you?” But he stayed quiet, and answered nothing. Again the high priest asked him, “Are you the Christ, the Son of the Blessed?”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-ea955e15",
   "voice": "S",
-  "text": "The rooster crowed the second time. Peter remembered the word, how that Jesus said to him, “Before the rooster crows twice, you will deny me three times.” When he thought about that, he wept."
+  "text": "The rooster crowed the second time. Peter remembered the word, how that Jesus said to him, “Before the rooster crows twice, you will deny me three times.” When he thought about that, he wept.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-eb701a21",
   "voice": "S",
-  "text": "Some began to spit on him, and to cover his face, and to beat him with fists, and to tell him, “Prophesy!” The officers struck him with the palms of their hands."
+  "text": "Some began to spit on him, and to cover his face, and to beat him with fists, and to tell him, “Prophesy!” The officers struck him with the palms of their hands.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f7f47736",
   "voice": "S",
-  "text": "Now the chief priests and the whole council sought witnesses against Jesus to put him to death, and found none. For many gave false testimony against him, and their testimony didn’t agree with each other."
+  "text": "Now the chief priests and the whole council sought witnesses against Jesus to put him to death, and found none. For many gave false testimony against him, and their testimony didn’t agree with each other.",
+  "kind": "scripture"
  }
 ]

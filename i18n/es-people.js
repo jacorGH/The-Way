@@ -16,7 +16,7 @@ window.TW = window.TW || {};
     'The fisherman from the beach': 'El pescador de la playa', 'The lame man': 'El cojo', 'The man born blind': 'El ciego de nacimiento', 'The official': 'El oficial', 'The synagogue attendant': 'El ayudante de la sinagoga',
     'The woman at the quern': 'La mujer del molino', 'The woman of Sychar': 'La mujer de Sicar', 'Theodora of Cyrene': 'Teodora de Cirene', 'Thomas': 'Tomás', 'Tobiah': 'Tobías', 'Yosef': 'Yosef', 'Your helper': 'Tu ayudante',
     // map, timeline and episode lists
-    'Your question': 'Tu pregunta', 'Care': 'Cuidar', 'Pray': 'Orar', 'Your choice': 'Tu elección', 'Replay': 'Repetir', 'Study': 'Estudiar', 'Enter': 'Entrar', 'Play': 'Jugar', 'Open': 'Abrir', 'Completed': 'Completado', 'completed': 'completado',
+    'Voice speed': 'Velocidad de la voz', 'Even out voice volume': 'Igualar el volumen de las voces', 'Your question': 'Tu pregunta', 'Care': 'Cuidar', 'Pray': 'Orar', 'Your choice': 'Tu elección', 'Replay': 'Repetir', 'Study': 'Estudiar', 'Enter': 'Entrar', 'Play': 'Jugar', 'Open': 'Abrir', 'Completed': 'Completado', 'completed': 'completado',
     'Episodes': 'Episodios', 'A later episode': 'Un episodio posterior', 'Historical background': 'Trasfondo histórico', 'Closer view': 'Vista de cerca',
     'People to talk to here': 'Personas con quienes hablar aquí', 'Eyewitnesses to seek out': 'Testigos que buscar', 'Episode': 'Episodio',
     'heard': 'escuchado', 'after': 'después de', 'Listen': 'Escuchar', 'Again': 'Otra vez', 'waiting for you': 'te espera', 'not yet heard': 'aún no escuchado', 'told after Pentecost': 'contado después de Pentecostés',

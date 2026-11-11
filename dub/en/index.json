@@ -4,6 +4,7 @@
  "bible": "WEB",
  "format": "[{ id, voice, text }] for TTS Studio",
  "pronunciation": "pronounce.json",
+ "cast": "voices.json",
  "voices": {
   "N": "narrator, Eleazar",
   "W": "narrator, Elisheva",

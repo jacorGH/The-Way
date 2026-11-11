@@ -2,121 +2,145 @@
  {
   "id": "d-04522a7f",
   "voice": "N",
-  "text": "Where do you stand?"
+  "text": "Where do you stand?",
+  "kind": "prompt"
  },
  {
   "id": "d-17f4eb31",
   "voice": "N",
-  "text": "They are believers, and Pharisees, and they are saying exactly what you would have said a few years ago. Some of what they say you still believe."
+  "text": "They are believers, and Pharisees, and they are saying exactly what you would have said a few years ago. Some of what they say you still believe.",
+  "kind": "drama"
  },
  {
   "id": "d-2b468287",
   "voice": "N",
-  "text": "The Greek believers look at one another. Some of them have been baptized for years."
+  "text": "The Greek believers look at one another. Some of them have been baptized for years.",
+  "kind": "drama"
  },
  {
   "id": "d-4173f225",
   "voice": "N",
-  "text": "One of the believing Pharisees catches your eye on the way out. He looks the way you feel: not defeated, but not sure what to do with what he has heard."
+  "text": "One of the believing Pharisees catches your eye on the way out. He looks the way you feel: not defeated, but not sure what to do with what he has heard.",
+  "kind": "drama"
  },
  {
   "id": "d-68c2ca47",
   "voice": "N",
-  "text": "Barnabas, who once took Saul by the arm and brought him to the apostles when no one else would, walks away with his cousin toward the harbor. Paul watches him go, and does not call after him."
+  "text": "Barnabas, who once took Saul by the arm and brought him to the apostles when no one else would, walks away with his cousin toward the harbor. Paul watches him go, and does not call after him.",
+  "kind": "drama"
  },
  {
   "id": "d-d569d29a",
   "voice": "N",
-  "text": "Two teachers have come down from Judea. You know their kind: careful, learned, devout. You were trained in the same school."
+  "text": "Two teachers have come down from Judea. You know their kind: careful, learned, devout. You were trained in the same school.",
+  "kind": "drama"
  },
  {
   "id": "d-d8c4d817",
   "voice": "W",
-  "text": "They are believers, and Pharisees, and they speak exactly as your uncle’s friends would. Some of what they say you still believe."
+  "text": "They are believers, and Pharisees, and they speak exactly as your uncle’s friends would. Some of what they say you still believe.",
+  "kind": "drama"
  },
  {
   "id": "d-ecadaf67",
   "voice": "W",
-  "text": "Two teachers have come down from Judea. You know their kind from your uncle’s table: careful, learned, devout."
+  "text": "Two teachers have come down from Judea. You know their kind from your uncle’s table: careful, learned, devout.",
+  "kind": "drama"
  },
  {
   "id": "d-fee72386",
   "voice": "N",
-  "text": "James quotes the prophet Amos: God will rebuild the fallen tent of David, so that the Gentiles who are called by his name may seek the Lord (Amos 9:11–12)."
+  "text": "James quotes the prophet Amos: God will rebuild the fallen tent of David, so that the Gentiles who are called by his name may seek the Lord (Amos 9:11–12).",
+  "kind": "history"
  },
  {
   "id": "s-WEB-0fab577f",
   "voice": "S",
-  "text": "Then the contention grew so sharp that they separated from each other. Barnabas took Mark with him, and sailed away to Cyprus, but Paul chose Silas, and went out, being commended by the brothers to the grace of God."
+  "text": "Then the contention grew so sharp that they separated from each other. Barnabas took Mark with him, and sailed away to Cyprus, but Paul chose Silas, and went out, being commended by the brothers to the grace of God.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-2fe79856",
   "voice": "S",
-  "text": "“Therefore my judgment is that we don’t trouble those from among the Gentiles who turn to God, but that we write to them that they abstain from the pollution of idols, from sexual immorality, from what is strangled, and from blood."
+  "text": "“Therefore my judgment is that we don’t trouble those from among the Gentiles who turn to God, but that we write to them that they abstain from the pollution of idols, from sexual immorality, from what is strangled, and from blood.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3016140a",
   "voice": "S",
-  "text": "All the multitude kept silence, and they listened to Barnabas and Paul reporting what signs and wonders God had done among the nations through them."
+  "text": "All the multitude kept silence, and they listened to Barnabas and Paul reporting what signs and wonders God had done among the nations through them.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3a8869d7",
   "voice": "S",
-  "text": "Then it seemed good to the apostles and the elders, with the whole assembly, to choose men out of their company, and send them to Antioch with Paul and Barnabas: Judas called Barsabbas, and Silas, chief men among the brothers."
+  "text": "Then it seemed good to the apostles and the elders, with the whole assembly, to choose men out of their company, and send them to Antioch with Paul and Barnabas: Judas called Barsabbas, and Silas, chief men among the brothers.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3d25d42f",
   "voice": "S",
-  "text": "Now therefore why do you tempt God, that you should put a yoke on the neck of the disciples which neither our fathers nor we were able to bear? But we believe that we are saved through the grace of the Lord Jesus, just as they are.”"
+  "text": "Now therefore why do you tempt God, that you should put a yoke on the neck of the disciples which neither our fathers nor we were able to bear? But we believe that we are saved through the grace of the Lord Jesus, just as they are.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-43636e43",
   "voice": "S",
-  "text": "So, when they were sent off, they came to Antioch. Having gathered the multitude together, they delivered the letter. When they had read it, they rejoiced over the encouragement."
+  "text": "So, when they were sent off, they came to Antioch. Having gathered the multitude together, they delivered the letter. When they had read it, they rejoiced over the encouragement.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-48af1b8f",
   "voice": "S",
-  "text": "When they had come to Jerusalem, they were received by the assembly and the apostles and the elders, and they reported all things that God had done with them."
+  "text": "When they had come to Jerusalem, they were received by the assembly and the apostles and the elders, and they reported all things that God had done with them.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-8da0fa95",
   "voice": "S",
-  "text": "Therefore when Paul and Barnabas had no small discord and discussion with them, they appointed Paul and Barnabas, and some others of them, to go up to Jerusalem to the apostles and elders about this question."
+  "text": "Therefore when Paul and Barnabas had no small discord and discussion with them, they appointed Paul and Barnabas, and some others of them, to go up to Jerusalem to the apostles and elders about this question.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9ac1bd63",
   "voice": "S",
-  "text": "After some days Paul said to Barnabas, “Let’s return now and visit our brothers in every city in which we proclaimed the word of the Lord, to see how they are doing.” Barnabas planned to take John, who was called Mark, with them also. But Paul didn’t think that it was a good idea to take with them someone who had withdrawn from them in Pamphylia, and didn’t go with them to do the work."
+  "text": "After some days Paul said to Barnabas, “Let’s return now and visit our brothers in every city in which we proclaimed the word of the Lord, to see how they are doing.” Barnabas planned to take John, who was called Mark, with them also. But Paul didn’t think that it was a good idea to take with them someone who had withdrawn from them in Pamphylia, and didn’t go with them to do the work.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-ae184be0",
   "voice": "S",
-  "text": "When there had been much discussion, Peter rose up and said to them, “Brothers, you know that a good while ago God made a choice among you, that by my mouth the nations should hear the word of the Good News, and believe. God, who knows the heart, testified about them, giving them the Holy Spirit, just like he did to us. He made no distinction between us and them, cleansing their hearts by faith."
+  "text": "When there had been much discussion, Peter rose up and said to them, “Brothers, you know that a good while ago God made a choice among you, that by my mouth the nations should hear the word of the Good News, and believe. God, who knows the heart, testified about them, giving them the Holy Spirit, just like he did to us. He made no distinction between us and them, cleansing their hearts by faith.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-d655a1fd",
   "voice": "S",
-  "text": "After they were silent, James answered, “Brothers, listen to me. Simeon has reported how God first visited the nations, to take out of them a people for his name."
+  "text": "After they were silent, James answered, “Brothers, listen to me. Simeon has reported how God first visited the nations, to take out of them a people for his name.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-e5f56f46",
   "voice": "S",
-  "text": "For it seemed good to the Holy Spirit, and to us, to lay no greater burden on you than these necessary things: that you abstain from things sacrificed to idols, from blood, from things strangled, and from sexual immorality, from which if you keep yourselves, it will be well with you. Farewell.”"
+  "text": "For it seemed good to the Holy Spirit, and to us, to lay no greater burden on you than these necessary things: that you abstain from things sacrificed to idols, from blood, from things strangled, and from sexual immorality, from which if you keep yourselves, it will be well with you. Farewell.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-e818d6af",
   "voice": "S",
-  "text": "The apostles and the elders were gathered together to see about this matter."
+  "text": "The apostles and the elders were gathered together to see about this matter.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f1846139",
   "voice": "S",
-  "text": "Some men came down from Judea and taught the brothers, “Unless you are circumcised after the custom of Moses, you can’t be saved.”"
+  "text": "Some men came down from Judea and taught the brothers, “Unless you are circumcised after the custom of Moses, you can’t be saved.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f76a8c12",
   "voice": "S",
-  "text": "But some of the sect of the Pharisees who believed rose up, saying, “It is necessary to circumcise them, and to charge them to keep the law of Moses.”"
+  "text": "But some of the sect of the Pharisees who believed rose up, saying, “It is necessary to circumcise them, and to charge them to keep the law of Moses.”",
+  "kind": "scripture"
  }
 ]

@@ -2,61 +2,76 @@
  {
   "id": "d-015041eb",
   "voice": "N",
-  "text": "He asks you to pray for his eyes."
+  "text": "He asks you to pray for his eyes.",
+  "kind": "prompt"
  },
  {
   "id": "d-5458118d",
   "voice": "N",
-  "text": "Nothing happens to his eyes. You pray again the next day, and the next week. They stay dark."
+  "text": "Nothing happens to his eyes. You pray again the next day, and the next week. They stay dark.",
+  "kind": "drama"
  },
  {
   "id": "d-626e2463",
   "voice": "N",
-  "text": "You write it down honestly. Not every prayer is answered the way you ask it."
+  "text": "You write it down honestly. Not every prayer is answered the way you ask it.",
+  "kind": "drama"
  },
  {
   "id": "d-72eea4e7",
   "voice": "N",
-  "text": "A blind man begs at the same Temple gate where the lame man used to sit. He has heard what happened there, and he asks the believers to pray for him."
+  "text": "A blind man begs at the same Temple gate where the lame man used to sit. He has heard what happened there, and he asks the believers to pray for him.",
+  "kind": "drama"
  },
  {
   "id": "d-8b93a49a",
   "voice": "M",
-  "text": "To see. And if not that, to stop being invisible."
+  "text": "To see. And if not that, to stop being invisible.",
+  "kind": "drama",
+  "speaker": "Tobiah"
  },
  {
   "id": "d-991028df",
   "voice": "N",
-  "text": "He turns his face toward your voice."
+  "text": "He turns his face toward your voice.",
+  "kind": "prompt"
  },
  {
   "id": "d-aaf97121",
   "voice": "M",
-  "text": "I still can’t see. But I eat with forty people every night, and they all know my name. I was invisible, scribe. Now I’m not."
+  "text": "I still can’t see. But I eat with forty people every night, and they all know my name. I was invisible, scribe. Now I’m not.",
+  "kind": "drama",
+  "speaker": "Tobiah"
  },
  {
   "id": "d-b24b8c23",
   "voice": "M",
-  "text": "I still can’t see. But I eat with forty people every night, and they all know my name. I was invisible, daughter. Now I’m not."
+  "text": "I still can’t see. But I eat with forty people every night, and they all know my name. I was invisible, daughter. Now I’m not.",
+  "kind": "drama",
+  "speaker": "Tobiah"
  },
  {
   "id": "d-b5eb90ee",
   "voice": "W",
-  "text": "He runs his fingers along the fringes and laughs. “A Pharisee’s cloak, on a quarryman.”"
+  "text": "He runs his fingers along the fringes and laughs. “A Pharisee’s cloak, on a quarryman.”",
+  "kind": "drama"
  },
  {
   "id": "d-ba8b8fb5",
   "voice": "N",
-  "text": "He runs his fingers along the fringes and laughs. “A scribe’s cloak, on a quarryman.”"
+  "text": "He runs his fingers along the fringes and laughs. “A scribe’s cloak, on a quarryman.”",
+  "kind": "drama"
  },
  {
   "id": "d-fff25b74",
   "voice": "N",
-  "text": "You put your hands over his eyes and pray, as Peter prayed at the gate, in the name of Jesus Christ of Nazareth."
+  "text": "You put your hands over his eyes and pray, as Peter prayed at the gate, in the name of Jesus Christ of Nazareth.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-a654556b",
   "voice": "S",
-  "text": "Being moved with compassion, he stretched out his hand, and touched him, and said to him, “I want to. Be made clean.”"
+  "text": "Being moved with compassion, he stretched out his hand, and touched him, and said to him, “I want to. Be made clean.”",
+  "kind": "scripture"
  }
 ]

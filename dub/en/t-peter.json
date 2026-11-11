@@ -2,136 +2,166 @@
  {
   "id": "d-029da62a",
   "voice": "N",
-  "text": "Peter is quiet for a while. Around you, people are breaking bread and passing it hand to hand."
+  "text": "Peter is quiet for a while. Around you, people are breaking bread and passing it hand to hand.",
+  "kind": "drama"
  },
  {
   "id": "d-21566a70",
   "voice": "N",
-  "text": "Weeks later, in a large upper room in the city, the lamps are lit and the room is full. A broad-shouldered fisherman you have seen on the shore at Capernaum agrees to tell you about the last night."
+  "text": "Weeks later, in a large upper room in the city, the lamps are lit and the room is full. A broad-shouldered fisherman you have seen on the shore at Capernaum agrees to tell you about the last night.",
+  "kind": "drama"
  },
  {
   "id": "d-5378350d",
   "voice": "M",
-  "text": "I will tell you, because he has forgiven me, and so I can."
+  "text": "I will tell you, because he has forgiven me, and so I can.",
+  "kind": "drama",
+  "speaker": "Simon Peter"
  },
  {
   "id": "d-83afe1aa",
   "voice": "N",
-  "text": "Told after Pentecost (Era III). Early Christian writers said Mark’s Gospel preserved Peter’s own preaching. Papias, writing in the early second century, said Mark was Peter’s interpreter."
+  "text": "Told after Pentecost (Era III). Early Christian writers said Mark’s Gospel preserved Peter’s own preaching. Papias, writing in the early second century, said Mark was Peter’s interpreter.",
+  "kind": "history"
  },
  {
   "id": "d-8ffde0bb",
   "voice": "M",
-  "text": "I told him he would never wash my feet. I was wrong about that, too."
+  "text": "I told him he would never wash my feet. I was wrong about that, too.",
+  "kind": "drama",
+  "speaker": "Simon Peter"
  },
  {
   "id": "d-c262d807",
   "voice": "N",
-  "text": "What do you ask Simon Peter?"
+  "text": "What do you ask Simon Peter?",
+  "kind": "prompt"
  },
  {
   "id": "d-e92a06e0",
   "voice": "M",
-  "text": "We break bread together now, house to house, as he did that night."
+  "text": "We break bread together now, house to house, as he did that night.",
+  "kind": "drama",
+  "speaker": "Simon Peter"
  },
  {
   "id": "s-WEB-0a03160e",
   "voice": "S",
-  "text": "As they were eating, Jesus took bread, and when he had blessed, he broke it, and gave to them, and said, “Take, eat. This is my body.”"
+  "text": "As they were eating, Jesus took bread, and when he had blessed, he broke it, and gave to them, and said, “Take, eat. This is my body.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-11ce4d36",
   "voice": "S",
-  "text": "Then he poured water into the basin, and began to wash the disciples’ feet, and to wipe them with the towel that was wrapped around him."
+  "text": "Then he poured water into the basin, and began to wash the disciples’ feet, and to wipe them with the towel that was wrapped around him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-1d6a8aed",
   "voice": "S",
-  "text": "Therefore, having received that morsel, he went out immediately. It was night."
+  "text": "Therefore, having received that morsel, he went out immediately. It was night.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3dd38ae5",
   "voice": "S",
-  "text": "Judas then, having taken a detachment of soldiers and officers from the chief priests and the Pharisees, came there with lanterns, torches, and weapons. Jesus therefore, knowing all the things that were happening to him, went forth, and said to them, “Who are you looking for?” They answered him, “Jesus of Nazareth.” Jesus said to them, “I am he.” Judas also, who betrayed him, was standing with them. When therefore he said to them, “I am he,” they went backward, and fell to the ground. Again therefore he asked them, “Who are you looking for?” They said, “Jesus of Nazareth.” Jesus answered, “I told you that I am he. If therefore you seek me, let these go their way,”"
+  "text": "Judas then, having taken a detachment of soldiers and officers from the chief priests and the Pharisees, came there with lanterns, torches, and weapons. Jesus therefore, knowing all the things that were happening to him, went forth, and said to them, “Who are you looking for?” They answered him, “Jesus of Nazareth.” Jesus said to them, “I am he.” Judas also, who betrayed him, was standing with them. When therefore he said to them, “I am he,” they went backward, and fell to the ground. Again therefore he asked them, “Who are you looking for?” They said, “Jesus of Nazareth.” Jesus answered, “I told you that I am he. If therefore you seek me, let these go their way,”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-445ad0d9",
   "voice": "S",
-  "text": "They came to a place which was named Gethsemane. He said to his disciples, “Sit here, while I pray.” He took with him Peter, James, and John, and began to be greatly troubled and distressed. He said to them, “My soul is exceedingly sorrowful, even to death. Stay here, and watch.” He went forward a little, and fell on the ground, and prayed that, if it were possible, the hour might pass away from him. He said, “Abba, Father, all things are possible to you. Please remove this cup from me. However, not what I desire, but what you desire.”"
+  "text": "They came to a place which was named Gethsemane. He said to his disciples, “Sit here, while I pray.” He took with him Peter, James, and John, and began to be greatly troubled and distressed. He said to them, “My soul is exceedingly sorrowful, even to death. Stay here, and watch.” He went forward a little, and fell on the ground, and prayed that, if it were possible, the hour might pass away from him. He said, “Abba, Father, all things are possible to you. Please remove this cup from me. However, not what I desire, but what you desire.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-478bb387",
   "voice": "S",
-  "text": "He took the cup, and when he had given thanks, he gave to them. They all drank of it. He said to them, “This is my blood of the new covenant, which is poured out for many. Most certainly I tell you, I will no more drink of the fruit of the vine, until that day when I drink it anew in the Kingdom of God.”"
+  "text": "He took the cup, and when he had given thanks, he gave to them. They all drank of it. He said to them, “This is my blood of the new covenant, which is poured out for many. Most certainly I tell you, I will no more drink of the fruit of the vine, until that day when I drink it anew in the Kingdom of God.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-5079f68b",
   "voice": "S",
-  "text": "A new commandment I give to you, that you love one another, just like I have loved you; that you also love one another. By this everyone will know that you are my disciples, if you have love for one another."
+  "text": "A new commandment I give to you, that you love one another, just like I have loved you; that you also love one another. By this everyone will know that you are my disciples, if you have love for one another.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-603e9b39",
   "voice": "S",
-  "text": "Peter said to him, “You will never wash my feet!” Jesus answered him, “If I don’t wash you, you have no part with me.” Simon Peter said to him, “Lord, not my feet only, but also my hands and my head!” Jesus said to him, “Someone who has bathed only needs to have his feet washed, but is completely clean. You are clean, but not all of you.”"
+  "text": "Peter said to him, “You will never wash my feet!” Jesus answered him, “If I don’t wash you, you have no part with me.” Simon Peter said to him, “Lord, not my feet only, but also my hands and my head!” Jesus said to him, “Someone who has bathed only needs to have his feet washed, but is completely clean. You are clean, but not all of you.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-7198c3ce",
   "voice": "S",
-  "text": "He answered them, “It is one of the twelve, he who dips with me in the dish. For the Son of Man goes, even as it is written about him, but woe to that man by whom the Son of Man is betrayed! It would be better for that man if he had not been born.”"
+  "text": "He answered them, “It is one of the twelve, he who dips with me in the dish. For the Son of Man goes, even as it is written about him, but woe to that man by whom the Son of Man is betrayed! It would be better for that man if he had not been born.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-8569a1f4",
   "voice": "S",
-  "text": "On the first day of unleavened bread, when they sacrificed the Passover, his disciples asked him, “Where do you want us to go and make ready that you may eat the Passover?” He sent two of his disciples, and said to them, “Go into the city, and there you will meet a man carrying a pitcher of water. Follow him, and wherever he enters in, tell the master of the house, ‘The Teacher says, “Where is the guest room, where I may eat the Passover with my disciples?”’"
+  "text": "On the first day of unleavened bread, when they sacrificed the Passover, his disciples asked him, “Where do you want us to go and make ready that you may eat the Passover?” He sent two of his disciples, and said to them, “Go into the city, and there you will meet a man carrying a pitcher of water. Follow him, and wherever he enters in, tell the master of the house, ‘The Teacher says, “Where is the guest room, where I may eat the Passover with my disciples?”’",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-8f2f7864",
   "voice": "S",
-  "text": "When they had sung a hymn, they went out to the Mount of Olives. Jesus said to them, “All of you will be made to stumble because of me tonight, for it is written, ‘I will strike the shepherd, and the sheep will be scattered.’ However, after I am raised up, I will go before you into Galilee.” But Peter said to him, “Although all will be offended, yet I will not.” Jesus said to him, “Most certainly I tell you, that you today, even this night, before the rooster crows twice, you will deny me three times.” But he spoke all the more, “If I must die with you, I will not deny you.” They all said the same thing."
+  "text": "When they had sung a hymn, they went out to the Mount of Olives. Jesus said to them, “All of you will be made to stumble because of me tonight, for it is written, ‘I will strike the shepherd, and the sheep will be scattered.’ However, after I am raised up, I will go before you into Galilee.” But Peter said to him, “Although all will be offended, yet I will not.” Jesus said to him, “Most certainly I tell you, that you today, even this night, before the rooster crows twice, you will deny me three times.” But he spoke all the more, “If I must die with you, I will not deny you.” They all said the same thing.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-98b93d79",
   "voice": "S",
-  "text": "Then he came to Simon Peter. He said to him, “Lord, do you wash my feet?” Jesus answered him, “You don’t know what I am doing now, but you will understand later.”"
+  "text": "Then he came to Simon Peter. He said to him, “Lord, do you wash my feet?” Jesus answered him, “You don’t know what I am doing now, but you will understand later.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-a5b05855",
   "voice": "S",
-  "text": "Simon Peter therefore, having a sword, drew it, and struck the high priest’s servant, and cut off his right ear. The servant’s name was Malchus. Jesus therefore said to Peter, “Put the sword into its sheath. The cup which the Father has given me, shall I not surely drink it?”"
+  "text": "Simon Peter therefore, having a sword, drew it, and struck the high priest’s servant, and cut off his right ear. The servant’s name was Malchus. Jesus therefore said to Peter, “Put the sword into its sheath. The cup which the Father has given me, shall I not surely drink it?”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-aa73899e",
   "voice": "S",
-  "text": "Jesus therefore answered, “It is he to whom I will give this piece of bread when I have dipped it.” So when he had dipped the piece of bread, he gave it to Judas, the son of Simon Iscariot. After the piece of bread, then Satan entered into him. Then Jesus said to him, “What you do, do quickly.” Now no man at the table knew why he said this to him."
+  "text": "Jesus therefore answered, “It is he to whom I will give this piece of bread when I have dipped it.” So when he had dipped the piece of bread, he gave it to Judas, the son of Simon Iscariot. After the piece of bread, then Satan entered into him. Then Jesus said to him, “What you do, do quickly.” Now no man at the table knew why he said this to him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-b0af4c5f",
   "voice": "S",
-  "text": "He will himself show you a large upper room furnished and ready. Make ready for us there.” His disciples went out, and came into the city, and found things as he had said to them, and they prepared the Passover."
+  "text": "He will himself show you a large upper room furnished and ready. Make ready for us there.” His disciples went out, and came into the city, and found things as he had said to them, and they prepared the Passover.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-b9dd6c6b",
   "voice": "S",
-  "text": "When it was evening he came with the twelve. As they sat and were eating, Jesus said, “Most certainly I tell you, one of you will betray me—he who eats with me.” They began to be sorrowful, and to ask him one by one, “Surely not I?” And another said, “Surely not I?”"
+  "text": "When it was evening he came with the twelve. As they sat and were eating, Jesus said, “Most certainly I tell you, one of you will betray me—he who eats with me.” They began to be sorrowful, and to ask him one by one, “Surely not I?” And another said, “Surely not I?”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-c25c955e",
   "voice": "S",
-  "text": "He came and found them sleeping, and said to Peter, “Simon, are you sleeping? Couldn’t you watch one hour? Watch and pray, that you may not enter into temptation. The spirit indeed is willing, but the flesh is weak.”"
+  "text": "He came and found them sleeping, and said to Peter, “Simon, are you sleeping? Couldn’t you watch one hour? Watch and pray, that you may not enter into temptation. The spirit indeed is willing, but the flesh is weak.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-d3b66e8c",
   "voice": "S",
-  "text": "When Jesus had said this, he was troubled in spirit, and testified, “Most certainly I tell you that one of you will betray me.” The disciples looked at one another, perplexed about whom he spoke. One of his disciples, whom Jesus loved, was at the table, leaning against Jesus’ breast. Simon Peter therefore beckoned to him, and said to him, “Tell us who it is of whom he speaks.” He, leaning back, as he was, on Jesus’ breast, asked him, “Lord, who is it?”"
+  "text": "When Jesus had said this, he was troubled in spirit, and testified, “Most certainly I tell you that one of you will betray me.” The disciples looked at one another, perplexed about whom he spoke. One of his disciples, whom Jesus loved, was at the table, leaning against Jesus’ breast. Simon Peter therefore beckoned to him, and said to him, “Tell us who it is of whom he speaks.” He, leaning back, as he was, on Jesus’ breast, asked him, “Lord, who is it?”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-d8802386",
   "voice": "S",
-  "text": "Jesus, knowing that the Father had given all things into his hands, and that he came forth from God, and was going to God, arose from supper, and laid aside his outer garments. He took a towel, and wrapped a towel around his waist."
+  "text": "Jesus, knowing that the Father had given all things into his hands, and that he came forth from God, and was going to God, arose from supper, and laid aside his outer garments. He took a towel, and wrapped a towel around his waist.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f0312f81",
   "voice": "S",
-  "text": "So when he had washed their feet, put his outer garment back on, and sat down again, he said to them, “Do you know what I have done to you? You call me, ‘Teacher’ and ‘Lord.’ You say so correctly, for so I am. If I then, the Lord and the Teacher, have washed your feet, you also ought to wash one another’s feet. For I have given you an example, that you also should do as I have done to you."
+  "text": "So when he had washed their feet, put his outer garment back on, and sat down again, he said to them, “Do you know what I have done to you? You call me, ‘Teacher’ and ‘Lord.’ You say so correctly, for so I am. If I then, the Lord and the Teacher, have washed your feet, you also ought to wash one another’s feet. For I have given you an example, that you also should do as I have done to you.",
+  "kind": "scripture"
  }
 ]

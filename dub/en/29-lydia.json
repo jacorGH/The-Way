@@ -2,116 +2,140 @@
  {
   "id": "d-0ee1ee9a",
   "voice": "N",
-  "text": "Paul later wrote of the faith that lived first in Timothy’s grandmother Lois and his mother Eunice (2 Timothy 1:5)."
+  "text": "Paul later wrote of the faith that lived first in Timothy’s grandmother Lois and his mother Eunice (2 Timothy 1:5).",
+  "kind": "history"
  },
  {
   "id": "d-103383c4",
   "voice": "N",
-  "text": "He reads it standing up, by the lamp, for a long time. When he gives it back, he says only: “You write down what you saw, and you say when you did not see it. Good.”"
+  "text": "He reads it standing up, by the lamp, for a long time. When he gives it back, he says only: “You write down what you saw, and you say when you did not see it. Good.”",
+  "kind": "drama"
  },
  {
   "id": "d-1d375f15",
   "voice": "N",
-  "text": "Back over the Taurus with Paul and Silas, to Lystra, where you once stood in a ring of disciples around a man left for dead. A boy who was crying that day is a young man now."
+  "text": "Back over the Taurus with Paul and Silas, to Lystra, where you once stood in a ring of disciples around a man left for dead. A boy who was crying that day is a young man now.",
+  "kind": "drama"
  },
  {
   "id": "d-2408a54d",
   "voice": "N",
-  "text": "Her house is the largest you have entered since Caesarea. On the threshold you think of Peter and the sheet let down from heaven, and you go in."
+  "text": "Her house is the largest you have entered since Caesarea. On the threshold you think of Peter and the sheet let down from heaven, and you go in.",
+  "kind": "drama"
  },
  {
   "id": "d-527e9456",
   "voice": "N",
-  "text": "Philippi was a Roman colony: Latin on the inscriptions, veterans’ families on the farms, and Roman law in the forum. There seems to have been no synagogue."
+  "text": "Philippi was a Roman colony: Latin on the inscriptions, veterans’ families on the farms, and Roman law in the forum. There seems to have been no synagogue.",
+  "kind": "history"
  },
  {
   "id": "d-5d7a3c5d",
   "voice": "N",
-  "text": "On the second day the mountains of Macedonia rise out of the sea. Paul stands at the bow. It is the first time any of you has seen Europe."
+  "text": "On the second day the mountains of Macedonia rise out of the sea. Paul stands at the bow. It is the first time any of you has seen Europe.",
+  "kind": "drama"
  },
  {
   "id": "d-5e4bfc64",
   "voice": "N",
-  "text": "He holds out his hand for your scroll."
+  "text": "He holds out his hand for your scroll.",
+  "kind": "prompt"
  },
  {
   "id": "d-7fa4b2cd",
   "voice": "N",
-  "text": "“Come into my house, and stay.” She is looking at you too."
+  "text": "“Come into my house, and stay.” She is looking at you too.",
+  "kind": "prompt"
  },
  {
   "id": "d-98be1c6d",
   "voice": "N",
-  "text": "Here Luke’s account turns from “they” to “we.” Most readers take it that the author of Luke and Acts joined Paul at Troas."
+  "text": "Here Luke’s account turns from “they” to “we.” Most readers take it that the author of Luke and Acts joined Paul at Troas.",
+  "kind": "history"
  },
  {
   "id": "d-9f17aada",
   "voice": "W",
-  "text": "You sit down among the women by the water. One of them, in a mantle dyed a purple you have only seen on the rich, makes room for you without a word."
+  "text": "You sit down among the women by the water. One of them, in a mantle dyed a purple you have only seen on the rich, makes room for you without a word.",
+  "kind": "drama"
  },
  {
   "id": "d-a843f02a",
   "voice": "N",
-  "text": "Paul nods to you, very slightly, as if to say that you no longer need to ask."
+  "text": "Paul nods to you, very slightly, as if to say that you no longer need to ask.",
+  "kind": "drama"
  },
  {
   "id": "d-d39bdf88",
   "voice": "N",
-  "text": "On the ship you read it to him, and he stops you every few lines to ask who else was there."
+  "text": "On the ship you read it to him, and he stops you every few lines to ask who else was there.",
+  "kind": "drama"
  },
  {
   "id": "d-ef43df7b",
   "voice": "M",
-  "text": "You are the one with the scroll. Paul says you were in Jerusalem from the beginning. I am a physician, and I ask a great many questions. May I read it?"
+  "text": "You are the one with the scroll. Paul says you were in Jerusalem from the beginning. I am a physician, and I ask a great many questions. May I read it?",
+  "kind": "drama",
+  "speaker": "Luke"
  },
  {
   "id": "d-fdb85790",
   "voice": "N",
-  "text": "Lydia laughs and claps her hands, and sends a servant running ahead to tell the house."
+  "text": "Lydia laughs and claps her hands, and sends a servant running ahead to tell the house.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-04a07532",
   "voice": "S",
-  "text": "Setting sail therefore from Troas, we made a straight course to Samothrace, and the day following to Neapolis;"
+  "text": "Setting sail therefore from Troas, we made a straight course to Samothrace, and the day following to Neapolis;",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-511f2b0a",
   "voice": "S",
-  "text": "A vision appeared to Paul in the night. There was a man of Macedonia standing, begging him, and saying, “Come over into Macedonia and help us.”"
+  "text": "A vision appeared to Paul in the night. There was a man of Macedonia standing, begging him, and saying, “Come over into Macedonia and help us.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-60976c15",
   "voice": "S",
-  "text": "When he had seen the vision, immediately we sought to go out to Macedonia, concluding that the Lord had called us to preach the Good News to them."
+  "text": "When he had seen the vision, immediately we sought to go out to Macedonia, concluding that the Lord had called us to preach the Good News to them.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-6c94994d",
   "voice": "S",
-  "text": "When they had gone through the region of Phrygia and Galatia, they were forbidden by the Holy Spirit to speak the word in Asia. When they had come opposite Mysia, they tried to go into Bithynia, but the Spirit didn’t allow them. Passing by Mysia, they came down to Troas."
+  "text": "When they had gone through the region of Phrygia and Galatia, they were forbidden by the Holy Spirit to speak the word in Asia. When they had come opposite Mysia, they tried to go into Bithynia, but the Spirit didn’t allow them. Passing by Mysia, they came down to Troas.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-707ab766",
   "voice": "S",
-  "text": "and from there to Philippi, which is a city of Macedonia, the foremost of the district, a Roman colony. We were staying some days in this city."
+  "text": "and from there to Philippi, which is a city of Macedonia, the foremost of the district, a Roman colony. We were staying some days in this city.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-95380cc8",
   "voice": "S",
-  "text": "He came to Derbe and Lystra: and behold, a certain disciple was there, named Timothy, the son of a Jewess who believed; but his father was a Greek. The brothers who were at Lystra and Iconium gave a good testimony about him."
+  "text": "He came to Derbe and Lystra: and behold, a certain disciple was there, named Timothy, the son of a Jewess who believed; but his father was a Greek. The brothers who were at Lystra and Iconium gave a good testimony about him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-99534642",
   "voice": "S",
-  "text": "When she and her household were baptized, she begged us, saying, “If you have judged me to be faithful to the Lord, come into my house, and stay.” So she persuaded us."
+  "text": "When she and her household were baptized, she begged us, saying, “If you have judged me to be faithful to the Lord, come into my house, and stay.” So she persuaded us.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-a24d4614",
   "voice": "S",
-  "text": "A certain woman named Lydia, a seller of purple, of the city of Thyatira, one who worshiped God, heard us; whose heart the Lord opened to listen to the things which were spoken by Paul."
+  "text": "A certain woman named Lydia, a seller of purple, of the city of Thyatira, one who worshiped God, heard us; whose heart the Lord opened to listen to the things which were spoken by Paul.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-a2bd2b3a",
   "voice": "S",
-  "text": "On the Sabbath day we went forth outside of the city by a riverside, where we supposed there was a place of prayer, and we sat down, and spoke to the women who had come together."
+  "text": "On the Sabbath day we went forth outside of the city by a riverside, where we supposed there was a place of prayer, and we sat down, and spoke to the women who had come together.",
+  "kind": "scripture"
  }
 ]

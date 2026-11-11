@@ -2,136 +2,170 @@
  {
   "id": "d-23958da7",
   "voice": "N",
-  "text": "Outside, the street is full of people talking at once."
+  "text": "Outside, the street is full of people talking at once.",
+  "kind": "drama"
  },
  {
   "id": "d-28162c44",
   "voice": "M",
-  "text": "Looking for Jesus of Nazareth? Follow the noise. Half the village has been at that door since dawn."
+  "text": "Looking for Jesus of Nazareth? Follow the noise. Half the village has been at that door since dawn.",
+  "kind": "drama",
+  "speaker": "A fisherman mending nets"
  },
  {
   "id": "d-3ea74f80",
   "voice": "F",
-  "text": "Did you see him? He walked past me carrying his own mat!"
+  "text": "Did you see him? He walked past me carrying his own mat!",
+  "kind": "drama",
+  "speaker": "The woman at the quern"
  },
  {
   "id": "d-59325eb0",
   "voice": "N",
-  "text": "Inside, the air is close and warm. Bodies press against the walls. As a teacher of the Law, you are waved to a place on the floor near the front, among the other scribes."
+  "text": "Inside, the air is close and warm. Bodies press against the walls. As a teacher of the Law, you are waved to a place on the floor near the front, among the other scribes.",
+  "kind": "drama"
  },
  {
   "id": "d-5cb53ea4",
   "voice": "N",
-  "text": "Words like these belong to God alone. What rises in your heart?"
+  "text": "Words like these belong to God alone. What rises in your heart?",
+  "kind": "prompt"
  },
  {
   "id": "d-6791a930",
   "voice": "W",
-  "text": "Inside, the air is close and warm. Bodies press against the walls. You squeeze in by the door with the women of the household. From here you can see the teacher, and the row of scribes from Jerusalem sitting on the floor in front of him."
+  "text": "Inside, the air is close and warm. Bodies press against the walls. You squeeze in by the door with the women of the household. From here you can see the teacher, and the row of scribes from Jerusalem sitting on the floor in front of him.",
+  "kind": "drama"
  },
  {
   "id": "d-8283cfaa",
   "voice": "M",
-  "text": "We couldn’t get him through the door. So we went up."
+  "text": "We couldn’t get him through the door. So we went up.",
+  "kind": "drama",
+  "speaker": "One of the four friends"
  },
  {
   "id": "d-a8a849b6",
   "voice": "N",
-  "text": "She is describing an earlier day in Capernaum, recorded in Mark 1:29–31."
+  "text": "She is describing an earlier day in Capernaum, recorded in Mark 1:29–31.",
+  "kind": "history"
  },
  {
   "id": "d-b2b7b4cc",
   "voice": "N",
-  "text": "Capernaum, on the north shore of the Sea of Galilee. Houses of black basalt crowd around shared courtyards. Their flat roofs are beams and branches packed with earth."
+  "text": "Capernaum, on the north shore of the Sea of Galilee. Houses of black basalt crowd around shared courtyards. Their flat roofs are beams and branches packed with earth.",
+  "kind": "history"
  },
  {
   "id": "d-bc9b5a92",
   "voice": "F",
-  "text": "You’ve come about him? He healed Simon’s wife’s mother, here in this village. The fever left her, and she got up and served them."
+  "text": "You’ve come about him? He healed Simon’s wife’s mother, here in this village. The fever left her, and she got up and served them.",
+  "kind": "drama",
+  "speaker": "A woman grinding grain"
  },
  {
   "id": "d-bf2d96fd",
   "voice": "N",
-  "text": "People are praising God on every side. You came to write down what you saw. You saw this."
+  "text": "People are praising God on every side. You came to write down what you saw. You saw this.",
+  "kind": "drama"
  },
  {
   "id": "d-c364263a",
   "voice": "N",
-  "text": "No one has spoken aloud. Yet he turns from the man on the mat and looks along the row of scribes. At you."
+  "text": "No one has spoken aloud. Yet he turns from the man on the mat and looks along the row of scribes. At you.",
+  "kind": "drama"
  },
  {
   "id": "d-d29f1ecd",
   "voice": "M",
-  "text": "You won’t get in that way, friend. Oh — a teacher of the Law. Make way, make way!"
+  "text": "You won’t get in that way, friend. Oh — a teacher of the Law. Make way, make way!",
+  "kind": "drama",
+  "speaker": "Someone in the crowd"
  },
  {
   "id": "d-e2d59ca3",
   "voice": "N",
-  "text": "Something scrapes overhead. Dust sifts down between the beams. One by one, faces turn upward."
+  "text": "Something scrapes overhead. Dust sifts down between the beams. One by one, faces turn upward.",
+  "kind": "drama"
  },
  {
   "id": "d-eeb113ba",
   "voice": "W",
-  "text": "No one has spoken aloud. Yet he turns from the man on the mat, looks along the row of scribes, and then past them to the doorway. At you."
+  "text": "No one has spoken aloud. Yet he turns from the man on the mat, looks along the row of scribes, and then past them to the doorway. At you.",
+  "kind": "drama"
  },
  {
   "id": "d-fb9ad06d",
   "voice": "M",
-  "text": "You won’t get in that way, daughter. Squeeze in by the door with the women of the house; you will see from there."
+  "text": "You won’t get in that way, daughter. Squeeze in by the door with the women of the house; you will see from there.",
+  "kind": "drama",
+  "speaker": "Someone in the crowd"
  },
  {
   "id": "s-WEB-09bb08b4",
   "voice": "S",
-  "text": "When he entered again into Capernaum after some days, it was heard that he was in the house. Immediately many were gathered together, so that there was no more room, not even around the door; and he spoke the word to them."
+  "text": "When he entered again into Capernaum after some days, it was heard that he was in the house. Immediately many were gathered together, so that there was no more room, not even around the door; and he spoke the word to them.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-0faefbb6",
   "voice": "S",
-  "text": "He arose, and immediately took up the mat, and went out in front of them all; so that they were all amazed, and glorified God, saying, “We never saw anything like this!”"
+  "text": "He arose, and immediately took up the mat, and went out in front of them all; so that they were all amazed, and glorified God, saying, “We never saw anything like this!”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-26ab8977",
   "voice": "S",
-  "text": "It happened on one of those days, that he was teaching; and there were Pharisees and teachers of the law sitting by, who had come out of every village of Galilee, Judea, and Jerusalem. The power of the Lord was with him to heal them."
+  "text": "It happened on one of those days, that he was teaching; and there were Pharisees and teachers of the law sitting by, who had come out of every village of Galilee, Judea, and Jerusalem. The power of the Lord was with him to heal them.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-6a3f96e7",
   "voice": "S",
-  "text": "But there were some of the scribes sitting there, and reasoning in their hearts, “Why does this man speak blasphemies like that? Who can forgive sins but God alone?”"
+  "text": "But there were some of the scribes sitting there, and reasoning in their hearts, “Why does this man speak blasphemies like that? Who can forgive sins but God alone?”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-7cf44dea",
   "voice": "S",
-  "text": "Four people came, carrying a paralytic to him. When they could not come near to him for the crowd, they removed the roof where he was. When they had broken it up, they let down the mat that the paralytic was lying on."
+  "text": "Four people came, carrying a paralytic to him. When they could not come near to him for the crowd, they removed the roof where he was. When they had broken it up, they let down the mat that the paralytic was lying on.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9024c816",
   "voice": "S",
-  "text": "Immediately Jesus, perceiving in his spirit that they so reasoned within themselves, said to them, “Why do you reason these things in your hearts? Which is easier, to tell the paralytic, ‘Your sins are forgiven;’ or to say, ‘Arise, and take up your bed, and walk?’"
+  "text": "Immediately Jesus, perceiving in his spirit that they so reasoned within themselves, said to them, “Why do you reason these things in your hearts? Which is easier, to tell the paralytic, ‘Your sins are forgiven;’ or to say, ‘Arise, and take up your bed, and walk?’",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9c4ac73b",
   "voice": "S",
-  "text": "But that you may know that the Son of Man has authority on earth to forgive sins”—he said to the paralytic— “I tell you, arise, take up your mat, and go to your house.”"
+  "text": "But that you may know that the Son of Man has authority on earth to forgive sins”—he said to the paralytic— “I tell you, arise, take up your mat, and go to your house.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f44f214c",
   "voice": "S",
-  "text": "Jesus, seeing their faith, said to the paralytic, “Son, your sins are forgiven you.”"
+  "text": "Jesus, seeing their faith, said to the paralytic, “Son, your sins are forgiven you.”",
+  "kind": "scripture"
  },
  {
   "id": "d-59ce7028",
   "voice": "N",
-  "text": "The four men are already climbing the outside stairs to the roof, carrying their friend between them."
+  "text": "The four men are already climbing the outside stairs to the roof, carrying their friend between them.",
+  "kind": "drama"
  },
  {
   "id": "d-4ba6c986",
   "voice": "M",
-  "text": "We carried him from the other end of the village. There’s no getting through that door. Not today."
+  "text": "We carried him from the other end of the village. There’s no getting through that door. Not today.",
+  "kind": "drama",
+  "speaker": "One of four friends"
  },
  {
   "id": "d-a218f6e0",
   "voice": "N",
-  "text": "Another looks up at the stairs that run along the wall to the roof. The four exchange a glance."
+  "text": "Another looks up at the stairs that run along the wall to the roof. The four exchange a glance.",
+  "kind": "drama"
  }
 ]

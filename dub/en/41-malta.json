@@ -2,76 +2,91 @@
  {
   "id": "d-0d604412",
   "voice": "N",
-  "text": "Nobody breathes."
+  "text": "Nobody breathes.",
+  "kind": "drama"
  },
  {
   "id": "d-199181d9",
   "voice": "N",
-  "text": "You are halfway to him when Paul shakes his hand once, hard."
+  "text": "You are halfway to him when Paul shakes his hand once, hard.",
+  "kind": "drama"
  },
  {
   "id": "d-1ab2f373",
   "voice": "N",
-  "text": "An hour ago he was a murderer. Now he is a god. Paul quietly goes back to gathering sticks."
+  "text": "An hour ago he was a murderer. Now he is a god. Paul quietly goes back to gathering sticks.",
+  "kind": "drama"
  },
  {
   "id": "d-4eb9042a",
   "voice": "W",
-  "text": "Publius’s wife lets you help her nurse the old man: water, cool cloths, the things you learned caring for the sick in Jerusalem. He is burning with fever."
+  "text": "Publius’s wife lets you help her nurse the old man: water, cool cloths, the things you learned caring for the sick in Jerusalem. He is burning with fever.",
+  "kind": "drama"
  },
  {
   "id": "d-a9149540",
   "voice": "N",
-  "text": "Your voice shakes, but it carries: “Lord Jesus.” Paul glances at you, almost amused."
+  "text": "Your voice shakes, but it carries: “Lord Jesus.” Paul glances at you, almost amused.",
+  "kind": "drama"
  },
  {
   "id": "d-aebd0552",
   "voice": "N",
-  "text": "You stay three months, until the sailing season opens again. When you leave, half the island comes down to the harbor with bread and oil and cloaks for the voyage."
+  "text": "You stay three months, until the sailing season opens again. When you leave, half the island comes down to the harbor with bread and oil and cloaks for the voyage.",
+  "kind": "drama"
  },
  {
   "id": "d-f551d996",
   "voice": "N",
-  "text": "They do not speak Greek, or Aramaic, or Latin. They speak with their hands: a blanket, a cup of something hot, a place nearer the fire. No one has been this kind to you in a long time."
+  "text": "They do not speak Greek, or Aramaic, or Latin. They speak with their hands: a blanket, a cup of something hot, a place nearer the fire. No one has been this kind to you in a long time.",
+  "kind": "drama"
  },
  {
   "id": "d-f9ff1304",
   "voice": "N",
-  "text": "The snake is hanging from his hand. Everyone has frozen. What do you do?"
+  "text": "The snake is hanging from his hand. Everyone has frozen. What do you do?",
+  "kind": "prompt"
  },
  {
   "id": "s-WEB-0592cee0",
   "voice": "S",
-  "text": "Now in the neighborhood of that place were lands belonging to the chief man of the island, named Publius, who received us and courteously entertained us for three days."
+  "text": "Now in the neighborhood of that place were lands belonging to the chief man of the island, named Publius, who received us and courteously entertained us for three days.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-1de43fd7",
   "voice": "S",
-  "text": "The father of Publius lay sick of fever and dysentery. Paul entered in to him, prayed, and laying his hands on him, healed him."
+  "text": "The father of Publius lay sick of fever and dysentery. Paul entered in to him, prayed, and laying his hands on him, healed him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-2c91b1a7",
   "voice": "S",
-  "text": "Then when this was done, the rest also who had diseases in the island came and were cured. They also honored us with many honors; and when we sailed, they put on board the things that we needed."
+  "text": "Then when this was done, the rest also who had diseases in the island came and were cured. They also honored us with many honors; and when we sailed, they put on board the things that we needed.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-2d8d9747",
   "voice": "S",
-  "text": "When the natives saw the creature hanging from his hand, they said to one another, “No doubt this man is a murderer, whom, though he has escaped from the sea, yet Justice has not allowed to live.”"
+  "text": "When the natives saw the creature hanging from his hand, they said to one another, “No doubt this man is a murderer, whom, though he has escaped from the sea, yet Justice has not allowed to live.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-c639f8a6",
   "voice": "S",
-  "text": "When we had escaped, then they learned that the island was called Malta. The natives showed us uncommon kindness; for they kindled a fire and received us all, because of the present rain and because of the cold."
+  "text": "When we had escaped, then they learned that the island was called Malta. The natives showed us uncommon kindness; for they kindled a fire and received us all, because of the present rain and because of the cold.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-cd4c3b69",
   "voice": "S",
-  "text": "However he shook off the creature into the fire, and wasn’t harmed. But they expected that he would have swollen or fallen down dead suddenly, but when they watched for a long time and saw nothing bad happen to him, they changed their minds and said that he was a god."
+  "text": "However he shook off the creature into the fire, and wasn’t harmed. But they expected that he would have swollen or fallen down dead suddenly, but when they watched for a long time and saw nothing bad happen to him, they changed their minds and said that he was a god.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-d46b4003",
   "voice": "S",
-  "text": "But when Paul had gathered a bundle of sticks and laid them on the fire, a viper came out because of the heat and fastened on his hand."
+  "text": "But when Paul had gathered a bundle of sticks and laid them on the fire, a viper came out because of the heat and fastened on his hand.",
+  "kind": "scripture"
  }
 ]

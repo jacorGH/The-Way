@@ -2,61 +2,73 @@
  {
   "id": "d-1117c29f",
   "voice": "N",
-  "text": "There is a long cry, and then silence. Eli falls asleep in the dirt with his head on his mother’s knee."
+  "text": "There is a long cry, and then silence. Eli falls asleep in the dirt with his head on his mother’s knee.",
+  "kind": "drama"
  },
  {
   "id": "d-1346f82a",
   "voice": "N",
-  "text": "He stares at you a long time. “Eli,” he says at last, in a small voice. Then the shouting starts again."
+  "text": "He stares at you a long time. “Eli,” he says at last, in a small voice. Then the shouting starts again.",
+  "kind": "drama"
  },
  {
   "id": "d-2fa77391",
   "voice": "N",
-  "text": "Stephen looks at you. It is time to pray."
+  "text": "Stephen looks at you. It is time to pray.",
+  "kind": "prompt"
  },
  {
   "id": "d-732c6144",
   "voice": "N",
-  "text": "Stephen takes you outside the walls to the tombs in the Kidron Valley. The neighbors of a young man named Eli have chained him there. They say he screams through the night and knows no one."
+  "text": "Stephen takes you outside the walls to the tombs in the Kidron Valley. The neighbors of a young man named Eli have chained him there. They say he screams through the night and knows no one.",
+  "kind": "drama"
  },
  {
   "id": "d-786ba978",
   "voice": "N",
-  "text": "Eli pulls against the chain and shouts at the sky."
+  "text": "Eli pulls against the chain and shouts at the sky.",
+  "kind": "prompt"
  },
  {
   "id": "d-961ee831",
   "voice": "N",
-  "text": "Acts records unclean spirits driven out in Jesus’ name (Acts 5:16, 8:7). It also warns that his name is not a spell for anyone to use (19:13–16)."
+  "text": "Acts records unclean spirits driven out in Jesus’ name (Acts 5:16, 8:7). It also warns that his name is not a spell for anyone to use (19:13–16).",
+  "kind": "history"
  },
  {
   "id": "d-b3646ac3",
   "voice": "N",
-  "text": "It is not finished in one night. For weeks his mother brings him to the breaking of bread, and some days are hard. By the Feast of Tabernacles he is carrying water for the widows."
+  "text": "It is not finished in one night. For weeks his mother brings him to the breaking of bread, and some days are hard. By the Feast of Tabernacles he is carrying water for the widows.",
+  "kind": "drama"
  },
  {
   "id": "d-b9f7a551",
   "voice": "N",
-  "text": "What do you do?"
+  "text": "What do you do?",
+  "kind": "prompt"
  },
  {
   "id": "d-ce3e41a4",
   "voice": "N",
-  "text": "Stephen speaks quietly and firmly. In the name of Jesus Christ of Nazareth he commands the unclean spirit to leave the boy. You pray with him, under your breath, again and again."
+  "text": "Stephen speaks quietly and firmly. In the name of Jesus Christ of Nazareth he commands the unclean spirit to leave the boy. You pray with him, under your breath, again and again.",
+  "kind": "drama"
  },
  {
   "id": "d-f987b357",
   "voice": "N",
-  "text": "You do not eat. The night is cold and long, and Stephen prays more than he speaks."
+  "text": "You do not eat. The night is cold and long, and Stephen prays more than he speaks.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-2766dc62",
   "voice": "S",
-  "text": "Jesus said to him, “If you can believe, all things are possible to him who believes.” Immediately the father of the child cried out with tears, “I believe. Help my unbelief!”"
+  "text": "Jesus said to him, “If you can believe, all things are possible to him who believes.” Immediately the father of the child cried out with tears, “I believe. Help my unbelief!”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-2fa5d269",
   "voice": "S",
-  "text": "He said to them, “This kind can come out by nothing, except by prayer and fasting.”"
+  "text": "He said to them, “This kind can come out by nothing, except by prayer and fasting.”",
+  "kind": "scripture"
  }
 ]

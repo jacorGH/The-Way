@@ -2,86 +2,103 @@
  {
   "id": "d-25b804c4",
   "voice": "N",
-  "text": "You know the Law as well as anyone here. Is this work?"
+  "text": "You know the Law as well as anyone here. Is this work?",
+  "kind": "prompt"
  },
  {
   "id": "d-2fe9249d",
   "voice": "N",
-  "text": "They go without you. Through the doorway you see men in Herod’s colors waiting for them. You stay on the bench, alone on your side of the room."
+  "text": "They go without you. Through the doorway you see men in Herod’s colors waiting for them. You stay on the bench, alone on your side of the room.",
+  "kind": "drama"
  },
  {
   "id": "d-5f2f7af8",
   "voice": "N",
-  "text": "Outside, two men from Herod’s household are already waiting. You hear the word “destroy.” You came to write down what you saw. You did not expect to see this."
+  "text": "Outside, two men from Herod’s household are already waiting. You hear the word “destroy.” You came to write down what you saw. You did not expect to see this.",
+  "kind": "drama"
  },
  {
   "id": "d-755f47eb",
   "voice": "N",
-  "text": "The answer is not hard. No one gives it. Why are you silent?"
+  "text": "The answer is not hard. No one gives it. Why are you silent?",
+  "kind": "prompt"
  },
  {
   "id": "d-b2b146ce",
   "voice": "N",
-  "text": "They rise and file out. Your place has always been with them."
+  "text": "They rise and file out. Your place has always been with them.",
+  "kind": "prompt"
  },
  {
   "id": "d-d70168ab",
   "voice": "N",
-  "text": "Grain ripens in Galilee in spring. The Law let a hungry traveler pluck heads of grain by hand from a neighbor’s field (Deuteronomy 23:25). But this is the Sabbath, and the Pharisees count plucking as reaping, a kind of work."
+  "text": "Grain ripens in Galilee in spring. The Law let a hungry traveler pluck heads of grain by hand from a neighbor’s field (Deuteronomy 23:25). But this is the Sabbath, and the Pharisees count plucking as reaping, a kind of work.",
+  "kind": "history"
  },
  {
   "id": "d-ff21471a",
   "voice": "N",
-  "text": "First-century synagogues found at Magdala and Gamla had stepped benches along the walls, facing a central floor where Scripture was read. The white limestone synagogue at Capernaum today was built centuries later, over older basalt foundations."
+  "text": "First-century synagogues found at Magdala and Gamla had stepped benches along the walls, facing a central floor where Scripture was read. The white limestone synagogue at Capernaum today was built centuries later, over older basalt foundations.",
+  "kind": "history"
  },
  {
   "id": "s-WEB-14d4e539",
   "voice": "S",
-  "text": "It happened that he was going on the Sabbath day through the grain fields, and his disciples began, as they went, to pluck the ears of grain."
+  "text": "It happened that he was going on the Sabbath day through the grain fields, and his disciples began, as they went, to pluck the ears of grain.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-20f7821e",
   "voice": "S",
-  "text": "He said to them, “The Sabbath was made for man, not man for the Sabbath. Therefore the Son of Man is lord even of the Sabbath.”"
+  "text": "He said to them, “The Sabbath was made for man, not man for the Sabbath. Therefore the Son of Man is lord even of the Sabbath.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3acf4911",
   "voice": "S",
-  "text": "He said to the man who had his hand withered, “Stand up.”"
+  "text": "He said to the man who had his hand withered, “Stand up.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3be433d2",
   "voice": "S",
-  "text": "He said to them, “Is it lawful on the Sabbath day to do good, or to do harm? To save a life, or to kill?” But they were silent."
+  "text": "He said to them, “Is it lawful on the Sabbath day to do good, or to do harm? To save a life, or to kill?” But they were silent.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-51b5ee37",
   "voice": "S",
-  "text": "He said to them, “Did you never read what David did, when he had need, and was hungry—he, and those who were with him? How he entered into the house of God when Abiathar was high priest, and ate the show bread, which is not lawful to eat except for the priests, and gave also to those who were with him?”"
+  "text": "He said to them, “Did you never read what David did, when he had need, and was hungry—he, and those who were with him? How he entered into the house of God when Abiathar was high priest, and ate the show bread, which is not lawful to eat except for the priests, and gave also to those who were with him?”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-6df3b368",
   "voice": "S",
-  "text": "When he had looked around at them with anger, being grieved at the hardening of their hearts, he said to the man, “Stretch out your hand.” He stretched it out, and his hand was restored as healthy as the other."
+  "text": "When he had looked around at them with anger, being grieved at the hardening of their hearts, he said to the man, “Stretch out your hand.” He stretched it out, and his hand was restored as healthy as the other.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-8e3f7b01",
   "voice": "S",
-  "text": "Jesus withdrew to the sea with his disciples, and a great multitude followed him from Galilee, from Judea, from Jerusalem, from Idumaea, beyond the Jordan, and those from around Tyre and Sidon. A great multitude, hearing what great things he did, came to him."
+  "text": "Jesus withdrew to the sea with his disciples, and a great multitude followed him from Galilee, from Judea, from Jerusalem, from Idumaea, beyond the Jordan, and those from around Tyre and Sidon. A great multitude, hearing what great things he did, came to him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9f57612d",
   "voice": "S",
-  "text": "The Pharisees said to him, “Behold, why do they do that which is not lawful on the Sabbath day?”"
+  "text": "The Pharisees said to him, “Behold, why do they do that which is not lawful on the Sabbath day?”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-c06a3af9",
   "voice": "S",
-  "text": "He entered again into the synagogue, and there was a man there who had his hand withered. They watched him, whether he would heal him on the Sabbath day, that they might accuse him."
+  "text": "He entered again into the synagogue, and there was a man there who had his hand withered. They watched him, whether he would heal him on the Sabbath day, that they might accuse him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-ea208a7c",
   "voice": "S",
-  "text": "The Pharisees went out, and immediately conspired with the Herodians against him, how they might destroy him."
+  "text": "The Pharisees went out, and immediately conspired with the Herodians against him, how they might destroy him.",
+  "kind": "scripture"
  }
 ]

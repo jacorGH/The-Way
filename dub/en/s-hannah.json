@@ -2,51 +2,62 @@
  {
   "id": "d-0233f759",
   "voice": "N",
-  "text": "Past midnight, a carpenter named Shimon pounds on your door. His daughter has burned with fever for three days. He heard the believers pray for the sick."
+  "text": "Past midnight, a carpenter named Shimon pounds on your door. His daughter has burned with fever for three days. He heard the believers pray for the sick.",
+  "kind": "drama"
  },
  {
   "id": "d-66e397c1",
   "voice": "N",
-  "text": "She has not eaten either. You put bread in her hands and hold them until she does."
+  "text": "She has not eaten either. You put bread in her hands and hold them until she does.",
+  "kind": "drama"
  },
  {
   "id": "d-9fbb321f",
   "voice": "N",
-  "text": "The room smells of sweat and lamp oil."
+  "text": "The room smells of sweat and lamp oil.",
+  "kind": "prompt"
  },
  {
   "id": "d-ab00b81f",
   "voice": "F",
-  "text": "Everything. Cold cloths. Prayers. The physician took our money and left."
+  "text": "Everything. Cold cloths. Prayers. The physician took our money and left.",
+  "kind": "drama",
+  "speaker": "Her mother"
  },
  {
   "id": "d-b6bf0b00",
   "voice": "N",
-  "text": "You pray for the girl."
+  "text": "You pray for the girl.",
+  "kind": "prompt"
  },
  {
   "id": "d-ba1dd639",
   "voice": "N",
-  "text": "Nothing changes at once. You keep watch with the parents until the lamp burns low."
+  "text": "Nothing changes at once. You keep watch with the parents until the lamp burns low.",
+  "kind": "drama"
  },
  {
   "id": "d-c3aa542c",
   "voice": "N",
-  "text": "Fevers killed many children in the ancient world, and physicians could do little to stop them."
+  "text": "Fevers killed many children in the ancient world, and physicians could do little to stop them.",
+  "kind": "history"
  },
  {
   "id": "d-fcfbb617",
   "voice": "N",
-  "text": "What do you do first?"
+  "text": "What do you do first?",
+  "kind": "prompt"
  },
  {
   "id": "d-ff84e807",
   "voice": "N",
-  "text": "Toward dawn the girl’s skin cools. She opens her eyes and asks for water. By midday she is eating bread with honey, and her father cannot stop weeping."
+  "text": "Toward dawn the girl’s skin cools. She opens her eyes and asks for water. By midday she is eating bread with honey, and her father cannot stop weeping.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-55215135",
   "voice": "S",
-  "text": "But when Jesus saw it, he was moved with indignation, and said to them, “Allow the little children to come to me! Don’t forbid them, for the Kingdom of God belongs to such as these. He took them in his arms, and blessed them, laying his hands on them."
+  "text": "But when Jesus saw it, he was moved with indignation, and said to them, “Allow the little children to come to me! Don’t forbid them, for the Kingdom of God belongs to such as these. He took them in his arms, and blessed them, laying his hands on them.",
+  "kind": "scripture"
  }
 ]

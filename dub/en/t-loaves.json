@@ -2,61 +2,75 @@
  {
   "id": "d-427aab78",
   "voice": "N",
-  "text": "He pulls up a handful of grass and lets it fall. “Twelve baskets left over. I helped carry one.”"
+  "text": "He pulls up a handful of grass and lets it fall. “Twelve baskets left over. I helped carry one.”",
+  "kind": "drama"
  },
  {
   "id": "d-64a68cd0",
   "voice": "M",
-  "text": "Barley loaves. Poor men’s bread. And everyone ate until they were full."
+  "text": "Barley loaves. Poor men’s bread. And everyone ate until they were full.",
+  "kind": "drama",
+  "speaker": "A man who was in the crowd"
  },
  {
   "id": "d-8249dd8d",
   "voice": "N",
-  "text": "Near Bethsaida a farmer points to a slope of thick spring grass above the lake. “There,” he says. “I was sitting right there.”"
+  "text": "Near Bethsaida a farmer points to a slope of thick spring grass above the lake. “There,” he says. “I was sitting right there.”",
+  "kind": "drama"
  },
  {
   "id": "d-9df9484f",
   "voice": "M",
-  "text": "We would have made him king that very night. He walked away from us into the hills."
+  "text": "We would have made him king that very night. He walked away from us into the hills.",
+  "kind": "drama",
+  "speaker": "A man who was in the crowd"
  },
  {
   "id": "d-c329caba",
   "voice": "N",
-  "text": "What do you ask a man who was in the crowd?"
+  "text": "What do you ask a man who was in the crowd?",
+  "kind": "prompt"
  },
  {
   "id": "s-WEB-03538aa2",
   "voice": "S",
-  "text": "One of his disciples, Andrew, Simon Peter’s brother, said to him, “There is a boy here who has five barley loaves and two fish, but what are these among so many?” Jesus said, “Have the people sit down.” Now there was much grass in that place. So the men sat down, in number about five thousand."
+  "text": "One of his disciples, Andrew, Simon Peter’s brother, said to him, “There is a boy here who has five barley loaves and two fish, but what are these among so many?” Jesus said, “Have the people sit down.” Now there was much grass in that place. So the men sat down, in number about five thousand.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-16c5e825",
   "voice": "S",
-  "text": "Jesus took the loaves; and having given thanks, he distributed to the disciples, and the disciples to those who were sitting down; likewise also of the fish as much as they desired."
+  "text": "Jesus took the loaves; and having given thanks, he distributed to the disciples, and the disciples to those who were sitting down; likewise also of the fish as much as they desired.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-16fa7b99",
   "voice": "S",
-  "text": "When therefore the people saw the sign which Jesus did, they said, “This is truly the prophet who comes into the world.”"
+  "text": "When therefore the people saw the sign which Jesus did, they said, “This is truly the prophet who comes into the world.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-5985a38b",
   "voice": "S",
-  "text": "When they were filled, he said to his disciples, “Gather up the broken pieces which are left over, that nothing be lost.” So they gathered them up, and filled twelve baskets with broken pieces from the five barley loaves, which were left over by those who had eaten."
+  "text": "When they were filled, he said to his disciples, “Gather up the broken pieces which are left over, that nothing be lost.” So they gathered them up, and filled twelve baskets with broken pieces from the five barley loaves, which were left over by those who had eaten.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-79a839ff",
   "voice": "S",
-  "text": "Jesus therefore, perceiving that they were about to come and take him by force, to make him king, withdrew again to the mountain by himself."
+  "text": "Jesus therefore, perceiving that they were about to come and take him by force, to make him king, withdrew again to the mountain by himself.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9838f56e",
   "voice": "S",
-  "text": "Jesus went up into the mountain, and he sat there with his disciples. Now the Passover, the feast of the Jews, was at hand. Jesus therefore lifting up his eyes, and seeing that a great multitude was coming to him, said to Philip, “Where are we to buy bread, that these may eat?” This he said to test him, for he himself knew what he would do. Philip answered him, “Two hundred denarii worth of bread is not sufficient for them, that everyone of them may receive a little.”"
+  "text": "Jesus went up into the mountain, and he sat there with his disciples. Now the Passover, the feast of the Jews, was at hand. Jesus therefore lifting up his eyes, and seeing that a great multitude was coming to him, said to Philip, “Where are we to buy bread, that these may eat?” This he said to test him, for he himself knew what he would do. Philip answered him, “Two hundred denarii worth of bread is not sufficient for them, that everyone of them may receive a little.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-ac9131ba",
   "voice": "S",
-  "text": "After these things, Jesus went away to the other side of the sea of Galilee, which is also called the Sea of Tiberias. A great multitude followed him, because they saw his signs which he did on those who were sick."
+  "text": "After these things, Jesus went away to the other side of the sea of Galilee, which is also called the Sea of Tiberias. A great multitude followed him, because they saw his signs which he did on those who were sick.",
+  "kind": "scripture"
  }
 ]

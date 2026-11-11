@@ -15,6 +15,11 @@ covering every spoken line in the game (1,252 lines, about 228,000 characters). 
 3. Export the ZIP. It contains `audio/en/<line ID>.mp3`, which is exactly where the game looks.
 4. Unzip it into the game folder, so the MP3s land in **audio/en/**, and push to GitHub (for example with GitMobile).
 
+How they sound is set in `dub/en/voices.json`: an OpenAI voice, a speed and a direction for each role (Eleazar's and
+Elisheva's narration, Scripture, men and women speaking), plus a line of context for each kind of line. Edit it and
+re-record (TTS Studio's Re-record box) to hear the change. Players can change the playback speed in Settings → Recorded
+voices → Voice speed, and "Even out voice volume" brings quieter voices up to match the others (on published copies).
+
 Recordings play whenever Settings → Recorded voices → "Play recorded voices" is on, even with Read aloud off. Read aloud
 only decides whether the device voice fills in lines that have no recording. On iPhone the first tap in the game unlocks
 the audio player, so a recording may stay silent until you have tapped once.

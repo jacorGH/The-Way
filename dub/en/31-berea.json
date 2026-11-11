@@ -2,101 +2,123 @@
  {
   "id": "d-02b0961c",
   "voice": "N",
-  "text": "You stand beside Jason in the doorway. The torchlight is in your eyes. Someone spits."
+  "text": "You stand beside Jason in the doorway. The torchlight is in your eyes. Someone spits.",
+  "kind": "drama"
  },
  {
   "id": "d-046235f2",
   "voice": "N",
-  "text": "Fists on the door. Torches in the street. Jason looks at you."
+  "text": "Fists on the door. Torches in the street. Jason looks at you.",
+  "kind": "prompt"
  },
  {
   "id": "d-170f95ee",
   "voice": "N",
-  "text": "You run through the alleys knocking on doors you were shown only three days ago."
+  "text": "You run through the alleys knocking on doors you were shown only three days ago.",
+  "kind": "drama"
  },
  {
   "id": "d-222c3c25",
   "voice": "N",
-  "text": "From Philippi you walk west for days along the Via Egnatia, the great paved road of Macedonia, still stiff from the night in Philippi."
+  "text": "From Philippi you walk west for days along the Via Egnatia, the great paved road of Macedonia, still stiff from the night in Philippi.",
+  "kind": "drama"
  },
  {
   "id": "d-3444fda6",
   "voice": "N",
-  "text": "You find the place in Isaiah that the Ethiopian was reading on the desert road, and read it aloud. The room is quiet for a long time."
+  "text": "You find the place in Isaiah that the Ethiopian was reading on the desert road, and read it aloud. The room is quiet for a long time.",
+  "kind": "drama"
  },
  {
   "id": "d-577c13dc",
   "voice": "N",
-  "text": "You pull a hanging behind them and stand in front of it, as if you were only a guest who had been asleep."
+  "text": "You pull a hanging behind them and stand in front of it, as if you were only a guest who had been asleep.",
+  "kind": "drama"
  },
  {
   "id": "d-62827ad1",
   "voice": "M",
-  "text": "Tomorrow we will read it again. And the day after."
+  "text": "Tomorrow we will read it again. And the day after.",
+  "kind": "drama",
+  "speaker": "The elder"
  },
  {
   "id": "d-c70dca75",
   "voice": "N",
-  "text": "Three scrolls lie open on the table. Which do you unroll first?"
+  "text": "Three scrolls lie open on the table. Which do you unroll first?",
+  "kind": "prompt"
  },
  {
   "id": "d-e10eb2c3",
   "voice": "M",
-  "text": "You are from Jerusalem, and you can read. Good. He says the Christ had to suffer and rise. Show us where."
+  "text": "You are from Jerusalem, and you can read. Good. He says the Christ had to suffer and rise. Show us where.",
+  "kind": "drama",
+  "speaker": "An elder of the synagogue"
  },
  {
   "id": "d-e858a1a6",
   "voice": "N",
-  "text": "You go down to the coast with the brothers who are taking Paul to Athens. Silas and Timothy stay behind. So, for now, does the old man with his finger on the page."
+  "text": "You go down to the coast with the brothers who are taking Paul to Athens. Silas and Timothy stay behind. So, for now, does the old man with his finger on the page.",
+  "kind": "drama"
  },
  {
   "id": "d-f96c25e4",
   "voice": "N",
-  "text": "You find the psalm Peter quoted at Pentecost, and the old man reads it again with his finger under every word."
+  "text": "You find the psalm Peter quoted at Pentecost, and the old man reads it again with his finger under every word.",
+  "kind": "drama"
  },
  {
   "id": "d-fa9de8a5",
   "voice": "N",
-  "text": "You find the psalm that Jesus himself asked the scribes about in the Temple courts, and tell them what he asked."
+  "text": "You find the psalm that Jesus himself asked the scribes about in the Temple courts, and tell them what he asked.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-08384dd3",
   "voice": "S",
-  "text": "Now when they had passed through Amphipolis and Apollonia, they came to Thessalonica, where there was a Jewish synagogue. Paul, as was his custom, went in to them, and for three Sabbath days reasoned with them from the Scriptures, explaining and demonstrating that the Christ had to suffer and rise again from the dead, and saying, “This Jesus, whom I proclaim to you, is the Christ.”"
+  "text": "Now when they had passed through Amphipolis and Apollonia, they came to Thessalonica, where there was a Jewish synagogue. Paul, as was his custom, went in to them, and for three Sabbath days reasoned with them from the Scriptures, explaining and demonstrating that the Christ had to suffer and rise again from the dead, and saying, “This Jesus, whom I proclaim to you, is the Christ.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-262e5505",
   "voice": "S",
-  "text": "But when the Jews of Thessalonica had knowledge that the word of God was proclaimed by Paul at Beroea also, they came there likewise, agitating the multitudes. Then the brothers immediately sent out Paul to go as far as to the sea, and Silas and Timothy still stayed there. But those who escorted Paul brought him as far as Athens. Receiving a commandment to Silas and Timothy that they should come to him very quickly, they departed."
+  "text": "But when the Jews of Thessalonica had knowledge that the word of God was proclaimed by Paul at Beroea also, they came there likewise, agitating the multitudes. Then the brothers immediately sent out Paul to go as far as to the sea, and Silas and Timothy still stayed there. But those who escorted Paul brought him as far as Athens. Receiving a commandment to Silas and Timothy that they should come to him very quickly, they departed.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-38321420",
   "voice": "S",
-  "text": "Some of them were persuaded, and joined Paul and Silas, of the devout Greeks a great multitude, and not a few of the chief women."
+  "text": "Some of them were persuaded, and joined Paul and Silas, of the devout Greeks a great multitude, and not a few of the chief women.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-4f34f6bc",
   "voice": "S",
-  "text": "Many of them therefore believed; also of the prominent Greek women, and not a few men."
+  "text": "Many of them therefore believed; also of the prominent Greek women, and not a few men.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-7efbee9c",
   "voice": "S",
-  "text": "The brothers immediately sent Paul and Silas away by night to Beroea. When they arrived, they went into the Jewish synagogue."
+  "text": "The brothers immediately sent Paul and Silas away by night to Beroea. When they arrived, they went into the Jewish synagogue.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-87903c88",
   "voice": "S",
-  "text": "But the unpersuaded Jews took along some wicked men from the marketplace, and gathering a crowd, set the city in an uproar. Assaulting the house of Jason, they sought to bring them out to the people."
+  "text": "But the unpersuaded Jews took along some wicked men from the marketplace, and gathering a crowd, set the city in an uproar. Assaulting the house of Jason, they sought to bring them out to the people.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-bbf552f2",
   "voice": "S",
-  "text": "Now these were more noble than those in Thessalonica, in that they received the word with all readiness of the mind, examining the Scriptures daily to see whether these things were so."
+  "text": "Now these were more noble than those in Thessalonica, in that they received the word with all readiness of the mind, examining the Scriptures daily to see whether these things were so.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-faef4d8c",
   "voice": "S",
-  "text": "When they didn’t find them, they dragged Jason and certain brothers before the rulers of the city, crying, “These who have turned the world upside down have come here also, whom Jason has received. These all act contrary to the decrees of Caesar, saying that there is another king, Jesus!” The multitude and the rulers of the city were troubled when they heard these things. When they had taken security from Jason and the rest, they let them go."
+  "text": "When they didn’t find them, they dragged Jason and certain brothers before the rulers of the city, crying, “These who have turned the world upside down have come here also, whom Jason has received. These all act contrary to the decrees of Caesar, saying that there is another king, Jesus!” The multitude and the rulers of the city were troubled when they heard these things. When they had taken security from Jason and the rest, they let them go.",
+  "kind": "scripture"
  }
 ]

@@ -2,101 +2,124 @@
  {
   "id": "d-111693c8",
   "voice": "N",
-  "text": "A Greek believer, a dealer in dyed wool, invites Barnabas and you to supper. There is bread, and olives, and a dish of meat from the market. No one at this table knows where the meat was bought, or whether it was ever offered on an altar."
+  "text": "A Greek believer, a dealer in dyed wool, invites Barnabas and you to supper. There is bread, and olives, and a dish of meat from the market. No one at this table knows where the meat was bought, or whether it was ever offered on an altar.",
+  "kind": "drama"
  },
  {
   "id": "d-200e0371",
   "voice": "N",
-  "text": "Barnabas is already eating. Your host passes you the dish."
+  "text": "Barnabas is already eating. Your host passes you the dish.",
+  "kind": "prompt"
  },
  {
   "id": "d-284ec1d8",
   "voice": "N",
-  "text": "“If God shows no favoritism, who else have I been calling unclean?” (Acts 10:28, 34)\n\nThe Greeks of Antioch, who believed and turned to the Lord. (Acts 11:20–21)"
+  "text": "“If God shows no favoritism, who else have I been calling unclean?” (Acts 10:28, 34)\n\nThe Greeks of Antioch, who believed and turned to the Lord. (Acts 11:20–21)",
+  "kind": "answer"
  },
  {
   "id": "d-4d583194",
   "voice": "N",
-  "text": "Antioch on the Orontes: capital of Syria, one of the three great cities of the empire, with temples to the gods of Greece and Rome and a large Jewish quarter."
+  "text": "Antioch on the Orontes: capital of Syria, one of the three great cities of the empire, with temples to the gods of Greece and Rome and a large Jewish quarter.",
+  "kind": "history"
  },
  {
   "id": "d-4ee33bbd",
   "voice": "N",
-  "text": "He nods, a little hurt, and lets you go. Barnabas watches you leave and says nothing."
+  "text": "He nods, a little hurt, and lets you go. Barnabas watches you leave and says nothing.",
+  "kind": "drama"
  },
  {
   "id": "d-5ff8cb12",
   "voice": "N",
-  "text": "Your host laughs and fills your cup. You think of a sheet let down from heaven, and of a voice that said three times not to call unclean what God has cleansed."
+  "text": "Your host laughs and fills your cup. You think of a sheet let down from heaven, and of a voice that said three times not to call unclean what God has cleansed.",
+  "kind": "drama"
  },
  {
   "id": "d-647a8960",
   "voice": "N",
-  "text": "You put in what you have, and watch Barnabas and Saul load the relief for Jerusalem: Greek money for Jewish believers, carried by a Levite and a Pharisee."
+  "text": "You put in what you have, and watch Barnabas and Saul load the relief for Jerusalem: Greek money for Jewish believers, carried by a Levite and a Pharisee.",
+  "kind": "drama"
  },
  {
   "id": "d-752ab62f",
   "voice": "M",
-  "text": "You again: the one from Damascus who writes everything down. Barnabas, you have brought me a witness."
+  "text": "You again: the one from Damascus who writes everything down. Barnabas, you have brought me a witness.",
+  "kind": "drama",
+  "speaker": "Saul"
  },
  {
   "id": "d-e29e7244",
   "voice": "N",
-  "text": "Nobody minds. Your host keeps the bread coming. Later the believers will argue about these tables for years."
+  "text": "Nobody minds. Your host keeps the bread coming. Later the believers will argue about these tables for years.",
+  "kind": "drama"
  },
  {
   "id": "d-ead3a711",
   "voice": "M",
-  "text": "There go the Christianoi. Christ’s people."
+  "text": "There go the Christianoi. Christ’s people.",
+  "kind": "drama",
+  "speaker": "A man in the market"
  },
  {
   "id": "d-ebb905d5",
   "voice": "N",
-  "text": "Tarsus, chief city of Cilicia. Saul had been sent home here for his safety (Acts 9:30). By trade he was a tentmaker (18:3), working goat-hair cloth."
+  "text": "Tarsus, chief city of Cilicia. Saul had been sent home here for his safety (Acts 9:30). By trade he was a tentmaker (18:3), working goat-hair cloth.",
+  "kind": "history"
  },
  {
   "id": "d-ef31f1cf",
   "voice": "N",
-  "text": "You came north with Barnabas, sent by the apostles to see whether the news from Antioch was true. It is."
+  "text": "You came north with Barnabas, sent by the apostles to see whether the news from Antioch was true. It is.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-12d97d36",
   "voice": "S",
-  "text": "Now in these days, prophets came down from Jerusalem to Antioch. One of them named Agabus stood up, and indicated by the Spirit that there should be a great famine all over the world, which also happened in the days of Claudius."
+  "text": "Now in these days, prophets came down from Jerusalem to Antioch. One of them named Agabus stood up, and indicated by the Spirit that there should be a great famine all over the world, which also happened in the days of Claudius.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-1a2b42a6",
   "voice": "S",
-  "text": "As any of the disciples had plenty, each determined to send relief to the brothers who lived in Judea; which they also did, sending it to the elders by the hands of Barnabas and Saul."
+  "text": "As any of the disciples had plenty, each determined to send relief to the brothers who lived in Judea; which they also did, sending it to the elders by the hands of Barnabas and Saul.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-32b25f2b",
   "voice": "S",
-  "text": "When he had found him, he brought him to Antioch. It happened, that for a whole year they were gathered together with the assembly, and taught many people. The disciples were first called Christians in Antioch."
+  "text": "When he had found him, he brought him to Antioch. It happened, that for a whole year they were gathered together with the assembly, and taught many people. The disciples were first called Christians in Antioch.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-762b9210",
   "voice": "S",
-  "text": "They therefore who were scattered abroad by the oppression that arose about Stephen traveled as far as Phoenicia, Cyprus, and Antioch, speaking the word to no one except to Jews only."
+  "text": "They therefore who were scattered abroad by the oppression that arose about Stephen traveled as far as Phoenicia, Cyprus, and Antioch, speaking the word to no one except to Jews only.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-bc3e5e0e",
   "voice": "S",
-  "text": "But there were some of them, men of Cyprus and Cyrene, who, when they had come to Antioch, spoke to the Hellenists, preaching the Lord Jesus. The hand of the Lord was with them, and a great number believed and turned to the Lord."
+  "text": "But there were some of them, men of Cyprus and Cyrene, who, when they had come to Antioch, spoke to the Hellenists, preaching the Lord Jesus. The hand of the Lord was with them, and a great number believed and turned to the Lord.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-c3159172",
   "voice": "S",
-  "text": "The report concerning them came to the ears of the assembly which was in Jerusalem. They sent out Barnabas to go as far as Antioch, who, when he had come, and had seen the grace of God, was glad. He exhorted them all, that with purpose of heart they should remain near to the Lord. For he was a good man, and full of the Holy Spirit and of faith, and many people were added to the Lord."
+  "text": "The report concerning them came to the ears of the assembly which was in Jerusalem. They sent out Barnabas to go as far as Antioch, who, when he had come, and had seen the grace of God, was glad. He exhorted them all, that with purpose of heart they should remain near to the Lord. For he was a good man, and full of the Holy Spirit and of faith, and many people were added to the Lord.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-fe70361e",
   "voice": "S",
-  "text": "Barnabas went out to Tarsus to look for Saul."
+  "text": "Barnabas went out to Tarsus to look for Saul.",
+  "kind": "scripture"
  },
  {
   "id": "d-24b98ab7",
   "voice": "M",
-  "text": "Barnabas. And you have brought a witness with you."
+  "text": "Barnabas. And you have brought a witness with you.",
+  "kind": "drama",
+  "speaker": "Saul"
  }
 ]

@@ -77,10 +77,32 @@ window.TW = window.TW || {};
     let bin = ''; bytes.forEach((b) => { bin += String.fromCharCode(b); });
     return 'data:audio/wav;base64,' + (typeof btoa === 'function' ? btoa(bin) : '');
   })();
+  // Voice speed (Settings → Recorded voices): recordings change speed without changing pitch; the device voice too.
+  const voiceRate = () => { const r = Number(TW.Settings && TW.Settings.get('voiceSpeed')); return r >= 0.5 && r <= 2 ? r : 1; };
+  if (player) { player.preservesPitch = true; player.mozPreservesPitch = true; player.webkitPreservesPitch = true; }
+  // Leveler: a gentle compressor and make-up gain on a channel of its own, so quiet voices match loud ones. Only for
+  // pages served over http(s): a file opened straight from disk cannot be routed through Web Audio without going silent.
+  let vctx = null;
+  function setupLeveler() {
+    if (vctx || !player || !/^https?:$/.test(location.protocol) || (TW.Settings && TW.Settings.get('voiceLevel') === false)) return;
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      vctx = new AC();
+      const src = vctx.createMediaElementSource(player);
+      const comp = vctx.createDynamicsCompressor();
+      comp.threshold.value = -26; comp.knee.value = 12; comp.ratio.value = 4; comp.attack.value = 0.004; comp.release.value = 0.25;
+      const gain = vctx.createGain(); gain.gain.value = 1.7;
+      src.connect(comp); comp.connect(gain); gain.connect(vctx.destination);
+    } catch (e) { vctx = null; }
+  }
   let unlocked = false;
   const unlock = () => {
+    if (vctx && vctx.state === 'suspended') vctx.resume();
     if (unlocked || !player) return;
     unlocked = true;
+    setupLeveler();
+    if (vctx && vctx.state === 'suspended') vctx.resume();
     try { player.src = SILENT; const pr = player.play(); if (pr && pr.catch) pr.catch(() => { unlocked = false; }); } catch (e) { unlocked = false; }
   };
   if (typeof document !== 'undefined') ['pointerdown', 'touchend', 'click', 'keydown'].forEach((ev) => document.addEventListener(ev, unlock, { capture: true, passive: true }));
@@ -97,6 +119,8 @@ window.TW = window.TW || {};
     player.onended = () => { if (audio !== token) return; audio = null; TW.Audio && TW.Audio.duck && TW.Audio.duck(false); done(); };
     player.onerror = () => { if (audio !== token) return; audio = null; if (!started) { missing.add(key); fallback(); } else { TW.Audio && TW.Audio.duck && TW.Audio.duck(false); done(); } };
     player.src = TW.Dubs.url(lang, id);
+    player.playbackRate = voiceRate(); player.defaultPlaybackRate = voiceRate();
+    if (vctx && vctx.state === 'suspended') vctx.resume();
     const pr = player.play();
     if (pr && pr.catch) pr.catch((err) => {
       if (audio !== token || started) return;
@@ -109,7 +133,7 @@ window.TW = window.TW || {};
   function speakNow(text, v) {
     const u = new SpeechSynthesisUtterance(clean(text));
     if (v.voice) { u.voice = v.voice; u.lang = v.voice.lang; }
-    u.pitch = v.pitch; u.rate = v.rate;
+    u.pitch = v.pitch; u.rate = Math.min(2, v.rate * voiceRate());
     u.onstart = () => TW.Audio && TW.Audio.duck && TW.Audio.duck(true);
     u.onend = u.onerror = () => { if (current === u) { current = null; done(); } TW.Audio && TW.Audio.duck && TW.Audio.duck(false); };
     current = u;

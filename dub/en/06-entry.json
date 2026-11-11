@@ -2,61 +2,73 @@
  {
   "id": "d-00d0e4ae",
   "voice": "N",
-  "text": "Josephus wrote that from a distance the Temple looked like a mountain covered with snow, where it was not plated with gold."
+  "text": "Josephus wrote that from a distance the Temple looked like a mountain covered with snow, where it was not plated with gold.",
+  "kind": "history"
  },
  {
   "id": "d-1930b071",
   "voice": "N",
-  "text": "Passover is a week away, and you are home in Jerusalem. Nicodemus has read all five of your reports. He rolls up the last one and says only, “He is coming up for the feast. Go and see.”"
+  "text": "Passover is a week away, and you are home in Jerusalem. Nicodemus has read all five of your reports. He rolls up the last one and says only, “He is coming up for the feast. Go and see.”",
+  "kind": "drama"
  },
  {
   "id": "d-354c1634",
   "voice": "N",
-  "text": "He looks at everything: the tables, the coins, the cages of doves, the barrier the nations may not pass. He says nothing. Then he turns and goes out toward Bethany."
+  "text": "He looks at everything: the tables, the coins, the cages of doves, the barrier the nations may not pass. He says nothing. Then he turns and goes out toward Bethany.",
+  "kind": "drama"
  },
  {
   "id": "d-7d8de078",
   "voice": "N",
-  "text": "“Hosanna” means “save us, we pray.” The words come from Psalm 118, sung by pilgrims at the feasts. Zechariah 9:9 had pictured Zion’s king coming “lowly, and riding on a donkey.”"
+  "text": "“Hosanna” means “save us, we pray.” The words come from Psalm 118, sung by pilgrims at the feasts. Zechariah 9:9 had pictured Zion’s king coming “lowly, and riding on a donkey.”",
+  "kind": "history"
  },
  {
   "id": "d-88c48934",
   "voice": "N",
-  "text": "Pilgrims from Galilee often came up by Jericho and crossed the Mount of Olives past Bethany and Bethphage. Over the ridge, the whole city suddenly lies open across the Kidron Valley."
+  "text": "Pilgrims from Galilee often came up by Jericho and crossed the Mount of Olives past Bethany and Bethphage. Over the ridge, the whole city suddenly lies open across the Kidron Valley.",
+  "kind": "history"
  },
  {
   "id": "d-94319a32",
   "voice": "W",
-  "text": "Passover is a week away, and you are home in Jerusalem. Your uncle has read all five of your letters. He rolls up the last one and says only, “He is coming up for the feast. Go and see.”"
+  "text": "Passover is a week away, and you are home in Jerusalem. Your uncle has read all five of your letters. He rolls up the last one and says only, “He is coming up for the feast. Go and see.”",
+  "kind": "drama"
  },
  {
   "id": "d-9b198aaa",
   "voice": "N",
-  "text": "He is almost level with you. The people beside you are throwing their cloaks on the road. Your mantle, with its long fringes, is on your shoulders."
+  "text": "He is almost level with you. The people beside you are throwing their cloaks on the road. Your mantle, with its long fringes, is on your shoulders.",
+  "kind": "prompt"
  },
  {
   "id": "s-WEB-0f2ac199",
   "voice": "S",
-  "text": "Jesus entered into the temple in Jerusalem. When he had looked around at everything, it being now evening, he went out to Bethany with the twelve."
+  "text": "Jesus entered into the temple in Jerusalem. When he had looked around at everything, it being now evening, he went out to Bethany with the twelve.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-50929069",
   "voice": "S",
-  "text": "When they drew near to Jerusalem, to Bethsphage and Bethany, at the Mount of Olives, he sent two of his disciples, and said to them, “Go your way into the village that is opposite you. Immediately as you enter into it, you will find a young donkey tied, on which no one has sat. Untie him, and bring him. If anyone asks you, ‘Why are you doing this?’ say, ‘The Lord needs him;’ and immediately he will send him back here.”"
+  "text": "When they drew near to Jerusalem, to Bethsphage and Bethany, at the Mount of Olives, he sent two of his disciples, and said to them, “Go your way into the village that is opposite you. Immediately as you enter into it, you will find a young donkey tied, on which no one has sat. Untie him, and bring him. If anyone asks you, ‘Why are you doing this?’ say, ‘The Lord needs him;’ and immediately he will send him back here.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-8e01affc",
   "voice": "S",
-  "text": "Many spread their garments on the way, and others were cutting down branches from the trees, and spreading them on the road."
+  "text": "Many spread their garments on the way, and others were cutting down branches from the trees, and spreading them on the road.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-b4d74df9",
   "voice": "S",
-  "text": "They went away, and found a young donkey tied at the door outside in the open street, and they untied him. Some of those who stood there asked them, “What are you doing, untying the young donkey?” They said to them just as Jesus had said, and they let them go. They brought the young donkey to Jesus, and threw their garments on it, and Jesus sat on it."
+  "text": "They went away, and found a young donkey tied at the door outside in the open street, and they untied him. Some of those who stood there asked them, “What are you doing, untying the young donkey?” They said to them just as Jesus had said, and they let them go. They brought the young donkey to Jesus, and threw their garments on it, and Jesus sat on it.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-c70a8789",
   "voice": "S",
-  "text": "Those who went in front, and those who followed, cried out, “Hosanna! Blessed is he who comes in the name of the Lord! Blessed is the kingdom of our father David that is coming in the name of the Lord! Hosanna in the highest!”"
+  "text": "Those who went in front, and those who followed, cried out, “Hosanna! Blessed is he who comes in the name of the Lord! Blessed is the kingdom of our father David that is coming in the name of the Lord! Hosanna in the highest!”",
+  "kind": "scripture"
  }
 ]

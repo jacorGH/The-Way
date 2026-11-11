@@ -2,136 +2,163 @@
  {
   "id": "d-039d6776",
   "voice": "N",
-  "text": "He paces as far as the chain allows, and talks. You write as fast as you can. Sometimes he stops in the middle of a sentence and says nothing for a long time, and you wait with the pen lifted."
+  "text": "He paces as far as the chain allows, and talks. You write as fast as you can. Sometimes he stops in the middle of a sentence and says nothing for a long time, and you wait with the pen lifted.",
+  "kind": "drama"
  },
  {
   "id": "d-19ff866a",
   "voice": "N",
-  "text": "Epaphroditus came from Philippi with a gift for Paul, and then nearly died of a fever in Rome. He is well enough to travel now. Paul wants to send a letter back with him, and he wants you to write it."
+  "text": "Epaphroditus came from Philippi with a gift for Paul, and then nearly died of a fever in Rome. He is well enough to travel now. Paul wants to send a letter back with him, and he wants you to write it.",
+  "kind": "drama"
  },
  {
   "id": "d-4c2c2c3e",
   "voice": "N",
-  "text": "At one point he stops pacing and begins to sing under his breath, and you realize the next lines are a song the churches already know. Your pen keeps time."
+  "text": "At one point he stops pacing and begins to sing under his breath, and you realize the next lines are a song the churches already know. Your pen keeps time.",
+  "kind": "drama"
  },
  {
   "id": "d-69504f3f",
   "voice": "N",
-  "text": "Lydia is weeping before you finish the first sentence. The jailer, grey now, has his eyes shut."
+  "text": "Lydia is weeping before you finish the first sentence. The jailer, grey now, has his eyes shut.",
+  "kind": "drama"
  },
  {
   "id": "d-71a24a02",
   "voice": "N",
-  "text": "Brundisium, the crossing to Greece, the Via Egnatia east across Macedonia. The letter rides inside your cloak the whole way, against your chest."
+  "text": "Brundisium, the crossing to Greece, the Via Egnatia east across Macedonia. The letter rides inside your cloak the whole way, against your chest.",
+  "kind": "drama"
  },
  {
   "id": "d-766af031",
   "voice": "N",
-  "text": "The next line names two women who have not spoken to each other in months. Both are sitting in this room."
+  "text": "The next line names two women who have not spoken to each other in months. Both are sitting in this room.",
+  "kind": "prompt"
  },
  {
   "id": "d-861a7a01",
   "voice": "N",
-  "text": "Paul usually dictated his letters to a scribe and added the last lines in his own hand (Romans 16:22; Galatians 6:11)."
+  "text": "Paul usually dictated his letters to a scribe and added the last lines in his own hand (Romans 16:22; Galatians 6:11).",
+  "kind": "history"
  },
  {
   "id": "d-b475e534",
   "voice": "N",
-  "text": "Lydia reads it in her merchant’s voice, the one that closes bargains. Then she sets the letter down and looks at both of them until they look at each other."
+  "text": "Lydia reads it in her merchant’s voice, the one that closes bargains. Then she sets the letter down and looks at both of them until they look at each other.",
+  "kind": "drama"
  },
  {
   "id": "d-cbd8400c",
   "voice": "W",
-  "text": "At one point he stops pacing and begins to sing under his breath, and you realize the next lines are a song the churches already know. You write them down as he sings."
+  "text": "At one point he stops pacing and begins to sing under his breath, and you realize the next lines are a song the churches already know. You write them down as he sings.",
+  "kind": "drama"
  },
  {
   "id": "d-d4f59a7b",
   "voice": "N",
-  "text": "You read it as Paul said it. The room goes very quiet."
+  "text": "You read it as Paul said it. The room goes very quiet.",
+  "kind": "drama"
  },
  {
   "id": "d-ea258166",
   "voice": "N",
-  "text": "““Cheer up! For I believe God.” How could Paul say that in the middle of a storm?” (Acts 27:25)\n\n“Rejoice in the Lord always!” Written in chains: his joy did not rest on his circumstances, but on the Lord who is near. (Philippians 4:4–7)"
+  "text": "““Cheer up! For I believe God.” How could Paul say that in the middle of a storm?” (Acts 27:25)\n\n“Rejoice in the Lord always!” Written in chains: his joy did not rest on his circumstances, but on the Lord who is near. (Philippians 4:4–7)",
+  "kind": "answer"
  },
  {
   "id": "d-eeb40de9",
   "voice": "N",
-  "text": "The same room where the church began, years ago, with a few women from the riverbank. Now it is full. Epaphroditus is home, alive, and everyone wants to hold him. Then they all sit down, and look at you."
+  "text": "The same room where the church began, years ago, with a few women from the riverbank. Now it is full. Epaphroditus is home, alive, and everyone wants to hold him. Then they all sit down, and look at you.",
+  "kind": "drama"
  },
  {
   "id": "d-ff7850e6",
   "voice": "N",
-  "text": "Euodia looks at the floor. Syntyche looks at Euodia. Neither moves, but neither leaves."
+  "text": "Euodia looks at the floor. Syntyche looks at Euodia. Neither moves, but neither leaves.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-025e1496",
   "voice": "S",
-  "text": "But I counted it necessary to send to you Epaphroditus, my brother, fellow worker, fellow soldier, and your apostle and servant of my need; since he longed for you all, and was very troubled, because you had heard that he was sick. For indeed he was sick, nearly to death, but God had mercy on him; and not on him only, but on me also, that I might not have sorrow on sorrow. I have sent him therefore the more diligently, that, when you see him again, you may rejoice, and that I may be the less sorrowful."
+  "text": "But I counted it necessary to send to you Epaphroditus, my brother, fellow worker, fellow soldier, and your apostle and servant of my need; since he longed for you all, and was very troubled, because you had heard that he was sick. For indeed he was sick, nearly to death, but God had mercy on him; and not on him only, but on me also, that I might not have sorrow on sorrow. I have sent him therefore the more diligently, that, when you see him again, you may rejoice, and that I may be the less sorrowful.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-09451bdf",
   "voice": "S",
-  "text": "For to me to live is Christ, and to die is gain. But if I live on in the flesh, this will bring fruit from my work; yet I don’t make known what I will choose. But I am in a dilemma between the two, having the desire to depart and be with Christ, which is far better. Yet, to remain in the flesh is more needful for your sake."
+  "text": "For to me to live is Christ, and to die is gain. But if I live on in the flesh, this will bring fruit from my work; yet I don’t make known what I will choose. But I am in a dilemma between the two, having the desire to depart and be with Christ, which is far better. Yet, to remain in the flesh is more needful for your sake.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-1df3bcc1",
   "voice": "S",
-  "text": "Rejoice in the Lord always! Again I will say, Rejoice! Let your gentleness be known to all men. The Lord is at hand. In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus."
+  "text": "Rejoice in the Lord always! Again I will say, Rejoice! Let your gentleness be known to all men. The Lord is at hand. In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-239e08d5",
   "voice": "S",
-  "text": "Paul and Timothy, servants of Jesus Christ; To all the saints in Christ Jesus who are at Philippi, with the overseers and servants: Grace to you, and peace from God, our Father, and the Lord Jesus Christ."
+  "text": "Paul and Timothy, servants of Jesus Christ; To all the saints in Christ Jesus who are at Philippi, with the overseers and servants: Grace to you, and peace from God, our Father, and the Lord Jesus Christ.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-4a2670e7",
   "voice": "S",
-  "text": "though I myself might have confidence even in the flesh. If any other man thinks that he has confidence in the flesh, I yet more: circumcised the eighth day, of the stock of Israel, of the tribe of Benjamin, a Hebrew of Hebrews; concerning the law, a Pharisee; concerning zeal, persecuting the assembly; concerning the righteousness which is in the law, found blameless. However, what things were gain to me, these have I counted loss for Christ. Yes most certainly, and I count all things to be loss for the excellency of the knowledge of Christ Jesus, my Lord, for whom I suffered the loss of all things, and count them nothing but refuse, that I may gain Christ"
+  "text": "though I myself might have confidence even in the flesh. If any other man thinks that he has confidence in the flesh, I yet more: circumcised the eighth day, of the stock of Israel, of the tribe of Benjamin, a Hebrew of Hebrews; concerning the law, a Pharisee; concerning zeal, persecuting the assembly; concerning the righteousness which is in the law, found blameless. However, what things were gain to me, these have I counted loss for Christ. Yes most certainly, and I count all things to be loss for the excellency of the knowledge of Christ Jesus, my Lord, for whom I suffered the loss of all things, and count them nothing but refuse, that I may gain Christ",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-6640d427",
   "voice": "S",
-  "text": "Brothers, I don’t regard myself as yet having taken hold, but one thing I do. Forgetting the things which are behind, and stretching forward to the things which are before, I press on toward the goal for the prize of the high calling of God in Christ Jesus."
+  "text": "Brothers, I don’t regard myself as yet having taken hold, but one thing I do. Forgetting the things which are behind, and stretching forward to the things which are before, I press on toward the goal for the prize of the high calling of God in Christ Jesus.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-718a0a3e",
   "voice": "S",
-  "text": "Therefore, my brothers, beloved and longed for, my joy and crown, so stand firm in the Lord, my beloved."
+  "text": "Therefore, my brothers, beloved and longed for, my joy and crown, so stand firm in the Lord, my beloved.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-7397001e",
   "voice": "S",
-  "text": "Have this in your mind, which was also in Christ Jesus, who, existing in the form of God, didn’t consider equality with God a thing to be grasped, but emptied himself, taking the form of a servant, being made in the likeness of men. And being found in human form, he humbled himself, becoming obedient to death, yes, the death of the cross. Therefore God also highly exalted him, and gave to him the name which is above every name; that at the name of Jesus every knee should bow, of those in heaven, those on earth, and those under the earth, and that every tongue should confess that Jesus Christ is Lord, to the glory of God the Father."
+  "text": "Have this in your mind, which was also in Christ Jesus, who, existing in the form of God, didn’t consider equality with God a thing to be grasped, but emptied himself, taking the form of a servant, being made in the likeness of men. And being found in human form, he humbled himself, becoming obedient to death, yes, the death of the cross. Therefore God also highly exalted him, and gave to him the name which is above every name; that at the name of Jesus every knee should bow, of those in heaven, those on earth, and those under the earth, and that every tongue should confess that Jesus Christ is Lord, to the glory of God the Father.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-82f3b690",
   "voice": "S",
-  "text": "Greet every saint in Christ Jesus. The brothers who are with me greet you. All the saints greet you, especially those who are of Caesar’s household. The grace of the Lord Jesus Christ be with you all. Amen."
+  "text": "Greet every saint in Christ Jesus. The brothers who are with me greet you. All the saints greet you, especially those who are of Caesar’s household. The grace of the Lord Jesus Christ be with you all. Amen.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-942b01cc",
   "voice": "S",
-  "text": "I thank my God whenever I remember you, always in every request of mine on behalf of you all making my requests with joy, for your partnership in furtherance of the Good News from the first day until now; being confident of this very thing, that he who began a good work in you will complete it until the day of Jesus Christ. It is even right for me to think this way on behalf of all of you, because I have you in my heart, because, both in my bonds and in the defense and confirmation of the Good News, you all are partakers with me of grace."
+  "text": "I thank my God whenever I remember you, always in every request of mine on behalf of you all making my requests with joy, for your partnership in furtherance of the Good News from the first day until now; being confident of this very thing, that he who began a good work in you will complete it until the day of Jesus Christ. It is even right for me to think this way on behalf of all of you, because I have you in my heart, because, both in my bonds and in the defense and confirmation of the Good News, you all are partakers with me of grace.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9b5e07f7",
   "voice": "S",
-  "text": "I exhort Euodia, and I exhort Syntyche, to think the same way in the Lord. Yes, I beg you also, true yokefellow, help these women, for they labored with me in the Good News, with Clement also, and the rest of my fellow workers, whose names are in the book of life."
+  "text": "I exhort Euodia, and I exhort Syntyche, to think the same way in the Lord. Yes, I beg you also, true yokefellow, help these women, for they labored with me in the Good News, with Clement also, and the rest of my fellow workers, whose names are in the book of life.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-af87b071",
   "voice": "S",
-  "text": "I thank my God whenever I remember you, always in every request of mine on behalf of you all making my requests with joy, for your partnership in furtherance of the Good News from the first day until now; being confident of this very thing, that he who began a good work in you will complete it until the day of Jesus Christ."
+  "text": "I thank my God whenever I remember you, always in every request of mine on behalf of you all making my requests with joy, for your partnership in furtherance of the Good News from the first day until now; being confident of this very thing, that he who began a good work in you will complete it until the day of Jesus Christ.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-e7abe039",
   "voice": "S",
-  "text": "Not that I speak in respect to lack, for I have learned in whatever state I am, to be content in it. I know how to be humbled, and I know also how to abound. In everything and in all things I have learned the secret both to be filled and to be hungry, both to abound and to be in need. I can do all things through Christ, who strengthens me."
+  "text": "Not that I speak in respect to lack, for I have learned in whatever state I am, to be content in it. I know how to be humbled, and I know also how to abound. In everything and in all things I have learned the secret both to be filled and to be hungry, both to abound and to be in need. I can do all things through Christ, who strengthens me.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f128a837",
   "voice": "S",
-  "text": "Now I desire to have you know, brothers, that the things which happened to me have turned out rather to the progress of the Good News; so that it became evident to the whole praetorian guard, and to all the rest, that my bonds are in Christ; and that most of the brothers in the Lord, being confident through my bonds, are more abundantly bold to speak the word of God without fear."
+  "text": "Now I desire to have you know, brothers, that the things which happened to me have turned out rather to the progress of the Good News; so that it became evident to the whole praetorian guard, and to all the rest, that my bonds are in Christ; and that most of the brothers in the Lord, being confident through my bonds, are more abundantly bold to speak the word of God without fear.",
+  "kind": "scripture"
  }
 ]

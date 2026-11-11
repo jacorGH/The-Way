@@ -2,71 +2,85 @@
  {
   "id": "d-2375fb9e",
   "voice": "N",
-  "text": "“He who hears, let him say, ‘Come!’” She stops, and waits for you. Your own scroll lies open on your knees, with room for one more line."
+  "text": "“He who hears, let him say, ‘Come!’” She stops, and waits for you. Your own scroll lies open on your knees, with room for one more line.",
+  "kind": "prompt"
  },
  {
   "id": "d-66df5d84",
   "voice": "N",
-  "text": "“Where does God dwell, now that the Temple is gone?” (Luke 21:6)\n\n“I saw no temple in it, for the Lord God, the Almighty, and the Lamb, are its temple.” God’s dwelling is with people. (Revelation 21:3, 22)"
+  "text": "“Where does God dwell, now that the Temple is gone?” (Luke 21:6)\n\n“I saw no temple in it, for the Lord God, the Almighty, and the Lamb, are its temple.” God’s dwelling is with people. (Revelation 21:3, 22)",
+  "kind": "answer"
  },
  {
   "id": "d-7af9dbdb",
   "voice": "N",
-  "text": "Patmos: bare rock, salt wind, and an old man writing. He was a fisherman’s son from Galilee. He stood at the cross. He ran to the tomb. He has outlived them all, and he is still writing down what he sees."
+  "text": "Patmos: bare rock, salt wind, and an old man writing. He was a fisherman’s son from Galilee. He stood at the cross. He ran to the tomb. He has outlived them all, and he is still writing down what he sees.",
+  "kind": "drama"
  },
  {
   "id": "d-7c2f3a6b",
   "voice": "N",
-  "text": "She writes it for you, in a young, clear hand, under all the years of yours. Then she reads the end."
+  "text": "She writes it for you, in a young, clear hand, under all the years of yours. Then she reads the end.",
+  "kind": "drama"
  },
  {
   "id": "d-cac06fc1",
   "voice": "N",
-  "text": "It is nearly dawn in Ephesus. The others have gone home. The girl is still reading to you, and there is only a little of the scroll left in her right hand."
+  "text": "It is nearly dawn in Ephesus. The others have gone home. The girl is still reading to you, and there is only a little of the scroll left in her right hand.",
+  "kind": "drama"
  },
  {
   "id": "d-e1966acf",
   "voice": "N",
-  "text": "You began as someone sent to watch a carpenter from Nazareth, to see whether there was anything in it. You have told what you saw. The scroll is hers now, and whoever she reads it to."
+  "text": "You began as someone sent to watch a carpenter from Nazareth, to see whether there was anything in it. You have told what you saw. The scroll is hers now, and whoever she reads it to.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-2eae70f6",
   "voice": "S",
-  "text": "He who sits on the throne said, “Behold, I am making all things new.” He said, “Write, for these words of God are faithful and true.” He said to me, “It is done! I am the Alpha and the Omega, the Beginning and the End. I will give freely to him who is thirsty from the spring of the water of life. He who overcomes, I will give him these things. I will be his God, and he will be my son."
+  "text": "He who sits on the throne said, “Behold, I am making all things new.” He said, “Write, for these words of God are faithful and true.” He said to me, “It is done! I am the Alpha and the Omega, the Beginning and the End. I will give freely to him who is thirsty from the spring of the water of life. He who overcomes, I will give him these things. I will be his God, and he will be my son.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3684f844",
   "voice": "S",
-  "text": "He showed me a river of water of life, clear as crystal, proceeding out of the throne of God and of the Lamb, in the middle of its street. On this side of the river and on that was the tree of life, bearing twelve kinds of fruits, yielding its fruit every month. The leaves of the tree were for the healing of the nations."
+  "text": "He showed me a river of water of life, clear as crystal, proceeding out of the throne of God and of the Lamb, in the middle of its street. On this side of the river and on that was the tree of life, bearing twelve kinds of fruits, yielding its fruit every month. The leaves of the tree were for the healing of the nations.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3b778aa0",
   "voice": "S",
-  "text": "He who testifies these things says, “Yes, I come quickly.” Amen! Yes, come, Lord Jesus. The grace of the Lord Jesus Christ be with all the saints. Amen."
+  "text": "He who testifies these things says, “Yes, I come quickly.” Amen! Yes, come, Lord Jesus. The grace of the Lord Jesus Christ be with all the saints. Amen.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-90e3d9e2",
   "voice": "S",
-  "text": "There will be no curse any more. The throne of God and of the Lamb will be in it, and his servants serve him. They will see his face, and his name will be on their foreheads. There will be no night, and they need no lamp light; for the Lord God will illuminate them. They will reign forever and ever."
+  "text": "There will be no curse any more. The throne of God and of the Lamb will be in it, and his servants serve him. They will see his face, and his name will be on their foreheads. There will be no night, and they need no lamp light; for the Lord God will illuminate them. They will reign forever and ever.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-b4761f58",
   "voice": "S",
-  "text": "I saw no temple in it, for the Lord God, the Almighty, and the Lamb, are its temple. The city has no need for the sun, neither of the moon, to shine, for the very glory of God illuminated it, and its lamp is the Lamb. The nations will walk in its light. The kings of the earth bring the glory and honor of the nations into it. Its gates will in no way be shut by day (for there will be no night there),"
+  "text": "I saw no temple in it, for the Lord God, the Almighty, and the Lamb, are its temple. The city has no need for the sun, neither of the moon, to shine, for the very glory of God illuminated it, and its lamp is the Lamb. The nations will walk in its light. The kings of the earth bring the glory and honor of the nations into it. Its gates will in no way be shut by day (for there will be no night there),",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-c70b4914",
   "voice": "S",
-  "text": "I saw a new heaven and a new earth: for the first heaven and the first earth have passed away, and the sea is no more. I saw the holy city, New Jerusalem, coming down out of heaven from God, made ready like a bride adorned for her husband."
+  "text": "I saw a new heaven and a new earth: for the first heaven and the first earth have passed away, and the sea is no more. I saw the holy city, New Jerusalem, coming down out of heaven from God, made ready like a bride adorned for her husband.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-c7c429ca",
   "voice": "S",
-  "text": "I heard a loud voice out of heaven saying, “Behold, God’s dwelling is with people, and he will dwell with them, and they will be his people, and God himself will be with them as their God. He will wipe away from them every tear from their eyes. Death will be no more; neither will there be mourning, nor crying, nor pain, any more. The first things have passed away.”"
+  "text": "I heard a loud voice out of heaven saying, “Behold, God’s dwelling is with people, and he will dwell with them, and they will be his people, and God himself will be with them as their God. He will wipe away from them every tear from their eyes. Death will be no more; neither will there be mourning, nor crying, nor pain, any more. The first things have passed away.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-d0121b5d",
   "voice": "S",
-  "text": "I, Jesus, have sent my angel to testify these things to you for the assemblies. I am the root and the offspring of David; the Bright and Morning Star.” The Spirit and the bride say, “Come!” He who hears, let him say, “Come!” He who is thirsty, let him come. He who desires, let him take the water of life freely."
+  "text": "I, Jesus, have sent my angel to testify these things to you for the assemblies. I am the root and the offspring of David; the Bright and Morning Star.” The Spirit and the bride say, “Come!” He who hears, let him say, “Come!” He who is thirsty, let him come. He who desires, let him take the water of life freely.",
+  "kind": "scripture"
  }
 ]

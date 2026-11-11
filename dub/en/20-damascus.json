@@ -2,156 +2,191 @@
  {
   "id": "d-0ae35fdb",
   "voice": "N",
-  "text": "“Who is the young man named Saul?” (Acts 7:58)\n\nSaul of Tarsus, a Pharisee, who met the risen Jesus on the road and became his chosen vessel. (Acts 9:15)"
+  "text": "“Who is the young man named Saul?” (Acts 7:58)\n\nSaul of Tarsus, a Pharisee, who met the risen Jesus on the road and became his chosen vessel. (Acts 9:15)",
+  "kind": "answer"
  },
  {
   "id": "d-10eb973a",
   "voice": "W",
-  "text": "An old disciple named Ananias and his wife take you in. Before supper he kneels to pray, and does not get up for a long time. Then he speaks aloud, to someone you cannot see."
+  "text": "An old disciple named Ananias and his wife take you in. Before supper he kneels to pray, and does not get up for a long time. Then he speaks aloud, to someone you cannot see.",
+  "kind": "drama"
  },
  {
   "id": "d-57e68c65",
   "voice": "N",
-  "text": "Saul sits down to eat. You have one question."
+  "text": "Saul sits down to eat. You have one question.",
+  "kind": "prompt"
  },
  {
   "id": "d-59731e65",
   "voice": "N",
-  "text": "You pray for the man who kept the cloaks. It is the hardest prayer you have ever prayed. Somewhere across the city, he is praying too."
+  "text": "You pray for the man who kept the cloaks. It is the hardest prayer you have ever prayed. Somewhere across the city, he is praying too.",
+  "kind": "drama"
  },
  {
   "id": "d-5ef41302",
   "voice": "N",
-  "text": "Years from now he will tell a crowd in Jerusalem what he told you tonight:"
+  "text": "Years from now he will tell a crowd in Jerusalem what he told you tonight:",
+  "kind": "drama"
  },
  {
   "id": "d-6443368a",
   "voice": "W",
-  "text": "You traveled north for a week with a caravan of believers to warn the disciples in Damascus that Saul was coming with letters. You are too late, though not in the way you feared."
+  "text": "You traveled north for a week with a caravan of believers to warn the disciples in Damascus that Saul was coming with letters. You are too late, though not in the way you feared.",
+  "kind": "drama"
  },
  {
   "id": "d-71c6fcff",
   "voice": "N",
-  "text": "Saul has your name on his list. Ananias is looking at you."
+  "text": "Saul has your name on his list. Ananias is looking at you.",
+  "kind": "prompt"
  },
  {
   "id": "d-a7cb52ca",
   "voice": "M",
-  "text": "Good. So am I. Let us be afraid together, then, and go."
+  "text": "Good. So am I. Let us be afraid together, then, and go.",
+  "kind": "drama",
+  "speaker": "Ananias"
  },
  {
   "id": "d-bb523635",
   "voice": "M",
-  "text": "They tell me you were outside the gate when Stephen died. I was there too. I kept the cloaks. I thought I was serving God."
+  "text": "They tell me you were outside the gate when Stephen died. I was there too. I kept the cloaks. I thought I was serving God.",
+  "kind": "drama",
+  "speaker": "Saul"
  },
  {
   "id": "d-cc7dec6b",
   "voice": "N",
-  "text": "When Saul goes up to Jerusalem at last, the believers there will be afraid of him. It will take a Levite from Cyprus to vouch for him."
+  "text": "When Saul goes up to Jerusalem at last, the believers there will be afraid of him. It will take a Levite from Cyprus to vouch for him.",
+  "kind": "drama"
  },
  {
   "id": "d-d8ce1b65",
   "voice": "N",
-  "text": "He has not eaten in three days. His eyes are open, and they see nothing."
+  "text": "He has not eaten in three days. His eyes are open, and they see nothing.",
+  "kind": "drama"
  },
  {
   "id": "d-ead7671c",
   "voice": "M",
-  "text": "I know you. You were by the cloaks, watching me as I watched him. I thought I was serving God that day."
+  "text": "I know you. You were by the cloaks, watching me as I watched him. I thought I was serving God that day.",
+  "kind": "drama",
+  "speaker": "Saul"
  },
  {
   "id": "d-ec419ec1",
   "voice": "M",
-  "text": "He says Saul of Tarsus is praying on Straight Street, at the house of Judah. He says I am to lay my hands on him."
+  "text": "He says Saul of Tarsus is praying on Straight Street, at the house of Judah. He says I am to lay my hands on him.",
+  "kind": "drama",
+  "speaker": "Ananias"
  },
  {
   "id": "d-edb85619",
   "voice": "N",
-  "text": "You walked north for a week to warn the believers in Damascus that Saul was coming with letters. You are too late, though not in the way you feared."
+  "text": "You walked north for a week to warn the believers in Damascus that Saul was coming with letters. You are too late, though not in the way you feared.",
+  "kind": "drama"
  },
  {
   "id": "d-f5c7bbb5",
   "voice": "N",
-  "text": "An old disciple named Ananias takes you in. Before supper he kneels to pray, and does not get up for a long time. Then he speaks aloud, to someone you cannot see."
+  "text": "An old disciple named Ananias takes you in. Before supper he kneels to pray, and does not get up for a long time. Then he speaks aloud, to someone you cannot see.",
+  "kind": "drama"
  },
  {
   "id": "d-f6ecf004",
   "voice": "N",
-  "text": "You stood beside Saul when Stephen died. You know his face. Ananias is looking at you."
+  "text": "You stood beside Saul when Stephen died. You know his face. Ananias is looking at you.",
+  "kind": "prompt"
  },
  {
   "id": "d-fcd735e4",
   "voice": "N",
-  "text": "“The Way” is what the believers are called. Saul’s letters name you, too, though he does not know your face."
+  "text": "“The Way” is what the believers are called. Saul’s letters name you, too, though he does not know your face.",
+  "kind": "history"
  },
  {
   "id": "s-WEB-0782401e",
   "voice": "S",
-  "text": "Ananias departed, and entered into the house. Laying his hands on him, he said, “Brother Saul, the Lord, who appeared to you on the road by which you came, has sent me, that you may receive your sight, and be filled with the Holy Spirit.”"
+  "text": "Ananias departed, and entered into the house. Laying his hands on him, he said, “Brother Saul, the Lord, who appeared to you on the road by which you came, has sent me, that you may receive your sight, and be filled with the Holy Spirit.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-07e728e0",
   "voice": "S",
-  "text": "He took food and was strengthened. Saul stayed several days with the disciples who were at Damascus."
+  "text": "He took food and was strengthened. Saul stayed several days with the disciples who were at Damascus.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-14965aa9",
   "voice": "S",
-  "text": "As he traveled, it happened that he got close to Damascus, and suddenly a light from the sky shone around him."
+  "text": "As he traveled, it happened that he got close to Damascus, and suddenly a light from the sky shone around him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-1ebcfb32",
   "voice": "S",
-  "text": "Immediately something like scales fell from his eyes, and he received his sight. He arose and was baptized."
+  "text": "Immediately something like scales fell from his eyes, and he received his sight. He arose and was baptized.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-48664c88",
   "voice": "S",
-  "text": "But Saul, still breathing threats and slaughter against the disciples of the Lord, went to the high priest, and asked for letters from him to the synagogues of Damascus, that if he found any who were of the Way, whether men or women, he might bring them bound to Jerusalem."
+  "text": "But Saul, still breathing threats and slaughter against the disciples of the Lord, went to the high priest, and asked for letters from him to the synagogues of Damascus, that if he found any who were of the Way, whether men or women, he might bring them bound to Jerusalem.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-50e75b24",
   "voice": "S",
-  "text": "But the Lord said to him, “Go your way, for he is my chosen vessel to bear my name before the nations and kings, and the children of Israel. For I will show him how many things he must suffer for my name’s sake.”"
+  "text": "But the Lord said to him, “Go your way, for he is my chosen vessel to bear my name before the nations and kings, and the children of Israel. For I will show him how many things he must suffer for my name’s sake.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-6088515c",
   "voice": "S",
-  "text": "The men who traveled with him stood speechless, hearing the sound, but seeing no one."
+  "text": "The men who traveled with him stood speechless, hearing the sound, but seeing no one.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-8e20778a",
   "voice": "S",
-  "text": "When Saul had come to Jerusalem, he tried to join himself to the disciples; but they were all afraid of him, not believing that he was a disciple. But Barnabas took him, and brought him to the apostles, and declared to them how he had seen the Lord in the way, and that he had spoken to him, and how at Damascus he had preached boldly in the name of Jesus."
+  "text": "When Saul had come to Jerusalem, he tried to join himself to the disciples; but they were all afraid of him, not believing that he was a disciple. But Barnabas took him, and brought him to the apostles, and declared to them how he had seen the Lord in the way, and that he had spoken to him, and how at Damascus he had preached boldly in the name of Jesus.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-93ee94b6",
   "voice": "S",
-  "text": "He fell on the earth, and heard a voice saying to him, “Saul, Saul, why do you persecute me?” He said, “Who are you, Lord?” The Lord said, “I am Jesus, whom you are persecuting. But rise up, and enter into the city, and you will be told what you must do.”"
+  "text": "He fell on the earth, and heard a voice saying to him, “Saul, Saul, why do you persecute me?” He said, “Who are you, Lord?” The Lord said, “I am Jesus, whom you are persecuting. But rise up, and enter into the city, and you will be told what you must do.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9acc9478",
   "voice": "S",
-  "text": "Immediately in the synagogues he proclaimed the Christ, that he is the Son of God. All who heard him were amazed, and said, “Isn’t this he who in Jerusalem made havoc of those who called on this name? And he had come here intending to bring them bound before the chief priests!” But Saul increased more in strength, and confounded the Jews who lived at Damascus, proving that this is the Christ."
+  "text": "Immediately in the synagogues he proclaimed the Christ, that he is the Son of God. All who heard him were amazed, and said, “Isn’t this he who in Jerusalem made havoc of those who called on this name? And he had come here intending to bring them bound before the chief priests!” But Saul increased more in strength, and confounded the Jews who lived at Damascus, proving that this is the Christ.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9ae49773",
   "voice": "S",
-  "text": "Saul arose from the ground, and when his eyes were opened, he saw no one. They led him by the hand, and brought him into Damascus. He was without sight for three days, and neither ate nor drank."
+  "text": "Saul arose from the ground, and when his eyes were opened, he saw no one. They led him by the hand, and brought him into Damascus. He was without sight for three days, and neither ate nor drank.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-a26ce598",
   "voice": "S",
-  "text": "Now there was a certain disciple at Damascus named Ananias. The Lord said to him in a vision, “Ananias!” He said, “Behold, it’s me, Lord.” The Lord said to him, “Arise, and go to the street which is called Straight, and inquire in the house of Judah for one named Saul, a man of Tarsus. For behold, he is praying, and in a vision he has seen a man named Ananias coming in, and laying his hands on him, that he might receive his sight.”"
+  "text": "Now there was a certain disciple at Damascus named Ananias. The Lord said to him in a vision, “Ananias!” He said, “Behold, it’s me, Lord.” The Lord said to him, “Arise, and go to the street which is called Straight, and inquire in the house of Judah for one named Saul, a man of Tarsus. For behold, he is praying, and in a vision he has seen a man named Ananias coming in, and laying his hands on him, that he might receive his sight.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-b86e7d23",
   "voice": "S",
-  "text": "When the blood of Stephen, your witness, was shed, I also was standing by, and consenting to his death, and guarding the cloaks of those who killed him.’"
+  "text": "When the blood of Stephen, your witness, was shed, I also was standing by, and consenting to his death, and guarding the cloaks of those who killed him.’",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f4232643",
   "voice": "S",
-  "text": "But Ananias answered, “Lord, I have heard from many about this man, how much evil he did to your saints at Jerusalem. Here he has authority from the chief priests to bind all who call on your name.”"
+  "text": "But Ananias answered, “Lord, I have heard from many about this man, how much evil he did to your saints at Jerusalem. Here he has authority from the chief priests to bind all who call on your name.”",
+  "kind": "scripture"
  }
 ]

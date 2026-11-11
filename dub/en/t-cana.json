@@ -2,61 +2,75 @@
  {
   "id": "d-491fb7f6",
   "voice": "N",
-  "text": "What do you ask a servant from the wedding at Cana?"
+  "text": "What do you ask a servant from the wedding at Cana?",
+  "kind": "prompt"
  },
  {
   "id": "d-4c10dcab",
   "voice": "N",
-  "text": "He shakes his head, still smiling. “Six jars. We filled them to the brim.”"
+  "text": "He shakes his head, still smiling. “Six jars. We filled them to the brim.”",
+  "kind": "drama"
  },
  {
   "id": "d-543c11f7",
   "voice": "N",
-  "text": "The stone jars held water for ritual washing, and each held roughly 75 to 115 litres. Stone, unlike pottery, was thought not to become unclean."
+  "text": "The stone jars held water for ritual washing, and each held roughly 75 to 115 litres. Stone, unlike pottery, was thought not to become unclean.",
+  "kind": "history"
  },
  {
   "id": "d-8dcf9b97",
   "voice": "M",
-  "text": "To run out of wine at your own wedding! The family would never have lived it down."
+  "text": "To run out of wine at your own wedding! The family would never have lived it down.",
+  "kind": "drama",
+  "speaker": "A servant from the wedding at Cana"
  },
  {
   "id": "d-8fc3ce21",
   "voice": "N",
-  "text": "In Cana you find a man who served at a wedding there. When you mention Jesus of Nazareth, he laughs out loud."
+  "text": "In Cana you find a man who served at a wedding there. When you mention Jesus of Nazareth, he laughs out loud.",
+  "kind": "drama"
  },
  {
   "id": "d-de3a3d6c",
   "voice": "M",
-  "text": "The master of the feast never knew where it came from. We knew. We drew it."
+  "text": "The master of the feast never knew where it came from. We knew. We drew it.",
+  "kind": "drama",
+  "speaker": "A servant from the wedding at Cana"
  },
  {
   "id": "s-WEB-188bb50e",
   "voice": "S",
-  "text": "Now there were six water pots of stone set there after the Jews’ manner of purifying, containing two or three metretes apiece. Jesus said to them, “Fill the water pots with water.” They filled them up to the brim."
+  "text": "Now there were six water pots of stone set there after the Jews’ manner of purifying, containing two or three metretes apiece. Jesus said to them, “Fill the water pots with water.” They filled them up to the brim.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-4c3f47c3",
   "voice": "S",
-  "text": "He said to them, “Now draw some out, and take it to the ruler of the feast.” So they took it."
+  "text": "He said to them, “Now draw some out, and take it to the ruler of the feast.” So they took it.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-5c84a3a1",
   "voice": "S",
-  "text": "When the wine ran out, Jesus’ mother said to him, “They have no wine.” Jesus said to her, “Woman, what does that have to do with you and me? My hour has not yet come.”"
+  "text": "When the wine ran out, Jesus’ mother said to him, “They have no wine.” Jesus said to her, “Woman, what does that have to do with you and me? My hour has not yet come.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-80254109",
   "voice": "S",
-  "text": "The third day, there was a marriage in Cana of Galilee. Jesus’ mother was there. Jesus also was invited, with his disciples, to the marriage."
+  "text": "The third day, there was a marriage in Cana of Galilee. Jesus’ mother was there. Jesus also was invited, with his disciples, to the marriage.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-84d29b9b",
   "voice": "S",
-  "text": "His mother said to the servants, “Whatever he says to you, do it.”"
+  "text": "His mother said to the servants, “Whatever he says to you, do it.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-b867759b",
   "voice": "S",
-  "text": "When the ruler of the feast tasted the water now become wine, and didn’t know where it came from (but the servants who had drawn the water knew), the ruler of the feast called the bridegroom, and said to him, “Everyone serves the good wine first, and when the guests have drunk freely, then that which is worse. You have kept the good wine until now!” This beginning of his signs Jesus did in Cana of Galilee, and revealed his glory; and his disciples believed in him."
+  "text": "When the ruler of the feast tasted the water now become wine, and didn’t know where it came from (but the servants who had drawn the water knew), the ruler of the feast called the bridegroom, and said to him, “Everyone serves the good wine first, and when the guests have drunk freely, then that which is worse. You have kept the good wine until now!” This beginning of his signs Jesus did in Cana of Galilee, and revealed his glory; and his disciples believed in him.",
+  "kind": "scripture"
  }
 ]

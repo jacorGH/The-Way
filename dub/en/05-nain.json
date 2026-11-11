@@ -2,66 +2,79 @@
  {
   "id": "d-1b66832c",
   "voice": "N",
-  "text": "Fear takes hold of everyone. The crowd is crying out. What do you say?"
+  "text": "Fear takes hold of everyone. The crowd is crying out. What do you say?",
+  "kind": "prompt"
  },
  {
   "id": "d-1f261d48",
   "voice": "N",
-  "text": "You came north to write down what you saw. Tonight your report to Nicodemus will be the hardest one yet to write."
+  "text": "You came north to write down what you saw. Tonight your report to Nicodemus will be the hardest one yet to write.",
+  "kind": "drama"
  },
  {
   "id": "d-44ff1b9c",
   "voice": "N",
-  "text": "Burial usually followed on the day of death. Even the poorest family hired flute players and a wailing woman (later recorded in Mishnah Ketubot 4:4). A widow who lost her only son had lost her support and her family’s future."
+  "text": "Burial usually followed on the day of death. Even the poorest family hired flute players and a wailing woman (later recorded in Mishnah Ketubot 4:4). A widow who lost her only son had lost her support and her family’s future.",
+  "kind": "history"
  },
  {
   "id": "d-4ff276c0",
   "voice": "N",
-  "text": "You know the purity laws by heart. He has just put his hand on the bier."
+  "text": "You know the purity laws by heart. He has just put his hand on the bier.",
+  "kind": "drama"
  },
  {
   "id": "d-78888669",
   "voice": "N",
-  "text": "Under the Law of Moses, touching the dead, or what carried the dead, made a person unclean for seven days (Numbers 19:11–16)."
+  "text": "Under the Law of Moses, touching the dead, or what carried the dead, made a person unclean for seven days (Numbers 19:11–16).",
+  "kind": "history"
  },
  {
   "id": "d-d31ebcf5",
   "voice": "W",
-  "text": "You came north to write down what you saw. Tonight your letter to your uncle will be the hardest one yet to write."
+  "text": "You came north to write down what you saw. Tonight your letter to your uncle will be the hardest one yet to write.",
+  "kind": "drama"
  },
  {
   "id": "d-ec29e138",
   "voice": "N",
-  "text": "Nain sat on the slope of the Hill of Moreh. From its gate you could look across the Jezreel Valley to Mount Tabor. On the other side of this same hill lay Shunem, where Elisha once raised a widow’s son (2 Kings 4)."
+  "text": "Nain sat on the slope of the Hill of Moreh. From its gate you could look across the Jezreel Valley to Mount Tabor. On the other side of this same hill lay Shunem, where Elisha once raised a widow’s son (2 Kings 4).",
+  "kind": "history"
  },
  {
   "id": "s-WEB-48c07447",
   "voice": "S",
-  "text": "Fear took hold of all, and they glorified God, saying, “A great prophet has arisen among us!” and, “God has visited his people!” This report went out concerning him in the whole of Judea, and in all the surrounding region."
+  "text": "Fear took hold of all, and they glorified God, saying, “A great prophet has arisen among us!” and, “God has visited his people!” This report went out concerning him in the whole of Judea, and in all the surrounding region.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-53ccda4d",
   "voice": "S",
-  "text": "It happened soon afterwards, that he went to a city called Nain. Many of his disciples, along with a great multitude, went with him."
+  "text": "It happened soon afterwards, that he went to a city called Nain. Many of his disciples, along with a great multitude, went with him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-6a4ae9f6",
   "voice": "S",
-  "text": "When the Lord saw her, he had compassion on her, and said to her, “Don’t cry.”"
+  "text": "When the Lord saw her, he had compassion on her, and said to her, “Don’t cry.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-7a6e6852",
   "voice": "S",
-  "text": "He who was dead sat up, and began to speak. And he gave him to his mother."
+  "text": "He who was dead sat up, and began to speak. And he gave him to his mother.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-c047a95d",
   "voice": "S",
-  "text": "Now when he drew near to the gate of the city, behold, one who was dead was carried out, the only son of his mother, and she was a widow. Many people of the city were with her."
+  "text": "Now when he drew near to the gate of the city, behold, one who was dead was carried out, the only son of his mother, and she was a widow. Many people of the city were with her.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-e9743e19",
   "voice": "S",
-  "text": "He came near and touched the coffin, and the bearers stood still. He said, “Young man, I tell you, arise!”"
+  "text": "He came near and touched the coffin, and the bearers stood still. He said, “Young man, I tell you, arise!”",
+  "kind": "scripture"
  }
 ]

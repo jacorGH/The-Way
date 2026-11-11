@@ -2,106 +2,128 @@
  {
   "id": "d-13391762",
   "voice": "N",
-  "text": "Two years is a long time to wait. How do you spend them?"
+  "text": "Two years is a long time to wait. How do you spend them?",
+  "kind": "prompt"
  },
  {
   "id": "d-1e4b5f64",
   "voice": "N",
-  "text": "Most days you bring bread, and news, and sometimes an argument. Some days you just sit. The guard learns your name, and then your story."
+  "text": "Most days you bring bread, and news, and sometimes an argument. Some days you just sit. The guard learns your name, and then your story.",
+  "kind": "drama"
  },
  {
   "id": "d-259fd041",
   "voice": "N",
-  "text": "Luke has a list of names, and you know half of them. You take him to Nain, to a man who was once carried out on a bier, and to Capernaum, to a fisherman’s widow who still keeps the roof patched where it was broken open. Luke writes until his hand cramps."
+  "text": "Luke has a list of names, and you know half of them. You take him to Nain, to a man who was once carried out on a bier, and to Capernaum, to a fisherman’s widow who still keeps the roof patched where it was broken open. Luke writes until his hand cramps.",
+  "kind": "drama"
  },
  {
   "id": "d-9b0ebf86",
   "voice": "M",
-  "text": "Many have tried to put these things in order. I want to set it down carefully, from the beginning, from those who saw it."
+  "text": "Many have tried to put these things in order. I want to set it down carefully, from the beginning, from those who saw it.",
+  "kind": "drama",
+  "speaker": "Luke"
  },
  {
   "id": "d-d313837e",
   "voice": "N",
-  "text": "You sit by the window with a stack of fresh sheets and copy what Paul once wrote to the Galatians and the Corinthians, so that more churches can read it. Your old training was for this, too."
+  "text": "You sit by the window with a stack of fresh sheets and copy what Paul once wrote to the Galatians and the Corinthians, so that more churches can read it. Your old training was for this, too.",
+  "kind": "drama"
  },
  {
   "id": "d-e57b336b",
   "voice": "N",
-  "text": "Felix kept Paul in custody for two years, until he was replaced as governor by Porcius Festus; wanting to do the Jews a favor, he left Paul in bonds (24:27)."
+  "text": "Felix kept Paul in custody for two years, until he was replaced as governor by Porcius Festus; wanting to do the Jews a favor, he left Paul in bonds (24:27).",
+  "kind": "history"
  },
  {
   "id": "d-f36b72ac",
   "voice": "N",
-  "text": "Tertullus begins with a long compliment to Felix on the peace and reforms of his rule. Everyone in the hall knows how much of it is true."
+  "text": "Tertullus begins with a long compliment to Felix on the peace and reforms of his rule. Everyone in the hall knows how much of it is true.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-0fd57084",
   "voice": "S",
-  "text": "Then Festus, when he had conferred with the council, answered, “You have appealed to Caesar. To Caesar you shall go.”"
+  "text": "Then Festus, when he had conferred with the council, answered, “You have appealed to Caesar. To Caesar you shall go.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-105af908",
   "voice": "S",
-  "text": "But this I confess to you, that after the Way, which they call a sect, so I serve the God of our fathers, believing all things which are according to the law, and which are written in the prophets; having hope toward God, which these also themselves look for, that there will be a resurrection of the dead, both of the just and unjust. Herein I also practice always having a conscience void of offense toward God and men."
+  "text": "But this I confess to you, that after the Way, which they call a sect, so I serve the God of our fathers, believing all things which are according to the law, and which are written in the prophets; having hope toward God, which these also themselves look for, that there will be a resurrection of the dead, both of the just and unjust. Herein I also practice always having a conscience void of offense toward God and men.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-1af4a3c2",
   "voice": "S",
-  "text": "But Paul said, “I am standing before Caesar’s judgment seat, where I ought to be tried. I have done no wrong to the Jews, as you also know very well. For if I have done wrong, and have committed anything worthy of death, I don’t refuse to die; but if none of those things is true that they accuse me of, no one can give me up to them. I appeal to Caesar!”"
+  "text": "But Paul said, “I am standing before Caesar’s judgment seat, where I ought to be tried. I have done no wrong to the Jews, as you also know very well. For if I have done wrong, and have committed anything worthy of death, I don’t refuse to die; but if none of those things is true that they accuse me of, no one can give me up to them. I appeal to Caesar!”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-20793a6e",
   "voice": "S",
-  "text": "But Festus, desiring to gain favor with the Jews, answered Paul and said, “Are you willing to go up to Jerusalem, and be judged by me there concerning these things?”"
+  "text": "But Festus, desiring to gain favor with the Jews, answered Paul and said, “Are you willing to go up to Jerusalem, and be judged by me there concerning these things?”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-615ab828",
   "voice": "S",
-  "text": "When he had stayed among them more than ten days, he went down to Caesarea, and on the next day he sat on the judgment seat, and commanded Paul to be brought. When he had come, the Jews who had come down from Jerusalem stood around him, bringing against him many and grievous charges which they could not prove,"
+  "text": "When he had stayed among them more than ten days, he went down to Caesarea, and on the next day he sat on the judgment seat, and commanded Paul to be brought. When he had come, the Jews who had come down from Jerusalem stood around him, bringing against him many and grievous charges which they could not prove,",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-680d6641",
   "voice": "S",
-  "text": "Festus therefore, having come into the province, after three days went up to Jerusalem from Caesarea. Then the high priest and the principal men of the Jews informed him against Paul, and they begged him, asking a favor against him, that he would summon him to Jerusalem; plotting to kill him on the way."
+  "text": "Festus therefore, having come into the province, after three days went up to Jerusalem from Caesarea. Then the high priest and the principal men of the Jews informed him against Paul, and they begged him, asking a favor against him, that he would summon him to Jerusalem; plotting to kill him on the way.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-80d44d4d",
   "voice": "S",
-  "text": "while he said in his defense, “Neither against the law of the Jews, nor against the temple, nor against Caesar, have I sinned at all.”"
+  "text": "while he said in his defense, “Neither against the law of the Jews, nor against the temple, nor against Caesar, have I sinned at all.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-82cddee3",
   "voice": "S",
-  "text": "Meanwhile, he also hoped that money would be given to him by Paul, that he might release him. Therefore also he sent for him more often, and talked with him."
+  "text": "Meanwhile, he also hoped that money would be given to him by Paul, that he might release him. Therefore also he sent for him more often, and talked with him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-ad0a0f57",
   "voice": "S",
-  "text": "But Felix, having more exact knowledge concerning the Way, deferred them, saying, “When Lysias, the commanding officer, comes down, I will decide your case.” He ordered the centurion that Paul should be kept in custody, and should have some privileges, and not to forbid any of his friends to serve him or to visit him."
+  "text": "But Felix, having more exact knowledge concerning the Way, deferred them, saying, “When Lysias, the commanding officer, comes down, I will decide your case.” He ordered the centurion that Paul should be kept in custody, and should have some privileges, and not to forbid any of his friends to serve him or to visit him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-b0e038a1",
   "voice": "S",
-  "text": "When the governor had beckoned to him to speak, Paul answered, “Because I know that you have been a judge of this nation for many years, I cheerfully make my defense,"
+  "text": "When the governor had beckoned to him to speak, Paul answered, “Because I know that you have been a judge of this nation for many years, I cheerfully make my defense,",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-d6cabf2f",
   "voice": "S",
-  "text": "As he reasoned about righteousness, self-control, and the judgment to come, Felix was terrified, and answered, “Go your way for this time, and when it is convenient for me, I will summon you.”"
+  "text": "As he reasoned about righteousness, self-control, and the judgment to come, Felix was terrified, and answered, “Go your way for this time, and when it is convenient for me, I will summon you.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-eaa6b6e9",
   "voice": "S",
-  "text": "After five days, the high priest, Ananias, came down with certain elders and an orator, one Tertullus. They informed the governor against Paul."
+  "text": "After five days, the high priest, Ananias, came down with certain elders and an orator, one Tertullus. They informed the governor against Paul.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-efc8d8f9",
   "voice": "S",
-  "text": "For we have found this man to be a plague, an instigator of insurrections among all the Jews throughout the world, and a ringleader of the sect of the Nazarenes."
+  "text": "For we have found this man to be a plague, an instigator of insurrections among all the Jews throughout the world, and a ringleader of the sect of the Nazarenes.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-fde05a8b",
   "voice": "S",
-  "text": "But after some days, Felix came with Drusilla, his wife, who was a Jewess, and sent for Paul, and heard him concerning the faith in Christ Jesus."
+  "text": "But after some days, Felix came with Drusilla, his wife, who was a Jewess, and sent for Paul, and heard him concerning the faith in Christ Jesus.",
+  "kind": "scripture"
  }
 ]

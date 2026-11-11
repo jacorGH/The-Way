@@ -2,116 +2,141 @@
  {
   "id": "d-052a78bc",
   "voice": "N",
-  "text": "He is asking you."
+  "text": "He is asking you.",
+  "kind": "prompt"
  },
  {
   "id": "d-31d84b15",
   "voice": "N",
-  "text": "He waves until the carriage is out of sight, singing something in a language you do not know. You are alone on the road with the wind."
+  "text": "He waves until the carriage is out of sight, singing something in a language you do not know. You are alone on the road with the wind.",
+  "kind": "drama"
  },
  {
   "id": "d-3d23a5b8",
   "voice": "W",
-  "text": "You know those words; you copied them once for your uncle. You have never heard them since you stood outside the city gate and watched a man led out to die."
+  "text": "You know those words; you copied them once for your uncle. You have never heard them since you stood outside the city gate and watched a man led out to die.",
+  "kind": "drama"
  },
  {
   "id": "d-45eb01b1",
   "voice": "N",
-  "text": "You say nothing. Philip answers for you, and you are ashamed of your silence."
+  "text": "You say nothing. Philip answers for you, and you are ashamed of your silence.",
+  "kind": "drama"
  },
  {
   "id": "d-6de606b1",
   "voice": "N",
-  "text": "You know those words; every scribe does. You have never heard them since you stood outside the city gate and watched a man led out to die."
+  "text": "You know those words; every scribe does. You have never heard them since you stood outside the city gate and watched a man led out to die.",
+  "kind": "drama"
  },
  {
   "id": "d-7a1444c9",
   "voice": "N",
-  "text": "“Nothing,” you say, and you are surprised how certain you are."
+  "text": "“Nothing,” you say, and you are surprised how certain you are.",
+  "kind": "drama"
  },
  {
   "id": "d-80135571",
   "voice": "W",
-  "text": "Philip woke his household before dawn. He said an angel had spoken to him, and that they were to go south. You saw no angel. You went with his wife and daughters anyway."
+  "text": "Philip woke his household before dawn. He said an angel had spoken to him, and that they were to go south. You saw no angel. You went with his wife and daughters anyway.",
+  "kind": "drama"
  },
  {
   "id": "d-84f638c1",
   "voice": "M",
-  "text": "You are a scribe from Jerusalem. They turned me away from the inner courts. Tell me honestly: what is keeping me?"
+  "text": "You are a scribe from Jerusalem. They turned me away from the inner courts. Tell me honestly: what is keeping me?",
+  "kind": "drama",
+  "speaker": "The official"
  },
  {
   "id": "d-8f006b97",
   "voice": "N",
-  "text": "Philip woke you before dawn. He said an angel had spoken to him, and that you were to go south. You saw no angel. You went anyway."
+  "text": "Philip woke you before dawn. He said an angel had spoken to him, and that you were to go south. You saw no angel. You went anyway.",
+  "kind": "drama"
  },
  {
   "id": "d-a981e2fe",
   "voice": "M",
-  "text": "You are a woman of Jerusalem, and you can read. They turned me away from the inner courts. Tell me honestly: what is keeping me?"
+  "text": "You are a woman of Jerusalem, and you can read. They turned me away from the inner courts. Tell me honestly: what is keeping me?",
+  "kind": "drama",
+  "speaker": "The official"
  },
  {
   "id": "d-bb50e3ec",
   "voice": "N",
-  "text": "Two days later you find Philip in Azotus, preaching in the market as if nothing had happened. He says news has come from Jerusalem: Saul has letters from the high priest, and he is going to Damascus."
+  "text": "Two days later you find Philip in Azotus, preaching in the market as if nothing had happened. He says news has come from Jerusalem: Saul has letters from the high priest, and he is going to Damascus.",
+  "kind": "drama"
  },
  {
   "id": "d-cd9dd919",
   "voice": "N",
-  "text": "As it passes, you hear the man inside reading aloud in Greek, slowly, the way people read words they do not understand."
+  "text": "As it passes, you hear the man inside reading aloud in Greek, slowly, the way people read words they do not understand.",
+  "kind": "drama"
  },
  {
   "id": "d-f61357dc",
   "voice": "N",
-  "text": "You tell him what Isaiah promised: that God will give eunuchs who keep his covenant a place in his house, and a name better than sons and daughters. His eyes fill."
+  "text": "You tell him what Isaiah promised: that God will give eunuchs who keep his covenant a place in his house, and a name better than sons and daughters. His eyes fill.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-04be9d15",
   "voice": "S",
-  "text": "Now the passage of the Scripture which he was reading was this, “He was led as a sheep to the slaughter. As a lamb before his shearer is silent, so he doesn’t open his mouth. In his humiliation, his judgment was taken away. Who will declare His generation? For his life is taken from the earth.”"
+  "text": "Now the passage of the Scripture which he was reading was this, “He was led as a sheep to the slaughter. As a lamb before his shearer is silent, so he doesn’t open his mouth. In his humiliation, his judgment was taken away. Who will declare His generation? For his life is taken from the earth.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-159d8251",
   "voice": "S",
-  "text": "The Spirit said to Philip, “Go near, and join yourself to this chariot.”"
+  "text": "The Spirit said to Philip, “Go near, and join yourself to this chariot.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-15e744b0",
   "voice": "S",
-  "text": "When they came up out of the water, the Spirit of the Lord caught Philip away, and the eunuch didn’t see him any more, for he went on his way rejoicing."
+  "text": "When they came up out of the water, the Spirit of the Lord caught Philip away, and the eunuch didn’t see him any more, for he went on his way rejoicing.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-170a787d",
   "voice": "S",
-  "text": "He arose and went; and behold, there was a man of Ethiopia, a eunuch of great authority under Candace, queen of the Ethiopians, who was over all her treasure, who had come to Jerusalem to worship. He was returning and sitting in his chariot, and was reading the prophet Isaiah."
+  "text": "He arose and went; and behold, there was a man of Ethiopia, a eunuch of great authority under Candace, queen of the Ethiopians, who was over all her treasure, who had come to Jerusalem to worship. He was returning and sitting in his chariot, and was reading the prophet Isaiah.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3a1ad1ca",
   "voice": "S",
-  "text": "But an angel of the Lord spoke to Philip, saying, “Arise, and go toward the south to the way that goes down from Jerusalem to Gaza. This is a desert.”"
+  "text": "But an angel of the Lord spoke to Philip, saying, “Arise, and go toward the south to the way that goes down from Jerusalem to Gaza. This is a desert.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-a433901d",
   "voice": "S",
-  "text": "As they went on the way, they came to some water, and the eunuch said, “Behold, here is water. What is keeping me from being baptized?”"
+  "text": "As they went on the way, they came to some water, and the eunuch said, “Behold, here is water. What is keeping me from being baptized?”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-ca3da03c",
   "voice": "S",
-  "text": "He commanded the chariot to stand still, and they both went down into the water, both Philip and the eunuch, and he baptized him."
+  "text": "He commanded the chariot to stand still, and they both went down into the water, both Philip and the eunuch, and he baptized him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-e85805a3",
   "voice": "S",
-  "text": "But Philip was found at Azotus. Passing through, he preached the Good News to all the cities, until he came to Caesarea."
+  "text": "But Philip was found at Azotus. Passing through, he preached the Good News to all the cities, until he came to Caesarea.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f12543d4",
   "voice": "S",
-  "text": "The eunuch answered Philip, “Who is the prophet talking about? About himself, or about someone else?” Philip opened his mouth, and beginning from this Scripture, preached to him Jesus."
+  "text": "The eunuch answered Philip, “Who is the prophet talking about? About himself, or about someone else?” Philip opened his mouth, and beginning from this Scripture, preached to him Jesus.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f6d6a162",
   "voice": "S",
-  "text": "Philip ran to him, and heard him reading Isaiah the prophet, and said, “Do you understand what you are reading?” He said, “How can I, unless someone explains it to me?” He begged Philip to come up and sit with him."
+  "text": "Philip ran to him, and heard him reading Isaiah the prophet, and said, “Do you understand what you are reading?” He said, “How can I, unless someone explains it to me?” He begged Philip to come up and sit with him.",
+  "kind": "scripture"
  }
 ]

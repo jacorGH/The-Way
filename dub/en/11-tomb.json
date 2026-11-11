@@ -2,186 +2,225 @@
  {
   "id": "d-04b5b630",
   "voice": "N",
-  "text": "The linen cloths lie where the body was laid, and the cloth from his head is rolled up in a place by itself. Two evenings ago you helped wind those cloths around him."
+  "text": "The linen cloths lie where the body was laid, and the cloth from his head is rolled up in a place by itself. Two evenings ago you helped wind those cloths around him.",
+  "kind": "drama"
  },
  {
   "id": "d-0e71a55d",
   "voice": "W",
-  "text": "Before dawn you go with Mary of Magdala, Mary the mother of James, and Salome. You carry a jar of the spices you helped prepare."
+  "text": "Before dawn you go with Mary of Magdala, Mary the mother of James, and Salome. You carry a jar of the spices you helped prepare.",
+  "kind": "drama"
  },
  {
   "id": "d-2568be2f",
   "voice": "N",
-  "text": "The linen cloths lie where the body was laid, and the cloth from his head is rolled up in a place by itself. Two evenings ago you watched them carry him in."
+  "text": "The linen cloths lie where the body was laid, and the cloth from his head is rolled up in a place by itself. Two evenings ago you watched them carry him in.",
+  "kind": "drama"
  },
  {
   "id": "d-2f271486",
   "voice": "W",
-  "text": "It is dark inside the tomb. Then it is not."
+  "text": "It is dark inside the tomb. Then it is not.",
+  "kind": "drama"
  },
  {
   "id": "d-3a3dfaef",
   "voice": "N",
-  "text": "A woman stands at the tomb, weeping. You step back among the trees. This is not yours to watch."
+  "text": "A woman stands at the tomb, weeping. You step back among the trees. This is not yours to watch.",
+  "kind": "drama"
  },
  {
   "id": "d-3d159f26",
   "voice": "W",
-  "text": "Mark names three women. Luke adds Joanna and “the other women with them” (Luke 24:10)."
+  "text": "Mark names three women. Luke adds Joanna and “the other women with them” (Luke 24:10).",
+  "kind": "history"
  },
  {
   "id": "d-3f183958",
   "voice": "F",
-  "text": "You were at the burial, scribe. I saw you. Then hear this, and write it down: I have seen the Lord!"
+  "text": "You were at the burial, scribe. I saw you. Then hear this, and write it down: I have seen the Lord!",
+  "kind": "drama",
+  "speaker": "Mary of Magdala"
  },
  {
   "id": "d-463d739a",
   "voice": "N",
-  "text": "She runs toward the city. You stand alone in the garden with your scroll, and every question in it looks different this morning."
+  "text": "She runs toward the city. You stand alone in the garden with your scroll, and every question in it looks different this morning.",
+  "kind": "drama"
  },
  {
   "id": "d-55c3e039",
   "voice": "N",
-  "text": "They are gone. The tomb is open in front of you. What do you do?"
+  "text": "They are gone. The tomb is open in front of you. What do you do?",
+  "kind": "prompt"
  },
  {
   "id": "d-637d5c76",
   "voice": "N",
-  "text": "What do you ask her?"
+  "text": "What do you ask her?",
+  "kind": "prompt"
  },
  {
   "id": "d-67bda6a7",
   "voice": "F",
-  "text": "You were at the burial with us, Elisheva. I saw you. Then hear this, and write it down: I have seen the Lord!"
+  "text": "You were at the burial with us, Elisheva. I saw you. Then hear this, and write it down: I have seen the Lord!",
+  "kind": "drama",
+  "speaker": "Mary of Magdala"
  },
  {
   "id": "d-7bb85df9",
   "voice": "W",
-  "text": "You run with them until you cannot breathe. Then you stop, and turn, and walk back to the garden alone."
+  "text": "You run with them until you cannot breathe. Then you stop, and turn, and walk back to the garden alone.",
+  "kind": "drama"
  },
  {
   "id": "d-8570737c",
   "voice": "W",
-  "text": "Then you see it, all of you at once. The stone has already been rolled aside."
+  "text": "Then you see it, all of you at once. The stone has already been rolled aside.",
+  "kind": "drama"
  },
  {
   "id": "d-a28eb6b6",
   "voice": "W",
-  "text": "The linen cloths lie where the body was laid, and the cloth from his head is rolled up in a place by itself. Two evenings ago you wound those cloths around him with your own hands."
+  "text": "The linen cloths lie where the body was laid, and the cloth from his head is rolled up in a place by itself. Two evenings ago you wound those cloths around him with your own hands.",
+  "kind": "drama"
  },
  {
   "id": "d-b0513443",
   "voice": "N",
-  "text": "You have not slept. Before dawn you find yourself walking back to the garden, though you could not say why."
+  "text": "You have not slept. Before dawn you find yourself walking back to the garden, though you could not say why.",
+  "kind": "drama"
  },
  {
   "id": "d-b5287134",
   "voice": "N",
-  "text": "The oldest manuscripts of Mark end here, with the women afraid and silent. The other Gospels tell what happened next."
+  "text": "The oldest manuscripts of Mark end here, with the women afraid and silent. The other Gospels tell what happened next.",
+  "kind": "history"
  },
  {
   "id": "d-d026dbe6",
   "voice": "N",
-  "text": "You cannot make yourself go closer. The open doorway is enough."
+  "text": "You cannot make yourself go closer. The open doorway is enough.",
+  "kind": "drama"
  },
  {
   "id": "d-ec6aa8d4",
   "voice": "N",
-  "text": "The Sabbath ended at sunset yesterday. This is the first day of the week, before the sun is fully up."
+  "text": "The Sabbath ended at sunset yesterday. This is the first day of the week, before the sun is fully up.",
+  "kind": "history"
  },
  {
   "id": "d-fc2e7940",
   "voice": "N",
-  "text": "From where you stand you can see the stone. It has already been rolled aside."
+  "text": "From where you stand you can see the stone. It has already been rolled aside.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-058fa2f2",
   "voice": "S",
-  "text": "When she had said this, she turned around and saw Jesus standing, and didn’t know that it was Jesus. Jesus said to her, “Woman, why are you weeping? Who are you looking for?” She, supposing him to be the gardener, said to him, “Sir, if you have carried him away, tell me where you have laid him, and I will take him away.”"
+  "text": "When she had said this, she turned around and saw Jesus standing, and didn’t know that it was Jesus. Jesus said to her, “Woman, why are you weeping? Who are you looking for?” She, supposing him to be the gardener, said to him, “Sir, if you have carried him away, tell me where you have laid him, and I will take him away.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-0a67c1c2",
   "voice": "S",
-  "text": "They went out, and fled from the tomb, for trembling and astonishment had come on them. They said nothing to anyone; for they were afraid."
+  "text": "They went out, and fled from the tomb, for trembling and astonishment had come on them. They said nothing to anyone; for they were afraid.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-1cef2505",
   "voice": "S",
-  "text": "But Mary was standing outside at the tomb weeping. So, as she wept, she stooped and looked into the tomb, and she saw two angels in white sitting, one at the head, and one at the feet, where the body of Jesus had lain."
+  "text": "But Mary was standing outside at the tomb weeping. So, as she wept, she stooped and looked into the tomb, and she saw two angels in white sitting, one at the head, and one at the feet, where the body of Jesus had lain.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-20c0acf1",
   "voice": "S",
-  "text": "Then Simon Peter came, following him, and entered into the tomb. He saw the linen cloths lying, and the cloth that had been on his head, not lying with the linen cloths, but rolled up in a place by itself."
+  "text": "Then Simon Peter came, following him, and entered into the tomb. He saw the linen cloths lying, and the cloth that had been on his head, not lying with the linen cloths, but rolled up in a place by itself.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-30d3c2c4",
   "voice": "S",
-  "text": "But Mary was standing outside at the tomb weeping. So, as she wept, she stooped and looked into the tomb,"
+  "text": "But Mary was standing outside at the tomb weeping. So, as she wept, she stooped and looked into the tomb,",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-64d42707",
   "voice": "S",
-  "text": "Mary Magdalene came and told the disciples that she had seen the Lord, and that he had said these things to her."
+  "text": "Mary Magdalene came and told the disciples that she had seen the Lord, and that he had said these things to her.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-7d9d4642",
   "voice": "S",
-  "text": "They told her, “Woman, why are you weeping?” She said to them, “Because they have taken away my Lord, and I don’t know where they have laid him.”"
+  "text": "They told her, “Woman, why are you weeping?” She said to them, “Because they have taken away my Lord, and I don’t know where they have laid him.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-8f240347",
   "voice": "S",
-  "text": "When the Sabbath was past, Mary Magdalene, and Mary the mother of James, and Salome, bought spices, that they might come and anoint him. Very early on the first day of the week, they came to the tomb when the sun had risen. They were saying among themselves, “Who will roll away the stone from the door of the tomb for us?”"
+  "text": "When the Sabbath was past, Mary Magdalene, and Mary the mother of James, and Salome, bought spices, that they might come and anoint him. Very early on the first day of the week, they came to the tomb when the sun had risen. They were saying among themselves, “Who will roll away the stone from the door of the tomb for us?”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-989c5852",
   "voice": "S",
-  "text": "So then the other disciple who came first to the tomb also entered in, and he saw and believed. For as yet they didn’t know the Scripture, that he must rise from the dead. So the disciples went away again to their own homes."
+  "text": "So then the other disciple who came first to the tomb also entered in, and he saw and believed. For as yet they didn’t know the Scripture, that he must rise from the dead. So the disciples went away again to their own homes.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9d66437a",
   "voice": "S",
-  "text": "Jesus said to her, “Mary.” She turned and said to him, “Rhabbouni!” which is to say, “Teacher!” Jesus said to her, “Don’t touch me, for I haven’t yet ascended to my Father; but go to my brothers, and tell them, ‘I am ascending to my Father and your Father, to my God and your God.’”"
+  "text": "Jesus said to her, “Mary.” She turned and said to him, “Rhabbouni!” which is to say, “Teacher!” Jesus said to her, “Don’t touch me, for I haven’t yet ascended to my Father; but go to my brothers, and tell them, ‘I am ascending to my Father and your Father, to my God and your God.’”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-cd4ce1f8",
   "voice": "S",
-  "text": "Stooping and looking in, he saw the linen cloths lying, yet he didn’t enter in."
+  "text": "Stooping and looking in, he saw the linen cloths lying, yet he didn’t enter in.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-d5661d59",
   "voice": "S",
-  "text": "Entering into the tomb, they saw a young man sitting on the right side, dressed in a white robe, and they were amazed. He said to them, “Don’t be amazed. You seek Jesus, the Nazarene, who has been crucified. He has risen. He is not here. Behold, the place where they laid him! But go, tell his disciples and Peter, ‘He goes before you into Galilee. There you will see him, as he said to you.’”"
+  "text": "Entering into the tomb, they saw a young man sitting on the right side, dressed in a white robe, and they were amazed. He said to them, “Don’t be amazed. You seek Jesus, the Nazarene, who has been crucified. He has risen. He is not here. Behold, the place where they laid him! But go, tell his disciples and Peter, ‘He goes before you into Galilee. There you will see him, as he said to you.’”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-daa3da37",
   "voice": "S",
-  "text": "Now on the first day of the week, Mary Magdalene went early, while it was still dark, to the tomb, and saw the stone taken away from the tomb. Therefore she ran and came to Simon Peter, and to the other disciple whom Jesus loved, and said to them, “They have taken away the Lord out of the tomb, and we don’t know where they have laid him!”"
+  "text": "Now on the first day of the week, Mary Magdalene went early, while it was still dark, to the tomb, and saw the stone taken away from the tomb. Therefore she ran and came to Simon Peter, and to the other disciple whom Jesus loved, and said to them, “They have taken away the Lord out of the tomb, and we don’t know where they have laid him!”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-ee0e2106",
   "voice": "S",
-  "text": "for it was very big. Looking up, they saw that the stone was rolled back."
+  "text": "for it was very big. Looking up, they saw that the stone was rolled back.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f2dda165",
   "voice": "S",
-  "text": "Therefore Peter and the other disciple went out, and they went toward the tomb. They both ran together. The other disciple outran Peter, and came to the tomb first."
+  "text": "Therefore Peter and the other disciple went out, and they went toward the tomb. They both ran together. The other disciple outran Peter, and came to the tomb first.",
+  "kind": "scripture"
  },
  {
   "id": "d-9391b6be",
   "voice": "N",
-  "text": "The linen cloths lie where the body was laid, and the cloth from his head is rolled up in a place by itself."
+  "text": "The linen cloths lie where the body was laid, and the cloth from his head is rolled up in a place by itself.",
+  "kind": "drama"
  },
  {
   "id": "d-5f5d30af",
   "voice": "N",
-  "text": " Two evenings ago you helped wind those cloths around him."
+  "text": " Two evenings ago you helped wind those cloths around him.",
+  "kind": "drama"
  },
  {
   "id": "d-6920180c",
   "voice": "N",
-  "text": " Two evenings ago you watched them carry him in."
+  "text": " Two evenings ago you watched them carry him in.",
+  "kind": "drama"
  }
 ]

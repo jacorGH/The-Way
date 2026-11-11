@@ -1,0 +1,37 @@
+{
+ "note": "Voice direction for TTS Studio. voice: an OpenAI voice (cedar and marin are the highest quality). speed: 0.25 to 4.0. instructions: OpenAI's recommended labeled lines (Voice Affect, Tone, Pacing, Emotion, Delivery). kinds: one line of context added for each kind of line. Edit freely; re-record lines to hear changes.",
+ "cast": {
+  "N": {
+   "voice": "cedar",
+   "speed": 1.0,
+   "instructions": "Voice Affect: A young man in first-century Judea telling what he saw with his own eyes; present, engaged, alive to the moment.\nTone: Warm and sincere, with quiet wonder.\nPacing: Natural storytelling; quicken slightly in tense moments and slow down for important ones.\nEmotion: Let the feeling of each moment come through: curiosity, fear, awe, grief, joy. Never flat or monotone.\nDelivery: Vary pitch and emphasis as a good storyteller does; brief pauses before turning points."
+  },
+  "W": {
+   "voice": "marin",
+   "speed": 1.0,
+   "instructions": "Voice Affect: A young woman in first-century Judea telling what she saw with her own eyes; bright, observant, alive to the moment.\nTone: Warm and sincere, with quiet wonder.\nPacing: Natural storytelling; quicken slightly in tense moments and slow down for important ones.\nEmotion: Let the feeling of each moment come through: curiosity, fear, awe, grief, joy. Never flat or monotone.\nDelivery: Clear, full and well projected; vary pitch and emphasis; brief pauses before turning points."
+  },
+  "S": {
+   "voice": "verse",
+   "speed": 0.95,
+   "instructions": "Voice Affect: A reader of Scripture before a gathering; resonant and assured.\nTone: Reverent but alive, never sing-song or droning.\nPacing: Measured, unhurried; rest at commas and between sentences.\nEmotion: Let the words carry their own weight: tender where they are tender, urgent where they are urgent.\nDelivery: Clear and well projected; give quoted speech a slightly different color from the narration."
+  },
+  "M": {
+   "voice": "ash",
+   "speed": 1.0,
+   "instructions": "Voice Affect: A man speaking in the moment, in his own voice.\nTone: Natural and conversational, matching what he says: wry, frightened, angry, kind or joyful.\nPacing: The rhythm of real speech, with small hesitations where they fit.\nEmotion: Genuine and specific; never flat, never overacted.\nDelivery: Full, clear voice."
+  },
+  "F": {
+   "voice": "coral",
+   "speed": 1.0,
+   "instructions": "Voice Affect: A woman speaking in the moment, in her own voice.\nTone: Natural and conversational, matching what she says: wry, grieving, urgent, kind or joyful.\nPacing: The rhythm of real speech, with small hesitations where they fit.\nEmotion: Genuine and specific; never flat, never overacted.\nDelivery: Full, clear and well projected, never breathy or quiet."
+  }
+ },
+ "kinds": {
+  "drama": "Context: Narration of what is happening right now, or a character speaking in the scene.",
+  "history": "Context: A short historical note, told like a good documentary narrator: interested and clear, a little lighter than the story itself.",
+  "scripture": "Context: A passage of Scripture read aloud; quoted speech within it belongs to the person speaking.",
+  "prompt": "Context: A question put quietly to the listener, inviting them to decide; slow down a little and let it hang.",
+  "answer": "Context: A remembered question and the answer that resolved it; let the answer land with quiet conviction."
+ }
+}

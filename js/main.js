@@ -769,6 +769,8 @@ window.TW = window.TW || {};
     const L = TW.Lines, lang = TW.Settings.get('lang') || 'en';
     const groups = L.groups(), keys = Object.keys(groups);
     checkRow(body, 'Play recorded voices when available', 'recordings');
+    pickRow(body, 'Voice speed', 'voiceSpeed', [['0.8', '0.8×'], ['0.9', '0.9×'], ['1', '1×'], ['1.1', '1.1×'], ['1.25', '1.25×'], ['1.5', '1.5×']], (v) => TW.Settings.set('voiceSpeed', Number(v)));
+    checkRow(body, 'Even out voice volume', 'voiceLevel');
     if (!DEV) { body.appendChild(el('p', 'empty', 'Recorded voices play wherever they exist. Any other line is read by your device’s voice.')); return; }
     body.appendChild(el('p', '', 'Developer tools (shown because the address has ?dev). Recordings in the game’s audio/' + lang + ' folder play automatically, line by line; any line without one is read by the device. Ready-made batches for TTS Studio, one per episode, are in the dub folder (dub/index.html on your published copy). You can also record your own with the iPhone’s Shortcuts app; see RECORDING.md.'));
     if (!keys.length) { body.appendChild(el('p', 'empty', 'Play an episode first; its lines will appear here.')); return; }

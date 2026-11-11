@@ -2,111 +2,133 @@
  {
   "id": "d-7e45b306",
   "voice": "N",
-  "text": "A traveler from Rome, grey with dust, puts a small sealed letter into Timothy’s hands. He knows the writing on the outside before he breaks the seal."
+  "text": "A traveler from Rome, grey with dust, puts a small sealed letter into Timothy’s hands. He knows the writing on the outside before he breaks the seal.",
+  "kind": "drama"
  },
  {
   "id": "d-889e8ec5",
   "voice": "N",
-  "text": "A cloak, because the cell is cold. The books. “Especially the parchments.” You have carried a scroll for nearly forty years; you know exactly what that means to a man."
+  "text": "A cloak, because the cell is cold. The books. “Especially the parchments.” You have carried a scroll for nearly forty years; you know exactly what that means to a man.",
+  "kind": "drama"
  },
  {
   "id": "d-a1f2fb06",
   "voice": "N",
-  "text": "Rome, July of AD 64. Fire breaks out near the Circus and burns for days. When it is over, much of the city is gone, and the emperor Nero needs someone to blame. He chooses the Christians."
+  "text": "Rome, July of AD 64. Fire breaks out near the Circus and burns for days. When it is over, much of the city is gone, and the emperor Nero needs someone to blame. He chooses the Christians.",
+  "kind": "history"
  },
  {
   "id": "d-b3fa8475",
   "voice": "N",
-  "text": "Scripture does not tell us whether they reached Paul in time. Early Christian writers say he was put to death in Rome under Nero. His letters were kept, copied, and read in the churches."
+  "text": "Scripture does not tell us whether they reached Paul in time. Early Christian writers say he was put to death in Rome under Nero. His letters were kept, copied, and read in the churches.",
+  "kind": "history"
  },
  {
   "id": "d-be802010",
   "voice": "N",
-  "text": "Timothy has stopped reading. His hands are shaking so that the papyrus rattles."
+  "text": "Timothy has stopped reading. His hands are shaking so that the papyrus rattles.",
+  "kind": "prompt"
  },
  {
   "id": "d-c6e40b89",
   "voice": "N",
-  "text": "It is already autumn. The sailing season is closing. “Be diligent to come before winter.”"
+  "text": "It is already autumn. The sailing season is closing. “Be diligent to come before winter.”",
+  "kind": "drama"
  },
  {
   "id": "d-c6fe9aba",
   "voice": "N",
-  "text": "Ephesus. You have grown old in this city. Timothy leads the church now; he is no longer the boy who cried outside the gate at Lystra. His mother Eunice still tells him to eat."
+  "text": "Ephesus. You have grown old in this city. Timothy leads the church now; he is no longer the boy who cried outside the gate at Lystra. His mother Eunice still tells him to eat.",
+  "kind": "drama"
  },
  {
   "id": "d-ccb7e579",
   "voice": "N",
-  "text": "“Acts ends with Paul teaching “without hindrance,” and does not say what happened next. Why might Luke end there?” (Acts 28:30–31)\n\nBecause the story was never Paul’s to finish. He wrote from his last prison: “God’s word isn’t chained.” (2 Timothy 2:9)"
+  "text": "“Acts ends with Paul teaching “without hindrance,” and does not say what happened next. Why might Luke end there?” (Acts 28:30–31)\n\nBecause the story was never Paul’s to finish. He wrote from his last prison: “God’s word isn’t chained.” (2 Timothy 2:9)",
+  "kind": "answer"
  },
  {
   "id": "d-cd11e34b",
   "voice": "W",
-  "text": "Ephesus. You have grown old in this city, beside Timothy’s mother Eunice, who still tells him to eat. Timothy leads the church now. He is no longer the boy who cried outside the gate at Lystra."
+  "text": "Ephesus. You have grown old in this city, beside Timothy’s mother Eunice, who still tells him to eat. Timothy leads the church now. He is no longer the boy who cried outside the gate at Lystra.",
+  "kind": "drama"
  },
  {
   "id": "d-de160f2d",
   "voice": "N",
-  "text": "Troas, at the house of Carpus. He has kept everything exactly as Paul left it: a heavy traveling cloak, a bundle of scrolls, and a flat leather case of parchments. Mark has come from the coast to go with you."
+  "text": "Troas, at the house of Carpus. He has kept everything exactly as Paul left it: a heavy traveling cloak, a bundle of scrolls, and a flat leather case of parchments. Mark has come from the coast to go with you.",
+  "kind": "drama"
  },
  {
   "id": "d-ed448ce4",
   "voice": "N",
-  "text": "Some time after this, Paul is arrested again. This time there is no rented house: he is chained as a criminal, and most of his friends are far away."
+  "text": "Some time after this, Paul is arrested again. This time there is no rented house: he is chained as a criminal, and most of his friends are far away.",
+  "kind": "history"
  },
  {
   "id": "d-f49c4726",
   "voice": "N",
-  "text": "Luke is waiting at the gate with a lamp. He looks at the cloak in Timothy’s arms, and at Mark, and at you, and for a moment he cannot speak. Then he says, “Come.”"
+  "text": "Luke is waiting at the gate with a lamp. He looks at the cloak in Timothy’s arms, and at Mark, and at you, and for a moment he cannot speak. Then he says, “Come.”",
+  "kind": "drama"
  },
  {
   "id": "d-fb0ac158",
   "voice": "N",
-  "text": "You sailed this sea with him once, in a storm, as a prisoner’s friend. You are old now, and the ship is small, and you hold the leather case in your lap the whole way."
+  "text": "You sailed this sea with him once, in a storm, as a prisoner’s friend. You are old now, and the ship is small, and you hold the leather case in your lap the whole way.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-06deeb7a",
   "voice": "S",
-  "text": "At my first defense, no one came to help me, but all left me. May it not be held against them. But the Lord stood by me, and strengthened me, that through me the message might be fully proclaimed, and that all the Gentiles might hear; and I was delivered out of the mouth of the lion. And the Lord will deliver me from every evil work, and will preserve me for his heavenly Kingdom; to whom be the glory forever and ever. Amen."
+  "text": "At my first defense, no one came to help me, but all left me. May it not be held against them. But the Lord stood by me, and strengthened me, that through me the message might be fully proclaimed, and that all the Gentiles might hear; and I was delivered out of the mouth of the lion. And the Lord will deliver me from every evil work, and will preserve me for his heavenly Kingdom; to whom be the glory forever and ever. Amen.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-1308632b",
   "voice": "S",
-  "text": "I thank God, whom I serve as my forefathers did, with a pure conscience. How unceasing is my memory of you in my petitions, night and day longing to see you, remembering your tears, that I may be filled with joy; having been reminded of the unfeigned faith that is in you; which lived first in your grandmother Lois, and your mother Eunice, and, I am persuaded, in you also."
+  "text": "I thank God, whom I serve as my forefathers did, with a pure conscience. How unceasing is my memory of you in my petitions, night and day longing to see you, remembering your tears, that I may be filled with joy; having been reminded of the unfeigned faith that is in you; which lived first in your grandmother Lois, and your mother Eunice, and, I am persuaded, in you also.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3b5dfaeb",
   "voice": "S",
-  "text": "For this cause I also suffer these things. Yet I am not ashamed, for I know him whom I have believed, and I am persuaded that he is able to guard that which I have committed to him against that day."
+  "text": "For this cause I also suffer these things. Yet I am not ashamed, for I know him whom I have believed, and I am persuaded that he is able to guard that which I have committed to him against that day.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-4e8db6e2",
   "voice": "S",
-  "text": "For God didn’t give us a spirit of fear, but of power, love, and self-control. Therefore don’t be ashamed of the testimony of our Lord, nor of me his prisoner; but endure hardship for the Good News according to the power of God,"
+  "text": "For God didn’t give us a spirit of fear, but of power, love, and self-control. Therefore don’t be ashamed of the testimony of our Lord, nor of me his prisoner; but endure hardship for the Good News according to the power of God,",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-603cb7b8",
   "voice": "S",
-  "text": "Remember Jesus Christ, risen from the dead, of the seed of David, according to my Good News, in which I suffer hardship to the point of chains as a criminal. But God’s word isn’t chained."
+  "text": "Remember Jesus Christ, risen from the dead, of the seed of David, according to my Good News, in which I suffer hardship to the point of chains as a criminal. But God’s word isn’t chained.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9cbaf91b",
   "voice": "S",
-  "text": "Be diligent to come before winter. Eubulus salutes you, as do Pudens, Linus, Claudia, and all the brothers. The Lord Jesus Christ be with your spirit. Grace be with you. Amen."
+  "text": "Be diligent to come before winter. Eubulus salutes you, as do Pudens, Linus, Claudia, and all the brothers. The Lord Jesus Christ be with your spirit. Grace be with you. Amen.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-b432f721",
   "voice": "S",
-  "text": "For I am already being offered, and the time of my departure has come. I have fought the good fight. I have finished the course. I have kept the faith. From now on, there is stored up for me the crown of righteousness, which the Lord, the righteous judge, will give to me on that day; and not to me only, but also to all those who have loved his appearing."
+  "text": "For I am already being offered, and the time of my departure has come. I have fought the good fight. I have finished the course. I have kept the faith. From now on, there is stored up for me the crown of righteousness, which the Lord, the righteous judge, will give to me on that day; and not to me only, but also to all those who have loved his appearing.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-bb887349",
   "voice": "S",
-  "text": "Only Luke is with me. Take Mark, and bring him with you, for he is useful to me for service."
+  "text": "Only Luke is with me. Take Mark, and bring him with you, for he is useful to me for service.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-d1b1463e",
   "voice": "S",
-  "text": "Be diligent to come to me soon, for Demas left me, having loved this present world, and went to Thessalonica; Crescens to Galatia, and Titus to Dalmatia. Only Luke is with me. Take Mark, and bring him with you, for he is useful to me for service. But I sent Tychicus to Ephesus. Bring the cloak that I left at Troas with Carpus when you come, and the books, especially the parchments."
+  "text": "Be diligent to come to me soon, for Demas left me, having loved this present world, and went to Thessalonica; Crescens to Galatia, and Titus to Dalmatia. Only Luke is with me. Take Mark, and bring him with you, for he is useful to me for service. But I sent Tychicus to Ephesus. Bring the cloak that I left at Troas with Carpus when you come, and the books, especially the parchments.",
+  "kind": "scripture"
  }
 ]

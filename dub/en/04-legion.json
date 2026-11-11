@@ -2,116 +2,141 @@
  {
   "id": "d-0c6511c1",
   "voice": "N",
-  "text": "The herders run for the town. What do you feel?"
+  "text": "The herders run for the town. What do you feel?",
+  "kind": "prompt"
  },
  {
   "id": "d-1f494e47",
   "voice": "M",
-  "text": "There is room in my boat for you and my wife, daughter, if you want to see where he goes."
+  "text": "There is room in my boat for you and my wife, daughter, if you want to see where he goes.",
+  "kind": "drama",
+  "speaker": "The fisherman from the beach"
  },
  {
   "id": "d-44d0c75e",
   "voice": "N",
-  "text": "This is largely Gentile country. The Law of Moses counted tombs, pigs and unclean spirits as defiling. A devout Jew would avoid all three, and here are all three at once."
+  "text": "This is largely Gentile country. The Law of Moses counted tombs, pigs and unclean spirits as defiling. A devout Jew would avoid all three, and here are all three at once.",
+  "kind": "history"
  },
  {
   "id": "d-450a15d2",
   "voice": "N",
-  "text": "The water is so still you can see the stars in it. No one in your boat says anything."
+  "text": "The water is so still you can see the stars in it. No one in your boat says anything.",
+  "kind": "drama"
  },
  {
   "id": "d-5e8daa5f",
   "voice": "N",
-  "text": "The lake lies about 210 m below sea level, ringed by hills. Cool air can pour down the slopes in the evening and raise steep waves very quickly."
+  "text": "The lake lies about 210 m below sea level, ringed by hills. Cool air can pour down the slopes in the evening and raise steep waves very quickly.",
+  "kind": "history"
  },
  {
   "id": "d-ef11a8db",
   "voice": "M",
-  "text": "There is room in my boat, scribe, if you want to see where he goes."
+  "text": "There is room in my boat, scribe, if you want to see where he goes.",
+  "kind": "drama",
+  "speaker": "The fisherman from the beach"
  },
  {
   "id": "d-f1ba8ae1",
   "voice": "N",
-  "text": "The Decapolis was a league of Greek-speaking cities, mostly east of the Jordan. The first person to tell about Jesus there was a man the whole region had been afraid of."
+  "text": "The Decapolis was a league of Greek-speaking cities, mostly east of the Jordan. The first person to tell about Jesus there was a man the whole region had been afraid of.",
+  "kind": "history"
  },
  {
   "id": "d-fcb1901a",
   "voice": "N",
-  "text": "“Who then is this?” What answer comes to you?"
+  "text": "“Who then is this?” What answer comes to you?",
+  "kind": "prompt"
  },
  {
   "id": "s-WEB-010ef6c3",
   "voice": "S",
-  "text": "On that day, when evening had come, he said to them, “Let’s go over to the other side.” Leaving the multitude, they took him with them, even as he was, in the boat. Other small boats were also with him."
+  "text": "On that day, when evening had come, he said to them, “Let’s go over to the other side.” Leaving the multitude, they took him with them, even as he was, in the boat. Other small boats were also with him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-0cca2ac3",
   "voice": "S",
-  "text": "He awoke, and rebuked the wind, and said to the sea, “Peace! Be still!” The wind ceased, and there was a great calm."
+  "text": "He awoke, and rebuked the wind, and said to the sea, “Peace! Be still!” The wind ceased, and there was a great calm.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-153dcb2f",
   "voice": "S",
-  "text": "They came to Jesus, and saw him who had been possessed by demons sitting, clothed, and in his right mind, even him who had the legion; and they were afraid. Those who saw it declared to them how it happened to him who was possessed by demons, and about the pigs. They began to beg him to depart from their region."
+  "text": "They came to Jesus, and saw him who had been possessed by demons sitting, clothed, and in his right mind, even him who had the legion; and they were afraid. Those who saw it declared to them how it happened to him who was possessed by demons, and about the pigs. They began to beg him to depart from their region.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-28f70e2f",
   "voice": "S",
-  "text": "Now there was on the mountainside a great herd of pigs feeding. All the demons begged him, saying, “Send us into the pigs, that we may enter into them.”"
+  "text": "Now there was on the mountainside a great herd of pigs feeding. All the demons begged him, saying, “Send us into the pigs, that we may enter into them.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-325e56fd",
   "voice": "S",
-  "text": "who had his dwelling in the tombs. Nobody could bind him any more, not even with chains, because he had been often bound with fetters and chains, and the chains had been torn apart by him, and the fetters broken in pieces. Nobody had the strength to tame him."
+  "text": "who had his dwelling in the tombs. Nobody could bind him any more, not even with chains, because he had been often bound with fetters and chains, and the chains had been torn apart by him, and the fetters broken in pieces. Nobody had the strength to tame him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3f892e80",
   "voice": "S",
-  "text": "A big wind storm arose, and the waves beat into the boat, so much that the boat was already filled."
+  "text": "A big wind storm arose, and the waves beat into the boat, so much that the boat was already filled.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-43b4beec",
   "voice": "S",
-  "text": "He went his way, and began to proclaim in Decapolis how Jesus had done great things for him, and everyone marveled."
+  "text": "He went his way, and began to proclaim in Decapolis how Jesus had done great things for him, and everyone marveled.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-511c04cc",
   "voice": "S",
-  "text": "He said to them, “Why are you so afraid? How is it that you have no faith?” They were greatly afraid, and said to one another, “Who then is this, that even the wind and the sea obey him?”"
+  "text": "He said to them, “Why are you so afraid? How is it that you have no faith?” They were greatly afraid, and said to one another, “Who then is this, that even the wind and the sea obey him?”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-563419cb",
   "voice": "S",
-  "text": "When he saw Jesus from afar, he ran and bowed down to him, and crying out with a loud voice, he said, “What have I to do with you, Jesus, you Son of the Most High God? I adjure you by God, don’t torment me.”"
+  "text": "When he saw Jesus from afar, he ran and bowed down to him, and crying out with a loud voice, he said, “What have I to do with you, Jesus, you Son of the Most High God? I adjure you by God, don’t torment me.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-5a82d889",
   "voice": "S",
-  "text": "At once Jesus gave them permission. The unclean spirits came out and entered into the pigs. The herd of about two thousand rushed down the steep bank into the sea, and they were drowned in the sea."
+  "text": "At once Jesus gave them permission. The unclean spirits came out and entered into the pigs. The herd of about two thousand rushed down the steep bank into the sea, and they were drowned in the sea.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-5f3ff0e1",
   "voice": "S",
-  "text": "For he said to him, “Come out of the man, you unclean spirit!” He asked him, “What is your name?” He said to him, “My name is Legion, for we are many.” He begged him much that he would not send them away out of the country."
+  "text": "For he said to him, “Come out of the man, you unclean spirit!” He asked him, “What is your name?” He said to him, “My name is Legion, for we are many.” He begged him much that he would not send them away out of the country.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-8ba0bbd8",
   "voice": "S",
-  "text": "Those who fed them fled, and told it in the city and in the country. The people came to see what it was that had happened."
+  "text": "Those who fed them fled, and told it in the city and in the country. The people came to see what it was that had happened.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-ab4b63f2",
   "voice": "S",
-  "text": "They came to the other side of the sea, into the country of the Gadarenes. When he had come out of the boat, immediately there met him out of the tombs a man with an unclean spirit,"
+  "text": "They came to the other side of the sea, into the country of the Gadarenes. When he had come out of the boat, immediately there met him out of the tombs a man with an unclean spirit,",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-b847589e",
   "voice": "S",
-  "text": "As he was entering into the boat, he who had been possessed by demons begged him that he might be with him. He didn’t allow him, but said to him, “Go to your house, to your friends, and tell them what great things the Lord has done for you, and how he had mercy on you.”"
+  "text": "As he was entering into the boat, he who had been possessed by demons begged him that he might be with him. He didn’t allow him, but said to him, “Go to your house, to your friends, and tell them what great things the Lord has done for you, and how he had mercy on you.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-c8c624ac",
   "voice": "S",
-  "text": "He himself was in the stern, asleep on the cushion, and they woke him up, and told him, “Teacher, don’t you care that we are dying?”"
+  "text": "He himself was in the stern, asleep on the cushion, and they woke him up, and told him, “Teacher, don’t you care that we are dying?”",
+  "kind": "scripture"
  }
 ]

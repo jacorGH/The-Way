@@ -2,51 +2,63 @@
  {
   "id": "d-21805294",
   "voice": "N",
-  "text": "Outside the Jericho gate, on the pilgrim road to Jerusalem, a man with bright, restless eyes is telling anyone who will stop how he used to sit right here and beg."
+  "text": "Outside the Jericho gate, on the pilgrim road to Jerusalem, a man with bright, restless eyes is telling anyone who will stop how he used to sit right here and beg.",
+  "kind": "drama"
  },
  {
   "id": "d-5c7236cb",
   "voice": "N",
-  "text": "He looks up the road toward Jerusalem. “I threw my cloak away when he called me,” he says. “I never went back for it.”"
+  "text": "He looks up the road toward Jerusalem. “I threw my cloak away when he called me,” he says. “I never went back for it.”",
+  "kind": "drama"
  },
  {
   "id": "d-7640a516",
   "voice": "M",
-  "text": "He asked me what I wanted. Not what I deserved. What I wanted."
+  "text": "He asked me what I wanted. Not what I deserved. What I wanted.",
+  "kind": "drama",
+  "speaker": "Bartimaeus, son of Timaeus"
  },
  {
   "id": "d-ea06da92",
   "voice": "M",
-  "text": "They told me to be quiet. I shouted louder."
+  "text": "They told me to be quiet. I shouted louder.",
+  "kind": "drama",
+  "speaker": "Bartimaeus, son of Timaeus"
  },
  {
   "id": "d-fb6e23ca",
   "voice": "N",
-  "text": "What do you ask Bartimaeus?"
+  "text": "What do you ask Bartimaeus?",
+  "kind": "prompt"
  },
  {
   "id": "s-WEB-169ad17c",
   "voice": "S",
-  "text": "They came to Jericho. As he went out from Jericho, with his disciples and a great multitude, the son of Timaeus, Bartimaeus, a blind beggar, was sitting by the road. When he heard that it was Jesus the Nazarene, he began to cry out, and say, “Jesus, you son of David, have mercy on me!”"
+  "text": "They came to Jericho. As he went out from Jericho, with his disciples and a great multitude, the son of Timaeus, Bartimaeus, a blind beggar, was sitting by the road. When he heard that it was Jesus the Nazarene, he began to cry out, and say, “Jesus, you son of David, have mercy on me!”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-26c61a67",
   "voice": "S",
-  "text": "He, casting away his cloak, sprang up, and came to Jesus. Jesus asked him, “What do you want me to do for you?” The blind man said to him, “Rhabboni, that I may see again.”"
+  "text": "He, casting away his cloak, sprang up, and came to Jesus. Jesus asked him, “What do you want me to do for you?” The blind man said to him, “Rhabboni, that I may see again.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3ee4f948",
   "voice": "S",
-  "text": "Many rebuked him, that he should be quiet, but he cried out much more, “You son of David, have mercy on me!”"
+  "text": "Many rebuked him, that he should be quiet, but he cried out much more, “You son of David, have mercy on me!”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-6bca068a",
   "voice": "S",
-  "text": "Jesus said to him, “Go your way. Your faith has made you well.” Immediately he received his sight, and followed Jesus in the way."
+  "text": "Jesus said to him, “Go your way. Your faith has made you well.” Immediately he received his sight, and followed Jesus in the way.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-e4365eba",
   "voice": "S",
-  "text": "Jesus stood still, and said, “Call him.” They called the blind man, saying to him, “Cheer up! Get up. He is calling you!”"
+  "text": "Jesus stood still, and said, “Call him.” They called the blind man, saying to him, “Cheer up! Get up. He is calling you!”",
+  "kind": "scripture"
  }
 ]

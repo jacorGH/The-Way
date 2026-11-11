@@ -2,136 +2,163 @@
  {
   "id": "d-3f6e93f0",
   "voice": "N",
-  "text": "You are no longer welcome on the scribes’ bench. You stand in the doorway and watch."
+  "text": "You are no longer welcome on the scribes’ bench. You stand in the doorway and watch.",
+  "kind": "drama"
  },
  {
   "id": "d-65f3e7e9",
   "voice": "W",
-  "text": "You are no longer welcome in this house. You stand at the outer door and watch."
+  "text": "You are no longer welcome in this house. You stand at the outer door and watch.",
+  "kind": "drama"
  },
  {
   "id": "d-87167d80",
   "voice": "N",
-  "text": "You are close enough to see his face. He is not angry. He watches as carefully as you do, as if it were his duty."
+  "text": "You are close enough to see his face. He is not angry. He watches as carefully as you do, as if it were his duty.",
+  "kind": "drama"
  },
  {
   "id": "d-b4dfce52",
   "voice": "N",
-  "text": "One of the men from Cilicia argues hardest: young, learned, quick with the Scriptures. Someone calls him Saul."
+  "text": "One of the men from Cilicia argues hardest: young, learned, quick with the Scriptures. Someone calls him Saul.",
+  "kind": "drama"
  },
  {
   "id": "d-c84f123e",
   "voice": "N",
-  "text": "He tells them the whole story of Israel: Abraham called out of Mesopotamia, Joseph sold into Egypt, Moses at the burning bush, the tent in the wilderness. He knows it as well as any scribe in the room."
+  "text": "He tells them the whole story of Israel: Abraham called out of Mesopotamia, Joseph sold into Egypt, Moses at the burning bush, the tent in the wilderness. He knows it as well as any scribe in the room.",
+  "kind": "drama"
  },
  {
   "id": "d-cf4b49fd",
   "voice": "N",
-  "text": "You go with Stephen to the synagogue where Jews from Cyrene, Alexandria and Cilicia gather. He means to tell them about Jesus in Greek, their own language."
+  "text": "You go with Stephen to the synagogue where Jews from Cyrene, Alexandria and Cilicia gather. He means to tell them about Jesus in Greek, their own language.",
+  "kind": "drama"
  },
  {
   "id": "d-d395de40",
   "voice": "N",
-  "text": "That night the believers who speak Greek begin to leave the city. Philip goes north toward Samaria. Someone has put your name on a list, and it is not Stephen’s."
+  "text": "That night the believers who speak Greek begin to leave the city. Philip goes north toward Samaria. Someone has put your name on a list, and it is not Stephen’s.",
+  "kind": "drama"
  },
  {
   "id": "d-d7b753b8",
   "voice": "W",
-  "text": "You stand by the door with your uncle’s writing case. No one here knows that you break bread with the man on trial."
+  "text": "You stand by the door with your uncle’s writing case. No one here knows that you break bread with the man on trial.",
+  "kind": "drama"
  },
  {
   "id": "d-e819bb9a",
   "voice": "N",
-  "text": "Where are you?"
+  "text": "Where are you?",
+  "kind": "prompt"
  },
  {
   "id": "d-f811d115",
   "voice": "N",
-  "text": "You take your seat on the scribes’ bench. No one here knows that you break bread with the man on trial."
+  "text": "You take your seat on the scribes’ bench. No one here knows that you break bread with the man on trial.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-241e3e01",
   "voice": "S",
-  "text": "He kneeled down, and cried with a loud voice, “Lord, don’t hold this sin against them!” When he had said this, he fell asleep."
+  "text": "He kneeled down, and cried with a loud voice, “Lord, don’t hold this sin against them!” When he had said this, he fell asleep.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-2607e2f5",
   "voice": "S",
-  "text": "Then they secretly induced men to say, “We have heard him speak blasphemous words against Moses and God.” They stirred up the people, the elders, and the scribes, and came against him and seized him, and brought him in to the council,"
+  "text": "Then they secretly induced men to say, “We have heard him speak blasphemous words against Moses and God.” They stirred up the people, the elders, and the scribes, and came against him and seized him, and brought him in to the council,",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-56ab6f06",
   "voice": "S",
-  "text": "Saul was consenting to his death. A great persecution arose against the assembly which was in Jerusalem in that day. They were all scattered abroad throughout the regions of Judea and Samaria, except for the apostles."
+  "text": "Saul was consenting to his death. A great persecution arose against the assembly which was in Jerusalem in that day. They were all scattered abroad throughout the regions of Judea and Samaria, except for the apostles.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-6383d153",
   "voice": "S",
-  "text": "and set up false witnesses who said, “This man never stops speaking blasphemous words against this holy place and the law. For we have heard him say that this Jesus of Nazareth will destroy this place, and will change the customs which Moses delivered to us.”"
+  "text": "and set up false witnesses who said, “This man never stops speaking blasphemous words against this holy place and the law. For we have heard him say that this Jesus of Nazareth will destroy this place, and will change the customs which Moses delivered to us.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-659572c6",
   "voice": "S",
-  "text": "Now when they heard these things, they were cut to the heart, and they gnashed at him with their teeth."
+  "text": "Now when they heard these things, they were cut to the heart, and they gnashed at him with their teeth.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-6f270646",
   "voice": "S",
-  "text": "Stephen, full of faith and power, performed great wonders and signs among the people. But some of those who were of the synagogue called “The Libertines,” and of the Cyrenians, of the Alexandrians, and of those of Cilicia and Asia arose, disputing with Stephen."
+  "text": "Stephen, full of faith and power, performed great wonders and signs among the people. But some of those who were of the synagogue called “The Libertines,” and of the Cyrenians, of the Alexandrians, and of those of Cilicia and Asia arose, disputing with Stephen.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-795305e3",
   "voice": "S",
-  "text": "“You stiff-necked and uncircumcised in heart and ears, you always resist the Holy Spirit! As your fathers did, so you do. Which of the prophets didn’t your fathers persecute? They killed those who foretold the coming of the Righteous One, of whom you have now become betrayers and murderers. You received the law as it was ordained by angels, and didn’t keep it!”"
+  "text": "“You stiff-necked and uncircumcised in heart and ears, you always resist the Holy Spirit! As your fathers did, so you do. Which of the prophets didn’t your fathers persecute? They killed those who foretold the coming of the Righteous One, of whom you have now become betrayers and murderers. You received the law as it was ordained by angels, and didn’t keep it!”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-7ccb3458",
   "voice": "S",
-  "text": "But Saul ravaged the assembly, entering into every house, and dragged both men and women off to prison. Therefore those who were scattered abroad went around preaching the word."
+  "text": "But Saul ravaged the assembly, entering into every house, and dragged both men and women off to prison. Therefore those who were scattered abroad went around preaching the word.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-811b645e",
   "voice": "S",
-  "text": "But they cried out with a loud voice, and stopped their ears, and rushed at him with one accord."
+  "text": "But they cried out with a loud voice, and stopped their ears, and rushed at him with one accord.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-8f86ade9",
   "voice": "S",
-  "text": "Devout men buried Stephen, and lamented greatly over him."
+  "text": "Devout men buried Stephen, and lamented greatly over him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-94ca81cd",
   "voice": "S",
-  "text": "The high priest said, “Are these things so?” He said, “Brothers and fathers, listen. The God of glory appeared to our father Abraham, when he was in Mesopotamia, before he lived in Haran,"
+  "text": "The high priest said, “Are these things so?” He said, “Brothers and fathers, listen. The God of glory appeared to our father Abraham, when he was in Mesopotamia, before he lived in Haran,",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-98fa1dcb",
   "voice": "S",
-  "text": "But he, being full of the Holy Spirit, looked up steadfastly into heaven, and saw the glory of God, and Jesus standing on the right hand of God, and said, “Behold, I see the heavens opened, and the Son of Man standing at the right hand of God!”"
+  "text": "But he, being full of the Holy Spirit, looked up steadfastly into heaven, and saw the glory of God, and Jesus standing on the right hand of God, and said, “Behold, I see the heavens opened, and the Son of Man standing at the right hand of God!”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-b5f44771",
   "voice": "S",
-  "text": "All who sat in the council, fastening their eyes on him, saw his face like it was the face of an angel."
+  "text": "All who sat in the council, fastening their eyes on him, saw his face like it was the face of an angel.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-baa20b7a",
   "voice": "S",
-  "text": "They weren’t able to withstand the wisdom and the Spirit by which he spoke."
+  "text": "They weren’t able to withstand the wisdom and the Spirit by which he spoke.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-c08952a2",
   "voice": "S",
-  "text": "They threw him out of the city, and stoned him. The witnesses placed their garments at the feet of a young man named Saul."
+  "text": "They threw him out of the city, and stoned him. The witnesses placed their garments at the feet of a young man named Saul.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f314783c",
   "voice": "S",
-  "text": "However, the Most High doesn’t dwell in temples made with hands, as the prophet says, ‘heaven is my throne, and the earth a footstool for my feet. What kind of house will you build me?’ says the Lord; ‘or what is the place of my rest? Didn’t my hand make all these things?’"
+  "text": "However, the Most High doesn’t dwell in temples made with hands, as the prophet says, ‘heaven is my throne, and the earth a footstool for my feet. What kind of house will you build me?’ says the Lord; ‘or what is the place of my rest? Didn’t my hand make all these things?’",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-fefacdc7",
   "voice": "S",
-  "text": "They stoned Stephen as he called out, saying, “Lord Jesus, receive my spirit!”"
+  "text": "They stoned Stephen as he called out, saying, “Lord Jesus, receive my spirit!”",
+  "kind": "scripture"
  }
 ]

@@ -2,131 +2,157 @@
  {
   "id": "d-038d574e",
   "voice": "N",
-  "text": "To quiet the rumors that he taught Jews to abandon the Law, the elders asked Paul to pay for the offerings of four men completing a vow, and to join them in the Temple (21:21–25)."
+  "text": "To quiet the rumors that he taught Jews to abandon the Law, the elders asked Paul to pay for the offerings of four men completing a vow, and to join them in the Temple (21:21–25).",
+  "kind": "history"
  },
  {
   "id": "d-1764a678",
   "voice": "N",
-  "text": "You saw Trophimus yesterday, in the lower city. He never came near the Temple. You open your mouth to say so, and no one could hear you if you shouted."
+  "text": "You saw Trophimus yesterday, in the lower city. He never came near the Temple. You open your mouth to say so, and no one could hear you if you shouted.",
+  "kind": "drama"
  },
  {
   "id": "d-22a08412",
   "voice": "N",
-  "text": "You come back with James at a run in time to hear him tell the Damascus road. You were there for the beginning of that story. You never thought you would hear him tell it here."
+  "text": "You come back with James at a run in time to hear him tell the Damascus road. You were there for the beginning of that story. You never thought you would hear him tell it here.",
+  "kind": "drama"
  },
  {
   "id": "d-3dfb3719",
   "voice": "N",
-  "text": "He tells them the Damascus road: the light at noon, the voice, the blindness, Ananias. You were there for the beginning of that story. You never thought you would hear him tell it here."
+  "text": "He tells them the Damascus road: the light at noon, the voice, the blindness, Ananias. You were there for the beginning of that story. You never thought you would hear him tell it here.",
+  "kind": "drama"
  },
  {
   "id": "d-455bc438",
   "voice": "N",
-  "text": "Caesarea, by the sea: the house of Philip, who once ran beside a chariot on the desert road. He is grey now. His four daughters pour the wine."
+  "text": "Caesarea, by the sea: the house of Philip, who once ran beside a chariot on the desert road. He is grey now. His four daughters pour the wine.",
+  "kind": "drama"
  },
  {
   "id": "d-cc203c39",
   "voice": "N",
-  "text": "“Away with him!” The crowd cried the same thing outside Pilate’s gate, the morning they crucified Jesus. Where do you go?"
+  "text": "“Away with him!” The crowd cried the same thing outside Pilate’s gate, the morning they crucified Jesus. Where do you go?",
+  "kind": "prompt"
  },
  {
   "id": "d-f235bb3f",
   "voice": "N",
-  "text": "You are home. You have not seen these walls in years. The city smells the same: smoke, sheep, the sea wind that never quite reaches it."
+  "text": "You are home. You have not seen these walls in years. The city smells the same: smoke, sheep, the sea wind that never quite reaches it.",
+  "kind": "drama"
  },
  {
   "id": "d-f3dbaa2b",
   "voice": "W",
-  "text": "The four of them prophesy, Luke says, as easily as other girls sing. The youngest asks you about Jerusalem, and about the women who went to the tomb."
+  "text": "The four of them prophesy, Luke says, as easily as other girls sing. The youngest asks you about Jerusalem, and about the women who went to the tomb.",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-03cbc893",
   "voice": "S",
-  "text": "When the blood of Stephen, your witness, was shed, I also was standing by, and consenting to his death, and guarding the cloaks of those who killed him.’ “He said to me, ‘Depart, for I will send you out far from here to the Gentiles.’”"
+  "text": "When the blood of Stephen, your witness, was shed, I also was standing by, and consenting to his death, and guarding the cloaks of those who killed him.’ “He said to me, ‘Depart, for I will send you out far from here to the Gentiles.’”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-08d629eb",
   "voice": "S",
-  "text": "When he came to the stairs, it happened that he was carried by the soldiers because of the violence of the crowd; for the multitude of the people followed after, crying out, “Away with him!”"
+  "text": "When he came to the stairs, it happened that he was carried by the soldiers because of the violence of the crowd; for the multitude of the people followed after, crying out, “Away with him!”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-1fa313ab",
   "voice": "S",
-  "text": "Then Paul answered, “What are you doing, weeping and breaking my heart? For I am ready not only to be bound, but also to die at Jerusalem for the name of the Lord Jesus.” When he would not be persuaded, we ceased, saying, “The Lord’s will be done.”"
+  "text": "Then Paul answered, “What are you doing, weeping and breaking my heart? For I am ready not only to be bound, but also to die at Jerusalem for the name of the Lord Jesus.” When he would not be persuaded, we ceased, saying, “The Lord’s will be done.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-2fdf3eb0",
   "voice": "S",
-  "text": "When we heard these things, both we and they of that place begged him not to go up to Jerusalem."
+  "text": "When we heard these things, both we and they of that place begged him not to go up to Jerusalem.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-3458b17b",
   "voice": "S",
-  "text": "They listened to him until he said that; then they lifted up their voice, and said, “Rid the earth of this fellow, for he isn’t fit to live!” As they cried out, and threw off their cloaks, and threw dust into the air, the commanding officer commanded him to be brought into the barracks, ordering him to be examined by scourging, that he might know for what crime they shouted against him like that."
+  "text": "They listened to him until he said that; then they lifted up their voice, and said, “Rid the earth of this fellow, for he isn’t fit to live!” As they cried out, and threw off their cloaks, and threw dust into the air, the commanding officer commanded him to be brought into the barracks, ordering him to be examined by scourging, that he might know for what crime they shouted against him like that.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-7e7eec5f",
   "voice": "S",
-  "text": "On the next day, we, who were Paul’s companions, departed, and came to Caesarea. We entered into the house of Philip the evangelist, who was one of the seven, and stayed with him. Now this man had four virgin daughters who prophesied."
+  "text": "On the next day, we, who were Paul’s companions, departed, and came to Caesarea. We entered into the house of Philip the evangelist, who was one of the seven, and stayed with him. Now this man had four virgin daughters who prophesied.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-7e98cc2b",
   "voice": "S",
-  "text": "“Brothers and fathers, listen to the defense which I now make to you.” When they heard that he spoke to them in the Hebrew language, they were even more quiet. He said, “I am indeed a Jew, born in Tarsus of Cilicia, but brought up in this city at the feet of Gamaliel, instructed according to the strict manner of the law of our fathers, being zealous for God, even as you all are this day. I persecuted this Way to the death, binding and delivering into prisons both men and women."
+  "text": "“Brothers and fathers, listen to the defense which I now make to you.” When they heard that he spoke to them in the Hebrew language, they were even more quiet. He said, “I am indeed a Jew, born in Tarsus of Cilicia, but brought up in this city at the feet of Gamaliel, instructed according to the strict manner of the law of our fathers, being zealous for God, even as you all are this day. I persecuted this Way to the death, binding and delivering into prisons both men and women.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-8b83660e",
   "voice": "S",
-  "text": "When we had come to Jerusalem, the brothers received us gladly. The day following, Paul went in with us to James; and all the elders were present. When he had greeted them, he reported one by one the things which God had worked among the Gentiles through his ministry. They, when they heard it, glorified God. They said to him, “You see, brother, how many thousands there are among the Jews of those who have believed, and they are all zealous for the law."
+  "text": "When we had come to Jerusalem, the brothers received us gladly. The day following, Paul went in with us to James; and all the elders were present. When he had greeted them, he reported one by one the things which God had worked among the Gentiles through his ministry. They, when they heard it, glorified God. They said to him, “You see, brother, how many thousands there are among the Jews of those who have believed, and they are all zealous for the law.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-94fa03ae",
   "voice": "S",
-  "text": "As we stayed there some days, a certain prophet named Agabus came down from Judea."
+  "text": "As we stayed there some days, a certain prophet named Agabus came down from Judea.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-a0e18408",
   "voice": "S",
-  "text": "Coming to us, and taking Paul’s belt, he bound his own feet and hands, and said, “Thus says the Holy Spirit: ‘So will the Jews at Jerusalem bind the man who owns this belt, and will deliver him into the hands of the Gentiles.’”"
+  "text": "Coming to us, and taking Paul’s belt, he bound his own feet and hands, and said, “Thus says the Holy Spirit: ‘So will the Jews at Jerusalem bind the man who owns this belt, and will deliver him into the hands of the Gentiles.’”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-bec7c9d8",
   "voice": "S",
-  "text": "As Paul was about to be brought into the barracks, he asked the commanding officer, “May I speak to you?” He said, “Do you know Greek? Aren’t you then the Egyptian, who before these days stirred up to sedition and led out into the wilderness the four thousand men of the Assassins?” But Paul said, “I am a Jew, from Tarsus in Cilicia, a citizen of no insignificant city. I beg you, allow me to speak to the people.”"
+  "text": "As Paul was about to be brought into the barracks, he asked the commanding officer, “May I speak to you?” He said, “Do you know Greek? Aren’t you then the Egyptian, who before these days stirred up to sedition and led out into the wilderness the four thousand men of the Assassins?” But Paul said, “I am a Jew, from Tarsus in Cilicia, a citizen of no insignificant city. I beg you, allow me to speak to the people.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-d4dd1673",
   "voice": "S",
-  "text": "Immediately he took soldiers and centurions, and ran down to them. They, when they saw the chief captain and the soldiers, stopped beating Paul. Then the commanding officer came near, arrested him, commanded him to be bound with two chains, and inquired who he was and what he had done. Some shouted one thing, and some another, among the crowd. When he couldn’t find out the truth because of the noise, he commanded him to be brought into the barracks."
+  "text": "Immediately he took soldiers and centurions, and ran down to them. They, when they saw the chief captain and the soldiers, stopped beating Paul. Then the commanding officer came near, arrested him, commanded him to be bound with two chains, and inquired who he was and what he had done. Some shouted one thing, and some another, among the crowd. When he couldn’t find out the truth because of the noise, he commanded him to be brought into the barracks.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-d92a9a78",
   "voice": "S",
-  "text": "When they had tied him up with thongs, Paul asked the centurion who stood by, “Is it lawful for you to scourge a man who is a Roman, and not found guilty?” When the centurion heard it, he went to the commanding officer and told him, “Watch what you are about to do, for this man is a Roman!” The commanding officer came and asked him, “Tell me, are you a Roman?” He said, “Yes.” The commanding officer answered, “I bought my citizenship for a great price.” Paul said, “But I was born a Roman.” Immediately those who were about to examine him departed from him, and the commanding officer also was afraid when he realized that he was a Roman, because he had bound him."
+  "text": "When they had tied him up with thongs, Paul asked the centurion who stood by, “Is it lawful for you to scourge a man who is a Roman, and not found guilty?” When the centurion heard it, he went to the commanding officer and told him, “Watch what you are about to do, for this man is a Roman!” The commanding officer came and asked him, “Tell me, are you a Roman?” He said, “Yes.” The commanding officer answered, “I bought my citizenship for a great price.” Paul said, “But I was born a Roman.” Immediately those who were about to examine him departed from him, and the commanding officer also was afraid when he realized that he was a Roman, because he had bound him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-d961c56f",
   "voice": "S",
-  "text": "He said, ‘The God of our fathers has appointed you to know his will, and to see the Righteous One, and to hear a voice from his mouth. For you will be a witness for him to all men of what you have seen and heard."
+  "text": "He said, ‘The God of our fathers has appointed you to know his will, and to see the Righteous One, and to hear a voice from his mouth. For you will be a witness for him to all men of what you have seen and heard.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-e57d10ea",
   "voice": "S",
-  "text": "All the city was moved, and the people ran together. They seized Paul and dragged him out of the temple. Immediately the doors were shut. As they were trying to kill him, news came up to the commanding officer of the regiment that all Jerusalem was in an uproar."
+  "text": "All the city was moved, and the people ran together. They seized Paul and dragged him out of the temple. Immediately the doors were shut. As they were trying to kill him, news came up to the commanding officer of the regiment that all Jerusalem was in an uproar.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f83a2f08",
   "voice": "S",
-  "text": "When he had given him permission, Paul, standing on the stairs, beckoned with his hand to the people. When there was a great silence, he spoke to them in the Hebrew language, saying,"
+  "text": "When he had given him permission, Paul, standing on the stairs, beckoned with his hand to the people. When there was a great silence, he spoke to them in the Hebrew language, saying,",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-f8f71e1b",
   "voice": "S",
-  "text": "Then Paul took the men, and the next day, purified himself and went with them into the temple, declaring the fulfillment of the days of purification, until the offering was offered for every one of them."
+  "text": "Then Paul took the men, and the next day, purified himself and went with them into the temple, declaring the fulfillment of the days of purification, until the offering was offered for every one of them.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-fb41a3a2",
   "voice": "S",
-  "text": "When the seven days were almost completed, the Jews from Asia, when they saw him in the temple, stirred up all the multitude and laid hands on him, crying out, “Men of Israel, help! This is the man who teaches all men everywhere against the people, and the law, and this place. Moreover, he also brought Greeks into the temple, and has defiled this holy place!” For they had seen Trophimus, the Ephesian, with him in the city, and they supposed that Paul had brought him into the temple."
+  "text": "When the seven days were almost completed, the Jews from Asia, when they saw him in the temple, stirred up all the multitude and laid hands on him, crying out, “Men of Israel, help! This is the man who teaches all men everywhere against the people, and the law, and this place. Moreover, he also brought Greeks into the temple, and has defiled this holy place!” For they had seen Trophimus, the Ephesian, with him in the city, and they supposed that Paul had brought him into the temple.",
+  "kind": "scripture"
  }
 ]

@@ -2,66 +2,80 @@
  {
   "id": "d-20e4ed28",
   "voice": "N",
-  "text": "A man laughs in the courtyard, a big, living laugh. Martha glances at him. “That is my brother,” she says, and goes back to her work."
+  "text": "A man laughs in the courtyard, a big, living laugh. Martha glances at him. “That is my brother,” she says, and goes back to her work.",
+  "kind": "drama"
  },
  {
   "id": "d-5b553984",
   "voice": "F",
-  "text": "Four days. I said exactly what I thought."
+  "text": "Four days. I said exactly what I thought.",
+  "kind": "drama",
+  "speaker": "Martha of Bethany"
  },
  {
   "id": "d-6149d63a",
   "voice": "N",
-  "text": "Bethany is crowded with people who have come to see Lazarus, the man who was dead. His sister Martha is serving them all, and talks to you while she works."
+  "text": "Bethany is crowded with people who have come to see Lazarus, the man who was dead. His sister Martha is serving them all, and talks to you while she works.",
+  "kind": "drama"
  },
  {
   "id": "d-cceffd9c",
   "voice": "N",
-  "text": "What do you ask Martha of Bethany?"
+  "text": "What do you ask Martha of Bethany?",
+  "kind": "prompt"
  },
  {
   "id": "s-WEB-3392fe41",
   "voice": "S",
-  "text": "He who was dead came out, bound hand and foot with wrappings, and his face was wrapped around with a cloth. Jesus said to them, “Free him, and let him go.” Therefore many of the Jews, who came to Mary and saw what Jesus did, believed in him."
+  "text": "He who was dead came out, bound hand and foot with wrappings, and his face was wrapped around with a cloth. Jesus said to them, “Free him, and let him go.” Therefore many of the Jews, who came to Mary and saw what Jesus did, believed in him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-412119b5",
   "voice": "S",
-  "text": "When he had said this, he cried with a loud voice, “Lazarus, come out!”"
+  "text": "When he had said this, he cried with a loud voice, “Lazarus, come out!”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-55b618a3",
   "voice": "S",
-  "text": "So they took away the stone from the place where the dead man was lying. Jesus lifted up his eyes, and said, “Father, I thank you that you listened to me. I know that you always listen to me, but because of the multitude that stands around I said this, that they may believe that you sent me.”"
+  "text": "So they took away the stone from the place where the dead man was lying. Jesus lifted up his eyes, and said, “Father, I thank you that you listened to me. I know that you always listen to me, but because of the multitude that stands around I said this, that they may believe that you sent me.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-7a024aba",
   "voice": "S",
-  "text": "Therefore when Mary came to where Jesus was, and saw him, she fell down at his feet, saying to him, “Lord, if you would have been here, my brother wouldn’t have died.” When Jesus therefore saw her weeping, and the Jews weeping who came with her, he groaned in the spirit, and was troubled, and said, “Where have you laid him?” They told him, “Lord, come and see.”"
+  "text": "Therefore when Mary came to where Jesus was, and saw him, she fell down at his feet, saying to him, “Lord, if you would have been here, my brother wouldn’t have died.” When Jesus therefore saw her weeping, and the Jews weeping who came with her, he groaned in the spirit, and was troubled, and said, “Where have you laid him?” They told him, “Lord, come and see.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-8118797b",
   "voice": "S",
-  "text": "Therefore Martha said to Jesus, “Lord, if you would have been here, my brother wouldn’t have died. Even now I know that, whatever you ask of God, God will give you.”"
+  "text": "Therefore Martha said to Jesus, “Lord, if you would have been here, my brother wouldn’t have died. Even now I know that, whatever you ask of God, God will give you.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-95d926e1",
   "voice": "S",
-  "text": "Jesus therefore, again groaning in himself, came to the tomb. Now it was a cave, and a stone lay against it. Jesus said, “Take away the stone.” Martha, the sister of him who was dead, said to him, “Lord, by this time there is a stench, for he has been dead four days.” Jesus said to her, “Didn’t I tell you that if you believed, you would see God’s glory?”"
+  "text": "Jesus therefore, again groaning in himself, came to the tomb. Now it was a cave, and a stone lay against it. Jesus said, “Take away the stone.” Martha, the sister of him who was dead, said to him, “Lord, by this time there is a stench, for he has been dead four days.” Jesus said to her, “Didn’t I tell you that if you believed, you would see God’s glory?”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-df044d0d",
   "voice": "S",
-  "text": "Jesus said to her, “Your brother will rise again.” Martha said to him, “I know that he will rise again in the resurrection at the last day.” Jesus said to her, “I am the resurrection and the life. He who believes in me will still live, even if he dies. Whoever lives and believes in me will never die. Do you believe this?” She said to him, “Yes, Lord. I have come to believe that you are the Christ, God’s Son, he who comes into the world.”"
+  "text": "Jesus said to her, “Your brother will rise again.” Martha said to him, “I know that he will rise again in the resurrection at the last day.” Jesus said to her, “I am the resurrection and the life. He who believes in me will still live, even if he dies. Whoever lives and believes in me will never die. Do you believe this?” She said to him, “Yes, Lord. I have come to believe that you are the Christ, God’s Son, he who comes into the world.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-ebc3f48c",
   "voice": "S",
-  "text": "Jesus wept. The Jews therefore said, “See how much affection he had for him!”"
+  "text": "Jesus wept. The Jews therefore said, “See how much affection he had for him!”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-fe3ddafd",
   "voice": "S",
-  "text": "So when Jesus came, he found that he had been in the tomb four days already. Now Bethany was near Jerusalem, about fifteen stadia away. Many of the Jews had joined the women around Martha and Mary, to console them concerning their brother. Then when Martha heard that Jesus was coming, she went and met him, but Mary stayed in the house."
+  "text": "So when Jesus came, he found that he had been in the tomb four days already. Now Bethany was near Jerusalem, about fifteen stadia away. Many of the Jews had joined the women around Martha and Mary, to console them concerning their brother. Then when Martha heard that Jesus was coming, she went and met him, but Mary stayed in the house.",
+  "kind": "scripture"
  }
 ]

@@ -2,51 +2,63 @@
  {
   "id": "d-2bc6861d",
   "voice": "N",
-  "text": "What do you ask Simon’s wife’s mother?"
+  "text": "What do you ask Simon’s wife’s mother?",
+  "kind": "prompt"
  },
  {
   "id": "d-3773d703",
   "voice": "N",
-  "text": "An older woman is sweeping the threshold of a house near the synagogue. When you ask about Jesus, she sets her broom against the wall."
+  "text": "An older woman is sweeping the threshold of a house near the synagogue. When you ask about Jesus, she sets her broom against the wall.",
+  "kind": "drama"
  },
  {
   "id": "d-46d949a8",
   "voice": "F",
-  "text": "I was burning with fever. I could not lift my head."
+  "text": "I was burning with fever. I could not lift my head.",
+  "kind": "drama",
+  "speaker": "Simon’s wife’s mother"
  },
  {
   "id": "d-7a12ffb2",
   "voice": "F",
-  "text": "The whole town at our door. I have never seen this street so full, before or since."
+  "text": "The whole town at our door. I have never seen this street so full, before or since.",
+  "kind": "drama",
+  "speaker": "Simon’s wife’s mother"
  },
  {
   "id": "d-b8d78c26",
   "voice": "N",
-  "text": "She picks up her broom again. “Write it down, scribe. The fever left, and I got up and served them.”"
+  "text": "She picks up her broom again. “Write it down, scribe. The fever left, and I got up and served them.”",
+  "kind": "drama"
  },
  {
   "id": "d-ca66ad48",
   "voice": "W",
-  "text": "She picks up her broom again. “Write it down, daughter. The fever left, and I got up and served them.”"
+  "text": "She picks up her broom again. “Write it down, daughter. The fever left, and I got up and served them.”",
+  "kind": "drama"
  },
  {
   "id": "s-WEB-83ec9cfe",
   "voice": "S",
-  "text": "He came and took her by the hand, and raised her up. The fever left her, and she served them."
+  "text": "He came and took her by the hand, and raised her up. The fever left her, and she served them.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-a7d8e35d",
   "voice": "S",
-  "text": "At evening, when the sun had set, they brought to him all who were sick, and those who were possessed by demons. All the city was gathered together at the door."
+  "text": "At evening, when the sun had set, they brought to him all who were sick, and those who were possessed by demons. All the city was gathered together at the door.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-a9b0b147",
   "voice": "S",
-  "text": "He healed many who were sick with various diseases, and cast out many demons. He didn’t allow the demons to speak, because they knew him."
+  "text": "He healed many who were sick with various diseases, and cast out many demons. He didn’t allow the demons to speak, because they knew him.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-c54b63b7",
   "voice": "S",
-  "text": "Immediately, when they had come out of the synagogue, they came into the house of Simon and Andrew, with James and John. Now Simon’s wife’s mother lay sick with a fever, and immediately they told him about her."
+  "text": "Immediately, when they had come out of the synagogue, they came into the house of Simon and Andrew, with James and John. Now Simon’s wife’s mother lay sick with a fever, and immediately they told him about her.",
+  "kind": "scripture"
  }
 ]

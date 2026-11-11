@@ -2,246 +2,303 @@
  {
   "id": "d-0630711a",
   "voice": "M",
-  "text": "They tell me you are a scribe, and that you counted the widows at the back of the line. I need someone who can keep lists, and who knows why they matter. Will you help me?"
+  "text": "They tell me you are a scribe, and that you counted the widows at the back of the line. I need someone who can keep lists, and who knows why they matter. Will you help me?",
+  "kind": "drama",
+  "speaker": "Stephen"
  },
  {
   "id": "d-167e7bd4",
   "voice": "N",
-  "text": "From now on there are people in this city who need you. Look for them on the map."
+  "text": "From now on there are people in this city who need you. Look for them on the map.",
+  "kind": "drama"
  },
  {
   "id": "d-1923176f",
   "voice": "N",
-  "text": "Lydia of Antioch, alone. Loaves left: 8."
+  "text": "Lydia of Antioch, alone. Loaves left: 8.",
+  "kind": "prompt"
  },
  {
   "id": "d-225c9e22",
   "voice": "M",
-  "text": "I have 1 at home. They do not let us near the front."
+  "text": "I have 1 at home. They do not let us near the front.",
+  "kind": "drama",
+  "speaker": "Euodia of Alexandria"
  },
  {
   "id": "d-26b06c42",
   "voice": "M",
-  "text": "Twelve loaves today, that is all. Start at the front. The ones at the back are the Greek speakers; they came late from the lower city, and they can wait."
+  "text": "Twelve loaves today, that is all. Start at the front. The ones at the back are the Greek speakers; they came late from the lower city, and they can wait.",
+  "kind": "drama",
+  "speaker": "Your helper"
  },
  {
   "id": "d-29594510",
   "voice": "N",
-  "text": "Miriam of Alexandria. Loaves left: 5."
+  "text": "Miriam of Alexandria. Loaves left: 5.",
+  "kind": "prompt"
  },
  {
   "id": "d-2de01b39",
   "voice": "N",
-  "text": "Miriam of Alexandria, alone. Loaves left: 12."
+  "text": "Miriam of Alexandria, alone. Loaves left: 12.",
+  "kind": "prompt"
  },
  {
   "id": "d-35792895",
   "voice": "N",
-  "text": "Theodora of Cyrene, with 3 children at home. Loaves left: 6."
+  "text": "Theodora of Cyrene, with 3 children at home. Loaves left: 6.",
+  "kind": "prompt"
  },
  {
   "id": "d-3d5261b3",
   "voice": "N",
-  "text": "Theodora of Cyrene. Loaves left: 8."
+  "text": "Theodora of Cyrene. Loaves left: 8.",
+  "kind": "prompt"
  },
  {
   "id": "d-3d616c3d",
   "voice": "N",
-  "text": "Theodora of Cyrene. Loaves left: 6."
+  "text": "Theodora of Cyrene. Loaves left: 6.",
+  "kind": "prompt"
  },
  {
   "id": "d-3f2b4bc3",
   "voice": "N",
-  "text": "The believers now number in the thousands. Every afternoon the widows come to this courtyard for bread. Today the man who usually helps is sick, and you have been asked to take his place."
+  "text": "The believers now number in the thousands. Every afternoon the widows come to this courtyard for bread. Today the man who usually helps is sick, and you have been asked to take his place.",
+  "kind": "drama"
  },
  {
   "id": "d-48b6a54e",
   "voice": "N",
-  "text": "Euodia of Alexandria. Loaves left: 10."
+  "text": "Euodia of Alexandria. Loaves left: 10.",
+  "kind": "prompt"
  },
  {
   "id": "d-4df12eeb",
   "voice": "F",
-  "text": "Only me now."
+  "text": "Only me now.",
+  "kind": "drama",
+  "speaker": "Miriam of Alexandria"
  },
  {
   "id": "d-50d2d314",
   "voice": "M",
-  "text": "1 child, and nothing in the house."
+  "text": "1 child, and nothing in the house.",
+  "kind": "drama",
+  "speaker": "Rivka"
  },
  {
   "id": "d-5a981c81",
   "voice": "N",
-  "text": "You have run this courtyard for one afternoon. The widows from the Dispersion have stood at the back of it every day for months."
+  "text": "You have run this courtyard for one afternoon. The widows from the Dispersion have stood at the back of it every day for months.",
+  "kind": "drama"
  },
  {
   "id": "d-6de9c37b",
   "voice": "N",
-  "text": "Lydia of Antioch. Loaves left: 7."
+  "text": "Lydia of Antioch. Loaves left: 7.",
+  "kind": "prompt"
  },
  {
   "id": "d-6eda70de",
   "voice": "N",
-  "text": "Dinah. Loaves left: 4."
+  "text": "Dinah. Loaves left: 4.",
+  "kind": "prompt"
  },
  {
   "id": "d-74049c15",
   "voice": "N",
-  "text": "Euodia of Alexandria. Loaves left: 6."
+  "text": "Euodia of Alexandria. Loaves left: 6.",
+  "kind": "prompt"
  },
  {
   "id": "d-7791ad91",
   "voice": "N",
-  "text": "Rivka. Loaves left: 2."
+  "text": "Rivka. Loaves left: 2.",
+  "kind": "prompt"
  },
  {
   "id": "d-7a5fd60f",
   "voice": "M",
-  "text": "They tell me you can read and write, and that you counted the widows at the back of the line. I need someone who can keep lists, and who knows why they matter. Will you help me?"
+  "text": "They tell me you can read and write, and that you counted the widows at the back of the line. I need someone who can keep lists, and who knows why they matter. Will you help me?",
+  "kind": "drama",
+  "speaker": "Stephen"
  },
  {
   "id": "d-8d1c6008",
   "voice": "M",
-  "text": "I have 3 at home. They do not let us near the front."
+  "text": "I have 3 at home. They do not let us near the front.",
+  "kind": "drama",
+  "speaker": "Theodora of Cyrene"
  },
  {
   "id": "d-8dc2b25a",
   "voice": "N",
-  "text": "Every widow goes home with bread. Not all of them with enough."
+  "text": "Every widow goes home with bread. Not all of them with enough.",
+  "kind": "drama"
  },
  {
   "id": "d-90becfe7",
   "voice": "N",
-  "text": "Dinah. Loaves left: 9."
+  "text": "Dinah. Loaves left: 9.",
+  "kind": "prompt"
  },
  {
   "id": "d-954de4c2",
   "voice": "N",
-  "text": "Rivka, with 1 child at home. Loaves left: 2."
+  "text": "Rivka, with 1 child at home. Loaves left: 2.",
+  "kind": "prompt"
  },
  {
   "id": "d-b0b9254e",
   "voice": "N",
-  "text": "Rivka. Loaves left: 10."
+  "text": "Rivka. Loaves left: 10.",
+  "kind": "prompt"
  },
  {
   "id": "d-b1a1e2e7",
   "voice": "N",
-  "text": "Euodia of Alexandria, with 1 child at home. Loaves left: 10."
+  "text": "Euodia of Alexandria, with 1 child at home. Loaves left: 10.",
+  "kind": "prompt"
  },
  {
   "id": "d-b5b51191",
   "voice": "N",
-  "text": "Yohanna of Bethany. Loaves left: 12."
+  "text": "Yohanna of Bethany. Loaves left: 12.",
+  "kind": "prompt"
  },
  {
   "id": "d-cbce80f8",
   "voice": "N",
-  "text": "Lydia of Antioch. Loaves left: 8."
+  "text": "Lydia of Antioch. Loaves left: 8.",
+  "kind": "prompt"
  },
  {
   "id": "d-cdb35814",
   "voice": "N",
-  "text": "The basket is empty. Yohanna of Bethany, Shoshanna are still standing in the courtyard with empty hands."
+  "text": "The basket is empty. Yohanna of Bethany, Shoshanna are still standing in the courtyard with empty hands.",
+  "kind": "drama"
  },
  {
   "id": "d-d02c0caf",
   "voice": "N",
-  "text": "Shoshanna. Loaves left: 11."
+  "text": "Shoshanna. Loaves left: 11.",
+  "kind": "prompt"
  },
  {
   "id": "d-e8c97dd2",
   "voice": "N",
-  "text": "Miriam of Alexandria. Loaves left: 12."
+  "text": "Miriam of Alexandria. Loaves left: 12.",
+  "kind": "prompt"
  },
  {
   "id": "d-ede16699",
   "voice": "N",
-  "text": "Dinah, alone. Loaves left: 4."
+  "text": "Dinah, alone. Loaves left: 4.",
+  "kind": "prompt"
  },
  {
   "id": "d-fe14d5e9",
   "voice": "N",
-  "text": "Twelve loaves, eight widows. Where do you begin?"
+  "text": "Twelve loaves, eight widows. Where do you begin?",
+  "kind": "prompt"
  },
  {
   "id": "s-WEB-8e639aae",
   "voice": "S",
-  "text": "whom they set before the apostles. When they had prayed, they laid their hands on them."
+  "text": "whom they set before the apostles. When they had prayed, they laid their hands on them.",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9896ace5",
   "voice": "S",
-  "text": "Now in those days, when the number of the disciples was multiplying, a complaint arose from the Hellenists against the Hebrews, because their widows were neglected in the daily service. The twelve summoned the multitude of the disciples and said, “It is not appropriate for us to forsake the word of God and serve tables. Therefore select from among you, brothers, seven men of good report, full of the Holy Spirit and of wisdom, whom we may appoint over this business. But we will continue steadfastly in prayer and in the ministry of the word.”"
+  "text": "Now in those days, when the number of the disciples was multiplying, a complaint arose from the Hellenists against the Hebrews, because their widows were neglected in the daily service. The twelve summoned the multitude of the disciples and said, “It is not appropriate for us to forsake the word of God and serve tables. Therefore select from among you, brothers, seven men of good report, full of the Holy Spirit and of wisdom, whom we may appoint over this business. But we will continue steadfastly in prayer and in the ministry of the word.”",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-9df840be",
   "voice": "S",
-  "text": "These words pleased the whole multitude. They chose Stephen, a man full of faith and of the Holy Spirit, Philip, Prochorus, Nicanor, Timon, Parmenas, and Nicolaus, a proselyte of Antioch;"
+  "text": "These words pleased the whole multitude. They chose Stephen, a man full of faith and of the Holy Spirit, Philip, Prochorus, Nicanor, Timon, Parmenas, and Nicolaus, a proselyte of Antioch;",
+  "kind": "scripture"
  },
  {
   "id": "s-WEB-e692f555",
   "voice": "S",
-  "text": "The word of God increased and the number of the disciples multiplied in Jerusalem exceedingly. A great company of the priests were obedient to the faith."
+  "text": "The word of God increased and the number of the disciples multiplied in Jerusalem exceedingly. A great company of the priests were obedient to the faith.",
+  "kind": "scripture"
  },
  {
   "id": "d-721df146",
   "voice": "N",
-  "text": "I have "
+  "text": "I have ",
+  "kind": "drama"
  },
  {
   "id": "d-6d28c6f2",
   "voice": "N",
-  "text": " at home. They do not let us near the front."
+  "text": " at home. They do not let us near the front.",
+  "kind": "drama"
  },
  {
   "id": "d-d7308a98",
   "voice": "N",
-  "text": " children"
+  "text": " children",
+  "kind": "drama"
  },
  {
   "id": "d-978df26f",
   "voice": "N",
-  "text": " child"
+  "text": " child",
+  "kind": "drama"
  },
  {
   "id": "d-0a9c5771",
   "voice": "N",
-  "text": ", and nothing in the house."
+  "text": ", and nothing in the house.",
+  "kind": "drama"
  },
  {
   "id": "d-be96f5d9",
   "voice": "N",
-  "text": "The basket is empty. "
+  "text": "The basket is empty. ",
+  "kind": "drama"
  },
  {
   "id": "d-74d66f07",
   "voice": "M",
-  "text": " are"
+  "text": " are",
+  "kind": "drama",
+  "speaker": "Your helper"
  },
  {
   "id": "d-5d3edceb",
   "voice": "N",
-  "text": " still standing in the courtyard with empty hands."
+  "text": " still standing in the courtyard with empty hands.",
+  "kind": "drama"
  },
  {
   "id": "d-e8fd40c0",
   "voice": "N",
-  "text": " Every one of them speaks Greek."
+  "text": " Every one of them speaks Greek.",
+  "kind": "drama"
  },
  {
   "id": "d-ed504143",
   "voice": "N",
-  "text": "Every widow goes home with bread."
+  "text": "Every widow goes home with bread.",
+  "kind": "drama"
  },
  {
   "id": "d-7b7c1c74",
   "voice": "N",
-  "text": " Not all of them with enough."
+  "text": " Not all of them with enough.",
+  "kind": "drama"
  },
  {
   "id": "d-48de66dd",
   "voice": "N",
-  "text": " For once, it was enough."
+  "text": " For once, it was enough.",
+  "kind": "drama"
  }
 ]
