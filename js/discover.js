@@ -169,11 +169,25 @@ window.TW = window.TW || {};
   D.unlockedFinds = () => FINDS.filter((f) => has(f.ep));
   // what an episode newly unlocks when its report is sealed (call before and after marking it complete)
   D.snapshot = () => new Set(D.unlockedThreads().map((t) => 'th:' + t.id).concat(D.unlockedFinds().map((f) => 'f:' + f.id)));
+  // Other writers, for the years beyond Nicodemus's letters. A letter set may be a plain list (Nicodemus) or
+  // { from: '<sender>', list: [...] }.
+  const SENDERS = {
+    timothy: {
+      kicker: { en: 'A letter from Timothy', es: 'Una carta de Timoteo' },
+      greet: () => (TW.Role && TW.Role.is() ? { en: 'To my dear sister', es: 'A mi querida hermana' } : { en: 'To my old friend', es: 'A mi viejo amigo' }),
+      sign: { en: 'Timothy', es: 'Timoteo' },
+    },
+  };
+  D.senders = SENDERS;
   D.letter = (ep) => {
     const s = save(); const r = s && s.reports && s.reports[ep];
-    const set = LETTERS[ep];
-    if (!set || !r || r.ci === undefined) return null;
-    return { greet: L(NAME()), body: L(set[r.ci] || set[0]), sign: L(SIGN()) };
+    const raw = LETTERS[ep];
+    if (!raw || !r || r.ci === undefined) return null;
+    const set = Array.isArray(raw) ? raw : raw.list;
+    const who = !Array.isArray(raw) && SENDERS[raw.from];
+    return who
+      ? { kicker: L(who.kicker), greet: L(who.greet()), body: L(set[r.ci] || set[0]), sign: L(who.sign) }
+      : { kicker: null, greet: L(NAME()), body: L(set[r.ci] || set[0]), sign: L(SIGN()) };
   };
 
   const T = (en, esText) => (es() ? esText : en);
@@ -181,7 +195,7 @@ window.TW = window.TW || {};
     const lt = D.letter(ep);
     if (!lt) return null;
     const box = el('div', 'disc-letter');
-    box.appendChild(el('p', 'disc-kicker', TW.Role && TW.Role.is() ? T('A letter from your uncle', 'Una carta de tu tío') : T('A letter from Nicodemus', 'Una carta de Nicodemo')));
+    box.appendChild(el('p', 'disc-kicker', lt.kicker || (TW.Role && TW.Role.is() ? T('A letter from your uncle', 'Una carta de tu tío') : T('A letter from Nicodemus', 'Una carta de Nicodemo'))));
     box.appendChild(el('p', 'disc-greet', lt.greet + ','));
     box.appendChild(el('p', 'disc-body', lt.body));
     box.appendChild(el('p', 'disc-sign', lt.sign));
@@ -225,7 +239,7 @@ window.TW = window.TW || {};
       return;
     }
     if (letters.length) {
-      body.appendChild(el('h3', '', TW.Role && TW.Role.is() ? T('Letters from your uncle', 'Cartas de tu tío') : T('Letters from Nicodemus', 'Cartas de Nicodemo')));
+      body.appendChild(el('h3', '', T('Letters', 'Cartas')));
       letters.forEach((k) => { const box = letterBox(el, k); if (box) { box.insertBefore(el('p', 'disc-ep', TW.tr ? TW.tr(TW.D.episodes[k].title) : TW.D.episodes[k].title), box.firstChild); body.appendChild(box); } });
     }
     if (th.length) { body.appendChild(el('h3', '', T('Threads between the accounts', 'Hilos entre los relatos'))); th.forEach((t) => body.appendChild(threadBox(el, t))); }

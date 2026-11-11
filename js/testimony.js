@@ -84,6 +84,17 @@ window.TW = window.TW || {};
       ],
       outro: [['n', 'He looks up the road toward Jerusalem. “I threw my cloak away when he called me,” he says. “I never went back for it.”']],
     },
+    zacchaeus: {
+      title: 'Zacchaeus', witness: 'Zacchaeus of Jericho', place: 'jericho', region: 'land', era: 'passion', after: 'levi', set: 'village',
+      look: { skin: '#b8845a', hair: '#2a1a12', beard: '#2a1a12', tunic: '#7a2a3a', mantle: '#c9a03a' },
+      intro: [['n', 'In Jericho, a short man in a fine mantle is handing out coins to beggars at the gate, and counting every one aloud so that the whole street can hear. People say he used to be the richest tax collector in the city.'], ['h', 'Jericho was rich: its balsam groves and date palms were famous, and its customs post sat on the road from the Jordan fords to Jerusalem.']],
+      asks: [
+        { id: 'tree', scene: 'zac_tree', q: 'Is it true you climbed a tree?', say: [['s', 'luke19', '19:1', '19:3'], ['c', 'crowd'], ['s', 'luke19', '19:4', '19:4'], ['c', 'climb'], ['c', 'pass'], ['c', 'look'], ['s', 'luke19', '19:5', '19:6'], ['c', 'down'], ['d', 'A chief tax collector, up a tree like a boy. I did not care who saw. And he called me by my name.']], note: 'Zacchaeus climbed a sycamore tree to see Jesus, and Jesus called him by name: “Zacchaeus, hurry and come down, for today I must stay at your house” (Luke 19:4–5).' },
+        { id: 'murmur', scene: 'zac_tree', q: 'What did the crowd say?', say: [['c', 'murmur'], ['s', 'luke19', '19:7', '19:7'], ['d', 'They were right. I was a sinner. He came to my house anyway. He came to my house because of it.']], note: 'The crowd murmured that he had gone to lodge with a sinner (Luke 19:7).' },
+        { id: 'house', scene: 'zac_house', q: 'What happened at your house?', say: [['c', 'stand'], ['s', 'luke19', '19:8', '19:8'], ['c', 'bless'], ['s', 'luke19', '19:9', '19:10'], ['d', 'Four times as much. I am still paying it back. It is the best money I ever spent.']], note: '“Today, salvation has come to this house… For the Son of Man came to seek and to save that which was lost” (Luke 19:9–10).' },
+      ],
+      outro: [['n', 'He drops another coin into a beggar’s bowl, then a second one, and laughs. “He came to seek the lost,” he says. “I was very lost. Write that down.”']],
+    },
     bethesda: {
       title: 'The man healed at Bethesda', witness: 'The man healed at Bethesda', place: 'bethesda', region: 'jerusalem', era: 'passion', after: 'nain', set: 'court',
       look: { skin: '#9a6440', hair: '#5f5048', beard: '#5f5048', tunic: '#8a7a5a' },

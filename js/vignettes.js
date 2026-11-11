@@ -576,6 +576,42 @@ window.TW = window.TW || {};
 
   // ---------- running a memory ----------
   let saved = null;
+  // ---------- Zacchaeus (Luke 19:1–10) ----------
+  const zacLook = { skin: '#b8845a', hair: '#2a1a12', beard: '#2a1a12', tunic: '#7a2a3a', mantle: '#c9a03a' };
+  const sycamore = (x) => (ctx, t, cam) => {
+    const sx = x - cam;
+    R(ctx, sx - 3, 100, 7, 50, '#6e5034'); R(ctx, sx - 12, 112, 10, 3, '#6e5034'); R(ctx, sx + 4, 106, 12, 3, '#6e5034');
+    for (let i = 0; i < 70; i++) { const lx = sx - 26 + Math.floor(K.rnd(i, 3) * 52), ly = 74 + Math.floor(K.rnd(i, 4) * 36); R(ctx, lx, ly, 5, 4, i % 6 ? '#5f8a4a' : '#7aa05a'); }
+  };
+  VG.zac_tree = () => {
+    const st = load('village');
+    st.props = st.props || []; st.props.push(sycamore(176));
+    const zac = add(S.person(zacLook), 150, 150, { facing: -1, speed: 30 });
+    const cr = [0, 1, 2, 3, 4, 5, 6].map((i) => add(i < 2 ? dis(i) : K.villager(900 + i), 96 + i * 13, 147 + (i % 2), { facing: -1, speed: 18 }));
+    const j = add(P().jesus, 10, 147, { facing: 1, speed: 18 });
+    return {
+      crowd: async () => { zac.pose = 'raise'; await W(500); zac.x = 140; await W(300); zac.x = 160; await W(300); zac.pose = 'stand'; },
+      climb: async () => { await SC.walk(zac, 176); zac.y = 104; zac.z = 160; zac.pose = 'sit'; await W(600); },
+      pass: async () => { cr.forEach((c, i) => SC.walk(c, 120 + i * 14)); await SC.walk(j, 168); },
+      look: async () => { j.facing = 1; j.pose = 'raise'; cr.forEach((c) => { c.facing = 1; c.pose = 'stand'; }); await W(900); j.pose = 'out'; },
+      down: async () => { zac.y = 150; zac.z = 150; zac.pose = 'raise'; await W(400); zac.pose = 'stand'; await SC.walk(zac, 184); zac.facing = -1; j.pose = 'stand'; },
+      murmur: async () => { cr.forEach((c, i) => { c.facing = i % 2 ? 1 : -1; c.pose = i % 3 ? 'out' : 'stand'; }); await W(1000); },
+      zac, j, cr,
+    };
+  };
+  VG.zac_house = () => {
+    const st = load('house');
+    st.props = st.props || []; st.props.push(lampProp); st.props.push(tableProp);
+    const j = add(P().jesus, 120, 147, { pose: 'sit', facing: 1 });
+    const zac = add(S.person(zacLook), 150, 147, { pose: 'sit', facing: -1 });
+    [[56, 1], [72, 1], [196, -1], [212, -1]].forEach((c, i) => add(K.villager(920 + i, i % 2 === 1), c[0], 147, { pose: 'sit', facing: c[1] }));
+    const door = [0, 1, 2].map((i) => add(K.villager(930 + i), 236 + i * 8, 146, { facing: -1 }));
+    return {
+      stand: async () => { zac.pose = 'stand'; await W(400); zac.pose = 'out'; door.forEach((d) => { d.pose = 'stand'; }); await W(600); },
+      bless: async () => { j.pose = 'out'; await W(800); j.pose = 'sit'; zac.pose = 'raise'; await W(700); zac.pose = 'sit'; },
+      zac, j,
+    };
+  };
   VG.enter = async function (id, witness) {
     const el = SC.el;
     let mem = null;
@@ -585,7 +621,7 @@ window.TW = window.TW || {};
       mem = VG[id]() || {};
       TW.Audio && TW.Audio.memory(true);
       el.stage.classList.add('memory');
-      el.memchip.textContent = 'As remembered by ' + witness.replace(/^The /, 'the ').replace(/^A /, 'a ');
+      el.memchip.textContent = TW.Settings && TW.Settings.get('lang') === 'es' ? 'Como lo recuerda ' + (TW.tr ? TW.tr(witness) : witness).replace(/^El /, 'el ').replace(/^La /, 'la ').replace(/^Un /, 'un ').replace(/^Una /, 'una ') : 'As remembered by ' + witness.replace(/^The /, 'the ').replace(/^A /, 'a ');
     });
     return mem;
   };

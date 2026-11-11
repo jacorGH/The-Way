@@ -1,5 +1,5 @@
 /* Scripture text in this file: World English Bible, public domain, not covered by the game license (LICENSE.md). */
-/* The Way — Scripture for the last era: 2 Timothy, Luke 21 and Revelation. World English Bible (public domain).
+/* The Way — Scripture for the last era: 2 Timothy, Luke 19, Luke 21 and Revelation. World English Bible (public domain).
    2 Timothy via Project Gutenberg #8282; Luke 21 and Revelation from biblehub.com/web. Wording unchanged. */
 window.TW = window.TW || {};
 (function (TW) {
@@ -87,6 +87,18 @@ window.TW = window.TW || {};
     ["22:17", "The Spirit and the bride say, “Come!” He who hears, let him say, “Come!” He who is thirsty, let him come. He who desires, let him take the water of life freely."],
     ["22:20", "He who testifies these things says, “Yes, I come quickly.” Amen! Yes, come, Lord Jesus."],
     ["22:21", "The grace of the Lord Jesus Christ be with all the saints. Amen."],
+  ]);
+  add('luke19', 'Luke', [
+    ["19:1", "He entered and was passing through Jericho."],
+    ["19:2", "There was a man named Zacchaeus. He was a chief tax collector, and he was rich."],
+    ["19:3", "He was trying to see who Jesus was, and couldn’t because of the crowd, because he was short."],
+    ["19:4", "He ran on ahead, and climbed up into a sycamore tree to see him, for he was to pass that way."],
+    ["19:5", "When Jesus came to the place, he looked up and saw him, and said to him, “Zacchaeus, hurry and come down, for today I must stay at your house.”"],
+    ["19:6", "He hurried, came down, and received him joyfully."],
+    ["19:7", "When they saw it, they all murmured, saying, “He has gone in to lodge with a man who is a sinner.”"],
+    ["19:8", "Zacchaeus stood and said to the Lord, “Behold, Lord, half of my goods I give to the poor. If I have wrongfully exacted anything of anyone, I restore four times as much.”"],
+    ["19:9", "Jesus said to him, “Today, salvation has come to this house, because he also is a son of Abraham."],
+    ["19:10", "For the Son of Man came to seek and to save that which was lost.”"],
   ]);
   add('luke21', 'Luke', [
     ["21:5", "As some were talking about the temple and how it was decorated with beautiful stones and gifts, he said,"],

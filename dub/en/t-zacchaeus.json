@@ -1,0 +1,89 @@
+[
+ {
+  "id": "d-059e96f0",
+  "voice": "N",
+  "text": "In Jericho, a short man in a fine mantle is handing out coins to beggars at the gate, and counting every one aloud so that the whole street can hear. People say he used to be the richest tax collector in the city.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-35435a6b",
+  "voice": "N",
+  "text": "Jericho was rich: its balsam groves and date palms were famous, and its customs post sat on the road from the Jordan fords to Jerusalem.",
+  "kind": "history"
+ },
+ {
+  "id": "d-dac404c7",
+  "voice": "N",
+  "text": "What do you ask Zacchaeus of Jericho?",
+  "kind": "prompt"
+ },
+ {
+  "id": "s-WEB-5f717037",
+  "voice": "S",
+  "text": "When they saw it, they all murmured, saying, “He has gone in to lodge with a man who is a sinner.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-eef3d5b5",
+  "voice": "M",
+  "text": "They were right. I was a sinner. He came to my house anyway. He came to my house because of it.",
+  "kind": "drama",
+  "speaker": "Zacchaeus of Jericho"
+ },
+ {
+  "id": "d-e6fb728c",
+  "voice": "N",
+  "text": "What else do you ask?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-6dc9f2be",
+  "voice": "N",
+  "text": "He drops another coin into a beggar’s bowl, then a second one, and laughs. “He came to seek the lost,” he says. “I was very lost. Write that down.”",
+  "kind": "drama"
+ },
+ {
+  "id": "s-WEB-0647b8d2",
+  "voice": "S",
+  "text": "He entered and was passing through Jericho. There was a man named Zacchaeus. He was a chief tax collector, and he was rich. He was trying to see who Jesus was, and couldn’t because of the crowd, because he was short.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-416cdf30",
+  "voice": "S",
+  "text": "He ran on ahead, and climbed up into a sycamore tree to see him, for he was to pass that way.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-31c3ec37",
+  "voice": "S",
+  "text": "When Jesus came to the place, he looked up and saw him, and said to him, “Zacchaeus, hurry and come down, for today I must stay at your house.” He hurried, came down, and received him joyfully.",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-e419f299",
+  "voice": "M",
+  "text": "A chief tax collector, up a tree like a boy. I did not care who saw. And he called me by my name.",
+  "kind": "drama",
+  "speaker": "Zacchaeus of Jericho"
+ },
+ {
+  "id": "s-WEB-f95b95c0",
+  "voice": "S",
+  "text": "Zacchaeus stood and said to the Lord, “Behold, Lord, half of my goods I give to the poor. If I have wrongfully exacted anything of anyone, I restore four times as much.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-2b922bef",
+  "voice": "S",
+  "text": "Jesus said to him, “Today, salvation has come to this house, because he also is a son of Abraham. For the Son of Man came to seek and to save that which was lost.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-2c69b8bc",
+  "voice": "M",
+  "text": "Four times as much. I am still paying it back. It is the best money I ever spent.",
+  "kind": "drama",
+  "speaker": "Zacchaeus of Jericho"
+ }
+]
