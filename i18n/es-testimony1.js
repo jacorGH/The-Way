@@ -53,7 +53,7 @@ window.TW = window.TW || {};
     'd-e8681914': 'El agua se convirtió en vino, el mejor de la fiesta; Juan lo llama el principio de sus señales (Juan 2:9–11).',
     'd-543c11f7': 'Las tinajas de piedra guardaban agua para el lavamiento ritual, y cada una contenía entre 75 y 115 litros aproximadamente. Se creía que la piedra, a diferencia del barro, no se volvía impura.',
     // ---- the loaves ----
-    'd-28e4df76': 'Un hombre que estaba en la multitud',
+    'd-28e4df76': 'Un hombre que estaba en la multitud', 'd-9b72b8ba': 'Un hombre de la multitud',
     'd-8249dd8d': 'Cerca de Betsaida, un campesino señala una ladera de hierba espesa de primavera sobre el lago. “Ahí”, dice. “Yo estaba sentado justo ahí.”',
     'd-c329caba': '¿Qué le preguntas a un hombre que estaba en la multitud?',
     'd-e7648d69': '¿Por qué había tanta gente aquí?', 'd-4604a543': '¿De dónde salió la comida?', 'd-322c2d22': '¿Qué hizo la gente después?',

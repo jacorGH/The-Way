@@ -15,7 +15,7 @@ window.TW = window.TW || {};
     bible: 'WEB',           // Bible version for Scripture
     recordings: true,       // play recorded voices from audio/<lang>/ when present
     voiceSpeed: 1,          // playback speed of voices (recordings and device voice)
-    voiceLevel: true,       // even out the loudness of recorded voices
+    voiceLeveler: false,    // even out the loudness of recorded voices (off by default; see speech.js)
   };
   let s = Object.assign({}, DEFAULTS);
   try { Object.assign(s, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { /* storage unavailable */ }

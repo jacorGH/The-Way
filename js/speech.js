@@ -83,26 +83,33 @@ window.TW = window.TW || {};
   // Leveler: a gentle compressor and make-up gain on a channel of its own, so quiet voices match loud ones. Only for
   // pages served over http(s): a file opened straight from disk cannot be routed through Web Audio without going silent.
   let vctx = null;
+  // Off by default: on iPhone Safari an audio engine that stays paused silences everything routed through it. When it
+  // is switched on, the recordings are routed only after the engine is confirmed running; otherwise they play directly.
   function setupLeveler() {
-    if (vctx || !player || !/^https?:$/.test(location.protocol) || (TW.Settings && TW.Settings.get('voiceLevel') === false)) return;
+    if (vctx || !player || !/^https?:$/.test(location.protocol) || !(TW.Settings && TW.Settings.get('voiceLeveler') === true)) return;
     try {
       const AC = window.AudioContext || window.webkitAudioContext;
       if (!AC) return;
-      vctx = new AC();
-      const src = vctx.createMediaElementSource(player);
-      const comp = vctx.createDynamicsCompressor();
-      comp.threshold.value = -26; comp.knee.value = 12; comp.ratio.value = 4; comp.attack.value = 0.004; comp.release.value = 0.25;
-      const gain = vctx.createGain(); gain.gain.value = 1.7;
-      src.connect(comp); comp.connect(gain); gain.connect(vctx.destination);
+      const ctx = new AC();
+      const go = () => {
+        if (ctx.state !== 'running') { try { ctx.close(); } catch (e) { /* ignore */ } return; }
+        const src = ctx.createMediaElementSource(player);
+        const comp = ctx.createDynamicsCompressor();
+        comp.threshold.value = -26; comp.knee.value = 12; comp.ratio.value = 4; comp.attack.value = 0.004; comp.release.value = 0.25;
+        const gain = ctx.createGain(); gain.gain.value = 1.7;
+        src.connect(comp); comp.connect(gain); gain.connect(ctx.destination);
+        vctx = ctx;
+      };
+      const r = ctx.resume ? ctx.resume() : null;
+      if (r && r.then) r.then(go, () => {}); else go();
     } catch (e) { vctx = null; }
   }
   let unlocked = false;
   const unlock = () => {
-    if (vctx && vctx.state === 'suspended') vctx.resume();
+    if (vctx && vctx.state !== 'running' && vctx.resume) vctx.resume();
     if (unlocked || !player) return;
     unlocked = true;
     setupLeveler();
-    if (vctx && vctx.state === 'suspended') vctx.resume();
     try { player.src = SILENT; const pr = player.play(); if (pr && pr.catch) pr.catch(() => { unlocked = false; }); } catch (e) { unlocked = false; }
   };
   if (typeof document !== 'undefined') ['pointerdown', 'touchend', 'click', 'keydown'].forEach((ev) => document.addEventListener(ev, unlock, { capture: true, passive: true }));
@@ -120,7 +127,7 @@ window.TW = window.TW || {};
     player.onerror = () => { if (audio !== token) return; audio = null; if (!started) { missing.add(key); fallback(); } else { TW.Audio && TW.Audio.duck && TW.Audio.duck(false); done(); } };
     player.src = TW.Dubs.url(lang, id);
     player.playbackRate = voiceRate(); player.defaultPlaybackRate = voiceRate();
-    if (vctx && vctx.state === 'suspended') vctx.resume();
+    if (vctx && vctx.state !== 'running' && vctx.resume) vctx.resume();
     const pr = player.play();
     if (pr && pr.catch) pr.catch((err) => {
       if (audio !== token || started) return;
