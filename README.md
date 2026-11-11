@@ -90,7 +90,7 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/scripture10.js` – WEB passages: 2 Timothy, Luke 21, Revelation
 - `tools/lines-en.json` – catalog of every line in the game with its permanent ID (translation and voice work)
 - `dub/` – ready-made TTS Studio batches, one per episode (`dub/index.html` lists them)
-- `i18n/es-capernaum.js`, `i18n/es-era1b.js`, `i18n/es-era1c.js` – Spanish for Era I (Episodes I–V)
+- `i18n/es-*.js` – Spanish: Era I (Episodes I–V) and Era II Episodes VI–IX, plus `es-extras.js` (tappable notes and Elisheva’s wording)
 - `js/scripture6.js` – WEB passages: Acts 18:24–24:26
 - `js/about.js` – copyright holder, contact and license summary shown in the game (fill in your name here)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
@@ -221,3 +221,10 @@ The Dub Studio and the line export in Settings appear only when the address ends
 (for example `https://YOU.github.io/the-way/?dev`). Players see only the "Play recorded voices" switch.
 Recorded voices need no manifest: the game tries `audio/<lang>/<line ID>.mp3` and falls back to the device voice.
 Translations may give masculine and feminine forms, `{ m: '…', f: '…' }`, for Eleazar's and Elisheva's accounts.
+
+### Shipping Bible versions with the game
+1. On your published copy, download the version in Settings → Bible translation (ASV, KJV or Reina-Valera).
+2. Open the game with `?dev` at the end of its address. In Settings → Bible translation, tap "Save … as a game file".
+3. Put the saved file (for example `RV1909.js` or `ASV.js`) in the `bible/` folder and push.
+`bible/versions.js` loads ASV, KJV, RV1909 and RV1858 if their files are present. A shipped version needs no download,
+and the title screen's Español button uses a shipped Spanish version at once.

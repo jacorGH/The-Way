@@ -15,6 +15,13 @@ covering every spoken line in the game (1,252 lines, about 228,000 characters). 
 3. Export the ZIP. It contains `audio/en/<line ID>.mp3`, which is exactly where the game looks.
 4. Unzip it into the game folder, so the MP3s land in **audio/en/**, and push to GitHub (for example with GitMobile).
 
+Recordings play whenever Settings → Recorded voices → "Play recorded voices" is on, even with Read aloud off. Read aloud
+only decides whether the device voice fills in lines that have no recording. On iPhone the first tap in the game unlocks
+the audio player, so a recording may stay silent until you have tapped once.
+
+To check a folder: open the game with `?dev` at the end of its address, play an episode, then Settings → Recorded
+voices → Check recordings. It reports how many of that episode's lines have recordings and the exact address it uses.
+
 That is all. The game tries a recording for every line and uses the device voice for any line that has none, so there
 is no list to update; the `manifest.json` inside each ZIP can be ignored or overwritten. Settings → Recorded voices has
 a switch to turn recordings off.

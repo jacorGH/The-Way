@@ -618,10 +618,10 @@ window.TW = window.TW || {};
     row.appendChild(box); row.appendChild(el('span', '', T(label)));
     body.appendChild(row);
   }
-  function download(name, text) {
+  function download(name, text, type) {
     try {
       const a = document.createElement('a');
-      a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+      a.href = URL.createObjectURL(new Blob([text], { type: type || 'application/json' }));
       a.download = name; document.body.appendChild(a); a.click(); a.remove();
     } catch (e) { /* fall through to the copy below */ }
     if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
@@ -650,6 +650,16 @@ window.TW = window.TW || {};
     pickRow(body, 'Bible translation', 'bible', TW.Bible.list().map((v) => [v.id, v.name + (v.id === 'WEB' ? '' : ' (' + TW.Bible.count(v.id) + ')')]), () => { relabel(); rerender(); });
     const cur = TW.Bible.version();
     body.appendChild(el('p', 'empty', cur.name + ' · ' + (cur.license || '') + (cur.id !== 'WEB' ? ' · ' + TW.Bible.count(cur.id) + ' / ' + TW.Bible.needed().length + ' verses; any missing verse is shown from the WEB, marked “WEB”.' : '')));
+    if (DEV) {
+      const dv = el('div', 'set-buttons');
+      TW.Bible.list().filter((v) => v.imported).forEach((v) => {
+        const sb = el('button', 'btn small', 'Save ' + v.id + ' as a game file'); sb.type = 'button';
+        sb.addEventListener('click', () => { const f = TW.Bible.exportFile(v.id); if (f) download(f.name, f.text, 'text/javascript'); });
+        dv.appendChild(sb);
+      });
+      if (dv.childNodes.length) { body.appendChild(el('p', 'empty', 'Developer: save a downloaded version as a file, put it in the game’s bible folder and push. It then ships with the game, with no download.')); body.appendChild(dv); }
+      TW.Bible.list().filter((v) => v.shipped).forEach((v) => body.appendChild(el('p', 'empty', 'Shipped with the game: ' + v.name + '.')));
+    }
     if (cur.imported) { const rm = el('button', 'btn small', T('Remove')); rm.type = 'button'; rm.addEventListener('click', () => { TW.Bible.remove(cur.id); relabel(); rerender(); }); body.appendChild(rm); }
     // one-tap downloads of public-domain versions
     const dl = el('div', 'set-downloads');
@@ -790,6 +800,16 @@ window.TW = window.TW || {};
     mark.addEventListener('click', () => { if (!pending.length) { status.textContent = 'Copy a batch first.'; return; } L.markRecorded(lang, pending); status.textContent = pending.length + ' lines marked as recorded.'; pending = []; setTimeout(() => openJournal('settings'), 900); });
     const man = el('button', 'btn small', 'Copy manifest'); man.type = 'button';
     man.addEventListener('click', () => { copyText(L.manifest(lang, ext), box); status.textContent = 'Paste this into audio/manifest.js, replacing the line for ' + lang + '. Put the recordings in audio/' + lang + '/.'; });
+    const chk = el('button', 'btn small', 'Check recordings'); chk.type = 'button';
+    chk.addEventListener('click', async () => {
+      const ids = (groups[sel.value] || []).filter((r) => /^(d|s)-/.test(r.id) && r.kind !== 'goal' && r.kind !== 'option' && r.kind !== 'observe').map((r) => r.id).slice(0, 40);
+      if (!ids.length) { status.textContent = 'Play this episode first.'; return; }
+      status.textContent = 'Checking ' + ids.length + ' lines…';
+      let found = 0;
+      for (const id of ids) { try { const r = await fetch(TW.Dubs.url(lang, id), { method: 'HEAD', cache: 'no-store' }); if (r.ok) found++; } catch (e) { /* not reachable */ } }
+      const where = new URL(TW.Dubs.url(lang, ids[0]), location.href).href;
+      status.textContent = found + ' of ' + ids.length + ' spoken lines in this episode have recordings. The game looks for files like: ' + where + (found ? '' : '  (None found: check that the MP3s are in an audio/' + lang + ' folder at the top of the game, next to index.html.)');
+    });
     const svc = el('button', 'btn small', 'Copy batch for a voice service'); svc.type = 'button';
     svc.addEventListener('click', () => {
       const b = L.batch(sel.value, +size.value, lang, voice.value);
@@ -797,7 +817,7 @@ window.TW = window.TW || {};
       copyText(JSON.stringify(b.lines.map((r) => ({ id: r.id, voice: L.tag(r), text: r.text })), null, 1), box);
       status.textContent = 'Copied as JSON for tools/dub-openai.mjs (a paid OpenAI service). See RECORDING.md.';
     });
-    [next, mark, man, svc].forEach((x) => row.appendChild(x));
+    [chk, next, mark, man, svc].forEach((x) => row.appendChild(x));
     [sel, size, voice, extSel, row, status, box].forEach((x) => body.appendChild(x));
     const how = el('details', 'set-import');
     how.appendChild(el('summary', '', 'How to record on iPhone'));

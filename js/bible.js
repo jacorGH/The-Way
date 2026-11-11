@@ -146,7 +146,20 @@ window.TW = window.TW || {};
     B.list().filter((v) => v.imported).forEach((v) => { keep[v.id] = v; });
     try { localStorage.setItem(STORE, JSON.stringify(keep)); return true; } catch (e) { return false; }
   };
-  B.add = function (v) { if (!v || !v.id || !v.text) return; B.versions[v.id] = Object.assign({ lang: 'en', license: '' }, v); };
+  B.add = function (v) {
+    if (!v || !v.id || !v.text) return;
+    const had = B.versions[v.id];
+    if (had && had.shipped && !v.shipped) return; // a version shipped with the game wins over a copy downloaded earlier
+    B.versions[v.id] = Object.assign({ lang: 'en', license: '' }, v);
+    if (v.shipped && had && had.imported) saveStore();
+  };
+  // A downloaded version as a file that can ship with the game (bible/<ID>.js).
+  B.exportFile = function (id) {
+    const v = B.versions[id];
+    if (!v) return null;
+    const out = { id: v.id, name: v.name, short: v.short || v.id, lang: v.lang, license: v.license, shipped: true, text: v.text };
+    return { name: v.id + '.js', text: '/* The Way — ' + v.name + ' (' + (v.license || '') + '). Scripture text is not covered by the game license. */\nTW.Bible.add(' + JSON.stringify(out) + ');\n' };
+  };
   B.importText = function (raw, meta) {
     const f = B.filter(B.parse(raw));
     if (!f.matched) return { ok: false, matched: 0, needed: f.needed };
@@ -155,7 +168,7 @@ window.TW = window.TW || {};
     const stored = saveStore();
     return { ok: true, id, matched: f.matched, needed: f.needed, stored };
   };
-  B.remove = function (id) { if (B.versions[id] && !B.versions[id].builtin) { delete B.versions[id]; saveStore(); if (B.current() === id && TW.Settings) TW.Settings.set('bible', 'WEB'); } };
+  B.remove = function (id) { if (B.versions[id] && !B.versions[id].builtin && !B.versions[id].shipped) { delete B.versions[id]; saveStore(); if (B.current() === id && TW.Settings) TW.Settings.set('bible', 'WEB'); } };
 
   // ---------- downloading a public-domain version straight to the device ----------
   // getBible.net serves a whole book per request; bible-api.com serves chapters (15 requests per 30 seconds).

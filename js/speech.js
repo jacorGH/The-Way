@@ -57,26 +57,55 @@ window.TW = window.TW || {};
 
   let current = null, timer = null, audio = null, waiters = [];
   const done = () => { const w = waiters; waiters = []; w.forEach((f) => f()); };
-  S.busy = () => !!(audio && !audio.paused) || !!(synth && (synth.speaking || synth.pending)) || !!timer;
+  S.busy = () => !!(audio && player && !player.paused) || !!(synth && (synth.speaking || synth.pending)) || !!timer;
   S.whenDone = (f) => { if (!S.busy()) setTimeout(f, 0); else waiters.push(f); };
   // a recorded voice for this line, if one has been made (see lines.js)
   // Recorded voices: try audio/<lang>/<id>.mp3 for every line. If the file is not there, remember that and use the
-  // device voice instead, so recordings can be added a batch at a time with no list to keep up to date.
+  // device voice instead (when read-aloud is on), so recordings can be added a batch at a time with no list to keep.
+  // One audio element is reused for every line and unlocked by the first tap: iPhone Safari refuses audio that a
+  // fresh element starts outside a tap, which would silence lines that begin a moment after the tap.
   const missing = new Set();
+  const player = typeof Audio !== 'undefined' ? new Audio() : null;
+  if (player) { player.preload = 'auto'; player.setAttribute('playsinline', ''); }
+  // a tenth of a second of silence, built as a real WAV file, used only to unlock the player on the first tap
+  const SILENT = (function () {
+    const n = 800, rate = 8000, bytes = [];
+    const u32 = (v) => [v & 255, (v >> 8) & 255, (v >> 16) & 255, (v >> 24) & 255], u16 = (v) => [v & 255, (v >> 8) & 255];
+    const str = (s) => s.split('').map((c) => c.charCodeAt(0));
+    bytes.push(...str('RIFF'), ...u32(36 + n), ...str('WAVE'), ...str('fmt '), ...u32(16), ...u16(1), ...u16(1), ...u32(rate), ...u32(rate), ...u16(1), ...u16(8), ...str('data'), ...u32(n));
+    for (let k = 0; k < n; k++) bytes.push(128);
+    let bin = ''; bytes.forEach((b) => { bin += String.fromCharCode(b); });
+    return 'data:audio/wav;base64,' + (typeof btoa === 'function' ? btoa(bin) : '');
+  })();
+  let unlocked = false;
+  const unlock = () => {
+    if (unlocked || !player) return;
+    unlocked = true;
+    try { player.src = SILENT; const pr = player.play(); if (pr && pr.catch) pr.catch(() => { unlocked = false; }); } catch (e) { unlocked = false; }
+  };
+  if (typeof document !== 'undefined') ['pointerdown', 'touchend', 'click', 'keydown'].forEach((ev) => document.addEventListener(ev, unlock, { capture: true, passive: true }));
+  const recordingsOn = () => !TW.Settings || TW.Settings.get('recordings') !== false;
   function playDub(id, fallback) {
     const lang = TW.Settings ? TW.Settings.get('lang') : 'en';
-    if (!id || !TW.Dubs || (TW.Settings && TW.Settings.get('recordings') === false)) return false;
+    if (!id || !TW.Dubs || !player || !recordingsOn()) return false;
     const key = lang + ':' + id;
     if (missing.has(key) && !TW.Dubs.has(lang, id)) return false;
-    const a = new Audio(TW.Dubs.url(lang, id));
-    audio = a;
+    const token = {};
+    audio = token;
     let started = false;
-    a.onplaying = () => { started = true; TW.Audio && TW.Audio.duck && TW.Audio.duck(true); };
-    a.onended = () => { if (audio === a) audio = null; TW.Audio && TW.Audio.duck && TW.Audio.duck(false); done(); };
-    a.onerror = () => { if (audio !== a) return; audio = null; if (!started) { missing.add(key); fallback(); } else { TW.Audio && TW.Audio.duck && TW.Audio.duck(false); done(); } };
-    a.play().catch(() => { if (audio !== a) return; audio = null; if (!started) fallback(); });
+    player.onplaying = () => { if (audio !== token) return; started = true; TW.Audio && TW.Audio.duck && TW.Audio.duck(true); };
+    player.onended = () => { if (audio !== token) return; audio = null; TW.Audio && TW.Audio.duck && TW.Audio.duck(false); done(); };
+    player.onerror = () => { if (audio !== token) return; audio = null; if (!started) { missing.add(key); fallback(); } else { TW.Audio && TW.Audio.duck && TW.Audio.duck(false); done(); } };
+    player.src = TW.Dubs.url(lang, id);
+    const pr = player.play();
+    if (pr && pr.catch) pr.catch((err) => {
+      if (audio !== token || started) return;
+      // a missing file reports through onerror; a refusal (not allowed to play) falls back without marking it missing
+      if (err && err.name === 'NotAllowedError') { audio = null; fallback(); }
+    });
     return true;
   }
+  S.recordingsOn = recordingsOn;
   function speakNow(text, v) {
     const u = new SpeechSynthesisUtterance(clean(text));
     if (v.voice) { u.voice = v.voice; u.lang = v.voice.lang; }
@@ -88,23 +117,24 @@ window.TW = window.TW || {};
     synth.speak(u);
   }
   S.say = function (kind, text, speaker, id) {
-    if (!S.on || !text) return;
+    // recordings play whenever they are switched on; the device voice speaks only when read-aloud is on
+    if (!text || (!S.on && !recordingsOn())) return;
     S.stop(true);
     const speakDevice = () => {
-      if (!synth) { done(); return; }
+      if (!S.on || !synth) { done(); return; }
       const v = pick(kind, speaker);
       if (synth.speaking || synth.pending) { synth.cancel(); timer = setTimeout(() => { timer = null; speakNow(text, v); }, 120); }
       else speakNow(text, v);
     };
     if (playDub(id, speakDevice)) return;
-    if (!synth) return;
+    if (!S.on || !synth) return;
     const v = pick(kind, speaker);
     if (synth.speaking || synth.pending) { synth.cancel(); timer = setTimeout(() => { timer = null; speakNow(text, v); }, 120); }
     else speakNow(text, v);
   };
   S.stop = function (keepWaiters) {
     clearTimeout(timer); timer = null;
-    if (audio) { audio.onended = audio.onerror = null; audio.pause(); audio = null; }
+    if (audio) { audio = null; if (player) { try { player.pause(); } catch (e) { /* ignore */ } } }
     if (synth && (synth.speaking || synth.pending)) synth.cancel();
     if (TW.Audio && TW.Audio.duck) TW.Audio.duck(false);
     if (!keepWaiters) waiters = [];
