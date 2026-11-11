@@ -982,6 +982,45 @@ window.TW = window.TW || {};
       lab.appendChild(el('span', '', o.text));
       box.appendChild(lab);
     });
+    // Optional: set the story's moments in the order they happened (only moments the story recorded in sequence)
+    let ordered = null;
+    const oldOrd = document.querySelector('#report-order'); if (oldOrd) oldOrd.remove();
+    const autos = (game.save.obs[ep] || []).filter((o) => o.auto);
+    if (autos.length >= 3) {
+      const es = TW.Settings.get('lang') === 'es';
+      const wrap = el('div', 'order-box'); wrap.id = 'report-order';
+      box.parentNode.insertBefore(wrap, box.nextSibling);
+      const build = () => {
+        wrap.innerHTML = '';
+        wrap.appendChild(el('h4', '', es ? 'Ponlo en orden (opcional)' : 'Set it in order (optional)'));
+        wrap.appendChild(el('p', 'help', es ? 'Toca estos momentos en el orden en que sucedieron.' : 'Tap these moments in the order they happened.'));
+        let deck = autos.map((o, i) => i);
+        do { deck.sort(() => Math.random() - 0.5); } while (deck.every((v, i) => v === i));
+        const picked = [];
+        deck.forEach((i) => {
+          const bt = el('button', 'order-item', autos[i].text); bt.type = 'button';
+          bt.addEventListener('click', () => {
+            if (bt.dataset.n || ordered !== null) return;
+            picked.push(i); bt.dataset.n = picked.length; bt.classList.add('picked');
+            bt.insertBefore(el('span', 'order-n', String(picked.length)), bt.firstChild);
+            if (picked.length === autos.length) {
+              ordered = picked.every((v, k) => v === k);
+              const res = el('div', 'order-result');
+              if (ordered) res.appendChild(el('p', '', es ? 'Puesto en orden, como Lucas: “escribírtelas por orden” (Lucas 1:3).' : 'Set in order, as Luke did: “to write to you in order” (Luke 1:3).'));
+              else {
+                res.appendChild(el('p', '', es ? 'Casi. Este es el orden en que sucedió:' : 'Nearly. This is the order it happened in:'));
+                const ol = el('ol', 'notes'); autos.forEach((o) => ol.appendChild(el('li', '', o.text))); res.appendChild(ol);
+                const again = el('button', 'btn small', es ? 'Intentar de nuevo' : 'Try again'); again.type = 'button';
+                again.addEventListener('click', () => { ordered = null; build(); }); res.appendChild(again);
+              }
+              wrap.appendChild(res);
+            }
+          });
+          wrap.appendChild(bt);
+        });
+      };
+      build();
+    }
     const rc = $('#report-conc');
     rc.innerHTML = '';
     const seal = $('#btn-seal');
@@ -1001,7 +1040,7 @@ window.TW = window.TW || {};
       const all = game.save.obs[ep] || [];
       const picked = [...box.querySelectorAll('input:checked')].map((c) => all[+c.value].text);
       const ci = +rc.querySelector('input:checked').value;
-      game.save.reports[ep] = { obs: picked, conclusion: TW.Role.G(E.conclusions[ci]), ci: ci };
+      game.save.reports[ep] = { obs: picked, conclusion: TW.Role.G(E.conclusions[ci]), ci: ci, ordered: ordered === true || !!(game.save.reports[ep] && game.save.reports[ep].ordered) };
       game.save.completed[ep] = true;
       if (E.endNode) { game.save.mapNode = E.endNode; game.save.region = game.region = 'galilee'; }
       if (E.region === 'jerusalem') { game.save.jerNode = E.place; game.save.region = game.region = 'jerusalem'; }

@@ -235,7 +235,10 @@ and the title screen's Español button uses a shipped Spanish version at once.
   Philip about bread, or why Barnabas stood by Mark). Each unlocks once the player has witnessed both halves.
 - **Finds**: keepsakes and archaeology Easter eggs (the Caiaphas ossuary, the Pilate stone, the heel bone of a crucified
   man, the Erastus pavement, the Galilee boat…), unlocked by completing their episode or testimony.
-- **Letters**: Nicodemus answers each report in Eras I–II, in reply to the conclusion the player sealed.
+- **Letters**: Nicodemus answers each report from Capernaum to Cyprus (`js/discover2.js` holds Era III onward), in reply
+  to the conclusion the player sealed.
+- **Setting a report in order**: when an episode recorded three or more story moments, the report offers an optional
+  step to tap them in the order they happened (Luke 1:3); ordered accounts are counted in Discoveries.
 - **Your account**: the last page draws on the player's own choices.
 They appear on the study page after a report is sealed and in the scroll's Discoveries tab. Where scholars disagree,
 the text says so.

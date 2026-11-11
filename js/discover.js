@@ -217,8 +217,9 @@ window.TW = window.TW || {};
     const s = save();
     const th = D.unlockedThreads(), fi = D.unlockedFinds();
     const letters = Object.keys(LETTERS).filter((k) => D.letter(k));
-    body.appendChild(el('p', 'empty', T('Threads: ' + th.length + ' of ' + THREADS.length + ' · Finds: ' + fi.length + ' of ' + FINDS.length + ' · Letters: ' + letters.length,
-      'Hilos: ' + th.length + ' de ' + THREADS.length + ' · Hallazgos: ' + fi.length + ' de ' + FINDS.length + ' · Cartas: ' + letters.length)));
+    const inOrder = Object.values((s && s.reports) || {}).filter((r) => r && r.ordered).length;
+    body.appendChild(el('p', 'empty', T('Threads: ' + th.length + ' of ' + THREADS.length + ' · Finds: ' + fi.length + ' of ' + FINDS.length + ' · Letters: ' + letters.length + ' · Accounts set in order: ' + inOrder,
+      'Hilos: ' + th.length + ' de ' + THREADS.length + ' · Hallazgos: ' + fi.length + ' de ' + FINDS.length + ' · Cartas: ' + letters.length + ' · Relatos puestos en orden: ' + inOrder)));
     if (!th.length && !fi.length && !letters.length) {
       body.appendChild(el('p', 'empty', T('Finish episodes to receive letters, collect finds, and notice threads where one account explains another.', 'Termina episodios para recibir cartas, reunir hallazgos y descubrir hilos donde un relato explica otro.')));
       return;
