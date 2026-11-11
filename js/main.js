@@ -3,6 +3,8 @@
 window.TW = window.TW || {};
 (function (TW) {
   const U = TW.U, D = TW.D, SC = TW.Scene, MV = TW.MapView;
+  // developer tools (Dub Studio, line export) appear only with ?dev in the address
+  const DEV = /[?&]dev\b/.test(location.search);
   const $ = (s) => document.querySelector(s);
   const el = (tag, cls, text) => {
     const e = document.createElement(tag);
@@ -642,11 +644,7 @@ window.TW = window.TW || {};
     checkRow(body, 'Reduce motion', 'reduceMotion');
     checkRow(body, 'Higher contrast', 'contrast');
     section(body, 'Language');
-    pickRow(body, 'Language', 'lang', [['en', 'English'], ['es', 'Español']], (v) => {
-      if (v === 'es' && TW.Bible.lang() !== 'es') { const sp = TW.Bible.list().find((x) => x.lang === 'es'); if (sp) TW.Settings.set('bible', sp.id); }
-      if (v === 'en' && TW.Bible.lang() !== 'en') TW.Settings.set('bible', 'WEB');
-      TW.Speech.reload(); relabel(); rerender();
-    });
+    pickRow(body, 'Language', 'lang', [['en', 'English'], ['es', 'Español']], (v) => { setLanguage(v); rerender(); });
     if (TW.Settings.get('lang') === 'es') body.appendChild(el('p', 'empty', 'El menú está en español. La historia se mostrará en español a medida que se traduzca; mientras tanto aparece en inglés. Para las Escrituras en español, añade la Reina-Valera 1909 abajo.'));
     section(body, 'Bible translation');
     pickRow(body, 'Bible translation', 'bible', TW.Bible.list().map((v) => [v.id, v.name + (v.id === 'WEB' ? '' : ' (' + TW.Bible.count(v.id) + ')')]), () => { relabel(); rerender(); });
@@ -712,12 +710,12 @@ window.TW = window.TW || {};
     restore.addEventListener('change', () => readFile(restore, (text) => {
       try { const sv = JSON.parse(text); if (!sv || typeof sv !== 'object' || !sv.completed) throw new Error(); game.save = Object.assign(U.defaultSave(), sv); persist(); relabel(); rerender(); } catch (e) { alert('That file is not a saved journey.'); }
     }));
-    const lines = el('button', 'btn small', 'Export lines'); lines.type = 'button';
+    const lines = el('button', 'btn small', 'Export lines'); lines.type = 'button'; lines.hidden = !DEV;
     lines.title = 'Every line you have seen, with its permanent ID, for recorded voices or translation';
     lines.addEventListener('click', () => download('the-way-lines.json', TW.Lines.export()));
     [back, rb, restore, lines].forEach((n) => row.appendChild(n));
     body.appendChild(row);
-    body.appendChild(el('p', 'empty', 'Backup copies your journey to a file (and to the clipboard), so you can move it to another device. Export lines lists every line you have seen with its permanent ID, for recording voices or translating.'));
+    body.appendChild(el('p', 'empty', 'Backup copies your journey to a file (and to the clipboard), so you can move it to another device.' + (DEV ? ' Export lines lists every line you have seen with its permanent ID, for recording voices or translating.' : '')));
   }
   function renderVoices(body) {
     const SP = TW.Speech;
@@ -755,7 +753,8 @@ window.TW = window.TW || {};
     const L = TW.Lines, lang = TW.Settings.get('lang') || 'en';
     const groups = L.groups(), keys = Object.keys(groups);
     checkRow(body, 'Play recorded voices when available', 'recordings');
-    body.appendChild(el('p', '', 'Recordings in the game’s audio/' + lang + ' folder play automatically, line by line; any line without one is read by the device. Ready-made batches for TTS Studio, one per episode, are in the dub folder (dub/index.html on your published copy). You can also record your own with the iPhone’s Shortcuts app; see RECORDING.md.'));
+    if (!DEV) { body.appendChild(el('p', 'empty', 'Recorded voices play wherever they exist. Any other line is read by your device’s voice.')); return; }
+    body.appendChild(el('p', '', 'Developer tools (shown because the address has ?dev). Recordings in the game’s audio/' + lang + ' folder play automatically, line by line; any line without one is read by the device. Ready-made batches for TTS Studio, one per episode, are in the dub folder (dub/index.html on your published copy). You can also record your own with the iPhone’s Shortcuts app; see RECORDING.md.'));
     if (!keys.length) { body.appendChild(el('p', 'empty', 'Play an episode first; its lines will appear here.')); return; }
     const done = L.recorded(lang);
     const title = (k) => (D.episodes[k] ? D.episodes[k].num + '. ' + D.episodes[k].title : k.indexOf('t:') === 0 ? 'Testimony: ' + k.slice(2) : k.indexOf('s:') === 0 ? 'Service: ' + k.slice(2) : 'Other');
@@ -815,6 +814,27 @@ window.TW = window.TW || {};
     reset.addEventListener('click', () => { if (confirm('Forget the record of which lines were recorded? Your audio files are not touched.')) { L.unmark(lang); openJournal('settings'); } });
     body.appendChild(reset);
   }
+  // Change the language. Choosing Spanish also fetches a Spanish Bible the first time (kept on the device).
+  let fetchingSpanish = false;
+  const langNote = (msg) => { const n = $('#lang-status'); if (n) { n.textContent = msg; n.hidden = !msg; } };
+  function setLanguage(v) {
+    TW.Settings.set('lang', v);
+    if (v === 'en' && TW.Bible.lang() !== 'en') TW.Settings.set('bible', 'WEB');
+    if (v === 'es' && TW.Bible.lang() !== 'es') {
+      const sp = TW.Bible.list().find((x) => x.lang === 'es');
+      if (sp) TW.Settings.set('bible', sp.id);
+      else if (!fetchingSpanish) {
+        fetchingSpanish = true;
+        langNote('Descargando la Reina-Valera…');
+        TW.Bible.download('RV1909', () => {}).then((r) => {
+          fetchingSpanish = false;
+          if (r.ok) { if (TW.Settings.get('lang') === 'es') TW.Settings.set('bible', r.id); langNote('Escrituras en español: ' + r.name + '.'); relabel(); }
+          else langNote('Sin conexión: las Escrituras siguen en inglés por ahora. Puedes descargarlas después en Ajustes.');
+        });
+      }
+    }
+    TW.Speech.reload(); relabel();
+  }
   // relabel everything that depends on language or Bible version
   function relabel() {
     TW.I18n.apply();
@@ -825,6 +845,8 @@ window.TW = window.TW || {};
       : 'Scripture quotations are from the ' + v.name + (/public domain/i.test(v.license) ? ', which is in the public domain.' : '.');
     const rep = document.querySelector('[data-tab=reports]');
     if (rep) rep.textContent = T(TW.Role.is() ? 'Letters' : 'Reports');
+    const lb = $('#btn-title-lang');
+    if (lb) { lb.textContent = TW.Settings.get('lang') === 'es' ? 'English' : 'Español'; lb.setAttribute('lang', TW.Settings.get('lang') === 'es' ? 'en' : 'es'); }
     $('#copyright').textContent = '© ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '. ' + (TW.Settings.get('lang') === 'es' ? 'Libre para jugar y compartir. Todos los demás derechos reservados.' : 'Free to play and share. All other rights reserved.');
   }
   function openJournal(tab) {
@@ -907,11 +929,14 @@ window.TW = window.TW || {};
     const E = D.episodes[ep];
     openOverlay('#o-report');
     const ltr = TW.Role.is();
-    document.querySelector('#o-report .scroll-title').textContent = ltr ? 'Letter to Nicodemus' : 'Report to Nicodemus';
+    document.querySelector('#o-report .scroll-title').textContent = TW.t(ltr ? 'Letter to Nicodemus' : 'Report to Nicodemus');
     document.querySelector('#o-report .help').textContent = ltr ? 'Choose what goes in your letter.' : 'Choose what goes in your report.';
     $('#btn-seal').textContent = ltr ? 'Seal the letter' : 'Seal the report';
     document.querySelector('[data-tab=reports]').textContent = TW.t(ltr ? 'Letters' : 'Reports');
-    $('#report-from').textContent = TW.Role.is() ? 'From ' + TW.Role.voiceName() + ', to her uncle Nicodemus. ' + E.scene + '.' : 'From ' + TW.Role.voiceName() + ', a scribe. ' + E.scene + '.';
+    const es = TW.Settings.get('lang') === 'es', scene = TW.tr(E.scene);
+    $('#report-from').textContent = TW.Role.is()
+      ? (es ? 'De ' + TW.Role.voiceName() + ', para su tío Nicodemo. ' : 'From ' + TW.Role.voiceName() + ', to her uncle Nicodemus. ') + scene + '.'
+      : (es ? 'De ' + TW.Role.voiceName() + ', escriba. ' : 'From ' + TW.Role.voiceName() + ', a scribe. ') + scene + '.';
     const box = $('#report-obs');
     box.innerHTML = '';
     (game.save.obs[ep] || []).forEach((o, i) => {
@@ -1030,6 +1055,7 @@ window.TW = window.TW || {};
   }
 
   // ---------- boot ----------
+  $('#btn-title-lang').addEventListener('click', (e) => { e.stopPropagation(); setLanguage(TW.Settings.get('lang') === 'es' ? 'en' : 'es'); });
   // Settings straight from the title screen
   $('#btn-title-settings').addEventListener('click', (e) => { e.stopPropagation(); openJournal('settings'); });
   relabel();

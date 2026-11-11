@@ -26,17 +26,20 @@ window.TW = window.TW || {};
     L.seen.set(id, { id, kind: o.kind, speaker: o.speaker || '', ref: o.ref || '', text: o.text, ep, role, n: L.seen.size });
     saveSeen();
   };
+  // A translation may be { m: '…', f: '…' } where the language marks gender and English does not:
+  // m for Eleazar's account, f for Elisheva's.
+  const pickForm = (t) => (t && typeof t === 'object' ? ((TW.Role && TW.Role.is && TW.Role.is()) ? t.f : t.m) || t.m || t.f : t);
   L.translate = function (id, text) {
     const lang = TW.Settings ? TW.Settings.get('lang') : 'en';
     const t = lang !== 'en' && L.translations[lang] && L.translations[lang][id];
-    return t || text;
+    return pickForm(t) || text;
   };
   // Translate any displayed text: by line ID first, then the interface dictionary; otherwise unchanged.
   TW.tr = function (text) {
     if (typeof text !== 'string' || !text) return text;
     const lang = TW.Settings ? TW.Settings.get('lang') : 'en';
     if (lang === 'en') return text;
-    const t = L.translations[lang] && L.translations[lang][L.id('data', text)];
+    const t = pickForm(L.translations[lang] && L.translations[lang][L.id('data', text)]);
     if (t) return t;
     return TW.t ? TW.t(text) : text;
   };

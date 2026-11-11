@@ -90,7 +90,7 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/scripture10.js` – WEB passages: 2 Timothy, Luke 21, Revelation
 - `tools/lines-en.json` – catalog of every line in the game with its permanent ID (translation and voice work)
 - `dub/` – ready-made TTS Studio batches, one per episode (`dub/index.html` lists them)
-- `i18n/es-capernaum.js` – Spanish for Episode I
+- `i18n/es-capernaum.js`, `i18n/es-era1b.js`, `i18n/es-era1c.js` – Spanish for Era I (Episodes I–V)
 - `js/scripture6.js` – WEB passages: Acts 18:24–24:26
 - `js/about.js` – copyright holder, contact and license summary shown in the game (fill in your name here)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
@@ -215,3 +215,9 @@ and 1,252 lines to voice (about 228,000 characters, roughly four hours of audio)
 Spanish: interface text, study pages, the timeline and map labels all pass through `TW.tr`, and story lines through
 their IDs. Translations live in `i18n/es-*.js`; any line without one stays in English. Scripture is never translated
 by these files: it comes from the chosen Spanish Bible version, and book names follow the language.
+
+### Developer tools
+The Dub Studio and the line export in Settings appear only when the address ends in `?dev`
+(for example `https://YOU.github.io/the-way/?dev`). Players see only the "Play recorded voices" switch.
+Recorded voices need no manifest: the game tries `audio/<lang>/<line ID>.mp3` and falls back to the device voice.
+Translations may give masculine and feminine forms, `{ m: '…', f: '…' }`, for Eleazar's and Elisheva's accounts.
