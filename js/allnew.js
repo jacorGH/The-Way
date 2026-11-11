@@ -52,6 +52,7 @@ window.TW = window.TW || {};
     reader.pose = 'stand';
     me.pose = 'sit';
     AU() && AU().sfx('chime');
+    if (TW.Discover) await SC.say({ kind: 'drama', text: TW.Discover.endingLine() });
     await SC.say({ kind: 'drama', text: 'You began as someone sent to watch a carpenter from Nazareth, to see whether there was anything in it. You have told what you saw. The scroll is hers now, and whoever she reads it to.' });
     game.observe('allnew', 'new', '“Behold, I am making all things new” (Revelation 21:5).', false, true);
     game.observe('allnew', 'come', '“He who is thirsty, let him come. He who desires, let him take the water of life freely” (Revelation 22:17).', false, true);

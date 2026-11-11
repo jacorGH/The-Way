@@ -417,3 +417,16 @@ html.selectable .dialog, html.selectable .dialog * { -webkit-user-select: text; 
 .studio-box { width: 100%; box-sizing: border-box; font-family: ui-monospace, Menlo, monospace; font-size: 0.75rem; }
 #btn-title-settings, #btn-title-lang { color: var(--on-basalt-soft); margin-top: 0.8rem; }
 .audio-toggles { flex-wrap: wrap; row-gap: 0.4rem; }
+
+/* ---------- discoveries: letters, threads, finds ---------- */
+.disc-letter, .disc-thread, .disc-find { margin: 1rem 0; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid var(--papyrus-edge); }
+.disc-letter { background: rgba(255, 250, 235, 0.55); font-style: italic; }
+.disc-thread { background: rgba(120, 90, 50, 0.08); border-left: 3px solid #8a5a2a; }
+.disc-find { background: rgba(60, 90, 110, 0.07); border-left: 3px solid #4a6a7a; }
+.disc-kicker { margin: 0 0 0.35rem; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.75; font-style: normal; }
+.disc-ep { margin: 0 0 0.2rem; font-weight: 600; font-style: normal; }
+.disc-greet { margin: 0 0 0.3rem; }
+.disc-body { margin: 0 0 0.4rem; }
+.disc-sign { margin: 0; text-align: right; }
+.disc-thread h4, .disc-find h4 { margin: 0 0 0.35rem; font-size: 1.02rem; }
+.disc-thread p, .disc-find p { margin: 0 0 0.4rem; }

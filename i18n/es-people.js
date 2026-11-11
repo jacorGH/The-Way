@@ -5,6 +5,7 @@ window.TW = window.TW || {};
 (function (TW) {
   // speaker names and interface labels, translated wherever they appear
   TW.I18n.add('es', {
+    'Discoveries': 'Descubrimientos', 'New in your Discoveries': 'Algo nuevo en tus Descubrimientos',
     'Blank parchment marks lands you have not heard of yet.': 'El pergamino en blanco señala tierras de las que todavía no has oído hablar.',
     'Your home city at Passover. Tap a place.': 'Tu ciudad en la Pascua. Toca un lugar.', 'People who need you': 'Personas que te necesitan',
     'A Pharisee from Capernaum': 'Un fariseo de Capernaúm', 'A dove seller': 'Un vendedor de palomas', 'A fisherman mending nets': 'Un pescador remendando redes',

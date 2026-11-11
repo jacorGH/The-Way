@@ -228,3 +228,14 @@ Translations may give masculine and feminine forms, `{ m: '…', f: '…' }`, fo
 3. Put the saved file (for example `RV1909.js` or `ASV.js`) in the `bible/` folder and push.
 `bible/versions.js` loads ASV, KJV, RV1909 and RV1858 if their files are present. A shipped version needs no download,
 and the title screen's Español button uses a shipped Spanish version at once.
+
+## Discoveries
+`js/discover.js` holds, in English and Spanish:
+- **Threads**: undesigned coincidences, where one account quietly explains another (for example, why Jesus asked
+  Philip about bread, or why Barnabas stood by Mark). Each unlocks once the player has witnessed both halves.
+- **Finds**: keepsakes and archaeology Easter eggs (the Caiaphas ossuary, the Pilate stone, the heel bone of a crucified
+  man, the Erastus pavement, the Galilee boat…), unlocked by completing their episode or testimony.
+- **Letters**: Nicodemus answers each report in Eras I–II, in reply to the conclusion the player sealed.
+- **Your account**: the last page draws on the player's own choices.
+They appear on the study page after a report is sealed and in the scroll's Discoveries tab. Where scholars disagree,
+the text says so.

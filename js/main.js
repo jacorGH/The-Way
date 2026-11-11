@@ -506,7 +506,11 @@ window.TW = window.TW || {};
     SC.init(sceneEls); SC.begin(); SC.start();
     TW.Service.run(game, id);
   }
-  game.hear = (id, n) => { game.save.heard[id] = Math.max(game.save.heard[id] || 0, n || 1); persist(); };
+  game.hear = (id, n) => {
+    const before = TW.Discover ? TW.Discover.snapshot() : null;
+    game.save.heard[id] = Math.max(game.save.heard[id] || 0, n || 1); persist();
+    if (before) { const now = TW.Discover.snapshot(); if ([...now].some((x) => !before.has(x)) && SC.toast) SC.toast(TW.t('New in your Discoveries')); }
+  };
   game.enterTestimony = function (id) { chooseVoice('t:' + id, 'Testimony: ' + D.testimonies[id].title, () => startTestimony(id)); };
   function startTestimony(id) {
     const T = D.testimonies[id];
@@ -893,6 +897,7 @@ window.TW = window.TW || {};
     const body = $('#journal-body');
     body.innerHTML = '';
     const s = game.save;
+    if (tab === 'discover') { if (TW.Discover) TW.Discover.journal(body, el); return; }
     if (tab === 'obs') {
       const eps = D.eraOrder.filter((id) => (s.obs[id] || []).length).concat(Object.keys(s.obs).filter((k) => (k.startsWith('t:') || k.startsWith('s:')) && s.obs[k].length));
       if (!eps.length) { body.appendChild(el('p', 'empty', 'Nothing written yet. In each place, tap people and things to note what you see.')); return; }
@@ -992,27 +997,30 @@ window.TW = window.TW || {};
     });
     seal.onclick = () => {
       const before = revealedSet();
+      const disc0 = TW.Discover ? TW.Discover.snapshot() : new Set();
       const all = game.save.obs[ep] || [];
       const picked = [...box.querySelectorAll('input:checked')].map((c) => all[+c.value].text);
       const ci = +rc.querySelector('input:checked').value;
-      game.save.reports[ep] = { obs: picked, conclusion: TW.Role.G(E.conclusions[ci]) };
+      game.save.reports[ep] = { obs: picked, conclusion: TW.Role.G(E.conclusions[ci]), ci: ci };
       game.save.completed[ep] = true;
       if (E.endNode) { game.save.mapNode = E.endNode; game.save.region = game.region = 'galilee'; }
       if (E.region === 'jerusalem') { game.save.jerNode = E.place; game.save.region = game.region = 'jerusalem'; }
       persist();
       const after = revealedSet();
       const fresh = [...after].filter((x) => !before.has(x));
-      openStudy(ep, fresh);
+      const disc1 = TW.Discover ? TW.Discover.snapshot() : new Set();
+      openStudy(ep, fresh, new Set([...disc1].filter((x) => !disc0.has(x))));
     };
   };
 
-  function openStudy(ep, fresh) {
+  function openStudy(ep, fresh, newly) {
     const E = D.episodes[ep];
     openOverlay('#o-study');
     const b = $('#study-body');
     b.innerHTML = '';
     b.appendChild(el('p', 'study-kicker', fresh ? (TW.Role.is() ? 'Your letter is sealed. Now read the passage.' : 'Your report is sealed. Now read the passage.') : 'Study'));
     b.appendChild(el('h2', 'scroll-title', E.title));
+    if (TW.Discover) { TW.Discover.study(ep, fresh, b, el, newly); if (ep === 'allnew' && game.save.completed.allnew) TW.Discover.endingPage(b, el); }
     b.appendChild(el('p', 'study-ref', E.ref + ', World English Bible. ' + (E.parallels.startsWith('told') ? 'This account is ' + E.parallels + '.' : 'Also told in ' + E.parallels + '.')));
     // one or more passages, each optionally limited to a verse range
     const parts = E.passages || [[E.passage, E.from, E.to]];
