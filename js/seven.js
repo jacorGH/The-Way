@@ -7,6 +7,10 @@ window.TW = window.TW || {};
   const SC = TW.Scene, K = TW.Kit, P = TW.P, S = TW.S, AU = () => TW.Audio;
   const R = K.R;
   const EP = { id: 'seven' };
+  // lines assembled during play are built in Spanish when Spanish is chosen
+  const ES = () => TW.Settings && TW.Settings.get('lang') === 'es';
+  const NAMES_ES = { 'Lydia of Antioch': 'Lidia de Antioquía', 'Miriam of Alexandria': 'Miriam de Alejandría', 'Euodia of Alexandria': 'Evodia de Alejandría', 'Theodora of Cyrene': 'Teodora de Cirene', 'Yohanna of Bethany': 'Yohanna de Betania', 'Dinah': 'Dina' };
+  const NM = (n) => NAMES_ES[n] || n;
   const s6 = (a, b) => SC.say({ kind: 'scripture', ref: P.ref('acts6', a, b), text: P.vs('acts6', a, b) });
 
   const WIDOWS = [
@@ -58,10 +62,14 @@ window.TW = window.TW || {};
       for (;;) {
         const opts = ['One loaf.', 'Two loaves.'];
         if (!e.asked) opts.push('Ask about her household first.');
-        pick = await SC.choose(e.w.name + (e.asked ? (e.w.kids ? ', with ' + e.w.kids + (e.w.kids > 1 ? ' children' : ' child') + ' at home' : ', alone') : '') + '. Loaves left: ' + st.loaves + '.', opts, 'Daily bread');
+        pick = await SC.choose(ES()
+          ? NM(e.w.name) + (e.asked ? (e.w.kids ? ', con ' + e.w.kids + (e.w.kids > 1 ? ' hijos' : ' hijo') + ' en casa' : ', sola') : '') + '. Panes restantes: ' + st.loaves + '.'
+          : e.w.name + (e.asked ? (e.w.kids ? ', with ' + e.w.kids + (e.w.kids > 1 ? ' children' : ' child') + ' at home' : ', alone') : '') + '. Loaves left: ' + st.loaves + '.', opts, 'Daily bread');
         if (pick < 2) break;
         e.asked = true; askedCount++;
-        await SC.say({ kind: 'drama', speaker: e.w.name, text: e.w.kids ? (e.w.greek ? 'I have ' + e.w.kids + ' at home. They do not let us near the front.' : e.w.kids + (e.w.kids > 1 ? ' children' : ' child') + ', and nothing in the house.') : 'Only me now.' });
+        await SC.say({ kind: 'drama', speaker: e.w.name, text: e.w.kids ? (ES()
+          ? (e.w.greek ? 'Tengo ' + e.w.kids + ' en casa. No nos dejan acercarnos al frente.' : e.w.kids + (e.w.kids > 1 ? ' hijos' : ' hijo') + ', y nada en la casa.')
+          : (e.w.greek ? 'I have ' + e.w.kids + ' at home. They do not let us near the front.' : e.w.kids + (e.w.kids > 1 ? ' children' : ' child') + ', and nothing in the house.')) : 'Only me now.' });
       }
       const give = Math.min(st.loaves, pick + 1);
       st.loaves -= give; e.given = give;
@@ -76,10 +84,14 @@ window.TW = window.TW || {};
     game.setHeart('seven', heart);
     if (unfed.length) {
       for (const e of unfed) { e.facing = -1; }
-      await SC.say({ kind: 'drama', text: 'The basket is empty. ' + unfed.map((e) => e.w.name).join(', ') + (unfed.length > 1 ? ' are' : ' is') + ' still standing in the courtyard with empty hands.' + (unfed.some((e) => e.w.greek) ? ' Every one of them speaks Greek.' : '') });
+      await SC.say({ kind: 'drama', text: ES()
+        ? 'La canasta está vacía. ' + unfed.map((e) => NM(e.w.name)).join(', ') + (unfed.length > 1 ? ' siguen' : ' sigue') + ' de pie en el patio con las manos vacías.' + (unfed.some((e) => e.w.greek) ? (unfed.length > 1 ? ' Todas hablan griego.' : ' Habla griego.') : '')
+        : 'The basket is empty. ' + unfed.map((e) => e.w.name).join(', ') + (unfed.length > 1 ? ' are' : ' is') + ' still standing in the courtyard with empty hands.' + (unfed.some((e) => e.w.greek) ? ' Every one of them speaks Greek.' : '') });
       game.observe('seven', 'unfed', 'The bread ran out before everyone was fed. ' + (unfed.some((e) => e.w.greek) ? 'The Greek-speaking widows at the back went home with nothing.' : 'Some widows went home with nothing.'), false, true);
     } else {
-      await SC.say({ kind: 'drama', text: 'Every widow goes home with bread.' + (short.length ? ' Not all of them with enough.' : ' For once, it was enough.') });
+      await SC.say({ kind: 'drama', text: ES()
+        ? 'Cada viuda vuelve a casa con pan.' + (short.length ? ' No todas con suficiente.' : ' Por una vez, alcanzó.')
+        : 'Every widow goes home with bread.' + (short.length ? ' Not all of them with enough.' : ' For once, it was enough.') });
       game.observe('seven', 'fed', 'Every widow received bread today' + (short.length ? ', though not every family had enough.' : ', each by her need.'), false, true);
     }
     await SC.say({ kind: 'drama', text: 'You have run this courtyard for one afternoon. The widows from the Dispersion have stood at the back of it every day for months.' });
