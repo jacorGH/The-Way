@@ -484,7 +484,7 @@ window.TW = window.TW || {};
       ctx.textAlign = pos === 'r' ? 'left' : pos === 'l' ? 'right' : 'center';
       const lx = p[0] + (pos === 'r' ? 6 : pos === 'l' ? -6 : 0) * k;
       const ly = p[1] + (pos === 'b' ? 7 * k + 6 * V.dpr : 0);
-      const name = pl.short || pl.name;
+      const name = TW.tr ? TW.tr(pl.short || pl.name) : (pl.short || pl.name);
       ctx.lineJoin = 'round'; ctx.lineWidth = 3.5 * V.dpr;
       ctx.strokeStyle = 'rgba(234,222,192,0.92)'; ctx.strokeText(name, lx, ly);
       ctx.fillStyle = pl.kind === 'locked' ? '#5b2a1d' : ink; ctx.fillText(name, lx, ly);
@@ -500,12 +500,12 @@ window.TW = window.TW || {};
       if (lb.style === 'water' || lb.style === 'river') {
         ctx.font = 'italic ' + (lb.style === 'water' ? 15 : 12) * V.dpr + 'px "EB Garamond", Georgia, serif';
         ctx.fillStyle = 'rgba(214,232,226,0.88)';
-        ctx.fillText(lb.text, p[0], p[1]);
+        ctx.fillText(TW.tr ? TW.tr(lb.text) : lb.text, p[0], p[1]);
       } else {
         ctx.font = (lb.style === 'small' ? 10 : 12) * V.dpr + 'px Cinzel, "Trajan Pro", Georgia, serif';
         if ('letterSpacing' in ctx) ctx.letterSpacing = 2 * V.dpr + 'px';
         ctx.fillStyle = 'rgba(42,28,18,0.6)';
-        ctx.fillText(lb.text, p[0], p[1]);
+        ctx.fillText(TW.tr ? TW.tr(lb.text) : lb.text, p[0], p[1]);
         if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
       }
     });

@@ -4,7 +4,29 @@ Every line in the game has a permanent ID (see `js/lines.js`). A recording named
 `audio/<lang>/`, listed in `audio/manifest.js`, is played instead of the device voice. Lines without a recording are
 still read by the device, so you can record a little at a time.
 
-There are two ways to make recordings:
+## The quick way: TTS Studio (OpenAI)
+
+Ready-made batches for TTS Studio are in **dub/en/**: one JSON file per episode, testimony and service visit, 64 in all,
+covering every spoken line in the game (1,252 lines, about 228,000 characters). On your published copy, open
+**dub/index.html** for a tappable list.
+
+1. Open a batch from dub/index.html, and save it to Files (Share → Save to Files).
+2. In TTS Studio, import the file, check the voices, and generate.
+3. Export the ZIP. It contains `audio/en/<line ID>.mp3`, which is exactly where the game looks.
+4. Unzip it into the game folder, so the MP3s land in **audio/en/**, and push to GitHub (for example with GitMobile).
+
+That is all. The game tries a recording for every line and uses the device voice for any line that has none, so there
+is no list to update; the `manifest.json` inside each ZIP can be ignored or overwritten. Settings → Recorded voices has
+a switch to turn recordings off.
+
+Notes:
+- Scripture lines are recorded from the World English Bible. If a player switches to another Bible version, its
+  Scripture lines are read by the device voice.
+- A line's ID changes when its words change, so an edited line simply falls back to the device voice until it is
+  recorded again. `tools/lines-en.json` is the full catalog; the batches are rebuilt from it.
+- Lines only in Elisheva's account are tagged `W` (her narrator voice); narration shared by both accounts is `N`.
+
+There are two other ways to make recordings:
 
 1. **Free, on your iPhone**, with the Shortcuts app and the Enhanced or Premium voices you download.
 2. **Paid, with OpenAI's text-to-speech API**: more expressive voices you can direct with a written prompt. Roughly a

@@ -67,7 +67,7 @@ window.TW = window.TW || {};
       world: [['Emperors', 'Tiberius, Caligula, Claudius, Nero'], ['Prefect of Judea', 'Pontius Pilate, then Marcellus (from AD 36)']],
       episodes: [
         'samaria', 'desert', 'damascus', 'tabitha', 'cornelius', 'antioch', 'rhoda', 'cyprus', 'pisidia', 'lystra', 'jcouncil', 'lydia', 'jailer', 'berea', 'athens', 'corinth', 'artemis', 'farewell',
-        'arrest', 'plot', 'felix', 'agrippa', 'storm', 'malta', 'rome',
+        'arrest', 'plot', 'felix', 'agrippa', 'storm', 'malta', 'rome', 'letter', 'onesimus',
       ],
     },
     {
@@ -76,7 +76,8 @@ window.TW = window.TW || {};
       summary:
         'Nero blames Christians for the fire of Rome. In Judea, revolt against Rome ends with Jerusalem and the Temple destroyed in AD 70, as Jesus foretold (Mark 13:1–2).',
       world: [['Emperors', 'Nero, then Vespasian'], ['Roman general', 'Titus']],
-      episodes: [{ title: 'Flight from Jerusalem', ref: 'Luke 21:20–24' }],
+      open: true,
+      episodes: ['goodfight', 'fall'],
     },
     {
       id: 'patmos', num: 'VI', title: 'Patmos and the Seven Churches', dates: 'c. AD 95',
@@ -84,7 +85,8 @@ window.TW = window.TW || {};
       summary:
         'John, exiled on Patmos, writes to seven churches in Asia (Revelation 1:9–11). Most date this to Domitian’s reign; some argue for the late 60s.',
       world: [['Emperor', 'Domitian (AD 81–96)']],
-      episodes: [{ title: 'Letters to Seven Churches', ref: 'Revelation 2–3' }],
+      open: true,
+      episodes: ['lamps', 'allnew'],
     },
   ];
 
@@ -1170,6 +1172,59 @@ window.TW = window.TW || {};
     },
   });
   D.eraOrder.push('storm', 'malta', 'rome');
+  Object.assign(D.episodes, {
+    letter: {
+      num: 'XLIII', title: 'The Letter to Philippi', ref: 'Philippians', passage: 'phil', place: 'philippi', region: 'aegean', era: 'spread',
+      scene: 'Rome and Philippi, c. AD 61', parallels: 'Acts 16; 28:30–31',
+      question: { id: 'content', text: 'Paul wrote that he had learned to be content in every state. How do you learn that?', ref: 'Philippians 4:11–13' },
+      hearts: ['You read it plainly, exactly as it was written.', 'You read it gently, looking at each of them.', 'You handed the letter to Lydia for that part.'],
+      answers: { cheer: ['“Rejoice in the Lord always!” Written in chains: his joy did not rest on his circumstances, but on the Lord who is near.', 'Philippians 4:4–7'] },
+      conclusions: [
+        'Paul wrote from his chains that they had turned out to advance the Good News, even in the praetorian guard.',
+        'He told them to have the mind of Christ, who emptied himself, took the form of a servant, and humbled himself to the death of the cross.',
+        'In the room where the church began, I read aloud: “Rejoice in the Lord always! Again I will say, Rejoice!”',
+      ],
+      notes: [
+        ['Written in chains (1:13)', 'Most think Paul wrote from his house arrest in Rome; some suggest an earlier imprisonment, at Ephesus or Caesarea.'],
+        ['A scribe (Romans 16:22)', 'Paul usually dictated his letters. A secretary named Tertius wrote Romans; Paul often added a closing line in his own hand (Galatians 6:11).'],
+        ['Epaphroditus (2:25)', 'The Philippians’ messenger, who brought their gift to Paul in prison and fell sick almost to death.'],
+        ['The mind of Christ (2:5–11)', 'Many scholars think these lines were an early hymn about Christ that Paul quoted and the churches already sang.'],
+        ['Euodia and Syntyche (4:2–3)', 'Two women who had “labored with” Paul in the Good News, now at odds with each other. Paul names them with honor and pleads for peace.'],
+        ['Caesar’s household (4:22)', 'Slaves and freedmen in the imperial service. The Good News had reached the emperor’s own staff.'],
+      ],
+      reflect: [
+        'Paul wrote “Rejoice” from prison. What would make that honest rather than forced?',
+        'What would it mean for you to “empty yourself” as Christ did?',
+        'Why do you think Paul named Euodia and Syntyche in a letter read to the whole church?',
+      ],
+    },
+    onesimus: {
+      num: 'XLIV', title: 'Onesimus', ref: 'Philemon', passage: 'phm', place: 'colossae', region: 'aegean', era: 'spread',
+      scene: 'Rome and Colossae, c. AD 61', parallels: 'Colossians 4:7–9; Galatians 3:28',
+      question: { id: 'brother', text: 'What would it take to receive someone “no longer as a slave, but more than a slave, a beloved brother”?', ref: 'Philemon 16' },
+      hearts: ['You stood beside Onesimus while you read.', 'You stood beside Philemon while you read.', 'You read from the middle of the room, between them.'],
+      conclusions: [
+        'A runaway slave became Paul’s child in the faith, and Paul sent him home with a letter.',
+        'Paul did not command. He asked Philemon to receive Onesimus as he would receive Paul himself, and to put any debt on Paul’s account.',
+        'The letter was read before the whole church in Philemon’s house. It does not tell us what Philemon did; it was kept, and copied, and read again.',
+      ],
+      notes: [
+        ['Slavery in Rome', 'A large part of the empire’s people were slaves, of every nation, owned with near total legal power. A runaway could be branded, beaten or killed.'],
+        ['Onesimus (10–11)', 'The name means “useful.” Paul plays on it: once useless to you, now useful to you and to me.'],
+        ['In his own hand (19)', 'Paul takes the pen himself to sign a promise to pay whatever Onesimus owed.'],
+        ['Read to a church (2)', 'The letter is addressed to Philemon, but also to Apphia, Archippus and “the assembly in your house.” Philemon would answer in front of them all.'],
+        ['Tychicus (Colossians 4:7–9)', 'He carried Paul’s letter to Colossae, traveling with Onesimus, whom Paul called a faithful and beloved brother from their own town.'],
+        ['Afterward', 'About fifty years later, Ignatius of Antioch wrote warmly of Onesimus, bishop of Ephesus. Whether he was this Onesimus no one can say.'],
+      ],
+      reflect: [
+        'Why do you think Paul asked rather than commanded?',
+        'Where do people who belong to the same church still live as master and slave, rich and poor, insider and outsider?',
+        'Whose debt might you offer to put on your own account?',
+      ],
+    },
+  });
+  D.eraOrder.push('letter', 'onesimus');
+
 
 
 
@@ -1411,7 +1466,7 @@ window.TW = window.TW || {};
       text: 'Herod’s fortress at the northwest corner of the Temple platform, garrisoned by a Roman cohort. Stairs led down from it into the Temple courts.' },
     { id: 'temple', name: 'The Temple', alt: 'Herod’s Temple on its great platform', lon: 35.2356, lat: 31.7781, kind: 'episode', episodes: ['entry', 'temple', 'pentecost', 'gate', 'trial'], label: 'r',
       text: 'Herod the Great began rebuilding the Temple around 20 BC, and work was still going on in Jesus’ day (John 2:20). Its platform covered about 14 hectares, one of the largest sacred precincts in the Roman world.' },
-    { id: 'olivet', name: 'Mount of Olives road', short: 'Olivet road', alt: 'The descent toward the city', lon: 35.2428, lat: 31.7784, kind: 'episode', episodes: ['entry'], label: 'r',
+    { id: 'olivet', name: 'Mount of Olives road', short: 'Olivet road', alt: 'The descent toward the city', lon: 35.2428, lat: 31.7784, kind: 'episode', episodes: ['entry', 'fall'], label: 'r',
       text: 'The road from Bethany crosses the ridge and drops toward the Kidron Valley. Here the whole city suddenly comes into view.' },
     { id: 'antonia', name: 'Antonia Fortress', short: 'Antonia', alt: 'Roman garrison', lon: 35.2341, lat: 31.7809, kind: 'history', label: 'l',
       text: 'A fortress Herod named for Mark Antony, overlooking the Temple courts. Roman soldiers watched the crowds from it, especially at the feasts (Acts 21:31–35).' },
@@ -1545,7 +1600,7 @@ window.TW = window.TW || {};
       text: 'A Roman colony and harbor on the Aegean. Here Paul saw the man of Macedonia in a vision, and here the “we” of Acts begins.' },
     { id: 'samothrace', name: 'Samothrace', alt: 'An island on the way', lon: 25.55, lat: 40.47, kind: 'history', label: 'r', ref: 'Acts 16:11', text: 'A mountainous island where ships from Troas put in overnight.' },
     { id: 'neapolis', name: 'Neapolis', alt: 'Kavala, the port of Philippi', lon: 24.410, lat: 40.937, kind: 'history', label: 'r', ref: 'Acts 16:11', text: 'The harbor where Paul first set foot in Europe.' },
-    { id: 'philippi', name: 'Philippi', alt: 'A Roman colony in Macedonia', lon: 24.287, lat: 41.013, kind: 'episode', episodes: ['lydia', 'jailer'], label: 'l',
+    { id: 'philippi', name: 'Philippi', alt: 'A Roman colony in Macedonia', lon: 24.287, lat: 41.013, kind: 'episode', episodes: ['lydia', 'jailer', 'letter'], label: 'l',
       text: 'A Roman colony on the Via Egnatia, settled with veterans after the battle fought here in 42 BC. Few Jews lived here; there seems to have been no synagogue.' },
     { id: 'amphipolis', name: 'Amphipolis', alt: 'On the Strymon', lon: 23.845, lat: 40.822, kind: 'history', label: 'r', ref: 'Acts 17:1', text: 'A Macedonian city on the Via Egnatia, passed through on the road to Thessalonica.' },
     { id: 'thessalonica', name: 'Thessalonica', alt: 'Capital of Macedonia', lon: 22.944, lat: 40.632, kind: 'episode', episodes: ['berea'], label: 'r', text: 'The capital of the province, a great port, where Paul reasoned three Sabbaths in the synagogue.' },
@@ -1553,10 +1608,19 @@ window.TW = window.TW || {};
     { id: 'athens', name: 'Athens', alt: 'The city of the philosophers', lon: 23.727, lat: 37.972, kind: 'episode', episodes: ['athens'], label: 'r', text: 'Past its greatest days but still the home of philosophy, full of temples and statues. Paul spoke at the Areopagus.' },
     { id: 'corinth', name: 'Corinth', alt: 'Capital of Achaia', lon: 22.880, lat: 37.906, kind: 'episode', episodes: ['corinth'], label: 'l', text: 'A rich Roman colony on the isthmus between two seas, where Paul stayed eighteen months with Priscilla and Aquila.' },
     { id: 'cenchreae', name: 'Cenchreae', alt: 'Corinth’s eastern port', lon: 22.990, lat: 37.884, kind: 'history', label: 'r', ref: 'Acts 18:18; Romans 16:1', text: 'Home of Phoebe, a servant of the church there (Romans 16:1).' },
-    { id: 'ephesus', name: 'Ephesus', alt: 'Chief city of Asia', lon: 27.341, lat: 37.940, kind: 'episode', episodes: ['artemis'], label: 'r', text: 'A great harbor city with the temple of Artemis, one of the wonders of the world. Paul taught here for two years.' },
+    { id: 'ephesus', name: 'Ephesus', alt: 'Chief city of Asia', lon: 27.341, lat: 37.940, kind: 'episode', episodes: ['artemis', 'lamps'], label: 'r', text: 'A great harbor city with the temple of Artemis, one of the wonders of the world. Paul taught here for two years.' },
     { id: 'miletus', name: 'Miletus', alt: 'An old Ionian port', lon: 27.278, lat: 37.530, kind: 'episode', episodes: ['farewell'], label: 'r', text: 'Where Paul said farewell to the elders of Ephesus.' },
     { id: 'thyatira', name: 'Thyatira', alt: 'A city of dyers', lon: 27.837, lat: 38.918, kind: 'history', label: 'r', ref: 'Acts 16:14; Revelation 2:18', text: 'Lydia’s home city, known for its trade guilds and its purple dye.' },
     { id: 'smyrna', name: 'Smyrna', alt: 'İzmir', lon: 27.140, lat: 38.420, kind: 'history', label: 'l', ref: 'Revelation 2:8', text: 'A great harbor city of Asia, one of the seven churches of Revelation.' },
+    { id: 'colossae', name: 'Colossae', alt: 'A town in the Lycus valley', lon: 29.22, lat: 37.79, kind: 'episode', episodes: ['onesimus'], label: 'r',
+      text: 'A small town in the valley of the Lycus, home of Philemon, Apphia, Archippus and the church that met in their house. Paul had never visited it.' },
+    { id: 'laodicea', name: 'Laodicea', alt: 'A rich city of bankers and wool', lon: 29.11, lat: 37.84, kind: 'history', label: 'l', ref: 'Colossians 4:16; Revelation 3:14–22', text: 'A wealthy city a few hours’ walk from Colossae, famous for banking, black wool and an eye salve.' },
+    { id: 'hierapolis', name: 'Hierapolis', alt: 'The city of the hot springs', lon: 29.12, lat: 37.93, kind: 'history', label: 'r', ref: 'Colossians 4:13', text: 'Known for its hot mineral springs and white terraces, across the valley from Laodicea.' },
+    { id: 'patmos', name: 'Patmos', alt: 'A small rocky island', lon: 26.55, lat: 37.32, kind: 'episode', episodes: ['allnew'], label: 'l',
+      text: 'A small, bare island off the coast of Asia, where John was “because of God’s Word and the testimony of Jesus Christ” (Revelation 1:9).' },
+    { id: 'pergamum', name: 'Pergamum', alt: 'A royal city on its hill', lon: 27.18, lat: 39.13, kind: 'history', label: 'r', ref: 'Revelation 2:12–17', text: 'An old royal capital with a great altar of Zeus and a temple to the emperor: “where Satan’s throne is.”' },
+    { id: 'sardis', name: 'Sardis', alt: 'Once the city of Croesus', lon: 28.04, lat: 38.49, kind: 'history', label: 'r', ref: 'Revelation 3:1–6', text: 'A city living on its famous past: “you have a reputation of being alive, but you are dead.”' },
+    { id: 'philadelphia', name: 'Philadelphia', alt: 'A small city on the road east', lon: 28.52, lat: 38.35, kind: 'history', label: 'r', ref: 'Revelation 3:7–13', text: 'A small church with “a little power,” before which stood an open door.' },
     { id: 'assos', name: 'Assos', alt: 'A harbor on the Troad', lon: 26.337, lat: 39.488, kind: 'history', label: 'r', ref: 'Acts 20:13–14', text: 'Paul walked here overland from Troas to meet the ship.' },
   ];
   const aegNodes = {
@@ -1564,7 +1628,7 @@ window.TW = window.TW || {};
   };
   aegPlaces.forEach((p) => { aegNodes[p.id] = { lon: p.lon, lat: p.lat, name: p.name }; });
   const aegEdges = [
-    ['toeast', 'a1'], ['a1', 'troas'], ['troas', 'assos'], ['a1', 'thyatira'], ['thyatira', 'smyrna'], ['toeast', 'a5'], ['a5', 'ephesus'], ['ephesus', 'smyrna'], ['ephesus', 'miletus'],
+    ['toeast', 'a1'], ['a1', 'troas'], ['ephesus', 'patmos', 'boat'], ['thyatira', 'pergamum'], ['thyatira', 'sardis'], ['sardis', 'philadelphia'], ['philadelphia', 'laodicea'], ['a5', 'laodicea'], ['laodicea', 'colossae'], ['laodicea', 'hierapolis'], ['troas', 'assos'], ['a1', 'thyatira'], ['thyatira', 'smyrna'], ['toeast', 'a5'], ['a5', 'ephesus'], ['ephesus', 'smyrna'], ['ephesus', 'miletus'],
     ['troas', 'samothrace', 'boat'], ['samothrace', 'neapolis', 'boat'], ['neapolis', 'philippi'], ['philippi', 'amphipolis'], ['amphipolis', 'a2'], ['a2', 'thessalonica'],
     ['thessalonica', 'berea'], ['berea', 'a3'], ['a3', 'athens', 'boat'], ['athens', 'a4'], ['a4', 'corinth'], ['corinth', 'cenchreae'], ['cenchreae', 'ephesus', 'boat'],
   ];
@@ -1574,7 +1638,7 @@ window.TW = window.TW || {};
     { text: 'Olympus', lon: 22.15, lat: 40.15, style: 'small' }, { text: 'Hellespont', lon: 26.55, lat: 40.15, style: 'river' },
   ];
   D.regions.aegean = {
-    id: 'aegean', title: 'The Aegean', lon0: 21.60, lon1: 28.60, lat0: 36.60, lat1: 41.60, w: 256, h: 238,
+    id: 'aegean', title: 'The Aegean', lon0: 21.60, lon1: 29.70, lat0: 36.60, lat1: 41.60, w: 296, h: 238,
     texelKm: 2.3, scaleKm: 50, start: 'troas', places: aegPlaces, nodes: aegNodes, edges: aegEdges, labels: aegLabels,
   };
   D.regions.aegean.subtitle = 'c. AD 49–57';
@@ -1595,7 +1659,7 @@ window.TW = window.TW || {};
     { id: 'puteoli', name: 'Puteoli', alt: 'The port for Rome’s grain', lon: 14.12, lat: 40.82, kind: 'history', label: 'r', ref: 'Acts 28:13–14', text: 'The great harbor on the Bay of Naples where the grain ships of Alexandria unloaded. Believers were already here.' },
     { id: 'forumappii', name: 'The Market of Appius', alt: 'Forum Appii, on the Appian Way', lon: 13.04, lat: 41.43, kind: 'history', label: 'r', ref: 'Acts 28:15', text: 'A market town about 65 km from Rome, where believers came out to meet Paul.' },
     { id: 'threetaverns', name: 'The Three Taverns', alt: 'A way station on the Appian Way', lon: 12.86, lat: 41.66, kind: 'history', label: 'l', ref: 'Acts 28:15', text: 'About 50 km from Rome, where a second group of believers met him.' },
-    { id: 'rome', name: 'Rome', alt: 'The city of the emperor', lon: 12.48, lat: 41.89, kind: 'episode', episodes: ['rome'], label: 'l',
+    { id: 'rome', name: 'Rome', alt: 'The city of the emperor', lon: 12.48, lat: 41.89, kind: 'episode', episodes: ['rome', 'goodfight'], label: 'l',
       text: 'The capital of the empire, a city of perhaps a million people, with a Jewish community and a church that had existed for years before Paul came.' },
   ];
   const westNodes = { w1: { lon: 20.0, lat: 35.2 }, w2: { lon: 17.0, lat: 35.6 } };

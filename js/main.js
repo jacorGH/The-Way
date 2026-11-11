@@ -7,7 +7,7 @@ window.TW = window.TW || {};
   const el = (tag, cls, text) => {
     const e = document.createElement(tag);
     if (cls) e.className = cls;
-    if (text !== undefined) e.textContent = text;
+    if (text !== undefined) e.textContent = TW.tr ? TW.tr(text) : text;
     return e;
   };
 
@@ -247,7 +247,9 @@ window.TW = window.TW || {};
     det.appendChild(dl);
     if (era.id === 'galilee' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era II, The Road to Jerusalem, comes next.'));
     if (era.id === 'passion' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era III, The Jerusalem Church, comes next.'));
-    if (era.id === 'spread') det.appendChild(el('p', 'era-done', 'Acts is complete. Still to come: the letters, the fall of Jerusalem, and Revelation.'));
+    if (era.id === 'spread' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era V, Fire and War, comes next.'));
+    if (era.id === 'war' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era VI, Patmos and the Seven Churches, comes next.'));
+    if (era.id === 'patmos' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have reached the end of the account: from a roof in Capernaum to the last page of the scroll.'));
     if (era.id === 'church' && game.save.completed.seven) det.appendChild(el('p', 'era-done', 'Service is open: look for people who need you on the Jerusalem map.'));
     const ol = el('ol', 'episodes');
     const next = nextEpisode();
@@ -561,6 +563,7 @@ window.TW = window.TW || {};
 
   game.observe = function (ep, id, text, showText, auto) {
     text = TW.Role.G(text);
+    if (TW.Lines && text) TW.Lines.note(TW.Lines.id('observe', text), { kind: 'observe', text: text });
     const list = (game.save.obs[ep] = game.save.obs[ep] || []);
     if (list.find((o) => o.id === id)) return;
     list.push({ id, text, auto: !!auto });
@@ -751,7 +754,8 @@ window.TW = window.TW || {};
   function renderStudio(body) {
     const L = TW.Lines, lang = TW.Settings.get('lang') || 'en';
     const groups = L.groups(), keys = Object.keys(groups);
-    body.appendChild(el('p', '', 'Make your own voice recordings with the iPhone’s Shortcuts app, which can use the Enhanced and Premium voices you download. Play an episode, then record its lines here a batch at a time. See “How to record on iPhone” below, and RECORDING.md in the game folder.'));
+    checkRow(body, 'Play recorded voices when available', 'recordings');
+    body.appendChild(el('p', '', 'Recordings in the game’s audio/' + lang + ' folder play automatically, line by line; any line without one is read by the device. Ready-made batches for TTS Studio, one per episode, are in the dub folder (dub/index.html on your published copy). You can also record your own with the iPhone’s Shortcuts app; see RECORDING.md.'));
     if (!keys.length) { body.appendChild(el('p', 'empty', 'Play an episode first; its lines will appear here.')); return; }
     const done = L.recorded(lang);
     const title = (k) => (D.episodes[k] ? D.episodes[k].num + '. ' + D.episodes[k].title : k.indexOf('t:') === 0 ? 'Testimony: ' + k.slice(2) : k.indexOf('s:') === 0 ? 'Service: ' + k.slice(2) : 'Other');

@@ -61,10 +61,12 @@ window.TW = window.TW || {};
     if (t) return { text: t, fallback: false };
     return { text: (WEB[book] && WEB[book][cv]) || '', fallback: v.id !== 'WEB' };
   };
-  B.bookName = (book) => (B.lang() === 'es' ? ES[book] || book : book);
+  // book names follow a Spanish Bible, or a Spanish interface
+  const spanish = () => B.lang() === 'es' || (TW.Settings && TW.Settings.get('lang') === 'es');
+  B.bookName = (book) => (spanish() ? ES[book] || book : book);
   // turn "Mark 2:1–12" into "Marcos 2:1–12" when a Spanish version is chosen
   const NAME_RE = new RegExp('\\b(' + BOOKS.map((b) => b[1].replace(/ /g, '\\s')).sort((a, b) => b.length - a.length).join('|') + ')\\b(?=\\s+\\d)', 'g');
-  B.localRef = (ref) => (ref && B.lang() === 'es' ? String(ref).replace(NAME_RE, (n) => ES[n.replace(/\s+/g, ' ')] || n) : ref);
+  B.localRef = (ref) => (ref && spanish() ? String(ref).replace(NAME_RE, (n) => ES[n.replace(/\s+/g, ' ')] || n) : ref);
   B.needed = () => { const out = []; Object.keys(WEB).forEach((bk) => Object.keys(WEB[bk]).forEach((cv) => out.push([bk, cv]))); return out; };
   B.list = () => Object.values(B.versions);
   B.count = (id) => { const t = (B.versions[id] || {}).text || {}; return Object.values(t).reduce((n, b) => n + Object.keys(b).length, 0); };

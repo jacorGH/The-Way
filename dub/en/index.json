@@ -1,0 +1,399 @@
+{
+ "game": "The Way: An Eyewitness Account",
+ "language": "en",
+ "bible": "WEB",
+ "format": "[{ id, voice, text }] for TTS Studio",
+ "voices": {
+  "N": "narrator, Eleazar",
+  "W": "narrator, Elisheva",
+  "S": "Scripture",
+  "M": "a man speaking",
+  "F": "a woman speaking"
+ },
+ "batches": [
+  {
+   "file": "01-capernaum.json",
+   "title": "I. At Home in Capernaum (Mark 2:1–12)",
+   "lines": 19,
+   "characters": 2830
+  },
+  {
+   "file": "02-levi.json",
+   "title": "II. The Tax Booth (Mark 2:13–17)",
+   "lines": 16,
+   "characters": 1906
+  },
+  {
+   "file": "03-sabbath.json",
+   "title": "III. Lord of the Sabbath (Mark 2:23–3:6)",
+   "lines": 17,
+   "characters": 2555
+  },
+  {
+   "file": "04-legion.json",
+   "title": "IV. Across the Lake (Mark 4:35–5:20)",
+   "lines": 23,
+   "characters": 3591
+  },
+  {
+   "file": "05-nain.json",
+   "title": "V. The Widow of Nain (Luke 7:11–17)",
+   "lines": 13,
+   "characters": 1721
+  },
+  {
+   "file": "06-entry.json",
+   "title": "VI. The Entry (Mark 11:1–11)",
+   "lines": 12,
+   "characters": 2435
+  },
+  {
+   "file": "07-temple.json",
+   "title": "VII. The Temple (Mark 11:15–18; 12:28–34)",
+   "lines": 14,
+   "characters": 2478
+  },
+  {
+   "file": "08-council.json",
+   "title": "VIII. The Council by Night (Mark 14:53–72)",
+   "lines": 23,
+   "characters": 3749
+  },
+  {
+   "file": "09-cross.json",
+   "title": "IX. The Cross (Mark 15:16–41)",
+   "lines": 20,
+   "characters": 3193
+  },
+  {
+   "file": "10-burial.json",
+   "title": "X. The Burial (John 19:38–42; Mark 15:42–47)",
+   "lines": 26,
+   "characters": 5118
+  },
+  {
+   "file": "11-tomb.json",
+   "title": "XI. The Empty Tomb (Mark 16:1–8; John 20:1–18)",
+   "lines": 34,
+   "characters": 5042
+  },
+  {
+   "file": "12-forty.json",
+   "title": "XII. Forty Days (John 20:19–29; Acts 1:1–14)",
+   "lines": 28,
+   "characters": 4662
+  },
+  {
+   "file": "13-pentecost.json",
+   "title": "XIII. Pentecost (Acts 2)",
+   "lines": 23,
+   "characters": 6110
+  },
+  {
+   "file": "14-gate.json",
+   "title": "XIV. The Beautiful Gate (Acts 3:1–4:4)",
+   "lines": 21,
+   "characters": 3591
+  },
+  {
+   "file": "15-trial.json",
+   "title": "XV. Before the Council (Acts 4:5–37)",
+   "lines": 25,
+   "characters": 5088
+  },
+  {
+   "file": "16-seven.json",
+   "title": "XVI. The Seven (Acts 6:1–7)",
+   "lines": 37,
+   "characters": 2950
+  },
+  {
+   "file": "17-stephen.json",
+   "title": "XVII. Stephen (Acts 6:8–8:4)",
+   "lines": 27,
+   "characters": 4110
+  },
+  {
+   "file": "18-samaria.json",
+   "title": "XVIII. Philip in Samaria (Acts 8:4–25)",
+   "lines": 19,
+   "characters": 3189
+  },
+  {
+   "file": "19-desert.json",
+   "title": "XIX. The Desert Road (Acts 8:26–40)",
+   "lines": 23,
+   "characters": 3333
+  },
+  {
+   "file": "20-damascus.json",
+   "title": "XX. The Road to Damascus (Acts 9:1–31)",
+   "lines": 31,
+   "characters": 5030
+  },
+  {
+   "file": "21-tabitha.json",
+   "title": "XXI. Tabitha (Acts 9:32–43)",
+   "lines": 16,
+   "characters": 2222
+  },
+  {
+   "file": "22-cornelius.json",
+   "title": "XXII. Peter and Cornelius (Acts 10:1–11:18)",
+   "lines": 34,
+   "characters": 7394
+  },
+  {
+   "file": "23-antioch.json",
+   "title": "XXIII. Antioch (Acts 11:19–30)",
+   "lines": 19,
+   "characters": 2980
+  },
+  {
+   "file": "24-rhoda.json",
+   "title": "XXIV. Rhoda at the Gate (Acts 12:1–17)",
+   "lines": 18,
+   "characters": 3362
+  },
+  {
+   "file": "25-cyprus.json",
+   "title": "XXV. Cyprus (Acts 13:1–13)",
+   "lines": 24,
+   "characters": 3575
+  },
+  {
+   "file": "26-pisidia.json",
+   "title": "XXVI. Antioch of Pisidia (Acts 13:14–52)",
+   "lines": 18,
+   "characters": 4107
+  },
+  {
+   "file": "27-lystra.json",
+   "title": "XXVII. Lystra (Acts 14)",
+   "lines": 22,
+   "characters": 4275
+  },
+  {
+   "file": "28-jcouncil.json",
+   "title": "XXVIII. The Council at Jerusalem (Acts 15)",
+   "lines": 24,
+   "characters": 4302
+  },
+  {
+   "file": "29-lydia.json",
+   "title": "XXIX. Lydia (Acts 16:1–15)",
+   "lines": 23,
+   "characters": 3229
+  },
+  {
+   "file": "30-jailer.json",
+   "title": "XXX. Midnight in Philippi (Acts 16:16–40)",
+   "lines": 25,
+   "characters": 3799
+  },
+  {
+   "file": "31-berea.json",
+   "title": "XXXI. Thessalonica and Berea (Acts 17:1–15)",
+   "lines": 20,
+   "characters": 3188
+  },
+  {
+   "file": "32-athens.json",
+   "title": "XXXII. The Unknown God (Acts 17:16–34)",
+   "lines": 15,
+   "characters": 3563
+  },
+  {
+   "file": "33-corinth.json",
+   "title": "XXXIII. Corinth (Acts 18:1–18)",
+   "lines": 23,
+   "characters": 3764
+  },
+  {
+   "file": "34-artemis.json",
+   "title": "XXXIV. Great Is Artemis (Acts 18:24–19:41)",
+   "lines": 28,
+   "characters": 7307
+  },
+  {
+   "file": "35-farewell.json",
+   "title": "XXXV. Farewell at Miletus (Acts 20)",
+   "lines": 21,
+   "characters": 4374
+  },
+  {
+   "file": "36-arrest.json",
+   "title": "XXXVI. On the Stairs (Acts 21–22)",
+   "lines": 26,
+   "characters": 6768
+  },
+  {
+   "file": "37-plot.json",
+   "title": "XXXVII. The Forty Who Swore (Acts 23)",
+   "lines": 23,
+   "characters": 3722
+  },
+  {
+   "file": "38-felix.json",
+   "title": "XXXVIII. Two Years in Caesarea (Acts 24:1–25:12)",
+   "lines": 21,
+   "characters": 4141
+  },
+  {
+   "file": "39-agrippa.json",
+   "title": "XXXIX. Almost Persuaded (Acts 25:13–26:32)",
+   "lines": 25,
+   "characters": 5651
+  },
+  {
+   "file": "40-storm.json",
+   "title": "XL. The Storm (Acts 27)",
+   "lines": 25,
+   "characters": 5894
+  },
+  {
+   "file": "41-malta.json",
+   "title": "XLI. Malta (Acts 28:1–10)",
+   "lines": 15,
+   "characters": 2123
+  },
+  {
+   "file": "42-rome.json",
+   "title": "XLII. Rome (Acts 28:11–31)",
+   "lines": 17,
+   "characters": 3909
+  },
+  {
+   "file": "43-letter.json",
+   "title": "XLIII. The Letter to Philippi (Philippians)",
+   "lines": 27,
+   "characters": 7030
+  },
+  {
+   "file": "44-onesimus.json",
+   "title": "XLIV. Onesimus (Philemon)",
+   "lines": 17,
+   "characters": 3900
+  },
+  {
+   "file": "45-goodfight.json",
+   "title": "XLV. The Good Fight (2 Timothy)",
+   "lines": 22,
+   "characters": 4583
+  },
+  {
+   "file": "46-fall.json",
+   "title": "XLVI. Not One Stone (Luke 21:5–33)",
+   "lines": 17,
+   "characters": 2672
+  },
+  {
+   "file": "47-lamps.json",
+   "title": "XLVII. The Seven Lamps (Revelation 1–3)",
+   "lines": 19,
+   "characters": 5244
+  },
+  {
+   "file": "48-allnew.json",
+   "title": "XLVIII. All Things New (Revelation 21–22)",
+   "lines": 14,
+   "characters": 3464
+  },
+  {
+   "file": "s-eli.json",
+   "title": "Service: Eli",
+   "lines": 12,
+   "characters": 1342
+  },
+  {
+   "file": "s-hannah.json",
+   "title": "Service: Hannah",
+   "lines": 10,
+   "characters": 966
+  },
+  {
+   "file": "s-miriam.json",
+   "title": "Service: Miriam",
+   "lines": 10,
+   "characters": 960
+  },
+  {
+   "file": "s-tobiah.json",
+   "title": "Service: Tobiah",
+   "lines": 12,
+   "characters": 1086
+  },
+  {
+   "file": "s-yosef.json",
+   "title": "Service: Yosef",
+   "lines": 11,
+   "characters": 955
+  },
+  {
+   "file": "t-attendant.json",
+   "title": "Testimony: Attendant",
+   "lines": 8,
+   "characters": 1240
+  },
+  {
+   "file": "t-bartimaeus.json",
+   "title": "Testimony: Bartimaeus",
+   "lines": 10,
+   "characters": 1229
+  },
+  {
+   "file": "t-bethesda.json",
+   "title": "Testimony: Bethesda",
+   "lines": 10,
+   "characters": 1977
+  },
+  {
+   "file": "t-blindman.json",
+   "title": "Testimony: Blindman",
+   "lines": 12,
+   "characters": 2983
+  },
+  {
+   "file": "t-cana.json",
+   "title": "Testimony: Cana",
+   "lines": 12,
+   "characters": 1682
+  },
+  {
+   "file": "t-jairus.json",
+   "title": "Testimony: Jairus",
+   "lines": 18,
+   "characters": 3236
+  },
+  {
+   "file": "t-loaves.json",
+   "title": "Testimony: Loaves",
+   "lines": 12,
+   "characters": 2106
+  },
+  {
+   "file": "t-martha.json",
+   "title": "Testimony: Martha",
+   "lines": 13,
+   "characters": 2707
+  },
+  {
+   "file": "t-motherinlaw.json",
+   "title": "Testimony: Motherinlaw",
+   "lines": 10,
+   "characters": 1108
+  },
+  {
+   "file": "t-peter.json",
+   "title": "Testimony: Peter",
+   "lines": 27,
+   "characters": 6991
+  },
+  {
+   "file": "t-samaritan.json",
+   "title": "Testimony: Samaritan",
+   "lines": 16,
+   "characters": 3873
+  }
+ ]
+}

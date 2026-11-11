@@ -60,13 +60,21 @@ window.TW = window.TW || {};
   S.busy = () => !!(audio && !audio.paused) || !!(synth && (synth.speaking || synth.pending)) || !!timer;
   S.whenDone = (f) => { if (!S.busy()) setTimeout(f, 0); else waiters.push(f); };
   // a recorded voice for this line, if one has been made (see lines.js)
-  function playDub(id) {
+  // Recorded voices: try audio/<lang>/<id>.mp3 for every line. If the file is not there, remember that and use the
+  // device voice instead, so recordings can be added a batch at a time with no list to keep up to date.
+  const missing = new Set();
+  function playDub(id, fallback) {
     const lang = TW.Settings ? TW.Settings.get('lang') : 'en';
-    if (!id || !TW.Dubs || !TW.Dubs.has(lang, id)) return false;
-    audio = new Audio(TW.Dubs.url(lang, id));
-    audio.onplay = () => TW.Audio && TW.Audio.duck && TW.Audio.duck(true);
-    audio.onended = audio.onerror = () => { TW.Audio && TW.Audio.duck && TW.Audio.duck(false); audio = null; done(); };
-    audio.play().catch(() => { audio = null; done(); });
+    if (!id || !TW.Dubs || (TW.Settings && TW.Settings.get('recordings') === false)) return false;
+    const key = lang + ':' + id;
+    if (missing.has(key) && !TW.Dubs.has(lang, id)) return false;
+    const a = new Audio(TW.Dubs.url(lang, id));
+    audio = a;
+    let started = false;
+    a.onplaying = () => { started = true; TW.Audio && TW.Audio.duck && TW.Audio.duck(true); };
+    a.onended = () => { if (audio === a) audio = null; TW.Audio && TW.Audio.duck && TW.Audio.duck(false); done(); };
+    a.onerror = () => { if (audio !== a) return; audio = null; if (!started) { missing.add(key); fallback(); } else { TW.Audio && TW.Audio.duck && TW.Audio.duck(false); done(); } };
+    a.play().catch(() => { if (audio !== a) return; audio = null; if (!started) fallback(); });
     return true;
   }
   function speakNow(text, v) {
@@ -82,7 +90,13 @@ window.TW = window.TW || {};
   S.say = function (kind, text, speaker, id) {
     if (!S.on || !text) return;
     S.stop(true);
-    if (playDub(id)) return;
+    const speakDevice = () => {
+      if (!synth) { done(); return; }
+      const v = pick(kind, speaker);
+      if (synth.speaking || synth.pending) { synth.cancel(); timer = setTimeout(() => { timer = null; speakNow(text, v); }, 120); }
+      else speakNow(text, v);
+    };
+    if (playDub(id, speakDevice)) return;
     if (!synth) return;
     const v = pick(kind, speaker);
     if (synth.speaking || synth.pending) { synth.cancel(); timer = setTimeout(() => { timer = null; speakNow(text, v); }, 120); }

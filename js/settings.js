@@ -13,6 +13,7 @@ window.TW = window.TW || {};
     selectable: false,      // dialog text can be selected (for the iPhone's Speak Selection)
     lang: 'en',             // interface and story language
     bible: 'WEB',           // Bible version for Scripture
+    recordings: true,       // play recorded voices from audio/<lang>/ when present
   };
   let s = Object.assign({}, DEFAULTS);
   try { Object.assign(s, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { /* storage unavailable */ }

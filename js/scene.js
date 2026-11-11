@@ -369,6 +369,50 @@ window.TW = window.TW || {};
   };
 
   SC.wait = (ms) => U.wait(U.reducedMotion() ? Math.min(ms, 150) : ms);
+  // ---------- every prompt, option, hint and toast is also a line: recorded, and translated when a translation exists ----------
+  // ---------- turbo: a developer mode in which the game plays itself at full speed, used to catalog every line ----------
+  (function () {
+    const say0 = SC.say, choose0 = SC.choose, prompt0 = SC.prompt, goal0 = SC.goal, toast0 = SC.toast, walk0 = SC.walk, tween0 = SC.tween, wait0 = SC.wait;
+    const line = (kind, text) => {
+      if (!TW.Lines || !text) return text;
+      const id = TW.Lines.id(kind, text);
+      TW.Lines.note(id, { kind: kind, text: text });
+      return TW.Lines.translate(id, text);
+    };
+    SC.say = function (o) {
+      if (!TW.TURBO) return say0(o);
+      if (o && o.kind !== 'scripture') o = Object.assign({}, o, { text: G(o.text), speaker: G(o.speaker) });
+      if (o && o.kind === 'scripture' && TW.Bible) TW.Bible.lastFallback = false;
+      if (TW.Lines && o && o.text) TW.Lines.note(TW.Lines.id(o.kind, o.text), o);
+      return Promise.resolve();
+    };
+    SC.choose = function (prompt, options, label) {
+      prompt = line('prompt', G(prompt)); options = options.map((x) => line('option', G(x)));
+      if (TW.TURBO) { const n = options.length, i = TW.TURBO_CYCLE ? (TW.TURBO_SEQ = (TW.TURBO_SEQ || 0) + 1) % n : Math.min(n - 1, TW.TURBO_CHOICE || 0); return Promise.resolve(i); }
+      return choose0(prompt, options, label);
+    };
+    SC.goal = function (text) { return goal0(line('goal', G(text))); };
+    SC.prompt = function (text, label, mode) {
+      text = line('goal', G(text)); label = line('ui', G(label));
+      if (TW.TURBO) return Promise.resolve();
+      return prompt0(text, label, mode);
+    };
+    SC.toast = function (text) { return toast0(line('ui', G(text))); };
+    SC.walk = function (e, x, y) { if (!TW.TURBO) return walk0(e, x, y); e.x = x; if (y !== undefined) e.y = y; e.target = null; return Promise.resolve(); };
+    SC.tween = function (ms, fn) { if (!TW.TURBO) return tween0(ms, fn); fn(1); return Promise.resolve(); };
+    SC.wait = function (ms) { return TW.TURBO ? Promise.resolve() : wait0(ms); };
+    // in turbo, also record everything that could be tapped and noted in a room
+    const load0 = SC.load;
+    SC.load = function (stage) {
+      if (TW.TURBO && stage && stage.hotspots) {
+        const walk = (o, depth) => { if (typeof o === 'string') { if (/\s/.test(o)) line('observe', G(o)); } else if (o && typeof o === 'object' && depth < 3) Object.values(o).forEach((v) => walk(v, depth + 1)); };
+        stage.hotspots.forEach((h) => walk(h, 0));
+      }
+      return load0(stage);
+    };
+    const uwait = U.wait;
+    U.wait = (ms) => (TW.TURBO ? Promise.resolve() : uwait(ms));
+  })();
   ['say', 'choose', 'prompt', 'tween', 'walk', 'walkPath', 'wait'].forEach((k) => { SC[k] = guard(SC[k]); });
 
   TW.Scene = SC;

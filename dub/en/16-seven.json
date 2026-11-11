@@ -1,0 +1,187 @@
+[
+ {
+  "id": "d-0630711a",
+  "voice": "M",
+  "text": "They tell me you are a scribe, and that you counted the widows at the back of the line. I need someone who can keep lists, and who knows why they matter. Will you help me?"
+ },
+ {
+  "id": "d-167e7bd4",
+  "voice": "N",
+  "text": "From now on there are people in this city who need you. Look for them on the map."
+ },
+ {
+  "id": "d-1923176f",
+  "voice": "N",
+  "text": "Lydia of Antioch, alone. Loaves left: 8."
+ },
+ {
+  "id": "d-225c9e22",
+  "voice": "M",
+  "text": "I have 1 at home. They do not let us near the front."
+ },
+ {
+  "id": "d-26b06c42",
+  "voice": "M",
+  "text": "Twelve loaves today, that is all. Start at the front. The ones at the back are the Greek speakers; they came late from the lower city, and they can wait."
+ },
+ {
+  "id": "d-29594510",
+  "voice": "N",
+  "text": "Miriam of Alexandria. Loaves left: 5."
+ },
+ {
+  "id": "d-2de01b39",
+  "voice": "N",
+  "text": "Miriam of Alexandria, alone. Loaves left: 12."
+ },
+ {
+  "id": "d-35792895",
+  "voice": "N",
+  "text": "Theodora of Cyrene, with 3 children at home. Loaves left: 6."
+ },
+ {
+  "id": "d-3d5261b3",
+  "voice": "N",
+  "text": "Theodora of Cyrene. Loaves left: 8."
+ },
+ {
+  "id": "d-3d616c3d",
+  "voice": "N",
+  "text": "Theodora of Cyrene. Loaves left: 6."
+ },
+ {
+  "id": "d-3f2b4bc3",
+  "voice": "N",
+  "text": "The believers now number in the thousands. Every afternoon the widows come to this courtyard for bread. Today the man who usually helps is sick, and you have been asked to take his place."
+ },
+ {
+  "id": "d-48b6a54e",
+  "voice": "N",
+  "text": "Euodia of Alexandria. Loaves left: 10."
+ },
+ {
+  "id": "d-4df12eeb",
+  "voice": "F",
+  "text": "Only me now."
+ },
+ {
+  "id": "d-50d2d314",
+  "voice": "M",
+  "text": "1 child, and nothing in the house."
+ },
+ {
+  "id": "d-5a981c81",
+  "voice": "N",
+  "text": "You have run this courtyard for one afternoon. The widows from the Dispersion have stood at the back of it every day for months."
+ },
+ {
+  "id": "d-6de9c37b",
+  "voice": "N",
+  "text": "Lydia of Antioch. Loaves left: 7."
+ },
+ {
+  "id": "d-6eda70de",
+  "voice": "N",
+  "text": "Dinah. Loaves left: 4."
+ },
+ {
+  "id": "d-74049c15",
+  "voice": "N",
+  "text": "Euodia of Alexandria. Loaves left: 6."
+ },
+ {
+  "id": "d-7791ad91",
+  "voice": "N",
+  "text": "Rivka. Loaves left: 2."
+ },
+ {
+  "id": "d-7a5fd60f",
+  "voice": "M",
+  "text": "They tell me you can read and write, and that you counted the widows at the back of the line. I need someone who can keep lists, and who knows why they matter. Will you help me?"
+ },
+ {
+  "id": "d-8d1c6008",
+  "voice": "M",
+  "text": "I have 3 at home. They do not let us near the front."
+ },
+ {
+  "id": "d-8dc2b25a",
+  "voice": "N",
+  "text": "Every widow goes home with bread. Not all of them with enough."
+ },
+ {
+  "id": "d-90becfe7",
+  "voice": "N",
+  "text": "Dinah. Loaves left: 9."
+ },
+ {
+  "id": "d-954de4c2",
+  "voice": "N",
+  "text": "Rivka, with 1 child at home. Loaves left: 2."
+ },
+ {
+  "id": "d-b0b9254e",
+  "voice": "N",
+  "text": "Rivka. Loaves left: 10."
+ },
+ {
+  "id": "d-b1a1e2e7",
+  "voice": "N",
+  "text": "Euodia of Alexandria, with 1 child at home. Loaves left: 10."
+ },
+ {
+  "id": "d-b5b51191",
+  "voice": "N",
+  "text": "Yohanna of Bethany. Loaves left: 12."
+ },
+ {
+  "id": "d-cbce80f8",
+  "voice": "N",
+  "text": "Lydia of Antioch. Loaves left: 8."
+ },
+ {
+  "id": "d-cdb35814",
+  "voice": "N",
+  "text": "The basket is empty. Yohanna of Bethany, Shoshanna are still standing in the courtyard with empty hands."
+ },
+ {
+  "id": "d-d02c0caf",
+  "voice": "N",
+  "text": "Shoshanna. Loaves left: 11."
+ },
+ {
+  "id": "d-e8c97dd2",
+  "voice": "N",
+  "text": "Miriam of Alexandria. Loaves left: 12."
+ },
+ {
+  "id": "d-ede16699",
+  "voice": "N",
+  "text": "Dinah, alone. Loaves left: 4."
+ },
+ {
+  "id": "d-fe14d5e9",
+  "voice": "N",
+  "text": "Twelve loaves, eight widows. Where do you begin?"
+ },
+ {
+  "id": "s-WEB-8e639aae",
+  "voice": "S",
+  "text": "whom they set before the apostles. When they had prayed, they laid their hands on them."
+ },
+ {
+  "id": "s-WEB-9896ace5",
+  "voice": "S",
+  "text": "Now in those days, when the number of the disciples was multiplying, a complaint arose from the Hellenists against the Hebrews, because their widows were neglected in the daily service. The twelve summoned the multitude of the disciples and said, “It is not appropriate for us to forsake the word of God and serve tables. Therefore select from among you, brothers, seven men of good report, full of the Holy Spirit and of wisdom, whom we may appoint over this business. But we will continue steadfastly in prayer and in the ministry of the word.”"
+ },
+ {
+  "id": "s-WEB-9df840be",
+  "voice": "S",
+  "text": "These words pleased the whole multitude. They chose Stephen, a man full of faith and of the Holy Spirit, Philip, Prochorus, Nicanor, Timon, Parmenas, and Nicolaus, a proselyte of Antioch;"
+ },
+ {
+  "id": "s-WEB-e692f555",
+  "voice": "S",
+  "text": "The word of God increased and the number of the disciples multiplied in Jerusalem exceedingly. A great company of the priests were obedient to the faith."
+ }
+]

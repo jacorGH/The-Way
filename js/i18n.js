@@ -23,6 +23,13 @@ window.TW = window.TW || {};
     'Comfort': 'Comodidad', 'Reduce motion': 'Reducir movimiento', 'Higher contrast': 'Más contraste',
     'Language': 'Idioma', 'Bible translation': 'Traducción de la Biblia', 'Voices': 'Voces', 'Your progress': 'Tu progreso',
     'Back up progress': 'Guardar copia del progreso', 'Restore progress': 'Restaurar progreso', 'Add a Bible translation': 'Añadir una traducción de la Biblia',
+    'The Way': 'El Camino', 'Title': 'Inicio', 'Open the timeline': 'Abrir la cronología', 'Tap a place. Drag to look around.': 'Toca un lugar. Arrastra para mirar alrededor.',
+    'Aegean': 'Egeo', 'Rome': 'Roma', 'Capernaum': 'Capernaúm', 'Report to Nicodemus': 'Informe para Nicodemo', 'Letter to Nicodemus': 'Carta a Nicodemo',
+    'Letter to uncle Nicodemus': 'Carta al tío Nicodemo', 'Choose what goes in your report.': 'Elige lo que va en tu informe.', 'Choose what goes in your letter.': 'Elige lo que va en tu carta.',
+    'Your report is sealed. Now read the passage.': 'Tu informe está sellado. Ahora lee el pasaje.', 'Your letter is sealed. Now read the passage.': 'Tu carta está sellada. Ahora lee el pasaje.',
+    'Your heart': 'Tu corazón', 'Added to your scroll': 'Añadido a tu rollo', 'A question in your scroll is answered': 'Una pregunta de tu rollo ha sido respondida',
+    'Whose account?': '¿El relato de quién?', 'Study notes': 'Notas de estudio', 'To reflect on': 'Para reflexionar', 'Back to the timeline': 'Volver a la cronología',
+    'Recorded voices': 'Voces grabadas', 'Play recorded voices when available': 'Usar voces grabadas cuando las haya', 
     'Test': 'Probar', 'About and license': 'Acerca de y licencia', 'Narrator': 'Narrador', 'Remove': 'Quitar', 'Go': 'Ir', 'Again': 'Otra vez',
   };
   const DICT = { es: ES };
@@ -36,7 +43,36 @@ window.TW = window.TW || {};
         if (!n.dataset.en) n.dataset.en = n.textContent.trim();
         n.textContent = I.t(n.dataset.en);
       });
+      if (!root) I.sweep();
     },
+  };
+  // Sweep: when the language is not English, translate any text node whose whole text is a known line.
+  // The English is remembered so that switching back restores it.
+  const original = new WeakMap();
+  function visit(node) {
+    if (!node) return;
+    if (node.nodeType === 3) {
+      if (node.parentElement && node.parentElement.closest && node.parentElement.closest('.passage, .kind-scripture, .verse')) return;
+      const raw = node.nodeValue, key = raw.trim();
+      if (!key || key.length > 600) return;
+      const en = original.has(node) && original.get(node).shown === raw ? original.get(node).en : key;
+      const tr = TW.tr ? TW.tr(en) : en;
+      if (tr !== key) { const out = raw.replace(key, tr); original.set(node, { en: en, shown: out }); node.nodeValue = out; }
+      return;
+    }
+    if (node.nodeType !== 1 || /^(SCRIPT|STYLE|TEXTAREA|INPUT|SELECT|OPTION|CANVAS)$/.test(node.tagName)) return;
+    // Scripture is never translated here: it comes from the chosen Bible version
+    if (node.classList && (node.classList.contains('passage') || node.classList.contains('kind-scripture') || node.classList.contains('verse'))) return;
+    for (let c = node.firstChild; c; c = c.nextSibling) visit(c);
+  }
+  let watcher = null;
+  I.sweep = function () {
+    if (typeof MutationObserver === 'undefined' || !document.body) return;
+    if (!watcher) {
+      watcher = new MutationObserver((list) => { if (I.lang() === 'en') return; list.forEach((m) => { if (m.type === 'characterData') visit(m.target); else m.addedNodes.forEach(visit); }); });
+      watcher.observe(document.body, { childList: true, subtree: true, characterData: true });
+    }
+    visit(document.body);
   };
   TW.I18n = I;
   TW.t = I.t;

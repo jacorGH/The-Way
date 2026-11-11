@@ -31,6 +31,15 @@ window.TW = window.TW || {};
     const t = lang !== 'en' && L.translations[lang] && L.translations[lang][id];
     return t || text;
   };
+  // Translate any displayed text: by line ID first, then the interface dictionary; otherwise unchanged.
+  TW.tr = function (text) {
+    if (typeof text !== 'string' || !text) return text;
+    const lang = TW.Settings ? TW.Settings.get('lang') : 'en';
+    if (lang === 'en') return text;
+    const t = L.translations[lang] && L.translations[lang][L.id('data', text)];
+    if (t) return t;
+    return TW.t ? TW.t(text) : text;
+  };
   L.export = () => JSON.stringify({ game: 'The Way', exported: new Date().toISOString(), lines: Array.from(L.seen.values()) }, null, 1);
 
   // recorded voices
@@ -38,7 +47,8 @@ window.TW = window.TW || {};
   const D = { ids: {}, ext: {}, base: 'audio/' };
   D.add = function (lang, ids, ext) { (D.ids[lang] = D.ids[lang] || new Set()); ids.forEach((i) => { D.ids[lang].add(i); D.ext[lang + ':' + i] = ext || 'mp3'; }); };
   D.has = (lang, id) => !!(D.ids[lang] && D.ids[lang].has(id));
-  D.url = (lang, id) => D.base + lang + '/' + id + '.' + (D.ext[lang + ':' + id] || 'mp3');
+  // Files named by the TTS Studio: characters other than letters, digits, dot, dash and underscore become '_'.
+  D.url = (lang, id) => D.base + lang + '/' + String(id).replace(/[^a-zA-Z0-9._-]/g, '_') + '.' + (D.ext[lang + ':' + id] || D.defaultExt || 'mp3');
   // ---------- Dub Studio helpers ----------
   // voice tags: N narrator (Eleazar's account), W narrator (Elisheva's), S Scripture, M a man speaking, F a woman speaking
   const WOMEN = /mary|martha|rhoda|widow|woman|mother|elisheva|lydia|tabitha|maid|wife|daughter|miriam|hannah|salome|joanna|damaris|priscilla/i;

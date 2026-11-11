@@ -657,6 +657,7 @@ window.TW = window.TW || {};
   }
 
   async function fade(fn) {
+    if (TW.TURBO) { await fn(); return; }
     TW.Audio && TW.Audio.sfx('whoosh');
     const v = SC.el.veil;
     v.classList.add('on');

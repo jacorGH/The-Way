@@ -79,9 +79,18 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/malta.js` – Episode XLI, Malta (Acts 28:1–10)
 - `js/rome.js` – Episode XLII, Rome (Acts 28:11–31), the end of Acts
 - `js/scripture8.js` – WEB passages: Acts 27–28
+- `js/letter.js` – Episode XLIII, The Letter to Philippi (Philippians)
+- `js/onesimus.js` – Episode XLIV, Onesimus (Philemon)
+- `js/scripture9.js` – WEB passages: Philippians and Philemon
 - `js/felix.js` – Episode XXXVIII, Two Years in Caesarea (Acts 24:1–25:12)
 - `js/agrippa.js` – Episode XXXIX, Almost Persuaded (Acts 25:13–26:32)
 - `js/scripture7.js` – WEB passages: Acts 25–26
+- `js/finale-art.js`, `js/goodfight.js`, `js/fall.js`, `js/lamps.js`, `js/allnew.js` – Eras V and VI: The Good Fight, Not One Stone, The Seven Lamps, All Things New
+- `js/data-finale.js` – episode entries for Eras V and VI
+- `js/scripture10.js` – WEB passages: 2 Timothy, Luke 21, Revelation
+- `tools/lines-en.json` – catalog of every line in the game with its permanent ID (translation and voice work)
+- `dub/` – ready-made TTS Studio batches, one per episode (`dub/index.html` lists them)
+- `i18n/es-capernaum.js` – Spanish for Episode I
 - `js/scripture6.js` – WEB passages: Acts 18:24–24:26
 - `js/about.js` – copyright holder, contact and license summary shown in the game (fill in your name here)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)
@@ -197,3 +206,12 @@ and Settings). Notes:
   (publishing a private repository with GitHub Pages requires a paid GitHub plan).
 - This license is a clear starting point, not legal advice. Have it reviewed if you ever sell the game or license it to
   others.
+
+## Catalog of lines, Spanish, and recorded voices
+A developer mode (`TW.TURBO`) plays the whole game at full speed. Played six times (every option at each choice, as
+both characters), it produced `tools/lines-en.json`: 2,884 lines to translate (about 41,000 words, Scripture excluded)
+and 1,252 lines to voice (about 228,000 characters, roughly four hours of audio).
+
+Spanish: interface text, study pages, the timeline and map labels all pass through `TW.tr`, and story lines through
+their IDs. Translations live in `i18n/es-*.js`; any line without one stays in English. Scripture is never translated
+by these files: it comes from the chosen Spanish Bible version, and book names follow the language.
