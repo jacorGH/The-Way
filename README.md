@@ -90,7 +90,7 @@ Open `index.html` (works from GitHub Pages or locally; plain scripts, no build s
 - `js/scripture10.js` – WEB passages: 2 Timothy, Luke 21, Revelation
 - `tools/lines-en.json` – catalog of every line in the game with its permanent ID (translation and voice work)
 - `dub/` – ready-made TTS Studio batches, one per episode (`dub/index.html` lists them)
-- `i18n/es-*.js` – Spanish: Era I (Episodes I–V) and Era II Episodes VI–IX, plus `es-extras.js` (tappable notes and Elisheva’s wording)
+- `i18n/es-*.js` – Spanish for the whole game: every episode, testimony, service visit, map and screen
 - `js/scripture6.js` – WEB passages: Acts 18:24–24:26
 - `js/about.js` – copyright holder, contact and license summary shown in the game (fill in your name here)
 - `js/testimony.js` – testimonies: the interview engine, gathering places, and every eyewitness (add new ones to `D.testimonies`)

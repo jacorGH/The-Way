@@ -5,6 +5,8 @@ window.TW = window.TW || {};
 (function (TW) {
   // speaker names and interface labels, translated wherever they appear
   TW.I18n.add('es', {
+    'Blank parchment marks lands you have not heard of yet.': 'El pergamino en blanco señala tierras de las que todavía no has oído hablar.',
+    'Your home city at Passover. Tap a place.': 'Tu ciudad en la Pascua. Toca un lugar.', 'People who need you': 'Personas que te necesitan',
     'A Pharisee from Capernaum': 'Un fariseo de Capernaúm', 'A dove seller': 'Un vendedor de palomas', 'A fisherman mending nets': 'Un pescador remendando redes',
     'A man in the market': 'Un hombre en el mercado', 'A man who was in the crowd': 'Un hombre que estaba en la multitud', 'A merchant with a bundle of cloth': 'Un mercader con un fardo de tela',
     'A money changer': 'Un cambista', 'A servant from the wedding at Cana': 'Un sirviente de la boda de Caná', 'A widow': 'Una viuda', 'A woman from Sychar': 'Una mujer de Sicar',

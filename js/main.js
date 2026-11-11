@@ -327,9 +327,9 @@ window.TW = window.TW || {};
     $('#map-title').textContent = TR(R.title) + ', ' + AD(R.subtitle);
     document.querySelectorAll('.region-switch button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.region === game.region));
     $('#map-hint').hidden = false;
-    $('#map-hint').textContent = game.region === 'land'
+    $('#map-hint').textContent = TW.t(game.region === 'land'
       ? 'Blank parchment marks lands you have not heard of yet.'
-      : game.region === 'jerusalem' ? 'Your home city at Passover. Tap a place.' : 'Tap a place. Drag to look around.';
+      : game.region === 'jerusalem' ? 'Your home city at Passover. Tap a place.' : 'Tap a place. Drag to look around.');
     clearTimeout(game.hintTimer);
     game.hintTimer = setTimeout(() => { $('#map-hint').hidden = true; }, 5000);
     MV.start({
@@ -417,7 +417,7 @@ window.TW = window.TW || {};
       if (!here) act.appendChild(travelBtn(pl, true));
     } else if (pl.kind === 'zoom') {
       const Z = D.regions[pl.zoom];
-      const b = el('button', 'btn primary', 'Open the ' + Z.title + ' map');
+      const b = el('button', 'btn primary', TW.Settings.get('lang') === 'es' ? 'Abrir el mapa: ' + TR(Z.title) : 'Open the ' + Z.title.replace(/^The /, '') + ' map');
       b.addEventListener('click', () => game.switchRegion(pl.zoom, Z.places.some((p) => p.id === id) ? id : null));
       act.appendChild(b);
     } else if (!here) {
