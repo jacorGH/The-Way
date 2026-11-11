@@ -392,9 +392,44 @@ window.TW = window.TW || {};
       return choose0(prompt, options, label);
     };
     SC.goal = function (text) { return goal0(line('goal', G(text))); };
+    // In turbo, a free walk taps every person once (their conversations run in full), and a look-around taps every
+    // noticeable thing, before the prompt continues. A prompt re-opened by one of those taps is left waiting, so the
+    // story still moves on exactly once, from the original prompt.
+    const tapped = new WeakSet(), doneFree = new Set(), active = new Set();
+    SC.turboReset = () => { doneFree.clear(); active.clear(); };
+    const settle = (p) => Promise.race([Promise.resolve(p).catch(() => {}), new Promise((r) => setTimeout(r, 1500))]);
+    // Tap everything once. Returns true if a tap moved the story on to another scene (then the prompt that started the
+    // tapping must not also move it on).
+    async function tapAll(mode, stage0) {
+      for (let pass = 0; pass < 2; pass++) {
+        const ents = mode === 'free' ? (SC.ents || []).filter((e) => e && e.onTap && e !== SC.player && e.visible !== false && !tapped.has(e)) : [];
+        const spots = mode === 'observe' ? ((SC.stage && SC.stage.hotspots) || []).filter((h) => h && h.onTap && !tapped.has(h) && (h.active === undefined || h.active())) : [];
+        if (!ents.length && !spots.length) return false;
+        for (const t of ents.concat(spots)) {
+          tapped.add(t);
+          SC.mode = mode;
+          try { await settle(t.onTap(t)); } catch (e) { /* keep going */ }
+          if (SC.stage !== stage0) return true;
+        }
+      }
+      return false;
+    }
     SC.prompt = function (text, label, mode) {
       text = line('goal', G(text)); label = line('ui', G(label));
-      if (TW.TURBO) return Promise.resolve();
+      if (TW.TURBO) {
+        if (TW.TURBO_TAP === false) return Promise.resolve();
+        const key = ((TW.game && TW.game.current) || '') + '|' + mode + '|' + text;
+        // the same prompt re-opened by a conversation, or a free walk the story already left: leave it waiting
+        if (active.has(key) || (mode === 'free' && doneFree.has(key))) return new Promise(() => {});
+        active.add(key);
+        const stage0 = SC.stage, m0 = SC.mode;
+        return tapAll(mode, stage0).then((moved) => {
+          active.delete(key);
+          if (mode === 'free') doneFree.add(key);
+          if (moved) return new Promise(() => {});
+          SC.mode = m0;
+        });
+      }
       return prompt0(text, label, mode);
     };
     SC.toast = function (text) { return toast0(line('ui', G(text))); };

@@ -5,6 +5,11 @@
   "text": "“Hear, Israel.” You have said these words every morning and every evening of your life."
  },
  {
+  "id": "d-1c284589",
+  "voice": "M",
+  "text": "Daughter! You came up for the feast too? Half of Capernaum is here. They say he will come back to the Temple today."
+ },
+ {
   "id": "d-2e54e151",
   "voice": "N",
   "text": "A few days later Jesus is back in the courts, answering questions from priests, Pharisees and Sadducees one after another. A scribe you know by sight has been listening at your elbow."
@@ -20,6 +25,16 @@
   "text": "The outer court of Herod’s Temple was open to everyone, Jews and Gentiles alike. At Passover it filled with pilgrims changing money and buying animals for sacrifice."
  },
  {
+  "id": "d-6930db73",
+  "voice": "M",
+  "text": "Scribe! You came up for the feast too? Half of Capernaum is here. They say he will come back to the Temple today."
+ },
+ {
+  "id": "d-af77928d",
+  "voice": "M",
+  "text": "The Temple tax is paid in silver of Tyre and nothing else. Your Roman coins carry Caesar’s face. I can change them for you, for a small fee."
+ },
+ {
   "id": "d-e2bbf522",
   "voice": "N",
   "text": "No one asks him anything after that. You find you have one question left, and you are afraid of the answer."
@@ -28,6 +43,11 @@
   "id": "d-e84033f4",
   "voice": "N",
   "text": "Coins are still rolling across the paving. What do you think?"
+ },
+ {
+  "id": "d-f026f3e0",
+  "voice": "M",
+  "text": "Two doves for a mother’s purification, if she cannot afford a lamb. The priests will reject any bird with a blemish, so buy here and be sure."
  },
  {
   "id": "d-fe514693",
@@ -68,5 +88,10 @@
   "id": "s-WEB-e11bdc4b",
   "voice": "S",
   "text": "He would not allow anyone to carry a container through the temple. He taught, saying to them, “Isn’t it written, ‘My house will be called a house of prayer for all the nations?’ But you have made it a den of robbers!”"
+ },
+ {
+  "id": "d-5a7e66e5",
+  "voice": "N",
+  "text": "Notices in Greek and Latin were set along this barrier. Two have been found. They warn that any foreigner who goes past it will have only himself to blame for the death that follows."
  }
 ]

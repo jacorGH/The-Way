@@ -3,6 +3,7 @@
  "language": "en",
  "bible": "WEB",
  "format": "[{ id, voice, text }] for TTS Studio",
+ "pronunciation": "pronounce.json",
  "voices": {
   "N": "narrator, Eleazar",
   "W": "narrator, Elisheva",
@@ -14,14 +15,14 @@
   {
    "file": "01-capernaum.json",
    "title": "I. At Home in Capernaum (Mark 2:1–12)",
-   "lines": 19,
-   "characters": 2830
+   "lines": 27,
+   "characters": 3532
   },
   {
    "file": "02-levi.json",
    "title": "II. The Tax Booth (Mark 2:13–17)",
-   "lines": 16,
-   "characters": 1906
+   "lines": 19,
+   "characters": 2274
   },
   {
    "file": "03-sabbath.json",
@@ -50,8 +51,8 @@
   {
    "file": "07-temple.json",
    "title": "VII. The Temple (Mark 11:15–18; 12:28–34)",
-   "lines": 14,
-   "characters": 2478
+   "lines": 19,
+   "characters": 3169
   },
   {
    "file": "08-council.json",
@@ -74,8 +75,8 @@
   {
    "file": "11-tomb.json",
    "title": "XI. The Empty Tomb (Mark 16:1–8; John 20:1–18)",
-   "lines": 34,
-   "characters": 5042
+   "lines": 37,
+   "characters": 5256
   },
   {
    "file": "12-forty.json",
@@ -104,8 +105,8 @@
   {
    "file": "16-seven.json",
    "title": "XVI. The Seven (Acts 6:1–7)",
-   "lines": 37,
-   "characters": 2950
+   "lines": 49,
+   "characters": 3237
   },
   {
    "file": "17-stephen.json",
@@ -116,8 +117,8 @@
   {
    "file": "18-samaria.json",
    "title": "XVIII. Philip in Samaria (Acts 8:4–25)",
-   "lines": 19,
-   "characters": 3189
+   "lines": 20,
+   "characters": 3307
   },
   {
    "file": "19-desert.json",
@@ -146,20 +147,20 @@
   {
    "file": "23-antioch.json",
    "title": "XXIII. Antioch (Acts 11:19–30)",
-   "lines": 19,
-   "characters": 2980
+   "lines": 20,
+   "characters": 3030
   },
   {
    "file": "24-rhoda.json",
    "title": "XXIV. Rhoda at the Gate (Acts 12:1–17)",
-   "lines": 18,
-   "characters": 3362
+   "lines": 21,
+   "characters": 3653
   },
   {
    "file": "25-cyprus.json",
    "title": "XXV. Cyprus (Acts 13:1–13)",
-   "lines": 24,
-   "characters": 3575
+   "lines": 25,
+   "characters": 3665
   },
   {
    "file": "26-pisidia.json",
@@ -395,6 +396,5 @@
    "lines": 16,
    "characters": 3873
   }
- ],
- "pronunciation": "pronounce.json"
+ ]
 }

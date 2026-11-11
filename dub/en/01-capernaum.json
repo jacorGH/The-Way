@@ -5,6 +5,16 @@
   "text": "Outside, the street is full of people talking at once."
  },
  {
+  "id": "d-28162c44",
+  "voice": "M",
+  "text": "Looking for Jesus of Nazareth? Follow the noise. Half the village has been at that door since dawn."
+ },
+ {
+  "id": "d-3ea74f80",
+  "voice": "F",
+  "text": "Did you see him? He walked past me carrying his own mat!"
+ },
+ {
   "id": "d-59325eb0",
   "voice": "N",
   "text": "Inside, the air is close and warm. Bodies press against the walls. As a teacher of the Law, you are waved to a place on the floor near the front, among the other scribes."
@@ -20,9 +30,24 @@
   "text": "Inside, the air is close and warm. Bodies press against the walls. You squeeze in by the door with the women of the household. From here you can see the teacher, and the row of scribes from Jerusalem sitting on the floor in front of him."
  },
  {
+  "id": "d-8283cfaa",
+  "voice": "M",
+  "text": "We couldn’t get him through the door. So we went up."
+ },
+ {
+  "id": "d-a8a849b6",
+  "voice": "N",
+  "text": "She is describing an earlier day in Capernaum, recorded in Mark 1:29–31."
+ },
+ {
   "id": "d-b2b7b4cc",
   "voice": "N",
   "text": "Capernaum, on the north shore of the Sea of Galilee. Houses of black basalt crowd around shared courtyards. Their flat roofs are beams and branches packed with earth."
+ },
+ {
+  "id": "d-bc9b5a92",
+  "voice": "F",
+  "text": "You’ve come about him? He healed Simon’s wife’s mother, here in this village. The fever left her, and she got up and served them."
  },
  {
   "id": "d-bf2d96fd",
@@ -93,5 +118,20 @@
   "id": "s-WEB-f44f214c",
   "voice": "S",
   "text": "Jesus, seeing their faith, said to the paralytic, “Son, your sins are forgiven you.”"
+ },
+ {
+  "id": "d-59ce7028",
+  "voice": "N",
+  "text": "The four men are already climbing the outside stairs to the roof, carrying their friend between them."
+ },
+ {
+  "id": "d-4ba6c986",
+  "voice": "M",
+  "text": "We carried him from the other end of the village. There’s no getting through that door. Not today."
+ },
+ {
+  "id": "d-a218f6e0",
+  "voice": "N",
+  "text": "Another looks up at the stairs that run along the wall to the roof. The four exchange a glance."
  }
 ]

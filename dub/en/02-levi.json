@@ -40,6 +40,16 @@
   "text": "He leaves the coins where they lie. The merchant stares at the empty booth, then at the money, and does not touch it."
  },
  {
+  "id": "d-aef1a000",
+  "voice": "N",
+  "text": "The toll collector does not look up from his counting. No one stands near his booth who does not have to."
+ },
+ {
+  "id": "d-b76c91c3",
+  "voice": "M",
+  "text": "Toll on the way out of Philip’s land, toll on the way into this one. By the time I reach Tiberias, I’ll have paid for the cloth twice."
+ },
+ {
   "id": "d-ccfce835",
   "voice": "N",
   "text": "Capernaum lay near the border between Herod Antipas’s Galilee and Philip’s territory. Goods crossing it paid tolls, collected by local men who bought the right. Most people despised them as cheats who served foreign rulers."
@@ -48,6 +58,11 @@
   "id": "d-dbe783cf",
   "voice": "N",
   "text": "You and the other scribes stand just inside the door. None of you sits down."
+ },
+ {
+  "id": "d-ec49c1d5",
+  "voice": "M",
+  "text": "You were at the house yesterday? Then you know why we watch him. A teacher is known by the company he keeps. Watch where he goes."
  },
  {
   "id": "d-fb6fed25",

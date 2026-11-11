@@ -5,6 +5,11 @@ window.TW = window.TW || {};
   const U = TW.U, D = TW.D, SC = TW.Scene, MV = TW.MapView;
   // developer tools (Dub Studio, line export) appear only with ?dev in the address
   const DEV = /[?&]dev\b/.test(location.search);
+  // pieces of assembled labels pass through the translator before they are joined
+  const TR = (x) => (TW.tr ? TW.tr(x) : x);
+  const REF = (x) => (TW.Bible ? TW.Bible.localRef(x) : x);
+  // "c. AD 28" → "h. 28 d. C." in Spanish
+  const AD = (x) => (TW.Settings && TW.Settings.get('lang') === 'es' && typeof x === 'string' ? x.replace(/^(c\. )?AD (.+)$/, (s, c, y) => (c ? 'h. ' : '') + y + ' d. C.') : x);
   const $ = (s) => document.querySelector(s);
   const el = (tag, cls, text) => {
     const e = document.createElement(tag);
@@ -111,7 +116,7 @@ window.TW = window.TW || {};
     pickRole = r;
     $('.name-field').hidden = r === 'both';
     document.querySelectorAll('.role-btn').forEach((b) => b.setAttribute('aria-pressed', b.dataset.role === r));
-    $('#role-note').textContent = ROLE_NOTE[r];
+    $('#role-note').textContent = TW.t(ROLE_NOTE[r]);
   }
   document.querySelectorAll('.role-btn').forEach((b) => b.addEventListener('click', () => setRole(b.dataset.role)));
   function showTitle() {
@@ -242,7 +247,7 @@ window.TW = window.TW || {};
     const det = $('#era-detail');
     det.innerHTML = '';
     det.appendChild(el('h3', 'era-title', era.title));
-    det.appendChild(el('p', 'era-meta', era.dates + '. You play as ' + TW.Role.G(era.view).toLowerCase().replace('nicodemus', 'Nicodemus') + '.'));
+    det.appendChild(el('p', 'era-meta', TW.Settings.get('lang') === 'es' ? TR(era.dates) + '. Juegas como ' + TR(TW.Role.G(era.view)).replace(/^U/, 'u') + '.' : era.dates + '. You play as ' + TW.Role.G(era.view).toLowerCase().replace('nicodemus', 'Nicodemus') + '.'));
     det.appendChild(el('p', 'era-summary', TW.Role.G(era.summary)));
     const dl = el('dl', 'world');
     era.world.forEach((w) => { dl.appendChild(el('dt', '', w[0])); dl.appendChild(el('dd', '', w[1])); });
@@ -260,7 +265,7 @@ window.TW = window.TW || {};
       const li = el('li', 'episode' + (ep.open ? ' open' : ''));
       const txt = el('div', 'ep-text');
       txt.appendChild(el('span', 'ep-title', ep.title));
-      txt.appendChild(el('span', 'ep-ref', ep.ref + (ep.open ? ', ' + placeName(ep.place) : '')));
+      txt.appendChild(el('span', 'ep-ref', REF(ep.ref) + (ep.open ? ', ' + TR(placeName(ep.place)) : '')));
       li.appendChild(txt);
       if (ep.open) {
         const done = game.save.completed[ep.id];
@@ -282,8 +287,8 @@ window.TW = window.TW || {};
         const T = D.testimonies[k];
         const pl = D.regions[T.region].places.find((p) => p.id === T.place);
         const li = el('li', game.save.heard[k] ? 'heard' : '');
-        li.appendChild(el('span', 'ep-title', T.witness));
-        li.appendChild(el('span', 'ep-ref', (pl ? pl.short || pl.name : '') + ', ' + (game.save.heard[k] ? 'heard' : tOpen(k) ? 'waiting for you' : 'after ' + D.episodes[T.after].title)));
+        li.appendChild(el('span', 'ep-title', TR(T.witness)));
+        li.appendChild(el('span', 'ep-ref', TR(pl ? pl.short || pl.name : '') + ', ' + (game.save.heard[k] ? TW.t('heard') : tOpen(k) ? TW.t('waiting for you') : TW.t('after') + ' ' + TR(D.episodes[T.after].title))));
         li.addEventListener('click', () => { if (tOpen(k)) game.goToPlace(T.region, T.place); });
         ul.appendChild(li);
       });
@@ -319,7 +324,7 @@ window.TW = window.TW || {};
     hideCard();
     const R = D.regions[game.region];
     AU.scene(REGION_SOUND[game.region]);
-    $('#map-title').textContent = R.title + ', ' + R.subtitle;
+    $('#map-title').textContent = TR(R.title) + ', ' + AD(R.subtitle);
     document.querySelectorAll('.region-switch button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.region === game.region));
     $('#map-hint').hidden = false;
     $('#map-hint').textContent = game.region === 'land'
@@ -377,7 +382,7 @@ window.TW = window.TW || {};
     $('#map-hint').hidden = true;
     MV.selected = id;
     const here = MV.node === id && !MV.moving;
-    $('#card-kind').textContent = pl.kind === 'episode' && pl.episodes.length === 1 ? 'Episode' : KINDS[pl.kind];
+    $('#card-kind').textContent = TW.t(pl.kind === 'episode' && pl.episodes.length === 1 ? 'Episode' : KINDS[pl.kind]);
     $('#card-name').textContent = pl.name;
     $('#card-alt').textContent = pl.alt || '';
     $('#card-text').textContent = pl.text;
@@ -393,8 +398,8 @@ window.TW = window.TW || {};
         const ep = D.episodes[eid];
         const row = el('div', 'ep-row');
         const t = el('div', 'ep-text');
-        t.appendChild(el('span', 'ep-title', ep.num + '. ' + ep.title));
-        t.appendChild(el('span', 'ep-ref', ep.ref + (game.save.completed[eid] ? ', completed' : '')));
+        t.appendChild(el('span', 'ep-title', ep.num + '. ' + TR(ep.title)));
+        t.appendChild(el('span', 'ep-ref', REF(ep.ref) + (game.save.completed[eid] ? ', ' + TW.t('completed') : '')));
         row.appendChild(t);
         if (here) {
           const done = game.save.completed[eid];
@@ -449,9 +454,9 @@ window.TW = window.TW || {};
         const T = D.testimonies[k];
         const row = el('div', 'ep-row');
         const t = el('div', 'ep-text');
-        t.appendChild(el('span', 'ep-title', T.witness));
+        t.appendChild(el('span', 'ep-title', TR(T.witness)));
         const after = T.after && D.episodes[T.after];
-        const status = !tOpen(k) ? 'after ' + after.num + '. ' + after.title : game.save.heard[k] ? 'heard' : T.later ? 'told after Pentecost' : 'not yet heard';
+        const status = !tOpen(k) ? TW.t('after') + ' ' + after.num + '. ' + TR(after.title) : TW.t(game.save.heard[k] ? 'heard' : T.later ? 'told after Pentecost' : 'not yet heard');
         t.appendChild(el('span', 'ep-ref', status));
         row.appendChild(t);
         if (here && tOpen(k)) {
@@ -467,7 +472,7 @@ window.TW = window.TW || {};
     $('#place-card').hidden = false;
   };
   function travelBtn(pl, primary) {
-    const b = el('button', 'btn' + (primary ? ' primary' : ''), 'Travel to ' + (pl.short || pl.name));
+    const b = el('button', 'btn' + (primary ? ' primary' : ''), (TW.Settings.get('lang') === 'es' ? 'Viajar a ' : 'Travel to ') + TR(pl.short || pl.name));
     b.addEventListener('click', () => { hideCard(); MV.travelTo(pl.id); });
     return b;
   }
@@ -547,6 +552,7 @@ window.TW = window.TW || {};
     wrap.querySelector('.voice-btn.rec, .voice-btn').focus();
   }
   function enterEpisode(id) {
+    if (TW.TURBO && SC.turboReset) SC.turboReset();
     const ep = TW.Episodes[id];
     if (!ep) return;
     chooseVoice(id, D.episodes[id].title, () => startEpisode(id, ep));
@@ -707,9 +713,9 @@ window.TW = window.TW || {};
     section(body, 'Recorded voices');
     renderStudio(body);
     section(body, 'About and license');
-    body.appendChild(el('p', '', TW.ABOUT.title + ' · © ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '.'));
+    body.appendChild(el('p', '', (TW.Settings.get('lang') === 'es' ? 'El Camino: Relato de un testigo' : TW.ABOUT.title) + ' · © ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '.'));
     body.appendChild(el('p', '', TW.ABOUT.summary));
-    body.appendChild(el('p', 'empty', 'Full terms are in LICENSE.md with the game. For permissions: ' + TW.ABOUT.contact + '.'));
+    body.appendChild(el('p', 'empty', (TW.Settings.get('lang') === 'es' ? 'Los términos completos están en LICENSE.md, junto con el juego. Para permisos: ' : 'Full terms are in LICENSE.md with the game. For permissions: ') + TW.ABOUT.contact + '.'));
     section(body, 'Your progress');
     const row = el('div', 'set-buttons');
     const back = el('button', 'btn small', T('Back up progress')); back.type = 'button';
@@ -865,6 +871,8 @@ window.TW = window.TW || {};
       : 'Scripture quotations are from the ' + v.name + (/public domain/i.test(v.license) ? ', which is in the public domain.' : '.');
     const rep = document.querySelector('[data-tab=reports]');
     if (rep) rep.textContent = T(TW.Role.is() ? 'Letters' : 'Reports');
+    const rn = $('#role-note'), cur = document.querySelector('[data-role][aria-pressed="true"]');
+    if (rn && cur && ROLE_NOTE[cur.dataset.role]) rn.textContent = TW.t(ROLE_NOTE[cur.dataset.role]);
     const lb = $('#btn-title-lang');
     if (lb) { lb.textContent = TW.Settings.get('lang') === 'es' ? 'English' : 'Español'; lb.setAttribute('lang', TW.Settings.get('lang') === 'es' ? 'en' : 'es'); }
     $('#copyright').textContent = '© ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '. ' + (TW.Settings.get('lang') === 'es' ? 'Libre para jugar y compartir. Todos los demás derechos reservados.' : 'Free to play and share. All other rights reserved.');
@@ -908,7 +916,7 @@ window.TW = window.TW || {};
     } else if (tab === 'testimonies') {
       const all = Object.keys(D.testimonies);
       const heard = all.filter((k) => s.heard[k]);
-      body.appendChild(el('p', 'empty', 'Heard ' + heard.length + ' of ' + all.length + ' testimonies so far. Look for people to talk to on the maps.'));
+      body.appendChild(el('p', 'empty', TW.Settings.get('lang') === 'es' ? 'Has escuchado ' + heard.length + ' de ' + all.length + ' testimonios. Busca en los mapas personas con quienes hablar.' : 'Heard ' + heard.length + ' of ' + all.length + ' testimonies so far. Look for people to talk to on the maps.'));
       heard.forEach((k) => {
         const T = D.testimonies[k];
         body.appendChild(el('h3', '', T.witness));
