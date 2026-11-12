@@ -197,7 +197,7 @@ window.TW = window.TW || {};
       await SC.say({ kind: 'drama', text: 'They go without you. Through the doorway you see men in Herod’s colors waiting for them. You stay on the bench, alone on your side of the room.' });
       game.observe('sabbath', 'plot', 'I stayed behind while my colleagues went out to plot with the Herodians.', false, true);
     }
-    await SC.say({ kind: 'scripture', ref: 'Mark 3:7–8', text: P.single['Mark 3:7–8'] });
+    await SC.say({ kind: 'scripture', ref: 'Mark 3:7–8', text: P.singleText('Mark 3:7–8') });
     game.addQuestion(TW.D.episodes.sabbath.question);
     SC.toast('A question is now open in your scroll');
     K.finish(game, 'sabbath');

@@ -495,7 +495,7 @@ window.TW = window.TW || {};
     const everyone = SC.ents.filter((e) => e !== jesus && e !== me);
 
     await SC.say({ kind: 'drama', text: 'Inside, the air is close and warm. Bodies press against the walls. As a teacher of the Law, you are waved to a place on the floor near the front, among the other scribes.' });
-    await SC.say({ kind: 'scripture', ref: 'Luke 5:17', text: TW.P.single['Luke 5:17'] });
+    await SC.say({ kind: 'scripture', ref: 'Luke 5:17', text: TW.P.singleText('Luke 5:17') });
 
     const obs = [
       { id: 'authority', x0: 140, x1: 166, y0: 118, y1: 146, text: 'He teaches with authority, not as the scribes do (Mark 1:22).' },

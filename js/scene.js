@@ -318,6 +318,7 @@ window.TW = window.TW || {};
     el.dialog.className = 'dialog kind-goal';
     el.label.textContent = LABELS.goal();
     el.speaker.hidden = true;
+    { const oldP = el.dialog.querySelector('canvas.portrait'); if (oldP) oldP.remove(); }
     el.text.textContent = text;
     el.choices.innerHTML = '';
     el.next.hidden = true;
