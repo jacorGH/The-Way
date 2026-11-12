@@ -437,6 +437,13 @@
    "title": "Testimony: Zacchaeus",
    "lines": 7,
    "characters": 850
+  },
+  {
+   "file": "scripture-es-RV1909.json",
+   "title": "Escritura (Reina-Valera 1909)",
+   "lines": 683,
+   "fromGame": true,
+   "how": "Open the published game with ?dev, download the Reina-Valera 1909 in Settings → Bible translation, then Settings → Recorded voices → Scripture batch: Reina-Valera 1909. Put the saved file here, unchanged."
   }
  ]
 }
