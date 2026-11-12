@@ -5,6 +5,10 @@ window.TW = window.TW || {};
 (function (TW) {
   // speaker names and interface labels, translated wherever they appear
   TW.I18n.add('es', {
+    'Your journey will return to this question.': 'Tu viaje volverá a esta pregunta.',
+    'Playing together': 'Jugar juntos', 'Group mode: take turns reading, decide together': 'Modo grupo: turnarse para leer, decidir juntos',
+    'Names, separated by commas': 'Nombres, separados por comas', 'Leader’s guide: all episodes': 'Guía para el líder: todos los episodios',
+    'For reflection': 'Para reflexionar', 'Still open in your scroll': 'Todavía abierta en tu rollo',
     'Discoveries': 'Descubrimientos', 'New in your Discoveries': 'Algo nuevo en tus Descubrimientos',
     'Blank parchment marks lands you have not heard of yet.': 'El pergamino en blanco señala tierras de las que todavía no has oído hablar.',
     'Your home city at Passover. Tap a place.': 'Tu ciudad en la Pascua. Toca un lugar.', 'People who need you': 'Personas que te necesitan',

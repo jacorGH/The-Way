@@ -642,7 +642,7 @@ window.TW = window.TW || {};
     for (const id of Object.keys(A)) {
       const q = game.answer(id, A[id][0], A[id][1]);
       if (!q) continue;
-      TW.Audio && TW.Audio.sfx('chime');
+      TW.Audio && TW.Audio.sfx('answer');
       await SC.say({ kind: 'answer', text: '“' + q.text + '” (' + q.ref + ')\n\n' + A[id][0] + ' (' + A[id][1] + ')' });
     }
   }

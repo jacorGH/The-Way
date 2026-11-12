@@ -237,8 +237,12 @@ window.TW = window.TW || {};
     el.dialog.className = 'dialog kind-' + o.kind;
     el.dialog.dataset.line = lineId || '';
     el.label.textContent = LABELS[o.kind](o.ref || '');
+    if (o.kind === 'scripture' && TW.Group && TW.Group.on() && !TW.TURBO) { const who = TW.Group.reader(); if (who) el.label.textContent += (TW.Settings.get('lang') === 'es' ? ' · Lee: ' : ' · Reader: ') + who; }
     el.speaker.textContent = o.speaker || '';
     el.speaker.hidden = !o.speaker;
+    // a small portrait of whoever is speaking
+    const oldP = el.dialog.querySelector('canvas.portrait'); if (oldP) oldP.remove();
+    if (o.speaker && TW.Portrait && !TW.TURBO) { const pc = TW.Portrait.canvas(o.speaker); if (pc) el.speaker.parentNode.insertBefore(pc, el.speaker); }
     el.choices.innerHTML = '';
     el.next.hidden = true;
     const full = o.text;
@@ -283,7 +287,9 @@ window.TW = window.TW || {};
     el.dialog.className = 'dialog kind-choice';
     el.label.textContent = label || 'Your heart';
     el.speaker.hidden = true;
+    { const oldP = el.dialog.querySelector('canvas.portrait'); if (oldP) oldP.remove(); }
     el.text.textContent = prompt;
+    if (TW.Group && TW.Group.on() && !TW.TURBO) { const h = document.createElement('span'); h.className = 'group-hint'; h.textContent = TW.Group.hint(); el.text.appendChild(document.createElement('br')); el.text.appendChild(h); }
     el.next.hidden = true;
     el.choices.innerHTML = '';
     pending = null;

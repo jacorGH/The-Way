@@ -252,7 +252,23 @@ the text says so.
   after the Empty Tomb. Each has a memory scene, a find, Spanish and a voice batch.
 
 ## Study features
+- **Your own words**: a private writing space under each episode's reflection questions on the study page, saved as you
+  type (`save.mine`).
+- **Your book** (`js/book.js`): the whole journey as one printable page (reports, conclusions, letters, word studies,
+  your own answers, witnesses, finds, threads), in the game's language. From the Discoveries tab, and on the last study page.
 - **Hands-on moments** (`js/hands.js`): wind the linen at the burial, hold the jailer's lamp, unroll the scroll in
   Berea, throw the grain overboard in the storm, take down Paul's dictation. Counted in Discoveries.
 - **Word study** for every episode and **Two accounts** (what Eleazar and Elisheva each saw) on the study page
   (`js/discover4.js`).
+
+## Group mode
+Settings → Playing together. With group mode on and names entered, each Scripture passage names whose turn it is to
+read it aloud (rotating through the names), choices invite the group to talk it over first, and the study page offers
+"Show the questions to the room" (full-screen, large type) and a printable leader's guide for the episode. A guide for
+every episode is in Settings. Code: `js/group.js`.
+
+## Polish
+- **Portraits** (`js/portraits.js`): a small pixel portrait beside each speaker's name, using the character's look from
+  the scenes, or a consistent look worked out from their description.
+- **Answer sting**: a short rising phrase when Scripture answers a question in your scroll (`answer` sound in `js/audio.js`).
+- The study page names the Bible version actually in use.

@@ -628,6 +628,33 @@ window.TW = window.TW || {};
     row.appendChild(box); row.appendChild(el('span', '', T(label)));
     body.appendChild(row);
   }
+  // Scripture in the installed Bible version, built from dub/scripture-refs.json (needs the published copy).
+  // Available in the developer tools even before any episode has been played.
+  function scriptureButton(lang, status) {
+    // one button per installed Bible version; each saves scripture.json for that language's dub folder
+    const box = el('div', 'set-buttons');
+    TW.Bible.list().forEach((v) => {
+      const vlang = v.lang || 'en';
+      const b = el('button', 'btn small', 'Scripture batch: ' + v.name + ' (dub/' + vlang + '/scripture.json)'); b.type = 'button';
+      b.addEventListener('click', async () => {
+        const prev = TW.Settings.get('bible');
+        try {
+          const r = await fetch('dub/scripture-refs.json', { cache: 'no-store' });
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          const list = (await r.json()).refs || [];
+          TW.Settings.set('bible', v.id);
+          const seen = new Set(), items = [];
+          list.forEach((x) => { const t = TW.P.singleText(x.ref); if (!t) return; const id = TW.Lines.id('scripture', t); if (seen.has(id)) return; seen.add(id); items.push({ id, voice: 'S', text: t, kind: 'scripture' }); });
+          TW.Settings.set('bible', prev);
+          download('scripture.json', JSON.stringify(items, null, 1));
+          status.textContent = items.length + ' Scripture lines in ' + v.name + '. Put scripture.json in the game’s dub/' + vlang + '/ folder and push; TTS Studio will list it as its own batch, and its recordings go to audio/' + vlang + '/.';
+        } catch (e) { TW.Settings.set('bible', prev); status.textContent = 'Could not read dub/scripture-refs.json (' + e.message + '). Open the published copy of the game.'; }
+      });
+      box.appendChild(b);
+    });
+    if (!TW.Bible.list().some((v) => v.lang === 'es')) box.appendChild(el('p', 'empty', 'For Spanish Scripture, first download the Reina-Valera in Settings → Bible translation.'));
+    return box;
+  }
   function download(name, text, type) {
     try {
       const a = document.createElement('a');
@@ -653,9 +680,13 @@ window.TW = window.TW || {};
     section(body, 'Comfort');
     checkRow(body, 'Reduce motion', 'reduceMotion');
     checkRow(body, 'Higher contrast', 'contrast');
+    section(body, 'Playing together');
+    checkRow(body, 'Group mode: take turns reading, decide together', 'group');
+    { const row = el('label', 'set-row'); row.appendChild(el('span', 'set-label', T('Names, separated by commas'))); const inp = el('input', 'group-names'); inp.type = 'text'; inp.value = TW.Settings.get('groupNames') || ''; inp.placeholder = 'Ana, Ben, Mia'; inp.addEventListener('change', () => TW.Settings.set('groupNames', inp.value)); row.appendChild(inp); body.appendChild(row); }
+    { const gb = el('button', 'btn small', T('Leader’s guide: all episodes')); gb.type = 'button'; gb.addEventListener('click', () => TW.Group && TW.Group.openGuide(D.eraOrder)); body.appendChild(gb); }
     section(body, 'Language');
     pickRow(body, 'Language', 'lang', [['en', 'English'], ['es', 'Español']], (v) => { setLanguage(v); rerender(); });
-    if (TW.Settings.get('lang') === 'es') body.appendChild(el('p', 'empty', 'El menú está en español. La historia se mostrará en español a medida que se traduzca; mientras tanto aparece en inglés. Para las Escrituras en español, añade la Reina-Valera 1909 abajo.'));
+    if (TW.Settings.get('lang') === 'es') body.appendChild(el('p', 'empty', 'El juego está en español. Para las Escrituras en español, elige o descarga la Reina-Valera abajo.'));
     section(body, 'Bible translation');
     pickRow(body, 'Bible translation', 'bible', TW.Bible.list().map((v) => [v.id, v.name + (v.id === 'WEB' ? '' : ' (' + TW.Bible.count(v.id) + ')')]), () => { relabel(); rerender(); });
     const cur = TW.Bible.version();
@@ -777,7 +808,11 @@ window.TW = window.TW || {};
     checkRow(body, 'Even out voice volume (experimental; turn off if recordings go silent)', 'voiceLeveler');
     if (!DEV) { body.appendChild(el('p', 'empty', 'Recorded voices play wherever they exist. Any other line is read by your device’s voice.')); return; }
     body.appendChild(el('p', '', 'Developer tools (shown because the address has ?dev). Recordings in the game’s audio/' + lang + ' folder play automatically, line by line; any line without one is read by the device. Ready-made batches for TTS Studio, one per episode, are in the dub folder (dub/index.html on your published copy). You can also record your own with the iPhone’s Shortcuts app; see RECORDING.md.'));
-    if (!keys.length) { body.appendChild(el('p', 'empty', 'Play an episode first; its lines will appear here.')); return; }
+    if (!keys.length) {
+      body.appendChild(el('p', 'empty', 'Play an episode first; its lines will appear here. The Scripture batch below needs no playing.'));
+      const st0 = el('p', 'empty', ''); body.appendChild(scriptureButton(lang, st0)); body.appendChild(st0);
+      return;
+    }
     const done = L.recorded(lang);
     const title = (k) => (D.episodes[k] ? D.episodes[k].num + '. ' + D.episodes[k].title : k.indexOf('t:') === 0 ? 'Testimony: ' + k.slice(2) : k.indexOf('s:') === 0 ? 'Service: ' + k.slice(2) : 'Other');
     const sel = el('select', 'voice-select');
@@ -822,19 +857,7 @@ window.TW = window.TW || {};
       const where = new URL(TW.Dubs.url(lang, ids[0]), location.href).href;
       status.textContent = found + ' of ' + ids.length + ' spoken lines in this episode have recordings. The game looks for files like: ' + where + (found ? '' : '  (None found: check that the MP3s are in an audio/' + lang + ' folder at the top of the game, next to index.html.)');
     });
-    // Scripture in the installed Bible version, built from dub/scripture-refs.json (needs the published copy)
-    const scr = el('button', 'btn small', 'Scripture batch for ' + TW.Bible.current()); scr.type = 'button';
-    scr.addEventListener('click', async () => {
-      try {
-        const r = await fetch('dub/scripture-refs.json', { cache: 'no-store' });
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        const list = (await r.json()).refs || [];
-        const seen = new Set(), items = [];
-        list.forEach((x) => { const t = TW.P.singleText(x.ref); if (!t) return; const id = TW.Lines.id('scripture', t); if (seen.has(id)) return; seen.add(id); items.push({ id, voice: 'S', text: t, kind: 'scripture' }); });
-        download('scripture-' + TW.Bible.current() + '.json', JSON.stringify(items, null, 1));
-        status.textContent = items.length + ' Scripture lines in ' + TW.Bible.current() + '. Load the file in TTS Studio, and unzip its recordings into audio/' + lang + '.';
-      } catch (e) { status.textContent = 'Could not read dub/scripture-refs.json (' + e.message + '). Open the published copy of the game.'; }
-    });
+    const scr = scriptureButton(lang, status);
     const svc = el('button', 'btn small', 'Copy batch for a voice service'); svc.type = 'button';
     svc.addEventListener('click', () => {
       const b = L.batch(sel.value, +size.value, lang, voice.value);
@@ -910,7 +933,7 @@ window.TW = window.TW || {};
     const body = $('#journal-body');
     body.innerHTML = '';
     const s = game.save;
-    if (tab === 'discover') { if (TW.Discover) TW.Discover.journal(body, el); return; }
+    if (tab === 'discover') { if (TW.Book) body.appendChild(TW.Book.button(el, 'btn small')); if (TW.Discover) TW.Discover.journal(body, el); return; }
     if (tab === 'obs') {
       const eps = D.eraOrder.filter((id) => (s.obs[id] || []).length).concat(Object.keys(s.obs).filter((k) => (k.startsWith('t:') || k.startsWith('s:')) && s.obs[k].length));
       if (!eps.length) { body.appendChild(el('p', 'empty', 'Nothing written yet. In each place, tap people and things to note what you see.')); return; }
@@ -1072,8 +1095,12 @@ window.TW = window.TW || {};
     b.innerHTML = '';
     b.appendChild(el('p', 'study-kicker', fresh ? (TW.Role.is() ? 'Your letter is sealed. Now read the passage.' : 'Your report is sealed. Now read the passage.') : 'Study'));
     b.appendChild(el('h2', 'scroll-title', E.title));
-    if (TW.Discover) { TW.Discover.study(ep, fresh, b, el, newly); if (ep === 'allnew' && game.save.completed.allnew) TW.Discover.endingPage(b, el); }
-    b.appendChild(el('p', 'study-ref', E.ref + ', World English Bible. ' + (E.parallels.startsWith('told') ? 'This account is ' + E.parallels + '.' : 'Also told in ' + E.parallels + '.')));
+    if (TW.Discover) { TW.Discover.study(ep, fresh, b, el, newly); if (ep === 'allnew' && game.save.completed.allnew) { TW.Discover.endingPage(b, el); if (TW.Book) b.appendChild(TW.Book.button(el, 'btn primary')); } }
+    { const es = TW.Settings.get('lang') === 'es', ver = TW.Bible ? TW.Bible.version().name : 'World English Bible', par = TR(E.parallels);
+      const cap = (x) => x.charAt(0).toUpperCase() + x.slice(1);
+      b.appendChild(el('p', 'study-ref', REF(E.ref) + ', ' + ver + '. ' + (E.parallels.startsWith('told')
+        ? (es ? cap(par) + '.' : 'This account is ' + E.parallels + '.')
+        : (es ? 'También en ' + par + '.' : 'Also told in ' + E.parallels + '.')))); }
     // one or more passages, each optionally limited to a verse range
     const parts = E.passages || [[E.passage, E.from, E.to]];
     parts.forEach((pt) => {
@@ -1099,14 +1126,24 @@ window.TW = window.TW || {};
     });
     b.appendChild(el('h3', '', 'For reflection'));
     const ol = el('ol', 'reflect');
-    E.reflect.forEach((q) => ol.appendChild(el('li', '', q)));
+    // your own words: a private place to answer each question, saved as you type
+    game.save.mine = game.save.mine || {};
+    const mine = (game.save.mine[ep] = game.save.mine[ep] || {});
+    E.reflect.forEach((q, i) => {
+      const li = el('li', '', q);
+      const ta = el('textarea', 'mine'); ta.rows = 3; ta.value = mine[i] || '';
+      ta.placeholder = TW.Settings.get('lang') === 'es' ? 'Escribe tu respuesta…' : 'Write your answer…';
+      let tm = null;
+      ta.addEventListener('input', () => { mine[i] = ta.value; clearTimeout(tm); tm = setTimeout(persist, 400); });
+      li.appendChild(ta); ol.appendChild(li);
+    });
     b.appendChild(ol);
     const q = game.save.questions.find((x) => x.id === E.question.id);
     if (q) {
       const d = el('div', 'open-q');
       d.appendChild(el('p', 'plabel', 'Still open in your scroll'));
-      d.appendChild(el('p', '', '“' + q.text + '” (' + q.ref + ')'));
-      d.appendChild(el('p', 'fine', 'Your journey will return to this question.'));
+      d.appendChild(el('p', '', '“' + TR(q.text) + '” (' + REF(q.ref) + ')'));
+      d.appendChild(el('p', 'fine', TW.t('Your journey will return to this question.')));
       b.appendChild(d);
     }
     const acts = el('div', 'study-actions');
@@ -1136,7 +1173,7 @@ window.TW = window.TW || {};
       b.appendChild(d);
     }
     const home = E.region || 'galilee';
-    const m = el('button', 'btn' + (fresh && fresh.length && E.reveal ? '' : ' primary'), 'Back to ' + D.regions[home].title);
+    const m = el('button', 'btn' + (fresh && fresh.length && E.reveal ? '' : ' primary'), (TW.Settings.get('lang') === 'es' ? 'Volver a ' : 'Back to ') + TR(D.regions[home].title).replace(/^The /, 'the '));
     m.addEventListener('click', () => { closeOverlays(); game.region = home; game.switchRegion(home); });
     const t = el('button', 'btn', 'Timeline');
     t.addEventListener('click', () => { closeOverlays(); game.show('timeline'); });

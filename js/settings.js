@@ -14,6 +14,8 @@ window.TW = window.TW || {};
     lang: 'en',             // interface and story language
     bible: 'WEB',           // Bible version for Scripture
     recordings: true,       // play recorded voices from audio/<lang>/ when present
+    group: false,           // group mode: take turns reading, decide together, questions for the room
+    groupNames: '',         // names of the people playing, separated by commas
     voiceSpeed: 1,          // playback speed of voices (recordings and device voice)
     voiceLeveler: false,    // even out the loudness of recorded voices (off by default; see speech.js)
   };

@@ -533,6 +533,8 @@ window.TW = window.TW || {};
     tap(t) { pluck(79, t, 0.05, sfxBus); },
     page(t) { pluck(88, t, 0.016, sfxBus); },
     chime(t) { pluck(86, t, 0.07, sfxBus); pluck(93, t + 0.12, 0.05, sfxBus); },
+    // when Scripture answers a question in your scroll: a short rising phrase
+    answer(t) { pluck(74, t, 0.06, sfxBus); pluck(78, t + 0.14, 0.055, sfxBus); pluck(81, t + 0.28, 0.055, sfxBus); pluck(86, t + 0.46, 0.07, sfxBus); pluck(90, t + 0.62, 0.045, sfxBus); },
     whoosh(t) { pluck(74, t, 0.03, sfxBus); pluck(71, t + 0.08, 0.026, sfxBus); pluck(67, t + 0.16, 0.022, sfxBus); },
     dig(t) { for (let i = 0; i < 4; i++) burst(t + i * 0.18 + rand(0, 0.05), 600, 350, 0.12, 0.1, 'lowpass'); },
     crumble(t) { burst(t, 800, 200, 0.9, 0.22, 'lowpass'); for (let i = 0; i < 6; i++) burst(t + rand(0, 0.6), 1200, 700, 0.05, 0.05); },

@@ -148,14 +148,16 @@ for each kind of voice. It needs Node 18 or newer and an OpenAI API key with bil
 The voices and the direction for each tag are at the top of the script, so you can change the cast and the tone. OpenAI's
 terms ask you to tell players that the voices are AI-generated; the game's About section is a good place for that.
 
-## Spanish recordings
-- **Story lines:** `dub/es/index.json` (67 batches, about 77,000 characters). Load it in TTS Studio's Whole project
-  panel exactly as for English; exports land in `audio/es/`. The Spanish voice directions are in `dub/es/voices.json`
-  (the same voices, directed to speak neutral Latin American Spanish).
+## English and Spanish together
+TTS Studio loads both languages from one address (paste `…/dub/en/index.json`), pairs each batch, records both, and
+exports one ZIP per batch with `audio/en/` and `audio/es/` inside. Unzip into the game folder and push.
+
 - **Elisheva's wording:** where Spanish changes with the narrator's gender, a line has two recordings: `<id>` for
   Eleazar and `<id>-f` for Elisheva. The game picks the right one.
-- **Scripture:** Spanish Scripture comes from the Bible version installed in the game, so its batch is built there.
-  Open the published game with `?dev`, choose the Spanish Bible (Reina-Valera), play any episode, then Settings →
-  Recorded voices → "Scripture batch for RV1909". Load the downloaded file in TTS Studio's batch view. The same
-  button builds an English Scripture batch for any other English version (ASV, KJV).
+- **Scripture:** the English Scripture lines are already in the English batches. Spanish Scripture depends on the
+  Bible version installed in the game: open the published game with `?dev`, download the Reina-Valera in Settings →
+  Bible translation, then Settings → Recorded voices → "Scripture batch: Reina-Valera … (dub/es/scripture.json)".
+  Put the saved `scripture.json` in the game's `dub/es/` folder and push; TTS Studio lists it as its own batch. (The
+  same works for any other English version, saved to `dub/en/`.)
+- **Re-recording a whole part:** TTS Studio's "Re-record batch" on any row.
 - Lines the Seven assembles while you play (the widows' names and loaves left) are read by the device voice.
