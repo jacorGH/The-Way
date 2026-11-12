@@ -1,0 +1,83 @@
+[
+ {
+  "id": "d-9bac8eb7",
+  "voice": "N",
+  "text": "Lazarus is sitting in the courtyard of his sister’s house in Bethany, mending a sandal strap. Pilgrims walk past the gate slowly, staring. He waves to them. He is used to it.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-67230c45",
+  "voice": "N",
+  "text": "Lazarus is the Greek form of the Hebrew name Eleazar, “God has helped.”",
+  "kind": "history"
+ },
+ {
+  "id": "d-99f32673",
+  "voice": "N",
+  "text": "What do you ask Lazarus of Bethany?",
+  "kind": "prompt"
+ },
+ {
+  "id": "s-WEB-846fe29c",
+  "voice": "S",
+  "text": "A large crowd therefore of the Jews learned that he was there; and they came, not for Jesus’ sake only, but that they might see Lazarus also, whom he had raised from the dead. But the chief priests conspired to put Lazarus to death also, because on account of him many of the Jews went away and believed in Jesus.",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-ab9e680a",
+  "voice": "M",
+  "text": "The chief priests would like me dead again. I have been dead once. I am not as afraid of it as they would like me to be.",
+  "kind": "drama",
+  "speaker": "Lazarus of Bethany"
+ },
+ {
+  "id": "d-09c61314",
+  "voice": "N",
+  "text": "He pulls the strap tight and tests it. “People come to look at me,” he says. “I tell them: don’t look at me. Look at the one who called my name.”",
+  "kind": "drama"
+ },
+ {
+  "id": "s-WEB-8f4eabbc",
+  "voice": "S",
+  "text": "Jesus therefore, again groaning in himself, came to the tomb. Now it was a cave, and a stone lay against it. Jesus said, “Take away the stone.” Martha, the sister of him who was dead, said to him, “Lord, by this time there is a stench, for he has been dead four days.” Jesus said to her, “Didn’t I tell you that if you believed, you would see God’s glory?” So they took away the stone from the place where the dead man was lying. Jesus lifted up his eyes, and said, “Father, I thank you that you listened to me.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-7a9723f6",
+  "voice": "S",
+  "text": "I know that you always listen to me, but because of the multitude that stands around I said this, that they may believe that you sent me.” When he had said this, he cried with a loud voice, “Lazarus, come out!”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-c793ade5",
+  "voice": "S",
+  "text": "He who was dead came out, bound hand and foot with wrappings, and his face was wrapped around with a cloth. Jesus said to them, “Free him, and let him go.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-7b16f6fe",
+  "voice": "M",
+  "text": "Nothing before his voice. Then my name. I came toward it before I knew I was alive.",
+  "kind": "drama",
+  "speaker": "Lazarus of Bethany"
+ },
+ {
+  "id": "s-WEB-9b96dda1",
+  "voice": "S",
+  "text": "Then, six days before the Passover, Jesus came to Bethany, where Lazarus was, who had been dead, whom he raised from the dead. So they made him a supper there. Martha served, but Lazarus was one of those who sat at the table with him.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-34ce3d47",
+  "voice": "S",
+  "text": "Therefore Mary took a pound of ointment of pure nard, very precious, and anointed Jesus’s feet and wiped his feet with her hair. The house was filled with the fragrance of the ointment.",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-fde8fb0e",
+  "voice": "M",
+  "text": "Martha served, of course. Mary poured out the nard. I just sat at the table beside him and ate. Sometimes that is enough to say.",
+  "kind": "drama",
+  "speaker": "Lazarus of Bethany"
+ }
+]

@@ -1,0 +1,47 @@
+[
+ {
+  "id": "d-9bac8eb7",
+  "voice": "N",
+  "text": "Lázaro está sentado en el patio de la casa de su hermana en Betania, remendando la correa de una sandalia. Los peregrinos pasan despacio frente a la puerta, mirándolo. Él los saluda con la mano. Ya está acostumbrado.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-67230c45",
+  "voice": "N",
+  "text": "Lázaro es la forma griega del nombre hebreo Eleazar, “Dios ha ayudado”.",
+  "kind": "history"
+ },
+ {
+  "id": "d-99f32673",
+  "voice": "N",
+  "text": "¿Qué le preguntas a Lázaro de Betania?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-ab9e680a",
+  "voice": "M",
+  "text": "Los principales sacerdotes quisieran verme muerto otra vez. Ya estuve muerto una vez. No le tengo tanto miedo como ellos quisieran.",
+  "kind": "drama",
+  "speaker": "Lázaro de Betania"
+ },
+ {
+  "id": "d-09c61314",
+  "voice": "N",
+  "text": "Aprieta la correa y la prueba. “La gente viene a mirarme”, dice. “Yo les digo: no me miren a mí. Miren al que dijo mi nombre.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-7b16f6fe",
+  "voice": "M",
+  "text": "Nada antes de su voz. Luego mi nombre. Fui hacia ella antes de saber que estaba vivo.",
+  "kind": "drama",
+  "speaker": "Lázaro de Betania"
+ },
+ {
+  "id": "d-fde8fb0e",
+  "voice": "M",
+  "text": "Marta servía, claro. María derramó el nardo. Yo solo me senté a la mesa junto a él y comí. A veces eso basta para decir algo.",
+  "kind": "drama",
+  "speaker": "Lázaro de Betania"
+ }
+]

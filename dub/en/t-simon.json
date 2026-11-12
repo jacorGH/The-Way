@@ -1,0 +1,59 @@
+[
+ {
+  "id": "d-b61a374c",
+  "voice": "N",
+  "text": "Outside the city gate a tall man from Cyrene in Africa is standing very still, looking up at the rock where the crosses stood. Two young men wait for him on the road. His sons, he says: Alexander and Rufus.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-40ee0c21",
+  "voice": "N",
+  "text": "Cyrene, in present-day Libya, had a large Jewish community; Cyrenians had their own synagogue in Jerusalem (Acts 6:9).",
+  "kind": "history"
+ },
+ {
+  "id": "d-59c894a4",
+  "voice": "N",
+  "text": "What do you ask Simon of Cyrene?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-113f287f",
+  "voice": "M",
+  "text": "They do now. Everyone who knows us knows it. People will remember me as the man who carried his cross. I hope they remember my sons as the men who followed him.",
+  "kind": "drama",
+  "speaker": "Simon of Cyrene"
+ },
+ {
+  "id": "d-1ebd7737",
+  "voice": "N",
+  "text": "His sons call to him from the road. He rubs his shoulder, as if it still aches. “I carried it for an hour,” he says. “He carried everything else.”",
+  "kind": "drama"
+ },
+ {
+  "id": "s-WEB-d29cee96",
+  "voice": "S",
+  "text": "When they led him away, they grabbed one Simon of Cyrene, coming from the country, and laid the cross on him to carry it after Jesus.",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-e2fc6a55",
+  "voice": "M",
+  "text": "I was coming in from the fields for the feast. A soldier put his spear across my chest and said “Carry it.” You do not argue with a Roman.",
+  "kind": "drama",
+  "speaker": "Simon of Cyrene"
+ },
+ {
+  "id": "s-WEB-0e17fa38",
+  "voice": "S",
+  "text": "A great multitude of the people followed him, including women who also mourned and lamented him. But Jesus, turning to them, said, “Daughters of Jerusalem, don’t weep for me, but weep for yourselves and for your children.",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-19bbc190",
+  "voice": "M",
+  "text": "He could barely stand, and he turned to comfort the women who were weeping for him. I was right behind him with his cross on my shoulder. I heard every word.",
+  "kind": "drama",
+  "speaker": "Simon of Cyrene"
+ }
+]

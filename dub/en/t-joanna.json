@@ -1,0 +1,77 @@
+[
+ {
+  "id": "d-be2c107e",
+  "voice": "N",
+  "text": "In a quiet room of the palace a woman in fine linen is counting coins into purses, one for each of the poor widows on a list. Her husband, she tells you, keeps the accounts of Herod Antipas. She keeps her own.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-bb3a08b8",
+  "voice": "N",
+  "text": "What do you ask Joanna?",
+  "kind": "prompt"
+ },
+ {
+  "id": "s-WEB-85c28beb",
+  "voice": "S",
+  "text": "But on the first day of the week, at early dawn, they and some others came to the tomb, bringing the spices which they had prepared. They found the stone rolled away from the tomb. They entered in, and didn’t find the Lord Jesus’ body. While they were greatly perplexed about this, behold, two men stood by them in dazzling clothing. Becoming terrified, they bowed their faces down to the earth. The men said to them, “Why do you seek the living among the dead?",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-bfe24860",
+  "voice": "S",
+  "text": "He isn’t here, but is risen. Remember what he told you when he was still in Galilee, saying that the Son of Man must be delivered up into the hands of sinful men and be crucified, and the third day rise again?” They remembered his words, returned from the tomb, and told all these things to the eleven and to all the rest.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-70de4f0a",
+  "voice": "S",
+  "text": "Now they were Mary Magdalene, Joanna, and Mary the mother of James. The other women with them told these things to the apostles. These words seemed to them to be nonsense, and they didn’t believe them.",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-0cedc81b",
+  "voice": "F",
+  "text": "They thought we were talking nonsense. Luke wrote that down too, to his credit. He also wrote down my name.",
+  "kind": "drama",
+  "speaker": "Joanna, the wife of Chuza"
+ },
+ {
+  "id": "d-f9a88329",
+  "voice": "N",
+  "text": "She ties the last purse and sets it with the others. “Herod wanted to see a sign,” she says. “I saw an empty tomb. I know which of us was given more.”",
+  "kind": "drama"
+ },
+ {
+  "id": "s-WEB-29b5c050",
+  "voice": "S",
+  "text": "Soon afterwards, he went about through cities and villages, preaching and bringing the good news of God’s Kingdom. With him were the twelve, and certain women who had been healed of evil spirits and infirmities: Mary who was called Magdalene, from whom seven demons had gone out; and Joanna, the wife of Chuzas, Herod’s steward; Susanna; and many others who served them from their possessions.",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-36d2d234",
+  "voice": "F",
+  "text": "I was ill, and he healed me. After that, what else would I do with Herod’s money? I spent some of it on bread for the Twelve.",
+  "kind": "drama",
+  "speaker": "Joanna, the wife of Chuza"
+ },
+ {
+  "id": "s-WEB-8698d625",
+  "voice": "S",
+  "text": "Now when Herod saw Jesus, he was exceedingly glad, for he had wanted to see him for a long time, because he had heard many things about him. He hoped to see some miracle done by him. He questioned him with many words, but he gave no answers.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-0ef4c126",
+  "voice": "S",
+  "text": "The chief priests and the scribes stood, vehemently accusing him. Herod with his soldiers humiliated him and mocked him. Dressing him in luxurious clothing, they sent him back to Pilate. Herod and Pilate became friends with each other that very day, for before that they were enemies with each other.",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-ac11ec40",
+  "voice": "F",
+  "text": "Herod wanted a miracle, like a show at a banquet. Jesus said nothing to him at all. I was in the house that day. I have never heard a silence like it.",
+  "kind": "drama",
+  "speaker": "Joanna, the wife of Chuza"
+ }
+]

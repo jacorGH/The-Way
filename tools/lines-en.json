@@ -18367,6 +18367,662 @@
 "ref": "",
 "text": "Women followed Jesus and “served them from their possessions” (Luke 8:3).",
 "role": "both"
+},
+{
+"id": "d-25cff448",
+"kind": "drama",
+"ep": "t:leper",
+"speaker": "",
+"ref": "",
+"text": "In Chorazin a man is helping to roof a house, passing up bundles of reeds, laughing with the others. His neighbors say that a year ago no one would come within shouting distance of him.",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-d9c8361d",
+"kind": "history",
+"ep": "t:leper",
+"speaker": "",
+"ref": "",
+"text": "The Law required a leper to live apart, with torn clothes, calling out “Unclean! Unclean!” to anyone who came near (Leviticus 13:45–46).",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-61364352",
+"kind": "prompt",
+"ep": "t:leper",
+"speaker": "",
+"ref": "",
+"text": "What do you ask a man who was a leper?",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-d8faa5e2",
+"kind": "option",
+"ep": "t:leper",
+"speaker": "",
+"ref": "",
+"text": "What did you say to him?",
+"role": "both"
+},
+{
+"id": "d-fc7a7048",
+"kind": "option",
+"ep": "t:leper",
+"speaker": "",
+"ref": "",
+"text": "He touched you?",
+"role": "both"
+},
+{
+"id": "d-937288de",
+"kind": "option",
+"ep": "t:leper",
+"speaker": "",
+"ref": "",
+"text": "Why didn’t you keep quiet?",
+"role": "both"
+},
+{
+"id": "s-WEB-d33cb8a9",
+"kind": "scripture",
+"ep": "t:leper",
+"speaker": "",
+"ref": "Mark 1:41–42",
+"text": "Being moved with compassion, he stretched out his hand, and touched him, and said to him, “I want to. Be made clean.” When he had said this, immediately the leprosy departed from him, and he was made clean.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-3564045d",
+"kind": "drama",
+"ep": "t:leper",
+"speaker": "A man who was a leper",
+"ref": "",
+"text": "He touched me before I was clean. Not after. I had not been touched by anyone for so long, I had forgotten how warm a hand is.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-52707597",
+"kind": "observe",
+"ep": "t:leper",
+"speaker": "",
+"ref": "",
+"text": "Moved with compassion, he touched him and said, “I want to. Be made clean” (Mark 1:41).",
+"role": "both"
+},
+{
+"id": "d-3befaf7e",
+"kind": "drama",
+"ep": "t:leper",
+"speaker": "",
+"ref": "",
+"text": "Someone calls down from the roof for another bundle, and he throws it up with both hands. “I used to ring a bell so people could get away from me,” he says. “Now they ask me to stay for supper.”",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "s-WEB-cbe63bb9",
+"kind": "scripture",
+"ep": "t:leper",
+"speaker": "",
+"ref": "Mark 1:40",
+"text": "There came to him a leper, begging him, kneeling down to him, and saying to him, “If you want to, you can make me clean.”",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-d32026fd",
+"kind": "drama",
+"ep": "t:leper",
+"speaker": "A man who was a leper",
+"ref": "",
+"text": "Not “Can you?” Everyone knew he could. I asked if he wanted to. No one had wanted to come near me in years.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-52956190",
+"kind": "observe",
+"ep": "t:leper",
+"speaker": "",
+"ref": "",
+"text": "The leper said, “If you want to, you can make me clean” (Mark 1:40).",
+"role": "both"
+},
+{
+"id": "s-WEB-9c722e7b",
+"kind": "scripture",
+"ep": "t:leper",
+"speaker": "",
+"ref": "Mark 1:43–45",
+"text": "He strictly warned him, and immediately sent him out, and said to him, “See you say nothing to anybody, but go show yourself to the priest, and offer for your cleansing the things which Moses commanded, for a testimony to them.” But he went out, and began to proclaim it much, and to spread about the matter, so that Jesus could no more openly enter into a city, but was outside in desert places: and they came to him from everywhere.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-21c49f1d",
+"kind": "drama",
+"ep": "t:leper",
+"speaker": "A man who was a leper",
+"ref": "",
+"text": "He told me to say nothing. I went to the priest, as he said. And then I told everyone else. Could you have kept quiet?",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-688c2b04",
+"kind": "observe",
+"ep": "t:leper",
+"speaker": "",
+"ref": "",
+"text": "He told him to show himself to the priest, but the man spread the news everywhere (Mark 1:44–45).",
+"role": "both"
+},
+{
+"id": "d-be2c107e",
+"kind": "drama",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "",
+"text": "In a quiet room of the palace a woman in fine linen is counting coins into purses, one for each of the poor widows on a list. Her husband, she tells you, keeps the accounts of Herod Antipas. She keeps her own.",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-bb3a08b8",
+"kind": "prompt",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "",
+"text": "What do you ask Joanna?",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-d6223491",
+"kind": "option",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "",
+"text": "How did a steward’s wife come to follow him?",
+"role": "both"
+},
+{
+"id": "d-cb37984c",
+"kind": "option",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "",
+"text": "Did Herod ever see him?",
+"role": "both"
+},
+{
+"id": "d-1cb3eb0e",
+"kind": "option",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "",
+"text": "You were at the tomb?",
+"role": "both"
+},
+{
+"id": "s-WEB-85c28beb",
+"kind": "scripture",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "Luke 24:1–5",
+"text": "But on the first day of the week, at early dawn, they and some others came to the tomb, bringing the spices which they had prepared. They found the stone rolled away from the tomb. They entered in, and didn’t find the Lord Jesus’ body. While they were greatly perplexed about this, behold, two men stood by them in dazzling clothing. Becoming terrified, they bowed their faces down to the earth. The men said to them, “Why do you seek the living among the dead?",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-bfe24860",
+"kind": "scripture",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "Luke 24:6–9",
+"text": "He isn’t here, but is risen. Remember what he told you when he was still in Galilee, saying that the Son of Man must be delivered up into the hands of sinful men and be crucified, and the third day rise again?” They remembered his words, returned from the tomb, and told all these things to the eleven and to all the rest.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-70de4f0a",
+"kind": "scripture",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "Luke 24:10–11",
+"text": "Now they were Mary Magdalene, Joanna, and Mary the mother of James. The other women with them told these things to the apostles. These words seemed to them to be nonsense, and they didn’t believe them.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-0cedc81b",
+"kind": "drama",
+"ep": "t:joanna",
+"speaker": "Joanna, the wife of Chuza",
+"ref": "",
+"text": "They thought we were talking nonsense. Luke wrote that down too, to his credit. He also wrote down my name.",
+"role": "both",
+"voice": "F"
+},
+{
+"id": "d-49da60ad",
+"kind": "observe",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "",
+"text": "“Why do you seek the living among the dead? He isn’t here, but is risen” (Luke 24:5–6). Joanna was one of the women who told the apostles (24:10).",
+"role": "both"
+},
+{
+"id": "d-f9a88329",
+"kind": "drama",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "",
+"text": "She ties the last purse and sets it with the others. “Herod wanted to see a sign,” she says. “I saw an empty tomb. I know which of us was given more.”",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "s-WEB-29b5c050",
+"kind": "scripture",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "Luke 8:1–3",
+"text": "Soon afterwards, he went about through cities and villages, preaching and bringing the good news of God’s Kingdom. With him were the twelve, and certain women who had been healed of evil spirits and infirmities: Mary who was called Magdalene, from whom seven demons had gone out; and Joanna, the wife of Chuzas, Herod’s steward; Susanna; and many others who served them from their possessions.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-36d2d234",
+"kind": "drama",
+"ep": "t:joanna",
+"speaker": "Joanna, the wife of Chuza",
+"ref": "",
+"text": "I was ill, and he healed me. After that, what else would I do with Herod’s money? I spent some of it on bread for the Twelve.",
+"role": "both",
+"voice": "F"
+},
+{
+"id": "d-baa96021",
+"kind": "observe",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "",
+"text": "Joanna, the wife of Chuza, Herod’s steward, was among the women who served them from their possessions (Luke 8:3).",
+"role": "both"
+},
+{
+"id": "s-WEB-8698d625",
+"kind": "scripture",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "Luke 23:8–9",
+"text": "Now when Herod saw Jesus, he was exceedingly glad, for he had wanted to see him for a long time, because he had heard many things about him. He hoped to see some miracle done by him. He questioned him with many words, but he gave no answers.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-0ef4c126",
+"kind": "scripture",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "Luke 23:10–12",
+"text": "The chief priests and the scribes stood, vehemently accusing him. Herod with his soldiers humiliated him and mocked him. Dressing him in luxurious clothing, they sent him back to Pilate. Herod and Pilate became friends with each other that very day, for before that they were enemies with each other.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-ac11ec40",
+"kind": "drama",
+"ep": "t:joanna",
+"speaker": "Joanna, the wife of Chuza",
+"ref": "",
+"text": "Herod wanted a miracle, like a show at a banquet. Jesus said nothing to him at all. I was in the house that day. I have never heard a silence like it.",
+"role": "both",
+"voice": "F"
+},
+{
+"id": "d-fe486e94",
+"kind": "observe",
+"ep": "t:joanna",
+"speaker": "",
+"ref": "",
+"text": "Herod had wanted to see Jesus for a long time and hoped to see a miracle, but Jesus gave him no answers (Luke 23:8–9).",
+"role": "both"
+},
+{
+"id": "d-b61a374c",
+"kind": "drama",
+"ep": "t:simon",
+"speaker": "",
+"ref": "",
+"text": "Outside the city gate a tall man from Cyrene in Africa is standing very still, looking up at the rock where the crosses stood. Two young men wait for him on the road. His sons, he says: Alexander and Rufus.",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-40ee0c21",
+"kind": "history",
+"ep": "t:simon",
+"speaker": "",
+"ref": "",
+"text": "Cyrene, in present-day Libya, had a large Jewish community; Cyrenians had their own synagogue in Jerusalem (Acts 6:9).",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-59c894a4",
+"kind": "prompt",
+"ep": "t:simon",
+"speaker": "",
+"ref": "",
+"text": "What do you ask Simon of Cyrene?",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-2cbb4143",
+"kind": "option",
+"ep": "t:simon",
+"speaker": "",
+"ref": "",
+"text": "How did you come to carry it?",
+"role": "both"
+},
+{
+"id": "d-db37eb45",
+"kind": "option",
+"ep": "t:simon",
+"speaker": "",
+"ref": "",
+"text": "Did he say anything on the road?",
+"role": "both"
+},
+{
+"id": "d-333f01f9",
+"kind": "option",
+"ep": "t:simon",
+"speaker": "",
+"ref": "",
+"text": "Do your sons believe?",
+"role": "both"
+},
+{
+"id": "d-113f287f",
+"kind": "drama",
+"ep": "t:simon",
+"speaker": "Simon of Cyrene",
+"ref": "",
+"text": "They do now. Everyone who knows us knows it. People will remember me as the man who carried his cross. I hope they remember my sons as the men who followed him.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-a0b17e41",
+"kind": "observe",
+"ep": "t:simon",
+"speaker": "",
+"ref": "",
+"text": "Mark names Simon’s sons as if his readers knew them (Mark 15:21); Paul greets a Rufus in Rome (Romans 16:13).",
+"role": "both"
+},
+{
+"id": "d-1ebd7737",
+"kind": "drama",
+"ep": "t:simon",
+"speaker": "",
+"ref": "",
+"text": "His sons call to him from the road. He rubs his shoulder, as if it still aches. “I carried it for an hour,” he says. “He carried everything else.”",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "s-WEB-d29cee96",
+"kind": "scripture",
+"ep": "t:simon",
+"speaker": "",
+"ref": "Luke 23:26",
+"text": "When they led him away, they grabbed one Simon of Cyrene, coming from the country, and laid the cross on him to carry it after Jesus.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-e2fc6a55",
+"kind": "drama",
+"ep": "t:simon",
+"speaker": "Simon of Cyrene",
+"ref": "",
+"text": "I was coming in from the fields for the feast. A soldier put his spear across my chest and said “Carry it.” You do not argue with a Roman.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-3032a4a1",
+"kind": "observe",
+"ep": "t:simon",
+"speaker": "",
+"ref": "",
+"text": "They compelled Simon of Cyrene, coming from the country, the father of Alexander and Rufus, to carry his cross (Mark 15:21; Luke 23:26).",
+"role": "both"
+},
+{
+"id": "s-WEB-0e17fa38",
+"kind": "scripture",
+"ep": "t:simon",
+"speaker": "",
+"ref": "Luke 23:27–28",
+"text": "A great multitude of the people followed him, including women who also mourned and lamented him. But Jesus, turning to them, said, “Daughters of Jerusalem, don’t weep for me, but weep for yourselves and for your children.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-19bbc190",
+"kind": "drama",
+"ep": "t:simon",
+"speaker": "Simon of Cyrene",
+"ref": "",
+"text": "He could barely stand, and he turned to comfort the women who were weeping for him. I was right behind him with his cross on my shoulder. I heard every word.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-b4bb8c53",
+"kind": "observe",
+"ep": "t:simon",
+"speaker": "",
+"ref": "",
+"text": "“Daughters of Jerusalem, don’t weep for me, but weep for yourselves and for your children” (Luke 23:28).",
+"role": "both"
+},
+{
+"id": "d-9bac8eb7",
+"kind": "drama",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "",
+"text": "Lazarus is sitting in the courtyard of his sister’s house in Bethany, mending a sandal strap. Pilgrims walk past the gate slowly, staring. He waves to them. He is used to it.",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-67230c45",
+"kind": "history",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "",
+"text": "Lazarus is the Greek form of the Hebrew name Eleazar, “God has helped.”",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-99f32673",
+"kind": "prompt",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "",
+"text": "What do you ask Lazarus of Bethany?",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-9cbf7edb",
+"kind": "option",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "",
+"text": "What do you remember of the tomb?",
+"role": "both"
+},
+{
+"id": "d-943b3a1c",
+"kind": "option",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "",
+"text": "What was the supper like?",
+"role": "both"
+},
+{
+"id": "d-6c7b764a",
+"kind": "option",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "",
+"text": "Are you afraid?",
+"role": "both"
+},
+{
+"id": "s-WEB-846fe29c",
+"kind": "scripture",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "John 12:9–11",
+"text": "A large crowd therefore of the Jews learned that he was there; and they came, not for Jesus’ sake only, but that they might see Lazarus also, whom he had raised from the dead. But the chief priests conspired to put Lazarus to death also, because on account of him many of the Jews went away and believed in Jesus.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-ab9e680a",
+"kind": "drama",
+"ep": "t:lazarus",
+"speaker": "Lazarus of Bethany",
+"ref": "",
+"text": "The chief priests would like me dead again. I have been dead once. I am not as afraid of it as they would like me to be.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-8e298a1b",
+"kind": "observe",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "",
+"text": "The chief priests conspired to put Lazarus to death also, because on account of him many believed (John 12:10–11).",
+"role": "both"
+},
+{
+"id": "d-09c61314",
+"kind": "drama",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "",
+"text": "He pulls the strap tight and tests it. “People come to look at me,” he says. “I tell them: don’t look at me. Look at the one who called my name.”",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "s-WEB-8f4eabbc",
+"kind": "scripture",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "John 11:38–41",
+"text": "Jesus therefore, again groaning in himself, came to the tomb. Now it was a cave, and a stone lay against it. Jesus said, “Take away the stone.” Martha, the sister of him who was dead, said to him, “Lord, by this time there is a stench, for he has been dead four days.” Jesus said to her, “Didn’t I tell you that if you believed, you would see God’s glory?” So they took away the stone from the place where the dead man was lying. Jesus lifted up his eyes, and said, “Father, I thank you that you listened to me.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-7a9723f6",
+"kind": "scripture",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "John 11:42–43",
+"text": "I know that you always listen to me, but because of the multitude that stands around I said this, that they may believe that you sent me.” When he had said this, he cried with a loud voice, “Lazarus, come out!”",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-c793ade5",
+"kind": "scripture",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "John 11:44",
+"text": "He who was dead came out, bound hand and foot with wrappings, and his face was wrapped around with a cloth. Jesus said to them, “Free him, and let him go.”",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-7b16f6fe",
+"kind": "drama",
+"ep": "t:lazarus",
+"speaker": "Lazarus of Bethany",
+"ref": "",
+"text": "Nothing before his voice. Then my name. I came toward it before I knew I was alive.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-2085b6d8",
+"kind": "observe",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "",
+"text": "Jesus cried with a loud voice, “Lazarus, come out!” and he who was dead came out (John 11:43–44).",
+"role": "both"
+},
+{
+"id": "s-WEB-9b96dda1",
+"kind": "scripture",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "John 12:1–2",
+"text": "Then, six days before the Passover, Jesus came to Bethany, where Lazarus was, who had been dead, whom he raised from the dead. So they made him a supper there. Martha served, but Lazarus was one of those who sat at the table with him.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-34ce3d47",
+"kind": "scripture",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "John 12:3",
+"text": "Therefore Mary took a pound of ointment of pure nard, very precious, and anointed Jesus’s feet and wiped his feet with her hair. The house was filled with the fragrance of the ointment.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-fde8fb0e",
+"kind": "drama",
+"ep": "t:lazarus",
+"speaker": "Lazarus of Bethany",
+"ref": "",
+"text": "Martha served, of course. Mary poured out the nard. I just sat at the table beside him and ate. Sometimes that is enough to say.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-42808ec4",
+"kind": "observe",
+"ep": "t:lazarus",
+"speaker": "",
+"ref": "",
+"text": "Martha served, and Lazarus sat at the table with him; Mary anointed Jesus’ feet (John 12:2–3).",
+"role": "both"
 }
 ],
 "data": [

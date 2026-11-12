@@ -1,0 +1,41 @@
+[
+ {
+  "id": "d-be2c107e",
+  "voice": "N",
+  "text": "En una sala tranquila del palacio, una mujer vestida de lino fino cuenta monedas en bolsas, una para cada una de las viudas pobres de una lista. Su esposo, te dice, lleva las cuentas de Herodes Antipas. Ella lleva las suyas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-bb3a08b8",
+  "voice": "N",
+  "text": "¿Qué le preguntas a Juana?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-0cedc81b",
+  "voice": "F",
+  "text": "Pensaron que decíamos locuras. Lucas también lo escribió, para su mérito. Y escribió mi nombre.",
+  "kind": "drama",
+  "speaker": "Juana, mujer de Chuza"
+ },
+ {
+  "id": "d-f9a88329",
+  "voice": "N",
+  "text": "Ata la última bolsa y la pone con las demás. “Herodes quería ver una señal”, dice. “Yo vi un sepulcro vacío. Sé a cuál de los dos se le dio más.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-36d2d234",
+  "voice": "F",
+  "text": "Estaba enferma, y él me sanó. Después de eso, ¿qué otra cosa iba a hacer con el dinero de Herodes? Gasté parte en pan para los Doce.",
+  "kind": "drama",
+  "speaker": "Juana, mujer de Chuza"
+ },
+ {
+  "id": "d-ac11ec40",
+  "voice": "F",
+  "text": "Herodes quería un milagro, como un espectáculo en un banquete. Jesús no le dijo nada en absoluto. Yo estaba en la casa aquel día. Nunca he oído un silencio así.",
+  "kind": "drama",
+  "speaker": "Juana, mujer de Chuza"
+ }
+]

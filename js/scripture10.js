@@ -105,6 +105,49 @@ window.TW = window.TW || {};
     ["8:2", "and certain women who had been healed of evil spirits and infirmities: Mary who was called Magdalene, from whom seven demons had gone out;"],
     ["8:3", "and Joanna, the wife of Chuzas, Herod’s steward; Susanna; and many others who served them from their possessions."],
   ]);
+  add('mark1d', 'Mark', [
+    ["1:40", "There came to him a leper, begging him, kneeling down to him, and saying to him, “If you want to, you can make me clean.”"],
+    ["1:41", "Being moved with compassion, he stretched out his hand, and touched him, and said to him, “I want to. Be made clean.”"],
+    ["1:42", "When he had said this, immediately the leprosy departed from him, and he was made clean."],
+    ["1:43", "He strictly warned him, and immediately sent him out,"],
+    ["1:44", "and said to him, “See you say nothing to anybody, but go show yourself to the priest, and offer for your cleansing the things which Moses commanded, for a testimony to them.”"],
+    ["1:45", "But he went out, and began to proclaim it much, and to spread about the matter, so that Jesus could no more openly enter into a city, but was outside in desert places: and they came to him from everywhere."],
+  ]);
+  add('luke23a', 'Luke', [
+    ["23:8", "Now when Herod saw Jesus, he was exceedingly glad, for he had wanted to see him for a long time, because he had heard many things about him. He hoped to see some miracle done by him."],
+    ["23:9", "He questioned him with many words, but he gave no answers."],
+    ["23:10", "The chief priests and the scribes stood, vehemently accusing him."],
+    ["23:11", "Herod with his soldiers humiliated him and mocked him. Dressing him in luxurious clothing, they sent him back to Pilate."],
+    ["23:12", "Herod and Pilate became friends with each other that very day, for before that they were enemies with each other."],
+  ]);
+  add('luke23b', 'Luke', [
+    ["23:26", "When they led him away, they grabbed one Simon of Cyrene, coming from the country, and laid the cross on him to carry it after Jesus."],
+    ["23:27", "A great multitude of the people followed him, including women who also mourned and lamented him."],
+    ["23:28", "But Jesus, turning to them, said, “Daughters of Jerusalem, don’t weep for me, but weep for yourselves and for your children."],
+  ]);
+  add('luke24', 'Luke', [
+    ["24:1", "But on the first day of the week, at early dawn, they and some others came to the tomb, bringing the spices which they had prepared."],
+    ["24:2", "They found the stone rolled away from the tomb."],
+    ["24:3", "They entered in, and didn’t find the Lord Jesus’ body."],
+    ["24:4", "While they were greatly perplexed about this, behold, two men stood by them in dazzling clothing."],
+    ["24:5", "Becoming terrified, they bowed their faces down to the earth. The men said to them, “Why do you seek the living among the dead?"],
+    ["24:6", "He isn’t here, but is risen. Remember what he told you when he was still in Galilee,"],
+    ["24:7", "saying that the Son of Man must be delivered up into the hands of sinful men and be crucified, and the third day rise again?”"],
+    ["24:8", "They remembered his words,"],
+    ["24:9", "returned from the tomb, and told all these things to the eleven and to all the rest."],
+    ["24:10", "Now they were Mary Magdalene, Joanna, and Mary the mother of James. The other women with them told these things to the apostles."],
+    ["24:11", "These words seemed to them to be nonsense, and they didn’t believe them."],
+  ]);
+  add('john12a', 'John', [
+    ["12:1", "Then, six days before the Passover, Jesus came to Bethany, where Lazarus was, who had been dead, whom he raised from the dead."],
+    ["12:2", "So they made him a supper there. Martha served, but Lazarus was one of those who sat at the table with him."],
+    ["12:3", "Therefore Mary took a pound of ointment of pure nard, very precious, and anointed Jesus’s feet and wiped his feet with her hair. The house was filled with the fragrance of the ointment."],
+  ]);
+  add('john12b', 'John', [
+    ["12:9", "A large crowd therefore of the Jews learned that he was there; and they came, not for Jesus’ sake only, but that they might see Lazarus also, whom he had raised from the dead."],
+    ["12:10", "But the chief priests conspired to put Lazarus to death also,"],
+    ["12:11", "because on account of him many of the Jews went away and believed in Jesus."],
+  ]);
   add('luke19', 'Luke', [
     ["19:1", "He entered and was passing through Jericho."],
     ["19:2", "There was a man named Zacchaeus. He was a chief tax collector, and he was rich."],

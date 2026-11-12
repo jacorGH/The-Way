@@ -117,6 +117,50 @@ window.TW = window.TW || {};
       ],
       outro: [['n', 'She ties off the net and holds it up to the light. “They will say a woman’s word is worth nothing in court,” she says. “I was not in court. I was in the garden. Write it down anyway.”']],
     },
+    leper: {
+      title: 'The leper', witness: 'A man who was a leper', place: 'chorazin', region: 'galilee', era: 'galilee', after: 'capernaum', set: 'village',
+      look: { skin: '#b8a48a', hair: '#7a6a5a', beard: '#7a6a5a', tunic: '#cdbb94', mantle: '#5a6a4a' },
+      intro: [['n', 'In Chorazin a man is helping to roof a house, passing up bundles of reeds, laughing with the others. His neighbors say that a year ago no one would come within shouting distance of him.'], ['h', 'The Law required a leper to live apart, with torn clothes, calling out “Unclean! Unclean!” to anyone who came near (Leviticus 13:45–46).']],
+      asks: [
+        { id: 'want', scene: 'lep_road', q: 'What did you say to him?', say: [['c', 'kneel'], ['s', 'mark1d', '1:40', '1:40'], ['d', 'Not “Can you?” Everyone knew he could. I asked if he wanted to. No one had wanted to come near me in years.']], note: 'The leper said, “If you want to, you can make me clean” (Mark 1:40).' },
+        { id: 'touch', scene: 'lep_road', q: 'He touched you?', say: [['c', 'touch'], ['s', 'mark1d', '1:41', '1:42'], ['c', 'clean'], ['d', 'He touched me before I was clean. Not after. I had not been touched by anyone for so long, I had forgotten how warm a hand is.']], note: 'Moved with compassion, he touched him and said, “I want to. Be made clean” (Mark 1:41).' },
+        { id: 'tell', scene: 'lep_road', q: 'Why didn’t you keep quiet?', say: [['c', 'go'], ['s', 'mark1d', '1:43', '1:45'], ['d', 'He told me to say nothing. I went to the priest, as he said. And then I told everyone else. Could you have kept quiet?']], note: 'He told him to show himself to the priest, but the man spread the news everywhere (Mark 1:44–45).' },
+      ],
+      outro: [['n', 'Someone calls down from the roof for another bundle, and he throws it up with both hands. “I used to ring a bell so people could get away from me,” he says. “Now they ask me to stay for supper.”']],
+    },
+    joanna: {
+      title: 'Joanna', witness: 'Joanna, the wife of Chuza', place: 'palace', region: 'jerusalem', era: 'passion', after: 'tomb', set: 'house',
+      look: { skin: '#b8845a', hair: '#2a1a12', tunic: '#3d5a6a', veil: '#c9b07a' },
+      intro: [['n', 'In a quiet room of the palace a woman in fine linen is counting coins into purses, one for each of the poor widows on a list. Her husband, she tells you, keeps the accounts of Herod Antipas. She keeps her own.']],
+      asks: [
+        { id: 'how', scene: 'mag_road', q: 'How did a steward’s wife come to follow him?', say: [['c', 'walk'], ['s', 'luke8', '8:1', '8:3'], ['d', 'I was ill, and he healed me. After that, what else would I do with Herod’s money? I spent some of it on bread for the Twelve.']], note: 'Joanna, the wife of Chuza, Herod’s steward, was among the women who served them from their possessions (Luke 8:3).' },
+        { id: 'herod', scene: 'jo_court', q: 'Did Herod ever see him?', say: [['c', 'ask'], ['s', 'luke23a', '23:8', '23:9'], ['c', 'mock'], ['s', 'luke23a', '23:10', '23:12'], ['d', 'Herod wanted a miracle, like a show at a banquet. Jesus said nothing to him at all. I was in the house that day. I have never heard a silence like it.']], note: 'Herod had wanted to see Jesus for a long time and hoped to see a miracle, but Jesus gave him no answers (Luke 23:8–9).' },
+        { id: 'tomb', scene: 'jo_tomb', q: 'You were at the tomb?', say: [['c', 'come'], ['s', 'luke24', '24:1', '24:5'], ['c', 'bow'], ['s', 'luke24', '24:6', '24:9'], ['c', 'run'], ['s', 'luke24', '24:10', '24:11'], ['d', 'They thought we were talking nonsense. Luke wrote that down too, to his credit. He also wrote down my name.']], note: '“Why do you seek the living among the dead? He isn’t here, but is risen” (Luke 24:5–6). Joanna was one of the women who told the apostles (24:10).' },
+      ],
+      outro: [['n', 'She ties the last purse and sets it with the others. “Herod wanted to see a sign,” she says. “I saw an empty tomb. I know which of us was given more.”']],
+    },
+    simon: {
+      title: 'Simon of Cyrene', witness: 'Simon of Cyrene', place: 'golgotha', region: 'jerusalem', era: 'passion', after: 'cross', set: 'street',
+      look: { skin: '#6a4430', hair: '#1e1410', beard: '#1e1410', tunic: '#b49a6a', mantle: '#7a5a3a' },
+      intro: [['n', 'Outside the city gate a tall man from Cyrene in Africa is standing very still, looking up at the rock where the crosses stood. Two young men wait for him on the road. His sons, he says: Alexander and Rufus.'], ['h', 'Cyrene, in present-day Libya, had a large Jewish community; Cyrenians had their own synagogue in Jerusalem (Acts 6:9).']],
+      asks: [
+        { id: 'carry', scene: 'sim_road', q: 'How did you come to carry it?', say: [['c', 'seize'], ['s', 'mark15', '15:21', '15:21'], ['c', 'walk'], ['s', 'luke23b', '23:26', '23:26'], ['d', 'I was coming in from the fields for the feast. A soldier put his spear across my chest and said “Carry it.” You do not argue with a Roman.']], note: 'They compelled Simon of Cyrene, coming from the country, the father of Alexander and Rufus, to carry his cross (Mark 15:21; Luke 23:26).' },
+        { id: 'women', scene: 'sim_road', q: 'Did he say anything on the road?', say: [['c', 'turn'], ['s', 'luke23b', '23:27', '23:28'], ['d', 'He could barely stand, and he turned to comfort the women who were weeping for him. I was right behind him with his cross on my shoulder. I heard every word.']], note: '“Daughters of Jerusalem, don’t weep for me, but weep for yourselves and for your children” (Luke 23:28).' },
+        { id: 'sons', scene: 'sim_road', q: 'Do your sons believe?', say: [['d', 'They do now. Everyone who knows us knows it. People will remember me as the man who carried his cross. I hope they remember my sons as the men who followed him.']], note: 'Mark names Simon’s sons as if his readers knew them (Mark 15:21); Paul greets a Rufus in Rome (Romans 16:13).' },
+      ],
+      outro: [['n', 'His sons call to him from the road. He rubs his shoulder, as if it still aches. “I carried it for an hour,” he says. “He carried everything else.”']],
+    },
+    lazarus: {
+      title: 'Lazarus', witness: 'Lazarus of Bethany', place: 'bethany', region: 'jerusalem', era: 'passion', after: 'entry', set: 'house',
+      look: { skin: '#a8724a', hair: '#3a2416', beard: '#3a2416', tunic: '#d8ccae', mantle: '#6a5a3a' },
+      intro: [['n', 'Lazarus is sitting in the courtyard of his sister’s house in Bethany, mending a sandal strap. Pilgrims walk past the gate slowly, staring. He waves to them. He is used to it.'], ['h', 'Lazarus is the Greek form of the Hebrew name Eleazar, “God has helped.”']],
+      asks: [
+        { id: 'tomb', scene: 'laz_tomb', q: 'What do you remember of the tomb?', say: [['s', 'john11', '11:38', '11:41'], ['c', 'call'], ['s', 'john11', '11:42', '11:43'], ['c', 'come'], ['s', 'john11', '11:44', '11:44'], ['c', 'loose'], ['d', 'Nothing before his voice. Then my name. I came toward it before I knew I was alive.']], note: 'Jesus cried with a loud voice, “Lazarus, come out!” and he who was dead came out (John 11:43–44).' },
+        { id: 'supper', scene: 'laz_supper', q: 'What was the supper like?', say: [['c', 'serve'], ['s', 'john12a', '12:1', '12:2'], ['c', 'anoint'], ['s', 'john12a', '12:3', '12:3'], ['d', 'Martha served, of course. Mary poured out the nard. I just sat at the table beside him and ate. Sometimes that is enough to say.']], note: 'Martha served, and Lazarus sat at the table with him; Mary anointed Jesus’ feet (John 12:2–3).' },
+        { id: 'afraid', scene: 'laz_supper', q: 'Are you afraid?', say: [['s', 'john12b', '12:9', '12:11'], ['d', 'The chief priests would like me dead again. I have been dead once. I am not as afraid of it as they would like me to be.']], note: 'The chief priests conspired to put Lazarus to death also, because on account of him many believed (John 12:10–11).' },
+      ],
+      outro: [['n', 'He pulls the strap tight and tests it. “People come to look at me,” he says. “I tell them: don’t look at me. Look at the one who called my name.”']],
+    },
     bethesda: {
       title: 'The man healed at Bethesda', witness: 'The man healed at Bethesda', place: 'bethesda', region: 'jerusalem', era: 'passion', after: 'nain', set: 'court',
       look: { skin: '#9a6440', hair: '#5f5048', beard: '#5f5048', tunic: '#8a7a5a' },

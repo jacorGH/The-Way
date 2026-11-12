@@ -597,6 +597,30 @@ window.TW = window.TW || {};
     return q;
   };
 
+  // ---------- offline copy (published copies only) ----------
+  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol) && !/\?dev/.test(location.search)) {
+    window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
+  }
+  // save every recording for one language on this device, for play without a connection
+  async function saveRecordingsOffline(lang, status) {
+    if (!('caches' in window) || !/^https?:$/.test(location.protocol)) { status.textContent = TW.t('Available on the published copy of the game.'); return; }
+    try {
+      const idx = await (await fetch('dub/' + lang + '/index.json', { cache: 'no-store' })).json();
+      const files = idx.batches.map((b) => b.file).concat(['scripture.json']);
+      const ids = [];
+      for (const f of files) { try { const r = await fetch('dub/' + lang + '/' + f, { cache: 'no-store' }); if (r.ok) (await r.json()).forEach((it) => ids.push(it.id)); } catch (e) { /* skip */ } }
+      const c = await caches.open('the-way-audio');
+      let saved = 0, missing = 0;
+      for (let i = 0; i < ids.length; i++) {
+        const url = 'audio/' + lang + '/' + String(ids[i]).replace(/[^a-zA-Z0-9._-]/g, '_') + '.mp3';
+        if (await c.match(url)) { saved++; continue; }
+        try { const r = await fetch(url); if (r.ok) { await c.put(url, r); saved++; } else missing++; } catch (e) { missing++; }
+        if (i % 10 === 0) status.textContent = TW.t('Saving recordings…') + ' ' + (i + 1) + ' / ' + ids.length;
+      }
+      status.textContent = TW.t('Recordings saved on this device:') + ' ' + saved + (missing ? ' · ' + TW.t('not yet recorded:') + ' ' + missing : '');
+    } catch (e) { status.textContent = TW.t('Could not save the recordings. Check your connection and try again.'); }
+  }
+
   // ---------- overlays ----------
   function closeOverlays() { document.querySelectorAll('.overlay').forEach((o) => { o.hidden = true; }); }
   function openOverlay(id) {
@@ -804,6 +828,8 @@ window.TW = window.TW || {};
     const L = TW.Lines, lang = TW.Settings.get('lang') || 'en';
     const groups = L.groups(), keys = Object.keys(groups);
     checkRow(body, 'Play recorded voices when available', 'recordings');
+    { const st = el('p', 'empty', ''); const ob = el('button', 'btn small', T('Save recordings for offline play')); ob.type = 'button';
+      ob.addEventListener('click', () => saveRecordingsOffline(TW.Settings.get('lang') === 'es' ? 'es' : 'en', st)); body.appendChild(ob); body.appendChild(st); }
     pickRow(body, 'Voice speed', 'voiceSpeed', [['0.8', '0.8×'], ['0.9', '0.9×'], ['1', '1×'], ['1.1', '1.1×'], ['1.25', '1.25×'], ['1.5', '1.5×']], (v) => TW.Settings.set('voiceSpeed', Number(v)));
     checkRow(body, 'Even out voice volume (experimental; turn off if recordings go silent)', 'voiceLeveler');
     if (!DEV) { body.appendChild(el('p', 'empty', 'Recorded voices play wherever they exist. Any other line is read by your device’s voice.')); return; }

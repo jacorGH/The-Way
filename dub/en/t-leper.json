@@ -1,0 +1,65 @@
+[
+ {
+  "id": "d-25cff448",
+  "voice": "N",
+  "text": "In Chorazin a man is helping to roof a house, passing up bundles of reeds, laughing with the others. His neighbors say that a year ago no one would come within shouting distance of him.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d9c8361d",
+  "voice": "N",
+  "text": "The Law required a leper to live apart, with torn clothes, calling out “Unclean! Unclean!” to anyone who came near (Leviticus 13:45–46).",
+  "kind": "history"
+ },
+ {
+  "id": "d-61364352",
+  "voice": "N",
+  "text": "What do you ask a man who was a leper?",
+  "kind": "prompt"
+ },
+ {
+  "id": "s-WEB-d33cb8a9",
+  "voice": "S",
+  "text": "Being moved with compassion, he stretched out his hand, and touched him, and said to him, “I want to. Be made clean.” When he had said this, immediately the leprosy departed from him, and he was made clean.",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-3564045d",
+  "voice": "M",
+  "text": "He touched me before I was clean. Not after. I had not been touched by anyone for so long, I had forgotten how warm a hand is.",
+  "kind": "drama",
+  "speaker": "A man who was a leper"
+ },
+ {
+  "id": "d-3befaf7e",
+  "voice": "N",
+  "text": "Someone calls down from the roof for another bundle, and he throws it up with both hands. “I used to ring a bell so people could get away from me,” he says. “Now they ask me to stay for supper.”",
+  "kind": "drama"
+ },
+ {
+  "id": "s-WEB-cbe63bb9",
+  "voice": "S",
+  "text": "There came to him a leper, begging him, kneeling down to him, and saying to him, “If you want to, you can make me clean.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-d32026fd",
+  "voice": "M",
+  "text": "Not “Can you?” Everyone knew he could. I asked if he wanted to. No one had wanted to come near me in years.",
+  "kind": "drama",
+  "speaker": "A man who was a leper"
+ },
+ {
+  "id": "s-WEB-9c722e7b",
+  "voice": "S",
+  "text": "He strictly warned him, and immediately sent him out, and said to him, “See you say nothing to anybody, but go show yourself to the priest, and offer for your cleansing the things which Moses commanded, for a testimony to them.” But he went out, and began to proclaim it much, and to spread about the matter, so that Jesus could no more openly enter into a city, but was outside in desert places: and they came to him from everywhere.",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-21c49f1d",
+  "voice": "M",
+  "text": "He told me to say nothing. I went to the priest, as he said. And then I told everyone else. Could you have kept quiet?",
+  "kind": "drama",
+  "speaker": "A man who was a leper"
+ }
+]

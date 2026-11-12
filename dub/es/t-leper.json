@@ -1,0 +1,47 @@
+[
+ {
+  "id": "d-25cff448",
+  "voice": "N",
+  "text": "En Corazín, un hombre ayuda a techar una casa, pasando haces de cañas hacia arriba y riendo con los demás. Sus vecinos dicen que hace un año nadie se le acercaba ni a la distancia de un grito.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d9c8361d",
+  "voice": "N",
+  "text": "La Ley mandaba que el leproso viviera aparte, con los vestidos rasgados, gritando “¡Inmundo! ¡Inmundo!” a cualquiera que se acercara (Levítico 13:45–46).",
+  "kind": "history"
+ },
+ {
+  "id": "d-61364352",
+  "voice": "N",
+  "text": "¿Qué le preguntas a un hombre que había sido leproso?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-3564045d",
+  "voice": "M",
+  "text": "Me tocó antes de que estuviera limpio. No después. Hacía tanto que nadie me tocaba, que había olvidado lo cálida que es una mano.",
+  "kind": "drama",
+  "speaker": "Un hombre que había sido leproso"
+ },
+ {
+  "id": "d-3befaf7e",
+  "voice": "N",
+  "text": "Alguien le pide desde el techo otro haz, y él lo lanza hacia arriba con las dos manos. “Antes tocaba una campanilla para que la gente se apartara de mí”, dice. “Ahora me piden que me quede a cenar.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d32026fd",
+  "voice": "M",
+  "text": "No “¿Puedes?”. Todos sabían que podía. Le pregunté si quería. Hacía años que nadie quería acercarse a mí.",
+  "kind": "drama",
+  "speaker": "Un hombre que había sido leproso"
+ },
+ {
+  "id": "d-21c49f1d",
+  "voice": "M",
+  "text": "Me dijo que no dijera nada. Fui al sacerdote, como él me mandó. Y luego se lo conté a todos los demás. ¿Tú habrías podido callarte?",
+  "kind": "drama",
+  "speaker": "Un hombre que había sido leproso"
+ }
+]

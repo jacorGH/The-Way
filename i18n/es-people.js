@@ -5,6 +5,9 @@ window.TW = window.TW || {};
 (function (TW) {
   // speaker names and interface labels, translated wherever they appear
   TW.I18n.add('es', {
+    'Save recordings for offline play': 'Guardar las grabaciones para jugar sin conexión', 'Saving recordings…': 'Guardando grabaciones…',
+    'Recordings saved on this device:': 'Grabaciones guardadas en este dispositivo:', 'not yet recorded:': 'aún sin grabar:',
+    'Available on the published copy of the game.': 'Disponible en la copia publicada del juego.', 'Could not save the recordings. Check your connection and try again.': 'No se pudieron guardar las grabaciones. Revisa tu conexión e inténtalo de nuevo.',
     'Your journey will return to this question.': 'Tu viaje volverá a esta pregunta.',
     'Playing together': 'Jugar juntos', 'Group mode: take turns reading, decide together': 'Modo grupo: turnarse para leer, decidir juntos',
     'Names, separated by commas': 'Nombres, separados por comas', 'Leader’s guide: all episodes': 'Guía para el líder: todos los episodios',

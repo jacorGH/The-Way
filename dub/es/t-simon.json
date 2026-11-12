@@ -1,0 +1,47 @@
+[
+ {
+  "id": "d-b61a374c",
+  "voice": "N",
+  "text": "Fuera de la puerta de la ciudad, un hombre alto de Cirene, en África, está muy quieto, mirando la roca donde estuvieron las cruces. Dos jóvenes lo esperan en el camino. Sus hijos, dice: Alejandro y Rufo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-40ee0c21",
+  "voice": "N",
+  "text": "Cirene, en la actual Libia, tenía una gran comunidad judía; los cireneos tenían su propia sinagoga en Jerusalén (Hechos 6:9).",
+  "kind": "history"
+ },
+ {
+  "id": "d-59c894a4",
+  "voice": "N",
+  "text": "¿Qué le preguntas a Simón de Cirene?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-113f287f",
+  "voice": "M",
+  "text": "Ahora sí. Todos los que nos conocen lo saben. La gente me recordará como el hombre que cargó su cruz. Espero que recuerden a mis hijos como los hombres que lo siguieron.",
+  "kind": "drama",
+  "speaker": "Simón de Cirene"
+ },
+ {
+  "id": "d-1ebd7737",
+  "voice": "N",
+  "text": "Sus hijos lo llaman desde el camino. Se frota el hombro, como si todavía le doliera. “La cargué una hora”, dice. “Él cargó todo lo demás.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-e2fc6a55",
+  "voice": "M",
+  "text": "Venía del campo para la fiesta. Un soldado me cruzó la lanza sobre el pecho y dijo: “Cárgala.” A un romano no se le discute.",
+  "kind": "drama",
+  "speaker": "Simón de Cirene"
+ },
+ {
+  "id": "d-19bbc190",
+  "voice": "M",
+  "text": "Apenas podía tenerse en pie, y se volvió para consolar a las mujeres que lloraban por él. Yo iba justo detrás con su cruz al hombro. Oí cada palabra.",
+  "kind": "drama",
+  "speaker": "Simón de Cirene"
+ }
+]

@@ -374,6 +374,24 @@
    "characters": 3236
   },
   {
+   "file": "t-joanna.json",
+   "title": "Testimony: Joanna",
+   "lines": 12,
+   "characters": 2682
+  },
+  {
+   "file": "t-lazarus.json",
+   "title": "Testimony: Lazarus",
+   "lines": 13,
+   "characters": 2364
+  },
+  {
+   "file": "t-leper.json",
+   "title": "Testimony: The leper",
+   "lines": 10,
+   "characters": 1665
+  },
+  {
    "file": "t-loaves.json",
    "title": "Testimony: A man from the crowd",
    "lines": 12,
@@ -408,6 +426,12 @@
    "title": "Testimony: The woman of Sychar",
    "lines": 16,
    "characters": 3873
+  },
+  {
+   "file": "t-simon.json",
+   "title": "Testimony: Simon of Cyrene",
+   "lines": 9,
+   "characters": 1311
   },
   {
    "file": "t-zacchaeus.json",

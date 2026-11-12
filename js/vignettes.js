@@ -650,6 +650,84 @@ window.TW = window.TW || {};
       go: async () => { mary.pose = 'stand'; mary.facing = 1; await SC.walk(mary, 300); },
     };
   };
+  // ---------- the leper (Mark 1:40–45) ----------
+  const leperLook = { skin: '#b8a48a', hair: '#7a6a5a', beard: '#7a6a5a', tunic: '#8a8478', mantle: '#6a6458' };
+  VG.lep_road = () => {
+    load('field');
+    const j = add(P().jesus, 70, 146, { facing: 1, speed: 16 });
+    const ds = [0, 1, 2].map((i) => add(dis(i), 48 - i * 13, 146 + (i % 2), { facing: 1, speed: 16 }));
+    const man = add(S.person(leperLook), 210, 147, { facing: -1, speed: 14 });
+    return {
+      kneel: async () => { await SC.walk(man, 116); man.pose = 'sit'; ds.forEach((d) => { d.pose = 'stand'; d.facing = 1; }); await W(700); man.pose = 'raise'; },
+      touch: async () => { j.pose = 'out'; await SC.walk(j, 104); await W(900); },
+      clean: async () => { man.pose = 'stand'; await W(400); man.pose = 'raise'; j.pose = 'stand'; await W(900); man.pose = 'stand'; },
+      go: async () => { man.facing = 1; await SC.walk(man, 300); },
+    };
+  };
+  // ---------- Joanna (Luke 8:3; 23:8–12; 24:1–11) ----------
+  const joannaLook = { skin: '#b8845a', hair: '#2a1a12', tunic: '#3d5a6a', veil: '#c9b07a' };
+  VG.jo_court = () => {
+    load('court');
+    const herod = add(S.person({ skin: '#b07a50', hair: '#3a2416', beard: '#3a2416', tunic: '#7a2a5a', mantle: '#c9a040' }), 170, 148, { facing: -1 });
+    const j = add(P().jesus, 120, 148, { facing: 1 });
+    const sol = [0, 1].map((i) => add(S.person(K.looks.soldier), 196 + i * 14, 148, { facing: -1 }));
+    const jo = add(S.person(joannaLook), 236, 147, { facing: -1 });
+    return {
+      ask: async () => { herod.pose = 'out'; await W(900); herod.pose = 'stand'; await W(600); herod.pose = 'raise'; await W(700); herod.pose = 'stand'; },
+      mock: async () => { sol.forEach((s) => { s.pose = 'out'; }); await W(1000); sol.forEach((s) => { s.pose = 'stand'; }); jo.pose = 'stand'; jo.facing = 1; await W(500); jo.facing = -1; },
+      herod, j, jo,
+    };
+  };
+  VG.jo_tomb = () => {
+    load('olives');
+    const w = [joannaLook, K.looks.magdalene, K.looks.maryj].map((l, i) => add(S.person(l), 20 - i * 14, 150, { facing: 1, speed: 15 }));
+    return {
+      come: async () => { w.forEach((x, i) => SC.walk(x, 150 - i * 14)); await W(2400); },
+      bow: async () => { w.forEach((x) => { x.pose = 'sit'; }); await W(1100); },
+      run: async () => { w.forEach((x) => { x.pose = 'stand'; x.facing = -1; SC.walk(x, -40); }); await W(1800); },
+    };
+  };
+  // ---------- Simon of Cyrene (Mark 15:21; Luke 23:26–28) ----------
+  const simonLook = { skin: '#6a4430', hair: '#1e1410', beard: '#1e1410', tunic: '#b49a6a', mantle: '#7a5a3a' };
+  VG.sim_road = () => {
+    load('street');
+    const sol = [0, 1].map((i) => add(S.person(K.looks.soldier), 160 + i * 16, 148, { facing: -1, speed: 14 }));
+    const j = add(P().jesus, 150, 148, { facing: -1, speed: 10 });
+    const sim = add(S.person(simonLook), 280, 148, { facing: -1, speed: 16 });
+    const wm = [0, 1, 2].map((i) => add(S.person({ skin: '#b8845a', hair: '#2a1a12', tunic: ['#5a4a3a', '#6a5a7a', '#4a5a4a'][i], veil: ['#8a7a6a', '#4a4a5a', '#9a8a6a'][i] }), 96 - i * 14, 149, { facing: 1 }));
+    return {
+      seize: async () => { await SC.walk(sim, 190); sol[1].pose = 'out'; sol[1].facing = 1; await W(700); sol[1].pose = 'stand'; sim.pose = 'carry'; await W(600); },
+      walk: async () => { j.facing = -1; sim.facing = -1; sol.forEach((s) => { s.facing = -1; SC.walk(s, s.x - 40); }); SC.walk(sim, 150); await SC.walk(j, 118); },
+      turn: async () => { wm.forEach((w) => { w.pose = 'raise'; }); await W(600); j.facing = -1; j.pose = 'out'; await W(1200); j.pose = 'stand'; wm.forEach((w) => { w.pose = 'stand'; }); },
+    };
+  };
+  // ---------- Lazarus (John 11:38–44; 12:1–11) ----------
+  const lazLook = { skin: '#a8724a', hair: '#3a2416', beard: '#3a2416', tunic: '#d8ccae', mantle: '#6a5a3a' };
+  VG.laz_tomb = () => {
+    load('olives');
+    const j = add(P().jesus, 100, 148, { facing: 1 });
+    const mourn = [0, 1, 2, 3].map((i) => add(i < 2 ? S.person([K.looks.maryj, { skin: '#b8845a', hair: '#2a1a12', tunic: '#6a4a3a', veil: '#9a7a5a' }][i]) : K.villager(960 + i), 60 - i * 13, 149, { facing: 1 }));
+    const laz = add(S.person({ skin: '#e8e2d4', hair: '#e8e2d4', tunic: '#f0ead8', belt: '#e0dace' }), 196, 148, { facing: -1, speed: 8 });
+    laz.visible = false;
+    return {
+      call: async () => { j.pose = 'raise'; await W(1200); j.pose = 'out'; },
+      come: async () => { laz.visible = true; await SC.walk(laz, 170); mourn.forEach((m) => { m.pose = 'raise'; }); await W(800); },
+      loose: async () => { j.pose = 'stand'; mourn.forEach((m) => { m.pose = 'stand'; SC.walk(m, m.x + 60); }); await W(1500); },
+    };
+  };
+  VG.laz_supper = () => {
+    const st = load('house');
+    st.props = st.props || []; st.props.push(lampProp); st.props.push(tableProp);
+    const j = add(P().jesus, 120, 147, { pose: 'sit', facing: 1 });
+    const laz = add(S.person(lazLook), 150, 147, { pose: 'sit', facing: -1 });
+    const martha = add(S.person({ skin: '#b8845a', hair: '#2a1a12', tunic: '#6a4a3a', veil: '#9a7a5a' }), 220, 147, { facing: -1, speed: 16 });
+    const mary = add(S.person(K.looks.maryj), 60, 147, { facing: 1, speed: 12 });
+    return {
+      serve: async () => { await SC.walk(martha, 170); martha.pose = 'out'; await W(700); martha.pose = 'stand'; await SC.walk(martha, 220); },
+      anoint: async () => { await SC.walk(mary, 104); mary.pose = 'sit'; await W(1400); },
+      laz, j,
+    };
+  };
   VG.enter = async function (id, witness) {
     const el = SC.el;
     let mem = null;
