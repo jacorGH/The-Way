@@ -69,7 +69,7 @@ window.TW = window.TW || {};
   };
   R.look = {
     scribe: { skin: '#b07a50', hair: '#2a1a12', beard: '#2a1a12', tunic: '#ddd0b0', mantle: '#4e5a72', fringe: '#9cc0e0', phylactery: true, belt: null },
-    niece: { skin: '#b8845a', hair: '#2a1a12', tunic: '#c9b08a', veil: '#4e5a72', stripe: '#8a6a42' },
+    niece: { skin: '#c08c62', hair: '#3a2014', tunic: '#a8505e', veil: '#efe4cc', veilEdge: '#c49a3c', dress: true, sash: '#d4a848', hem: '#c49a3c', braid: true, belt: null },
   };
 
   // [as written for Eleazar, as it reads for Elisheva]

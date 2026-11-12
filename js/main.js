@@ -562,13 +562,18 @@ window.TW = window.TW || {};
     chooseVoice(id, D.episodes[id].title, () => startEpisode(id, ep));
   }
   function startEpisode(id, ep) {
-    game.show('scene');
-    game.current = id;
-    $('#scene-title').textContent = D.episodes[id].scene;
-    SC.init(sceneEls);
-    SC.begin();
-    SC.start();
-    ep.run(game);
+    const run = (target) => {
+      game.show('scene');
+      game.current = id;
+      $('#scene-title').textContent = D.episodes[id].scene;
+      SC.init(sceneEls);
+      SC.begin();
+      SC.start();
+      if (target && TW.Progress) TW.Progress.fastForward(id, target);
+      ep.run(game);
+    };
+    // continue where you left off, start from a moment, or start over
+    if (TW.Progress) TW.Progress.offer(id, run); else run(null);
   }
   game.enterEpisode = enterEpisode;
   $('#btn-leave').addEventListener('click', () => game.show('map'));
@@ -606,7 +611,7 @@ window.TW = window.TW || {};
     if (!('caches' in window) || !/^https?:$/.test(location.protocol)) { status.textContent = TW.t('Available on the published copy of the game.'); return; }
     try {
       const idx = await (await fetch('dub/' + lang + '/index.json', { cache: 'no-store' })).json();
-      const files = idx.batches.map((b) => b.file).concat(['scripture.json']);
+      const files = idx.batches.map((b) => b.file).concat(['scripture.json'], TW.Bible.list().map((v) => 'scripture-' + lang + '-' + v.id + '.json'));
       const ids = [];
       for (const f of files) { try { const r = await fetch('dub/' + lang + '/' + f, { cache: 'no-store' }); if (r.ok) (await r.json()).forEach((it) => ids.push(it.id)); } catch (e) { /* skip */ } }
       const c = await caches.open('the-way-audio');
@@ -659,7 +664,8 @@ window.TW = window.TW || {};
     const box = el('div', 'set-buttons');
     TW.Bible.list().forEach((v) => {
       const vlang = v.lang || 'en';
-      const b = el('button', 'btn small', 'Scripture batch: ' + v.name + ' (dub/' + vlang + '/scripture.json)'); b.type = 'button';
+      const fname = 'scripture-' + vlang + '-' + v.id + '.json';
+      const b = el('button', 'btn small', 'Scripture batch: ' + v.name + ' (dub/' + vlang + '/' + fname + ')'); b.type = 'button';
       b.addEventListener('click', async () => {
         const prev = TW.Settings.get('bible');
         try {
@@ -670,8 +676,8 @@ window.TW = window.TW || {};
           const seen = new Set(), items = [];
           list.forEach((x) => { const t = TW.P.singleText(x.ref); if (!t) return; const id = TW.Lines.id('scripture', t); if (seen.has(id)) return; seen.add(id); items.push({ id, voice: 'S', text: t, kind: 'scripture' }); });
           TW.Settings.set('bible', prev);
-          download('scripture.json', JSON.stringify(items, null, 1));
-          status.textContent = items.length + ' Scripture lines in ' + v.name + '. Put scripture.json in the game’s dub/' + vlang + '/ folder and push; TTS Studio will list it as its own batch, and its recordings go to audio/' + vlang + '/.';
+          download(fname, JSON.stringify(items, null, 1));
+          status.textContent = items.length + ' Scripture lines in ' + v.name + '. Put ' + fname + ' in the game’s dub/' + vlang + '/ folder and push; TTS Studio will list it as its own batch, and its recordings go to audio/' + vlang + '/.';
         } catch (e) { TW.Settings.set('bible', prev); status.textContent = 'Could not read dub/scripture-refs.json (' + e.message + '). Open the published copy of the game.'; }
       });
       box.appendChild(b);
@@ -1023,6 +1029,7 @@ window.TW = window.TW || {};
   }
 
   game.openReport = function (ep) {
+    if (TW.Progress) TW.Progress.finished(ep);
     const E = D.episodes[ep];
     openOverlay('#o-report');
     const ltr = TW.Role.is();

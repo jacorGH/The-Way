@@ -156,8 +156,8 @@ exports one ZIP per batch with `audio/en/` and `audio/es/` inside. Unzip into th
   Eleazar and `<id>-f` for Elisheva. The game picks the right one.
 - **Scripture:** the English Scripture lines are already in the English batches. Spanish Scripture depends on the
   Bible version installed in the game: open the published game with `?dev`, download the Reina-Valera in Settings →
-  Bible translation, then Settings → Recorded voices → "Scripture batch: Reina-Valera … (dub/es/scripture.json)".
-  Put the saved `scripture.json` in the game's `dub/es/` folder and push; TTS Studio lists it as its own batch. (The
-  same works for any other English version, saved to `dub/en/`.)
+  Bible translation, then Settings → Recorded voices → "Scripture batch: Reina-Valera 1909". It saves
+  `scripture-es-RV1909.json`: put it in the game's `dub/es/` folder, unchanged, and push. TTS Studio lists it as its own
+  batch. Other versions work the same way (`scripture-en-KJV.json` in `dub/en/`, and so on).
 - **Re-recording a whole part:** TTS Studio's "Re-record batch" on any row.
 - Lines the Seven assembles while you play (the widows' names and loaves left) are read by the device voice.

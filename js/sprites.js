@@ -68,6 +68,8 @@ window.TW = window.TW || {};
       put(g, 11, 7 + dy, sk);
       rect(g, 7, 10 + dy, 8, 10 + dy, skD);
       rect(g, 4, 11 + dy, 11, 12 + dy, o.veil);
+      if (o.veilEdge) { rect(g, 5, 3 + dy, 10, 3 + dy, o.veilEdge); rect(g, 4, 12 + dy, 11, 12 + dy, o.veilEdge); }
+      if (o.braid) { put(g, 7, 5 + dy, o.hair); put(g, 8, 5 + dy, o.hair); rect(g, 10, 10 + dy, 10, 15 + dy, o.hair); put(g, 10, 16 + dy, o.braidTie || o.veilEdge || o.hair); }
     } else {
       rect(g, 6, 3 + dy, 9, 3 + dy, hr);
       rect(g, 5, 4 + dy, 10, 4 + dy, hr);
@@ -89,10 +91,18 @@ window.TW = window.TW || {};
     }
     // torso
     const t = o.tunic, tD = U.shadeHex(t, 0.8), tL = U.shadeHex(t, 1.1);
+    if (o.dress) {
+      rect(g, 5, 11 + dy, 10, 15 + dy, t); rect(g, 5, 12 + dy, 5, 15 + dy, tD);
+      rect(g, 4, 16 + dy, 11, 18 + dy, t); rect(g, 4, 16 + dy, 4, 18 + dy, tD);
+      rect(g, 3, 19 + dy, 12, 21 + dy, t); rect(g, 3, 19 + dy, 3, 21 + dy, tD); rect(g, 12, 19 + dy, 12, 21 + dy, tL);
+      if (o.sash) rect(g, 5, 15 + dy, 10, 15 + dy, o.sash);
+      if (o.braid) rect(g, 10, 12 + dy, 10, 15 + dy, o.hair);
+    } else {
     rect(g, 5, 11 + dy, 10, 11 + dy, t);
     rect(g, 4, 12 + dy, 11, 21 + dy, t);
     rect(g, 4, 12 + dy, 4, 21 + dy, tD);
     rect(g, 11, 13 + dy, 11, 21 + dy, tL);
+    }
     if (o.stripe) { rect(g, 6, 11 + dy, 6, 21 + dy, o.stripe); rect(g, 9, 11 + dy, 9, 21 + dy, o.stripe); }
     if (o.belt) rect(g, 4, 16 + dy, 11, 16 + dy, o.belt);
     if (o.mantle) {
@@ -123,7 +133,8 @@ window.TW = window.TW || {};
     const sandal = '#5a3b22';
     const frames = {};
     const legs = (g, mode) => {
-      if (o.veil) { rect(g, 4, 22, 11, 23, o.tunic); rect(g, 4, 22, 4, 23, U.shadeHex(o.tunic, 0.8)); }
+      if (o.dress) { rect(g, 3, 22, 12, 23, o.tunic); rect(g, 3, 22, 3, 23, U.shadeHex(o.tunic, 0.8)); if (o.hem) rect(g, 3, 23, 12, 23, o.hem); }
+      else if (o.veil) { rect(g, 4, 22, 11, 23, o.tunic); rect(g, 4, 22, 4, 23, U.shadeHex(o.tunic, 0.8)); }
       const sk = o.skin;
       if (mode === 'stand' || mode === 'raise' || mode === 'carry' || mode === 'out') {
         if (!o.veil) { put(g, 6, 22, sk); put(g, 6, 23, sk); put(g, 9, 22, sk); put(g, 9, 23, sk); }
