@@ -1,0 +1,47 @@
+[
+ {
+  "id": "d-029da62a",
+  "voice": "N",
+  "text": "Pedro se queda callado un rato. A su alrededor, la gente parte el pan y lo pasa de mano en mano.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-21566a70",
+  "voice": "N",
+  "text": "Semanas después, en un gran aposento alto de la ciudad, las lámparas están encendidas y la sala está llena. Un pescador de anchos hombros al que has visto en la orilla de Capernaúm acepta contarte la última noche.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-5378350d",
+  "voice": "M",
+  "text": "Te lo contaré, porque él me ha perdonado, y por eso puedo.",
+  "kind": "drama",
+  "speaker": "Simón Pedro"
+ },
+ {
+  "id": "d-83afe1aa",
+  "voice": "N",
+  "text": "Contado después de Pentecostés (Era III). Los primeros escritores cristianos decían que el Evangelio de Marcos conservaba la predicación del propio Pedro. Papías, a comienzos del siglo II, dijo que Marcos fue el intérprete de Pedro.",
+  "kind": "history"
+ },
+ {
+  "id": "d-8ffde0bb",
+  "voice": "M",
+  "text": "Le dije que nunca me lavaría los pies. También en eso me equivoqué.",
+  "kind": "drama",
+  "speaker": "Simón Pedro"
+ },
+ {
+  "id": "d-c262d807",
+  "voice": "N",
+  "text": "¿Qué le preguntas a Simón Pedro?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-e92a06e0",
+  "voice": "M",
+  "text": "Ahora partimos el pan juntos, de casa en casa, como él lo hizo aquella noche.",
+  "kind": "drama",
+  "speaker": "Simón Pedro"
+ }
+]

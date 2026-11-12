@@ -1,0 +1,94 @@
+[
+ {
+  "id": "d-10545b2f",
+  "voice": "N",
+  "text": "La pregunta está en los labios de todos los escribas junto a la puerta. ¿La haces tú también?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-1491e534",
+  "voice": "W",
+  "text": "La pregunta está en los labios de todos los escribas junto a la puerta. ¿La susurras tú también?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-18703648",
+  "voice": "N",
+  "text": "No dices nada. Los demás la dicen por ti, lo bastante alto para que toda la sala la oiga.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-35100bb0",
+  "voice": "N",
+  "text": "Un cobrador de impuestos, nada menos. ¿Qué piensas?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-40a2bd25",
+  "voice": "N",
+  "text": "Llegaste a Capernaúm como uno de los sanos. Sigues de pie junto a la puerta.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-40a2bd25-f",
+  "voice": "W",
+  "text": "Llegaste a Capernaúm como una de las sanas. Sigues de pie junto a la puerta.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-43586f12",
+  "voice": "N",
+  "text": "Cuando termina la enseñanza, no vuelve hacia el pueblo. Camina por la orilla, directo hacia el puesto de los impuestos.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-919a7636",
+  "voice": "N",
+  "text": "La dices con ellos, a uno de sus discípulos, lo bastante alto para que toda la sala la oiga.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-99cb6572",
+  "voice": "N",
+  "text": "Deja las monedas donde están. El mercader mira el puesto vacío, luego el dinero, y no lo toca.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-aef1a000",
+  "voice": "N",
+  "text": "El cobrador de impuestos no levanta la vista de su cuenta. Nadie se acerca a su puesto si no tiene que hacerlo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-b76c91c3",
+  "voice": "M",
+  "text": "Peaje al salir de la tierra de Felipe, peaje al entrar en esta. Para cuando llegue a Tiberias, habré pagado la tela dos veces.",
+  "kind": "drama",
+  "speaker": "Un mercader con un fardo de tela"
+ },
+ {
+  "id": "d-ccfce835",
+  "voice": "N",
+  "text": "Capernaúm estaba cerca de la frontera entre la Galilea de Herodes Antipas y el territorio de Felipe. Las mercancías que la cruzaban pagaban peaje, cobrado por hombres del lugar que compraban ese derecho. La mayoría los despreciaba como tramposos al servicio de gobernantes extranjeros.",
+  "kind": "history"
+ },
+ {
+  "id": "d-dbe783cf",
+  "voice": "N",
+  "text": "Tú y los demás escribas se quedan de pie justo al pasar la puerta. Ninguno se sienta.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ec49c1d5",
+  "voice": "M",
+  "text": "¿Estuviste ayer en la casa? Entonces sabes por qué lo vigilamos. A un maestro se le conoce por la compañía que tiene. Mira adónde va.",
+  "kind": "drama",
+  "speaker": "Un fariseo de Capernaúm"
+ },
+ {
+  "id": "d-fb6fed25",
+  "voice": "W",
+  "text": "Te quedas de pie justo al pasar la puerta, con las mujeres de la casa de Leví, que traen los platos. Los escribas también están junto a la puerta. Ninguno de ellos se sienta.",
+  "kind": "drama"
+ }
+]

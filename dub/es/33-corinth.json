@@ -1,0 +1,74 @@
+[
+ {
+  "id": "d-4bfb757c",
+  "voice": "N",
+  "text": "Cuando llegas hasta él, la multitud ya se ha cansado y se ha dispersado. Lo ayudas a incorporarse. Te mira, un creyente de Jerusalén, y no entiende por qué viniste.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4bfb757c-f",
+  "voice": "W",
+  "text": "Cuando llegas hasta él, la multitud ya se ha cansado y se ha dispersado. Lo ayudas a incorporarse. Te mira, una creyente de Jerusalén, y no entiende por qué viniste.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-502fe199",
+  "voice": "N",
+  "text": "Despiertas de noche. Pablo está de rodillas junto a la ventana, y el cuarto está lleno de una luz que no viene de la lámpara.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-5cc045c0",
+  "voice": "N",
+  "text": "Cuando la multitud se dispersa, él está sentado solo en el polvo, al pie del tribunal. No puedes dejar de pensar en ello.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-6e7e1d4b",
+  "voice": "N",
+  "text": "Oras por él por su nombre, y te sorprende descubrir que lo dices de corazón.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-792df7ce",
+  "voice": "N",
+  "text": "Años después, la primera carta de Pablo a esta ciudad se envió de parte de Pablo “y el hermano Sóstenes” (1 Corintios 1:1). Puede que sea el mismo hombre.",
+  "kind": "history"
+ },
+ {
+  "id": "d-a9514490",
+  "voice": "N",
+  "text": "Después de Atenas, Pablo está callado. Más tarde escribirá que llegó a Corinto “con flaqueza, y mucho temor y temblor”. Por ahora corta tela de pelo de cabra y habla poco.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ab1fde11",
+  "voice": "N",
+  "text": "Están golpeando al principal de la sinagoga delante del tribunal, y el procónsul mira para otro lado.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-baa83b4f",
+  "voice": "N",
+  "text": "El principal de la sinagoga se va a la casa de al lado, adonde ha ido Pablo. Media sala lo ve irse.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-c3a4d185",
+  "voice": "N",
+  "text": "Desde el muelle de Cencrea ves partir el barco: Pablo con la cabeza recién rapada, y Priscila y Aquila, que salieron de Roma sin nada y salen de Corinto con una iglesia.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ef27f0eb",
+  "voice": "N",
+  "text": "Aquila te enseña a encerar el hilo y a colocar la lezna. Tus puntadas salen torcidas. Él las deshace sin decir palabra y te devuelve el trabajo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-fdaf0ba2",
+  "voice": "W",
+  "text": "Priscila te enseña a encerar el hilo y a colocar la lezna. Habla mientras cose: de Roma, de la noche en que tuvieron que irse, de las Escrituras, que conoce mejor que la mayoría de los hombres que has conocido.",
+  "kind": "drama"
+ }
+]

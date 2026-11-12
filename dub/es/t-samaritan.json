@@ -1,0 +1,47 @@
+[
+ {
+  "id": "d-1c6a5ef9",
+  "voice": "N",
+  "text": "¿Qué le preguntas a una mujer de Sicar?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-2ee3a7d0",
+  "voice": "N",
+  "text": "Para ahorrar días de camino has pasado por Samaria. En el pozo de Jacob, a las afueras de Sicar, una mujer baja su cántaro. Tú no tienes uno propio, y los judíos no comparten vasijas con los samaritanos. Ella mira tus flecos y espera.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-855b4c80",
+  "voice": "F",
+  "text": "Lo sabía todo, y aun así me pidió de beber.",
+  "kind": "drama",
+  "speaker": "Una mujer de Sicar"
+ },
+ {
+  "id": "d-a0d8ceb7",
+  "voice": "F",
+  "text": "Un judío, pidiéndome de beber. Eres el segundo que veo hacer algo extraño en este pozo.",
+  "kind": "drama",
+  "speaker": "Una mujer de Sicar"
+ },
+ {
+  "id": "d-a0d8ceb7-f",
+  "voice": "F",
+  "text": "Una judía, pidiéndome de beber. Eres la segunda que veo hacer algo extraño en este pozo.",
+  "kind": "drama",
+  "speaker": "Una mujer de Sicar"
+ },
+ {
+  "id": "d-b54b8857",
+  "voice": "N",
+  "text": "Los samaritanos adoraban en el monte Gerizim, sobre este pozo, y aceptaban solo los cinco libros de Moisés. Judíos y samaritanos se despreciaban desde hacía siglos.",
+  "kind": "history"
+ },
+ {
+  "id": "d-b9dab30d",
+  "voice": "N",
+  "text": "Llena su cántaro y, sin decir palabra, lo inclina hacia ti para que bebas.",
+  "kind": "drama"
+ }
+]

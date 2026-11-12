@@ -1,0 +1,94 @@
+[
+ {
+  "id": "d-052a78bc",
+  "voice": "N",
+  "text": "Te lo pregunta a ti.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-31d84b15",
+  "voice": "N",
+  "text": "Él saluda con la mano hasta que el carro se pierde de vista, cantando algo en una lengua que no conoces. Te quedas solo en el camino con el viento.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-31d84b15-f",
+  "voice": "W",
+  "text": "Él saluda con la mano hasta que el carro se pierde de vista, cantando algo en una lengua que no conoces. Te quedas sola en el camino con el viento.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-3d23a5b8",
+  "voice": "W",
+  "text": "Conoces esas palabras; una vez las copiaste para tu tío. No las habías vuelto a oír desde que estuviste fuera de la puerta de la ciudad y viste a un hombre llevado a morir.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-45eb01b1",
+  "voice": "N",
+  "text": "No dices nada. Felipe responde por ti, y te avergüenzas de tu silencio.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-6de606b1",
+  "voice": "N",
+  "text": "Conoces esas palabras; todo escriba las conoce. No las habías vuelto a oír desde que estuviste fuera de la puerta de la ciudad y viste a un hombre llevado a morir.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-7a1444c9",
+  "voice": "N",
+  "text": "“Nada”, dices, y te sorprende lo seguro que estás.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-7a1444c9-f",
+  "voice": "W",
+  "text": "“Nada”, dices, y te sorprende lo segura que estás.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-80135571",
+  "voice": "W",
+  "text": "Felipe despertó a su casa antes del amanecer. Dijo que un ángel le había hablado, y que debían ir al sur. No viste ningún ángel. Fuiste de todos modos con su esposa y sus hijas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-84f638c1",
+  "voice": "M",
+  "text": "Eres un escriba de Jerusalén. A mí me apartaron de los atrios interiores. Dime con franqueza: ¿qué me lo impide?",
+  "kind": "drama",
+  "speaker": "El oficial"
+ },
+ {
+  "id": "d-8f006b97",
+  "voice": "N",
+  "text": "Felipe te despertó antes del amanecer. Dijo que un ángel le había hablado, y que debías ir al sur. No viste ningún ángel. Fuiste de todos modos.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-a981e2fe",
+  "voice": "M",
+  "text": "Eres una mujer de Jerusalén, y sabes leer. A mí me apartaron de los atrios interiores. Dime con franqueza: ¿qué me lo impide?",
+  "kind": "drama",
+  "speaker": "El oficial"
+ },
+ {
+  "id": "d-bb50e3ec",
+  "voice": "N",
+  "text": "Dos días después encuentras a Felipe en Azoto, predicando en el mercado como si nada hubiera pasado. Dice que han llegado noticias de Jerusalén: Saulo tiene cartas del sumo sacerdote, y va a Damasco.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-cd9dd919",
+  "voice": "N",
+  "text": "Al pasar, oyes al hombre de adentro leyendo en voz alta en griego, despacio, como se leen las palabras que no se entienden.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f61357dc",
+  "voice": "N",
+  "text": "Le dices lo que Isaías prometió: que Dios dará a los eunucos que guardan su pacto un lugar en su casa, y un nombre mejor que el de hijos e hijas. Se le llenan los ojos de lágrimas.",
+  "kind": "drama"
+ }
+]

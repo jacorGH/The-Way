@@ -1,0 +1,45 @@
+[
+ {
+  "id": "d-32827bd7",
+  "voice": "M",
+  "text": "Una cosa sé: que habiendo yo sido ciego, ahora veo. Escribe eso, ya que todos los demás lo escriben.",
+  "kind": "drama",
+  "speaker": "El ciego de nacimiento"
+ },
+ {
+  "id": "d-5362a986",
+  "voice": "N",
+  "text": "Los fariseos ya han interrogado dos veces a este hombre. Ahora tú, un escriba, también preguntas. Suspira antes de que empieces.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-70e942b7",
+  "voice": "W",
+  "text": "Los fariseos ya han interrogado dos veces a este hombre. Ahora tú, la sobrina de un fariseo, también preguntas. Suspira antes de que empieces.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-8de571a4",
+  "voice": "N",
+  "text": "¿Qué le preguntas al ciego de nacimiento?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-ab72e011",
+  "voice": "N",
+  "text": "Juan cuenta la historia de este hombre como una serie de interrogatorios. No eres el primero en preguntarle.",
+  "kind": "history"
+ },
+ {
+  "id": "d-ab72e011-f",
+  "voice": "W",
+  "text": "Juan cuenta la historia de este hombre como una serie de interrogatorios. No eres la primera en preguntarle.",
+  "kind": "history"
+ },
+ {
+  "id": "d-f038dbe1",
+  "voice": "N",
+  "text": "Te mira un largo momento, como si todavía se estuviera acostumbrando a los rostros. “¿Tú también me vas a echar fuera?”",
+  "kind": "drama"
+ }
+]

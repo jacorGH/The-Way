@@ -1,0 +1,34 @@
+[
+ {
+  "id": "d-427aab78",
+  "voice": "N",
+  "text": "Arranca un puñado de hierba y la deja caer. “Sobraron doce cestas. Yo ayudé a cargar una.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-64a68cd0",
+  "voice": "M",
+  "text": "Panes de cebada. Pan de pobres. Y todos comieron hasta saciarse.",
+  "kind": "drama",
+  "speaker": "Un hombre que estaba en la multitud"
+ },
+ {
+  "id": "d-8249dd8d",
+  "voice": "N",
+  "text": "Cerca de Betsaida, un campesino señala una ladera de hierba espesa de primavera sobre el lago. “Ahí”, dice. “Yo estaba sentado justo ahí.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-9df9484f",
+  "voice": "M",
+  "text": "Lo habríamos hecho rey esa misma noche. Se apartó de nosotros hacia los montes.",
+  "kind": "drama",
+  "speaker": "Un hombre que estaba en la multitud"
+ },
+ {
+  "id": "d-c329caba",
+  "voice": "N",
+  "text": "¿Qué le preguntas a un hombre que estaba en la multitud?",
+  "kind": "prompt"
+ }
+]

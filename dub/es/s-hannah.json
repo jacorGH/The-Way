@@ -1,0 +1,57 @@
+[
+ {
+  "id": "d-0233f759",
+  "voice": "N",
+  "text": "Pasada la medianoche, un carpintero llamado Shimón golpea tu puerta. Su hija lleva tres días ardiendo de fiebre. Oyó que los creyentes oran por los enfermos.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-66e397c1",
+  "voice": "N",
+  "text": "Ella tampoco ha comido. Le pones pan en las manos y se las sostienes hasta que come.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-9fbb321f",
+  "voice": "N",
+  "text": "El cuarto huele a sudor y a aceite de lámpara.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-ab00b81f",
+  "voice": "F",
+  "text": "Todo. Paños fríos. Oraciones. El médico se llevó nuestro dinero y se fue.",
+  "kind": "drama",
+  "speaker": "Su madre"
+ },
+ {
+  "id": "d-b6bf0b00",
+  "voice": "N",
+  "text": "Oras por la niña.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-ba1dd639",
+  "voice": "N",
+  "text": "Nada cambia de inmediato. Velas con los padres hasta que la lámpara se apaga.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-c3aa542c",
+  "voice": "N",
+  "text": "Las fiebres mataban a muchos niños en el mundo antiguo, y los médicos poco podían hacer para detenerlas.",
+  "kind": "history"
+ },
+ {
+  "id": "d-fcfbb617",
+  "voice": "N",
+  "text": "¿Qué haces primero?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-ff84e807",
+  "voice": "N",
+  "text": "Hacia el amanecer, la piel de la niña se enfría. Abre los ojos y pide agua. Al mediodía está comiendo pan con miel, y su padre no puede dejar de llorar.",
+  "kind": "drama"
+ }
+]

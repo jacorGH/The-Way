@@ -1,0 +1,50 @@
+[
+ {
+  "id": "d-038d574e",
+  "voice": "N",
+  "text": "Para acallar los rumores de que enseñaba a los judíos a abandonar la Ley, los ancianos le pidieron a Pablo que pagara las ofrendas de cuatro hombres que cumplían un voto, y que fuera con ellos al Templo (21:21–25).",
+  "kind": "history"
+ },
+ {
+  "id": "d-1764a678",
+  "voice": "N",
+  "text": "Ayer viste a Trófimo en la ciudad baja. Nunca se acercó al Templo. Abres la boca para decirlo, y nadie podría oírte aunque gritaras.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-22a08412",
+  "voice": "N",
+  "text": "Vuelves corriendo con Jacobo a tiempo de oírlo contar el camino a Damasco. Estuviste allí al comienzo de esa historia. Nunca pensaste que lo oirías contarla aquí.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-3dfb3719",
+  "voice": "N",
+  "text": "Les cuenta el camino a Damasco: la luz a mediodía, la voz, la ceguera, Ananías. Estuviste allí al comienzo de esa historia. Nunca pensaste que lo oirías contarla aquí.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-455bc438",
+  "voice": "N",
+  "text": "Cesarea, junto al mar: la casa de Felipe, que una vez corrió junto a un carro en el camino del desierto. Ahora tiene canas. Sus cuatro hijas sirven el vino.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-cc203c39",
+  "voice": "N",
+  "text": "“¡Fuera con él!” La multitud gritó lo mismo frente a la puerta de Pilato, la mañana en que crucificaron a Jesús. ¿Adónde vas?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-f235bb3f",
+  "voice": "N",
+  "text": "Estás en casa. Hace años que no ves estos muros. La ciudad huele igual: humo, ovejas, el viento del mar que nunca termina de llegar.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f3dbaa2b",
+  "voice": "W",
+  "text": "Las cuatro profetizan, dice Lucas, con la misma naturalidad con que otras muchachas cantan. La menor te pregunta por Jerusalén, y por las mujeres que fueron al sepulcro.",
+  "kind": "drama"
+ }
+]

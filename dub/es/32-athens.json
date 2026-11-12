@@ -1,0 +1,44 @@
+[
+ {
+  "id": "d-30dbb11a",
+  "voice": "N",
+  "text": "Al borde del ágora, Pablo se detiene ante un pequeño altar y lee la inscripción en voz alta, dos veces, como si no acabara de creerlo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-58b78076",
+  "voice": "N",
+  "text": "Toda tu crianza aparta los ojos de las estatuas. ¿Qué haces?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-67fb4291",
+  "voice": "N",
+  "text": "La mayor parte del Areópago se va a casa a cenar. Dos personas se quedan para preguntarle a Pablo dónde se hospeda. No parece mucho. Lo escribes de todos modos.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-7caebe14",
+  "voice": "N",
+  "text": "“No está lejos de cada uno de nosotros.” Recuerdas a un escriba en los atrios del Templo, y a Jesús diciéndole que no estaba lejos del reino de Dios.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-9aa2553b",
+  "voice": "N",
+  "text": "Mantienes la vista en el empedrado, y aun así la ciudad te mira desde todas partes.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-c1e1ca42",
+  "voice": "N",
+  "text": "En cambio, observas a la gente: una mujer que deja un pastel de incienso en un santuario, un anciano que toca para tener suerte el pie gastado de una estatua, un niño que le pregunta a su padre qué dios es cuál. Están buscando algo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f4d0cfbe",
+  "voice": "N",
+  "text": "Pablo está solo en Atenas, esperando a Silas y a Timoteo. Mires adonde mires hay un dios: de mármol en las esquinas, de bronce en las puertas, pintado en los muros, tallado en la misma colina sobre la ciudad.",
+  "kind": "drama"
+ }
+]

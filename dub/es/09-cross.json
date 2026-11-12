@@ -1,0 +1,38 @@
+[
+ {
+  "id": "d-02dff2b1",
+  "voice": "N",
+  "text": "Han llegado al lugar. ¿Dónde te quedas?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-0c9c6622",
+  "voice": "N",
+  "text": "Dos de los hombres que se ríen al pie del monte te enseñaron la Ley. ¿Qué haces?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-2c40b933",
+  "voice": "W",
+  "text": "Dos de los hombres que se ríen al pie del monte han comido a la mesa de tu tío. ¿Qué haces?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-47ececd3",
+  "voice": "N",
+  "text": "El velo colgaba ante el Lugar Santísimo del Templo, donde solo entraba el sumo sacerdote, una vez al año.",
+  "kind": "history"
+ },
+ {
+  "id": "d-4eaa6842",
+  "voice": "N",
+  "text": "Es de mañana. El concilio lo ha entregado a Pilato, y Pilato lo ha entregado a los soldados. Estás junto al camino, fuera de la puerta, con la multitud.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-c89b1894",
+  "voice": "N",
+  "text": "La gente vuelve poco a poco hacia la puerta. Las mujeres no se mueven. Tú tampoco.",
+  "kind": "drama"
+ }
+]

@@ -1,0 +1,50 @@
+[
+ {
+  "id": "d-580ca336",
+  "voice": "N",
+  "text": "Años después Pablo le recordaría a Timoteo, un joven de Listra, lo que había sufrido en Antioquía, Iconio y Listra (2 Timoteo 3:11).",
+  "kind": "history"
+ },
+ {
+  "id": "d-746ab7ce",
+  "voice": "N",
+  "text": "Te quedas con los demás. Nadie habla. Bernabé no se ha movido desde que lo arrastraron afuera.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-910ab194",
+  "voice": "N",
+  "text": "No entiendes una palabra de licaónico. No te hace falta. Los ves señalar a Bernabé, el alto, y a Pablo, el que habla.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-925202cb",
+  "voice": "N",
+  "text": "Vuelves con un cántaro del pozo y te arrodillas para mojarle los labios.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-a4e46a58",
+  "voice": "N",
+  "text": "Te arrodillas y oras las únicas palabras que te vienen: “Señor Jesús.” Una y otra vez. Nada más.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-afae3906",
+  "voice": "N",
+  "text": "“¿Qué significa ser luz para los gentiles?” (Hechos 13:47)\n\nDios abrió a las naciones la puerta de la fe. (Hechos 14:27)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-e86cc739",
+  "voice": "N",
+  "text": "Fuera de la ciudad lo han dejado en el polvo. Los discípulos están a su alrededor. Un muchacho del pueblo llora.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-ec286e23",
+  "voice": "N",
+  "text": "Listra: una pequeña colonia romana en la llanura de Licaonia, donde la mayoría hablaba su propia lengua licaónica. Fuera de la puerta había un templo de Zeus.",
+  "kind": "history"
+ }
+]

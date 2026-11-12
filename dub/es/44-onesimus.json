@@ -1,0 +1,50 @@
+[
+ {
+  "id": "d-0b335da8",
+  "voice": "N",
+  "text": "Llegó a la puerta hace meses, flaco y asustado, un esclavo de la provincia de Asia que había huido de su amo. En una ciudad de un millón de personas podría haber desaparecido. En cambio, encontró el camino hasta el único preso de Roma que conocía el nombre de su amo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-3459a0c2",
+  "voice": "N",
+  "text": "La Escritura no nos dice qué hizo Filemón. Pero la carta se guardó, se copió, y se ha leído en las iglesias desde entonces.",
+  "kind": "history"
+ },
+ {
+  "id": "d-72c784bc",
+  "voice": "N",
+  "text": "Tíquico llevó la carta de Pablo a los colosenses, viajando con Onésimo, a quien Pablo llamó hermano fiel y amado, de su mismo pueblo (Colosenses 4:7–9).",
+  "kind": "history"
+ },
+ {
+  "id": "d-79808ac3",
+  "voice": "N",
+  "text": "A mitad de la carta, Pablo te quita la pluma y escribe él mismo las líneas siguientes, despacio, con letras grandes, la cadena golpeando contra la mesa.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-98cb78aa",
+  "voice": "N",
+  "text": "Cuanto más se acercan al valle del Lico, menos habla Onésimo. La última noche te pregunta, muy bajito, qué les pasa a los esclavos fugitivos. Le dices la verdad. Luego le dices lo que escribió Pablo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-a07a1d5e",
+  "voice": "N",
+  "text": "Toda la iglesia está reunida en casa de Filemón, y Onésimo está de pie en la puerta. Te toca leer la carta. ¿Dónde te pones?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-c8ecb31c",
+  "voice": "N",
+  "text": "Desde entonces ha aprendido el Camino, ha sido bautizado, y se ha hecho tan útil que Pablo lo llama su propio corazón. Y la ley romana dice que debe volver.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-e511ea97",
+  "voice": "N",
+  "text": "Nadie habla. Filemón se queda de pie largo rato, mirando al joven de la puerta que una vez huyó de él. Luego cruza la sala.",
+  "kind": "drama"
+ }
+]

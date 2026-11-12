@@ -51,7 +51,9 @@ window.TW = window.TW || {};
   D.add = function (lang, ids, ext) { (D.ids[lang] = D.ids[lang] || new Set()); ids.forEach((i) => { D.ids[lang].add(i); D.ext[lang + ':' + i] = ext || 'mp3'; }); };
   D.has = (lang, id) => !!(D.ids[lang] && D.ids[lang].has(id));
   // Files named by the TTS Studio: characters other than letters, digits, dot, dash and underscore become '_'.
-  D.url = (lang, id) => D.base + lang + '/' + String(id).replace(/[^a-zA-Z0-9._-]/g, '_') + '.' + (D.ext[lang + ':' + id] || D.defaultExt || 'mp3');
+  // A line translated with two forms ({ m, f }) has a second recording, <id>-f, read when Elisheva tells the story.
+  const fem = (lang, id) => { const t = L.translations[lang] && L.translations[lang][id]; return t && typeof t === 'object' && TW.Role && TW.Role.is && TW.Role.is(); };
+  D.url = (lang, id) => D.base + lang + '/' + String(id).replace(/[^a-zA-Z0-9._-]/g, '_') + (fem(lang, id) ? '-f' : '') + '.' + (D.ext[lang + ':' + id] || D.defaultExt || 'mp3');
   // ---------- Dub Studio helpers ----------
   // voice tags: N narrator (Eleazar's account), W narrator (Elisheva's), S Scripture, M a man speaking, F a woman speaking
   const WOMEN = /mary|martha|rhoda|widow|woman|mother|elisheva|lydia|tabitha|maid|wife|daughter|miriam|hannah|salome|joanna|damaris|priscilla/i;

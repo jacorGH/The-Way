@@ -1,0 +1,71 @@
+[
+ {
+  "id": "d-015041eb",
+  "voice": "N",
+  "text": "Te pide que ores por sus ojos.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-5458118d",
+  "voice": "N",
+  "text": "Nada les pasa a sus ojos. Vuelves a orar al día siguiente, y a la semana siguiente. Siguen a oscuras.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-626e2463",
+  "voice": "N",
+  "text": "Lo escribes con honestidad. No toda oración se responde como la pides.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-72eea4e7",
+  "voice": "N",
+  "text": "Un ciego mendiga en la misma puerta del Templo donde antes se sentaba el cojo. Ha oído lo que pasó allí, y les pide a los creyentes que oren por él.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-8b93a49a",
+  "voice": "M",
+  "text": "Ver. Y si no eso, dejar de ser invisible.",
+  "kind": "drama",
+  "speaker": "Tobías"
+ },
+ {
+  "id": "d-991028df",
+  "voice": "N",
+  "text": "Vuelve el rostro hacia tu voz.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-aaf97121",
+  "voice": "M",
+  "text": "Todavía no veo. Pero como con cuarenta personas cada noche, y todas saben mi nombre. Yo era invisible, escriba. Ya no.",
+  "kind": "drama",
+  "speaker": "Tobías"
+ },
+ {
+  "id": "d-b24b8c23",
+  "voice": "M",
+  "text": "Todavía no veo. Pero como con cuarenta personas cada noche, y todas saben mi nombre. Yo era invisible, hija. Ya no.",
+  "kind": "drama",
+  "speaker": "Tobías"
+ },
+ {
+  "id": "d-b5eb90ee",
+  "voice": "W",
+  "text": "Pasa los dedos por los flecos y se ríe. “El manto de un fariseo, en un cantero.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ba8b8fb5",
+  "voice": "N",
+  "text": "Pasa los dedos por los flecos y se ríe. “El manto de un escriba, en un cantero.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-fff25b74",
+  "voice": "N",
+  "text": "Le pones las manos sobre los ojos y oras, como oró Pedro en la puerta, en el nombre de Jesucristo de Nazaret.",
+  "kind": "drama"
+ }
+]

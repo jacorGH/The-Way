@@ -1,0 +1,123 @@
+[
+ {
+  "id": "d-23958da7",
+  "voice": "N",
+  "text": "Afuera, la calle está llena de gente que habla toda a la vez.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-28162c44",
+  "voice": "M",
+  "text": "¿Buscas a Jesús de Nazaret? Sigue el ruido. Medio pueblo ha estado frente a esa puerta desde el amanecer.",
+  "kind": "drama",
+  "speaker": "Un pescador remendando redes"
+ },
+ {
+  "id": "d-3ea74f80",
+  "voice": "F",
+  "text": "¿Lo viste? ¡Pasó junto a mí cargando su propia camilla!",
+  "kind": "drama",
+  "speaker": "La mujer del molino"
+ },
+ {
+  "id": "d-59325eb0",
+  "voice": "N",
+  "text": "Adentro, el aire es denso y cálido. Los cuerpos se aprietan contra las paredes. Como maestro de la Ley, te hacen señas para que ocupes un lugar en el suelo, cerca del frente, entre los demás escribas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-5cb53ea4",
+  "voice": "N",
+  "text": "Palabras como estas pertenecen solo a Dios. ¿Qué surge en tu corazón?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-6791a930",
+  "voice": "W",
+  "text": "Adentro, el aire es denso y cálido. Los cuerpos se aprietan contra las paredes. Te abres paso junto a la puerta, con las mujeres de la casa. Desde aquí puedes ver al maestro, y a la fila de escribas de Jerusalén sentados en el suelo frente a él.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-8283cfaa",
+  "voice": "M",
+  "text": "No pudimos hacerlo pasar por la puerta. Así que subimos.",
+  "kind": "drama",
+  "speaker": "Uno de los cuatro amigos"
+ },
+ {
+  "id": "d-a8a849b6",
+  "voice": "N",
+  "text": "Ella describe un día anterior en Capernaúm, narrado en Marcos 1:29–31.",
+  "kind": "history"
+ },
+ {
+  "id": "d-b2b7b4cc",
+  "voice": "N",
+  "text": "Capernaúm, en la orilla norte del mar de Galilea. Casas de basalto negro se agrupan alrededor de patios compartidos. Sus techos planos son de vigas y ramas cubiertas de tierra apisonada.",
+  "kind": "history"
+ },
+ {
+  "id": "d-bc9b5a92",
+  "voice": "F",
+  "text": "¿Vienes por él? Sanó a la suegra de Simón, aquí en este pueblo. La fiebre la dejó, y ella se levantó y les servía.",
+  "kind": "drama",
+  "speaker": "Una mujer moliendo grano"
+ },
+ {
+  "id": "d-bf2d96fd",
+  "voice": "N",
+  "text": "Por todos lados la gente alaba a Dios. Viniste a escribir lo que vieras. Viste esto.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-c364263a",
+  "voice": "N",
+  "text": "Nadie ha hablado en voz alta. Sin embargo, él aparta la mirada del hombre en la camilla y recorre la fila de escribas. Hasta ti.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d29f1ecd",
+  "voice": "M",
+  "text": "Por ahí no vas a entrar, amigo. Ah… un maestro de la Ley. ¡Abran paso, abran paso!",
+  "kind": "drama",
+  "speaker": "Alguien entre la multitud"
+ },
+ {
+  "id": "d-e2d59ca3",
+  "voice": "N",
+  "text": "Algo raspa sobre sus cabezas. Cae polvo entre las vigas. Uno a uno, los rostros se vuelven hacia arriba.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-eeb113ba",
+  "voice": "W",
+  "text": "Nadie ha hablado en voz alta. Sin embargo, él aparta la mirada del hombre en la camilla, recorre la fila de escribas y luego mira más allá, hacia la puerta. Hacia ti.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-fb9ad06d",
+  "voice": "M",
+  "text": "Por ahí no vas a entrar, hija. Métete junto a la puerta con las mujeres de la casa; desde ahí podrás ver.",
+  "kind": "drama",
+  "speaker": "Alguien entre la multitud"
+ },
+ {
+  "id": "d-59ce7028",
+  "voice": "N",
+  "text": "Los cuatro hombres ya están subiendo la escalera exterior hacia el techo, cargando a su amigo entre ellos.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4ba6c986",
+  "voice": "M",
+  "text": "Lo trajimos desde el otro extremo del pueblo. No hay manera de pasar por esa puerta. Hoy no.",
+  "kind": "drama",
+  "speaker": "Uno de los cuatro amigos"
+ },
+ {
+  "id": "d-a218f6e0",
+  "voice": "N",
+  "text": "Otro levanta la vista hacia la escalera que sube por el muro hasta el techo. Los cuatro se miran.",
+  "kind": "drama"
+ }
+]

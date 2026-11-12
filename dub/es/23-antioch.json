@@ -1,0 +1,83 @@
+[
+ {
+  "id": "d-111693c8",
+  "voice": "N",
+  "text": "Un creyente griego, comerciante de lana teñida, los invita a cenar a Bernabé y a ti. Hay pan, aceitunas y un plato de carne del mercado. Nadie en esta mesa sabe dónde se compró la carne, ni si alguna vez se ofreció en un altar.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-200e0371",
+  "voice": "N",
+  "text": "Bernabé ya está comiendo. Tu anfitrión te pasa el plato.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-284ec1d8",
+  "voice": "N",
+  "text": "“Si Dios no hace acepción de personas, ¿a quién más he estado llamando inmundo?” (Hechos 10:28, 34)\n\nLos griegos de Antioquía, que creyeron y se convirtieron al Señor. (Hechos 11:20–21)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-4d583194",
+  "voice": "N",
+  "text": "Antioquía del Orontes: capital de Siria, una de las tres grandes ciudades del imperio, con templos a los dioses de Grecia y Roma y un gran barrio judío.",
+  "kind": "history"
+ },
+ {
+  "id": "d-4ee33bbd",
+  "voice": "N",
+  "text": "Asiente, un poco dolido, y te deja ir. Bernabé te ve salir y no dice nada.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-5ff8cb12",
+  "voice": "N",
+  "text": "Tu anfitrión se ríe y te llena la copa. Piensas en un lienzo bajado del cielo, y en una voz que dijo tres veces que no llamaras común lo que Dios limpió.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-647a8960",
+  "voice": "N",
+  "text": "Pones lo que tienes, y ves a Bernabé y a Saulo cargar la ayuda para Jerusalén: dinero griego para creyentes judíos, llevado por un levita y un fariseo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-752ab62f",
+  "voice": "M",
+  "text": "Tú otra vez: el de Damasco que lo escribe todo. Bernabé, me has traído un testigo.",
+  "kind": "drama",
+  "speaker": "Saulo"
+ },
+ {
+  "id": "d-e29e7244",
+  "voice": "N",
+  "text": "A nadie le importa. Tu anfitrión sigue trayendo pan. Más adelante los creyentes discutirán durante años sobre estas mesas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ead3a711",
+  "voice": "M",
+  "text": "Ahí van los christianoi. La gente de Cristo.",
+  "kind": "drama",
+  "speaker": "Un hombre en el mercado"
+ },
+ {
+  "id": "d-ebb905d5",
+  "voice": "N",
+  "text": "Tarso, ciudad principal de Cilicia. A Saulo lo habían enviado a casa aquí por su seguridad (Hechos 9:30). De oficio era fabricante de tiendas (18:3), y trabajaba la tela de pelo de cabra.",
+  "kind": "history"
+ },
+ {
+  "id": "d-ef31f1cf",
+  "voice": "N",
+  "text": "Viniste al norte con Bernabé, enviado por los apóstoles a ver si eran ciertas las noticias de Antioquía. Lo son.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-24b98ab7",
+  "voice": "M",
+  "text": "Bernabé. Y has traído un testigo contigo.",
+  "kind": "drama",
+  "speaker": "Saulo"
+ }
+]

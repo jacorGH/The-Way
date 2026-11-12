@@ -1,0 +1,57 @@
+[
+ {
+  "id": "d-192906b8",
+  "voice": "N",
+  "text": "Las viudas sin hijos ni hermanos casi no tenían cómo ganarse la vida. La distribución diaria de los creyentes debía llegar a cada una de ellas (Hechos 4:34).",
+  "kind": "history"
+ },
+ {
+  "id": "d-5eeb14ee",
+  "voice": "N",
+  "text": "Esteban te envía con pan y aceite a una viuda de Alejandría que vive sola en dos cuartos cerca de la puerta del Pescado. Habla griego. Tú lo hablas mal.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-66aa7974",
+  "voice": "N",
+  "text": "Tropiezas con una oración en griego. A la mitad, ella la toma y la termina por ti.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-772475e0",
+  "voice": "N",
+  "text": "No ocurre nada milagroso en los dos cuartos de Miriam. Una viuda come, y no está sola. Esteban dice que para eso fueron escogidos los siete.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-8080582f",
+  "voice": "N",
+  "text": "Antes de irte, oras con ella.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-833bd44c",
+  "voice": "N",
+  "text": "Tienes pan, aceite y el resto de la tarde.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-847f5350",
+  "voice": "F",
+  "text": "Ayer. Un poco. No te preocupes.",
+  "kind": "drama",
+  "speaker": "Miriam"
+ },
+ {
+  "id": "d-8f697a44",
+  "voice": "N",
+  "text": "Se sienta muy derecha y espera a que hables.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-91015ffd",
+  "voice": "N",
+  "text": "Escribes MIRIAM DE ALEJANDRÍA con tu mejor letra. Ella te mira hacerlo como si fuera la escritura de una tierra.",
+  "kind": "drama"
+ }
+]

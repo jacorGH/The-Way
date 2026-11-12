@@ -1,0 +1,57 @@
+[
+ {
+  "id": "d-041ec1ed",
+  "voice": "N",
+  "text": "Has pasado junto al mismo mendigo en la puerta interior cada día durante años. Unos hombres lo traen allí cada mañana. No sabes cómo se llama.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-04d1c09d",
+  "voice": "N",
+  "text": "La hora novena, cerca de las tres de la tarde: la hora del sacrificio de la tarde, cuando los piadosos subían al Templo a orar.",
+  "kind": "history"
+ },
+ {
+  "id": "d-090abdbf",
+  "voice": "N",
+  "text": "Le dices que no tienes nada. Por primera vez en años, te mira a la cara.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-0f39be02",
+  "voice": "N",
+  "text": "Te tiende su cuenco, como a todos.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-643fca05",
+  "voice": "N",
+  "text": "Mañana por la mañana el concilio se reunirá para interrogarlos. Se espera que ocupes tu lugar con los demás escribas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-74036ecf",
+  "voice": "N",
+  "text": "La moneda suena en el cuenco. Te da las gracias sin levantar la vista.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-74ef0072",
+  "voice": "N",
+  "text": "El pórtico de Salomón era una columnata a lo largo del lado oriental de los atrios del Templo. Jesús había caminado allí (Juan 10:23).",
+  "kind": "history"
+ },
+ {
+  "id": "d-bcdd69fb",
+  "voice": "W",
+  "text": "Mañana por la mañana el concilio se reunirá para interrogarlos. Tu tío te pide que vayas con él y lleves su estuche de escribir.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ddff8ca0",
+  "voice": "M",
+  "text": "Una limosna, señor. Una limosna, por amor de Dios.",
+  "kind": "drama",
+  "speaker": "El cojo"
+ }
+]

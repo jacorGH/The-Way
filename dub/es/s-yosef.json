@@ -1,0 +1,64 @@
+[
+ {
+  "id": "d-11e5b0c1",
+  "voice": "M",
+  "text": "Le pedimos al Señor que lo sanara. En cambio, se lo llevó a casa. El dolor ahora es nuestro para llevarlo, no suyo.",
+  "kind": "drama",
+  "speaker": "Esteban"
+ },
+ {
+  "id": "d-39fd441f",
+  "voice": "N",
+  "text": "Viene su hija, y tres nietos que se quedan muy quietos en la entrada.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-43453806",
+  "voice": "M",
+  "text": "¿De morir? Un poco. ¿De lo que viene después? No desde Pentecostés.",
+  "kind": "drama",
+  "speaker": "Yosef"
+ },
+ {
+  "id": "d-605bcf37",
+  "voice": "N",
+  "text": "Te toma la mano. Su apretón todavía es fuerte por sesenta años en el torno.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-7b6e209c",
+  "voice": "N",
+  "text": "Oras con él.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-89d9f892",
+  "voice": "N",
+  "text": "¿Qué haces por él?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-b5eb9c8c",
+  "voice": "N",
+  "text": "No hay milagro en el cuarto. Tampoco hay miedo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-cca5411e",
+  "voice": "N",
+  "text": "Yosef muere poco antes del amanecer, con la mano de su hija en la suya y tu rollo sobre la manta.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-cee116dd",
+  "voice": "N",
+  "text": "Yosef oyó a Pedro en Pentecostés y fue bautizado a los ochenta años. Ahora se está muriendo, y ha pedido que venga “el escriba que escribe las cosas”.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d4ce26ed",
+  "voice": "W",
+  "text": "Yosef oyó a Pedro en Pentecostés y fue bautizado a los ochenta años. Ahora se está muriendo, y ha pedido que venga “la muchacha que escribe las cosas”.",
+  "kind": "drama"
+ }
+]

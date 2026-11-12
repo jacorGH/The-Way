@@ -1,0 +1,2669 @@
+{
+ "note": "Every Scripture passage the game speaks, by reference (English book names), in batch order. The game builds a Scripture voice batch for the installed Bible from this list.",
+ "refs": [
+  {
+   "ref": "Mark 2:1–2",
+   "batch": "01-capernaum"
+  },
+  {
+   "ref": "Mark 2:12",
+   "batch": "01-capernaum"
+  },
+  {
+   "ref": "Luke 5:17",
+   "batch": "01-capernaum"
+  },
+  {
+   "ref": "Mark 2:6–7",
+   "batch": "01-capernaum"
+  },
+  {
+   "ref": "Mark 2:3–4",
+   "batch": "01-capernaum"
+  },
+  {
+   "ref": "Mark 2:8–9",
+   "batch": "01-capernaum"
+  },
+  {
+   "ref": "Mark 2:10–11",
+   "batch": "01-capernaum"
+  },
+  {
+   "ref": "Mark 2:5",
+   "batch": "01-capernaum"
+  },
+  {
+   "ref": "Mark 2:13",
+   "batch": "02-levi"
+  },
+  {
+   "ref": "Mark 2:14",
+   "batch": "02-levi"
+  },
+  {
+   "ref": "Mark 2:15",
+   "batch": "02-levi"
+  },
+  {
+   "ref": "Mark 2:17",
+   "batch": "02-levi"
+  },
+  {
+   "ref": "Mark 2:16",
+   "batch": "02-levi"
+  },
+  {
+   "ref": "Mark 2:23",
+   "batch": "03-sabbath"
+  },
+  {
+   "ref": "Mark 2:27–28",
+   "batch": "03-sabbath"
+  },
+  {
+   "ref": "Mark 3:3",
+   "batch": "03-sabbath"
+  },
+  {
+   "ref": "Mark 3:4",
+   "batch": "03-sabbath"
+  },
+  {
+   "ref": "Mark 2:25–26",
+   "batch": "03-sabbath"
+  },
+  {
+   "ref": "Mark 3:5",
+   "batch": "03-sabbath"
+  },
+  {
+   "ref": "Mark 3:7–8",
+   "batch": "03-sabbath"
+  },
+  {
+   "ref": "Mark 2:24",
+   "batch": "03-sabbath"
+  },
+  {
+   "ref": "Mark 3:1–2",
+   "batch": "03-sabbath"
+  },
+  {
+   "ref": "Mark 3:6",
+   "batch": "03-sabbath"
+  },
+  {
+   "ref": "Mark 4:35–36",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 4:39",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 5:15–17",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 5:11–12",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 5:3–4",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 4:37",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 5:20",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 4:40–41",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 5:6–7",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 5:13",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 5:8–10",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 5:14",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 5:1–2",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 5:18–19",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Mark 4:38",
+   "batch": "04-legion"
+  },
+  {
+   "ref": "Luke 7:16–17",
+   "batch": "05-nain"
+  },
+  {
+   "ref": "Luke 7:11",
+   "batch": "05-nain"
+  },
+  {
+   "ref": "Luke 7:13",
+   "batch": "05-nain"
+  },
+  {
+   "ref": "Luke 7:15",
+   "batch": "05-nain"
+  },
+  {
+   "ref": "Luke 7:12",
+   "batch": "05-nain"
+  },
+  {
+   "ref": "Luke 7:14",
+   "batch": "05-nain"
+  },
+  {
+   "ref": "Mark 11:11",
+   "batch": "06-entry"
+  },
+  {
+   "ref": "Mark 11:1–3",
+   "batch": "06-entry"
+  },
+  {
+   "ref": "Mark 11:8",
+   "batch": "06-entry"
+  },
+  {
+   "ref": "Mark 11:4–7",
+   "batch": "06-entry"
+  },
+  {
+   "ref": "Mark 11:9–10",
+   "batch": "06-entry"
+  },
+  {
+   "ref": "Mark 12:28",
+   "batch": "07-temple"
+  },
+  {
+   "ref": "Mark 12:32–33",
+   "batch": "07-temple"
+  },
+  {
+   "ref": "Mark 11:15",
+   "batch": "07-temple"
+  },
+  {
+   "ref": "Mark 11:18",
+   "batch": "07-temple"
+  },
+  {
+   "ref": "Mark 12:29–31",
+   "batch": "07-temple"
+  },
+  {
+   "ref": "Mark 12:34",
+   "batch": "07-temple"
+  },
+  {
+   "ref": "Mark 11:16–17",
+   "batch": "07-temple"
+  },
+  {
+   "ref": "Mark 14:66–68",
+   "batch": "08-council"
+  },
+  {
+   "ref": "Mark 14:63–64",
+   "batch": "08-council"
+  },
+  {
+   "ref": "Mark 14:57–59",
+   "batch": "08-council"
+  },
+  {
+   "ref": "Mark 14:71",
+   "batch": "08-council"
+  },
+  {
+   "ref": "Mark 14:62",
+   "batch": "08-council"
+  },
+  {
+   "ref": "Mark 14:69–70",
+   "batch": "08-council"
+  },
+  {
+   "ref": "Mark 14:53–54",
+   "batch": "08-council"
+  },
+  {
+   "ref": "Mark 14:60–61",
+   "batch": "08-council"
+  },
+  {
+   "ref": "Mark 14:72",
+   "batch": "08-council"
+  },
+  {
+   "ref": "Mark 14:65",
+   "batch": "08-council"
+  },
+  {
+   "ref": "Mark 14:55–56",
+   "batch": "08-council"
+  },
+  {
+   "ref": "Mark 15:29–30",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:33",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:21",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:26–28",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:35–36",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:31–32",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:40–41",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:34",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:37",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:16–20",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:39",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:38",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:23–25",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:22",
+   "batch": "09-cross"
+  },
+  {
+   "ref": "Mark 15:44–45",
+   "batch": "10-burial"
+  },
+  {
+   "ref": "John 19:38–39",
+   "batch": "10-burial"
+  },
+  {
+   "ref": "Mark 15:46–47",
+   "batch": "10-burial"
+  },
+  {
+   "ref": "John 3:1–2",
+   "batch": "10-burial"
+  },
+  {
+   "ref": "John 3:5–8",
+   "batch": "10-burial"
+  },
+  {
+   "ref": "John 3:3–4",
+   "batch": "10-burial"
+  },
+  {
+   "ref": "John 19:40–42",
+   "batch": "10-burial"
+  },
+  {
+   "ref": "John 3:9–13",
+   "batch": "10-burial"
+  },
+  {
+   "ref": "John 7:50–52",
+   "batch": "10-burial"
+  },
+  {
+   "ref": "John 3:14–16",
+   "batch": "10-burial"
+  },
+  {
+   "ref": "John 7:45–49",
+   "batch": "10-burial"
+  },
+  {
+   "ref": "Mark 15:42–43",
+   "batch": "10-burial"
+  },
+  {
+   "ref": "John 20:14–15",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "Mark 16:8",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "John 20:11–12",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "John 20:6–7",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "John 20:11",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "John 20:18",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "John 20:13",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "Mark 16:1–3",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "John 20:8–10",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "John 20:16–17",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "John 20:5",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "Mark 16:5–7",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "John 20:1–2",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "Mark 16:4",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "John 20:3–4",
+   "batch": "11-tomb"
+  },
+  {
+   "ref": "John 20:25",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "John 20:22–23",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "Acts 1:12–14",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "John 20:26",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "John 20:27",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "John 20:28–29",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "Acts 1:6–8",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "John 20:24",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "John 20:21",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "John 20:20",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "John 20:19",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "Acts 1:3–5",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "Acts 1:15",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "Acts 1:10–11",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "Acts 1:9",
+   "batch": "12-forty"
+  },
+  {
+   "ref": "Acts 2:38–40",
+   "batch": "13-pentecost"
+  },
+  {
+   "ref": "Acts 2:22–24",
+   "batch": "13-pentecost"
+  },
+  {
+   "ref": "Acts 2:33–36",
+   "batch": "13-pentecost"
+  },
+  {
+   "ref": "Acts 2:1–4",
+   "batch": "13-pentecost"
+  },
+  {
+   "ref": "Acts 2:9–13",
+   "batch": "13-pentecost"
+  },
+  {
+   "ref": "Acts 2:42–47",
+   "batch": "13-pentecost"
+  },
+  {
+   "ref": "Acts 2:16–21",
+   "batch": "13-pentecost"
+  },
+  {
+   "ref": "Acts 2:5–8",
+   "batch": "13-pentecost"
+  },
+  {
+   "ref": "Acts 2:14–15",
+   "batch": "13-pentecost"
+  },
+  {
+   "ref": "Acts 2:29–32",
+   "batch": "13-pentecost"
+  },
+  {
+   "ref": "Acts 2:41",
+   "batch": "13-pentecost"
+  },
+  {
+   "ref": "Acts 2:37",
+   "batch": "13-pentecost"
+  },
+  {
+   "ref": "Acts 3:9–10",
+   "batch": "14-gate"
+  },
+  {
+   "ref": "Acts 3:17–19",
+   "batch": "14-gate"
+  },
+  {
+   "ref": "Acts 3:4–5",
+   "batch": "14-gate"
+  },
+  {
+   "ref": "Acts 3:1–3",
+   "batch": "14-gate"
+  },
+  {
+   "ref": "Acts 3:11",
+   "batch": "14-gate"
+  },
+  {
+   "ref": "Acts 3:14–16",
+   "batch": "14-gate"
+  },
+  {
+   "ref": "Acts 4:4",
+   "batch": "14-gate"
+  },
+  {
+   "ref": "Acts 3:12–13",
+   "batch": "14-gate"
+  },
+  {
+   "ref": "Acts 4:1–3",
+   "batch": "14-gate"
+  },
+  {
+   "ref": "Acts 3:8",
+   "batch": "14-gate"
+  },
+  {
+   "ref": "Acts 3:6",
+   "batch": "14-gate"
+  },
+  {
+   "ref": "Acts 3:7",
+   "batch": "14-gate"
+  },
+  {
+   "ref": "Acts 4:32–35",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:13–14",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:11–12",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:8–10",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:7",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:19–20",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:18",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:15–17",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:23–24",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:29–30",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:36–37",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:31",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:5–6",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 4:21–22",
+   "batch": "15-trial"
+  },
+  {
+   "ref": "Acts 6:6",
+   "batch": "16-seven"
+  },
+  {
+   "ref": "Acts 6:1–4",
+   "batch": "16-seven"
+  },
+  {
+   "ref": "Acts 6:5",
+   "batch": "16-seven"
+  },
+  {
+   "ref": "Acts 6:7",
+   "batch": "16-seven"
+  },
+  {
+   "ref": "Acts 7:60",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 6:11–12",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 8:1",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 6:13–14",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 7:54",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 6:8–9",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 7:51–53",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 8:3–4",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 7:57",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 8:2",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 7:1–2",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 7:55–56",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 6:15",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 6:10",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 7:58",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 7:48–50",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 7:59",
+   "batch": "17-stephen"
+  },
+  {
+   "ref": "Acts 8:5–6",
+   "batch": "18-samaria"
+  },
+  {
+   "ref": "Acts 8:9–11",
+   "batch": "18-samaria"
+  },
+  {
+   "ref": "Acts 8:17",
+   "batch": "18-samaria"
+  },
+  {
+   "ref": "Acts 8:7",
+   "batch": "18-samaria"
+  },
+  {
+   "ref": "Acts 8:12–13",
+   "batch": "18-samaria"
+  },
+  {
+   "ref": "Acts 8:18–19",
+   "batch": "18-samaria"
+  },
+  {
+   "ref": "Acts 8:25",
+   "batch": "18-samaria"
+  },
+  {
+   "ref": "Acts 8:14–16",
+   "batch": "18-samaria"
+  },
+  {
+   "ref": "Acts 8:8",
+   "batch": "18-samaria"
+  },
+  {
+   "ref": "Acts 8:24",
+   "batch": "18-samaria"
+  },
+  {
+   "ref": "Acts 8:20–23",
+   "batch": "18-samaria"
+  },
+  {
+   "ref": "Acts 8:32–33",
+   "batch": "19-desert"
+  },
+  {
+   "ref": "Acts 8:29",
+   "batch": "19-desert"
+  },
+  {
+   "ref": "Acts 8:39",
+   "batch": "19-desert"
+  },
+  {
+   "ref": "Acts 8:27–28",
+   "batch": "19-desert"
+  },
+  {
+   "ref": "Acts 8:26",
+   "batch": "19-desert"
+  },
+  {
+   "ref": "Acts 8:36",
+   "batch": "19-desert"
+  },
+  {
+   "ref": "Acts 8:38",
+   "batch": "19-desert"
+  },
+  {
+   "ref": "Acts 8:40",
+   "batch": "19-desert"
+  },
+  {
+   "ref": "Acts 8:34–35",
+   "batch": "19-desert"
+  },
+  {
+   "ref": "Acts 8:30–31",
+   "batch": "19-desert"
+  },
+  {
+   "ref": "Acts 9:17",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:19",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:3",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:18",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:1–2",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:15–16",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:7",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:26–27",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:4–6",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:20–22",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:8–9",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:10–12",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 22:20",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:13–14",
+   "batch": "20-damascus"
+  },
+  {
+   "ref": "Acts 9:41",
+   "batch": "21-tabitha"
+  },
+  {
+   "ref": "Acts 9:40",
+   "batch": "21-tabitha"
+  },
+  {
+   "ref": "Acts 9:39",
+   "batch": "21-tabitha"
+  },
+  {
+   "ref": "Acts 9:43",
+   "batch": "21-tabitha"
+  },
+  {
+   "ref": "Acts 9:42",
+   "batch": "21-tabitha"
+  },
+  {
+   "ref": "Acts 9:36–38",
+   "batch": "21-tabitha"
+  },
+  {
+   "ref": "Acts 10:40–43",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:13",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:25–26",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 11:1–4",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:23",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:14–15",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:37–39",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 11:18",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:44–46",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:48",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:19–20",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:11–12",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:17–18",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:3–6",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:34–36",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:1–2",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:47",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:27–29",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:24",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:30–33",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 11:15–17",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:9–10",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:21–22",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:16",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 10:7–8",
+   "batch": "22-cornelius"
+  },
+  {
+   "ref": "Acts 11:27–28",
+   "batch": "23-antioch"
+  },
+  {
+   "ref": "Acts 11:29–30",
+   "batch": "23-antioch"
+  },
+  {
+   "ref": "Acts 11:26",
+   "batch": "23-antioch"
+  },
+  {
+   "ref": "Acts 11:19",
+   "batch": "23-antioch"
+  },
+  {
+   "ref": "Acts 11:20–21",
+   "batch": "23-antioch"
+  },
+  {
+   "ref": "Acts 11:22–24",
+   "batch": "23-antioch"
+  },
+  {
+   "ref": "Acts 11:25",
+   "batch": "23-antioch"
+  },
+  {
+   "ref": "Acts 12:7–8",
+   "batch": "24-rhoda"
+  },
+  {
+   "ref": "Acts 12:4–5",
+   "batch": "24-rhoda"
+  },
+  {
+   "ref": "Acts 12:14",
+   "batch": "24-rhoda"
+  },
+  {
+   "ref": "Acts 12:15",
+   "batch": "24-rhoda"
+  },
+  {
+   "ref": "Acts 12:16",
+   "batch": "24-rhoda"
+  },
+  {
+   "ref": "Acts 12:12–13",
+   "batch": "24-rhoda"
+  },
+  {
+   "ref": "Acts 12:1–3",
+   "batch": "24-rhoda"
+  },
+  {
+   "ref": "Acts 12:9–11",
+   "batch": "24-rhoda"
+  },
+  {
+   "ref": "Acts 12:17",
+   "batch": "24-rhoda"
+  },
+  {
+   "ref": "Acts 12:6",
+   "batch": "24-rhoda"
+  },
+  {
+   "ref": "Acts 13:8",
+   "batch": "25-cyprus"
+  },
+  {
+   "ref": "Acts 13:6–7",
+   "batch": "25-cyprus"
+  },
+  {
+   "ref": "Acts 13:5",
+   "batch": "25-cyprus"
+  },
+  {
+   "ref": "Acts 13:11",
+   "batch": "25-cyprus"
+  },
+  {
+   "ref": "Acts 13:2",
+   "batch": "25-cyprus"
+  },
+  {
+   "ref": "Acts 13:3",
+   "batch": "25-cyprus"
+  },
+  {
+   "ref": "Acts 13:12",
+   "batch": "25-cyprus"
+  },
+  {
+   "ref": "Acts 13:4",
+   "batch": "25-cyprus"
+  },
+  {
+   "ref": "Acts 13:1",
+   "batch": "25-cyprus"
+  },
+  {
+   "ref": "Acts 13:13",
+   "batch": "25-cyprus"
+  },
+  {
+   "ref": "Acts 13:9–10",
+   "batch": "25-cyprus"
+  },
+  {
+   "ref": "Acts 13:26–29",
+   "batch": "26-pisidia"
+  },
+  {
+   "ref": "Acts 13:42–43",
+   "batch": "26-pisidia"
+  },
+  {
+   "ref": "Acts 13:38–39",
+   "batch": "26-pisidia"
+  },
+  {
+   "ref": "Acts 13:48–49",
+   "batch": "26-pisidia"
+  },
+  {
+   "ref": "Acts 13:46–47",
+   "batch": "26-pisidia"
+  },
+  {
+   "ref": "Acts 13:30–33",
+   "batch": "26-pisidia"
+  },
+  {
+   "ref": "Acts 13:50",
+   "batch": "26-pisidia"
+  },
+  {
+   "ref": "Acts 13:22–23",
+   "batch": "26-pisidia"
+  },
+  {
+   "ref": "Acts 13:16–17",
+   "batch": "26-pisidia"
+  },
+  {
+   "ref": "Acts 13:14–15",
+   "batch": "26-pisidia"
+  },
+  {
+   "ref": "Acts 13:51–52",
+   "batch": "26-pisidia"
+  },
+  {
+   "ref": "Acts 13:44–45",
+   "batch": "26-pisidia"
+  },
+  {
+   "ref": "Acts 14:19",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:8–9",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:5–7",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:13",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:27–28",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:11–12",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:20",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:18",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:10",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:21–23",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:15–17",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:24–26",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:1–4",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 14:14",
+   "batch": "27-lystra"
+  },
+  {
+   "ref": "Acts 15:39–40",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:19–20",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:12",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:22",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:10–11",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:30–31",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:4",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:2",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:36–38",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:7–9",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:13–14",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:28–29",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:6",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:1",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 15:5",
+   "batch": "28-jcouncil"
+  },
+  {
+   "ref": "Acts 16:11",
+   "batch": "29-lydia"
+  },
+  {
+   "ref": "Acts 16:9",
+   "batch": "29-lydia"
+  },
+  {
+   "ref": "Acts 16:10",
+   "batch": "29-lydia"
+  },
+  {
+   "ref": "Acts 16:6–8",
+   "batch": "29-lydia"
+  },
+  {
+   "ref": "Acts 16:12",
+   "batch": "29-lydia"
+  },
+  {
+   "ref": "Acts 16:1–2",
+   "batch": "29-lydia"
+  },
+  {
+   "ref": "Acts 16:15",
+   "batch": "29-lydia"
+  },
+  {
+   "ref": "Acts 16:14",
+   "batch": "29-lydia"
+  },
+  {
+   "ref": "Acts 16:13",
+   "batch": "29-lydia"
+  },
+  {
+   "ref": "Acts 16:19",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 16:31–32",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 16:27",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 16:25",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 16:18",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 16:22–23",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 16:40",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 16:24",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 16:28",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 16:33–34",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 16:16–17",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 16:29–30",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 16:26",
+   "batch": "30-jailer"
+  },
+  {
+   "ref": "Acts 17:1–3",
+   "batch": "31-berea"
+  },
+  {
+   "ref": "Acts 17:13–15",
+   "batch": "31-berea"
+  },
+  {
+   "ref": "Acts 17:4",
+   "batch": "31-berea"
+  },
+  {
+   "ref": "Acts 17:12",
+   "batch": "31-berea"
+  },
+  {
+   "ref": "Acts 17:10",
+   "batch": "31-berea"
+  },
+  {
+   "ref": "Acts 17:5",
+   "batch": "31-berea"
+  },
+  {
+   "ref": "Acts 17:11",
+   "batch": "31-berea"
+  },
+  {
+   "ref": "Acts 17:6–9",
+   "batch": "31-berea"
+  },
+  {
+   "ref": "Acts 17:16–17",
+   "batch": "32-athens"
+  },
+  {
+   "ref": "Acts 17:22–23",
+   "batch": "32-athens"
+  },
+  {
+   "ref": "Acts 17:30–31",
+   "batch": "32-athens"
+  },
+  {
+   "ref": "Acts 17:18–21",
+   "batch": "32-athens"
+  },
+  {
+   "ref": "Acts 17:34",
+   "batch": "32-athens"
+  },
+  {
+   "ref": "Acts 17:27–29",
+   "batch": "32-athens"
+  },
+  {
+   "ref": "Acts 17:24–26",
+   "batch": "32-athens"
+  },
+  {
+   "ref": "Acts 17:32–33",
+   "batch": "32-athens"
+  },
+  {
+   "ref": "Acts 18:17",
+   "batch": "33-corinth"
+  },
+  {
+   "ref": "Acts 18:11",
+   "batch": "33-corinth"
+  },
+  {
+   "ref": "Acts 18:16",
+   "batch": "33-corinth"
+  },
+  {
+   "ref": "Acts 18:4–5",
+   "batch": "33-corinth"
+  },
+  {
+   "ref": "Acts 18:6",
+   "batch": "33-corinth"
+  },
+  {
+   "ref": "Acts 18:1–3",
+   "batch": "33-corinth"
+  },
+  {
+   "ref": "Acts 18:18",
+   "batch": "33-corinth"
+  },
+  {
+   "ref": "Acts 18:14–15",
+   "batch": "33-corinth"
+  },
+  {
+   "ref": "Acts 18:9–10",
+   "batch": "33-corinth"
+  },
+  {
+   "ref": "Acts 18:8",
+   "batch": "33-corinth"
+  },
+  {
+   "ref": "Acts 18:7",
+   "batch": "33-corinth"
+  },
+  {
+   "ref": "Acts 18:12–13",
+   "batch": "33-corinth"
+  },
+  {
+   "ref": "Acts 19:8–10",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 18:24–25",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:35–37",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:38–41",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:5–7",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:30–32",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 18:26",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:19–20",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:21",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:11–12",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:33–34",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:18",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:29",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:1–4",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:23–27",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 18:27–28",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:28",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 19:13–17",
+   "batch": "34-artemis"
+  },
+  {
+   "ref": "Acts 20:31–32",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 20:25",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 20:13–16",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 20:11–12",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 20:33–35",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 20:36",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 20:37–38",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 20:7–8",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 20:28–29",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 20:9",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 20:22–24",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 20:17–21",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 20:10",
+   "batch": "35-farewell"
+  },
+  {
+   "ref": "Acts 22:20–21",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:35–36",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:13–14",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:12",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 22:22–24",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:8–9",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 22:1–4",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:17–20",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:10",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:11",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:37–39",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:32–34",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 22:25–29",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 22:14–15",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:30–31",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:40",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:26",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 21:27–29",
+   "batch": "36-arrest"
+  },
+  {
+   "ref": "Acts 23:35",
+   "batch": "37-plot"
+  },
+  {
+   "ref": "Acts 23:10",
+   "batch": "37-plot"
+  },
+  {
+   "ref": "Acts 23:16–17",
+   "batch": "37-plot"
+  },
+  {
+   "ref": "Acts 23:1",
+   "batch": "37-plot"
+  },
+  {
+   "ref": "Acts 23:33",
+   "batch": "37-plot"
+  },
+  {
+   "ref": "Acts 23:31",
+   "batch": "37-plot"
+  },
+  {
+   "ref": "Acts 23:7–8",
+   "batch": "37-plot"
+  },
+  {
+   "ref": "Acts 23:6",
+   "batch": "37-plot"
+  },
+  {
+   "ref": "Acts 23:9",
+   "batch": "37-plot"
+  },
+  {
+   "ref": "Acts 23:11",
+   "batch": "37-plot"
+  },
+  {
+   "ref": "Acts 23:23–24",
+   "batch": "37-plot"
+  },
+  {
+   "ref": "Acts 23:12–13",
+   "batch": "37-plot"
+  },
+  {
+   "ref": "Acts 25:12",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 24:14–16",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 25:10–11",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 25:9",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 25:6–7",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 25:1–3",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 25:8",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 24:26",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 24:22–23",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 24:10",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 24:25",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 24:1",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 24:5",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 24:24",
+   "batch": "38-felix"
+  },
+  {
+   "ref": "Acts 26:25–27",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 25:19",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 26:16–18",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 25:13",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 26:28",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 26:22–23",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 26:29",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 25:23",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 26:30–32",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 26:1",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 26:2–3",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 26:19–21",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 26:12–15",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 26:4–8",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 25:22",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 25:26–27",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 26:24",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 26:9–11",
+   "batch": "39-agrippa"
+  },
+  {
+   "ref": "Acts 27:39–40",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:21–22",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:44",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:25–26",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:41",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:16–17",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:3–6",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:7–8",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:35",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:23–24",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:20",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:18–19",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:11–12",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:14–15",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:42–43",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:13",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:1–2",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:30–32",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:33–34",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:36–38",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:9–10",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 27:27–29",
+   "batch": "40-storm"
+  },
+  {
+   "ref": "Acts 28:7",
+   "batch": "41-malta"
+  },
+  {
+   "ref": "Acts 28:8",
+   "batch": "41-malta"
+  },
+  {
+   "ref": "Acts 28:9–10",
+   "batch": "41-malta"
+  },
+  {
+   "ref": "Acts 28:4",
+   "batch": "41-malta"
+  },
+  {
+   "ref": "Acts 28:1–2",
+   "batch": "41-malta"
+  },
+  {
+   "ref": "Acts 28:5–6",
+   "batch": "41-malta"
+  },
+  {
+   "ref": "Acts 28:3",
+   "batch": "41-malta"
+  },
+  {
+   "ref": "Acts 28:14",
+   "batch": "42-rome"
+  },
+  {
+   "ref": "Acts 28:16",
+   "batch": "42-rome"
+  },
+  {
+   "ref": "Acts 28:21–22",
+   "batch": "42-rome"
+  },
+  {
+   "ref": "Acts 28:28–29",
+   "batch": "42-rome"
+  },
+  {
+   "ref": "Acts 28:17–20",
+   "batch": "42-rome"
+  },
+  {
+   "ref": "Acts 28:25–27",
+   "batch": "42-rome"
+  },
+  {
+   "ref": "Acts 28:11–13",
+   "batch": "42-rome"
+  },
+  {
+   "ref": "Acts 28:15",
+   "batch": "42-rome"
+  },
+  {
+   "ref": "Acts 28:30–31",
+   "batch": "42-rome"
+  },
+  {
+   "ref": "Acts 28:23–24",
+   "batch": "42-rome"
+  },
+  {
+   "ref": "Philippians 2:25–28",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 1:21–24",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 4:4–7",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 1:1–2",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 3:4–8",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 3:13–14",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 4:1",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 2:5–11",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 4:21–23",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 1:3–7",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 4:2–3",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 1:3–6",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 4:11–13",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philippians 1:12–14",
+   "batch": "43-letter"
+  },
+  {
+   "ref": "Philemon 1:4–7",
+   "batch": "44-onesimus"
+  },
+  {
+   "ref": "Philemon 1:8–12",
+   "batch": "44-onesimus"
+  },
+  {
+   "ref": "Philemon 1:13–16",
+   "batch": "44-onesimus"
+  },
+  {
+   "ref": "Philemon 1:1–3",
+   "batch": "44-onesimus"
+  },
+  {
+   "ref": "Philemon 1:17–19",
+   "batch": "44-onesimus"
+  },
+  {
+   "ref": "Philemon 1:19",
+   "batch": "44-onesimus"
+  },
+  {
+   "ref": "Philemon 1:20–22",
+   "batch": "44-onesimus"
+  },
+  {
+   "ref": "Philemon 1:10–12",
+   "batch": "44-onesimus"
+  },
+  {
+   "ref": "Philemon 1:23–25",
+   "batch": "44-onesimus"
+  },
+  {
+   "ref": "2 Timothy 4:16–18",
+   "batch": "45-goodfight"
+  },
+  {
+   "ref": "2 Timothy 1:3–5",
+   "batch": "45-goodfight"
+  },
+  {
+   "ref": "2 Timothy 1:12",
+   "batch": "45-goodfight"
+  },
+  {
+   "ref": "2 Timothy 1:7–8",
+   "batch": "45-goodfight"
+  },
+  {
+   "ref": "2 Timothy 2:8–9",
+   "batch": "45-goodfight"
+  },
+  {
+   "ref": "2 Timothy 4:21–22",
+   "batch": "45-goodfight"
+  },
+  {
+   "ref": "2 Timothy 4:6–8",
+   "batch": "45-goodfight"
+  },
+  {
+   "ref": "2 Timothy 4:11",
+   "batch": "45-goodfight"
+  },
+  {
+   "ref": "2 Timothy 4:9–13",
+   "batch": "45-goodfight"
+  },
+  {
+   "ref": "Luke 21:5–6",
+   "batch": "46-fall"
+  },
+  {
+   "ref": "Luke 21:20–21",
+   "batch": "46-fall"
+  },
+  {
+   "ref": "Luke 21:22–24",
+   "batch": "46-fall"
+  },
+  {
+   "ref": "Luke 21:33",
+   "batch": "46-fall"
+  },
+  {
+   "ref": "Luke 21:28",
+   "batch": "46-fall"
+  },
+  {
+   "ref": "Revelation 1:9–11",
+   "batch": "47-lamps"
+  },
+  {
+   "ref": "Revelation 3:18–19",
+   "batch": "47-lamps"
+  },
+  {
+   "ref": "Revelation 1:12–13",
+   "batch": "47-lamps"
+  },
+  {
+   "ref": "Revelation 3:14–17",
+   "batch": "47-lamps"
+  },
+  {
+   "ref": "Revelation 2:7",
+   "batch": "47-lamps"
+  },
+  {
+   "ref": "Revelation 1:17–18",
+   "batch": "47-lamps"
+  },
+  {
+   "ref": "Revelation 2:8–11",
+   "batch": "47-lamps"
+  },
+  {
+   "ref": "Revelation 1:19–20",
+   "batch": "47-lamps"
+  },
+  {
+   "ref": "Revelation 1:14–16",
+   "batch": "47-lamps"
+  },
+  {
+   "ref": "Revelation 2:1–3",
+   "batch": "47-lamps"
+  },
+  {
+   "ref": "Revelation 2:4–5",
+   "batch": "47-lamps"
+  },
+  {
+   "ref": "Revelation 3:20–22",
+   "batch": "47-lamps"
+  },
+  {
+   "ref": "Revelation 21:5–7",
+   "batch": "48-allnew"
+  },
+  {
+   "ref": "Revelation 22:1–2",
+   "batch": "48-allnew"
+  },
+  {
+   "ref": "Revelation 22:20–21",
+   "batch": "48-allnew"
+  },
+  {
+   "ref": "Revelation 22:3–5",
+   "batch": "48-allnew"
+  },
+  {
+   "ref": "Revelation 21:22–25",
+   "batch": "48-allnew"
+  },
+  {
+   "ref": "Revelation 21:1–2",
+   "batch": "48-allnew"
+  },
+  {
+   "ref": "Revelation 21:3–4",
+   "batch": "48-allnew"
+  },
+  {
+   "ref": "Revelation 22:16–17",
+   "batch": "48-allnew"
+  },
+  {
+   "ref": "Mark 9:23–24",
+   "batch": "s-eli"
+  },
+  {
+   "ref": "Mark 9:29",
+   "batch": "s-eli"
+  },
+  {
+   "ref": "Mark 10:14–16",
+   "batch": "s-hannah"
+  },
+  {
+   "ref": "John 14:27",
+   "batch": "s-miriam"
+  },
+  {
+   "ref": "Mark 1:41",
+   "batch": "s-tobiah"
+  },
+  {
+   "ref": "John 11:25–26",
+   "batch": "s-yosef"
+  },
+  {
+   "ref": "Mark 1:27–28",
+   "batch": "t-attendant"
+  },
+  {
+   "ref": "Mark 1:25–26",
+   "batch": "t-attendant"
+  },
+  {
+   "ref": "Mark 1:23–24",
+   "batch": "t-attendant"
+  },
+  {
+   "ref": "Mark 1:21–22",
+   "batch": "t-attendant"
+  },
+  {
+   "ref": "Mark 10:46–47",
+   "batch": "t-bartimaeus"
+  },
+  {
+   "ref": "Mark 10:50–51",
+   "batch": "t-bartimaeus"
+  },
+  {
+   "ref": "Mark 10:48",
+   "batch": "t-bartimaeus"
+  },
+  {
+   "ref": "Mark 10:52",
+   "batch": "t-bartimaeus"
+  },
+  {
+   "ref": "Mark 10:49",
+   "batch": "t-bartimaeus"
+  },
+  {
+   "ref": "John 5:10–13",
+   "batch": "t-bethesda"
+  },
+  {
+   "ref": "John 5:4–5",
+   "batch": "t-bethesda"
+  },
+  {
+   "ref": "John 5:9",
+   "batch": "t-bethesda"
+  },
+  {
+   "ref": "John 5:14–15",
+   "batch": "t-bethesda"
+  },
+  {
+   "ref": "John 5:6–8",
+   "batch": "t-bethesda"
+  },
+  {
+   "ref": "John 5:1–3",
+   "batch": "t-bethesda"
+  },
+  {
+   "ref": "John 9:24–25",
+   "batch": "t-blindman"
+  },
+  {
+   "ref": "John 9:6–7",
+   "batch": "t-blindman"
+  },
+  {
+   "ref": "John 9:13–17",
+   "batch": "t-blindman"
+  },
+  {
+   "ref": "John 9:1–5",
+   "batch": "t-blindman"
+  },
+  {
+   "ref": "John 9:30–34",
+   "batch": "t-blindman"
+  },
+  {
+   "ref": "John 9:8–12",
+   "batch": "t-blindman"
+  },
+  {
+   "ref": "John 2:6–7",
+   "batch": "t-cana"
+  },
+  {
+   "ref": "John 2:8",
+   "batch": "t-cana"
+  },
+  {
+   "ref": "John 2:3–4",
+   "batch": "t-cana"
+  },
+  {
+   "ref": "John 2:1–2",
+   "batch": "t-cana"
+  },
+  {
+   "ref": "John 2:5",
+   "batch": "t-cana"
+  },
+  {
+   "ref": "John 2:9–11",
+   "batch": "t-cana"
+  },
+  {
+   "ref": "Luke 7:9–10",
+   "batch": "t-centurion"
+  },
+  {
+   "ref": "Luke 7:1–3",
+   "batch": "t-centurion"
+  },
+  {
+   "ref": "Luke 7:4–5",
+   "batch": "t-centurion"
+  },
+  {
+   "ref": "Luke 7:6",
+   "batch": "t-centurion"
+  },
+  {
+   "ref": "Luke 7:7–8",
+   "batch": "t-centurion"
+  },
+  {
+   "ref": "Mark 5:24",
+   "batch": "t-jairus"
+  },
+  {
+   "ref": "Mark 5:21",
+   "batch": "t-jairus"
+  },
+  {
+   "ref": "Mark 5:30–32",
+   "batch": "t-jairus"
+  },
+  {
+   "ref": "Mark 5:22–23",
+   "batch": "t-jairus"
+  },
+  {
+   "ref": "Mark 5:41–43",
+   "batch": "t-jairus"
+  },
+  {
+   "ref": "Mark 5:33–34",
+   "batch": "t-jairus"
+  },
+  {
+   "ref": "Mark 5:25–26",
+   "batch": "t-jairus"
+  },
+  {
+   "ref": "Mark 5:35–37",
+   "batch": "t-jairus"
+  },
+  {
+   "ref": "Mark 5:27–29",
+   "batch": "t-jairus"
+  },
+  {
+   "ref": "Mark 5:38–39",
+   "batch": "t-jairus"
+  },
+  {
+   "ref": "Mark 5:40",
+   "batch": "t-jairus"
+  },
+  {
+   "ref": "John 6:8–10",
+   "batch": "t-loaves"
+  },
+  {
+   "ref": "John 6:11",
+   "batch": "t-loaves"
+  },
+  {
+   "ref": "John 6:14",
+   "batch": "t-loaves"
+  },
+  {
+   "ref": "John 6:12–13",
+   "batch": "t-loaves"
+  },
+  {
+   "ref": "John 6:15",
+   "batch": "t-loaves"
+  },
+  {
+   "ref": "John 6:3–7",
+   "batch": "t-loaves"
+  },
+  {
+   "ref": "John 6:1–2",
+   "batch": "t-loaves"
+  },
+  {
+   "ref": "John 20:11–15",
+   "batch": "t-magdalene"
+  },
+  {
+   "ref": "John 20:16",
+   "batch": "t-magdalene"
+  },
+  {
+   "ref": "John 20:17–18",
+   "batch": "t-magdalene"
+  },
+  {
+   "ref": "Luke 8:1–2",
+   "batch": "t-magdalene"
+  },
+  {
+   "ref": "Luke 8:3",
+   "batch": "t-magdalene"
+  },
+  {
+   "ref": "John 11:44–45",
+   "batch": "t-martha"
+  },
+  {
+   "ref": "John 11:43",
+   "batch": "t-martha"
+  },
+  {
+   "ref": "John 11:41–42",
+   "batch": "t-martha"
+  },
+  {
+   "ref": "John 11:32–34",
+   "batch": "t-martha"
+  },
+  {
+   "ref": "John 11:21–22",
+   "batch": "t-martha"
+  },
+  {
+   "ref": "John 11:38–40",
+   "batch": "t-martha"
+  },
+  {
+   "ref": "John 11:23–27",
+   "batch": "t-martha"
+  },
+  {
+   "ref": "John 11:35–36",
+   "batch": "t-martha"
+  },
+  {
+   "ref": "John 11:17–20",
+   "batch": "t-martha"
+  },
+  {
+   "ref": "Mark 1:31",
+   "batch": "t-motherinlaw"
+  },
+  {
+   "ref": "Mark 1:32–33",
+   "batch": "t-motherinlaw"
+  },
+  {
+   "ref": "Mark 1:34",
+   "batch": "t-motherinlaw"
+  },
+  {
+   "ref": "Mark 1:29–30",
+   "batch": "t-motherinlaw"
+  },
+  {
+   "ref": "Mark 14:22",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "John 13:5",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "John 13:30",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "John 18:3–8",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "Mark 14:32–36",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "Mark 14:23–25",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "John 13:34–35",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "John 13:8–10",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "Mark 14:20–21",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "Mark 14:12–14",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "Mark 14:26–31",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "John 13:6–7",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "John 18:10–11",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "John 13:26–28",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "Mark 14:15–16",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "Mark 14:17–19",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "Mark 14:37–38",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "John 13:21–25",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "John 13:3–4",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "John 13:12–15",
+   "batch": "t-peter"
+  },
+  {
+   "ref": "John 4:29–30",
+   "batch": "t-samaritan"
+  },
+  {
+   "ref": "John 4:27–28",
+   "batch": "t-samaritan"
+  },
+  {
+   "ref": "John 4:19",
+   "batch": "t-samaritan"
+  },
+  {
+   "ref": "John 4:25–26",
+   "batch": "t-samaritan"
+  },
+  {
+   "ref": "John 4:16–18",
+   "batch": "t-samaritan"
+  },
+  {
+   "ref": "John 4:10–15",
+   "batch": "t-samaritan"
+  },
+  {
+   "ref": "John 4:39–42",
+   "batch": "t-samaritan"
+  },
+  {
+   "ref": "John 4:20–24",
+   "batch": "t-samaritan"
+  },
+  {
+   "ref": "John 4:5–6",
+   "batch": "t-samaritan"
+  },
+  {
+   "ref": "John 4:7–9",
+   "batch": "t-samaritan"
+  },
+  {
+   "ref": "Luke 19:7",
+   "batch": "t-zacchaeus"
+  },
+  {
+   "ref": "Luke 19:1–3",
+   "batch": "t-zacchaeus"
+  },
+  {
+   "ref": "Luke 19:4",
+   "batch": "t-zacchaeus"
+  },
+  {
+   "ref": "Luke 19:5–6",
+   "batch": "t-zacchaeus"
+  },
+  {
+   "ref": "Luke 19:8",
+   "batch": "t-zacchaeus"
+  },
+  {
+   "ref": "Luke 19:9–10",
+   "batch": "t-zacchaeus"
+  }
+ ]
+}

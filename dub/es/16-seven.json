@@ -1,0 +1,54 @@
+[
+ {
+  "id": "d-0630711a",
+  "voice": "M",
+  "text": "Me dicen que eres escriba, y que contaste a las viudas del fondo de la fila. Necesito a alguien que sepa llevar listas, y que sepa por qué importan. ¿Me ayudarás?",
+  "kind": "drama",
+  "speaker": "Esteban"
+ },
+ {
+  "id": "d-167e7bd4",
+  "voice": "N",
+  "text": "Desde ahora hay personas en esta ciudad que te necesitan. Búscalas en el mapa.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-26b06c42",
+  "voice": "M",
+  "text": "Doce panes hoy, nada más. Empieza por el frente. Las del fondo son las de habla griega; llegaron tarde de la ciudad baja, y pueden esperar.",
+  "kind": "drama",
+  "speaker": "Tu ayudante"
+ },
+ {
+  "id": "d-3f2b4bc3",
+  "voice": "N",
+  "text": "Los creyentes ya se cuentan por miles. Cada tarde las viudas vienen a este patio por pan. Hoy el hombre que suele ayudar está enfermo, y te han pedido que ocupes su lugar.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4df12eeb",
+  "voice": "F",
+  "text": "Ahora solo yo.",
+  "kind": "drama",
+  "speaker": "Miriam de Alejandría"
+ },
+ {
+  "id": "d-5a981c81",
+  "voice": "N",
+  "text": "Has llevado este patio durante una tarde. Las viudas de la Dispersión llevan meses de pie al fondo, cada día.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-7a5fd60f",
+  "voice": "M",
+  "text": "Me dicen que sabes leer y escribir, y que contaste a las viudas del fondo de la fila. Necesito a alguien que sepa llevar listas, y que sepa por qué importan. ¿Me ayudarás?",
+  "kind": "drama",
+  "speaker": "Esteban"
+ },
+ {
+  "id": "d-fe14d5e9",
+  "voice": "N",
+  "text": "Doce panes, ocho viudas. ¿Por dónde empiezas?",
+  "kind": "prompt"
+ }
+]

@@ -1,0 +1,50 @@
+[
+ {
+  "id": "d-25b804c4",
+  "voice": "N",
+  "text": "Conoces la Ley tan bien como cualquiera aquí. ¿Es esto trabajo?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-2fe9249d",
+  "voice": "N",
+  "text": "Se van sin ti. Por la puerta ves a hombres con los colores de Herodes esperándolos. Te quedas en el banco, solo en tu lado de la sala.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-2fe9249d-f",
+  "voice": "W",
+  "text": "Se van sin ti. Por la puerta ves a hombres con los colores de Herodes esperándolos. Te quedas en el banco, sola en tu lado de la sala.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-5f2f7af8",
+  "voice": "N",
+  "text": "Afuera ya esperan dos hombres de la casa de Herodes. Oyes la palabra “destruir”. Viniste a escribir lo que vieras. No esperabas ver esto.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-755f47eb",
+  "voice": "N",
+  "text": "La respuesta no es difícil. Nadie la da. ¿Por qué callas?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-b2b146ce",
+  "voice": "N",
+  "text": "Se levantan y salen uno tras otro. Tu lugar siempre ha estado con ellos.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-d70168ab",
+  "voice": "N",
+  "text": "En Galilea el grano madura en primavera. La Ley permitía al viajero hambriento arrancar espigas con la mano del campo de su vecino (Deuteronomio 23:25). Pero hoy es sábado, y los fariseos consideran que arrancar espigas es segar, una forma de trabajo.",
+  "kind": "history"
+ },
+ {
+  "id": "d-ff21471a",
+  "voice": "N",
+  "text": "Las sinagogas del siglo I halladas en Magdala y Gamla tenían bancos escalonados a lo largo de las paredes, frente a un espacio central donde se leía la Escritura. La sinagoga de piedra caliza blanca que hoy se ve en Capernaúm se construyó siglos después, sobre cimientos más antiguos de basalto.",
+  "kind": "history"
+ }
+]

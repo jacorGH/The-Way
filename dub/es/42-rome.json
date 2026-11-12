@@ -1,0 +1,44 @@
+[
+ {
+  "id": "d-5456b142",
+  "voice": "N",
+  "text": "Lucas lo toma con las dos manos, como una vez viste a un sacerdote alzar la Ley. “Lo cuidaré”, dice. Sabes que lo hará.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-6d29c470",
+  "voice": "N",
+  "text": "Tu rollo está lleno. Años de él: un techo en Capernaúm, un sepulcro en un huerto, una tormenta frente a Creta. ¿Qué harás con él?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-7c9aa66d",
+  "voice": "N",
+  "text": "Algunos conocen a Pablo solo por una carta que les escribió una vez, antes de haber visto su ciudad. Uno de ellos puede recitarla. Han caminado sesenta kilómetros para encontrarse con un hombre encadenado.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ab83497e",
+  "voice": "N",
+  "text": "Cortas una hoja nueva y afilas tu caña. La historia no ha terminado. Nunca terminó.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-bc3f552c",
+  "voice": "N",
+  "text": "Se apiñan en el cuarto alquilado para oírlo, romanos y judíos y griegos, esclavos y libertos, y el soldado de la cadena también escucha.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-c8161776",
+  "voice": "N",
+  "text": "Aquí termina el relato de Lucas: no con el juicio de Pablo ni con su muerte, sino con la palabra que sale “sin impedimento”, la última palabra del libro.",
+  "kind": "history"
+ },
+ {
+  "id": "d-caa3e082",
+  "voice": "N",
+  "text": "“Así es menester que testifiques también en Roma.” ¿Cómo llegaría un preso a Roma? (Hechos 23:11)\n\n“Y así vinimos a Roma”: como preso, por tormenta y naufragio, a costa del emperador. (Hechos 28:14)",
+  "kind": "answer"
+ }
+]

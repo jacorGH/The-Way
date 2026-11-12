@@ -1,0 +1,62 @@
+[
+ {
+  "id": "d-04522a7f",
+  "voice": "N",
+  "text": "¿Dónde te pones?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-17f4eb31",
+  "voice": "N",
+  "text": "Son creyentes, y fariseos, y dicen exactamente lo que tú habrías dicho hace unos años. Algo de lo que dicen todavía lo crees.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-2b468287",
+  "voice": "N",
+  "text": "Los creyentes griegos se miran unos a otros. Algunos llevan años bautizados.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4173f225",
+  "voice": "N",
+  "text": "Uno de los fariseos creyentes te mira al salir. Se le ve como tú te sientes: no derrotado, pero sin saber qué hacer con lo que ha oído.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4173f225-f",
+  "voice": "W",
+  "text": "Uno de los fariseos creyentes te mira al salir. Se le ve como tú te sientes: no derrotada, pero sin saber qué hacer con lo que ha oído.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-68c2ca47",
+  "voice": "N",
+  "text": "Bernabé, que una vez tomó a Saulo del brazo y lo llevó ante los apóstoles cuando nadie más quiso, se aleja con su primo hacia el puerto. Pablo lo ve irse, y no lo llama.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d569d29a",
+  "voice": "N",
+  "text": "Dos maestros han bajado de Judea. Conoces a los de su clase: cuidadosos, instruidos, piadosos. Te formaste en la misma escuela.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d8c4d817",
+  "voice": "W",
+  "text": "Son creyentes, y fariseos, y hablan exactamente como hablarían los amigos de tu tío. Algo de lo que dicen todavía lo crees.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ecadaf67",
+  "voice": "W",
+  "text": "Dos maestros han bajado de Judea. Conoces a los de su clase por la mesa de tu tío: cuidadosos, instruidos, piadosos.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-fee72386",
+  "voice": "N",
+  "text": "Jacobo cita al profeta Amós: Dios reedificará el tabernáculo caído de David, para que los gentiles sobre los cuales es invocado su nombre busquen al Señor (Amós 9:11–12).",
+  "kind": "history"
+ }
+]

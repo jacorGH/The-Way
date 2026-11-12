@@ -1,0 +1,50 @@
+[
+ {
+  "id": "d-0d604412",
+  "voice": "N",
+  "text": "Nadie respira.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-199181d9",
+  "voice": "N",
+  "text": "Estás a mitad de camino hacia él cuando Pablo sacude la mano una vez, con fuerza.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-1ab2f373",
+  "voice": "N",
+  "text": "Hace una hora era un homicida. Ahora es un dios. Pablo vuelve tranquilamente a recoger ramas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4eb9042a",
+  "voice": "W",
+  "text": "La esposa de Publio te deja ayudarla a cuidar al anciano: agua, paños frescos, lo que aprendiste cuidando enfermos en Jerusalén. Arde de fiebre.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-a9149540",
+  "voice": "N",
+  "text": "Te tiembla la voz, pero se oye: “Señor Jesús.” Pablo te mira, casi divertido.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-aebd0552",
+  "voice": "N",
+  "text": "Se quedan tres meses, hasta que vuelve a abrirse la temporada de navegación. Cuando se van, media isla baja al puerto con pan, aceite y mantos para el viaje.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f551d996",
+  "voice": "N",
+  "text": "No hablan griego, ni arameo, ni latín. Hablan con las manos: una manta, una taza de algo caliente, un lugar más cerca del fuego. Hacía mucho que nadie era tan bondadoso contigo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f9ff1304",
+  "voice": "N",
+  "text": "La serpiente le cuelga de la mano. Todos se han quedado inmóviles. ¿Qué haces?",
+  "kind": "prompt"
+ }
+]

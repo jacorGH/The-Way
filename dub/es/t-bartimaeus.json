@@ -1,0 +1,34 @@
+[
+ {
+  "id": "d-21805294",
+  "voice": "N",
+  "text": "Junto a la puerta de Jericó, en el camino de los peregrinos a Jerusalén, un hombre de ojos brillantes e inquietos le cuenta a todo el que se detiene cómo antes se sentaba justo aquí a mendigar.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-5c7236cb",
+  "voice": "N",
+  "text": "Mira el camino hacia Jerusalén. “Arrojé mi capa cuando me llamó”, dice. “Nunca volví a buscarla.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-7640a516",
+  "voice": "M",
+  "text": "Me preguntó qué quería. No lo que merecía. Lo que quería.",
+  "kind": "drama",
+  "speaker": "Bartimeo, hijo de Timeo"
+ },
+ {
+  "id": "d-ea06da92",
+  "voice": "M",
+  "text": "Me dijeron que me callara. Grité más fuerte.",
+  "kind": "drama",
+  "speaker": "Bartimeo, hijo de Timeo"
+ },
+ {
+  "id": "d-fb6e23ca",
+  "voice": "N",
+  "text": "¿Qué le preguntas a Bartimeo?",
+  "kind": "prompt"
+ }
+]

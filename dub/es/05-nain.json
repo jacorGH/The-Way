@@ -1,0 +1,44 @@
+[
+ {
+  "id": "d-1b66832c",
+  "voice": "N",
+  "text": "El temor se apodera de todos. La multitud está gritando. ¿Qué dices tú?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-1f261d48",
+  "voice": "N",
+  "text": "Viniste al norte a escribir lo que vieras. Esta noche, tu informe para Nicodemo será el más difícil de escribir hasta ahora.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-44ff1b9c",
+  "voice": "N",
+  "text": "Por lo general se sepultaba el mismo día de la muerte. Aun la familia más pobre contrataba flautistas y una plañidera (como se registró más tarde en la Misná, Ketubot 4:4). Una viuda que perdía a su único hijo perdía su sustento y el futuro de su familia.",
+  "kind": "history"
+ },
+ {
+  "id": "d-4ff276c0",
+  "voice": "N",
+  "text": "Te sabes de memoria las leyes de pureza. Acaba de poner la mano sobre el féretro.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-78888669",
+  "voice": "N",
+  "text": "Según la Ley de Moisés, tocar un muerto, o aquello en que se llevaba al muerto, dejaba a una persona impura por siete días (Números 19:11–16).",
+  "kind": "history"
+ },
+ {
+  "id": "d-d31ebcf5",
+  "voice": "W",
+  "text": "Viniste al norte a escribir lo que vieras. Esta noche, tu carta a tu tío será la más difícil de escribir hasta ahora.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ec29e138",
+  "voice": "N",
+  "text": "Naín estaba en la ladera del monte de Moré. Desde su puerta se veía, al otro lado del valle de Jezreel, el monte Tabor. Del otro lado de este mismo monte estaba Sunem, donde Eliseo resucitó una vez al hijo de una mujer (2 Reyes 4).",
+  "kind": "history"
+ }
+]

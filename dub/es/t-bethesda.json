@@ -1,0 +1,26 @@
+[
+ {
+  "id": "d-5d45b68f",
+  "voice": "N",
+  "text": "“Treinta y ocho años”, dice, y se aleja por el atrio, despacio, por su propio pie.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-8815893b",
+  "voice": "N",
+  "text": "Los manuscritos más antiguos de Juan no tienen el final del versículo 3 ni el versículo 4, sobre el ángel que agitaba el agua. La WEB los incluye.",
+  "kind": "history"
+ },
+ {
+  "id": "d-8df5495a",
+  "voice": "N",
+  "text": "¿Qué le preguntas al hombre sanado en Betesda?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-c3b52bf8",
+  "voice": "N",
+  "text": "En los atrios del Templo te señalan a un hombre delgado. Dicen que pasó casi toda su vida tendido junto al estanque de Betesda.",
+  "kind": "drama"
+ }
+]

@@ -1,0 +1,56 @@
+[
+ {
+  "id": "d-225f542e",
+  "voice": "N",
+  "text": "Pedro se detiene un momento en la puerta. Tú también.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-257d8764",
+  "voice": "N",
+  "text": "Estás adentro antes de haberlo decidido.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-379c8f5c",
+  "voice": "N",
+  "text": "Los hermanos de Jope se quedan mirando. Tú también. Es igual que en Pentecostés: el mismo don, la misma alabanza en otras lenguas, sobre romanos.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-69cba236",
+  "voice": "N",
+  "text": "Mientras tanto, unos cincuenta kilómetros costa arriba, en Cesarea, la ciudad más romana de la tierra.",
+  "kind": "history"
+ },
+ {
+  "id": "d-75de5f1a",
+  "voice": "N",
+  "text": "Eres tú quien abre la puerta. Dos sirvientes de una casa y un soldado de Roma están en la calle de una casa judía, preguntando por Pedro por su nombre.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-903c8dce",
+  "voice": "N",
+  "text": "Mediodía en la casa del curtidor. Estás ayudando a la esposa de Simón con el pan cuando Pedro sube por la escalera de afuera a la azotea a orar.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-99de07d4",
+  "voice": "N",
+  "text": "Les cuenta todo por orden: la azotea, el lienzo, los hombres en la puerta, la casa de Cesarea.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-9bc6687b",
+  "voice": "N",
+  "text": "“¿Por qué come con cobradores de impuestos y pecadores?” (Marcos 2:16)\n\nDios no hace acepción de personas. Lo que Dios limpió, no lo llames tú común. (Hechos 10:15, 34)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-db894686",
+  "voice": "N",
+  "text": "La entrada está pintada de rojo y oro. Más allá, el suelo es un mosaico de una clase que solo has oído describir. Nunca en tu vida has cruzado el umbral de un gentil.",
+  "kind": "drama"
+ }
+]

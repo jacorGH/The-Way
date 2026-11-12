@@ -1,0 +1,27 @@
+[
+ {
+  "id": "d-20e4ed28",
+  "voice": "N",
+  "text": "Un hombre se ríe en el patio, una risa grande y llena de vida. Marta lo mira. “Es mi hermano”, dice, y vuelve a su trabajo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-5b553984",
+  "voice": "F",
+  "text": "Cuatro días. Le dije exactamente lo que pensaba.",
+  "kind": "drama",
+  "speaker": "Marta de Betania"
+ },
+ {
+  "id": "d-6149d63a",
+  "voice": "N",
+  "text": "Betania está llena de gente que ha venido a ver a Lázaro, el hombre que estaba muerto. Su hermana Marta los atiende a todos, y habla contigo mientras trabaja.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-cceffd9c",
+  "voice": "N",
+  "text": "¿Qué le preguntas a Marta de Betania?",
+  "kind": "prompt"
+ }
+]

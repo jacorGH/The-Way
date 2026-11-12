@@ -17845,6 +17845,528 @@
 "role": "both",
 "from": "code",
 "voice": "N"
+},
+{
+"id": "d-059e96f0",
+"kind": "drama",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "",
+"text": "In Jericho, a short man in a fine mantle is handing out coins to beggars at the gate, and counting every one aloud so that the whole street can hear. People say he used to be the richest tax collector in the city.",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-35435a6b",
+"kind": "history",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "",
+"text": "Jericho was rich: its balsam groves and date palms were famous, and its customs post sat on the road from the Jordan fords to Jerusalem.",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-dac404c7",
+"kind": "prompt",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "",
+"text": "What do you ask Zacchaeus of Jericho?",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-87bf79c7",
+"kind": "option",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "",
+"text": "Is it true you climbed a tree?",
+"role": "both"
+},
+{
+"id": "d-816a9354",
+"kind": "option",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "",
+"text": "What did the crowd say?",
+"role": "both"
+},
+{
+"id": "s-WEB-5f717037",
+"kind": "scripture",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "Luke 19:7",
+"text": "When they saw it, they all murmured, saying, “He has gone in to lodge with a man who is a sinner.”",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-eef3d5b5",
+"kind": "drama",
+"ep": "t:zacchaeus",
+"speaker": "Zacchaeus of Jericho",
+"ref": "",
+"text": "They were right. I was a sinner. He came to my house anyway. He came to my house because of it.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-fd7ec085",
+"kind": "observe",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "",
+"text": "The crowd murmured that he had gone to lodge with a sinner (Luke 19:7).",
+"role": "both"
+},
+{
+"id": "d-6dc9f2be",
+"kind": "drama",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "",
+"text": "He drops another coin into a beggar’s bowl, then a second one, and laughs. “He came to seek the lost,” he says. “I was very lost. Write that down.”",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-9f063af5",
+"kind": "ui",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "",
+"text": "New in your Discoveries",
+"role": "scribe"
+},
+{
+"id": "s-WEB-0647b8d2",
+"kind": "scripture",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "Luke 19:1–3",
+"text": "He entered and was passing through Jericho. There was a man named Zacchaeus. He was a chief tax collector, and he was rich. He was trying to see who Jesus was, and couldn’t because of the crowd, because he was short.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-416cdf30",
+"kind": "scripture",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "Luke 19:4",
+"text": "He ran on ahead, and climbed up into a sycamore tree to see him, for he was to pass that way.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-31c3ec37",
+"kind": "scripture",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "Luke 19:5–6",
+"text": "When Jesus came to the place, he looked up and saw him, and said to him, “Zacchaeus, hurry and come down, for today I must stay at your house.” He hurried, came down, and received him joyfully.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-e419f299",
+"kind": "drama",
+"ep": "t:zacchaeus",
+"speaker": "Zacchaeus of Jericho",
+"ref": "",
+"text": "A chief tax collector, up a tree like a boy. I did not care who saw. And he called me by my name.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-f02a458e",
+"kind": "observe",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "",
+"text": "Zacchaeus climbed a sycamore tree to see Jesus, and Jesus called him by name: “Zacchaeus, hurry and come down, for today I must stay at your house” (Luke 19:4–5).",
+"role": "both"
+},
+{
+"id": "s-WEB-f95b95c0",
+"kind": "scripture",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "Luke 19:8",
+"text": "Zacchaeus stood and said to the Lord, “Behold, Lord, half of my goods I give to the poor. If I have wrongfully exacted anything of anyone, I restore four times as much.”",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-2b922bef",
+"kind": "scripture",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "Luke 19:9–10",
+"text": "Jesus said to him, “Today, salvation has come to this house, because he also is a son of Abraham. For the Son of Man came to seek and to save that which was lost.”",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-2c69b8bc",
+"kind": "drama",
+"ep": "t:zacchaeus",
+"speaker": "Zacchaeus of Jericho",
+"ref": "",
+"text": "Four times as much. I am still paying it back. It is the best money I ever spent.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-5e27b752",
+"kind": "observe",
+"ep": "t:zacchaeus",
+"speaker": "",
+"ref": "",
+"text": "“Today, salvation has come to this house… For the Son of Man came to seek and to save that which was lost” (Luke 19:9–10).",
+"role": "both"
+},
+{
+"id": "d-33264b14",
+"kind": "drama",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "",
+"text": "An old man is sweeping the steps of the synagogue in Capernaum, the same black basalt steps you once watched a crowd spill down. He pats the wall as he works. “A Roman paid for every stone of this,” he says. “Ask me how I feel about that.”",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-2d8bebe4",
+"kind": "prompt",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "",
+"text": "What do you ask an elder of the Capernaum synagogue?",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-672d9054",
+"kind": "option",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "",
+"text": "Why did you go to Jesus for a Roman?",
+"role": "both"
+},
+{
+"id": "d-9a68dddc",
+"kind": "option",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "",
+"text": "What did the centurion say?",
+"role": "both"
+},
+{
+"id": "d-808fb4fc",
+"kind": "option",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "",
+"text": "What did Jesus say?",
+"role": "both"
+},
+{
+"id": "s-WEB-327aed0d",
+"kind": "scripture",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "Luke 7:9–10",
+"text": "When Jesus heard these things, he marveled at him, and turned and said to the multitude who followed him, “I tell you, I have not found such great faith, no, not in Israel.” Those who were sent, returning to the house, found that the servant who had been sick was well.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-d25a7785",
+"kind": "drama",
+"ep": "t:centurion",
+"speaker": "An elder of the Capernaum synagogue",
+"ref": "",
+"text": "“Not in Israel.” He said it with all of us standing there, the elders of Israel. And he was right.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-21e9dd75",
+"kind": "observe",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "",
+"text": "“I have not found such great faith, no, not in Israel” (Luke 7:9).",
+"role": "both"
+},
+{
+"id": "d-67cca8b1",
+"kind": "drama",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "",
+"text": "He goes back to his sweeping. “A Roman, with more faith than the elders,” he says, without looking up. “He told us so to our faces. It was the kindest thing anyone ever said to me.”",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "s-WEB-320c690d",
+"kind": "scripture",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "Luke 7:1–3",
+"text": "After he had finished speaking in the hearing of the people, he entered into Capernaum. A certain centurion’s servant, who was dear to him, was sick and at the point of death. When he heard about Jesus, he sent to him elders of the Jews, asking him to come and save his servant.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-6626b0d9",
+"kind": "scripture",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "Luke 7:4–5",
+"text": "When they came to Jesus, they begged him earnestly, saying, “He is worthy for you to do this for him, for he loves our nation, and he built our synagogue for us.”",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-45b43f4b",
+"kind": "drama",
+"ep": "t:centurion",
+"speaker": "An elder of the Capernaum synagogue",
+"ref": "",
+"text": "I begged a Jewish teacher to help a Roman officer. My grandfather would not have believed it. But that centurion loved this town, and the boy was dying.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-3dedfe44",
+"kind": "observe",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "",
+"text": "Elders of the Jews begged Jesus to help a centurion, saying, “he loves our nation, and he built our synagogue for us” (Luke 7:4–5).",
+"role": "both"
+},
+{
+"id": "s-WEB-059d16fc",
+"kind": "scripture",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "Luke 7:6",
+"text": "Jesus went with them. When he was now not far from the house, the centurion sent friends to him, saying to him, “Lord, don’t trouble yourself, for I am not worthy for you to come under my roof.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-6e04f334",
+"kind": "scripture",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "Luke 7:7–8",
+"text": "Therefore I didn’t even think myself worthy to come to you; but say the word, and my servant will be healed. For I also am a man placed under authority, having under myself soldiers. I tell this one, ‘Go!’ and he goes; and to another, ‘Come!’ and he comes; and to my servant, ‘Do this,’ and he does it.”",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-f4a212af",
+"kind": "drama",
+"ep": "t:centurion",
+"speaker": "An elder of the Capernaum synagogue",
+"ref": "",
+"text": "We said he was worthy. He said he was not. I have thought about that for a long time.",
+"role": "both",
+"voice": "M"
+},
+{
+"id": "d-7407222a",
+"kind": "observe",
+"ep": "t:centurion",
+"speaker": "",
+"ref": "",
+"text": "The centurion sent word: “I am not worthy for you to come under my roof… but say the word, and my servant will be healed” (Luke 7:6–7).",
+"role": "both"
+},
+{
+"id": "d-3f95528d",
+"kind": "drama",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "",
+"text": "Magdala smells of salt fish and lake wind. In a courtyard near the shore, Mary Magdalene is mending a net with her sister-in-law. She looks up when you come in, and smiles as if she has been expecting you.",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-8a184ba7",
+"kind": "history",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "",
+"text": "After the resurrection, Matthew says, the disciples went back to Galilee (Matthew 28:16).",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-60baf2ae",
+"kind": "prompt",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "",
+"text": "What do you ask Mary of Magdala?",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "d-15ec18de",
+"kind": "option",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "",
+"text": "They say you were very ill once.",
+"role": "both"
+},
+{
+"id": "d-bf8eb59b",
+"kind": "option",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "",
+"text": "What was it like to follow him?",
+"role": "both"
+},
+{
+"id": "d-2f5a76d3",
+"kind": "option",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "",
+"text": "Tell me about the garden.",
+"role": "both"
+},
+{
+"id": "s-WEB-dffa2f3f",
+"kind": "scripture",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "John 20:11–15",
+"text": "But Mary was standing outside at the tomb weeping. So, as she wept, she stooped and looked into the tomb, and she saw two angels in white sitting, one at the head, and one at the feet, where the body of Jesus had lain. They told her, “Woman, why are you weeping?” She said to them, “Because they have taken away my Lord, and I don’t know where they have laid him.” When she had said this, she turned around and saw Jesus standing, and didn’t know that it was Jesus. Jesus said to her, “Woman, why are you weeping? Who are you looking for?” She, supposing him to be the gardener, said to him, “Sir, if you have carried him away, tell me where you have laid him, and I will take him away.”",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-a2bac63a",
+"kind": "scripture",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "John 20:16",
+"text": "Jesus said to her, “Mary.” She turned and said to him, “Rhabbouni!” which is to say, “Teacher!”",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "s-WEB-407d9279",
+"kind": "scripture",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "John 20:17–18",
+"text": "Jesus said to her, “Don’t touch me, for I haven’t yet ascended to my Father; but go to my brothers, and tell them, ‘I am ascending to my Father and your Father, to my God and your God.’” Mary Magdalene came and told the disciples that she had seen the Lord, and that he had said these things to her.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-9abbaf8d",
+"kind": "drama",
+"ep": "t:magdalene",
+"speaker": "Mary of Magdala",
+"ref": "",
+"text": "I thought he was the gardener. Then he said my name, the way he always said it. You know a voice that has freed you.",
+"role": "both",
+"voice": "F"
+},
+{
+"id": "d-1e7f747f",
+"kind": "observe",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "",
+"text": "Jesus said to her, “Mary.” She turned and said to him, “Rabboni!” (John 20:16). She went and told the disciples, “I have seen the Lord!” (John 20:18).",
+"role": "both"
+},
+{
+"id": "d-fb7a5280",
+"kind": "drama",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "",
+"text": "She ties off the net and holds it up to the light. “They will say a woman’s word is worth nothing in court,” she says. “I was not in court. I was in the garden. Write it down anyway.”",
+"role": "both",
+"voice": "N"
+},
+{
+"id": "s-WEB-8a417a31",
+"kind": "scripture",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "Luke 8:1–2",
+"text": "Soon afterwards, he went about through cities and villages, preaching and bringing the good news of God’s Kingdom. With him were the twelve, and certain women who had been healed of evil spirits and infirmities: Mary who was called Magdalene, from whom seven demons had gone out;",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-e9fc8a01",
+"kind": "drama",
+"ep": "t:magdalene",
+"speaker": "Mary of Magdala",
+"ref": "",
+"text": "Seven. I do not talk about those years. I talk about the day they left.",
+"role": "both",
+"voice": "F"
+},
+{
+"id": "d-9c447a3b",
+"kind": "observe",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "",
+"text": "Mary who was called Magdalene, “from whom seven demons had gone out” (Luke 8:2).",
+"role": "both"
+},
+{
+"id": "s-WEB-f0fe08fa",
+"kind": "scripture",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "Luke 8:3",
+"text": "and Joanna, the wife of Chuzas, Herod’s steward; Susanna; and many others who served them from their possessions.",
+"role": "both",
+"voice": "S"
+},
+{
+"id": "d-f53f0764",
+"kind": "drama",
+"ep": "t:magdalene",
+"speaker": "Mary of Magdala",
+"ref": "",
+"text": "We bought the bread and mended the cloaks and listened to everything. The Twelve preached. We fed the preachers. Some of us paid for it.",
+"role": "both",
+"voice": "F"
+},
+{
+"id": "d-4390afe4",
+"kind": "observe",
+"ep": "t:magdalene",
+"speaker": "",
+"ref": "",
+"text": "Women followed Jesus and “served them from their possessions” (Luke 8:3).",
+"role": "both"
 }
 ],
 "data": [

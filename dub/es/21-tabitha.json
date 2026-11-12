@@ -1,0 +1,63 @@
+[
+ {
+  "id": "d-48cbf38b",
+  "voice": "N",
+  "text": "Después de la conversión de Saulo, las iglesias por toda Judea, Galilea y Samaria tuvieron paz por un tiempo (Hechos 9:31).",
+  "kind": "history"
+ },
+ {
+  "id": "d-69dd82e1",
+  "voice": "N",
+  "text": "Una tras otra muestran lo que ella hizo: el abrigo de un niño, un manto, una túnica ensanchada para una mujer que esperaba un hijo. Todas están gastadas por el uso.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-6b419645",
+  "voice": "N",
+  "text": "Los curtidores trabajaban las pieles de animales muertos. El trabajo olía mal y era ritualmente impuro, y las curtidurías se mantenían lejos de donde vivía la gente. La de Simón estaba junto al mar.",
+  "kind": "history"
+ },
+ {
+  "id": "d-6e4b449b",
+  "voice": "N",
+  "text": "Una viuda te tiende un abrigo sin decir palabra.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-b0c71847",
+  "voice": "N",
+  "text": "Esperas en la escalera de afuera con las viudas. Nadie dice nada. Por la persiana oyes a un hombre orando.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-bdab1c85",
+  "voice": "N",
+  "text": "La han lavado y la han puesto en el aposento alto. Las viudas de Jope se sientan a su alrededor, y ninguna quiere irse.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-de05a0ac",
+  "voice": "F",
+  "text": "Tenía un telar y dos buenas manos, y no guardaba ninguno de los dos para sí. Cuando murió mi esposo, ella llegó a mi puerta antes que las plañideras.",
+  "kind": "drama",
+  "speaker": "Una viuda"
+ },
+ {
+  "id": "d-f7386bc5",
+  "voice": "N",
+  "text": "Esperas en la puerta hasta que cambia la luz. Entonces los ves en el camino de Lida: dos hombres de Jope, y un pescador corpulento caminando entre ellos.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-fa55f5eb",
+  "voice": "N",
+  "text": "Bajas a la costa con cartas para los creyentes de Jope. Los encuentras de luto.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-fb9763ae",
+  "voice": "N",
+  "text": "La casa huele a cal y a pieles. Pedro no parece notarlo. Tú notas que no lo nota.",
+  "kind": "drama"
+ }
+]

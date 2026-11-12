@@ -1,0 +1,27 @@
+[
+ {
+  "id": "d-5535f84c",
+  "voice": "M",
+  "text": "Le he entregado el rollo a cien maestros. Te dicen lo que dijeron otros maestros. Él no.",
+  "kind": "drama",
+  "speaker": "El ayudante de la sinagoga"
+ },
+ {
+  "id": "d-9aa29a00",
+  "voice": "N",
+  "text": "Vuelve a su escoba, y luego se detiene. “Hazte la pregunta que todos nos hicimos”, dice. “¿Qué es esto?”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-9b937dae",
+  "voice": "N",
+  "text": "El anciano que guarda los rollos en la sinagoga de Capernaúm está barriendo la sala. Recuerda el primer sábado en que Jesús habló aquí.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-e00cea8b",
+  "voice": "N",
+  "text": "¿Qué le preguntas al ayudante de la sinagoga?",
+  "kind": "prompt"
+ }
+]

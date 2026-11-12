@@ -822,6 +822,19 @@ window.TW = window.TW || {};
       const where = new URL(TW.Dubs.url(lang, ids[0]), location.href).href;
       status.textContent = found + ' of ' + ids.length + ' spoken lines in this episode have recordings. The game looks for files like: ' + where + (found ? '' : '  (None found: check that the MP3s are in an audio/' + lang + ' folder at the top of the game, next to index.html.)');
     });
+    // Scripture in the installed Bible version, built from dub/scripture-refs.json (needs the published copy)
+    const scr = el('button', 'btn small', 'Scripture batch for ' + TW.Bible.current()); scr.type = 'button';
+    scr.addEventListener('click', async () => {
+      try {
+        const r = await fetch('dub/scripture-refs.json', { cache: 'no-store' });
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        const list = (await r.json()).refs || [];
+        const seen = new Set(), items = [];
+        list.forEach((x) => { const t = TW.P.singleText(x.ref); if (!t) return; const id = TW.Lines.id('scripture', t); if (seen.has(id)) return; seen.add(id); items.push({ id, voice: 'S', text: t, kind: 'scripture' }); });
+        download('scripture-' + TW.Bible.current() + '.json', JSON.stringify(items, null, 1));
+        status.textContent = items.length + ' Scripture lines in ' + TW.Bible.current() + '. Load the file in TTS Studio, and unzip its recordings into audio/' + lang + '.';
+      } catch (e) { status.textContent = 'Could not read dub/scripture-refs.json (' + e.message + '). Open the published copy of the game.'; }
+    });
     const svc = el('button', 'btn small', 'Copy batch for a voice service'); svc.type = 'button';
     svc.addEventListener('click', () => {
       const b = L.batch(sel.value, +size.value, lang, voice.value);
@@ -829,7 +842,7 @@ window.TW = window.TW || {};
       copyText(JSON.stringify(b.lines.map((r) => ({ id: r.id, voice: L.tag(r), text: r.text })), null, 1), box);
       status.textContent = 'Copied as JSON for tools/dub-openai.mjs (a paid OpenAI service). See RECORDING.md.';
     });
-    [chk, next, mark, man, svc].forEach((x) => row.appendChild(x));
+    [chk, next, mark, man, svc, scr].forEach((x) => row.appendChild(x));
     [sel, size, voice, extSel, row, status, box].forEach((x) => body.appendChild(x));
     const how = el('details', 'set-import');
     how.appendChild(el('summary', '', 'How to record on iPhone'));

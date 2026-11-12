@@ -1,0 +1,68 @@
+[
+ {
+  "id": "d-38de7fca",
+  "voice": "N",
+  "text": "“¿Estoy lejos del reino de Dios?” (Marcos 12:34)\n\n“Arrepentíos, y bautícese cada uno de vosotros… para vosotros es la promesa.” (Hechos 2:38–39)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-3f139c72",
+  "voice": "N",
+  "text": "El hombre a tu lado oye griego. La mujer detrás de él oye la lengua de Egipto. Tú oyes el arameo de tu propia madre, hablado por un pescador galileo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-481e341b",
+  "voice": "N",
+  "text": "“¿Es él el Cristo, el Hijo del Bendito?” (Marcos 14:61)\n\nDios lo ha hecho Señor y Cristo. (Hechos 2:36)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-5dec36da",
+  "voice": "N",
+  "text": "Es la hora tercera de la mañana. Estás en los atrios del Templo entre los peregrinos cuando comienza el sonido.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-79c8de32",
+  "voice": "N",
+  "text": "Pentecostés, la fiesta de las Semanas: cincuenta días después de la Pascua. La ciudad vuelve a llenarse de peregrinos de todas las tierras donde se han establecido judíos, desde Persia hasta Roma.",
+  "kind": "history"
+ },
+ {
+  "id": "d-9eac078a",
+  "voice": "N",
+  "text": "“¿Es él el rey que viene en el nombre del Señor?” (Marcos 11:9–10)\n\nDios lo levantó para sentarse en el trono de David. (Hechos 2:30–36)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-ab8bb8ad",
+  "voice": "N",
+  "text": "“Varones hermanos, ¿qué haremos?” La pregunta es tan tuya como de cualquiera.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-d78482d6",
+  "voice": "W",
+  "text": "Esa tarde partes el pan en la casa de un desconocido de Cirene, y él te llama hermana.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-dc3a5ae0",
+  "voice": "N",
+  "text": "Esa tarde partes el pan en la casa de un desconocido de Cirene, y él te llama hermano.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f2659cef",
+  "voice": "N",
+  "text": "Este es el hombre que viste junto al fuego, maldiciendo y jurando que no lo conocía. Ahora no tiene miedo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-fe3508e4",
+  "voice": "N",
+  "text": "“¿Cómo puede un hombre nacer siendo viejo?” (Juan 3:4)\n\nNacer de agua y del Espíritu. (Juan 3:5; Hechos 2:38)",
+  "kind": "answer"
+ }
+]

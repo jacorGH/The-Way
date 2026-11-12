@@ -90,6 +90,11 @@ window.TW = window.TW || {};
     p2.pose = 'stand';
     crew.forEach((c) => { c.pose = 'sit'; });
     await s27('27:36', '27:38');
+    if (TW.Hands) await TW.Hands.moment('storm', 'grain', 'Throw the grain', [
+      'Now everyone has eaten, and the sailors are throwing the cargo of wheat into the sea. Help them.',
+      'Another sack. The ship rides a little higher.',
+      'And another. Your arms ache, and the deck rises under your feet.',
+    ]);
     // the wreck
     ST.calm = 0.6;
     await s27('27:39', '27:40');

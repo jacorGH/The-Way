@@ -1,0 +1,45 @@
+[
+ {
+  "id": "d-13391762",
+  "voice": "N",
+  "text": "Dos años es mucho tiempo de espera. ¿Cómo los pasas?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-1e4b5f64",
+  "voice": "N",
+  "text": "Casi todos los días llevas pan, y noticias, y a veces una discusión. Algunos días solo te sientas con él. El guardia aprende tu nombre, y luego tu historia.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-259fd041",
+  "voice": "N",
+  "text": "Lucas tiene una lista de nombres, y tú conoces a la mitad. Lo llevas a Naín, a un hombre al que una vez sacaron en un féretro, y a Capernaúm, a la viuda de un pescador que todavía mantiene remendado el techo donde lo abrieron. Lucas escribe hasta que se le acalambra la mano.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-9b0ebf86",
+  "voice": "M",
+  "text": "Muchos han intentado poner en orden estas cosas. Quiero escribirlas con cuidado, desde el principio, de boca de los que las vieron.",
+  "kind": "drama",
+  "speaker": "Lucas"
+ },
+ {
+  "id": "d-d313837e",
+  "voice": "N",
+  "text": "Te sientas junto a la ventana con un montón de hojas nuevas y copias lo que Pablo escribió una vez a los gálatas y a los corintios, para que más iglesias puedan leerlo. Tu antigua formación también era para esto.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-e57b336b",
+  "voice": "N",
+  "text": "Félix tuvo a Pablo preso dos años, hasta que lo reemplazó como gobernador Porcio Festo; queriendo congraciarse con los judíos, dejó preso a Pablo (24:27).",
+  "kind": "history"
+ },
+ {
+  "id": "d-f36b72ac",
+  "voice": "N",
+  "text": "Tértulo comienza con un largo elogio a Félix por la paz y las reformas de su gobierno. Todos en la sala saben cuánto de eso es verdad.",
+  "kind": "drama"
+ }
+]

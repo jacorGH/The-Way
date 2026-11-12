@@ -333,7 +333,7 @@
   },
   {
    "file": "t-attendant.json",
-   "title": "Testimony: Attendant",
+   "title": "Testimony: The synagogue attendant",
    "lines": 8,
    "characters": 1240
   },
@@ -345,21 +345,27 @@
   },
   {
    "file": "t-bethesda.json",
-   "title": "Testimony: Bethesda",
+   "title": "Testimony: The man healed at Bethesda",
    "lines": 10,
    "characters": 1977
   },
   {
    "file": "t-blindman.json",
-   "title": "Testimony: Blindman",
+   "title": "Testimony: The man born blind",
    "lines": 12,
    "characters": 2983
   },
   {
    "file": "t-cana.json",
-   "title": "Testimony: Cana",
+   "title": "Testimony: A servant from the wedding at Cana",
    "lines": 12,
    "characters": 1682
+  },
+  {
+   "file": "t-centurion.json",
+   "title": "Testimony: The centurion’s servant",
+   "lines": 11,
+   "characters": 2012
   },
   {
    "file": "t-jairus.json",
@@ -369,51 +375,45 @@
   },
   {
    "file": "t-loaves.json",
-   "title": "Testimony: Loaves",
+   "title": "Testimony: A man from the crowd",
    "lines": 12,
    "characters": 2106
   },
   {
+   "file": "t-magdalene.json",
+   "title": "Testimony: Mary of Magdala",
+   "lines": 12,
+   "characters": 2305
+  },
+  {
    "file": "t-martha.json",
-   "title": "Testimony: Martha",
+   "title": "Testimony: Martha of Bethany",
    "lines": 13,
    "characters": 2707
   },
   {
    "file": "t-motherinlaw.json",
-   "title": "Testimony: Motherinlaw",
+   "title": "Testimony: Simon’s wife’s mother",
    "lines": 10,
    "characters": 1108
   },
   {
    "file": "t-peter.json",
-   "title": "Testimony: Peter",
+   "title": "Testimony: Simon Peter",
    "lines": 27,
    "characters": 6991
   },
   {
    "file": "t-samaritan.json",
-   "title": "Testimony: Samaritan",
+   "title": "Testimony: The woman of Sychar",
    "lines": 16,
    "characters": 3873
   },
   {
    "file": "t-zacchaeus.json",
    "title": "Testimony: Zacchaeus",
-   "lines": 14,
-   "characters": 1759
-  },
-  {
-   "file": "t-centurion.json",
-   "title": "Testimony: The centurion’s servant",
-   "lines": 12,
-   "characters": 2033
-  },
-  {
-   "file": "t-magdalene.json",
-   "title": "Testimony: Mary of Magdala",
    "lines": 13,
-   "characters": 2326
+   "characters": 1738
   }
  ]
 }

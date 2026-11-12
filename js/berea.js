@@ -65,6 +65,10 @@ window.TW = window.TW || {};
     SC.add({ id: 'player', frames: P0.player, x: 140, y: 153, facing: -1 });
     await s17('17:11', '17:11');
     await SC.say({ kind: 'drama', speaker: 'An elder of the synagogue', text: 'You are from Jerusalem, and you can read. Good. He says the Christ had to suffer and rise. Show us where.' });
+    if (TW.Hands) await TW.Hands.moment('berea', 'scroll', 'Unroll', [
+      'The scrolls are long, and the passages are far in. Wind the rollers.',
+      'Further. Column after column of letters passes under your fingers.',
+    ]);
     const look = await SC.choose('Three scrolls lie open on the table. Which do you unroll first?', [
       'Isaiah: “He was led as a sheep to the slaughter.”',
       'The Psalm: “You will not leave my soul in Hades.”',

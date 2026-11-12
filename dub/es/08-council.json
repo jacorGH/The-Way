@@ -1,0 +1,74 @@
+[
+ {
+  "id": "d-0c10c236",
+  "voice": "N",
+  "text": "Bajas la escalera hacia el patio, con tus notas bajo el brazo. El galileo sigue junto al fuego.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-101f0087",
+  "voice": "N",
+  "text": "El concilio se sienta en semicírculo a la luz de las lámparas. Tu maestro Nicodemo está de pie al extremo de un banco. No te mira.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-68690ada",
+  "voice": "N",
+  "text": "Eres un escriba joven; nadie te pide el voto. Todas las manos a tu alrededor se levantan. En Capernaúm pensaste la misma palabra en silencio: blasfemia.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-7fc926c1",
+  "voice": "N",
+  "text": "Junto al fuego está sentado un galileo corpulento al que ya has visto antes, en la orilla de Capernaúm. Mantiene el rostro vuelto hacia las llamas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-9b7b4953",
+  "voice": "N",
+  "text": "Pasada la medianoche, un criado del sumo sacerdote golpea tu puerta. El concilio se reúne de inmediato, y se llama a todo escriba que sepa tomar notas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-b102ab79",
+  "voice": "W",
+  "text": "Él ya te está mirando desde el otro lado de la sala, como miró hacia la puerta en Capernaúm.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ba7c8469",
+  "voice": "N",
+  "text": "La sala espera su respuesta. ¿Adónde miras?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-d3adca65",
+  "voice": "N",
+  "text": "Él ya te está mirando, como recorrió con la mirada la fila de escribas en Capernaúm.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-dce7b36b",
+  "voice": "N",
+  "text": "Sale a la oscuridad, llorando. Por un momento quieres seguirlo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-eee81a5a",
+  "voice": "W",
+  "text": "Estás junto a la puerta con los criados de la casa, sosteniendo el estuche de escribir de tu tío. El concilio se sienta en semicírculo a la luz de las lámparas. Nicodemo no te mira.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f7fdc491",
+  "voice": "W",
+  "text": "Pasada la medianoche, un criado del sumo sacerdote golpea la puerta de tu tío. El concilio se reúne de inmediato. Nicodemo te lleva con él para cargar su estuche de escribir; esperarás con los criados de la casa.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f91f3f4a",
+  "voice": "W",
+  "text": "Nadie en esta sala le preguntaría a una mujer junto a la puerta lo que piensa. Todas las manos de los bancos se levantan. En Capernaúm oíste a los escribas murmurar la misma palabra: blasfemia.",
+  "kind": "drama"
+ }
+]

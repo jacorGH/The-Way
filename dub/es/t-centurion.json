@@ -1,0 +1,41 @@
+[
+ {
+  "id": "d-33264b14",
+  "voice": "N",
+  "text": "Un anciano barre las gradas de la sinagoga de Capernaúm, las mismas gradas de basalto negro por las que una vez viste desbordarse a una multitud. Da palmaditas al muro mientras trabaja. “Un romano pagó cada piedra de esto”, dice. “Pregúntame qué siento al respecto.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-2d8bebe4",
+  "voice": "N",
+  "text": "¿Qué le preguntas a un anciano de la sinagoga de Capernaúm?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-d25a7785",
+  "voice": "M",
+  "text": "“Ni aun en Israel.” Lo dijo con todos nosotros ahí, los ancianos de Israel. Y tenía razón.",
+  "kind": "drama",
+  "speaker": "Un anciano de la sinagoga de Capernaúm"
+ },
+ {
+  "id": "d-67cca8b1",
+  "voice": "N",
+  "text": "Vuelve a su barrido. “Un romano, con más fe que los ancianos”, dice, sin levantar la vista. “Nos lo dijo en la cara. Fue lo más bondadoso que alguien me ha dicho jamás.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-45b43f4b",
+  "voice": "M",
+  "text": "Le rogué a un maestro judío que ayudara a un oficial romano. Mi abuelo no lo habría creído. Pero aquel centurión amaba este pueblo, y el muchacho se moría.",
+  "kind": "drama",
+  "speaker": "Un anciano de la sinagoga de Capernaúm"
+ },
+ {
+  "id": "d-f4a212af",
+  "voice": "M",
+  "text": "Nosotros dijimos que era digno. Él dijo que no lo era. He pensado en eso mucho tiempo.",
+  "kind": "drama",
+  "speaker": "Un anciano de la sinagoga de Capernaúm"
+ }
+]

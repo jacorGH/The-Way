@@ -92,6 +92,11 @@ window.TW = window.TW || {};
     jailer.pose = 'stand';
     if (heart !== 0) { me2.visible = true; await SC.walk(me2, 220); }
     await SC.say({ kind: 'drama', text: 'Someone has to bring a light. It is you. Your hands are shaking so that the lamp flame jumps on the walls.' });
+    if (TW.Hands) await TW.Hands.moment('jailer', 'lamp', 'Hold the lamp steady', [
+      'The jailer is trembling worse than you are. Hold the lamp steady.',
+      'He falls down before Paul and Silas. Keep the light on their faces.',
+      'Steady. Steady.',
+    ]);
     PR.lights.push({ ent: me2, r: 46, dy: 22, c: 'rgba(255,190,110,0.45)' });
     await SC.walk(jailer, 140);
     jailer.pose = 'sit';

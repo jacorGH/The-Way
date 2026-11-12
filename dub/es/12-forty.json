@@ -1,0 +1,84 @@
+[
+ {
+  "id": "d-0364b3ca",
+  "voice": "N",
+  "text": "“Me seréis testigos.” Miras el rollo en tu regazo, un año de informes, y te preguntas si también se refería a ti.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-1aea8d52",
+  "voice": "N",
+  "text": "Once hombres y varias mujeres te están mirando. ¿Qué preguntas?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-1fb0d4ea",
+  "voice": "M",
+  "text": "Me lo contaron, y les dije que estaban locos. La sobrina de tu tío entenderá eso.",
+  "kind": "drama",
+  "speaker": "Tomás"
+ },
+ {
+  "id": "d-20d510ec",
+  "voice": "W",
+  "text": "“Me seréis testigos.” Miras el rollo en tu regazo, un año de cartas, y te preguntas si también se refería a ti.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-23a95056",
+  "voice": "M",
+  "text": "Me lo contaron, y les dije que estaban locos. Tú, más que nadie, entenderás eso.",
+  "kind": "drama",
+  "speaker": "Tomás"
+ },
+ {
+  "id": "d-3688963d",
+  "voice": "N",
+  "text": "“Bienaventurados los que no vieron y creyeron.” ¿Qué surge en ti?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-3b02820c",
+  "voice": "F",
+  "text": "Esta es la sobrina de Nicodemo. Ayudó a envolverlo para la sepultura, y ha estado escribiéndolo todo. Cuéntenle lo que me contaron a mí.",
+  "kind": "drama",
+  "speaker": "María Magdalena"
+ },
+ {
+  "id": "d-3dfb9cdd",
+  "voice": "N",
+  "text": "“Ha resucitado. ¿Qué significa eso para todo lo que he visto?” (Marcos 16:6)\n\nSe presentó vivo con muchas pruebas durante cuarenta días. (Hechos 1:3)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-47aa0a02",
+  "voice": "N",
+  "text": "“¿Un gran profeta, o más que un profeta?” (Lucas 7:16)\n\nMás que un profeta: “¡Señor mío, y Dios mío!” (Juan 20:28)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-9192c1b3",
+  "voice": "N",
+  "text": "Alguien cuenta los nombres en voz alta: unos ciento veinte. Nadie te pide que te vayas. Te sientas junto a la puerta y oras con ellos.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-a4895358",
+  "voice": "N",
+  "text": "“¿Quién puede perdonar pecados, sino solo Dios?” (Marcos 2:7)\n\nTomás lo llamó “¡Señor mío, y Dios mío!” (Juan 20:28)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-bcd04222",
+  "voice": "N",
+  "text": "Algunos días después del sepulcro vacío, María Magdalena te lleva por la escalera exterior de una casa en la Ciudad Alta. La puerta está atrancada. Ella toca dos veces, y se abre.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f0a8c8b0",
+  "voice": "F",
+  "text": "Este es el escriba que ayudó a Nicodemo a sepultarlo. Ha estado escribiéndolo todo. Cuéntenle lo que me contaron a mí.",
+  "kind": "drama",
+  "speaker": "María Magdalena"
+ }
+]

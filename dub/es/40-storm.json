@@ -1,0 +1,26 @@
+[
+ {
+  "id": "d-77cfeba9",
+  "voice": "N",
+  "text": "Hace días que no estás seco. Nadie ha cocinado nada. Un marinero mayor que tu padre ora a dioses de los que nunca has oído hablar, y te descubres orando a su lado.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-77cfeba9-f",
+  "voice": "W",
+  "text": "Hace días que no estás seca. Nadie ha cocinado nada. Un marinero mayor que tu padre ora a dioses de los que nunca has oído hablar, y te descubres orando a su lado.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-c0a5ba1a",
+  "voice": "N",
+  "text": "Parte el pan delante de todos: marineros, soldados, presos, mercaderes. Alguien te pasa un pedazo.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-e0a4153c",
+  "voice": "W",
+  "text": "Bajo cubierta, las mujeres han dejado de llorar. La esposa de un mercader abraza a su niña y mira al vacío. Tú tomas la otra mano de la niña y le cuentas de una barca en el mar de Galilea, y del hombre que se puso de pie en ella y le habló al viento.",
+  "kind": "drama"
+ }
+]

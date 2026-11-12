@@ -1,0 +1,68 @@
+[
+ {
+  "id": "d-03c6a190",
+  "voice": "N",
+  "text": "Antes del amanecer ya se ha ido. Rode se sienta junto a la puerta hasta que sale el sol, y nadie vuelve a decirle que está loca.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-0f4b69fd",
+  "voice": "N",
+  "text": "“Es su ángel”, te oyes decir. Rode te mira como si la hubieras golpeado.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-17d41f03",
+  "voice": "N",
+  "text": "Jacobo, que estuvo junto al lago con su hermano remendando redes; Jacobo, que vio levantarse a la niña en casa de Jairo. Dices su nombre en la oscuridad y no puedes decir nada después.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-75a9362a",
+  "voice": "N",
+  "text": "Herodes Agripa I, nieto de Herodes el Grande, gobierna ahora Judea como rey. Es la semana de los Panes sin levadura.",
+  "kind": "history"
+ },
+ {
+  "id": "d-89517393",
+  "voice": "N",
+  "text": "La casa de María, la madre de Juan Marcos, está llena pasada la medianoche. Nadie se ha ido a casa. Te sientas entre los hombres cerca de las lámparas, orando en susurros con todos los demás.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-95c1a5c4",
+  "voice": "N",
+  "text": "Siguen llamando. Rode está a punto de llorar. Todos la miran.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-983f46f9",
+  "voice": "N",
+  "text": "Mantienes los ojos cerrados y las manos alzadas. Estás orando por Pedro. No quieres que te interrumpan.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-aa51c230",
+  "voice": "W",
+  "text": "La casa de María, la madre de Juan Marcos, está llena pasada la medianoche. Nadie se ha ido a casa. Te sientas junto a la puerta con Rode, la criada, que se queda dormida sobre tu hombro y despierta para volver a orar.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-c32cfc9b",
+  "voice": "N",
+  "text": "La casa de María, la madre de Juan Marcos, está llena pasada la medianoche. Nadie se ha ido a casa. ",
+  "kind": "drama"
+ },
+ {
+  "id": "d-3d92331e",
+  "voice": "N",
+  "text": "Te sientas junto a la puerta con Rode, la criada, que se queda dormida sobre tu hombro y despierta para volver a orar.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-659b4f01",
+  "voice": "N",
+  "text": "Te sientas entre los hombres cerca de las lámparas, orando en susurros con todos los demás.",
+  "kind": "drama"
+ }
+]

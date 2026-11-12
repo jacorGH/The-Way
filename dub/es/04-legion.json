@@ -1,0 +1,52 @@
+[
+ {
+  "id": "d-0c6511c1",
+  "voice": "N",
+  "text": "Los porqueros corren hacia el pueblo. ¿Qué sientes?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-1f494e47",
+  "voice": "M",
+  "text": "Hay lugar en mi barca para ti y para mi esposa, hija, si quieres ver adónde va.",
+  "kind": "drama",
+  "speaker": "El pescador de la playa"
+ },
+ {
+  "id": "d-44d0c75e",
+  "voice": "N",
+  "text": "Esta es en gran parte tierra de gentiles. La Ley de Moisés consideraba impuros los sepulcros, los cerdos y los espíritus inmundos. Un judío piadoso evitaría los tres, y aquí están los tres a la vez.",
+  "kind": "history"
+ },
+ {
+  "id": "d-450a15d2",
+  "voice": "N",
+  "text": "El agua está tan quieta que se ven las estrellas en ella. Nadie en tu barca dice nada.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-5e8daa5f",
+  "voice": "N",
+  "text": "El lago está a unos 210 m bajo el nivel del mar, rodeado de colinas. Al atardecer, el aire fresco puede bajar por las laderas y levantar olas altas muy de repente.",
+  "kind": "history"
+ },
+ {
+  "id": "d-ef11a8db",
+  "voice": "M",
+  "text": "Hay lugar en mi barca, escriba, si quieres ver adónde va.",
+  "kind": "drama",
+  "speaker": "El pescador de la playa"
+ },
+ {
+  "id": "d-f1ba8ae1",
+  "voice": "N",
+  "text": "La Decápolis era una liga de ciudades de habla griega, casi todas al este del Jordán. El primero en hablar de Jesús allí fue un hombre al que toda la región había temido.",
+  "kind": "history"
+ },
+ {
+  "id": "d-fcb1901a",
+  "voice": "N",
+  "text": "“¿Quién es este?” ¿Qué respuesta te viene?",
+  "kind": "prompt"
+ }
+]

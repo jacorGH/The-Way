@@ -1,0 +1,50 @@
+[
+ {
+  "id": "d-4769ce42",
+  "voice": "N",
+  "text": "Lo recuerdas como era entonces: el joven que guardaba los mantos mientras apedreaban a Esteban. No se ahorra una sola palabra de ello.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-7de24462",
+  "voice": "N",
+  "text": "“No solamente tú, sino también todos los que hoy me oyen.” Tú eres uno de ellos. En tu corazón, le respondes.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-7de24462-f",
+  "voice": "W",
+  "text": "“No solamente tú, sino también todos los que hoy me oyen.” Tú eres una de ellos. En tu corazón, le respondes.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-90727cbb",
+  "voice": "N",
+  "text": "Festo le cuenta al rey de su extraño preso, y de la causa que no logra entender.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-9ab1555a",
+  "voice": "N",
+  "text": "Miras el rollo que tienes en las manos, años de escritura ya, y sigues escribiendo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-9bbe922f",
+  "voice": "N",
+  "text": "Por un momento, los ojos de Pablo encuentran los tuyos al otro lado de la sala, como si te hubiera oído.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-b8c921ca",
+  "voice": "N",
+  "text": "“¿Por qué la multitud escuchó a Pablo hasta que habló de los gentiles?” (Hechos 22:21–22)\n\nEl Cristo anunciaría “luz al pueblo y a los gentiles”. Para Pablo, esa era la esperanza misma de Israel, no una traición a ella. (Hechos 26:23)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-f50978ec",
+  "voice": "N",
+  "text": "El rey también dijo “por poco”. Te preguntas si alguna vez llegó más lejos. Te preguntas si llegarás tú.",
+  "kind": "drama"
+ }
+]

@@ -439,3 +439,5 @@ html.selectable .dialog, html.selectable .dialog * { -webkit-user-select: text; 
 .order-item.picked { background: rgba(120, 90, 50, 0.12); }
 .order-n { flex: none; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: #6a4a2a; color: #f4ecd8; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; }
 .order-result { margin-top: 0.5rem; font-style: italic; }
+.disc-word .word-orig { font-size: 1.5rem; margin: 0.1rem 0 0; font-family: "Gentium Plus", "Times New Roman", Georgia, serif; }
+.disc-word .word-tr { margin: 0 0 0.45rem; font-style: italic; opacity: 0.8; }

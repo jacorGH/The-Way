@@ -1,0 +1,94 @@
+[
+ {
+  "id": "d-0ee1ee9a",
+  "voice": "N",
+  "text": "Más tarde Pablo escribió sobre la fe que habitó primero en Loida, la abuela de Timoteo, y en Eunice, su madre (2 Timoteo 1:5).",
+  "kind": "history"
+ },
+ {
+  "id": "d-103383c4",
+  "voice": "N",
+  "text": "Lo lee de pie, junto a la lámpara, largo rato. Cuando te lo devuelve, solo dice: “Escribes lo que viste, y dices cuándo no lo viste. Bien.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-1d375f15",
+  "voice": "N",
+  "text": "De vuelta por el Tauro con Pablo y Silas, a Listra, donde una vez estuviste en un círculo de discípulos alrededor de un hombre dado por muerto. Un muchacho que lloraba aquel día ahora es un joven.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-2408a54d",
+  "voice": "N",
+  "text": "Su casa es la más grande en la que has entrado desde Cesarea. En el umbral piensas en Pedro y en el lienzo bajado del cielo, y entras.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-527e9456",
+  "voice": "N",
+  "text": "Filipos era una colonia romana: latín en las inscripciones, familias de veteranos en las granjas y ley romana en el foro. Al parecer no había sinagoga.",
+  "kind": "history"
+ },
+ {
+  "id": "d-5d7a3c5d",
+  "voice": "N",
+  "text": "Al segundo día, los montes de Macedonia se levantan del mar. Pablo está en la proa. Es la primera vez que alguno de ustedes ve Europa.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-5e4bfc64",
+  "voice": "N",
+  "text": "Te tiende la mano para recibir tu rollo.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-7fa4b2cd",
+  "voice": "N",
+  "text": "“Entrad en mi casa, y posad.” También te está mirando a ti.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-98be1c6d",
+  "voice": "N",
+  "text": "Aquí el relato de Lucas pasa de “ellos” a “nosotros”. La mayoría de los lectores entiende que el autor de Lucas y Hechos se unió a Pablo en Troas.",
+  "kind": "history"
+ },
+ {
+  "id": "d-9f17aada",
+  "voice": "W",
+  "text": "Te sientas entre las mujeres junto al agua. Una de ellas, con un manto teñido de una púrpura que solo has visto en los ricos, te hace lugar sin decir palabra.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-a843f02a",
+  "voice": "N",
+  "text": "Pablo te hace un leve gesto con la cabeza, como diciendo que ya no necesitas preguntar.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d39bdf88",
+  "voice": "N",
+  "text": "En el barco se lo lees, y te detiene cada pocas líneas para preguntar quién más estaba allí.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ef43df7b",
+  "voice": "M",
+  "text": "Tú eres el del rollo. Pablo dice que estuviste en Jerusalén desde el principio. Soy médico, y hago muchas preguntas. ¿Puedo leerlo?",
+  "kind": "drama",
+  "speaker": "Lucas"
+ },
+ {
+  "id": "d-ef43df7b-f",
+  "voice": "M",
+  "text": "Tú eres la del rollo. Pablo dice que estuviste en Jerusalén desde el principio. Soy médico, y hago muchas preguntas. ¿Puedo leerlo?",
+  "kind": "drama",
+  "speaker": "Lucas"
+ },
+ {
+  "id": "d-fdb85790",
+  "voice": "N",
+  "text": "Lidia se ríe y da palmadas, y manda a un criado corriendo a avisar a la casa.",
+  "kind": "drama"
+ }
+]

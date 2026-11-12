@@ -1,0 +1,44 @@
+[
+ {
+  "id": "d-00d0e4ae",
+  "voice": "N",
+  "text": "Josefo escribió que de lejos el Templo parecía una montaña cubierta de nieve, allí donde no estaba recubierto de oro.",
+  "kind": "history"
+ },
+ {
+  "id": "d-1930b071",
+  "voice": "N",
+  "text": "Falta una semana para la Pascua, y estás de vuelta en Jerusalén. Nicodemo ha leído tus cinco informes. Enrolla el último y solo dice: “Viene a la fiesta. Ve y mira”.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-354c1634",
+  "voice": "N",
+  "text": "Lo mira todo: las mesas, las monedas, las jaulas de palomas, la barrera que las naciones no pueden cruzar. No dice nada. Luego se da vuelta y sale hacia Betania.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-7d8de078",
+  "voice": "N",
+  "text": "“Hosanna” significa “sálvanos, te rogamos”. Las palabras vienen del Salmo 118, que cantaban los peregrinos en las fiestas. Zacarías 9:9 había descrito al rey de Sion viniendo “humilde, y cabalgando sobre un asno”.",
+  "kind": "history"
+ },
+ {
+  "id": "d-88c48934",
+  "voice": "N",
+  "text": "Los peregrinos de Galilea solían subir por Jericó y cruzar el monte de los Olivos pasando por Betania y Betfagé. Al otro lado de la cresta, la ciudad entera aparece de pronto, al otro lado del valle del Cedrón.",
+  "kind": "history"
+ },
+ {
+  "id": "d-94319a32",
+  "voice": "W",
+  "text": "Falta una semana para la Pascua, y estás de vuelta en Jerusalén. Tu tío ha leído tus cinco cartas. Enrolla la última y solo dice: “Viene a la fiesta. Ve y mira”.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-9b198aaa",
+  "voice": "N",
+  "text": "Ya casi está a tu altura. La gente a tu lado echa sus mantos en el camino. Tu manto, con sus largos flecos, está sobre tus hombros.",
+  "kind": "prompt"
+ }
+]

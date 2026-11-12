@@ -1,0 +1,40 @@
+[
+ {
+  "id": "d-491fb7f6",
+  "voice": "N",
+  "text": "¿Qué le preguntas al sirviente de la boda de Caná?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-4c10dcab",
+  "voice": "N",
+  "text": "Niega con la cabeza, todavía sonriendo. “Seis tinajas. Las llenamos hasta arriba.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-543c11f7",
+  "voice": "N",
+  "text": "Las tinajas de piedra guardaban agua para el lavamiento ritual, y cada una contenía entre 75 y 115 litros aproximadamente. Se creía que la piedra, a diferencia del barro, no se volvía impura.",
+  "kind": "history"
+ },
+ {
+  "id": "d-8dcf9b97",
+  "voice": "M",
+  "text": "¡Quedarse sin vino en tu propia boda! La familia nunca lo habría olvidado.",
+  "kind": "drama",
+  "speaker": "Un sirviente de la boda de Caná"
+ },
+ {
+  "id": "d-8fc3ce21",
+  "voice": "N",
+  "text": "En Caná encuentras a un hombre que sirvió en una boda allí. Cuando mencionas a Jesús de Nazaret, se ríe a carcajadas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-de3a3d6c",
+  "voice": "M",
+  "text": "El maestresala nunca supo de dónde venía. Nosotros sí. Nosotros lo sacamos.",
+  "kind": "drama",
+  "speaker": "Un sirviente de la boda de Caná"
+ }
+]

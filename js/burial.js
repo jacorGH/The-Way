@@ -102,6 +102,11 @@ window.TW = window.TW || {};
     ws.forEach((w, i) => SC.walk(w, 40 + i * 12));
     await sayS('john19b', '19:40', '19:42');
     await SC.walk(bier, 184);
+    if (help !== 2 && TW.Hands) await TW.Hands.moment('burial', 'linen', 'Wind the linen', [
+      'Nicodemus hands you the end of a long linen strip, heavy with myrrh and aloes. Wind it.',
+      'Again. The scent of the spices fills the tomb.',
+      'Once more. Your hands will smell of myrrh for days.',
+    ]);
     bier.hidden = true;
     await SC.wait(800);
     bearers.forEach((b) => { b.facing = -1; });

@@ -1,0 +1,62 @@
+[
+ {
+  "id": "d-3f6e93f0",
+  "voice": "N",
+  "text": "Ya no eres bienvenido en el banco de los escribas. Te quedas en la entrada y observas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-65f3e7e9",
+  "voice": "W",
+  "text": "Ya no eres bienvenida en esta casa. Te quedas en la puerta de afuera y observas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-87167d80",
+  "voice": "N",
+  "text": "Estás lo bastante cerca para ver su rostro. No está enojado. Observa con tanto cuidado como tú, como si fuera su deber.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-b4dfce52",
+  "voice": "N",
+  "text": "Uno de los hombres de Cilicia es el que más discute: joven, instruido, ágil con las Escrituras. Alguien lo llama Saulo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-c84f123e",
+  "voice": "N",
+  "text": "Les cuenta toda la historia de Israel: Abraham llamado de Mesopotamia, José vendido a Egipto, Moisés ante la zarza ardiente, el tabernáculo en el desierto. La conoce tan bien como cualquier escriba de la sala.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-cf4b49fd",
+  "voice": "N",
+  "text": "Vas con Esteban a la sinagoga donde se reúnen judíos de Cirene, Alejandría y Cilicia. Él piensa hablarles de Jesús en griego, su propia lengua.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d395de40",
+  "voice": "N",
+  "text": "Esa noche, los creyentes que hablan griego comienzan a salir de la ciudad. Felipe va al norte, hacia Samaria. Alguien ha puesto tu nombre en una lista, y no es la de Esteban.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d7b753b8",
+  "voice": "W",
+  "text": "Te quedas junto a la puerta con el estuche de escribir de tu tío. Nadie aquí sabe que partes el pan con el hombre al que juzgan.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-e819bb9a",
+  "voice": "N",
+  "text": "¿Dónde estás?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-f811d115",
+  "voice": "N",
+  "text": "Ocupas tu asiento en el banco de los escribas. Nadie aquí sabe que partes el pan con el hombre al que juzgan.",
+  "kind": "drama"
+ }
+]

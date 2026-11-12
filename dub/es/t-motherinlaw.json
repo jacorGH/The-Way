@@ -1,0 +1,40 @@
+[
+ {
+  "id": "d-2bc6861d",
+  "voice": "N",
+  "text": "¿Qué le preguntas a la suegra de Simón?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-3773d703",
+  "voice": "N",
+  "text": "Una mujer mayor barre el umbral de una casa cerca de la sinagoga. Cuando le preguntas por Jesús, apoya la escoba contra la pared.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-46d949a8",
+  "voice": "F",
+  "text": "Me ardía la fiebre. No podía levantar la cabeza.",
+  "kind": "drama",
+  "speaker": "La suegra de Simón"
+ },
+ {
+  "id": "d-7a12ffb2",
+  "voice": "F",
+  "text": "Todo el pueblo a nuestra puerta. Nunca he visto esta calle tan llena, ni antes ni después.",
+  "kind": "drama",
+  "speaker": "La suegra de Simón"
+ },
+ {
+  "id": "d-b8d78c26",
+  "voice": "N",
+  "text": "Vuelve a tomar la escoba. “Escríbelo, escriba. La fiebre se fue, y me levanté y les serví.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ca66ad48",
+  "voice": "W",
+  "text": "Vuelve a tomar la escoba. “Escríbelo, hija. La fiebre se fue, y me levanté y les serví.”",
+  "kind": "drama"
+ }
+]

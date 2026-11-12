@@ -12,29 +12,17 @@
   "kind": "prompt"
  },
  {
-  "id": "s-WEB-059d16fc",
+  "id": "s-WEB-327aed0d",
   "voice": "S",
-  "text": "Jesus went with them. When he was now not far from the house, the centurion sent friends to him, saying to him, “Lord, don’t trouble yourself, for I am not worthy for you to come under my roof.",
+  "text": "When Jesus heard these things, he marveled at him, and turned and said to the multitude who followed him, “I tell you, I have not found such great faith, no, not in Israel.” Those who were sent, returning to the house, found that the servant who had been sick was well.",
   "kind": "scripture"
  },
  {
-  "id": "s-WEB-6e04f334",
-  "voice": "S",
-  "text": "Therefore I didn’t even think myself worthy to come to you; but say the word, and my servant will be healed. For I also am a man placed under authority, having under myself soldiers. I tell this one, ‘Go!’ and he goes; and to another, ‘Come!’ and he comes; and to my servant, ‘Do this,’ and he does it.”",
-  "kind": "scripture"
- },
- {
-  "id": "d-f4a212af",
+  "id": "d-d25a7785",
   "voice": "M",
-  "text": "We said he was worthy. He said he was not. I have thought about that for a long time.",
+  "text": "“Not in Israel.” He said it with all of us standing there, the elders of Israel. And he was right.",
   "kind": "drama",
   "speaker": "An elder of the Capernaum synagogue"
- },
- {
-  "id": "d-e6fb728c",
-  "voice": "N",
-  "text": "What else do you ask?",
-  "kind": "prompt"
  },
  {
   "id": "d-67cca8b1",
@@ -62,15 +50,21 @@
   "speaker": "An elder of the Capernaum synagogue"
  },
  {
-  "id": "s-WEB-327aed0d",
+  "id": "s-WEB-059d16fc",
   "voice": "S",
-  "text": "When Jesus heard these things, he marveled at him, and turned and said to the multitude who followed him, “I tell you, I have not found such great faith, no, not in Israel.” Those who were sent, returning to the house, found that the servant who had been sick was well.",
+  "text": "Jesus went with them. When he was now not far from the house, the centurion sent friends to him, saying to him, “Lord, don’t trouble yourself, for I am not worthy for you to come under my roof.",
   "kind": "scripture"
  },
  {
-  "id": "d-d25a7785",
+  "id": "s-WEB-6e04f334",
+  "voice": "S",
+  "text": "Therefore I didn’t even think myself worthy to come to you; but say the word, and my servant will be healed. For I also am a man placed under authority, having under myself soldiers. I tell this one, ‘Go!’ and he goes; and to another, ‘Come!’ and he comes; and to my servant, ‘Do this,’ and he does it.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-f4a212af",
   "voice": "M",
-  "text": "“Not in Israel.” He said it with all of us standing there, the elders of Israel. And he was right.",
+  "text": "We said he was worthy. He said he was not. I have thought about that for a long time.",
   "kind": "drama",
   "speaker": "An elder of the Capernaum synagogue"
  }

@@ -29,6 +29,10 @@ window.TW = window.TW || {};
     await SC.say({ kind: 'history', text: 'Paul usually dictated his letters to a scribe and added the last lines in his own hand (Romans 16:22; Galatians 6:11).' });
     paul.pose = 'out';
     await SC.say({ kind: 'drama', text: 'He paces as far as the chain allows, and talks. You write as fast as you can. Sometimes he stops in the middle of a sentence and says nothing for a long time, and you wait with the pen lifted.' });
+    if (TW.Hands) await TW.Hands.moment('letter', 'write', 'Write', [
+      'He begins: “Paul and Timothy, servants of Jesus Christ…” Write it down.',
+      'He is quicker than your pen. Keep up.',
+    ]);
     await ph('1:3', '1:6');
     await ph('1:12', '1:14');
     await ph('1:21', '1:24');

@@ -1,0 +1,68 @@
+[
+ {
+  "id": "d-1e23e05c",
+  "voice": "W",
+  "text": "El concilio delibera cómo hacerlos callar. Estás entre los criados junto a la puerta. ¿Qué haces?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-2999c1be",
+  "voice": "N",
+  "text": "A la mañana siguiente ocupas tu lugar entre los escribas. Hace un año estuviste en esta sala durante el juicio nocturno. Hoy eres uno de los cinco mil, y nadie aquí lo sabe.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-2bc9178e",
+  "voice": "W",
+  "text": "A la mañana siguiente te quedas junto a la puerta con el estuche de escribir de tu tío. Hace un año estuviste en esta casa durante el juicio nocturno. Hoy eres una de los cinco mil, y solo tu tío lo sabe.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-3815c857",
+  "voice": "N",
+  "text": "“Lo que hemos visto y oído.” Piensas en tu rollo: cada línea de él es algo que viste y oíste.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-391f58cb",
+  "voice": "W",
+  "text": "Te escabulles por las puertas. Un criado te ve salir y no dice nada.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4b79e9fd",
+  "voice": "N",
+  "text": "Conoces a este hombre. Lo viste junto al fuego del sumo sacerdote, jurando que nunca había conocido a Jesús. Ahora está donde estuvo Jesús y no deja de decir su nombre.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-820fe6f3",
+  "voice": "N",
+  "text": "Sales por las puertas. Detrás de ti la sala se queda en silencio, y luego vuelven las conversaciones, sobre ti.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-8a61278d",
+  "voice": "N",
+  "text": "Piensas en la casa que te dejó tu padre, y en las viudas que llegaron anoche a la puerta sin nada que comer.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-c0994152",
+  "voice": "N",
+  "text": "El concilio delibera cómo hacerlos callar. Tu asiento está entre ellos. ¿Qué haces?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-c1fb8e5e",
+  "voice": "W",
+  "text": "Tu tío sostiene tu mirada un largo momento. Luego baja la vista a sus manos. Sabes lo que le cuesta estar sentado allí, y lo que le cuesta callar.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-c82582c5",
+  "voice": "N",
+  "text": "“¿Juzga nuestra ley a un hombre si primero no lo oye?” Te tiembla la voz. Alguien se ríe. Al otro lado de la sala, Nicodemo cierra los ojos.",
+  "kind": "drama"
+ }
+]

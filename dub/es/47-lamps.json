@@ -1,0 +1,44 @@
+[
+ {
+  "id": "d-1a7a77cf",
+  "voice": "N",
+  "text": "Esta noche ha llegado de Patmos, la isla prisión, un pescador con un rollo escondido en una red. Es de Juan, el último, dicen, de los Doce. La iglesia ha encendido todas las lámparas que tiene.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-31b7ba00",
+  "voice": "N",
+  "text": "La primera carta es para esta misma iglesia. La muchacha levanta la vista, y luego la lee.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-415b654c",
+  "voice": "N",
+  "text": "Se lo cuentas. Toma mucho tiempo; tienes muchos años, y no olvidas nada. Cuando terminas, un joven cerca de la puerta está llorando, y no crees que sea por ti.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-7d6b928d",
+  "voice": "N",
+  "text": "“Has dejado tu primer amor.” La sala está muy quieta. Nadie aquí tiene más años que tú. ¿Qué fue, al principio?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-947e258e",
+  "voice": "N",
+  "text": "Lo viste morir. Viste la piedra removida, y los lienzos puestos donde él había estado. “Fui muerto; y he aquí que vivo por siglos de siglos.” Tus piernas ya no te sostienen, pero lo intentas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ad99559e",
+  "voice": "N",
+  "text": "Éfeso, unos treinta años después de Pablo. Tienes muchísimos años. Casi todos los que conociste ya no están, Pedro y Pablo entre ellos. Tus ojos ya no ven la letra pequeña, así que una muchacha a la que enseñaste a leer lee por ti.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-af6e3ee0",
+  "voice": "N",
+  "text": "El rollo se copió y siguió por el camino, a cada una de las siete iglesias por turno.",
+  "kind": "history"
+ }
+]

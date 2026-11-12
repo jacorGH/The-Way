@@ -1,0 +1,59 @@
+[
+ {
+  "id": "d-0a470bac",
+  "voice": "N",
+  "text": "Sebaste estaba en el monte de la antigua Samaria, capital del reino del norte. Herodes el Grande la coronó con un templo al emperador.",
+  "kind": "history"
+ },
+ {
+  "id": "d-862488f6",
+  "voice": "F",
+  "text": "Lo conocí en el pozo de Jacob, hace años. Me pidió de beber. Siéntate, escriba. Él lo haría.",
+  "kind": "drama",
+  "speaker": "Una mujer de Sicar"
+ },
+ {
+  "id": "d-8a404d7b",
+  "voice": "N",
+  "text": "Una familia samaritana ha recibido a Felipe, y te quieren también a su mesa. Su pan es pan samaritano. Cada regla que te enseñaron dice que no lo comes.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-98ac4218",
+  "voice": "N",
+  "text": "Te están esperando.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-a73854a2",
+  "voice": "N",
+  "text": "Saliste de Jerusalén de noche con Felipe y un puñado de otros. Tres días al norte, el camino sube a la ciudad que Herodes reconstruyó y llamó así por Augusto. Nunca has puesto un pie en una ciudad samaritana. Te criaron para rodearlas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-bb2d8e10",
+  "voice": "F",
+  "text": "Lo conocí en el pozo de Jacob, hace años. Me pidió de beber. Siéntate, hija. Él lo haría.",
+  "kind": "drama",
+  "speaker": "Una mujer de Sicar"
+ },
+ {
+  "id": "d-d3fc068e",
+  "voice": "N",
+  "text": "Felipe no vuelve a Jerusalén con ellos. Dice que el Señor tiene otra cosa para él, y que tú debes venir.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d7e88798",
+  "voice": "N",
+  "text": "El pan está bueno. Nadie se atraganta. Felipe te mira y sonríe.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-90981987",
+  "voice": "F",
+  "text": "¡Escriba! Te conté del pozo, y del hombre que me dijo todo lo que he hecho. Mira ahora: ha enviado a su gente a nosotros.",
+  "kind": "drama",
+  "speaker": "La mujer de Sicar"
+ }
+]

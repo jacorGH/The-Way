@@ -1,0 +1,62 @@
+[
+ {
+  "id": "d-1117c29f",
+  "voice": "N",
+  "text": "Hay un largo grito, y luego silencio. Elí se queda dormido en la tierra con la cabeza en las rodillas de su madre.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-1346f82a",
+  "voice": "N",
+  "text": "Te mira largo rato. “Elí”, dice por fin, con voz pequeña. Luego vuelven los gritos.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-2fa77391",
+  "voice": "N",
+  "text": "Esteban te mira. Es hora de orar.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-732c6144",
+  "voice": "N",
+  "text": "Esteban te lleva fuera de las murallas, a los sepulcros del valle del Cedrón. Los vecinos de un joven llamado Elí lo han encadenado allí. Dicen que grita toda la noche y no reconoce a nadie.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-786ba978",
+  "voice": "N",
+  "text": "Elí tira de la cadena y le grita al cielo.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-961ee831",
+  "voice": "N",
+  "text": "Hechos registra espíritus inmundos expulsados en el nombre de Jesús (Hechos 5:16; 8:7). También advierte que su nombre no es un conjuro que cualquiera pueda usar (19:13–16).",
+  "kind": "history"
+ },
+ {
+  "id": "d-b3646ac3",
+  "voice": "N",
+  "text": "No termina en una noche. Durante semanas su madre lo lleva al partimiento del pan, y algunos días son difíciles. Para la fiesta de los Tabernáculos ya está cargando agua para las viudas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-b9f7a551",
+  "voice": "N",
+  "text": "¿Qué haces?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-ce3e41a4",
+  "voice": "N",
+  "text": "Esteban habla en voz baja y con firmeza. En el nombre de Jesucristo de Nazaret le ordena al espíritu inmundo que salga del muchacho. Tú oras con él, en voz baja, una y otra vez.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f987b357",
+  "voice": "N",
+  "text": "No comes. La noche es fría y larga, y Esteban ora más de lo que habla.",
+  "kind": "drama"
+ }
+]

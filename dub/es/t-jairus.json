@@ -1,0 +1,46 @@
+[
+ {
+  "id": "d-0c8c8adb",
+  "voice": "W",
+  "text": "Jairo es uno de los principales de la sinagoga. Hombres como él rara vez hablan de Jesús con la sobrina de un fariseo de Jerusalén. Aun así habla contigo, mientras desde el cuarto de al lado llega la voz de una niña.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-2178c57d",
+  "voice": "N",
+  "text": "Del cuarto de al lado llega la risa de una niña. Jairo no termina la frase.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4b04c4b1",
+  "voice": "N",
+  "text": "¿Qué le preguntas a Jairo?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-5cdb15f2",
+  "voice": "N",
+  "text": "“Talitha cumi” es arameo, la lengua de cada día en Galilea. Marcos conservó las propias palabras de Jesús.",
+  "kind": "history"
+ },
+ {
+  "id": "d-9ebc4101",
+  "voice": "M",
+  "text": "No me importó quién me viera de rodillas. Tenía doce años.",
+  "kind": "drama",
+  "speaker": "Jairo, principal de la sinagoga"
+ },
+ {
+  "id": "d-a132a502",
+  "voice": "M",
+  "text": "Se detuvo. Con mi hija muriéndose, se detuvo por ella. Entonces no lo entendí.",
+  "kind": "drama",
+  "speaker": "Jairo, principal de la sinagoga"
+ },
+ {
+  "id": "d-c8a3b80a",
+  "voice": "N",
+  "text": "Jairo es uno de los principales de la sinagoga. Hombres como él rara vez hablan de Jesús con un escriba de Jerusalén. Aun así habla contigo, mientras desde el cuarto de al lado llega la voz de una niña.",
+  "kind": "drama"
+ }
+]

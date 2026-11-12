@@ -1,0 +1,76 @@
+[
+ {
+  "id": "d-02b0961c",
+  "voice": "N",
+  "text": "Te pones junto a Jasón en la entrada. La luz de las antorchas te da en los ojos. Alguien escupe.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-046235f2",
+  "voice": "N",
+  "text": "Puños en la puerta. Antorchas en la calle. Jasón te mira.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-170f95ee",
+  "voice": "N",
+  "text": "Corres por los callejones golpeando puertas que te enseñaron hace solo tres días.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-222c3c25",
+  "voice": "N",
+  "text": "Desde Filipos caminas días hacia el oeste por la Vía Egnatia, la gran calzada empedrada de Macedonia, todavía con el cuerpo dolorido por la noche de Filipos.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-3444fda6",
+  "voice": "N",
+  "text": "Buscas el pasaje de Isaías que leía el etíope en el camino del desierto, y lo lees en voz alta. La sala se queda en silencio largo rato.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-577c13dc",
+  "voice": "N",
+  "text": "Corres una cortina detrás de ellos y te paras delante, como si solo hubieras estado durmiendo allí.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-62827ad1",
+  "voice": "M",
+  "text": "Mañana lo leeremos otra vez. Y pasado mañana.",
+  "kind": "drama",
+  "speaker": "El anciano"
+ },
+ {
+  "id": "d-c70dca75",
+  "voice": "N",
+  "text": "Hay tres rollos abiertos sobre la mesa. ¿Cuál desenrollas primero?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-e10eb2c3",
+  "voice": "M",
+  "text": "Eres de Jerusalén, y sabes leer. Bien. Él dice que el Cristo tenía que padecer y resucitar. Muéstranos dónde.",
+  "kind": "drama",
+  "speaker": "Un anciano de la sinagoga"
+ },
+ {
+  "id": "d-e858a1a6",
+  "voice": "N",
+  "text": "Bajas a la costa con los hermanos que llevan a Pablo a Atenas. Silas y Timoteo se quedan. Y también, por ahora, el anciano con el dedo sobre la página.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f96c25e4",
+  "voice": "N",
+  "text": "Buscas el salmo que Pedro citó en Pentecostés, y el anciano vuelve a leerlo con el dedo bajo cada palabra.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-fa9de8a5",
+  "voice": "N",
+  "text": "Buscas el salmo sobre el que el mismo Jesús les preguntó a los escribas en los atrios del Templo, y les cuentas lo que él preguntó.",
+  "kind": "drama"
+ }
+]

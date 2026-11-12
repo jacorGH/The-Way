@@ -1,0 +1,47 @@
+[
+ {
+  "id": "d-3f95528d",
+  "voice": "N",
+  "text": "Magdala huele a pescado salado y a viento del lago. En un patio cerca de la orilla, María Magdalena remienda una red con su cuñada. Levanta la vista cuando entras, y sonríe como si te estuviera esperando.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-8a184ba7",
+  "voice": "N",
+  "text": "Después de la resurrección, dice Mateo, los discípulos volvieron a Galilea (Mateo 28:16).",
+  "kind": "history"
+ },
+ {
+  "id": "d-60baf2ae",
+  "voice": "N",
+  "text": "¿Qué le preguntas a María Magdalena?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-9abbaf8d",
+  "voice": "F",
+  "text": "Creí que era el hortelano. Luego dijo mi nombre, como siempre lo decía. Uno reconoce la voz que lo ha liberado.",
+  "kind": "drama",
+  "speaker": "María Magdalena"
+ },
+ {
+  "id": "d-fb7a5280",
+  "voice": "N",
+  "text": "Ata el último nudo de la red y la levanta contra la luz. “Dirán que la palabra de una mujer no vale nada en un tribunal”, dice. “Yo no estaba en un tribunal. Estaba en el huerto. Escríbelo de todos modos.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-e9fc8a01",
+  "voice": "F",
+  "text": "Siete. No hablo de esos años. Hablo del día en que se fueron.",
+  "kind": "drama",
+  "speaker": "María Magdalena"
+ },
+ {
+  "id": "d-f53f0764",
+  "voice": "F",
+  "text": "Comprábamos el pan, remendábamos los mantos y escuchábamos todo. Los Doce predicaban. Nosotras alimentábamos a los predicadores. Algunas lo pagábamos de nuestro bolsillo.",
+  "kind": "drama",
+  "speaker": "María Magdalena"
+ }
+]

@@ -1,0 +1,80 @@
+[
+ {
+  "id": "d-039d6776",
+  "voice": "N",
+  "text": "Camina tan lejos como le permite la cadena, y habla. Escribes tan rápido como puedes. A veces se detiene a mitad de una frase y no dice nada durante largo rato, y tú esperas con la pluma en alto.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-19ff866a",
+  "voice": "N",
+  "text": "Epafrodito vino de Filipos con una ofrenda para Pablo, y luego casi murió de fiebre en Roma. Ya está lo bastante bien para viajar. Pablo quiere enviar una carta con él, y quiere que tú la escribas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4c2c2c3e",
+  "voice": "N",
+  "text": "En un momento deja de caminar y empieza a cantar en voz baja, y te das cuenta de que las líneas siguientes son un canto que las iglesias ya conocen. Tu pluma lleva el compás.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-69504f3f",
+  "voice": "N",
+  "text": "Lidia llora antes de que termines la primera frase. El carcelero, ya canoso, tiene los ojos cerrados.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-71a24a02",
+  "voice": "N",
+  "text": "Brindisi, la travesía a Grecia, la Vía Egnatia hacia el este por Macedonia. La carta viaja todo el camino dentro de tu manto, contra tu pecho.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-766af031",
+  "voice": "N",
+  "text": "La línea siguiente nombra a dos mujeres que llevan meses sin hablarse. Las dos están sentadas en esta sala.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-861a7a01",
+  "voice": "N",
+  "text": "Pablo solía dictar sus cartas a un escriba y añadía las últimas líneas de su propia mano (Romanos 16:22; Gálatas 6:11).",
+  "kind": "history"
+ },
+ {
+  "id": "d-b475e534",
+  "voice": "N",
+  "text": "Lidia lo lee con su voz de comerciante, la que cierra tratos. Luego deja la carta y las mira a las dos hasta que se miran entre ellas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-cbd8400c",
+  "voice": "W",
+  "text": "En un momento deja de caminar y empieza a cantar en voz baja, y te das cuenta de que las líneas siguientes son un canto que las iglesias ya conocen. Las escribes mientras él canta.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d4f59a7b",
+  "voice": "N",
+  "text": "Lo lees tal como lo dijo Pablo. La sala se queda muy callada.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ea258166",
+  "voice": "N",
+  "text": "“Tened buen ánimo; porque yo confío en Dios.” ¿Cómo pudo Pablo decir eso en medio de una tormenta? (Hechos 27:25)\n\n“Gozaos en el Señor siempre.” Escrito entre cadenas: su gozo no dependía de sus circunstancias, sino del Señor que está cerca. (Filipenses 4:4–7)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-eeb40de9",
+  "voice": "N",
+  "text": "La misma sala donde comenzó la iglesia, hace años, con unas pocas mujeres de la orilla del río. Ahora está llena. Epafrodito está en casa, vivo, y todos quieren abrazarlo. Luego todos se sientan, y te miran.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ff7850e6",
+  "voice": "N",
+  "text": "Evodia mira al suelo. Síntique mira a Evodia. Ninguna se mueve, pero ninguna se va.",
+  "kind": "drama"
+ }
+]

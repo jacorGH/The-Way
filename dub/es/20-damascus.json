@@ -1,0 +1,108 @@
+[
+ {
+  "id": "d-0ae35fdb",
+  "voice": "N",
+  "text": "“¿Quién es el joven llamado Saulo?” (Hechos 7:58)\n\nSaulo de Tarso, un fariseo, que se encontró con Jesús resucitado en el camino y llegó a ser su vaso escogido. (Hechos 9:15)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-10eb973a",
+  "voice": "W",
+  "text": "Un viejo discípulo llamado Ananías y su esposa te reciben. Antes de la cena él se arrodilla a orar, y tarda mucho en levantarse. Luego habla en voz alta, a alguien que no puedes ver.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-57e68c65",
+  "voice": "N",
+  "text": "Saulo se sienta a comer. Tienes una pregunta.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-59731e65",
+  "voice": "N",
+  "text": "Oras por el hombre que guardaba los mantos. Es la oración más difícil que has hecho. En algún lugar de la ciudad, él también está orando.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-5ef41302",
+  "voice": "N",
+  "text": "Dentro de algunos años le contará a una multitud en Jerusalén lo que esta noche te contó a ti:",
+  "kind": "drama"
+ },
+ {
+  "id": "d-6443368a",
+  "voice": "W",
+  "text": "Viajaste al norte durante una semana con una caravana de creyentes para advertir a los discípulos de Damasco que Saulo venía con cartas. Llegas tarde, aunque no como temías.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-71c6fcff",
+  "voice": "N",
+  "text": "Saulo tiene tu nombre en su lista. Ananías te está mirando.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-a7cb52ca",
+  "voice": "M",
+  "text": "Bien. Yo también. Tengamos miedo juntos, entonces, y vamos.",
+  "kind": "drama",
+  "speaker": "Ananías"
+ },
+ {
+  "id": "d-bb523635",
+  "voice": "M",
+  "text": "Me dicen que estabas fuera de la puerta cuando murió Esteban. Yo también estaba. Yo guardaba los mantos. Creí que servía a Dios.",
+  "kind": "drama",
+  "speaker": "Saulo"
+ },
+ {
+  "id": "d-cc7dec6b",
+  "voice": "N",
+  "text": "Cuando Saulo suba por fin a Jerusalén, los creyentes de allí le tendrán miedo. Hará falta un levita de Chipre para dar fe de él.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d8ce1b65",
+  "voice": "N",
+  "text": "Lleva tres días sin comer. Tiene los ojos abiertos, y no ven nada.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ead7671c",
+  "voice": "M",
+  "text": "Te conozco. Estabas junto a los mantos, mirándome mientras yo lo miraba a él. Aquel día creí que servía a Dios.",
+  "kind": "drama",
+  "speaker": "Saulo"
+ },
+ {
+  "id": "d-ec419ec1",
+  "voice": "M",
+  "text": "Dice que Saulo de Tarso está orando en la calle Derecha, en casa de Judas. Dice que debo ponerle las manos encima.",
+  "kind": "drama",
+  "speaker": "Ananías"
+ },
+ {
+  "id": "d-edb85619",
+  "voice": "N",
+  "text": "Caminaste al norte durante una semana para advertir a los creyentes de Damasco que Saulo venía con cartas. Llegas tarde, aunque no como temías.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f5c7bbb5",
+  "voice": "N",
+  "text": "Un viejo discípulo llamado Ananías te recibe. Antes de la cena se arrodilla a orar, y tarda mucho en levantarse. Luego habla en voz alta, a alguien que no puedes ver.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f6ecf004",
+  "voice": "N",
+  "text": "Estuviste junto a Saulo cuando murió Esteban. Conoces su rostro. Ananías te está mirando.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-fcd735e4",
+  "voice": "N",
+  "text": "“El Camino” es como llaman a los creyentes. Las cartas de Saulo también te nombran a ti, aunque él no conoce tu rostro.",
+  "kind": "history"
+ }
+]

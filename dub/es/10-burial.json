@@ -1,0 +1,91 @@
+[
+ {
+  "id": "d-081e3890",
+  "voice": "N",
+  "text": "Tocar un muerto te dejará impuro siete días. No comerás la Pascua con tu familia (Números 9:6). ¿Qué haces?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-297130af",
+  "voice": "W",
+  "text": "¿Qué le preguntas a tu tío?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-4338b611",
+  "voice": "N",
+  "text": "El sol se pone detrás de la muralla. Ha comenzado el sábado, y el sepulcro está sellado.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4bfec742",
+  "voice": "N",
+  "text": "José se va a su casa antes de que se acabe la luz. Nicodemo se sienta en una piedra del huerto, con las manos todavía oliendo a mirra, y no se levanta.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-50ece243",
+  "voice": "N",
+  "text": "Es la tarde del día de la Preparación. Al ponerse el sol comienza el sábado, y la Ley no permite que un cuerpo quede colgado durante la noche (Deuteronomio 21:22–23).",
+  "kind": "history"
+ },
+ {
+  "id": "d-75df9699",
+  "voice": "W",
+  "text": "José se va a su casa antes de que se acabe la luz. Tu tío se sienta en una piedra del huerto, con las manos todavía oliendo a mirra, y no se levanta.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-978a8bec",
+  "voice": "M",
+  "text": "“Así es necesario que el Hijo del Hombre sea levantado.” Entonces no lo entendí. Esta noche creo que sí.",
+  "kind": "drama",
+  "speaker": "Nicodemo"
+ },
+ {
+  "id": "d-a3ab08e8",
+  "voice": "M",
+  "text": "Viniste. Bien. José tiene el permiso del gobernador, y tenemos hasta la puesta del sol. Necesito otro par de manos.",
+  "kind": "drama",
+  "speaker": "Nicodemo"
+ },
+ {
+  "id": "d-c5eb093b",
+  "voice": "M",
+  "text": "Se rieron de mí. Lo permití. Debí haber dicho más, y antes.",
+  "kind": "drama",
+  "speaker": "Nicodemo"
+ },
+ {
+  "id": "d-d5d0998c",
+  "voice": "M",
+  "text": "Viniste. Bien. José tiene el permiso del gobernador, y tenemos hasta la puesta del sol. Los criados de José lo cargarán. Necesito tus manos para el lino y las especias.",
+  "kind": "drama",
+  "speaker": "Nicodemo"
+ },
+ {
+  "id": "d-e6fb728c",
+  "voice": "N",
+  "text": "¿Qué más le preguntas?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-ecec4e09",
+  "voice": "M",
+  "text": "Fui a verlo de noche, para que nadie me viera. Soy un hombre viejo, y le pregunté cómo puede un hombre nacer de nuevo.",
+  "kind": "drama",
+  "speaker": "Nicodemo"
+ },
+ {
+  "id": "d-f2d62a90",
+  "voice": "N",
+  "text": "¿Qué le preguntas a tu maestro?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-f7fc8935",
+  "voice": "W",
+  "text": "Ayudar a envolver el cuerpo te dejará impura siete días. No comerás la Pascua con tu familia (Números 9:6). ¿Qué haces?",
+  "kind": "prompt"
+ }
+]

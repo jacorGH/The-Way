@@ -232,8 +232,8 @@ window.TW = window.TW || {};
     const th = D.unlockedThreads(), fi = D.unlockedFinds();
     const letters = Object.keys(LETTERS).filter((k) => D.letter(k));
     const inOrder = Object.values((s && s.reports) || {}).filter((r) => r && r.ordered).length;
-    body.appendChild(el('p', 'empty', T('Threads: ' + th.length + ' of ' + THREADS.length + ' · Finds: ' + fi.length + ' of ' + FINDS.length + ' · Letters: ' + letters.length + ' · Accounts set in order: ' + inOrder,
-      'Hilos: ' + th.length + ' de ' + THREADS.length + ' · Hallazgos: ' + fi.length + ' de ' + FINDS.length + ' · Cartas: ' + letters.length + ' · Relatos puestos en orden: ' + inOrder)));
+    body.appendChild(el('p', 'empty', T('Threads: ' + th.length + ' of ' + THREADS.length + ' · Finds: ' + fi.length + ' of ' + FINDS.length + ' · Letters: ' + letters.length + ' · Accounts set in order: ' + inOrder + ' · Hands-on moments: ' + (TW.Hands ? TW.Hands.count() : 0),
+      'Hilos: ' + th.length + ' de ' + THREADS.length + ' · Hallazgos: ' + fi.length + ' de ' + FINDS.length + ' · Cartas: ' + letters.length + ' · Relatos puestos en orden: ' + inOrder + ' · Momentos con tus manos: ' + (TW.Hands ? TW.Hands.count() : 0))));
     if (!th.length && !fi.length && !letters.length) {
       body.appendChild(el('p', 'empty', T('Finish episodes to receive letters, collect finds, and notice threads where one account explains another.', 'Termina episodios para recibir cartas, reunir hallazgos y descubrir hilos donde un relato explica otro.')));
       return;

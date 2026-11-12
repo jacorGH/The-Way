@@ -1,0 +1,74 @@
+[
+ {
+  "id": "d-1e69af0f",
+  "voice": "N",
+  "text": "Día tras día te sigue por el foro, gritando. Lo que dice es verdad, y es terrible oírlo de ella: no es su voz.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-2d1ae0ff",
+  "voice": "N",
+  "text": "No puedes llegar hasta ellos entre la multitud. Solo puedes oírlo.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4787d39a",
+  "voice": "N",
+  "text": "En casa de Lidia alguien dice: “Escuchen”, y desde el otro lado del pueblo dormido llega el débil sonido de un canto.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-624858e1",
+  "voice": "N",
+  "text": "Por la mañana, los magistrados mandaron decir que los soltaran en silencio. Pablo se negó: eran ciudadanos romanos, azotados en público sin juicio, y los magistrados tuvieron que venir a sacarlos ellos mismos (Hechos 16:35–39).",
+  "kind": "history"
+ },
+ {
+  "id": "d-738a802d",
+  "voice": "N",
+  "text": "Cae la noche. Pablo y Silas están en el calabozo de más adentro, con los pies en el cepo. ¿Dónde estás tú?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-b2e22dd9",
+  "voice": "N",
+  "text": "Desde la puerta lo oyes: dos voces cantando un salmo en la oscuridad, y nadie que les diga que se callen.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-c21e7006",
+  "voice": "N",
+  "text": "Las cárceles romanas daban poco o nada de comer a los presos; los amigos y la familia les llevaban comida. La casa de Lidia habría hecho lo que pudiera.",
+  "kind": "history"
+ },
+ {
+  "id": "d-c5722fc2",
+  "voice": "N",
+  "text": "Alguien tiene que traer una luz. Eres tú. Te tiemblan tanto las manos que la llama de la lámpara salta por las paredes.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d3317cc8",
+  "voice": "N",
+  "text": "“¿Por qué es menester que por muchas tribulaciones entremos en el reino de Dios?” (Hechos 14:22)\n\nPor muchas tribulaciones: y a medianoche, en el cepo, Pablo y Silas cantaban. (Hechos 14:22; 16:25)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-d77497cb",
+  "voice": "N",
+  "text": "Junto al muro de la cárcel dejas de caminar. Alguien adentro está cantando.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-daa01aa7",
+  "voice": "N",
+  "text": "Alrededor de una mesa en casa de Lidia: una vendedora de púrpura, un carcelero y su familia, y dos hombres que no pueden recostarse por sus heridas. Esta es la iglesia de Filipos. En algún lugar de la ciudad, una esclava vuelve a conocer su propia voz; Hechos no nos dice qué fue de ella.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-f8b40261",
+  "voice": "N",
+  "text": "Levanta la vista, desconcertada, como quien despierta. Por primera vez oyes su propia voz. Pregunta qué día es.",
+  "kind": "drama"
+ }
+]

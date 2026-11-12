@@ -250,3 +250,9 @@ the text says so.
   opens after Episode I.
 - **Mary of Magdala** (Luke 8:1–3; John 20:11–18): told at Magdala, which this testimony unlocks on the map; opens
   after the Empty Tomb. Each has a memory scene, a find, Spanish and a voice batch.
+
+## Study features
+- **Hands-on moments** (`js/hands.js`): wind the linen at the burial, hold the jailer's lamp, unroll the scroll in
+  Berea, throw the grain overboard in the storm, take down Paul's dictation. Counted in Discoveries.
+- **Word study** for every episode and **Two accounts** (what Eleazar and Elisheva each saw) on the study page
+  (`js/discover4.js`).

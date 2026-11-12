@@ -1,0 +1,87 @@
+[
+ {
+  "id": "d-0f1f4d73",
+  "voice": "N",
+  "text": "Le das el rollo. Lo desenrolla y lee en silencio largo rato: más de un año de cosas vistas y oídas, con las fechas y los nombres de los testigos.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-1e363fce",
+  "voice": "N",
+  "text": "Pafos, la capital romana de Chipre, ciento cincuenta kilómetros al oeste, al otro lado de la isla.",
+  "kind": "history"
+ },
+ {
+  "id": "d-1fa9bf50",
+  "voice": "N",
+  "text": "Nunca has estado en el mar. Para la segunda hora te inclinas mareado sobre la borda, y Saulo, que ya ha navegado antes, te trae agua y no se ríe.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-3a8f05a8",
+  "voice": "N",
+  "text": "Hacia el atardecer, una isla larga y azul se levanta del mar. Bernabé está en la proa y no dice nada.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4088e81d",
+  "voice": "M",
+  "text": "Mi consejero dice que son fábulas de Judea. Tú, el de Jerusalén. ¿Estuviste allí? ¿Viste algo de esto con tus propios ojos?",
+  "kind": "drama",
+  "speaker": "Sergio Paulo"
+ },
+ {
+  "id": "d-4e16c0d8",
+  "voice": "N",
+  "text": "Bernabé te pide que vayas con ellos hasta Chipre. Tiene parientes en Salamina, y cartas para ellos, y le gustaría llevar un testigo de Jerusalén.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-6bf39ad1",
+  "voice": "N",
+  "text": "Miras a Pablo, y Pablo comienza. Te das cuenta de que él también es testigo: del camino a Damasco, y del hombre al que una vez persiguió.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-7d18ede4",
+  "voice": "N",
+  "text": "Un levita de Chipre, Simón llamado Níger, “el Negro”, un hombre de Cirene, un hombre que se crió en el palacio de Herodes, y el fariseo de Tarso. Nunca has visto un consejo como este.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-98cd7a14",
+  "voice": "N",
+  "text": "El gobernador de Chipre te está mirando.",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-b997d338",
+  "voice": "N",
+  "text": "En el puerto, Juan Marcos dice que se vuelve a casa. Pablo no dice nada, y su silencio pesa más que cualquier cosa que pudiera haber dicho. Bernabé te pregunta si seguirás con ellos, montaña arriba. Sigues.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-bb0ff22f",
+  "voice": "W",
+  "text": "Bernabé te pide que vayas hasta Chipre con la familia de su primo, que vuelve a casa en Salamina. Tiene cartas para sus parientes, y le gustaría llevar un testigo de Jerusalén.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-ca9afed5",
+  "voice": "N",
+  "text": "“Dijo: “Me seréis testigos”. ¿Se refiere a mí?” (Hechos 1:8)\n\nSí. En Pafos un gobernador romano me preguntó qué había visto, y se lo dije. (Hechos 1:8; 4:20)",
+  "kind": "answer"
+ },
+ {
+  "id": "d-d3871c6b",
+  "voice": "N",
+  "text": "Se lo dices con sencillez, como aprendiste a escribirlo: el techo en Capernaúm, la cruz fuera de la puerta, la piedra removida, los lienzos donde había estado el cuerpo. Dices solo lo que viste.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-73245de3",
+  "voice": "N",
+  "text": ")\n\nSí. En Pafos un gobernador romano me preguntó qué había visto, y se lo dije. (Hechos 1:8; 4:20)",
+  "kind": "answer"
+ }
+]

@@ -1,0 +1,47 @@
+[
+ {
+  "id": "d-059e96f0",
+  "voice": "N",
+  "text": "En Jericó, un hombre bajo con un manto fino reparte monedas a los mendigos de la puerta, y cuenta cada una en voz alta para que toda la calle lo oiga. Dicen que antes era el publicano más rico de la ciudad.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-35435a6b",
+  "voice": "N",
+  "text": "Jericó era rica: sus bálsamos y sus palmeras de dátiles eran famosos, y su aduana estaba en el camino que sube de los vados del Jordán a Jerusalén.",
+  "kind": "history"
+ },
+ {
+  "id": "d-dac404c7",
+  "voice": "N",
+  "text": "¿Qué le preguntas a Zaqueo de Jericó?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-eef3d5b5",
+  "voice": "M",
+  "text": "Tenían razón. Yo era un pecador. Vino a mi casa de todos modos. Vino a mi casa precisamente por eso.",
+  "kind": "drama",
+  "speaker": "Zaqueo de Jericó"
+ },
+ {
+  "id": "d-6dc9f2be",
+  "voice": "N",
+  "text": "Echa otra moneda en el cuenco de un mendigo, y luego una segunda, y se ríe. “Vino a buscar lo que se había perdido”, dice. “Yo estaba muy perdido. Escribe eso.”",
+  "kind": "drama"
+ },
+ {
+  "id": "d-e419f299",
+  "voice": "M",
+  "text": "El jefe de los publicanos, subido a un árbol como un muchacho. No me importó quién me viera. Y él me llamó por mi nombre.",
+  "kind": "drama",
+  "speaker": "Zaqueo de Jericó"
+ },
+ {
+  "id": "d-2c69b8bc",
+  "voice": "M",
+  "text": "Cuatro tantos. Todavía lo estoy devolviendo. Es el mejor dinero que he gastado.",
+  "kind": "drama",
+  "speaker": "Zaqueo de Jericó"
+ }
+]
