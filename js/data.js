@@ -1260,7 +1260,7 @@ window.TW = window.TW || {};
         'Home of Philip, Andrew and Peter (John 1:44), just across the Jordan in Philip the tetrarch’s territory. Its exact site is still debated.',
     },
     {
-      id: 'magdala', name: 'Magdala', alt: 'Migdal', lon: 35.510, lat: 32.826, kind: 'locked', label: 'l',
+      id: 'magdala', name: 'Magdala', alt: 'Migdal', lon: 35.510, lat: 32.826, kind: 'history', label: 'l',
       ref: 'Luke 8:1–3',
       text:
         'A prosperous lakeside town known for salted fish, and home of Mary called Magdalene (Luke 8:2). Excavations since 2009 have uncovered a first-century synagogue.',

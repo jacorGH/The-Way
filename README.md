@@ -246,3 +246,7 @@ the text says so.
 ## Side stories
 - **Zacchaeus** (Luke 19:1–10): a testimony in Jericho with two memory scenes (the sycamore tree, and dinner at his
   house), a find about Jericho's balsam groves, Spanish, and a voice batch (`dub/en/t-zacchaeus.json`).
+- **The centurion's servant** (Luke 7:1–10): told at the Capernaum synagogue by one of the elders the centurion sent;
+  opens after Episode I.
+- **Mary of Magdala** (Luke 8:1–3; John 20:11–18): told at Magdala, which this testimony unlocks on the map; opens
+  after the Empty Tomb. Each has a memory scene, a find, Spanish and a voice batch.

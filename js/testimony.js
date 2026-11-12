@@ -95,6 +95,28 @@ window.TW = window.TW || {};
       ],
       outro: [['n', 'He drops another coin into a beggar’s bowl, then a second one, and laughs. “He came to seek the lost,” he says. “I was very lost. Write that down.”']],
     },
+    centurion: {
+      title: 'The centurion’s servant', witness: 'An elder of the Capernaum synagogue', place: 'capernaum', region: 'galilee', era: 'galilee', after: 'capernaum', set: 'synagogue',
+      look: { skin: '#b8845a', hair: '#8a7a6a', beard: '#8a7a6a', tunic: '#e6dfcc', mantle: '#3a4a6a' },
+      intro: [['n', 'An old man is sweeping the steps of the synagogue in Capernaum, the same black basalt steps you once watched a crowd spill down. He pats the wall as he works. “A Roman paid for every stone of this,” he says. “Ask me how I feel about that.”']],
+      asks: [
+        { id: 'roman', scene: 'cent_plea', q: 'Why did you go to Jesus for a Roman?', say: [['s', 'luke7c', '7:1', '7:3'], ['c', 'beg'], ['s', 'luke7c', '7:4', '7:5'], ['d', 'I begged a Jewish teacher to help a Roman officer. My grandfather would not have believed it. But that centurion loved this town, and the boy was dying.']], note: 'Elders of the Jews begged Jesus to help a centurion, saying, “he loves our nation, and he built our synagogue for us” (Luke 7:4–5).' },
+        { id: 'worthy', scene: 'cent_plea', q: 'What did the centurion say?', say: [['c', 'go'], ['s', 'luke7c', '7:6', '7:6'], ['c', 'friends'], ['s', 'luke7c', '7:7', '7:8'], ['d', 'We said he was worthy. He said he was not. I have thought about that for a long time.']], note: 'The centurion sent word: “I am not worthy for you to come under my roof… but say the word, and my servant will be healed” (Luke 7:6–7).' },
+        { id: 'faith', scene: 'cent_plea', q: 'What did Jesus say?', say: [['c', 'marvel'], ['s', 'luke7c', '7:9', '7:10'], ['d', '“Not in Israel.” He said it with all of us standing there, the elders of Israel. And he was right.']], note: '“I have not found such great faith, no, not in Israel” (Luke 7:9).' },
+      ],
+      outro: [['n', 'He goes back to his sweeping. “A Roman, with more faith than the elders,” he says, without looking up. “He told us so to our faces. It was the kindest thing anyone ever said to me.”']],
+    },
+    magdalene: {
+      title: 'Mary of Magdala', witness: 'Mary of Magdala', place: 'magdala', region: 'galilee', era: 'passion', after: 'tomb', set: 'village',
+      look: { skin: '#b8845a', hair: '#2a1a12', tunic: '#7a5a8a', veil: '#d8cfb8' },
+      intro: [['n', 'Magdala smells of salt fish and lake wind. In a courtyard near the shore, Mary Magdalene is mending a net with her sister-in-law. She looks up when you come in, and smiles as if she has been expecting you.'], ['h', 'After the resurrection, Matthew says, the disciples went back to Galilee (Matthew 28:16).']],
+      asks: [
+        { id: 'seven', scene: 'mag_road', q: 'They say you were very ill once.', say: [['s', 'luke8', '8:1', '8:2'], ['d', 'Seven. I do not talk about those years. I talk about the day they left.']], note: 'Mary who was called Magdalene, “from whom seven demons had gone out” (Luke 8:2).' },
+        { id: 'served', scene: 'mag_road', q: 'What was it like to follow him?', say: [['c', 'walk'], ['s', 'luke8', '8:3', '8:3'], ['c', 'serve'], ['d', 'We bought the bread and mended the cloaks and listened to everything. The Twelve preached. We fed the preachers. Some of us paid for it.']], note: 'Women followed Jesus and “served them from their possessions” (Luke 8:3).' },
+        { id: 'garden', scene: 'mag_garden', q: 'Tell me about the garden.', say: [['c', 'weep'], ['s', 'john20', '20:11', '20:15'], ['c', 'turn'], ['s', 'john20', '20:16', '20:16'], ['c', 'name'], ['s', 'john20', '20:17', '20:18'], ['c', 'go'], ['d', 'I thought he was the gardener. Then he said my name, the way he always said it. You know a voice that has freed you.']], note: 'Jesus said to her, “Mary.” She turned and said to him, “Rabboni!” (John 20:16). She went and told the disciples, “I have seen the Lord!” (John 20:18).' },
+      ],
+      outro: [['n', 'She ties off the net and holds it up to the light. “They will say a woman’s word is worth nothing in court,” she says. “I was not in court. I was in the garden. Write it down anyway.”']],
+    },
     bethesda: {
       title: 'The man healed at Bethesda', witness: 'The man healed at Bethesda', place: 'bethesda', region: 'jerusalem', era: 'passion', after: 'nain', set: 'court',
       look: { skin: '#9a6440', hair: '#5f5048', beard: '#5f5048', tunic: '#8a7a5a' },
@@ -222,7 +244,7 @@ window.TW = window.TW || {};
     for (;;) {
       const open = T.asks.filter((a) => !asked[a.id]);
       const opts = open.map((a) => a.q).concat([open.length ? 'Thank them and take your leave' : 'Thank them for their testimony']);
-      const pick = await SC.choose(open.length === T.asks.length ? 'What do you ask ' + T.witness.split(',')[0].replace(/^The /, 'the ').replace(/^A /, 'a ') + '?' : 'What else do you ask?', opts, 'Your question');
+      const pick = await SC.choose(open.length === T.asks.length ? 'What do you ask ' + T.witness.split(',')[0].replace(/^The /, 'the ').replace(/^An /, 'an ').replace(/^A /, 'a ') + '?' : 'What else do you ask?', opts, 'Your question');
       if (pick === open.length) break;
       const a = open[pick];
       asked[a.id] = true;

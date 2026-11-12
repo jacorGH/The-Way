@@ -402,6 +402,18 @@
    "title": "Testimony: Zacchaeus",
    "lines": 14,
    "characters": 1759
+  },
+  {
+   "file": "t-centurion.json",
+   "title": "Testimony: The centurion’s servant",
+   "lines": 12,
+   "characters": 2033
+  },
+  {
+   "file": "t-magdalene.json",
+   "title": "Testimony: Mary of Magdala",
+   "lines": 13,
+   "characters": 2326
   }
  ]
 }

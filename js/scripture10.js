@@ -88,6 +88,23 @@ window.TW = window.TW || {};
     ["22:20", "He who testifies these things says, “Yes, I come quickly.” Amen! Yes, come, Lord Jesus."],
     ["22:21", "The grace of the Lord Jesus Christ be with all the saints. Amen."],
   ]);
+  add('luke7c', 'Luke', [
+    ["7:1", "After he had finished speaking in the hearing of the people, he entered into Capernaum."],
+    ["7:2", "A certain centurion’s servant, who was dear to him, was sick and at the point of death."],
+    ["7:3", "When he heard about Jesus, he sent to him elders of the Jews, asking him to come and save his servant."],
+    ["7:4", "When they came to Jesus, they begged him earnestly, saying, “He is worthy for you to do this for him,"],
+    ["7:5", "for he loves our nation, and he built our synagogue for us.”"],
+    ["7:6", "Jesus went with them. When he was now not far from the house, the centurion sent friends to him, saying to him, “Lord, don’t trouble yourself, for I am not worthy for you to come under my roof."],
+    ["7:7", "Therefore I didn’t even think myself worthy to come to you; but say the word, and my servant will be healed."],
+    ["7:8", "For I also am a man placed under authority, having under myself soldiers. I tell this one, ‘Go!’ and he goes; and to another, ‘Come!’ and he comes; and to my servant, ‘Do this,’ and he does it.”"],
+    ["7:9", "When Jesus heard these things, he marveled at him, and turned and said to the multitude who followed him, “I tell you, I have not found such great faith, no, not in Israel.”"],
+    ["7:10", "Those who were sent, returning to the house, found that the servant who had been sick was well."],
+  ]);
+  add('luke8', 'Luke', [
+    ["8:1", "Soon afterwards, he went about through cities and villages, preaching and bringing the good news of God’s Kingdom. With him were the twelve,"],
+    ["8:2", "and certain women who had been healed of evil spirits and infirmities: Mary who was called Magdalene, from whom seven demons had gone out;"],
+    ["8:3", "and Joanna, the wife of Chuzas, Herod’s steward; Susanna; and many others who served them from their possessions."],
+  ]);
   add('luke19', 'Luke', [
     ["19:1", "He entered and was passing through Jericho."],
     ["19:2", "There was a man named Zacchaeus. He was a chief tax collector, and he was rich."],

@@ -612,6 +612,44 @@ window.TW = window.TW || {};
       zac, j,
     };
   };
+  // ---------- the centurion's servant (Luke 7:1–10), remembered by an elder ----------
+  VG.cent_plea = () => {
+    load('street');
+    const j = add(P().jesus, 60, 147, { facing: 1, speed: 18 });
+    const ds = [0, 1, 2].map((i) => add(dis(i), 40 - i * 12, 147 + (i % 2), { facing: 1, speed: 18 }));
+    const el = [0, 1].map((i) => add(S.person({ skin: '#b8845a', hair: '#8a7a6a', beard: '#8a7a6a', tunic: '#e6dfcc', mantle: i ? '#5a4a6a' : '#3a4a6a' }), 120 + i * 14, 147, { facing: -1, speed: 16 }));
+    const fr = [0, 1].map((i) => add(K.villager(950 + i), 290 + i * 12, 147, { facing: -1, speed: 22 }));
+    return {
+      beg: async () => { el.forEach((e) => { e.pose = 'out'; }); await W(1100); el.forEach((e) => { e.pose = 'stand'; }); },
+      go: async () => { el.forEach((e) => { e.facing = 1; SC.walk(e, e.x + 70); }); ds.forEach((d) => SC.walk(d, d.x + 70)); await SC.walk(j, 150); },
+      friends: async () => { fr.forEach((f) => SC.walk(f, 196 + (f === fr[1] ? 12 : 0))); await W(1300); fr.forEach((f) => { f.pose = 'out'; }); await W(900); fr.forEach((f) => { f.pose = 'stand'; }); },
+      marvel: async () => { j.facing = -1; j.pose = 'raise'; await W(1100); j.pose = 'out'; await W(500); j.pose = 'stand'; },
+      j, el, fr,
+    };
+  };
+  // ---------- Mary of Magdala (Luke 8:1–3; John 20:11–18) ----------
+  const maryLook = { skin: '#b8845a', hair: '#2a1a12', tunic: '#7a5a8a', veil: '#d8cfb8' };
+  VG.mag_road = () => {
+    load('village');
+    const j = add(P().jesus, 40, 147, { facing: 1, speed: 16 });
+    const tw = [0, 1, 2, 3].map((i) => add(dis(i), 20 - i * 12, 147 + (i % 2), { facing: 1, speed: 16 }));
+    const wm = [0, 1, 2].map((i) => add(S.person(i ? { skin: '#c49470', hair: '#3a2416', tunic: i === 1 ? '#5a6a7a' : '#8a6a3a', veil: '#b3a080' } : maryLook), -30 - i * 13, 148, { facing: 1, speed: 16 }));
+    return {
+      walk: async () => { SC.walk(j, 200); tw.forEach((t, i) => SC.walk(t, 182 - i * 12)); wm.forEach((w, i) => SC.walk(w, 128 - i * 13)); await W(2600); },
+      serve: async () => { wm.forEach((w) => { w.pose = 'out'; }); await W(1000); wm.forEach((w) => { w.pose = 'stand'; }); },
+    };
+  };
+  VG.mag_garden = () => {
+    load('olives');
+    const mary = add(S.person(maryLook), 120, 150, { pose: 'sit', facing: 1 });
+    const j = add(P().jesus, 70, 147, { facing: 1, speed: 14 });
+    return {
+      weep: async () => { mary.pose = 'sit'; await W(1000); },
+      turn: async () => { mary.pose = 'stand'; mary.facing = -1; await W(700); },
+      name: async () => { j.pose = 'out'; await W(700); j.pose = 'stand'; mary.pose = 'raise'; await W(900); mary.pose = 'sit'; },
+      go: async () => { mary.pose = 'stand'; mary.facing = 1; await SC.walk(mary, 300); },
+    };
+  };
   VG.enter = async function (id, witness) {
     const el = SC.el;
     let mem = null;
@@ -621,7 +659,7 @@ window.TW = window.TW || {};
       mem = VG[id]() || {};
       TW.Audio && TW.Audio.memory(true);
       el.stage.classList.add('memory');
-      el.memchip.textContent = TW.Settings && TW.Settings.get('lang') === 'es' ? 'Como lo recuerda ' + (TW.tr ? TW.tr(witness) : witness).replace(/^El /, 'el ').replace(/^La /, 'la ').replace(/^Un /, 'un ').replace(/^Una /, 'una ') : 'As remembered by ' + witness.replace(/^The /, 'the ').replace(/^A /, 'a ');
+      el.memchip.textContent = TW.Settings && TW.Settings.get('lang') === 'es' ? 'Como lo recuerda ' + (TW.tr ? TW.tr(witness) : witness).replace(/^El /, 'el ').replace(/^La /, 'la ').replace(/^Un /, 'un ').replace(/^Una /, 'una ') : 'As remembered by ' + witness.replace(/^The /, 'the ').replace(/^An /, 'an ').replace(/^A /, 'a ');
     });
     return mem;
   };

@@ -1,0 +1,83 @@
+[
+ {
+  "id": "d-3f95528d",
+  "voice": "N",
+  "text": "Magdala smells of salt fish and lake wind. In a courtyard near the shore, Mary Magdalene is mending a net with her sister-in-law. She looks up when you come in, and smiles as if she has been expecting you.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-8a184ba7",
+  "voice": "N",
+  "text": "After the resurrection, Matthew says, the disciples went back to Galilee (Matthew 28:16).",
+  "kind": "history"
+ },
+ {
+  "id": "d-60baf2ae",
+  "voice": "N",
+  "text": "What do you ask Mary of Magdala?",
+  "kind": "prompt"
+ },
+ {
+  "id": "s-WEB-f0fe08fa",
+  "voice": "S",
+  "text": "and Joanna, the wife of Chuzas, Herod’s steward; Susanna; and many others who served them from their possessions.",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-f53f0764",
+  "voice": "F",
+  "text": "We bought the bread and mended the cloaks and listened to everything. The Twelve preached. We fed the preachers. Some of us paid for it.",
+  "kind": "drama",
+  "speaker": "Mary of Magdala"
+ },
+ {
+  "id": "d-e6fb728c",
+  "voice": "N",
+  "text": "What else do you ask?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-fb7a5280",
+  "voice": "N",
+  "text": "She ties off the net and holds it up to the light. “They will say a woman’s word is worth nothing in court,” she says. “I was not in court. I was in the garden. Write it down anyway.”",
+  "kind": "drama"
+ },
+ {
+  "id": "s-WEB-8a417a31",
+  "voice": "S",
+  "text": "Soon afterwards, he went about through cities and villages, preaching and bringing the good news of God’s Kingdom. With him were the twelve, and certain women who had been healed of evil spirits and infirmities: Mary who was called Magdalene, from whom seven demons had gone out;",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-e9fc8a01",
+  "voice": "F",
+  "text": "Seven. I do not talk about those years. I talk about the day they left.",
+  "kind": "drama",
+  "speaker": "Mary of Magdala"
+ },
+ {
+  "id": "s-WEB-dffa2f3f",
+  "voice": "S",
+  "text": "But Mary was standing outside at the tomb weeping. So, as she wept, she stooped and looked into the tomb, and she saw two angels in white sitting, one at the head, and one at the feet, where the body of Jesus had lain. They told her, “Woman, why are you weeping?” She said to them, “Because they have taken away my Lord, and I don’t know where they have laid him.” When she had said this, she turned around and saw Jesus standing, and didn’t know that it was Jesus. Jesus said to her, “Woman, why are you weeping? Who are you looking for?” She, supposing him to be the gardener, said to him, “Sir, if you have carried him away, tell me where you have laid him, and I will take him away.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-a2bac63a",
+  "voice": "S",
+  "text": "Jesus said to her, “Mary.” She turned and said to him, “Rhabbouni!” which is to say, “Teacher!”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-407d9279",
+  "voice": "S",
+  "text": "Jesus said to her, “Don’t touch me, for I haven’t yet ascended to my Father; but go to my brothers, and tell them, ‘I am ascending to my Father and your Father, to my God and your God.’” Mary Magdalene came and told the disciples that she had seen the Lord, and that he had said these things to her.",
+  "kind": "scripture"
+ },
+ {
+  "id": "d-9abbaf8d",
+  "voice": "F",
+  "text": "I thought he was the gardener. Then he said my name, the way he always said it. You know a voice that has freed you.",
+  "kind": "drama",
+  "speaker": "Mary of Magdala"
+ }
+]
