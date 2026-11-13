@@ -145,6 +145,7 @@ window.TW = window.TW || {};
 
   // ---------- music ----------
   const DOR = [0, 2, 3, 5, 7, 9, 10], PHR = [0, 1, 3, 5, 7, 8, 10], PDOM = [0, 1, 4, 5, 7, 8, 10], MIX = [0, 2, 4, 5, 7, 9, 10], AEO = [0, 2, 3, 5, 7, 8, 10];
+  const MAJ = [0, 2, 4, 5, 7, 9, 11];
   const MOODS = {
     title: { root: 62, mode: DOR, bpm: 64, drone: [38, 45], lyre: 0.75, flute: 0.7, drum: 0, theme: true },
     galilee: { root: 62, mode: DOR, bpm: 70, drone: [38, 45], lyre: 0.8, flute: 0.5, drum: 0 },
@@ -157,9 +158,34 @@ window.TW = window.TW || {};
     night: { root: 62, mode: DOR, bpm: 48, drone: [38], lyre: 0.3, flute: 0.2, drum: 0 },
     storm: { root: 62, mode: PHR, bpm: 96, drone: [38, 39], lyre: 0, flute: 0, drum: 1, roll: true },
     silence: { root: 62, mode: DOR, bpm: 60, drone: [], lyre: 0, flute: 0, drum: 0 },
+    // The Birth of Jesus
+    advent: { root: 67, mode: MAJ, bpm: 56, drone: [43, 50], lyre: 0.35, flute: 0, drum: 0, pad: true, carol: 'faithful' },
+    manger: { root: 60, mode: MAJ, bpm: 50, drone: [36, 43], lyre: 0.25, flute: 0, drum: 0, pad: true, carol: 'silent' },
+    gloria: { root: 65, mode: MAJ, bpm: 60, drone: [41, 48], lyre: 0.4, flute: 0, drum: 0, pad: true, carol: 'angels' },
+    child: { root: 69, mode: AEO, bpm: 54, drone: [45, 52], lyre: 0.3, flute: 0, drum: 0, pad: true, carol: 'child' },
+    kings: { root: 64, mode: AEO, bpm: 58, drone: [40, 47], lyre: 0.35, flute: 0, drum: 0.25, pad: true, carol: 'kings' },
   };
   const THEME = [[0, 1], [2, 1], [3, 1], [4, 2], [6, 1], [4, 1], [3, 1], [4, 3], [2, 1], [3, 1], [1, 1], [0, 4]];
-  let mood = null, moodName = null, drone = null, nextBeat = 0, beat = 0, fluteBusyUntil = 0, themePlayed = false;
+  // Christmas carols for The Birth of Jesus: public-domain melodies, as [MIDI note, beats] (0 = rest). spb: seconds per beat.
+  const CAROLS = {
+    // Silent Night (Franz Gruber, 1818), C major, in eighth notes
+    silent: { spb: 0.36, notes: [[67, 3], [69, 1], [67, 2], [64, 6], [67, 3], [69, 1], [67, 2], [64, 6], [74, 4], [74, 2], [71, 6], [72, 4], [72, 2], [67, 6],
+      [69, 4], [69, 2], [72, 3], [71, 1], [69, 2], [67, 3], [69, 1], [67, 2], [64, 6], [69, 4], [69, 2], [72, 3], [71, 1], [69, 2], [67, 3], [69, 1], [67, 2], [64, 6],
+      [74, 4], [74, 2], [77, 3], [74, 1], [71, 2], [72, 6], [76, 6], [72, 3], [67, 1], [64, 2], [67, 3], [65, 1], [62, 2], [60, 9]] },
+    // O Come, All Ye Faithful (Adeste Fideles, 18th century), G major, the opening, in quarter notes
+    faithful: { spb: 0.62, notes: [[67, 1], [67, 2], [62, 1], [67, 1], [69, 2], [62, 2], [71, 1], [69, 1], [71, 1], [72, 1], [71, 2], [69, 1], [0, 1]] },
+    // What Child Is This (Greensleeves, 16th century), A minor, in quarter notes
+    child: { spb: 0.5, notes: [[69, 1], [72, 2], [74, 1], [76, 1.5], [77, 0.5], [76, 1], [74, 2], [71, 1], [67, 1.5], [69, 0.5], [71, 1], [72, 2], [69, 1],
+      [69, 1.5], [68, 0.5], [69, 1], [71, 2], [68, 1], [64, 2], [69, 1], [72, 2], [74, 1], [76, 1.5], [77, 0.5], [76, 1], [74, 2], [71, 1],
+      [67, 1.5], [69, 0.5], [71, 1], [72, 1.5], [71, 0.5], [69, 1], [68, 1.5], [66, 0.5], [68, 1], [69, 3]] },
+    // We Three Kings (John Henry Hopkins, 1857), E minor, in eighth notes
+    kings: { spb: 0.26, notes: [[71, 2], [69, 1], [67, 2], [64, 1], [66, 1], [67, 1], [66, 1], [64, 3], [71, 2], [69, 1], [67, 2], [64, 1], [66, 1], [67, 1], [66, 1], [64, 3],
+      [67, 2], [67, 1], [69, 2], [69, 1], [71, 2], [71, 1], [74, 1], [72, 1], [71, 1], [69, 1], [71, 1], [69, 1], [67, 2], [66, 1], [64, 6]] },
+    // Angels We Have Heard on High (French carol), F major, the verse, in quarter notes
+    angels: { spb: 0.48, notes: [[69, 1], [69, 1], [69, 1], [72, 1], [72, 1.5], [70, 0.5], [69, 2], [69, 1], [67, 1], [69, 1], [72, 1], [69, 1.5], [67, 0.5], [65, 2],
+      [69, 1], [69, 1], [69, 1], [72, 1], [72, 1.5], [70, 0.5], [69, 2], [69, 1], [67, 1], [69, 1], [72, 1], [69, 1.5], [67, 0.5], [65, 2]] },
+  };
+  let mood = null, moodName = null, drone = null, nextBeat = 0, beat = 0, fluteBusyUntil = 0, themePlayed = false, carolRest = 0;
   const note = (M, deg, oct) => {
     const n = M.mode.length, d = ((deg % n) + n) % n, o = Math.floor(deg / n);
     return M.root + M.mode[d] + 12 * (o + (oct || 0));
@@ -263,6 +289,18 @@ window.TW = window.TW || {};
       else { if (b === 0 || b === 2) drum('doum', t, 0.3 * M.drum); if (b === 1 || b === 3) drum('tek', t + spb * 0.5, 0.25 * M.drum); }
     }
     if (M.pad && b === 0 && beat % 8 === 0) pad([note(M, 0, -1), note(M, 2, -1), note(M, 4, -1)], t, spb * 8, 0.035);
+    // a carol: the melody on the flute (with a soft bell under each note), then a long rest before it comes round again
+    if (M.carol && b === 0 && t > fluteBusyUntil) {
+      const C = CAROLS[M.carol];
+      let tt = t;
+      C.notes.forEach((n, i) => {
+        const d = n[1] * C.spb;
+        if (n[0]) { flute(n[0], tt, d * 0.92, 0.085); if (n[1] >= 1 || i === 0) pluck(n[0] + 12, tt, 0.018); }
+        tt += d;
+      });
+      carolRest = 14 + Math.floor(Math.random() * 10);
+      fluteBusyUntil = tt + spb * carolRest;
+    }
     if (M.flute > 0 && b === 0 && t > fluteBusyUntil) {
       if (M.theme && !themePlayed) {
         themePlayed = true;
@@ -533,6 +571,22 @@ window.TW = window.TW || {};
     tap(t) { pluck(79, t, 0.05, sfxBus); },
     page(t) { pluck(88, t, 0.016, sfxBus); },
     chime(t) { pluck(86, t, 0.07, sfxBus); pluck(93, t + 0.12, 0.05, sfxBus); },
+    // The Birth of Jesus: the opening of Joy to the World (public domain), when a report is sealed
+    joy(t) { [[84, 0.75], [83, 0.25], [81, 0.5], [79, 0.75], [77, 0.25], [76, 0.5], [74, 0.5], [72, 1.2]].reduce((tt, n) => { pluck(n[0], tt, 0.06, sfxBus); return tt + n[1] * 0.42; }, t); },
+    // the glory of the Lord, or the star: a high shimmer that rises and fades
+    shimmer(t) { [84, 88, 91, 96, 100, 103, 108].forEach((m, i) => pluck(m, t + i * 0.07, 0.035 - i * 0.003, sfxBus)); [96, 100, 103].forEach((m, i) => pluck(m, t + 0.9 + i * 0.11, 0.02, sfxBus)); },
+    // small bells on the wise men's camels
+    bells(t) { for (let i = 0; i < 7; i++) { const tt = t + i * rand(0.12, 0.22); pluck(pick([91, 93, 96, 98]), tt, rand(0.012, 0.025), sfxBus); } },
+    // a sheep in the night field
+    sheep(t) {
+      [0, 0.32].forEach((d, i) => {
+        const o = ctx.createOscillator(), g = ctx.createGain(), bp = filt('bandpass', 900, 2.2), vib = ctx.createOscillator(), vg = ctx.createGain();
+        o.type = 'sawtooth'; o.frequency.setValueAtTime(i ? 300 : 330, t + d); o.frequency.linearRampToValueAtTime(i ? 270 : 300, t + d + 0.4);
+        vib.frequency.value = 22; vg.gain.value = 18; vib.connect(vg); vg.connect(o.frequency);
+        g.gain.setValueAtTime(0.0001, t + d); g.gain.linearRampToValueAtTime(0.05, t + d + 0.05); g.gain.linearRampToValueAtTime(0.0001, t + d + (i ? 0.55 : 0.28));
+        o.connect(bp); bp.connect(g); g.connect(sfxBus); [o, vib].forEach((x) => { x.start(t + d); x.stop(t + d + 0.6); });
+      });
+    },
     // when Scripture answers a question in your scroll: a short rising phrase
     answer(t) { pluck(74, t, 0.06, sfxBus); pluck(78, t + 0.14, 0.055, sfxBus); pluck(81, t + 0.28, 0.055, sfxBus); pluck(86, t + 0.46, 0.07, sfxBus); pluck(90, t + 0.62, 0.045, sfxBus); },
     whoosh(t) { pluck(74, t, 0.03, sfxBus); pluck(71, t + 0.08, 0.026, sfxBus); pluck(67, t + 0.16, 0.022, sfxBus); },

@@ -54,9 +54,11 @@ window.TW = window.TW || {};
   SC.start = function () {
     sizeFx();
     SC.running = true;
+    // 30 frames a second: identical for pixel art, and half the battery and heat of drawing at the screen's full rate
     let last = performance.now();
     const loop = (now) => {
       if (!SC.running) return;
+      if (now - last < 1000 / 30 - 2) { requestAnimationFrame(loop); return; }
       const dt = Math.min(0.05, (now - last) / 1000);
       last = now;
       update(dt);

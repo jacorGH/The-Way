@@ -728,6 +728,164 @@ window.TW = window.TW || {};
       laz, j,
     };
   };
+  // ---------- The Birth of Jesus: Mary's memories (Luke 1–2; Matthew 1–2) ----------
+  const maryY = { skin: '#b8845a', hair: '#2a1a12', tunic: '#c9b89a', veil: '#5a7a9a' };
+  const josephY = { skin: '#a8724a', hair: '#3a2416', beard: '#3a2416', tunic: '#8a6a4a', mantle: '#5a4a3a' };
+  // light for an angel or the glory of the Lord (never a figure): a soft radiance that can fade in and out
+  const glow = (x, y, r, s) => (ctx, t, cam) => {
+    if (!s.a) return;
+    const sx = x - cam, k = s.a * (0.85 + Math.sin(t * 3) * 0.15);
+    const gr = ctx.createRadialGradient(sx, y, 0, sx, y, r);
+    gr.addColorStop(0, 'rgba(255,248,220,' + (0.95 * k) + ')'); gr.addColorStop(0.35, 'rgba(255,236,180,' + (0.5 * k) + ')'); gr.addColorStop(1, 'rgba(255,230,170,0)');
+    ctx.fillStyle = gr; ctx.fillRect(sx - r, y - r, r * 2, r * 2);
+    for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4 + t * 0.3; R(ctx, Math.round(sx + Math.cos(a) * r * 0.55), Math.round(y + Math.sin(a) * r * 0.55), 1, 1, 'rgba(255,250,230,' + k + ')'); }
+  };
+  const star = (x, y, s) => (ctx, t, cam) => {
+    const sx = x - cam, tw = 0.75 + Math.sin(t * 4) * 0.25, a = s ? s.a : 1;
+    if (!a) return;
+    const gr = ctx.createRadialGradient(sx, y, 0, sx, y, 14); gr.addColorStop(0, 'rgba(255,250,220,' + (0.9 * a) + ')'); gr.addColorStop(1, 'rgba(255,240,190,0)');
+    ctx.fillStyle = gr; ctx.fillRect(sx - 14, y - 14, 28, 28);
+    R(ctx, sx - 1, y - 1, 3, 3, 'rgba(255,255,245,' + a + ')');
+    for (let i = 2; i < 7; i++) { const c = 'rgba(255,250,225,' + (a * tw * (1 - i / 8)) + ')'; R(ctx, sx + i, y, 1, 1, c); R(ctx, sx - i, y, 1, 1, c); R(ctx, sx, y + i, 1, 1, c); R(ctx, sx, y - i, 1, 1, c); }
+    for (let i = 10; i < 70; i += 6) R(ctx, sx, y + i, 1, 1, 'rgba(255,245,210,' + (a * 0.25 * (1 - i / 70)) + ')');
+  };
+  const sheep = (list) => (ctx, t, cam) => {
+    list.forEach(([x, y, f], i) => {
+      const sx = Math.round(x - cam + Math.sin(t * 0.5 + i) * 0.6);
+      R(ctx, sx - 4, y - 4, 9, 4, '#e8e2d4'); R(ctx, sx - 3, y - 5, 7, 1, '#f2eee4');
+      R(ctx, f > 0 ? sx + 4 : sx - 6, y - 5, 2, 3, '#3a3028');
+      R(ctx, sx - 3, y, 1, 2, '#3a3028'); R(ctx, sx + 2, y, 1, 2, '#3a3028');
+    });
+  };
+  // a stone feeding trough, and the baby in bands of cloth when s.baby is set
+  const manger = (x, s) => (ctx, t, cam) => {
+    const sx = x - cam;
+    R(ctx, sx - 9, 138, 18, 6, '#8a8070'); R(ctx, sx - 9, 138, 18, 1, '#a49a88'); R(ctx, sx - 8, 144, 2, 4, '#6e6658'); R(ctx, sx + 6, 144, 2, 4, '#6e6658');
+    R(ctx, sx - 7, 137, 14, 2, '#c9a85a');
+    if (s.baby) { R(ctx, sx - 5, 134, 9, 4, '#efe8d6'); R(ctx, sx - 5, 135, 9, 1, '#d8ccb0'); R(ctx, sx + 2, 133, 3, 3, '#c4946a'); }
+  };
+  // a light drawn after the night's darkness (so it truly glows), fading with s.a
+  const lit = (st, x, y, r, s, warm) => {
+    const L = { x, y };
+    Object.defineProperty(L, 'c', { get: () => (warm ? 'rgba(255,200,120,' : 'rgba(255,246,214,') + ((warm ? 0.5 : 0.9) * (s ? s.a : 1)) + ')' });
+    Object.defineProperty(L, 'r', { get: () => r * (s ? 0.4 + 0.6 * s.a : 1) });
+    st.lights.push(L);
+  };
+  // a deep night sky with stars, drawn as part of the scenery
+  const nightSky = (h) => (ctx, t) => {
+    ctx.fillStyle = 'rgba(10,14,34,0.62)'; ctx.fillRect(0, 0, 256, h);
+    for (let i = 0; i < 52; i++) { const sx = Math.floor(K.rnd(i, 81) * 256), sy = Math.floor(K.rnd(i, 82) * (h - 6)); if (U.hash(i, Math.floor(t * 2), 4) > 0.12) R(ctx, sx, sy, 1, 1, '#e8e4d8'); }
+  };
+
+  VG.bth_angel = () => {
+    const st = load('house', { dusk: true });
+    const s = { a: 0 };
+    st.props.push(lampProp); st.props.push(glow(178, 118, 46, s)); lit(st, 178, 110, 70, s);
+    const mary = add(S.person(maryY), 120, 147, { pose: 'sit', facing: 1 });
+    return {
+      come: async () => { TW.Audio && TW.Audio.sfx('shimmer'); await SC.tween(1400, (p) => { s.a = p; }); mary.facing = 1; },
+      afraid: async () => { mary.pose = 'raise'; await W(900); mary.pose = 'sit'; },
+      yes: async () => { mary.pose = 'stand'; await W(400); mary.pose = 'out'; await W(900); mary.pose = 'stand'; },
+      go: async () => { await SC.tween(1600, (p) => { s.a = 1 - p; }); },
+    };
+  };
+  VG.bth_visit = () => {
+    load('village');
+    const eliz = add(S.person({ skin: '#b8845a', hair: '#a8a098', tunic: '#7a5a3a', veil: '#8a7a6a' }), 196, 147, { facing: -1 });
+    const zech = add(S.person({ skin: '#a8724a', hair: '#c8c0b4', beard: '#c8c0b4', tunic: '#e6dfcc', mantle: '#4a5a6a' }), 222, 147, { facing: -1 });
+    const mary = add(S.person(maryY), 20, 147, { facing: 1, speed: 22 });
+    return {
+      arrive: async () => { await SC.walk(mary, 168); },
+      greet: async () => { eliz.pose = 'raise'; await W(1100); eliz.pose = 'out'; await W(600); eliz.pose = 'stand'; },
+      song: async () => { mary.pose = 'raise'; await W(1400); mary.pose = 'stand'; },
+      zech,
+    };
+  };
+  VG.bth_dream = () => {
+    const st = load('house', { night: true });
+    const s = { a: 0 };
+    st.props.push(glow(150, 112, 40, s)); lit(st, 150, 106, 64, s);
+    const jo = add(S.person(josephY), 118, 148, { pose: 'sit', facing: 1 });
+    return {
+      dream: async () => { TW.Audio && TW.Audio.sfx('shimmer'); await SC.tween(1200, (p) => { s.a = p; }); },
+      wake: async () => { await SC.tween(900, (p) => { s.a = 1 - p; }); jo.pose = 'stand'; await W(500); jo.pose = 'out'; await W(700); jo.pose = 'stand'; },
+    };
+  };
+  VG.bth_road = () => {
+    load('field');
+    const jo = add(S.person(josephY), 20, 147, { facing: 1, speed: 13 });
+    const mary = add(S.person(maryY), 4, 148, { facing: 1, speed: 13 });
+    const others = [0, 1, 2].map((i) => add(K.villager(990 + i), 70 + i * 50, 147, { facing: 1, speed: 15 }));
+    return {
+      walk: async () => { others.forEach((o) => SC.walk(o, o.x + 120)); SC.walk(mary, 150); await SC.walk(jo, 166); },
+    };
+  };
+  VG.bth_manger = () => {
+    const st = load('house', { night: true });
+    const s = { baby: false };
+    st.props.push(lampProp); st.props.push(manger(132, s)); lit(st, 132, 112, 44, null, true);
+    const mary = add(S.person(maryY), 112, 147, { pose: 'sit', facing: 1 });
+    const jo = add(S.person(josephY), 154, 147, { facing: -1 });
+    const sh = [0, 1, 2].map((i) => add(S.person({ skin: '#9a6440', hair: '#2a1a12', beard: i === 2 ? null : '#2a1a12', tunic: ['#6a5a42', '#7a6a4a', '#5a4a3a'][i], mantle: ['#4a3e30', '#3a3226', '#5a4e40'][i] }), 290 + i * 14, 147, { facing: -1, speed: 22 }));
+    return {
+      birth: async () => { s.baby = true; mary.pose = 'sit'; await W(1200); },
+      shepherds: async () => { await Promise.all(sh.map((x, i) => SC.walk(x, 184 + i * 14))); sh.forEach((x) => { x.pose = 'sit'; }); await W(900); },
+      ponder: async () => { mary.pose = 'sit'; jo.pose = 'stand'; await W(1000); },
+    };
+  };
+  VG.bth_field = () => {
+    const st = load('field', { night: true });
+    const s = { a: 0 }, host = { a: 0 };
+    st.props.push(nightSky(64));
+    st.props.push(sheep([[40, 150, 1], [62, 152, -1], [86, 149, 1], [196, 151, -1], [214, 149, 1], [232, 152, -1]]));
+    st.props.push(glow(132, 96, 60, s)); lit(st, 132, 96, 96, s);
+    [40, 80, 180, 220, 110, 150].forEach((x, i) => { st.props.push(glow(x, 30 + (i % 3) * 12, 18, host)); lit(st, x, 30 + (i % 3) * 12, 26, host); });
+    const sh = [0, 1, 2].map((i) => add(S.person({ skin: '#9a6440', hair: '#2a1a12', beard: i === 2 ? null : '#2a1a12', tunic: ['#6a5a42', '#7a6a4a', '#5a4a3a'][i], mantle: ['#4a3e30', '#3a3226', '#5a4e40'][i] }), 112 + i * 16, 148, { pose: 'sit', facing: i ? -1 : 1, speed: 24 }));
+    return {
+      watch: async () => { TW.Audio && TW.Audio.sfx('sheep'); await W(1200); },
+      glory: async () => { TW.Audio && TW.Audio.sfx('shimmer'); await SC.tween(1500, (p) => { s.a = p; }); sh.forEach((x) => { x.pose = 'raise'; }); await W(700); sh.forEach((x) => { x.pose = 'sit'; }); },
+      host: async () => { TW.Audio && TW.Audio.sfx('shimmer'); await SC.tween(1800, (p) => { host.a = p; }); },
+      gone: async () => { await SC.tween(1600, (p) => { s.a = 1 - p; host.a = 1 - p; }); },
+      go: async () => { sh.forEach((x) => { x.pose = 'stand'; x.facing = 1; SC.walk(x, 300); }); TW.Audio && TW.Audio.sfx('sheep'); await W(1800); },
+    };
+  };
+  VG.bth_temple = () => {
+    load('court');
+    const mary = add(S.person(maryY), 110, 147, { facing: 1 });
+    const jo = add(S.person(josephY), 94, 147, { facing: 1 });
+    const sim = add(S.person({ skin: '#a8724a', hair: '#e2ddd2', beard: '#e2ddd2', tunic: '#e6dfcc', mantle: '#6a5a7a' }), 250, 147, { facing: -1, speed: 10 });
+    const anna = add(S.person({ skin: '#a06a42', hair: '#d8d2c6', tunic: '#4a4a5a', veil: '#6a6a7a' }), 290, 147, { facing: -1, speed: 9 });
+    return {
+      come: async () => { await SC.walk(sim, 132); },
+      take: async () => { mary.pose = 'out'; sim.pose = 'out'; await W(800); mary.pose = 'stand'; sim.pose = 'raise'; await W(1400); },
+      bless: async () => { sim.pose = 'out'; await W(1200); sim.pose = 'stand'; },
+      anna: async () => { await SC.walk(anna, 160); anna.pose = 'raise'; await W(1200); anna.pose = 'stand'; },
+      jo,
+    };
+  };
+  VG.bth_magi = () => {
+    const st = load('village', { night: true });
+    st.props.push(nightSky(70)); st.props.push(star(196, 22)); lit(st, 196, 22, 34, null);
+    const mary = add(S.person(maryY), 204, 147, { pose: 'sit', facing: -1 });
+    const looks = [{ skin: '#8a5636', hair: '#1e1410', beard: '#1e1410', tunic: '#5a2a6a', mantle: '#c9a040' }, { skin: '#c49470', hair: '#d8d2c6', beard: '#d8d2c6', tunic: '#2a4a6a', mantle: '#9a2a2a' }, { skin: '#6a4430', hair: '#2a1a12', beard: null, tunic: '#2a5a3a', mantle: '#c9a040' }];
+    const mg = looks.map((l, i) => add(S.person(l), -20 - i * 16, 147, { facing: 1, speed: 16 }));
+    return {
+      arrive: async () => { TW.Audio && TW.Audio.sfx('bells'); await Promise.all(mg.map((m, i) => SC.walk(m, 172 - i * 16))); },
+      kneel: async () => { mg.forEach((m) => { m.pose = 'sit'; }); await W(1200); },
+      gifts: async () => { for (const m of mg) { m.pose = 'out'; await W(500); } await W(500); mg.forEach((m) => { m.pose = 'sit'; }); },
+      go: async () => { mg.forEach((m) => { m.pose = 'stand'; m.facing = -1; SC.walk(m, -60); }); TW.Audio && TW.Audio.sfx('bells'); await W(1800); },
+      mary,
+    };
+  };
+  VG.bth_flight = () => {
+    const st = load('field', { night: true });
+    st.props.push(nightSky(64));
+    const jo = add(S.person(josephY), 220, 147, { facing: -1, speed: 16 });
+    const mary = add(S.person(maryY), 236, 148, { facing: -1, speed: 16 });
+    return {
+      flee: async () => { SC.walk(mary, 40); await SC.walk(jo, 24); },
+    };
+  };
   VG.enter = async function (id, witness) {
     const el = SC.el;
     let mem = null;

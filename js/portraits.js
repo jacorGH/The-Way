@@ -9,7 +9,7 @@ window.TW = window.TW || {};
   const hash = (s) => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; } return h; };
   // English and Spanish forms: in Spanish the speaker's name arrives already translated
   const NAMED = [
-    [/^nicodem/i, 'nicodemus'], [/simon peter|simón pedro|^peter|^pedro/i, 'peter'], [/^thomas|^tomás/i, 'thomas'], [/mary of magdala|magdalene|magdalena/i, 'magdalene'],
+    [/mother of jesus|madre de jesús/i, 'marymother'], [/^nicodem/i, 'nicodemus'], [/simon peter|simón pedro|^peter|^pedro/i, 'peter'], [/^thomas|^tomás/i, 'thomas'], [/mary of magdala|magdalene|magdalena/i, 'magdalene'],
     [/^stephen|^esteban/i, 'stephen'], [/^saul/i, 'saul'], [/^barnab/i, 'barnabas'], [/^luke|^lucas/i, 'luke'], [/^timot/i, 'timothy'], [/^lydia|^lidia/i, 'lydia'],
     [/^silas/i, 'silas'], [/^john mark|^juan marcos|^mark$|^marcos$/i, 'johnmark'], [/^caiaphas|^caifás/i, 'caiaphas'], [/^annas|^anás/i, 'annas'], [/^joseph of arimath|^josé de arimatea/i, 'joseph'],
     [/^salome|^salomé/i, 'salome'], [/the lame man|el cojo/i, 'lame'], [/^sergius paulus|^sergio paulo/i, 'sergius'], [/jailer|carcelero/i, 'jailer'],

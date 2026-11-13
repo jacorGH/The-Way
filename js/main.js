@@ -86,7 +86,9 @@ window.TW = window.TW || {};
     screens.forEach((s) => $('#s-' + s).classList.toggle('active', s === name));
     closeOverlays();
     game.screen = name;
-    if (name === 'title' || name === 'prologue' || name === 'timeline') AU.scene({ music: 'title', amb: { wind: 0.35, birds: 0.3 } });
+    // from Advent to Epiphany (December 1 to January 6), the title plays the Christmas theme
+    const xmas = (() => { const d = new Date(), mo = d.getMonth(), da = d.getDate(); return mo === 11 || (mo === 0 && da <= 6); })();
+    if (name === 'title' || name === 'prologue' || name === 'timeline') AU.scene({ music: xmas ? 'advent' : 'title', amb: { wind: 0.35, birds: 0.3 } });
     if (name === 'title') showTitle();
     if (name === 'prologue') renderPrologue();
     if (name === 'timeline') renderTimeline();
@@ -129,9 +131,10 @@ window.TW = window.TW || {};
     const c = $('#title-vista'), ctx = c.getContext('2d');
     titleRunning = true;
     const t0 = performance.now();
+    let lastT = 0;
     const loop = (now) => {
       if (!titleRunning) return;
-      TW.Episodes.capernaum.vista(ctx, (now - t0) / 1000);
+      if (now - lastT >= 1000 / 30 - 2) { lastT = now; TW.Episodes.capernaum.vista(ctx, (now - t0) / 1000); }
       requestAnimationFrame(loop);
     };
     requestAnimationFrame(loop);
@@ -198,7 +201,8 @@ window.TW = window.TW || {};
 
   // ---------- timeline ----------
   // Piecewise scale: the Gospel years are short but dense, so they get more room.
-  const yearPct = (y) => (y <= 36 ? ((y - 26) / 10) * 40 : 40 + ((y - 36) / 64) * 60);
+  // The birth (c. 5 BC) has a short segment of its own at the far left, before a break in the scale.
+  const yearPct = (y) => (y < 0 ? 0.5 : y <= 36 ? 9 + ((y - 26) / 10) * 35 : 44 + ((y - 36) / 64) * 56);
   function renderTimeline() {
     const bar = $('#tl-bar');
     bar.innerHTML = '';
@@ -207,6 +211,8 @@ window.TW = window.TW || {};
       t.style.left = yearPct(y) + '%';
       bar.appendChild(t);
     });
+    { const t = el('span', 'tl-tick', TW.Settings.get('lang') === 'es' ? '5 a. C.' : '5 BC'); t.style.left = '0.5%'; bar.appendChild(t);
+      const b0 = el('span', 'tl-break'); b0.style.left = '7%'; b0.title = 'About thirty years pass'; bar.appendChild(b0); }
     const brk = el('span', 'tl-break');
     brk.style.left = yearPct(36) + 2 + '%';
     brk.title = 'The scale widens after AD 36';
@@ -214,7 +220,7 @@ window.TW = window.TW || {};
     D.eras.forEach((e) => {
       const s = el('button', 'tl-era' + (e.open ? ' open' : '') + (game.era === e.id ? ' sel' : ''), e.num);
       s.style.left = yearPct(e.span[0]) + '%';
-      s.style.width = Math.max(yearPct(e.span[1]) - yearPct(e.span[0]), 3.2) + '%';
+      s.style.width = (e.span[1] < 0 ? 5.5 : Math.max(yearPct(e.span[1]) - yearPct(e.span[0]), 3.2)) + '%';
       s.setAttribute('aria-label', 'Era ' + e.num + ', ' + e.title);
       s.addEventListener('click', () => { game.era = e.id; renderTimeline(); });
       bar.appendChild(s);
@@ -307,7 +313,7 @@ window.TW = window.TW || {};
     for (const k in D.regions) { const p = D.regions[k].places.find((x) => x.id === id && x.kind === 'episode'); if (p) return p.name; }
     return id;
   };
-  function nextEpisode() { return D.eraOrder.find((id) => !game.save.completed[id]) || null; }
+  function nextEpisode() { return D.eraOrder.find((id) => !game.save.completed[id] && D.episodes[id].era !== 'birth') || null; }
   function eraDone(era) { return era.episodes.every((id) => typeof id !== 'string' || game.save.completed[id]); }
   function revealedSet() {
     const s = new Set();
@@ -1116,6 +1122,7 @@ window.TW = window.TW || {};
       persist();
       const after = revealedSet();
       const fresh = [...after].filter((x) => !before.has(x));
+      if (D.episodes[ep] && D.episodes[ep].era === 'birth' && TW.Audio) TW.Audio.sfx('joy');
       const disc1 = TW.Discover ? TW.Discover.snapshot() : new Set();
       openStudy(ep, fresh, new Set([...disc1].filter((x) => !disc0.has(x))));
     };

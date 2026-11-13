@@ -23,6 +23,24 @@ window.TW = window.TW || {};
 
   D.eras = [
     {
+      // A part of its own, before Era I and open from the start: the birth of Jesus, as Mary told it years later.
+      id: 'birth', num: '✦', title: 'The Birth of Jesus', dates: 'c. 6–4 BC',
+      span: [-6, -4], open: true, view: 'A listener, years later',
+      summary:
+        'You were not yet born when Jesus was. Years later, after Pentecost, his mother Mary is among the believers in Jerusalem (Acts 1:14). Luke says that she “kept all these sayings, pondering them in her heart” (Luke 2:19), and that he traced everything from those who were eyewitnesses from the beginning (Luke 1:2–3). You sit with her, and ask. Matthew tells the same story from Joseph’s side.',
+      world: [
+        ['Emperor', 'Caesar Augustus (27 BC–AD 14)'],
+        ['King of Judea', 'Herod the Great (37–4 BC)'],
+        ['Told by', 'Luke 1–2 and Matthew 1–2'],
+      ],
+      episodes: [
+        { title: 'The Angel’s Word', ref: 'Luke 1:26–56; Matthew 1:18–25', open: false },
+        { title: 'No Room', ref: 'Luke 2:1–20', open: false },
+        { title: 'Simeon and Anna', ref: 'Luke 2:21–38', open: false },
+        { title: 'The Star and the Flight', ref: 'Matthew 2:1–23; Luke 2:39–40', open: false },
+      ],
+    },
+    {
       id: 'galilee', num: 'I', title: 'The Ministry in Galilee', dates: 'c. AD 28–29',
       span: [28, 30], open: true, view: 'A skeptical scribe',
       summary:
