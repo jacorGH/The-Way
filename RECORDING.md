@@ -161,3 +161,11 @@ exports one ZIP per batch with `audio/en/` and `audio/es/` inside. Unzip into th
   batch. Other versions work the same way (`scripture-en-KJV.json` in `dub/en/`, and so on).
 - **Re-recording a whole part:** TTS Studio's "Re-record batch" on any row.
 - Lines the Seven assembles while you play (the widows' names and loaves left) are read by the device voice.
+
+## Smaller audio files
+`.github/workflows/compress-audio.yml` runs on GitHub after every push that adds or changes recordings. It re-encodes
+each MP3 above the target bitrate as mono 24 kHz MP3 at that bitrate (48 kbps by default, about 70% smaller than the
+originals), keeping the same file names, and commits the result. Files already at the target are left alone. To change
+the quality, edit `KBPS` at the top of the workflow (56 or 64 sound a little fuller). You can also run it by hand from
+the repository's Actions tab (Compress audio → Run workflow). The script itself is `tools/compress-audio.sh`.
+Phones that already saved recordings for offline play keep their old copies until they are cleared.
