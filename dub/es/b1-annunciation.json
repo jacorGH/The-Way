@@ -1,0 +1,54 @@
+[
+ {
+  "id": "d-022a0820",
+  "voice": "N",
+  "text": "María dijo que sí antes de entender. ¿Qué le dices?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-0ca67642",
+  "voice": "F",
+  "text": "No entendía cómo. Dije que sí de todos modos. Se le puede decir que sí a Dios antes de entenderlo.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-145a260e",
+  "voice": "F",
+  "text": "Quieres saber cómo empezó. Todos quieren saberlo. Yo era más joven que tú ahora, y no esperaba nada en absoluto.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-39fb520d",
+  "voice": "N",
+  "text": "Lucas dice que había “entendido todas las cosas desde el principio con diligencia”, de los que “desde el principio lo vieron por sus ojos” (Lucas 1:2–3), y dos veces que María guardaba estas cosas en su corazón (2:19, 51).",
+  "kind": "history"
+ },
+ {
+  "id": "d-52b4b7ff",
+  "voice": "F",
+  "text": "El valor vino después. Primero solo hubo la palabra, y un sí. Luego fui a ver a Elisabet, tan rápido como pude caminar.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-8e825c3b",
+  "voice": "F",
+  "text": "Y luego volví a casa, y tuve que decírselo a José. Ya te imaginarás lo que pensó. Mateo lo cuenta como lo contó José.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-e34580ff",
+  "voice": "N",
+  "text": "Lucas cuenta la historia desde el lado de María; Mateo, desde el de José. Ninguno repite la mitad del otro, y coinciden en lo que importa: una virgen llamada María, un hombre del linaje de David llamado José, y un nombre dado por un ángel.",
+  "kind": "history"
+ },
+ {
+  "id": "d-eb16eaad",
+  "voice": "N",
+  "text": "Jerusalén, algunos años después de Pentecostés. En el aposento alto donde se reúnen los creyentes, una anciana remienda un manto junto a la lámpara. María, la madre de Jesús. Has escrito todo lo que viste; pero hay una parte de la historia que nunca pudiste ver.",
+  "kind": "drama"
+ }
+]

@@ -6,8 +6,8 @@ still read by the device, so you can record a little at a time.
 
 ## The quick way: TTS Studio (OpenAI)
 
-Ready-made batches for TTS Studio are in **dub/en/**: one JSON file per episode, testimony and service visit, 64 in all,
-covering every spoken line in the game (1,252 lines, about 228,000 characters). On your published copy, open
+Ready-made batches for TTS Studio are in **dub/en/**: one JSON file per episode, testimony and service visit, 76 in all,
+covering every spoken line in the game (1,457 lines, about 263,000 characters). On your published copy, open
 **dub/index.html** for a tappable list.
 
 1. Open a batch from dub/index.html, and save it to Files (Share → Save to Files).

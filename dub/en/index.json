@@ -14,6 +14,36 @@
  },
  "batches": [
   {
+   "file": "b1-annunciation.json",
+   "title": "✦ I. The Angel’s Word (Luke 1:26–56; Matthew 1:18–25)",
+   "lines": 21,
+   "characters": 5576
+  },
+  {
+   "file": "b2-nativity.json",
+   "title": "✦ II. No Room (Luke 2:1–20)",
+   "lines": 17,
+   "characters": 2776
+  },
+  {
+   "file": "b3-presentation.json",
+   "title": "✦ III. Simeon and Anna (Luke 2:21–40)",
+   "lines": 11,
+   "characters": 2806
+  },
+  {
+   "file": "b4-magi.json",
+   "title": "✦ IV. The Star and the Flight (Matthew 2:1–23; Luke 2:39–40)",
+   "lines": 18,
+   "characters": 4134
+  },
+  {
+   "file": "b5-temple12.json",
+   "title": "✦ V. My Father’s House (Luke 2:41–52)",
+   "lines": 18,
+   "characters": 2480
+  },
+  {
    "file": "01-capernaum.json",
    "title": "I. At Home in Capernaum (Mark 2:1–12)",
    "lines": 27,
@@ -46,14 +76,14 @@
   {
    "file": "06-entry.json",
    "title": "VI. The Entry (Mark 11:1–11)",
-   "lines": 12,
-   "characters": 2435
+   "lines": 13,
+   "characters": 2661
   },
   {
    "file": "07-temple.json",
    "title": "VII. The Temple (Mark 11:15–18; 12:28–34)",
-   "lines": 19,
-   "characters": 3169
+   "lines": 20,
+   "characters": 3475
   },
   {
    "file": "08-council.json",
@@ -64,8 +94,8 @@
   {
    "file": "09-cross.json",
    "title": "IX. The Cross (Mark 15:16–41)",
-   "lines": 20,
-   "characters": 3193
+   "lines": 21,
+   "characters": 3396
   },
   {
    "file": "10-burial.json",

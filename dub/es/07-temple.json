@@ -10,7 +10,7 @@
   "voice": "M",
   "text": "¡Hija! ¿También subiste a la fiesta? Medio Capernaúm está aquí. Dicen que hoy volverá al Templo.",
   "kind": "drama",
-  "speaker": "El pescador de Capernaúm"
+  "speaker": "The fisherman from Capernaum"
  },
  {
   "id": "d-2e54e151",
@@ -31,18 +31,30 @@
   "kind": "history"
  },
  {
+  "id": "d-5a7e66e5",
+  "voice": "N",
+  "text": "A lo largo de esta barrera había avisos en griego y en latín. Se han hallado dos. Advierten que cualquier extranjero que la cruce será el único culpable de la muerte que le sobrevenga.",
+  "kind": "history"
+ },
+ {
+  "id": "d-6842868d",
+  "voice": "N",
+  "text": "“¿Qué quiso decir: “en los negocios de mi Padre me conviene estar”?” (Lucas 2:49)\n\nVeinte años después volvió a los mismos atrios y echó fuera a los vendedores: “Mi casa, casa de oración será llamada por todas las gentes”. Juan recuerda que dijo: “No hagáis la casa de mi Padre casa de mercado”. (Marcos 11:17; Juan 2:16)",
+  "kind": "answer"
+ },
+ {
   "id": "d-6930db73",
   "voice": "M",
   "text": "¡Escriba! ¿También subiste a la fiesta? Medio Capernaúm está aquí. Dicen que hoy volverá al Templo.",
   "kind": "drama",
-  "speaker": "El pescador de Capernaúm"
+  "speaker": "The fisherman from Capernaum"
  },
  {
   "id": "d-af77928d",
   "voice": "M",
   "text": "El impuesto del Templo se paga en plata de Tiro y en nada más. Tus monedas romanas llevan el rostro del César. Te las puedo cambiar, por una pequeña comisión.",
   "kind": "drama",
-  "speaker": "Un cambista"
+  "speaker": "A money changer"
  },
  {
   "id": "d-e2bbf522",
@@ -61,18 +73,12 @@
   "voice": "M",
   "text": "Dos palomas para la purificación de una madre, si no puede pagar un cordero. Los sacerdotes rechazan cualquier ave con defecto, así que compra aquí y asegúrate.",
   "kind": "drama",
-  "speaker": "Un vendedor de palomas"
+  "speaker": "A dove seller"
  },
  {
   "id": "d-fe514693",
   "voice": "W",
   "text": "A la sombra de un pórtico, dos hombres que comen a la mesa de tu tío hablan en voz baja con un sacerdote de la familia del sumo sacerdote. Cuando te ven, se callan.",
   "kind": "drama"
- },
- {
-  "id": "d-5a7e66e5",
-  "voice": "N",
-  "text": "A lo largo de esta barrera había avisos en griego y en latín. Se han hallado dos. Advierten que cualquier extranjero que la cruce será el único culpable de la muerte que le sobrevenga.",
-  "kind": "history"
  }
 ]

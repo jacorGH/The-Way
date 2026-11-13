@@ -31,6 +31,18 @@
   "kind": "history"
  },
  {
+  "id": "d-5a7e66e5",
+  "voice": "N",
+  "text": "Notices in Greek and Latin were set along this barrier. Two have been found. They warn that any foreigner who goes past it will have only himself to blame for the death that follows.",
+  "kind": "history"
+ },
+ {
+  "id": "d-6842868d",
+  "voice": "N",
+  "text": "“What did he mean: “I must be in my Father’s house”?” (Luke 2:49)\n\nTwenty years later he came back to the same courts and drove out the sellers: “My house will be called a house of prayer for all the nations.” John remembers him saying, “Don’t make my Father’s house a marketplace!” (Mark 11:17; John 2:16)",
+  "kind": "answer"
+ },
+ {
   "id": "d-6930db73",
   "voice": "M",
   "text": "Scribe! You came up for the feast too? Half of Capernaum is here. They say he will come back to the Temple today.",
@@ -110,11 +122,5 @@
   "voice": "S",
   "text": "He would not allow anyone to carry a container through the temple. He taught, saying to them, “Isn’t it written, ‘My house will be called a house of prayer for all the nations?’ But you have made it a den of robbers!”",
   "kind": "scripture"
- },
- {
-  "id": "d-5a7e66e5",
-  "voice": "N",
-  "text": "Notices in Greek and Latin were set along this barrier. Two have been found. They warn that any foreigner who goes past it will have only himself to blame for the death that follows.",
-  "kind": "history"
  }
 ]

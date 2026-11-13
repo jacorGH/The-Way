@@ -325,6 +325,7 @@ window.TW = window.TW || {};
     j2.facing = 1; SC.walk(j2, 340); dis.forEach((d, i) => SC.walk(d, 352 + i * 12));
     game.observe('entry', 'hosanna', 'The crowd cried “Hosanna! Blessed is he who comes in the name of the Lord!” (Mark 11:9).', false, true);
     game.observe('entry', 'looked', 'He entered the Temple, looked around at everything, and left for Bethany (Mark 11:11).', false, true);
+    await K.answerAll(game, 'entry');
     game.addQuestion(TW.D.episodes.entry.question);
     SC.toast('A question is now open in your scroll');
     K.finish(game, 'entry', 'The lamps are being lit in the porticoes. Write down what you saw today.');

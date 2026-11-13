@@ -13,6 +13,36 @@
  },
  "batches": [
   {
+   "file": "b1-annunciation.json",
+   "title": "✦ I. The Angel’s Word (Luke 1:26–56; Matthew 1:18–25)",
+   "lines": 8,
+   "characters": 1220
+  },
+  {
+   "file": "b2-nativity.json",
+   "title": "✦ II. No Room (Luke 2:1–20)",
+   "lines": 7,
+   "characters": 738
+  },
+  {
+   "file": "b3-presentation.json",
+   "title": "✦ III. Simeon and Anna (Luke 2:21–40)",
+   "lines": 6,
+   "characters": 752
+  },
+  {
+   "file": "b4-magi.json",
+   "title": "✦ IV. The Star and the Flight (Matthew 2:1–23; Luke 2:39–40)",
+   "lines": 7,
+   "characters": 789
+  },
+  {
+   "file": "b5-temple12.json",
+   "title": "✦ V. My Father’s House (Luke 2:41–52)",
+   "lines": 10,
+   "characters": 1288
+  },
+  {
    "file": "01-capernaum.json",
    "title": "I. At Home in Capernaum (Mark 2:1–12)",
    "lines": 19,
@@ -45,14 +75,14 @@
   {
    "file": "06-entry.json",
    "title": "VI. The Entry (Mark 11:1–11)",
-   "lines": 7,
-   "characters": 1158
+   "lines": 8,
+   "characters": 1382
   },
   {
    "file": "07-temple.json",
    "title": "VII. The Temple (Mark 11:15–18; 12:28–34)",
-   "lines": 12,
-   "characters": 1630
+   "lines": 13,
+   "characters": 1951
   },
   {
    "file": "08-council.json",
@@ -63,8 +93,8 @@
   {
    "file": "09-cross.json",
    "title": "IX. The Cross (Mark 15:16–41)",
-   "lines": 6,
-   "characters": 549
+   "lines": 7,
+   "characters": 761
   },
   {
    "file": "10-burial.json",
@@ -441,7 +471,7 @@
   {
    "file": "scripture-es-RV1909.json",
    "title": "Escritura (Reina-Valera 1909)",
-   "lines": 683,
+   "lines": 730,
    "fromGame": true,
    "how": "Open the published game with ?dev, download the Reina-Valera 1909 in Settings → Bible translation, then Settings → Recorded voices → Scripture batch: Reina-Valera 1909. Put the saved file here, unchanged."
   }

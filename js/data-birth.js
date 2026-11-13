@@ -1,5 +1,5 @@
 /* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
-/* The Way — data for The Birth of Jesus: four episodes, told as Mary's memories years later (Luke 1–2; Matthew 1–2).
+/* The Way — data for The Birth of Jesus: five episodes, told as Mary's memories years later (Luke 1–2; Matthew 1–2).
    Loaded after data.js and data-finale.js. */
 window.TW = window.TW || {};
 (function (TW) {
@@ -103,14 +103,39 @@ window.TW = window.TW || {};
         'Joseph obeyed every dream at once. What does quick obedience look like for you?',
       ],
     },
+    temple12: {
+      num: '✦ V', title: 'My Father’s House', ref: 'Luke 2:41–52', passage: 'luke2', from: '2:41', to: '2:52', place: 'temple', region: 'jerusalem', era: 'birth',
+      scene: 'Jerusalem, remembering the Temple', parallels: 'told only in Luke',
+      question: { id: 'fathers', text: 'What did he mean: “I must be in my Father’s house”?', ref: 'Luke 2:49' },
+      hearts: ['He knew who he was, even at twelve.', 'Even his mother had to learn who he was.', 'He went home with them, and obeyed them.'],
+      conclusions: [
+        'When Jesus was twelve, he stayed behind in Jerusalem after the Passover, and his parents searched for him three days.',
+        'They found him in the Temple, sitting among the teachers, listening and asking questions, and all who heard him were amazed at his understanding.',
+        'He said, “Didn’t you know that I must be in my Father’s house?” Then he went down to Nazareth and was subject to them, and grew in wisdom and stature, and in favor with God and men.',
+      ],
+      notes: [
+        ['Every year (2:41)', 'The Law called every man to appear before the Lord three times a year (Deuteronomy 16:16). Mary and Joseph went up every year for the Passover, and brought the boy.'],
+        ['Twelve years old (2:42)', 'Nearly a man under the Law. The Mishnah, written down about AD 200, says that at thirteen a boy takes on the commandments (Pirkei Avot 5:21); the later bar mitzvah grew from that.'],
+        ['A day’s journey (2:44)', 'Pilgrims traveled in large companies of relatives and neighbors, so a boy of twelve could be out of his parents’ sight all day without alarm.'],
+        ['Among the teachers (2:46)', 'Teachers of the Law taught in the Temple courts and porticoes, and students sat to listen and to ask. Jesus listens and asks first; the answers come after.'],
+        ['My Father’s house (2:49)', 'The first words of Jesus in Luke’s Gospel. The Greek says literally “in the things of my Father”: his house, or his business, as the King James Version has it.'],
+        ['He grew (2:52)', 'An echo of the boy Samuel, who “grew on, and was in favour both with the Lord, and also with men” (1 Samuel 2:26). Luke says nothing more about Jesus until he is about thirty (3:23).'],
+      ],
+      reflect: [
+        'The first words of Jesus that Luke records are about his Father. What do they tell you about him?',
+        'Mary did not understand the saying, and kept it anyway. What do you keep that you do not yet understand?',
+        'He knew whose Son he was, and still went home and obeyed his parents. What does that say about obedience?',
+      ],
+    },
   });
   // the part's episodes, in order, at the front of the whole account
   const era = D.eras.find((e) => e.id === 'birth');
-  if (era) era.episodes = ['annunciation', 'nativity', 'presentation', 'magi'];
-  D.eraOrder.unshift('annunciation', 'nativity', 'presentation', 'magi');
+  if (era) era.episodes = ['annunciation', 'nativity', 'presentation', 'magi', 'temple12'];
+  D.eraOrder.unshift('annunciation', 'nativity', 'presentation', 'magi', 'temple12');
   // questions raised here and answered later in the main story
   D.episodes.cross.answers = Object.assign(D.episodes.cross.answers || {}, { sword: ['Mary stood by the cross of her son (John 19:25). Simeon’s word had come true: the sword was this.', 'John 19:25; Luke 2:35'] });
   D.episodes.entry.answers = Object.assign(D.episodes.entry.answers || {}, { king: ['A king who comes “lowly, and riding on a donkey” (Zechariah 9:9), welcomed with palms, and crowned at last with thorns.', 'Matthew 21:5; John 19:2'] });
+  D.episodes.temple.answers = Object.assign(D.episodes.temple.answers || {}, { fathers: ['Twenty years later he came back to the same courts and drove out the sellers: “My house will be called a house of prayer for all the nations.” John remembers him saying, “Don’t make my Father’s house a marketplace!”', 'Mark 11:17; John 2:16'] });
   // places on the maps
   const place = (region, id) => D.regions[region].places.find((p) => p.id === id);
   const naz = place('galilee', 'nazareth');
@@ -118,5 +143,5 @@ window.TW = window.TW || {};
   const beth = place('land', 'bethlehem');
   if (beth) { beth.kind = 'episode'; beth.episodes = ['nativity', 'magi']; }
   const tem = place('jerusalem', 'temple');
-  if (tem) tem.episodes = ['presentation'].concat(tem.episodes || []);
+  if (tem) tem.episodes = ['presentation', 'temple12'].concat(tem.episodes || []);
 })(window.TW);

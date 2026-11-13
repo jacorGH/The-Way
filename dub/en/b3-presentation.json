@@ -1,0 +1,71 @@
+[
+ {
+  "id": "d-23bb29dd",
+  "voice": "F",
+  "text": "He held my son for a moment and was ready to die. I held him for thirty-three years, and I was never ready.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-bbef304d",
+  "voice": "N",
+  "text": "Mary is quiet tonight. When she speaks, she looks at the lamp, not at you.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-bd9f7b5b",
+  "voice": "F",
+  "text": "Forty days later we brought him up to the Temple, as the Law says. We could not afford a lamb. We brought two pigeons.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-bec1d1bf",
+  "voice": "F",
+  "text": "A sword. I did not know what he meant, not for thirty years. Then I stood by the cross, and I knew.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-ef0f326d",
+  "voice": "N",
+  "text": "Simeon could die in peace now. Which of his words do you keep?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-f61e297c",
+  "voice": "N",
+  "text": "“Why would God’s sign be a baby lying in a feeding trough?” (Luke 2:12)\n\nSimeon took the child in his arms and said, “My eyes have seen your salvation… a light for revelation to the nations.” The sign was God himself come near, small enough to hold. (Luke 2:28–32)",
+  "kind": "answer"
+ },
+ {
+  "id": "s-WEB-2b2ce826",
+  "voice": "S",
+  "text": "When eight days were fulfilled for the circumcision of the child, his name was called Jesus, which was given by the angel before he was conceived in the womb. When the days of their purification according to the law of Moses were fulfilled, they brought him up to Jerusalem to present him to the Lord (as it is written in the law of the Lord, “Every male who opens the womb shall be called holy to the Lord”), and to offer a sacrifice according to that which is said in the law of the Lord, “A pair of turtledoves, or two young pigeons.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-7bd70729",
+  "voice": "S",
+  "text": "Behold, there was a man in Jerusalem whose name was Simeon. This man was righteous and devout, looking for the consolation of Israel, and the Holy Spirit was on him. It had been revealed to him by the Holy Spirit that he should not see death before he had seen the Lord’s Christ. He came in the Spirit into the temple. When the parents brought in the child, Jesus, that they might do concerning him according to the custom of the law,",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-84c4ca30",
+  "voice": "S",
+  "text": "then he received him into his arms and blessed God, and said, “Now you are releasing your servant, Master, according to your word, in peace; for my eyes have seen your salvation, which you have prepared before the face of all peoples; a light for revelation to the nations, and the glory of your people Israel.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-90068aec",
+  "voice": "S",
+  "text": "There was one Anna, a prophetess, the daughter of Phanuel, of the tribe of Asher (she was of a great age, having lived with a husband seven years from her virginity, and she had been a widow for about eighty-four years), who didn’t depart from the temple, worshiping with fastings and petitions night and day. Coming up at that very hour, she gave thanks to the Lord, and spoke of him to all those who were looking for redemption in Jerusalem.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-c4bf3d93",
+  "voice": "S",
+  "text": "Joseph and his mother were marveling at the things which were spoken concerning him. Simeon blessed them, and said to Mary, his mother, “Behold, this child is appointed for the falling and the rising of many in Israel, and for a sign which is spoken against. Yes, a sword will pierce through your own soul, that the thoughts of many hearts may be revealed.”",
+  "kind": "scripture"
+ }
+]

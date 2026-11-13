@@ -1,0 +1,132 @@
+[
+ {
+  "id": "d-022a0820",
+  "voice": "N",
+  "text": "Mary said yes before she understood. What do you say to her?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-0ca67642",
+  "voice": "F",
+  "text": "I did not understand how. I said yes anyway. You can say yes to God before you understand him.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-145a260e",
+  "voice": "F",
+  "text": "You want to know how it began. Everyone does. I was younger than you are now, and I was not expecting anything at all.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-39fb520d",
+  "voice": "N",
+  "text": "Luke says that he “traced the course of all things accurately from the first,” from those who “from the beginning were eyewitnesses” (Luke 1:2–3), and twice that Mary kept these things in her heart (2:19, 51).",
+  "kind": "history"
+ },
+ {
+  "id": "d-52b4b7ff",
+  "voice": "F",
+  "text": "Courage came later. First there was only the word, and a yes. Then I went to see Elizabeth, as fast as I could walk.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-8e825c3b",
+  "voice": "F",
+  "text": "And then I came home, and had to tell Joseph. You can imagine what he thought. Matthew tells it as Joseph told it.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-e34580ff",
+  "voice": "N",
+  "text": "Luke tells the story from Mary’s side, Matthew from Joseph’s. Neither repeats the other’s half, and they agree on what matters: a virgin named Mary, a man of David’s line named Joseph, and a name given by an angel.",
+  "kind": "history"
+ },
+ {
+  "id": "d-eb16eaad",
+  "voice": "N",
+  "text": "Jerusalem, some years after Pentecost. In the upper room where the believers meet, an old woman is mending a cloak by the lamp. Mary, the mother of Jesus. You have written down everything you saw; but there is a part of the story you could never have seen.",
+  "kind": "drama"
+ },
+ {
+  "id": "s-WEB-38043f81",
+  "voice": "S",
+  "text": "Now all this has happened that it might be fulfilled which was spoken by the Lord through the prophet, saying, “Behold, the virgin shall be with child, and shall give birth to a son. They shall call his name Immanuel,” which is, being interpreted, “God with us.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-53cccf37",
+  "voice": "S",
+  "text": "Joseph arose from his sleep, and did as the angel of the Lord commanded him, and took his wife to himself; and didn’t know her sexually until she had given birth to her firstborn son. He named him Jesus.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-5fd0acaf",
+  "voice": "S",
+  "text": "Now in the sixth month, the angel Gabriel was sent from God to a city of Galilee named Nazareth, to a virgin pledged to be married to a man whose name was Joseph, of David’s house. The virgin’s name was Mary. Having come in, the angel said to her, “Rejoice, you highly favored one! The Lord is with you. Blessed are you among women!” But when she saw him, she was greatly troubled at the saying, and considered what kind of salutation this might be.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-695fbbb2",
+  "voice": "S",
+  "text": "Mary said to the angel, “How can this be, seeing I am a virgin?” The angel answered her, “The Holy Spirit will come on you, and the power of the Most High will overshadow you. Therefore also the holy one who is born from you will be called the Son of God. Behold, Elizabeth your relative also has conceived a son in her old age; and this is the sixth month with her who was called barren. For nothing spoken by God is impossible.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-6e9ff0aa",
+  "voice": "S",
+  "text": "Mary said, “My soul magnifies the Lord. My spirit has rejoiced in God my Savior, for he has looked at the humble state of his servant. For behold, from now on, all generations will call me blessed. For he who is mighty has done great things for me. Holy is his name. His mercy is for generations and generations on those who fear him.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-73c4eceb",
+  "voice": "S",
+  "text": "Mary arose in those days and went into the hill country with haste, into a city of Judah, and entered into the house of Zacharias and greeted Elizabeth.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-91a80c87",
+  "voice": "S",
+  "text": "Mary said, “Behold, the servant of the Lord; let it be done to me according to your word.” Then the angel departed from her.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-9adfcee5",
+  "voice": "S",
+  "text": "But when he thought about these things, behold, an angel of the Lord appeared to him in a dream, saying, “Joseph, son of David, don’t be afraid to take to yourself Mary as your wife, for that which is conceived in her is of the Holy Spirit. She shall give birth to a son. You shall name him Jesus, for it is he who shall save his people from their sins.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-ae905113",
+  "voice": "S",
+  "text": "Now the birth of Jesus Christ was like this: After his mother, Mary, was engaged to Joseph, before they came together, she was found pregnant by the Holy Spirit. Joseph, her husband, being a righteous man, and not willing to make her a public example, intended to put her away secretly.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-b36d0523",
+  "voice": "S",
+  "text": "When Elizabeth heard Mary’s greeting, the baby leaped in her womb; and Elizabeth was filled with the Holy Spirit. She called out with a loud voice and said, “Blessed are you among women, and blessed is the fruit of your womb! Why am I so favored, that the mother of my Lord should come to me? For behold, when the voice of your greeting came into my ears, the baby leaped in my womb for joy! Blessed is she who believed, for there will be a fulfillment of the things which have been spoken to her from the Lord!”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-c2add5c5",
+  "voice": "S",
+  "text": "The angel said to her, “Don’t be afraid, Mary, for you have found favor with God. Behold, you will conceive in your womb and give birth to a son, and shall name him ‘Jesus.’ He will be great and will be called the Son of the Most High. The Lord God will give him the throne of his father David, and he will reign over the house of Jacob forever. There will be no end to his Kingdom.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-dc1ce14f",
+  "voice": "S",
+  "text": "He has shown strength with his arm. He has scattered the proud in the imagination of their hearts. He has put down princes from their thrones, and has exalted the lowly. He has filled the hungry with good things. He has sent the rich away empty. He has given help to Israel, his servant, that he might remember mercy, as he spoke to our fathers, to Abraham and his offspring forever.” Mary stayed with her about three months, and then returned to her house.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-fa16145a",
+  "voice": "S",
+  "text": "Since many have undertaken to set in order a narrative concerning those matters which have been fulfilled among us, even as those who from the beginning were eyewitnesses and servants of the word delivered them to us, it seemed good to me also, having traced the course of all things accurately from the first, to write to you in order, most excellent Theophilus; that you might know the certainty concerning the things in which you were instructed.",
+  "kind": "scripture"
+ }
+]

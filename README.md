@@ -294,15 +294,17 @@ the screen's full rate); the map keeps the full rate for smooth dragging. The of
 icon, so it is about 1.8 MB.
 
 ## The Birth of Jesus
-A part of its own before Era I, open from the start: four episodes told as Mary's memories, years later in Jerusalem
+A part of its own before Era I, open from the start: five episodes told as Mary's memories, years later in Jerusalem
 (`js/birth.js`, data in `js/data-birth.js`, Scripture in `js/scripture11.js`, memory scenes in `js/vignettes.js`):
-The Angel's Word (Luke 1:26–56; Matthew 1:18–25), No Room (Luke 2:1–20), Simeon and Anna (Luke 2:21–40), and The Star
-and the Flight (Matthew 2; Luke 2:39–40). Angels and the glory of the Lord are shown only as light. Each study page has
+The Angel's Word (Luke 1:26–56; Matthew 1:18–25), No Room (Luke 2:1–20), Simeon and Anna (Luke 2:21–40), The Star
+and the Flight (Matthew 2; Luke 2:39–40), and My Father's House (Luke 2:41–52), the boy Jesus in the Temple at twelve,
+drawn as a child among the teachers (sprites take a `child` option: the same head on a shorter body). Angels and the glory of the Lord are shown only as light. Each study page has
 "One story, two accounts" (`js/birth-study.js`): the usual harmony of Luke and Matthew, what they agree on, and a note
 that the order is a harmony rather than something either Gospel states. Questions raised here are answered later in
-the story (Simeon's sword at the Cross; the king the wise men sought at the Entry).
+the story (Simeon's sword at the Cross; the king the wise men sought at the Entry; "my Father's house" at the Temple).
+Voice batches: `dub/en/b1-annunciation.json` to `b5-temple12.json` (and the same in `dub/es/`), listed first.
 
 Music: public-domain carols arranged for the game's instruments in `js/audio.js` (moods `advent`: O Come, All Ye
 Faithful; `manger`: Silent Night; `gloria`: Angels We Have Heard on High; `child`: What Child Is This; `kings`: We Three
 Kings), the opening of Joy to the World when a report is sealed, and seasonal sounds (`shimmer`, `bells`, `sheep`). From
-December 1 to January 6 the title screen plays the Christmas theme.
+December 1 to January 6 the title screen plays the Christmas theme. Spanish: `i18n/es-birth.js`.

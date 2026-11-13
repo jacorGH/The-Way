@@ -115,6 +115,7 @@ window.TW = window.TW || {};
     crowd.forEach((c) => { c.facing = -1; SC.walk(c, -20); });
     priests.forEach((p) => { p.facing = -1; SC.walk(p, -20); });
     await SC.say({ kind: 'drama', text: 'People drift back toward the gate. The women do not move. Neither do you.' });
+    await K.answerAll(game, 'cross');
     game.addQuestion(TW.D.episodes.cross.question);
     SC.toast('A question is now open in your scroll');
     K.finish(game, 'cross', 'Stay with the women until evening. Then write what you saw.');

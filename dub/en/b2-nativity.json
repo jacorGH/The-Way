@@ -1,0 +1,108 @@
+[
+ {
+  "id": "d-0afc7ef9",
+  "voice": "N",
+  "text": "Another evening. Mary has saved you the place by the lamp.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-45eaf744",
+  "voice": "F",
+  "text": "Then the emperor wanted everyone counted. Joseph was of David’s house, so we had to go to David’s town. I was very near my time.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-47475a1d",
+  "voice": "F",
+  "text": "I have pondered it for thirty years and more. I am still pondering it.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-906e8aff",
+  "voice": "N",
+  "text": "God’s sign was a baby lying in a feeding trough. What rises in you?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-9a63986a",
+  "voice": "F",
+  "text": "There was no room, so I laid him where the animals ate. The Lord of everything, in a feeding trough. I counted his fingers.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-d41898da",
+  "voice": "F",
+  "text": "That night, out in the fields, there were shepherds. They told us everything. I made them tell it twice.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-f4be061c",
+  "voice": "N",
+  "text": "“Why was he named Jesus?” (Matthew 1:21)\n\n“There is born to you today, in David’s city, a Savior, who is Christ the Lord.” The name Jesus means “the Lord saves.” (Luke 2:11; Matthew 1:21)",
+  "kind": "answer"
+ },
+ {
+  "id": "s-WEB-07e61c2e",
+  "voice": "S",
+  "text": "While they were there, the day had come for her to give birth.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-1538e6b6",
+  "voice": "S",
+  "text": "But Mary kept all these sayings, pondering them in her heart. The shepherds returned, glorifying and praising God for all the things that they had heard and seen, just as it was told them.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-30126826",
+  "voice": "S",
+  "text": "She gave birth to her firstborn son. She wrapped him in bands of cloth and laid him in a feeding trough, because there was no room for them in the inn.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-32583d60",
+  "voice": "S",
+  "text": "Now in those days, a decree went out from Caesar Augustus that all the world should be enrolled. This was the first enrollment made when Quirinius was governor of Syria. All went to enroll themselves, everyone to his own city.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-5bfc1b10",
+  "voice": "S",
+  "text": "There were shepherds in the same country staying in the field, and keeping watch by night over their flock.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-5e1cd514",
+  "voice": "S",
+  "text": "Behold, an angel of the Lord stood by them, and the glory of the Lord shone around them, and they were terrified. The angel said to them, “Don’t be afraid, for behold, I bring you good news of great joy which will be to all the people. For there is born to you today, in David’s city, a Savior, who is Christ the Lord. This is the sign to you: you will find a baby wrapped in strips of cloth, lying in a feeding trough.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-94bfec5d",
+  "voice": "S",
+  "text": "When the angels went away from them into the sky, the shepherds said to one another, “Let’s go to Bethlehem, now, and see this thing that has happened, which the Lord has made known to us.”",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-df7cb9ef",
+  "voice": "S",
+  "text": "They came with haste and found both Mary and Joseph, and the baby was lying in the feeding trough. When they saw it, they publicized widely the saying which was spoken to them about this child. All who heard it wondered at the things which were spoken to them by the shepherds.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-e0d81801",
+  "voice": "S",
+  "text": "Joseph also went up from Galilee, out of the city of Nazareth, into Judea, to David’s city, which is called Bethlehem, because he was of the house and family of David, to enroll himself with Mary, who was pledged to be married to him as wife, being pregnant.",
+  "kind": "scripture"
+ },
+ {
+  "id": "s-WEB-e63899ce",
+  "voice": "S",
+  "text": "Suddenly, there was with the angel a multitude of the heavenly army praising God and saying, “Glory to God in the highest, on earth peace, good will toward men.”",
+  "kind": "scripture"
+ }
+]

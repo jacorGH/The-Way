@@ -128,6 +128,7 @@ window.TW = window.TW || {};
     await SC.say({ kind: 'scripture', ref: 'Mark 12:34', text: P.vs('mark11b', '12:34') });
     await SC.say({ kind: 'drama', text: 'No one asks him anything after that. You find you have one question left, and you are afraid of the answer.' });
     game.observe('temple', 'notfar', 'He told the scribe, “You are not far from the Kingdom of God” (Mark 12:34).', false, true);
+    await K.answerAll(game, 'temple');
     game.addQuestion(TW.D.episodes.temple.question);
     SC.toast('A question is now open in your scroll');
     K.finish(game, 'temple', 'The evening sacrifice is over. Write down what you saw these days in the Temple.');

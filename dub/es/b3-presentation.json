@@ -1,0 +1,41 @@
+[
+ {
+  "id": "d-23bb29dd",
+  "voice": "F",
+  "text": "Él tuvo a mi hijo en brazos un momento y ya estaba listo para morir. Yo lo tuve treinta y tres años, y nunca estuve lista.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-bbef304d",
+  "voice": "N",
+  "text": "María está callada esta noche. Cuando habla, mira la lámpara, no a ti.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-bd9f7b5b",
+  "voice": "F",
+  "text": "Cuarenta días después lo llevamos al Templo, como dice la Ley. No podíamos pagar un cordero. Llevamos dos palominos.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-bec1d1bf",
+  "voice": "F",
+  "text": "Una espada. No supe lo que quería decir, no en treinta años. Luego estuve junto a la cruz, y lo supe.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-ef0f326d",
+  "voice": "N",
+  "text": "Simeón ya podía morir en paz. ¿Cuál de sus palabras guardas?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-f61e297c",
+  "voice": "N",
+  "text": "“¿Por qué la señal de Dios sería un niño acostado en un pesebre?” (Lucas 2:12)\n\nSimeón tomó al niño en sus brazos y dijo: “han visto mis ojos tu salvación… luz para revelación a los gentiles”. La señal era Dios mismo, venido tan cerca que se le podía tener en brazos. (Lucas 2:28–32)",
+  "kind": "answer"
+ }
+]

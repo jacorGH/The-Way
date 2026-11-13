@@ -1,0 +1,48 @@
+[
+ {
+  "id": "d-0afc7ef9",
+  "voice": "N",
+  "text": "Otra tarde. María te ha guardado el lugar junto a la lámpara.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-45eaf744",
+  "voice": "F",
+  "text": "Luego el emperador quiso que todos fueran empadronados. José era de la casa de David, así que tuvimos que ir a la ciudad de David. Me faltaba muy poco.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-47475a1d",
+  "voice": "F",
+  "text": "Lo he meditado más de treinta años. Todavía lo medito.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-906e8aff",
+  "voice": "N",
+  "text": "La señal de Dios fue un niño acostado en un pesebre. ¿Qué surge en ti?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-9a63986a",
+  "voice": "F",
+  "text": "No había lugar, así que lo acosté donde comían los animales. El Señor de todo, en un pesebre. Le conté los dedos.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-d41898da",
+  "voice": "F",
+  "text": "Esa noche, allá en los campos, había pastores. Nos lo contaron todo. Les hice contarlo dos veces.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-f4be061c",
+  "voice": "N",
+  "text": "“¿Por qué lo llamaron Jesús?” (Mateo 1:21)\n\n“Os ha nacido hoy, en la ciudad de David, un Salvador, que es Cristo el Señor.” El nombre Jesús significa “el Señor salva”. (Lucas 2:11; Mateo 1:21)",
+  "kind": "answer"
+ }
+]

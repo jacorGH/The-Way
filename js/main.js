@@ -207,7 +207,7 @@ window.TW = window.TW || {};
     const bar = $('#tl-bar');
     bar.innerHTML = '';
     [28, 30, 33, 36, 50, 64, 70, 95].forEach((y, i) => {
-      const t = el('span', 'tl-tick', (i === 0 ? 'AD ' : '') + y);
+      const t = el('span', 'tl-tick', i === 0 && TW.Settings.get('lang') !== 'es' ? 'AD ' + y : String(y));
       t.style.left = yearPct(y) + '%';
       bar.appendChild(t);
     });
@@ -228,7 +228,7 @@ window.TW = window.TW || {};
     D.events.forEach((ev, i) => {
       const d = el('button', 'tl-event');
       d.style.left = yearPct(ev.year) + '%';
-      d.setAttribute('aria-label', ev.label);
+      d.setAttribute('aria-label', TW.t(ev.label));
       d.addEventListener('click', () => setCaption(i));
       bar.appendChild(d);
     });
@@ -253,7 +253,7 @@ window.TW = window.TW || {};
     const det = $('#era-detail');
     det.innerHTML = '';
     det.appendChild(el('h3', 'era-title', era.title));
-    det.appendChild(el('p', 'era-meta', TW.Settings.get('lang') === 'es' ? TR(era.dates) + '. Juegas como ' + TR(TW.Role.G(era.view)).replace(/^U/, 'u') + '.' : era.dates + '. You play as ' + TW.Role.G(era.view).toLowerCase().replace('nicodemus', 'Nicodemus') + '.'));
+    det.appendChild(el('p', 'era-meta', TW.Settings.get('lang') === 'es' ? TR(era.dates).replace(/\.$/, '') + '. Juegas como ' + TR(TW.Role.G(era.view)).replace(/^./, (c) => c.toLowerCase()) + '.' : era.dates + '. You play as ' + TW.Role.G(era.view).toLowerCase().replace('nicodemus', 'Nicodemus') + '.'));
     det.appendChild(el('p', 'era-summary', TW.Role.G(era.summary)));
     const dl = el('dl', 'world');
     era.world.forEach((w) => { dl.appendChild(el('dt', '', w[0])); dl.appendChild(el('dd', '', w[1])); });
@@ -304,7 +304,7 @@ window.TW = window.TW || {};
   function setCaption(i) {
     game.capIdx = i;
     const ev = D.events[i];
-    $('#tl-caption').textContent = (ev.approx ? 'c. ' : '') + 'AD ' + ev.year + ': ' + ev.label;
+    $('#tl-caption').textContent = TW.Settings.get('lang') === 'es' ? (ev.approx ? 'h. ' : '') + ev.year + ' d. C.: ' + TW.t(ev.label) : (ev.approx ? 'c. ' : '') + 'AD ' + ev.year + ': ' + ev.label;
     document.querySelectorAll('.tl-event').forEach((d, j) => d.classList.toggle('sel', j === i));
   }
 

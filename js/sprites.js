@@ -51,12 +51,15 @@ window.TW = window.TW || {};
     ctx.drawImage(c, 0, 0);
     return f;
   }
-  const both = (g) => {
+  // a child: the same head on a shorter body (rows taken out of the torso and robe)
+  const shorten = (g, rows) => g.filter((r, y) => rows.indexOf(y) < 0);
+  const both = (g, rows) => {
+    if (rows) g = shorten(g, rows);
     const r = toCanvas(outline(g));
     return { r, l: flip(r) };
   };
 
-  /* opts: skin, hair, beard, tunic, stripe, mantle, fringe, veil, phylactery, belt */
+  /* opts: child (shorter body), skin, hair, beard, tunic, stripe, mantle, fringe, veil, phylactery, belt */
   function drawUpper(g, o, dy, arm) {
     const sk = o.skin, hr = o.hair;
     const skD = U.shadeHex(sk, 0.82);
@@ -161,7 +164,7 @@ window.TW = window.TW || {};
         for (let x = 2; x <= 14; x += 2) put(g, x, 15, '#8e7646');
         rect(g, 1, 14, 1, 16, '#8e7646'); rect(g, 15, 14, 15, 16, '#8e7646');
       }
-      frames[mode] = both(g);
+      frames[mode] = both(g, o.child ? (bob ? [13, 15, 17, 19] : [14, 16, 18, 20]) : null);
     });
     // seated on the floor
     {
@@ -174,7 +177,7 @@ window.TW = window.TW || {};
       rect(g, 3, 21, 3, 23, U.shadeHex(lap, 0.8));
       rect(g, 2, 24, 14, 24, U.shadeHex(lap, 0.85));
       put(g, 14, 23, o.skin);
-      frames.sit = both(g);
+      frames.sit = both(g, o.child ? [17, 19, 22] : null);
     }
     return frames;
   }

@@ -1,0 +1,48 @@
+[
+ {
+  "id": "d-148318c2",
+  "voice": "F",
+  "text": "Todavía estábamos en Belén, ya en una casa, cuando llegaron unos visitantes que nadie esperaba. Del oriente. Siguiendo una estrella.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-2f8c0d2c",
+  "voice": "F",
+  "text": "Nosotros estábamos a salvo. Otros no. Nunca he dejado de llorar por las madres de Belén.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-4fb806b7",
+  "voice": "F",
+  "text": "Oro. Incienso. Y mirra, la especia para los muertos. Tampoco entendí ese regalo. Nicodemo trajo mirra para su sepultura.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-506b1858",
+  "voice": "N",
+  "text": "Los magos abrieron sus tesoros. ¿Qué le traerías tú?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-7678841e",
+  "voice": "N",
+  "text": "Herodes el Grande gobernó Judea del 37 al 4 a. C.: un constructor hábil y un rey desconfiado y cruel. El historiador Josefo dice que hizo ejecutar a tres de sus propios hijos.",
+  "kind": "history"
+ },
+ {
+  "id": "d-9931c91b",
+  "voice": "N",
+  "text": "La última tarde de su historia. María tiene en el regazo una cajita, muy vieja, y mantiene las manos sobre ella mientras habla.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-d7c17c46",
+  "voice": "F",
+  "text": "Basta por esta noche. Hay una cosa más que guardo, de cuando él tenía doce años. Vuelve mañana.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ }
+]

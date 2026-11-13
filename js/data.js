@@ -24,7 +24,7 @@ window.TW = window.TW || {};
   D.eras = [
     {
       // A part of its own, before Era I and open from the start: the birth of Jesus, as Mary told it years later.
-      id: 'birth', num: '✦', title: 'The Birth of Jesus', dates: 'c. 6–4 BC',
+      id: 'birth', num: '✦', title: 'The Birth of Jesus', dates: 'c. 6 BC–AD 8',
       span: [-6, -4], open: true, view: 'A listener, years later',
       summary:
         'You were not yet born when Jesus was. Years later, after Pentecost, his mother Mary is among the believers in Jerusalem (Acts 1:14). Luke says that she “kept all these sayings, pondering them in her heart” (Luke 2:19), and that he traced everything from those who were eyewitnesses from the beginning (Luke 1:2–3). You sit with her, and ask. Matthew tells the same story from Joseph’s side.',

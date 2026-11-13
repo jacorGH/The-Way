@@ -1,0 +1,68 @@
+[
+ {
+  "id": "d-04758f78",
+  "voice": "F",
+  "text": "“Tu padre y yo”, le dije. Y él dijo: “mi Padre”. Yo le había contado lo de Gabriel. Nunca le había dicho lo que significaba. Él ya lo sabía.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-0d3c9777",
+  "voice": "F",
+  "text": "Tenía doce años. Cada año subíamos a Jerusalén para la Pascua, medio Nazaret junto, cantando por el camino.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-23920262",
+  "voice": "N",
+  "text": "Los peregrinos de Galilea iban a pie a Jerusalén en grandes compañías de parientes y vecinos: más de cien kilómetros, cuatro o cinco días de camino. Por el camino cantaban los Salmos graduales (Salmos 120–134).",
+  "kind": "history"
+ },
+ {
+  "id": "d-43cfeeb9",
+  "voice": "N",
+  "text": "Ella vuelve a su remiendo. Dentro de algunos años, un médico llamado Lucas vendrá a Jerusalén haciendo las mismas preguntas.",
+  "kind": "drama"
+ },
+ {
+  "id": "d-4ee1ef67",
+  "voice": "F",
+  "text": "Yo pensaba que iba con los muchachos de mi hermana. José pensaba que iba conmigo. Al anochecer, nadie lo había visto desde que salimos de la ciudad.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-52d4b20b",
+  "voice": "F",
+  "text": "Ahora conoces el principio. Tú viste el final, y el sepulcro vacío, y el principio otra vez. Escríbelo todo. Alguien lo necesitará.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-665bc487",
+  "voice": "F",
+  "text": "Tres días. Pregunté en cada puerta y en cada patio. La segunda noche no dormí nada.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-d5962418",
+  "voice": "N",
+  "text": "Dijo que en el Templo, en los negocios de su Padre, le convenía estar. ¿Qué oyes en esas palabras?",
+  "kind": "prompt"
+ },
+ {
+  "id": "d-daf8a920",
+  "voice": "F",
+  "text": "Tres días lo busqué cuando tenía doce años. Años después hubo otros tres días, y un sepulcro. Las dos veces, al tercer día, estaba en los negocios de su Padre.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-fc40b24a",
+  "voice": "N",
+  "text": "Creías que su historia había terminado. Esta noche es María quien te pide que te quedes.",
+  "kind": "drama"
+ }
+]

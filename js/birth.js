@@ -1,5 +1,5 @@
 /* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
-/* The Way — The Birth of Jesus: four episodes told as Mary's memories, years later in Jerusalem (Luke 1–2; Matthew 1–2).
+/* The Way — The Birth of Jesus: five episodes told as Mary's memories, years later in Jerusalem (Luke 1–2; Matthew 1–2).
    Angels and the glory of the Lord are shown only as light. Carols: see the advent, manger, gloria, child and kings
    moods in js/audio.js. */
 window.TW = window.TW || {};
@@ -201,11 +201,63 @@ window.TW = window.TW || {};
     game.observe('magi', 'nazareth', 'When Herod was dead, Joseph brought the child and his mother back and settled in Nazareth in Galilee (Matthew 2:19–23; Luke 2:39).', false, true);
     await choose('magi', 'The wise men opened their treasures. What would you bring him?', TW.D.episodes.magi.hearts);
     m.pose = 'out';
-    await mary('Now you know the beginning. You saw the end, and the empty tomb, and the beginning again. Write it all down. Someone will need it.');
+    await mary('That is enough for tonight. There is one more thing I keep, from when he was twelve. Come back tomorrow.');
     m.pose = 'sit';
     done(game, 'magi', 'Write down the beginning of the story, as she told it to you.');
   };
 
+  // ---------- ✦ V. My Father's House ----------
+  const temple12 = { id: 'temple12' };
+  temple12.run = async function (game) {
+    const m = room();
+    await drama('You thought her story was finished. Tonight Mary is the one who asks you to stay.');
+    m.pose = 'out';
+    await mary('He was twelve. Every year we went up to Jerusalem for the Passover, half of Nazareth together, singing on the road.');
+    m.pose = 'sit';
+    await hist('Pilgrims from Galilee walked to Jerusalem in large companies of relatives and neighbors, more than a hundred kilometers, four or five days on foot. On the way they sang the Psalms of Ascents (Psalms 120–134).');
+    await memory('bth_caravan', async (v) => {
+      music('child');
+      await L2('2:41', '2:42');
+      await v.walk();
+      await L2('2:43', '2:44');
+      await v.search();
+      await mary('I thought he was walking with my sister’s boys. Joseph thought he was with me. By evening no one had seen him since the city.');
+      await L2('2:45', '2:45');
+      await v.turn();
+    });
+    game.observe('temple12', 'lost', 'When Jesus was twelve, he stayed behind in Jerusalem after the Passover; his parents went a day’s journey before they missed him, and turned back to look for him (Luke 2:43–45).', false, true);
+    await memory('bth_search', async (v) => {
+      music('night');
+      await v.look();
+      await mary('Three days. I asked at every gate and in every courtyard. The second night I did not sleep at all.');
+      await v.again();
+    });
+    await memory('bth_teachers', async (v) => {
+      music('child');
+      await v.listen();
+      await L2('2:46', '2:46');
+      await v.ask();
+      await L2('2:47', '2:47');
+      await v.find();
+      await L2('2:48', '2:48');
+      await v.answer();
+      await L2('2:49', '2:50');
+      await mary('“Your father and I,” I said. And he said, “my Father.” I had told him about Gabriel. I had never told him what it meant. He already knew.');
+      await v.go();
+      await L2('2:51', '2:52');
+    });
+    game.observe('temple12', 'teachers', 'After three days his parents found him in the Temple, sitting among the teachers, listening to them and asking them questions; all who heard him were amazed at his understanding (Luke 2:46–47).', false, true);
+    game.observe('temple12', 'father', 'He said, “Why were you looking for me? Didn’t you know that I must be in my Father’s house?” They did not understand the saying (Luke 2:49–50).', false, true);
+    game.observe('temple12', 'grew', 'He went down to Nazareth and was subject to them, and grew in wisdom and stature, and in favor with God and men; his mother kept all these sayings in her heart (Luke 2:51–52).', false, true);
+    await choose('temple12', 'He called the Temple his Father’s house. What do you hear in it?', TW.D.episodes.temple12.hearts);
+    m.pose = 'out';
+    await mary('Three days I searched for him when he was twelve. Years later there were three more days, and a tomb. Both times, on the third day, he was about his Father’s business.');
+    await mary('Now you know the beginning. You saw the end, and the empty tomb, and the beginning again. Write it all down. Someone will need it.');
+    m.pose = 'sit';
+    await drama('She goes back to her mending. Some years from now a physician named Luke will come to Jerusalem asking the same questions.');
+    done(game, 'temple12', 'Write down the last thing she told you, and the first words of his that anyone remembered.');
+  };
+
   TW.Episodes = TW.Episodes || {};
-  Object.assign(TW.Episodes, { annunciation, nativity, presentation, magi });
+  Object.assign(TW.Episodes, { annunciation, nativity, presentation, magi, temple12 });
 })(window.TW);

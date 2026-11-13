@@ -886,6 +886,57 @@ window.TW = window.TW || {};
       flee: async () => { SC.walk(mary, 40); await SC.walk(jo, 24); },
     };
   };
+  // ---------- ✦ V. The boy Jesus in the Temple (Luke 2:41–52) ----------
+  const boyJ = { child: true, skin: '#a26c44', hair: '#24160e', tunic: '#d6c8a6', belt: '#8b6140' };
+  const kid = (i) => S.person({ child: true, skin: K.SKINS[i % K.SKINS.length], hair: K.HAIRS[(i + 1) % K.HAIRS.length], tunic: K.TUNICS[(i + 2) % K.TUNICS.length], belt: '#5a3b22' });
+  VG.bth_caravan = () => {
+    load('field');
+    const jo = add(S.person(josephY), 290, 147, { facing: -1, speed: 28 });
+    const mary = add(S.person(maryY), 306, 148, { facing: -1, speed: 28 });
+    const band = [0, 1, 2, 3, 4].map((i) => add(K.villager(1010 + i, i % 2 === 1), 160 + i * 22, 146 + (i % 2) * 2, { facing: -1, speed: 28 }));
+    const kids = [0, 1].map((i) => add(kid(i), 140 + i * 12, 148, { facing: -1, speed: 30 }));
+    return {
+      walk: async () => { band.concat(kids).forEach((b) => SC.walk(b, b.x - 190)); SC.walk(mary, 150); await SC.walk(jo, 132); },
+      search: async () => {
+        mary.facing = -1; mary.pose = 'out'; await W(900); mary.pose = 'stand';
+        jo.facing = 1; await W(600); jo.facing = -1; await W(500);
+        mary.facing = 1; await W(500);
+      },
+      turn: async () => { mary.facing = 1; jo.facing = 1; SC.walk(mary, 280); await SC.walk(jo, 268); },
+    };
+  };
+  VG.bth_search = () => {
+    load('olives', { dusk: true });
+    const jo = add(S.person(josephY), -10, 148, { facing: 1, speed: 26 });
+    const mary = add(S.person(maryY), -24, 148, { facing: 1, speed: 26 });
+    const folk = [0, 1, 2].map((i) => add(K.villager(1030 + i, i === 1), 120 + i * 50, 147, { facing: -1 }));
+    return {
+      look: async () => {
+        SC.walk(jo, 100); await SC.walk(mary, 108);
+        mary.pose = 'out'; await W(800); mary.pose = 'stand'; folk[0].facing = 1; await W(500); folk[0].facing = -1;
+        await SC.walk(mary, 160); mary.pose = 'out'; await W(800); mary.pose = 'stand';
+      },
+      again: async () => { jo.facing = -1; await W(500); jo.facing = 1; SC.walk(jo, 230); await SC.walk(mary, 242); },
+    };
+  };
+  VG.bth_teachers = () => {
+    load('court');
+    const tl = [{ skin: '#a8724a', hair: '#d8d2c6', beard: '#d8d2c6', tunic: '#e6dfcc', mantle: '#4a4a6a', fringe: '#cdb98a', phylactery: true },
+      { skin: '#b8845a', hair: '#5a4a3a', beard: '#5a4a3a', tunic: '#d8ccae', mantle: '#6a4a3a', fringe: '#cdb98a' },
+      { skin: '#9a6440', hair: '#c8c0b4', beard: '#c8c0b4', tunic: '#e6dfcc', mantle: '#3a5a4a', fringe: '#cdb98a', phylactery: true },
+      { skin: '#a8724a', hair: '#2a1a12', beard: '#2a1a12', tunic: '#cdbb94', mantle: '#5a4a6a', fringe: '#cdb98a' }];
+    const teachers = [[118, 1], [134, 1], [182, -1], [198, -1]].map((c, i) => add(S.person(tl[i]), c[0], 146 + (i % 2), { pose: 'sit', facing: c[1] }));
+    const boy = add(S.person(boyJ), 158, 148, { pose: 'sit', facing: -1 });
+    const jo = add(S.person(josephY), -14, 148, { facing: 1, speed: 20 });
+    const mary = add(S.person(maryY), 0, 148, { facing: 1, speed: 20 });
+    return {
+      listen: async () => { for (const t of [teachers[0], teachers[2]]) { t.pose = 'out'; await W(700); t.pose = 'sit'; } boy.facing = 1; await W(500); },
+      ask: async () => { boy.pose = 'out'; await W(1000); boy.pose = 'sit'; teachers[1].facing = -1; teachers[3].facing = 1; await W(600); teachers[1].facing = 1; teachers[3].facing = -1; },
+      find: async () => { SC.walk(jo, 70); await SC.walk(mary, 88); boy.facing = -1; mary.pose = 'out'; await W(900); mary.pose = 'stand'; },
+      answer: async () => { boy.pose = 'stand'; await W(400); boy.pose = 'out'; await W(1100); boy.pose = 'stand'; },
+      go: async () => { await SC.walk(boy, 104); boy.facing = -1; mary.facing = -1; jo.facing = -1; SC.walk(jo, -40); SC.walk(mary, -26); await SC.walk(boy, -12); },
+    };
+  };
   VG.enter = async function (id, witness) {
     const el = SC.el;
     let mem = null;
