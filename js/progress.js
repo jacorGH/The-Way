@@ -64,17 +64,32 @@ window.TW = window.TW || {};
     const done = () => { inFree = Math.max(0, inFree - 1); };
     return Promise.resolve(p).then((v) => { done(); return v; }, (e) => { done(); throw e; });
   };
-  SC.say = function (o) { return say1.call(SC, o); };
+  // A remembered scene is a place to come back to as well (some episodes, like the Birth of Jesus, are mostly memories).
+  // Its bookmark is labeled with the first line spoken in it.
+  let labelNext = null;
+  PR.memory = function (id, witness) {
+    if (!episodeOn() || inFree > 0) return;
+    const m = mark('memory', id, { label: witness ? T('As remembered by ', 'Como lo recuerda ') + (TW.tr ? TW.tr(witness) : witness) : id });
+    if (!FF) labelNext = m;
+  };
+  SC.say = function (o) {
+    if (labelNext && o && o.text && !FF && rec) {
+      const sl = store()[slot(rec.ep)], mk = sl && sl.marks.find((x) => x.key === labelNext.key && x.occ === labelNext.occ);
+      if (mk) { mk.text = o.kind === 'scripture' ? (o.ref ? o.ref + ' · ' : '') + o.text : o.text; persist(); }
+      labelNext = null;
+    }
+    return say1.call(SC, o);
+  };
 
   // the report is written: the episode is finished, so there is no place to continue from (the bookmarks stay)
   PR.finished = (ep) => { const sl = store()[slot(ep)]; if (sl) { delete sl.resume; persist(); } };
 
   // Before an episode starts: offer to continue, start from a moment, or start over. Calls go(ff) with a target or null.
   PR.offer = function (ep, go) {
-    rec = { ep, count: {} }; inFree = 0; stopFF();
+    rec = { ep, count: {} }; inFree = 0; labelNext = null; stopFF();
     if (TW.TURBO) { go(null); return; }
     const sl = store()[slot(ep)];
-    const moments = sl ? sl.marks.filter((m) => m.kind === 'choose' || m.kind === 'prompt') : [];
+    const moments = sl ? sl.marks.filter((m) => m.kind === 'choose' || m.kind === 'prompt' || m.kind === 'memory') : [];
     if (!sl || moments.length < 2) { if (sl) { sl.marks = []; sl.choices = []; delete sl.resume; } go(null); return; }
     const box = document.createElement('div'); box.className = 'resume-sheet'; box.setAttribute('role', 'dialog');
     const card = document.createElement('div'); card.className = 'resume-card';

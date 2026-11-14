@@ -54,8 +54,12 @@ window.TW = window.TW || {};
       await mary('I did not understand how. I said yes anyway. You can say yes to God before you understand him.');
     });
     game.observe('annunciation', 'gabriel', 'The angel Gabriel told Mary she would bear a son, Jesus, the Son of the Most High; she answered, “Let it be done to me according to your word” (Luke 1:31–38).', false, true);
-    await choose('annunciation', 'Mary said yes before she understood. What do you say to her?', TW.D.episodes.annunciation.hearts);
-    await mary('Courage came later. First there was only the word, and a yes. Then I went to see Elizabeth, as fast as I could walk.');
+    const h1 = await choose('annunciation', 'Mary said yes before she understood. What do you say to her?', TW.D.episodes.annunciation.hearts);
+    await mary([
+      'Courage came later. First there was only the word, and a yes. Then I went to see Elizabeth, as fast as I could walk.',
+      'I was afraid. He said, “Do not be afraid,” and I still was. You can be afraid and say yes. Then I went to see Elizabeth, as fast as I could walk.',
+      'Your hand is cold. Mine was too, that night. In the morning I went to see Elizabeth, as fast as I could walk.',
+    ][h1]);
     await memory('bth_visit', async (v) => {
       await v.arrive();
       await L1('1:39', '1:40');
@@ -125,8 +129,12 @@ window.TW = window.TW || {};
       await L2('2:19', '2:20');
     });
     game.observe('nativity', 'shepherds', 'The shepherds found Mary and Joseph and the baby lying in the feeding trough, and told what they had heard; Mary kept these sayings, pondering them in her heart (Luke 2:16–19).', false, true);
-    await choose('nativity', 'God’s sign was a baby lying in a feeding trough. What rises in you?', TW.D.episodes.nativity.hearts);
-    await mary('I have pondered it for thirty years and more. I am still pondering it.');
+    const h2 = await choose('nativity', 'God’s sign was a baby lying in a feeding trough. What rises in you?', TW.D.episodes.nativity.hearts);
+    await mary([
+      'Wonder is the right word. I have pondered it for thirty years and more. I am still pondering it.',
+      'So were the shepherds, and they were the first to be told. I have pondered that for thirty years and more.',
+      'Joy. The angels sang it, and the shepherds went back praising God. I am still pondering it.',
+    ][h2]);
     await K.answerAll(game, 'nativity');
     done(game, 'nativity', 'Write it down: the night, the trough, the shepherds running.');
   };
@@ -199,7 +207,12 @@ window.TW = window.TW || {};
     await M2('2:19', '2:23');
     await L2('2:39', '2:40');
     game.observe('magi', 'nazareth', 'When Herod was dead, Joseph brought the child and his mother back and settled in Nazareth in Galilee (Matthew 2:19–23; Luke 2:39).', false, true);
-    await choose('magi', 'The wise men opened their treasures. What would you bring him?', TW.D.episodes.magi.hearts);
+    const h4 = await choose('magi', 'The wise men opened their treasures. What would you bring him?', TW.D.episodes.magi.hearts);
+    await mary([
+      'Then bring him that. The wise men brought what they had. You have a scroll.',
+      'That is what he asked of his friends. Most of them gave it.',
+      'Yourself. That is all he ever asked of anyone.',
+    ][h4]);
     m.pose = 'out';
     await mary('That is enough for tonight. There is one more thing I keep, from when he was twelve. Come back tomorrow.');
     m.pose = 'sit';
@@ -249,7 +262,12 @@ window.TW = window.TW || {};
     game.observe('temple12', 'teachers', 'After three days his parents found him in the Temple, sitting among the teachers, listening to them and asking them questions; all who heard him were amazed at his understanding (Luke 2:46–47).', false, true);
     game.observe('temple12', 'father', 'He said, “Why were you looking for me? Didn’t you know that I must be in my Father’s house?” They did not understand the saying (Luke 2:49–50).', false, true);
     game.observe('temple12', 'grew', 'He went down to Nazareth and was subject to them, and grew in wisdom and stature, and in favor with God and men; his mother kept all these sayings in her heart (Luke 2:51–52).', false, true);
-    await choose('temple12', 'He called the Temple his Father’s house. What do you hear in it?', TW.D.episodes.temple12.hearts);
+    const h5 = await choose('temple12', 'He called the Temple his Father’s house. What do you hear in it?', TW.D.episodes.temple12.hearts);
+    await mary([
+      'He knew. I think he always knew, long before I had words for it.',
+      'I am still learning. Every day I had with him, I learned.',
+      'Eighteen more years in Nazareth. He worked beside Joseph, and did what I asked. Think of it.',
+    ][h5]);
     m.pose = 'out';
     await mary('Three days I searched for him when he was twelve. Years later there were three more days, and a tomb. Both times, on the third day, he was about his Father’s business.');
     await mary('Now you know the beginning. You saw the end, and the empty tomb, and the beginning again. Write it all down. Someone will need it.');

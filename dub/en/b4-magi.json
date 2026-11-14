@@ -27,16 +27,37 @@
   "kind": "prompt"
  },
  {
+  "id": "d-749c8099",
+  "voice": "F",
+  "text": "Then bring him that. The wise men brought what they had. You have a scroll.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
   "id": "d-7678841e",
   "voice": "N",
   "text": "Herod the Great ruled Judea from 37 to 4 BC, an able builder and a suspicious, cruel king. The historian Josephus says he executed three of his own sons.",
   "kind": "history"
  },
  {
+  "id": "d-8179977c",
+  "voice": "F",
+  "text": "Yourself. That is all he ever asked of anyone.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
   "id": "d-9931c91b",
   "voice": "N",
   "text": "The last evening of her story. Mary has a small box in her lap, very old, and keeps her hands on it while she talks.",
   "kind": "drama"
+ },
+ {
+  "id": "d-a37e0735",
+  "voice": "F",
+  "text": "That is what he asked of his friends. Most of them gave it.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
  },
  {
   "id": "d-d7c17c46",

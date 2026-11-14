@@ -20,6 +20,13 @@
   "speaker": "Mary, the mother of Jesus"
  },
  {
+  "id": "d-1eb30131",
+  "voice": "F",
+  "text": "I was afraid. He said, “Do not be afraid,” and I still was. You can be afraid and say yes. Then I went to see Elizabeth, as fast as I could walk.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
   "id": "d-39fb520d",
   "voice": "N",
   "text": "Luke says that he “traced the course of all things accurately from the first,” from those who “from the beginning were eyewitnesses” (Luke 1:2–3), and twice that Mary kept these things in her heart (2:19, 51).",
@@ -29,6 +36,13 @@
   "id": "d-52b4b7ff",
   "voice": "F",
   "text": "Courage came later. First there was only the word, and a yes. Then I went to see Elizabeth, as fast as I could walk.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-85c9a40c",
+  "voice": "F",
+  "text": "Your hand is cold. Mine was too, that night. In the morning I went to see Elizabeth, as fast as I could walk.",
   "kind": "drama",
   "speaker": "Mary, the mother of Jesus"
  },

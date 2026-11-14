@@ -15,14 +15,14 @@
   {
    "file": "b1-annunciation.json",
    "title": "✦ I. The Angel’s Word (Luke 1:26–56; Matthew 1:18–25)",
-   "lines": 8,
-   "characters": 1220
+   "lines": 10,
+   "characters": 1489
   },
   {
    "file": "b2-nativity.json",
    "title": "✦ II. No Room (Luke 2:1–20)",
-   "lines": 7,
-   "characters": 738
+   "lines": 9,
+   "characters": 972
   },
   {
    "file": "b3-presentation.json",
@@ -33,14 +33,14 @@
   {
    "file": "b4-magi.json",
    "title": "✦ IV. The Star and the Flight (Matthew 2:1–23; Luke 2:39–40)",
-   "lines": 7,
-   "characters": 789
+   "lines": 11,
+   "characters": 1020
   },
   {
    "file": "b5-temple12.json",
    "title": "✦ V. My Father’s House (Luke 2:41–52)",
-   "lines": 10,
-   "characters": 1288
+   "lines": 13,
+   "characters": 1526
   },
   {
    "file": "01-capernaum.json",

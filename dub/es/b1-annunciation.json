@@ -20,6 +20,13 @@
   "speaker": "Mary, the mother of Jesus"
  },
  {
+  "id": "d-1eb30131",
+  "voice": "F",
+  "text": "Tuve miedo. Él dijo: “No temas”, y aun así lo tenía. Se puede tener miedo y decir que sí. Luego fui a ver a Elisabet, tan aprisa como pude andar.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
   "id": "d-39fb520d",
   "voice": "N",
   "text": "Lucas dice que había “entendido todas las cosas desde el principio con diligencia”, de los que “desde el principio lo vieron por sus ojos” (Lucas 1:2–3), y dos veces que María guardaba estas cosas en su corazón (2:19, 51).",
@@ -29,6 +36,13 @@
   "id": "d-52b4b7ff",
   "voice": "F",
   "text": "El valor vino después. Primero solo hubo la palabra, y un sí. Luego fui a ver a Elisabet, tan rápido como pude caminar.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-85c9a40c",
+  "voice": "F",
+  "text": "Tienes la mano fría. La mía también lo estaba aquella noche. Por la mañana fui a ver a Elisabet, tan aprisa como pude andar.",
   "kind": "drama",
   "speaker": "Mary, the mother of Jesus"
  },

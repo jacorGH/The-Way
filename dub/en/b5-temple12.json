@@ -20,6 +20,20 @@
   "kind": "history"
  },
  {
+  "id": "d-27eefbfd",
+  "voice": "F",
+  "text": "I am still learning. Every day I had with him, I learned.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-36b3f0e7",
+  "voice": "F",
+  "text": "He knew. I think he always knew, long before I had words for it.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
   "id": "d-43cfeeb9",
   "voice": "N",
   "text": "She goes back to her mending. Some years from now a physician named Luke will come to Jerusalem asking the same questions.",
@@ -43,6 +57,13 @@
   "id": "d-665bc487",
   "voice": "F",
   "text": "Three days. I asked at every gate and in every courtyard. The second night I did not sleep at all.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-9d6f6d90",
+  "voice": "F",
+  "text": "Eighteen more years in Nazareth. He worked beside Joseph, and did what I asked. Think of it.",
   "kind": "drama",
   "speaker": "Mary, the mother of Jesus"
  },

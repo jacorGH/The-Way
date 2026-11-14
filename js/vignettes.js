@@ -938,6 +938,7 @@ window.TW = window.TW || {};
     };
   };
   VG.enter = async function (id, witness) {
+    if (TW.Progress && TW.Progress.memory) TW.Progress.memory(id, witness);
     const el = SC.el;
     let mem = null;
     await K.fade(async () => {

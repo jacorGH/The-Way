@@ -6,6 +6,13 @@
   "kind": "drama"
  },
  {
+  "id": "d-1f8475c6",
+  "voice": "F",
+  "text": "Gozo. Los ángeles lo cantaron, y los pastores se volvieron alabando a Dios. Todavía lo medito.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
   "id": "d-45eaf744",
   "voice": "F",
   "text": "Luego el emperador quiso que todos fueran empadronados. José era de la casa de David, así que tuvimos que ir a la ciudad de David. Me faltaba muy poco.",
@@ -13,9 +20,16 @@
   "speaker": "Mary, the mother of Jesus"
  },
  {
-  "id": "d-47475a1d",
+  "id": "d-4a21d90d",
   "voice": "F",
-  "text": "Lo he meditado más de treinta años. Todavía lo medito.",
+  "text": "También lo eran los pastores, y fueron los primeros en saberlo. Eso lo he meditado por más de treinta años.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-876f5203",
+  "voice": "F",
+  "text": "Asombro es la palabra justa. Lo he meditado por más de treinta años. Todavía lo medito.",
   "kind": "drama",
   "speaker": "Mary, the mother of Jesus"
  },

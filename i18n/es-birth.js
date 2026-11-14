@@ -183,4 +183,18 @@ window.TW = window.TW || {};
     'd-b07d7e93': "“¿Qué quiso decir Simeón: “una espada traspasará tu alma”?” (Lucas 2:35)\n\nMaría estaba junto a la cruz de su hijo (Juan 19:25). La palabra de Simeón se había cumplido: la espada era esta. (Juan 19:25; Lucas 2:35)",
     'd-b534a628': "“¿Qué clase de rey vienen a adorar unos magos de las naciones?” (Mateo 2:2)\n\nUn rey que viene “humilde, y cabalgando sobre un asno” (Zacarías 9:9), recibido con palmas, y coronado al final de espinas. (Mateo 21:5; Juan 19:2)",
   });
+  // ---- the replies to your heart (Mary answers what you chose) ----
+  Object.assign(TW.Lines.translations.es, {
+    'd-1eb30131': "Tuve miedo. Él dijo: “No temas”, y aun así lo tenía. Se puede tener miedo y decir que sí. Luego fui a ver a Elisabet, tan aprisa como pude andar.",
+    'd-85c9a40c': "Tienes la mano fría. La mía también lo estaba aquella noche. Por la mañana fui a ver a Elisabet, tan aprisa como pude andar.",
+    'd-876f5203': "Asombro es la palabra justa. Lo he meditado por más de treinta años. Todavía lo medito.",
+    'd-4a21d90d': "También lo eran los pastores, y fueron los primeros en saberlo. Eso lo he meditado por más de treinta años.",
+    'd-1f8475c6': "Gozo. Los ángeles lo cantaron, y los pastores se volvieron alabando a Dios. Todavía lo medito.",
+    'd-749c8099': "Entonces llévale eso. Los magos llevaron lo que tenían. Tú tienes un rollo.",
+    'd-a37e0735': "Eso es lo que pidió a sus amigos. La mayoría se los dio.",
+    'd-8179977c': {"m": "A ti mismo. Es todo lo que él pidió jamás a nadie.", "f": "A ti misma. Es todo lo que él pidió jamás a nadie."},
+    'd-36b3f0e7': "Lo sabía. Creo que siempre lo supo, mucho antes de que yo tuviera palabras para decirlo.",
+    'd-27eefbfd': "Todavía estoy aprendiendo. Cada día que tuve con él, aprendí.",
+    'd-9d6f6d90': "Dieciocho años más en Nazaret. Trabajó junto a José, e hizo lo que yo le pedía. Piénsalo.",
+  });
 })(window.TW);

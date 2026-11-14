@@ -4,10 +4,10 @@
  "bible": "WEB",
  "generated": "2026-11-13",
  "stats": {
-  "translate_lines": 3271,
-  "translate_chars": 237818,
-  "voice_lines": 727,
-  "voice_chars": 83555,
+  "translate_lines": 3281,
+  "translate_chars": 238688,
+  "voice_lines": 737,
+  "voice_chars": 84425,
   "scripture_lines": 730,
   "scripture_chars": 179504
  },
@@ -547,6 +547,15 @@
    "role": "both"
   },
   {
+   "id": "d-1eb30131",
+   "kind": "drama",
+   "ep": "annunciation",
+   "speaker": "Mary, the mother of Jesus",
+   "ref": "",
+   "text": "I was afraid. He said, “Do not be afraid,” and I still was. You can be afraid and say yes. Then I went to see Elizabeth, as fast as I could walk.",
+   "role": "both"
+  },
+  {
    "id": "d-2f3894d1",
    "kind": "goal",
    "ep": "annunciation",
@@ -598,6 +607,15 @@
    "speaker": "",
    "ref": "",
    "text": "“I would have been afraid.”",
+   "role": "both"
+  },
+  {
+   "id": "d-85c9a40c",
+   "kind": "drama",
+   "ep": "annunciation",
+   "speaker": "Mary, the mother of Jesus",
+   "ref": "",
+   "text": "Your hand is cold. Mine was too, that night. In the morning I went to see Elizabeth, as fast as I could walk.",
    "role": "both"
   },
   {
@@ -9892,12 +9910,30 @@
    "role": "both"
   },
   {
+   "id": "d-749c8099",
+   "kind": "drama",
+   "ep": "magi",
+   "speaker": "Mary, the mother of Jesus",
+   "ref": "",
+   "text": "Then bring him that. The wise men brought what they had. You have a scroll.",
+   "role": "both"
+  },
+  {
    "id": "d-7678841e",
    "kind": "history",
    "ep": "magi",
    "speaker": "",
    "ref": "",
    "text": "Herod the Great ruled Judea from 37 to 4 BC, an able builder and a suspicious, cruel king. The historian Josephus says he executed three of his own sons.",
+   "role": "both"
+  },
+  {
+   "id": "d-8179977c",
+   "kind": "drama",
+   "ep": "magi",
+   "speaker": "Mary, the mother of Jesus",
+   "ref": "",
+   "text": "Yourself. That is all he ever asked of anyone.",
    "role": "both"
   },
   {
@@ -9916,6 +9952,15 @@
    "speaker": "",
    "ref": "",
    "text": "Write down the beginning of the story, as she told it to you.",
+   "role": "both"
+  },
+  {
+   "id": "d-a37e0735",
+   "kind": "drama",
+   "ep": "magi",
+   "speaker": "Mary, the mother of Jesus",
+   "ref": "",
+   "text": "That is what he asked of his friends. Most of them gave it.",
    "role": "both"
   },
   {
@@ -10478,6 +10523,15 @@
    "role": "both"
   },
   {
+   "id": "d-1f8475c6",
+   "kind": "drama",
+   "ep": "nativity",
+   "speaker": "Mary, the mother of Jesus",
+   "ref": "",
+   "text": "Joy. The angels sang it, and the shepherds went back praising God. I am still pondering it.",
+   "role": "both"
+  },
+  {
    "id": "d-25f70514",
    "kind": "observe",
    "ep": "nativity",
@@ -10496,12 +10550,12 @@
    "role": "both"
   },
   {
-   "id": "d-47475a1d",
+   "id": "d-4a21d90d",
    "kind": "drama",
    "ep": "nativity",
    "speaker": "Mary, the mother of Jesus",
    "ref": "",
-   "text": "I have pondered it for thirty years and more. I am still pondering it.",
+   "text": "So were the shepherds, and they were the first to be told. I have pondered that for thirty years and more.",
    "role": "both"
   },
   {
@@ -10520,6 +10574,15 @@
    "speaker": "",
    "ref": "",
    "text": "The shepherds found Mary and Joseph and the baby lying in the feeding trough, and told what they had heard; Mary kept these sayings, pondering them in her heart (Luke 2:16–19).",
+   "role": "both"
+  },
+  {
+   "id": "d-876f5203",
+   "kind": "drama",
+   "ep": "nativity",
+   "speaker": "Mary, the mother of Jesus",
+   "ref": "",
+   "text": "Wonder is the right word. I have pondered it for thirty years and more. I am still pondering it.",
    "role": "both"
   },
   {
@@ -19158,6 +19221,24 @@
    "role": "both"
   },
   {
+   "id": "d-27eefbfd",
+   "kind": "drama",
+   "ep": "temple12",
+   "speaker": "Mary, the mother of Jesus",
+   "ref": "",
+   "text": "I am still learning. Every day I had with him, I learned.",
+   "role": "both"
+  },
+  {
+   "id": "d-36b3f0e7",
+   "kind": "drama",
+   "ep": "temple12",
+   "speaker": "Mary, the mother of Jesus",
+   "ref": "",
+   "text": "He knew. I think he always knew, long before I had words for it.",
+   "role": "both"
+  },
+  {
    "id": "d-43cfeeb9",
    "kind": "drama",
    "ep": "temple12",
@@ -19209,6 +19290,15 @@
    "speaker": "",
    "ref": "",
    "text": "When Jesus was twelve, he stayed behind in Jerusalem after the Passover; his parents went a day’s journey before they missed him, and turned back to look for him (Luke 2:43–45).",
+   "role": "both"
+  },
+  {
+   "id": "d-9d6f6d90",
+   "kind": "drama",
+   "ep": "temple12",
+   "speaker": "Mary, the mother of Jesus",
+   "ref": "",
+   "text": "Eighteen more years in Nazareth. He worked beside Joseph, and did what I asked. Think of it.",
    "role": "both"
   },
   {

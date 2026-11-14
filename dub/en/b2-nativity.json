@@ -6,6 +6,13 @@
   "kind": "drama"
  },
  {
+  "id": "d-1f8475c6",
+  "voice": "F",
+  "text": "Joy. The angels sang it, and the shepherds went back praising God. I am still pondering it.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
   "id": "d-45eaf744",
   "voice": "F",
   "text": "Then the emperor wanted everyone counted. Joseph was of David’s house, so we had to go to David’s town. I was very near my time.",
@@ -13,9 +20,16 @@
   "speaker": "Mary, the mother of Jesus"
  },
  {
-  "id": "d-47475a1d",
+  "id": "d-4a21d90d",
   "voice": "F",
-  "text": "I have pondered it for thirty years and more. I am still pondering it.",
+  "text": "So were the shepherds, and they were the first to be told. I have pondered that for thirty years and more.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-876f5203",
+  "voice": "F",
+  "text": "Wonder is the right word. I have pondered it for thirty years and more. I am still pondering it.",
   "kind": "drama",
   "speaker": "Mary, the mother of Jesus"
  },

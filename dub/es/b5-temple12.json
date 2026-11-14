@@ -20,6 +20,20 @@
   "kind": "history"
  },
  {
+  "id": "d-27eefbfd",
+  "voice": "F",
+  "text": "Todavía estoy aprendiendo. Cada día que tuve con él, aprendí.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-36b3f0e7",
+  "voice": "F",
+  "text": "Lo sabía. Creo que siempre lo supo, mucho antes de que yo tuviera palabras para decirlo.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
   "id": "d-43cfeeb9",
   "voice": "N",
   "text": "Ella vuelve a su remiendo. Dentro de algunos años, un médico llamado Lucas vendrá a Jerusalén haciendo las mismas preguntas.",
@@ -43,6 +57,13 @@
   "id": "d-665bc487",
   "voice": "F",
   "text": "Tres días. Pregunté en cada puerta y en cada patio. La segunda noche no dormí nada.",
+  "kind": "drama",
+  "speaker": "Mary, the mother of Jesus"
+ },
+ {
+  "id": "d-9d6f6d90",
+  "voice": "F",
+  "text": "Dieciocho años más en Nazaret. Trabajó junto a José, e hizo lo que yo le pedía. Piénsalo.",
   "kind": "drama",
   "speaker": "Mary, the mother of Jesus"
  },
