@@ -50,6 +50,14 @@ window.TW = window.TW || {};
   const D = { ids: {}, ext: {}, base: 'audio/' };
   D.add = function (lang, ids, ext) { (D.ids[lang] = D.ids[lang] || new Set()); ids.forEach((i) => { D.ids[lang].add(i); D.ext[lang + ':' + i] = ext || 'mp3'; }); };
   D.has = (lang, id) => !!(D.ids[lang] && D.ids[lang].has(id));
+  // Scripture recordings live with their Bible's language, not the screen's: s-WEB-… (and KJV, ASV) in audio/en,
+  // s-RV1909-… in audio/es. So English Scripture under a Spanish screen still finds its recording.
+  D.langFor = function (id, lang) {
+    const m = /^s-([A-Za-z0-9]+)-/.exec(String(id || ''));
+    if (!m) return lang;
+    const v = TW.Bible && TW.Bible.list ? TW.Bible.list().find((x) => x.id === m[1]) : null;
+    return v ? (v.lang || 'en') : /^RV/i.test(m[1]) ? 'es' : 'en';
+  };
   // Files named by the TTS Studio: characters other than letters, digits, dot, dash and underscore become '_'.
   // A line translated with two forms ({ m, f }) has a second recording, <id>-f, read when Elisheva tells the story.
   const fem = (lang, id) => { const t = L.translations[lang] && L.translations[lang][id]; return t && typeof t === 'object' && TW.Role && TW.Role.is && TW.Role.is(); };

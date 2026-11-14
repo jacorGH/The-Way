@@ -1,0 +1,12 @@
+{
+  "appId": "com.jacobcooper.theway",
+  "appName": "The Way",
+  "webDir": "www",
+  "backgroundColor": "#2e2a27",
+  "ios": { "contentInset": "never", "backgroundColor": "#2e2a27", "scrollEnabled": true },
+  "android": { "backgroundColor": "#2e2a27" },
+  "plugins": {
+    "SplashScreen": { "launchShowDuration": 1200, "launchAutoHide": true, "backgroundColor": "#2e2a27", "showSpinner": false },
+    "LocalNotifications": { "iconColor": "#b88a3d" }
+  }
+}

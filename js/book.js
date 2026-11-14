@@ -55,6 +55,8 @@ window.TW = window.TW || {};
   B.save = function () {
     const html = B.html();
     const name = (TW.game.save.name || 'account').replace(/[^\w-]+/g, '-');
+    // in the store apps, through the share sheet (save to Files, print, send)
+    if (TW.Native && TW.Native.is()) { TW.Native.shareFile((es() ? 'relato-' : 'account-') + name + '.html', html, T('The account of ', 'El relato de ') + name); return; }
     try {
       const a = document.createElement('a');
       a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));

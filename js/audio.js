@@ -8,7 +8,15 @@ window.TW = window.TW || {};
   const KEY = 'the-way.sound';
   try { A.on = localStorage.getItem(KEY) !== 'off'; } catch (e) { /* storage unavailable */ }
 
-  let ctx = null, master, musicBus, musicFilter, ambBus, ambOut, sfxBus, reverb, noiseBuf, brownBuf, timer = null;
+  let ctx = null, master, musicBus, musicFilter, musicUser, ambBus, ambOut, ambUser, sfxBus, reverb, noiseBuf, brownBuf, timer = null;
+  // the player's own levels (Settings → Sound): off, soft or full for background sounds; quiet, normal or loud for music
+  const LEVELS = { off: 0, soft: 0.45, full: 1, quiet: 0.55, normal: 1, loud: 1.45 };
+  const userLevel = (k) => { const v = TW.Settings && TW.Settings.get(k); return v in LEVELS ? LEVELS[v] : 1; };
+  A.applyLevels = function () {
+    if (!ctx) return;
+    ambUser.gain.setTargetAtTime(userLevel('ambience'), ctx.currentTime, 0.3);
+    musicUser.gain.setTargetAtTime(userLevel('musicLevel'), ctx.currentTime, 0.3);
+  };
   const mtof = (m) => 440 * Math.pow(2, (m - 69) / 12);
   const rand = (a, b) => a + Math.random() * (b - a);
   const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
@@ -42,24 +50,27 @@ window.TW = window.TW || {};
     reverb.connect(revOut); revOut.connect(master);
     musicBus = ctx.createGain(); musicBus.gain.value = 0.2;
     musicFilter = ctx.createBiquadFilter(); musicFilter.type = 'lowpass'; musicFilter.frequency.value = 16000;
-    musicBus.connect(musicFilter); musicFilter.connect(master);
-    const mRev = ctx.createGain(); mRev.gain.value = 0.55; musicFilter.connect(mRev); mRev.connect(reverb);
+    musicUser = ctx.createGain(); musicUser.gain.value = userLevel('musicLevel');
+    musicBus.connect(musicFilter); musicFilter.connect(musicUser); musicUser.connect(master);
+    const mRev = ctx.createGain(); mRev.gain.value = 0.55; musicUser.connect(mRev); mRev.connect(reverb);
     ambBus = ctx.createGain(); ambBus.gain.value = 0.34;
-    ambOut = ctx.createBiquadFilter(); ambOut.type = 'lowpass'; ambOut.frequency.value = 3000; ambOut.Q.value = 0.5;
-    ambBus.connect(ambOut); ambOut.connect(master);
+    // background sounds are kept low and dark (2.2 kHz), so nothing in them reads as static on a phone speaker
+    ambOut = ctx.createBiquadFilter(); ambOut.type = 'lowpass'; ambOut.frequency.value = 2200; ambOut.Q.value = 0.5;
+    ambUser = ctx.createGain(); ambUser.gain.value = userLevel('ambience');
+    ambBus.connect(ambOut); ambOut.connect(ambUser); ambUser.connect(master);
     sfxBus = ctx.createGain(); sfxBus.gain.value = 0.55; sfxBus.connect(master);
     const sRev = ctx.createGain(); sRev.gain.value = 0.3; sfxBus.connect(sRev); sRev.connect(reverb);
     const len = ctx.sampleRate * 8;
     noiseBuf = ctx.createBuffer(1, len, ctx.sampleRate);
     brownBuf = ctx.createBuffer(1, len, ctx.sampleRate);
     const d = noiseBuf.getChannelData(0), br = brownBuf.getChannelData(0);
-    let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0, last = 0;
+    let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0, last = 0, sm = 0;
     for (let i = 0; i < len; i++) {
       const w = Math.random() * 2 - 1;
       b0 = 0.99886 * b0 + w * 0.0555179; b1 = 0.99332 * b1 + w * 0.0750759; b2 = 0.969 * b2 + w * 0.153852;
       b3 = 0.8665 * b3 + w * 0.3104856; b4 = 0.55 * b4 + w * 0.5329522; b5 = -0.7616 * b5 - w * 0.016898;
       d[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + w * 0.5362) * 0.11; b6 = w * 0.115926;
-      last = (last + 0.02 * w) / 1.02; br[i] = last * 3.5;
+      last = (last + 0.02 * w) / 1.02; sm += (last - sm) * 0.06; br[i] = sm * 3.5;
     }
     // fade the loop seam so the repeat point is silent
     const fade = Math.floor(ctx.sampleRate * 0.05);
@@ -106,21 +117,19 @@ window.TW = window.TW || {};
   let base = {};
   const makeBed = {
     wind() {
-      const out = gain(0), lp = filt('lowpass', 360), g = gain(0.45);
-      noise(true).connect(lp).connect(g).connect(out);
-      lfo(0.05, 0.08, g.gain, 0.4); lfo(0.09, 40, lp.frequency, 330);
+      const out = gain(0), lp = filt('lowpass', 300), lp2 = filt('lowpass', 300), g = gain(0.3);
+      noise(true).connect(lp).connect(lp2).connect(g).connect(out);
+      lfo(0.05, 0.06, g.gain, 0.26); lfo(0.09, 40, lp.frequency, 280);
       return out;
     },
-    room() { const out = gain(0); noise(true).connect(filt('lowpass', 170)).connect(gain(0.9)).connect(out); return out; },
+    // a quiet room is quiet: no continuous layer at all (a low rumble on a phone speaker is heard only as static)
     storm() {
       const out = gain(0), g = gain(0.8);
       noise(true).connect(filt('lowpass', 900)).connect(g).connect(out); lfo(0.17, 0.3, g.gain, 0.75);
       noise().connect(filt('bandpass', 1400, 0.5)).connect(gain(0.08)).connect(out);
       return out;
     },
-    fire() { const out = gain(0); noise(true).connect(filt('lowpass', 260)).connect(gain(0.6)).connect(out); return out; },
-    // a crowd is a low presence plus many separate voices (events), never filtered hiss
-    crowd() { const out = gain(0); noise(true).connect(filt('lowpass', 220)).connect(gain(0.3)).connect(out); return out; },
+    // a fire is its occasional soft pops, and a crowd is many separate voices: both are events, with no bed under them
   };
   const eventBed = () => gain(0);
   function applyLevels(lv) {
@@ -162,6 +171,7 @@ window.TW = window.TW || {};
     advent: { root: 67, mode: MAJ, bpm: 56, drone: [43, 50], lyre: 0.35, flute: 0, drum: 0, pad: true, carol: 'faithful' },
     manger: { root: 60, mode: MAJ, bpm: 50, drone: [36, 43], lyre: 0.25, flute: 0, drum: 0, pad: true, carol: 'silent' },
     gloria: { root: 65, mode: MAJ, bpm: 60, drone: [41, 48], lyre: 0.4, flute: 0, drum: 0, pad: true, carol: 'angels' },
+    host: { root: 65, mode: MAJ, bpm: 60, drone: [41, 48, 53], lyre: 0.12, flute: 0, drum: 0, pad: true },
     child: { root: 69, mode: AEO, bpm: 54, drone: [45, 52], lyre: 0.3, flute: 0, drum: 0, pad: true, carol: 'child' },
     kings: { root: 64, mode: AEO, bpm: 58, drone: [40, 47], lyre: 0.35, flute: 0, drum: 0.25, pad: true, carol: 'kings' },
   };
@@ -185,6 +195,7 @@ window.TW = window.TW || {};
     angels: { spb: 0.48, notes: [[69, 1], [69, 1], [69, 1], [72, 1], [72, 1.5], [70, 0.5], [69, 2], [69, 1], [67, 1], [69, 1], [72, 1], [69, 1.5], [67, 0.5], [65, 2],
       [69, 1], [69, 1], [69, 1], [72, 1], [72, 1.5], [70, 0.5], [69, 2], [69, 1], [67, 1], [69, 1], [72, 1], [69, 1.5], [67, 0.5], [65, 2]] },
   };
+  A.GLORIA = [72, 74, 72, 70, 69, 70, 72, 69, 70, 72, 70, 69, 67, 69, 70, 67, 69, 70, 69, 67, 65, 67, 69, 65, 67, 60, 65, 67, 69, 67, 65];
   let mood = null, moodName = null, drone = null, nextBeat = 0, beat = 0, fluteBusyUntil = 0, themePlayed = false, carolRest = 0;
   const note = (M, deg, oct) => {
     const n = M.mode.length, d = ((deg % n) + n) % n, o = Math.floor(deg / n);
@@ -266,8 +277,40 @@ window.TW = window.TW || {};
   // lower the music and ambience while a line is read aloud
   A.duck = function (on) {
     if (!ctx) return;
-    musicBus.gain.setTargetAtTime(on ? 0.08 : 0.2, ctx.currentTime, 0.25);
+    musicBus.gain.setTargetAtTime(on ? 0.08 : musicBase, ctx.currentTime, 0.25);
     ambBus.gain.setTargetAtTime(on ? 0.2 : 0.34, ctx.currentTime, 0.25);
+  };
+  // the music swells (0..1), for moments like the heavenly host
+  let musicBase = 0.2;
+  A.swell = function (x) {
+    musicBase = 0.2 + 0.24 * Math.max(0, Math.min(1, x || 0));
+    if (ctx) musicBus.gain.setTargetAtTime(musicBase, ctx.currentTime, 0.4);
+  };
+  // a choir voice: detuned saws through the formants of an open "ah", with a slow swell and vibrato
+  function choirNote(m, t, d, v) {
+    const f = mtof(m), out = gain(0.0001), body = gain(1);
+    [[800, 6, 1], [1150, 8, 0.55], [2900, 10, 0.18]].forEach(([ff, q, a]) => { const b = filt('bandpass', ff, q), g = gain(a); body.connect(b); b.connect(g); g.connect(out); });
+    const lp = filt('lowpass', 1600), lg = gain(0.35); body.connect(lp); lp.connect(lg); lg.connect(out);
+    const vib = ctx.createOscillator(), vg = ctx.createGain();
+    vib.frequency.value = 5; vg.gain.setValueAtTime(0, t); vg.gain.linearRampToValueAtTime(f * 0.005, t + 0.35); vib.connect(vg);
+    const oscs = [[-9, 1], [0, 1], [9, 1], [-1200, 0.5]].map(([c, a]) => {
+      const o = ctx.createOscillator(), g = gain(a * 0.25); o.type = 'sawtooth'; o.frequency.value = f; o.detune.value = c;
+      vg.connect(o.frequency); o.connect(g); g.connect(body); return o;
+    });
+    out.gain.setValueAtTime(0.0001, t); out.gain.linearRampToValueAtTime(v, t + 0.14); out.gain.setValueAtTime(v, t + d);
+    out.gain.exponentialRampToValueAtTime(0.0001, t + d + 0.9);
+    out.connect(musicBus); toRev(out, 1.4);
+    oscs.concat([vib]).forEach((o) => { o.start(t); o.stop(t + d + 1); });
+  }
+  A.choir = function (m, d, v) {
+    if (!ctx || !A.on || ctx.state !== 'running') return;
+    const t = ctx.currentTime + 0.01;
+    choirNote(m, t, d || 0.5, v || 0.09); pluck(m + 12, t, 0.02);
+  };
+  A.chorus = function (notes, d, v) {
+    if (!ctx || !A.on || ctx.state !== 'running') return;
+    const t = ctx.currentTime + 0.02;
+    notes.forEach((m, i) => choirNote(m, t + i * 0.04, d || 3, (v || 0.05)));
   };
   A.memory = function (on) {
     if (!ctx) return;
@@ -356,7 +399,7 @@ window.TW = window.TW || {};
   function crackle(t, v, dest) {
     const n = noise(), g = ctx.createGain();
     g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.03);
-    n.connect(filt('bandpass', 1000, 1.5)).connect(g); g.connect(dest); n.stop(t + 0.04);
+    n.connect(filt('bandpass', 520, 1.2)).connect(g); g.connect(dest); n.stop(t + 0.04);
   }
   // one wavelet on the lakeshore: the water draws up, laps the stones, and slides back
   function wavelet(t, big) {
@@ -511,8 +554,7 @@ window.TW = window.TW || {};
     const soon = () => now + rand(0.02, 0.25);
     if (L('birds') && chance(0.45 * L('birds'))) chirp(soon(), beds.birds);
     if (L('night')) { if (chance(1.2 * L('night'))) cricket(soon(), beds.night); if (chance(0.03)) owl(soon(), beds.night); }
-    if (L('fire') && chance(3 * L('fire'))) crackle(soon(), 0.04, beds.fire);
-    if (L('room') && chance(0.2 * L('room'))) crackle(soon(), 0.015, beds.room);
+    if (L('fire') && chance(1.1 * L('fire'))) crackle(soon(), 0.02, beds.fire);
     if (L('shore') && now > nextWave) { wavelet(now + 0.05, Math.random() < 0.2); nextWave = now + rand(1.5, 3.6); }
     if (L('crowd') && chance(3.5 * L('crowd'))) voice(soon(), beds.crowd);
     if (L('city')) {

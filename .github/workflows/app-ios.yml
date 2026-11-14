@@ -1,0 +1,81 @@
+# Builds the iPhone app on GitHub's Mac and sends it to TestFlight. Needs an Apple Developer account and the secrets
+# listed in app/README.md (an App Store Connect API key, your Team ID, and a private repository for the signing files).
+name: App · iPhone (TestFlight)
+on:
+  workflow_dispatch:
+jobs:
+  ios:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use the newest Xcode (the App Store needs Xcode 26 or later)
+        run: |
+          X=$(ls -d /Applications/Xcode_2[6-9]*.app /Applications/Xcode_[3-9][0-9]*.app 2>/dev/null | grep -v -i beta | sort -V | tail -1)
+          if [ -z "$X" ]; then echo "::error::No Xcode 26 on this runner. Change runs-on to a newer macOS image (for example macos-26)."; ls /Applications | grep Xcode; exit 1; fi
+          sudo xcode-select -s "$X/Contents/Developer"
+          xcodebuild -version
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check the secrets
+        env:
+          A: ${{ secrets.ASC_KEY_ID }}
+          B: ${{ secrets.ASC_ISSUER_ID }}
+          C: ${{ secrets.ASC_KEY_P8 }}
+          D: ${{ secrets.APPLE_TEAM_ID }}
+          E: ${{ secrets.MATCH_GIT_URL }}
+          F: ${{ secrets.MATCH_GIT_TOKEN }}
+          G: ${{ secrets.MATCH_PASSWORD }}
+        run: |
+          miss=""
+          [ -z "$A" ] && miss="$miss ASC_KEY_ID"; [ -z "$B" ] && miss="$miss ASC_ISSUER_ID"; [ -z "$C" ] && miss="$miss ASC_KEY_P8"
+          [ -z "$D" ] && miss="$miss APPLE_TEAM_ID"; [ -z "$E" ] && miss="$miss MATCH_GIT_URL"; [ -z "$F" ] && miss="$miss MATCH_GIT_TOKEN"; [ -z "$G" ] && miss="$miss MATCH_PASSWORD"
+          if [ -n "$miss" ]; then echo "::error::Missing secrets:$miss (see app/README.md)"; exit 1; fi
+      - name: Install Capacitor
+        working-directory: app
+        run: npm install --no-audit --no-fund
+      - name: Copy the game into the app
+        working-directory: app
+        run: node scripts/copy-www.mjs
+      - name: Make the iPhone project
+        working-directory: app
+        run: |
+          npx cap add ios
+          mkdir -p assets
+          cp ../icons/icon-1024.png assets/icon-only.png
+          cp ../icons/icon-1024.png assets/logo.png
+          npx @capacitor/assets generate --ios --iconBackgroundColor '#2e2a27' --iconBackgroundColorDark '#2e2a27' --splashBackgroundColor '#2e2a27' --splashBackgroundColorDark '#2e2a27'
+          npx cap sync ios
+          P=ios/App/App/Info.plist
+          /usr/libexec/PlistBuddy -c "Add :ITSAppUsesNonExemptEncryption bool false" $P || /usr/libexec/PlistBuddy -c "Set :ITSAppUsesNonExemptEncryption false" $P
+          /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName The Way" $P || /usr/libexec/PlistBuddy -c "Add :CFBundleDisplayName string The Way" $P
+          /usr/libexec/PlistBuddy -c "Add :UIStatusBarStyle string UIStatusBarStyleLightContent" $P || true
+      - name: Build and send to TestFlight
+        working-directory: app
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
+          MATCH_GIT_TOKEN: ${{ secrets.MATCH_GIT_TOKEN }}
+          GIT_USER: ${{ github.repository_owner }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          BUILD_NUMBER: ${{ github.run_number }}
+          FASTLANE_SKIP_UPDATE_CHECK: '1'
+          FASTLANE_HIDE_CHANGELOG: '1'
+        run: |
+          export APP_VERSION=$(node -p "require('./package.json').version")
+          export APP_ID=$(node -p "require('./capacitor.config.json').appId")
+          export MATCH_GIT_BASIC_AUTHORIZATION=$(printf '%s:%s' "$GIT_USER" "$MATCH_GIT_TOKEN" | base64 | tr -d '\n')
+          command -v fastlane >/dev/null || brew install fastlane
+          fastlane ios beta
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: the-way-ios-${{ github.run_number }}
+          path: |
+            app/build/*.ipa
+            ~/Library/Logs/gym/*.log
+          retention-days: 14

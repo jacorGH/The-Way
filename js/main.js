@@ -128,6 +128,7 @@ window.TW = window.TW || {};
     setRole(pickRole);
     $('#btn-continue').hidden = !s.started;
     $('#btn-begin').classList.toggle('primary', !s.started);
+    if (TW.Advent) TW.Advent.titleButton();
     const c = $('#title-vista'), ctx = c.getContext('2d');
     titleRunning = true;
     const t0 = performance.now();
@@ -258,6 +259,7 @@ window.TW = window.TW || {};
     const dl = el('dl', 'world');
     era.world.forEach((w) => { dl.appendChild(el('dt', '', w[0])); dl.appendChild(el('dd', '', w[1])); });
     det.appendChild(dl);
+    if (era.id === 'birth' && TW.Advent) det.appendChild(TW.Advent.button('btn small adv-btn'));
     if (era.id === 'galilee' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era II, The Road to Jerusalem, comes next.'));
     if (era.id === 'passion' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era III, The Jerusalem Church, comes next.'));
     if (era.id === 'spread' && eraDone(era)) det.appendChild(el('p', 'era-done', 'You have finished this era. Era V, Fire and War, comes next.'));
@@ -609,7 +611,8 @@ window.TW = window.TW || {};
   };
 
   // ---------- offline copy (published copies only) ----------
-  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol) && !/\?dev/.test(location.search)) {
+  // (the store apps carry every file inside them, so they need no service worker)
+  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol) && !/\?dev/.test(location.search) && !(TW.Native && TW.Native.is())) {
     window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
   }
   // save every recording for one language on this device, for play without a connection
@@ -779,6 +782,9 @@ window.TW = window.TW || {};
     }));
     [name, short, lang, file, status].forEach((n) => imp.appendChild(n));
     body.appendChild(imp);
+    section(body, 'Music and sounds');
+    pickRow(body, 'Music', 'musicLevel', [['quiet', 'Quiet'], ['normal', 'Normal'], ['loud', 'Loud']], () => TW.Audio && TW.Audio.applyLevels());
+    pickRow(body, 'Background sounds', 'ambience', [['off', 'Off'], ['soft', 'Soft'], ['full', 'Full']], () => TW.Audio && TW.Audio.applyLevels());
     section(body, 'Voices');
     renderVoices(body);
     section(body, 'Recorded voices');
@@ -840,7 +846,7 @@ window.TW = window.TW || {};
     const L = TW.Lines, lang = TW.Settings.get('lang') || 'en';
     const groups = L.groups(), keys = Object.keys(groups);
     checkRow(body, 'Play recorded voices when available', 'recordings');
-    { const st = el('p', 'empty', ''); const ob = el('button', 'btn small', T('Save recordings for offline play')); ob.type = 'button';
+    if (!(TW.Native && TW.Native.is())) { const st = el('p', 'empty', ''); const ob = el('button', 'btn small', T('Save recordings for offline play')); ob.type = 'button';
       ob.addEventListener('click', () => saveRecordingsOffline(TW.Settings.get('lang') === 'es' ? 'es' : 'en', st)); body.appendChild(ob); body.appendChild(st); }
     pickRow(body, 'Voice speed', 'voiceSpeed', [['0.8', '0.8×'], ['0.9', '0.9×'], ['1', '1×'], ['1.1', '1.1×'], ['1.25', '1.25×'], ['1.5', '1.5×']], (v) => TW.Settings.set('voiceSpeed', Number(v)));
     checkRow(body, 'Even out voice volume (experimental; turn off if recordings go silent)', 'voiceLeveler');
@@ -891,8 +897,8 @@ window.TW = window.TW || {};
       if (!ids.length) { status.textContent = 'Play this episode first.'; return; }
       status.textContent = 'Checking ' + ids.length + ' lines…';
       let found = 0;
-      for (const id of ids) { try { const r = await fetch(TW.Dubs.url(lang, id), { method: 'HEAD', cache: 'no-store' }); if (r.ok) found++; } catch (e) { /* not reachable */ } }
-      const where = new URL(TW.Dubs.url(lang, ids[0]), location.href).href;
+      for (const id of ids) { try { const r = await fetch(TW.Dubs.url(TW.Dubs.langFor(id, lang), id), { method: 'HEAD', cache: 'no-store' }); if (r.ok) found++; } catch (e) { /* not reachable */ } }
+      const where = new URL(TW.Dubs.url(TW.Dubs.langFor(ids[0], lang), ids[0]), location.href).href;
       status.textContent = found + ' of ' + ids.length + ' spoken lines in this episode have recordings. The game looks for files like: ' + where + (found ? '' : '  (None found: check that the MP3s are in an audio/' + lang + ' folder at the top of the game, next to index.html.)');
     });
     const scr = scriptureButton(lang, status);
@@ -1110,6 +1116,7 @@ window.TW = window.TW || {};
       rc.appendChild(lab);
     });
     seal.onclick = () => {
+      TW.Native && TW.Native.haptic('firm');
       const before = revealedSet();
       const disc0 = TW.Discover ? TW.Discover.snapshot() : new Set();
       const all = game.save.obs[ep] || [];

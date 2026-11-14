@@ -833,19 +833,125 @@ window.TW = window.TW || {};
       ponder: async () => { mary.pose = 'sit'; jo.pose = 'stand'; await W(1000); },
     };
   };
+  // an angel of the heavenly host: a robe of light, arms raised in praise, wings that move with the song
+  const angelFig = (ctx, sx, y, a, flash, t, ph, size) => {
+    if (a <= 0.01) return;
+    const k = size || 1, A2 = (v) => Math.max(0, Math.min(1, v * a));
+    const robe = (r) => 'rgba(' + (r % 3 ? '244,238,222,' : '255,251,240,') + A2(1) + ')';
+    const wing = 'rgba(255,240,200,' + A2(0.75 + flash * 0.25) + ')', wing2 = 'rgba(255,250,232,' + A2(0.5 + flash * 0.5) + ')';
+    sx = Math.round(sx); y = Math.round(y);
+    for (let j = 1; j <= 6 * k; j++) {
+      const f = Math.round(Math.sin(t * 2.2 + ph) * 1.6 * (j / (6 * k)) * (1 + flash));
+      const top = y - 6 * k - Math.floor(j * 0.7) - f, h = Math.max(2, 6 * k - Math.floor(j * 0.8));
+      R(ctx, sx - 2 - j, top, 1, h, j % 2 ? wing : wing2); R(ctx, sx + 2 + j, top, 1, h, j % 2 ? wing : wing2);
+    }
+    // the robe: one fall of white, lit down the middle and shaded at its edges
+    for (let r = 0; r < 11 * k; r++) {
+      const w = 1 + 2 * k + Math.floor(r / 2), x0 = sx - Math.floor(w / 2), yy = y - 6 * k + r;
+      R(ctx, x0, yy, w, 1, 'rgba(240,233,214,' + A2(1) + ')');
+      R(ctx, x0, yy, 1, 1, 'rgba(214,202,176,' + A2(1) + ')'); R(ctx, x0 + w - 1, yy, 1, 1, 'rgba(214,202,176,' + A2(1) + ')');
+      R(ctx, sx - (k > 1 ? 1 : 0), yy, k > 1 ? 2 : 1, 1, 'rgba(255,252,242,' + A2(1) + ')');
+    }
+    if (k > 1) R(ctx, sx - Math.floor((1 + 2 * k) / 2), y - 6 * k + 3 * k, 1 + 2 * k, 1, 'rgba(226,196,120,' + A2(0.9) + ')');
+    R(ctx, sx - k, y - 6 * k - 3 * k, 2 * k + 1, 3 * k, 'rgba(246,232,206,' + A2(1) + ')');
+    R(ctx, sx - k, y - 6 * k - 3 * k - 1, 2 * k + 1, 1 + (k > 1 ? 1 : 0), 'rgba(236,204,128,' + A2(1) + ')');
+    R(ctx, sx - 2 * k - 1, y - 6 * k - 3 * k, k, 4 * k, robe(1)); R(ctx, sx + 2 * k + 1 - k + 1, y - 6 * k - 3 * k, k, 4 * k, robe(1));
+    if (flash > 0.05) for (let i = 0; i < 8; i++) { const an = i * Math.PI / 4 + t; R(ctx, Math.round(sx + Math.cos(an) * (8 + flash * 6)), Math.round(y - 4 + Math.sin(an) * (8 + flash * 6)), 1, 1, 'rgba(255,252,236,' + A2(flash) + ')'); }
+  };
   VG.bth_field = () => {
     const st = load('field', { night: true });
     const s = { a: 0 }, host = { a: 0 };
     st.props.push(nightSky(64));
     st.props.push(sheep([[40, 150, 1], [62, 152, -1], [86, 149, 1], [196, 151, -1], [214, 149, 1], [232, 152, -1]]));
+    // the angel of the Lord, and the glory that shone around them
     st.props.push(glow(132, 96, 60, s)); lit(st, 132, 96, 96, s);
-    [40, 80, 180, 220, 110, 150].forEach((x, i) => { st.props.push(glow(x, 30 + (i % 3) * 12, 18, host)); lit(st, x, 30 + (i % 3) * 12, 26, host); });
+    // the multitude of the heavenly host
+    const angels = [[20, 36], [52, 56], [84, 32], [116, 56], [148, 30], [180, 56], [212, 34], [240, 56]]
+      .map(([x, y], i) => ({ hx: x, hy: y, x, y, tx: x, ty: y, flash: 0, near: 0, ph: i * 0.9 }));
+    let finger = null, lastT = 0;
+    // drawn above the night and the sepia of memory, in pure light: the angel of the Lord, then the host
+    const fx1 = st.fx;
+    st.fx = function (fc, k, t, cam, sc) {
+      if (fx1) fx1.call(st, fc, k, t, cam, sc);
+      const dt = Math.min(0.1, lastT ? t - lastT : 0.03); lastT = t;
+      fc.save(); fc.scale(k, k);
+      angelFig(fc, 132 - cam, 104 + Math.sin(t * 1.3) * 1.5, s.a, 0, t, 0, 3);
+      angels.forEach((a) => {
+        a.x += (a.tx - a.x) * Math.min(1, dt * 7); a.y += (a.ty - a.y) * Math.min(1, dt * 7);
+        a.flash = Math.max(0, a.flash - dt * 1.4);
+        const nd = finger ? Math.max(0, 1 - Math.hypot(a.x - finger.x, a.y - 4 - finger.y) / 46) : 0;
+        a.near += (nd - a.near) * Math.min(1, dt * 8);
+        angelFig(fc, a.x - cam, a.y + Math.sin(t * 1.6 + a.ph) * 1.2, host.a, Math.min(1, a.flash + a.near * 0.4), t, a.ph, 2);
+      });
+      fc.restore();
+    };
+    angels.forEach((a) => {
+      const L = {};
+      Object.defineProperty(L, 'x', { get: () => a.x });
+      Object.defineProperty(L, 'y', { get: () => a.y - 4 });
+      Object.defineProperty(L, 'r', { get: () => (16 + 34 * a.flash + 14 * a.near) * (0.3 + 0.7 * host.a) });
+      Object.defineProperty(L, 'c', { get: () => 'rgba(255,246,214,' + (host.a * (0.45 + 0.5 * a.flash + 0.2 * a.near)) + ')' });
+      st.lights.push(L);
+    });
     const sh = [0, 1, 2].map((i) => add(S.person({ skin: '#9a6440', hair: '#2a1a12', beard: i === 2 ? null : '#2a1a12', tunic: ['#6a5a42', '#7a6a4a', '#5a4a3a'][i], mantle: ['#4a3e30', '#3a3226', '#5a4e40'][i] }), 112 + i * 16, 148, { pose: 'sit', facing: i ? -1 : 1, speed: 24 }));
+    // Swept by a finger, the host sings the long "Gloria" of Angels We Have Heard on High, one note per angel touched;
+    // the touched angel follows the finger and blazes, and the music swells as the song goes on.
+    const sing = async () => {
+      if (TW.TURBO) return;
+      const AU = TW.Audio, G = AU && AU.GLORIA ? AU.GLORIA : [72, 74, 72, 70, 69, 70, 72, 69];
+      const fx = SC.fx, ta0 = fx.style.touchAction;
+      fx.style.touchAction = 'none'; SC.mode = 'sweep';
+      // the memory comes alive: full color, and the music no longer muffled
+      SC.el.stage.classList.add('vivid'); if (AU) AU.memory(false);
+      let idx = 0, down = false, last = null, finishRes = null;
+      const finished = new Promise((r) => { finishRes = r; });
+      const pt = (ev) => { const r = fx.getBoundingClientRect(); return { x: ((ev.clientX - r.left) / r.width) * SC.W + SC.cam, y: ((ev.clientY - r.top) / r.height) * SC.H }; };
+      const nearest = (p) => { let best = null, bd = 20; angels.forEach((a) => { const d = Math.hypot(a.x - p.x, a.y - 4 - p.y); if (d < bd) { bd = d; best = a; } }); return best; };
+      const singOn = (a) => {
+        if (idx >= G.length) return;
+        const m = G[idx++];
+        if (AU) { AU.choir(m, 0.45, 0.06 + 0.05 * (idx / G.length)); AU.swell(idx / G.length); }
+        a.flash = 1;
+        if (TW.Native) TW.Native.haptic('light');
+        if (idx >= G.length) finishRes('song');
+      };
+      const onDown = (ev) => { down = true; try { fx.setPointerCapture(ev.pointerId); } catch (e) { /* ignore */ } const p = pt(ev); finger = p; const a = nearest(p); if (a) { last = a; singOn(a); } };
+      const onMove = (ev) => {
+        const p = pt(ev); finger = p;
+        if (!down) return;
+        const a = nearest(p);
+        if (a && a !== last) { last = a; singOn(a); }
+        if (last) { last.tx = Math.max(8, Math.min(248, p.x)); last.ty = Math.max(14, Math.min(76, p.y + 4)); }
+      };
+      const onUp = () => { down = false; finger = null; last = null; angels.forEach((a) => { a.tx = a.hx; a.ty = a.hy; }); };
+      fx.addEventListener('pointerdown', onDown); fx.addEventListener('pointermove', onMove);
+      fx.addEventListener('pointerup', onUp); fx.addEventListener('pointercancel', onUp); fx.addEventListener('pointerleave', onUp);
+      const how = await Promise.race([finished, SC.prompt('A multitude of the heavenly host. Sweep your finger across the angels, and they will sing.', 'Glory to God in the highest').then(() => 'button')]);
+      SC.el.choices.innerHTML = ''; SC.mode = 'sweep';
+      if (how === 'button') {
+        // the rest of the song, sung across the whole host
+        while (idx < G.length) { singOn(angels[idx % angels.length]); await W(330); }
+      }
+      fx.removeEventListener('pointerdown', onDown); fx.removeEventListener('pointermove', onMove);
+      fx.removeEventListener('pointerup', onUp); fx.removeEventListener('pointercancel', onUp); fx.removeEventListener('pointerleave', onUp);
+      onUp();
+      // all together: the whole chord, every angel ablaze
+      if (AU) { AU.chorus([53, 57, 60, 65, 69, 72, 77], 3.2, 0.05); AU.sfx('shimmer'); }
+      angels.forEach((a) => { a.flash = 1; });
+      sh.forEach((x) => { x.pose = 'raise'; });
+      await W(2800);
+      sh.forEach((x) => { x.pose = 'sit'; });
+      if (AU) { AU.swell(0); AU.memory(true); }
+      SC.el.stage.classList.remove('vivid');
+      fx.style.touchAction = ta0; SC.mode = 'script';
+      const sv = TW.game && TW.game.save; if (sv) { sv.hands = sv.hands || {}; sv.hands['nativity:gloria'] = true; }
+    };
     return {
       watch: async () => { TW.Audio && TW.Audio.sfx('sheep'); await W(1200); },
       glory: async () => { TW.Audio && TW.Audio.sfx('shimmer'); await SC.tween(1500, (p) => { s.a = p; }); sh.forEach((x) => { x.pose = 'raise'; }); await W(700); sh.forEach((x) => { x.pose = 'sit'; }); },
-      host: async () => { TW.Audio && TW.Audio.sfx('shimmer'); await SC.tween(1800, (p) => { host.a = p; }); },
-      gone: async () => { await SC.tween(1600, (p) => { s.a = 1 - p; host.a = 1 - p; }); },
+      host: async () => { TW.Audio && TW.Audio.sfx('shimmer'); angels.forEach((a, i) => { a.y = a.hy - 30; a.flash = 0.6; a.x = a.hx; }); await SC.tween(1800, (p) => { host.a = p; }); },
+      sing,
+      gone: async () => { angels.forEach((a) => { a.ty = a.hy - 60; a.tx = a.hx; }); await SC.tween(1800, (p) => { s.a = 1 - p; host.a = 1 - p; }); },
       go: async () => { sh.forEach((x) => { x.pose = 'stand'; x.facing = 1; SC.walk(x, 300); }); TW.Audio && TW.Audio.sfx('sheep'); await W(1800); },
     };
   };
@@ -955,7 +1061,7 @@ window.TW = window.TW || {};
     const el = SC.el;
     await K.fade(async () => {
       Object.assign(SC, { stage: saved.stage, ents: saved.ents, cam: saved.cam, camGoal: saved.camGoal, player: saved.player, parts: saved.parts, motes: saved.motes });
-      el.stage.classList.remove('memory');
+      el.stage.classList.remove('memory'); el.stage.classList.remove('vivid');
       if (TW.Audio) { TW.Audio.memory(false); if (saved.stage.audio) TW.Audio.amb(saved.stage.audio.amb || {}); }
       saved = null;
     });

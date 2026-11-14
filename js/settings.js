@@ -18,6 +18,8 @@ window.TW = window.TW || {};
     groupNames: '',         // names of the people playing, separated by commas
     voiceSpeed: 1,          // playback speed of voices (recordings and device voice)
     voiceLeveler: false,    // even out the loudness of recorded voices (off by default; see speech.js)
+    musicLevel: 'normal',   // quiet, normal, loud
+    ambience: 'soft',       // background sounds: off, soft, full
   };
   let s = Object.assign({}, DEFAULTS);
   try { Object.assign(s, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { /* storage unavailable */ }

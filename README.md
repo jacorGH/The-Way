@@ -122,8 +122,8 @@ Service visits live in `D.service` (in `js/service.js`). Each has `listen`, `car
 (healed, slow recovery, comfort, death in peace, prayer not answered as asked). Prayers quote Scripture word for word.
 
 ## Audio notes
-Ambience has two kinds of layer. Beds are only low, soft brown-noise textures: `wind` (gusts), `room`, `fire`, `storm`,
-and a low `crowd` presence. Everything else is a distinct event, scheduled live: `shore` (lake wavelets lapping and
+Ambience has two kinds of layer. Beds are only low, soft brown-noise textures, and now only `wind` (gusts, kept quiet and
+dark) and `storm`; `room`, `fire` and `crowd` have no bed at all (see Sound settings below). Everything else is a distinct event, scheduled live: `shore` (lake wavelets lapping and
 washing back over pebbles), `crowd` and `city` voices (murmured syllables through moving vowel formants), `city`
 (stonemasons' hammers, sheep, passing footsteps), `doves`, `village` (dogs, goats, voices), `birds`, `night` (crickets,
 an owl), and travel: `steps` while walking on a map and `oars` while crossing water (`TW.Audio.travel('walk'|'boat'|'')`).
@@ -308,3 +308,32 @@ Music: public-domain carols arranged for the game's instruments in `js/audio.js`
 Faithful; `manger`: Silent Night; `gloria`: Angels We Have Heard on High; `child`: What Child Is This; `kings`: We Three
 Kings), the opening of Joy to the World when a report is sealed, and seasonal sounds (`shimmer`, `bells`, `sheep`). From
 December 1 to January 6 the title screen plays the Christmas theme. Spanish: `i18n/es-birth.js`.
+
+## The heavenly host
+
+In No Room, when the multitude of the heavenly host appears (Luke 2:13–14), the player sweeps a finger across the
+angels: each angel touched sings the next note of the "Gloria" of *Angels We Have Heard on High* (a choir voice in
+`audio.js`, `A.choir`), blazes with light, and follows the finger; the music swells as the song goes on, and the memory
+turns from sepia to full color. The button sings the rest for anyone who would rather listen. Finishing it counts as a
+hands-on moment. (`VG.bth_field` in `js/vignettes.js`.)
+
+## Advent calendar
+
+`js/advent.js`: twenty-five doors, December 1 to Christmas Day, each opening a reading from the Birth of Jesus (the same
+ranges the game reads, so their recordings play), a short thought, its carol, and the memory it belongs to. In December
+one door opens a day; the rest of the year all are open. Advent candles (hope, peace, joy, love, and Christ) light with
+the Sundays of Advent. Shown on the title screen from mid-November to Epiphany, and always on the Birth of Jesus in the
+timeline. Opened doors are kept per year in the save (`save.advent`). In the store apps it can schedule a reminder each
+morning of Advent.
+
+## Sound settings
+
+Settings → Music and sounds: music quiet, normal or loud; background sounds off, soft (the default) or full. Background
+layers are only distinct events (a wave, a voice, a cricket, a fire's pop) over at most a soft, low wind; there is no
+continuous noise under rooms, fires or crowds, because on a phone speaker a low rumble is heard only as static.
+
+## Store apps
+
+`app/` wraps the game in Capacitor for the App Store and Google Play, built entirely by GitHub workflows (no Mac needed).
+`js/native.js` adds what only the apps do: haptics, saving the book through the share sheet, Advent reminders. See
+`app/README.md` for the step-by-step. `privacy.html` is the privacy policy both stores ask for.

@@ -258,7 +258,7 @@ window.TW = window.TW || {};
         // auto-advance: after the voice finishes, or after time enough to read the line
         if (TW.Settings && TW.Settings.get('autoAdvance')) {
           const go = () => { if (pending === mine) mine(); };
-          if (TW.Speech && TW.Speech.on && TW.Speech.busy()) TW.Speech.whenDone(() => setTimeout(go, 700));
+          if (TW.Speech && TW.Speech.busy()) TW.Speech.whenDone(() => setTimeout(go, 700));
           else setTimeout(go, Math.max(1800, full.length * 45));
         }
       };
@@ -281,9 +281,10 @@ window.TW = window.TW || {};
     if (pending) pending();
   }
 
-  SC.choose = function (prompt, options, label) {
+  SC.choose = function (prompt, options, label, lineId) {
     prompt = G(prompt); options = options.map(G);
-    if (TW.Speech) TW.Speech.say('drama', prompt);
+    // the question is spoken like any narration line: by its recording when there is one (found by its line ID)
+    if (TW.Speech) TW.Speech.say('drama', prompt, null, lineId);
     const el = SC.el;
     SC.mode = 'script';
     el.dialog.className = 'dialog kind-choice';
@@ -303,6 +304,7 @@ window.TW = window.TW || {};
         b.addEventListener('click', (ev) => {
           ev.stopPropagation();
           TW.Audio && TW.Audio.sfx('tap');
+          TW.Native && TW.Native.haptic('light');
           el.choices.innerHTML = '';
           res(i);
         });
@@ -396,9 +398,10 @@ window.TW = window.TW || {};
       return Promise.resolve();
     };
     SC.choose = function (prompt, options, label) {
+      const pid = TW.Lines && prompt ? TW.Lines.id('prompt', G(prompt)) : null;
       prompt = line('prompt', G(prompt)); options = options.map((x) => line('option', G(x))); if (label) label = TW.t ? TW.t(G(label)) : label;
       if (TW.TURBO) { const n = options.length, i = TW.TURBO_CYCLE ? (TW.TURBO_SEQ = (TW.TURBO_SEQ || 0) + 1) % n : Math.min(n - 1, TW.TURBO_CHOICE || 0); return Promise.resolve(i); }
-      return choose0(prompt, options, label);
+      return choose0(prompt, options, label, pid);
     };
     SC.goal = function (text) { return goal0(line('goal', G(text))); };
     // In turbo, a free walk taps every person once (their conversations run in full), and a look-around taps every

@@ -152,6 +152,10 @@ terms ask you to tell players that the voices are AI-generated; the game's About
 TTS Studio loads both languages from one address (paste `…/dub/en/index.json`), pairs each batch, records both, and
 exports one ZIP per batch with `audio/en/` and `audio/es/` inside. Unzip into the game folder and push.
 
+Scripture recordings belong to their Bible's language, not the screen's: `s-WEB-…`, `s-KJV-…` and `s-ASV-…` go in
+`audio/en/`, and `s-RV1909-…` in `audio/es/`. The game looks for them there whatever language the screen is in, so an
+`s-WEB-…` file in `audio/es/` is never played and can be deleted.
+
 - **Elisheva's wording:** where Spanish changes with the narrator's gender, a line has two recordings: `<id>` for
   Eleazar and `<id>-f` for Elisheva. The game picks the right one.
 - **Scripture:** the English Scripture lines are already in the English batches. Spanish Scripture depends on the

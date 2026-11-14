@@ -1,0 +1,74 @@
+# Builds the Android app from the game in this repository.
+#  · With the upload key (app/keys/android-upload.jks.enc and the ANDROID_KEY_PASSWORD secret): a signed .aab for
+#    Google Play and a signed .apk to install on a phone.
+#  · Without it: a debug .apk, to try the app on an Android phone before you have a Play account.
+# Download them from the run's page, under Artifacts. See app/README.md.
+name: App · Android
+on:
+  workflow_dispatch:
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install Capacitor
+        working-directory: app
+        run: npm install --no-audit --no-fund
+      - name: Copy the game into the app
+        working-directory: app
+        run: node scripts/copy-www.mjs
+      - name: Make the Android project
+        working-directory: app
+        run: |
+          npx cap add android
+          mkdir -p assets
+          cp ../icons/icon-1024.png assets/icon-only.png
+          cp ../icons/icon-1024.png assets/icon-foreground.png
+          cp ../icons/icon-1024.png assets/logo.png
+          npx @capacitor/assets generate --android --iconBackgroundColor '#2e2a27' --iconBackgroundColorDark '#2e2a27' --splashBackgroundColor '#2e2a27' --splashBackgroundColorDark '#2e2a27'
+          VERSION=$(node -p "require('./package.json').version")
+          sed -i -E "s/versionCode [0-9]+/versionCode ${{ github.run_number }}/; s/versionName \"[^\"]*\"/versionName \"$VERSION\"/" android/app/build.gradle
+          grep -E "versionCode|versionName|applicationId" android/app/build.gradle
+          npx cap sync android
+      - name: Build
+        working-directory: app/android
+        env:
+          PW: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          chmod +x gradlew
+          if [ -n "$PW" ] && [ -f ../keys/android-upload.jks.enc ]; then
+            ./gradlew --no-daemon bundleRelease assembleRelease
+          else
+            echo "::notice::No upload key yet, so this is a debug build to try on a phone (not for Google Play)."
+            ./gradlew --no-daemon assembleDebug
+          fi
+      - name: Sign
+        working-directory: app
+        env:
+          PW: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          mkdir -p out
+          if [ -n "$PW" ] && [ -f keys/android-upload.jks.enc ]; then
+            openssl enc -d -aes-256-cbc -pbkdf2 -iter 250000 -in keys/android-upload.jks.enc -out upload.jks -pass env:PW
+            BT=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
+            jarsigner -sigalg SHA256withRSA -digestalg SHA-256 -keystore upload.jks -storepass "$PW" -keypass "$PW" \
+              -signedjar out/the-way-${{ github.run_number }}.aab android/app/build/outputs/bundle/release/app-release.aab upload
+            "$BT/zipalign" -f -p 4 android/app/build/outputs/apk/release/app-release-unsigned.apk aligned.apk
+            "$BT/apksigner" sign --ks upload.jks --ks-pass env:PW --key-pass env:PW --ks-key-alias upload --out out/the-way-${{ github.run_number }}.apk aligned.apk
+            rm -f upload.jks aligned.apk
+          else
+            cp android/app/build/outputs/apk/debug/app-debug.apk out/the-way-debug-${{ github.run_number }}.apk
+          fi
+          ls -la out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: the-way-android-${{ github.run_number }}
+          path: app/out/
+          retention-days: 30

@@ -115,8 +115,8 @@ window.TW = window.TW || {};
   if (typeof document !== 'undefined') ['pointerdown', 'touchend', 'click', 'keydown'].forEach((ev) => document.addEventListener(ev, unlock, { capture: true, passive: true }));
   const recordingsOn = () => !TW.Settings || TW.Settings.get('recordings') !== false;
   function playDub(id, fallback) {
-    const lang = TW.Settings ? TW.Settings.get('lang') : 'en';
     if (!id || !TW.Dubs || !player || !recordingsOn()) return false;
+    const lang = TW.Dubs.langFor(id, TW.Settings ? TW.Settings.get('lang') : 'en');
     const key = lang + ':' + id;
     if (missing.has(key) && !TW.Dubs.has(lang, id)) return false;
     const token = {};
