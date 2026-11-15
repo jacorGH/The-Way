@@ -1,6 +1,7 @@
 /* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — the few things the store apps (iPhone and Android, built with Capacitor; see app/README.md) do that a web
-   page cannot: a light touch of the phone's haptics, the share sheet for files, and Advent reminders.
+   page cannot: a light touch of the phone's haptics, the share sheet for files, Advent reminders, and keeping the screen
+   on during play.
    On the web every call here quietly does the web's best (or nothing). */
 window.TW = window.TW || {};
 (function (TW) {
@@ -53,6 +54,38 @@ window.TW = window.TW || {};
     })).filter((n) => n.schedule.at > now);
     try { if (list.length) await LN.schedule({ notifications: list }); return true; } catch (e) { return false; }
   };
+
+  // Keep the screen on while an episode is playing or a voice is reading (a phone that dims and locks halfway through a
+  // memory, or in the middle of a passage, breaks the scene). Let it sleep again on the map, the timeline, the title.
+  // The apps use the KeepAwake plugin; the web uses the Screen Wake Lock (Safari 16.4 and later, Chrome, Edge).
+  let lock = null, nativeOn = false, asking = false;
+  const wanted = () => {
+    if (document.visibilityState !== 'visible') return false;
+    const g = TW.game;
+    if (g && g.screen === 'scene') return true;
+    if (TW.Speech && TW.Speech.busy && TW.Speech.busy()) return true;
+    return !!document.querySelector('.verse-game');
+  };
+  async function hold(on) {
+    const K = N.is() && plugin('KeepAwake');
+    if (K) {
+      if (on === nativeOn) return;
+      nativeOn = on;
+      try { await (on ? K.keepAwake() : K.allowSleep()); } catch (e) { nativeOn = !on; }
+      return;
+    }
+    if (!('wakeLock' in navigator)) return;
+    if (on && !lock && !asking) {
+      asking = true;
+      try { lock = await navigator.wakeLock.request('screen'); lock.addEventListener('release', () => { lock = null; }); } catch (e) { lock = null; }
+      asking = false;
+    } else if (!on && lock) { const l = lock; lock = null; try { await l.release(); } catch (e) { /* already gone */ } }
+  }
+  N.keepAwake = () => hold(wanted());
+  setInterval(N.keepAwake, 2000);
+  document.addEventListener('visibilitychange', N.keepAwake);
+  // a lock asked for without a tap can be refused, so ask again on every tap
+  document.addEventListener('pointerup', () => { if (wanted()) hold(true); }, { passive: true });
 
   // the app's status bar matches the dark frame of the game
   if (N.is()) {

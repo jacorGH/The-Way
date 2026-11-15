@@ -45,4 +45,4 @@ arising from its use.
 ## 6. Permissions
 
 To ask for any permission not granted here (for example to translate the game, to use it commercially, or to use part of
-it in another project), contact: [your contact].
+it in another project), contact: jacoblc22@gmail.com.

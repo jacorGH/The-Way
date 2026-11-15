@@ -5,8 +5,8 @@ built by GitHub, on GitHub's own Linux and Mac machines, so **no Mac is needed**
 download what it makes. On a public repository these builds cost nothing.
 
 The whole game goes inside the app (Bibles and recorded voices too), so it plays offline from the first launch. The app
-also does a few things a web page cannot: haptics, saving your book through the share sheet, and an optional reminder
-each morning of Advent.
+also does a few things a web page cannot: haptics, saving your book through the share sheet, keeping the screen on
+while an episode plays or a voice reads, and an optional reminder each morning of Advent.
 
 | Workflow (Actions tab) | What it does | When |
 |---|---|---|

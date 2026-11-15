@@ -855,7 +855,25 @@ window.TW = window.TW || {};
     if (k > 1) R(ctx, sx - Math.floor((1 + 2 * k) / 2), y - 6 * k + 3 * k, 1 + 2 * k, 1, 'rgba(226,196,120,' + A2(0.9) + ')');
     R(ctx, sx - k, y - 6 * k - 3 * k, 2 * k + 1, 3 * k, 'rgba(246,232,206,' + A2(1) + ')');
     R(ctx, sx - k, y - 6 * k - 3 * k - 1, 2 * k + 1, 1 + (k > 1 ? 1 : 0), 'rgba(236,204,128,' + A2(1) + ')');
-    R(ctx, sx - 2 * k - 1, y - 6 * k - 3 * k, k, 4 * k, robe(1)); R(ctx, sx + 2 * k + 1 - k + 1, y - 6 * k - 3 * k, k, 4 * k, robe(1));
+    // arms raised in a Y, open hands lifted up: sleeves from the shoulders, swaying with the song, higher when it swells
+    const sway = Math.sin(t * 2.2 + ph) * 0.06 - flash * 0.08, L = 4 * k + 1, shY = y - 6 * k + 1;
+    const skin = 'rgba(240,214,182,' + A2(1) + ')', skin2 = 'rgba(214,184,150,' + A2(1) + ')';
+    [-1, 1].forEach((side) => {
+      const th = 0.6 + sway * side;   // the angle from upright
+      let px = sx, py = shY;
+      for (let i = 0; i < L; i++) {
+        px = sx + side * (k + 1 + Math.round(i * Math.sin(th))); py = shY - Math.round(i * Math.cos(th));
+        const wdt = i < k ? k + 1 : k;   // a wider sleeve at the shoulder
+        R(ctx, side < 0 ? px - wdt + 1 : px, py, wdt, k, robe(i + 1));
+        if (i === L - 2) R(ctx, side < 0 ? px - wdt + 1 : px, py, wdt, 1, 'rgba(214,202,176,' + A2(1) + ')');   // the cuff
+      }
+      // the hand: an open palm lifted up, rounded at the fingertips, the thumb turned in toward the head
+      const hw = k + 1, hh = k + 2, hx = side < 0 ? px + k - hw : px, hy = py - hh + 1;
+      R(ctx, hx, hy + 1, hw, hh - 1, skin);
+      R(ctx, hx + (side < 0 ? 0 : 1), hy, hw - 1, 1, skin);             // fingertips, rounded on the outer corner
+      R(ctx, side < 0 ? hx + hw : hx - 1, hy + Math.ceil(hh / 2), 1, k > 1 ? 2 : 1, skin);   // the thumb
+      R(ctx, side < 0 ? hx : hx + hw - 1, hy + 1, 1, hh - 1, skin2);     // shade on the outer edge
+    });
     if (flash > 0.05) for (let i = 0; i < 8; i++) { const an = i * Math.PI / 4 + t; R(ctx, Math.round(sx + Math.cos(an) * (8 + flash * 6)), Math.round(y - 4 + Math.sin(an) * (8 + flash * 6)), 1, 1, 'rgba(255,252,236,' + A2(flash) + ')'); }
   };
   VG.bth_field = () => {
