@@ -55,7 +55,7 @@ window.TW = window.TW || {};
     if (d >= start && m === 10) return { mode: 'waiting', year: y, upTo: 0, sundays: 1 };
     return { mode: 'open', year: y, upTo: 25, sundays: 0 };
   };
-  AD.inSeason = () => { const d = today(), m = d.getMonth(), day = d.getDate(); return (m === 10 && day >= 15) || m === 11 || (m === 0 && day <= 6); };
+  AD.inSeason = () => { const m = today().getMonth(), day = today().getDate(); return m === 10 || m === 11 || (m === 0 && day <= 6); };
 
   const save = () => (TW.game && TW.game.save) || {};
   const opened = (year) => { const s = save(); s.advent = s.advent || {}; return (s.advent[year] = s.advent[year] || []); };
@@ -131,8 +131,10 @@ window.TW = window.TW || {};
     close.addEventListener('click', AD.close);
     head.appendChild(close);
     b.appendChild(head);
-    b.appendChild(candles(st));
-    b.appendChild(el('p', 'adv-note', note(st)));
+    const sky = el('div', 'adv-sky');
+    sky.appendChild(starCanvas());
+    sky.appendChild(candles(st));
+    sky.appendChild(el('p', 'adv-note', note(st)));
     const g = el('div', 'adv-grid');
     AD.doors.forEach((d) => {
       const can = d.day <= st.upTo, isOpen = done.indexOf(d.day) >= 0;
@@ -145,7 +147,7 @@ window.TW = window.TW || {};
       btn.addEventListener('click', () => {
         if (!isOpen) {
           done.push(d.day); persist();
-          btn.classList.add('opening');
+          btn.classList.add('opening'); burst(btn, d.day === 25);
           TW.Audio && TW.Audio.sfx(d.day === 25 ? 'joy' : 'bells');
           TW.Native && TW.Native.haptic('medium');
           setTimeout(() => door(d), U().reducedMotion() ? 0 : 520);
@@ -153,7 +155,8 @@ window.TW = window.TW || {};
       });
       g.appendChild(btn);
     });
-    b.appendChild(g);
+    sky.appendChild(g);
+    b.appendChild(sky);
     // in the store apps: a reminder each morning of Advent
     if (TW.Native && TW.Native.canRemind()) {
       const s = save(), row = el('label', 'set-check adv-remind'), box = el('input');
@@ -228,6 +231,7 @@ window.TW = window.TW || {};
     if (!ov) return;
     ov.hidden = true;
     TW.Speech && TW.Speech.stop();
+    AD.titleButton();
     // back to the music of the screen underneath
     if (!quiet && TW.game && TW.game.screen && TW.game.screen !== 'scene' && TW.game.show) TW.game.show(TW.game.screen);
   };
@@ -240,11 +244,73 @@ window.TW = window.TW || {};
     b.addEventListener('click', AD.open);
     return b;
   };
+  // the star over Bethlehem, in pixels, above the doors
+  function starCanvas() {
+    const c = document.createElement('canvas'); c.width = 32; c.height = 32; c.className = 'adv-bigstar'; c.setAttribute('aria-hidden', 'true');
+    const x = c.getContext('2d'), R = (a, b, w, h, col) => { x.fillStyle = col; x.fillRect(a, b, w, h); };
+    R(15, 0, 2, 32, 'rgba(255,240,190,0.35)'); R(0, 15, 32, 2, 'rgba(255,240,190,0.25)');
+    R(15, 4, 2, 24, '#ffe9a0'); R(4, 15, 24, 2, '#ffe9a0');
+    R(11, 11, 10, 10, '#f3cf5a'); R(13, 9, 6, 14, '#f3cf5a'); R(9, 13, 14, 6, '#f3cf5a');
+    R(13, 13, 6, 6, '#fffbe8'); R(15, 15, 2, 2, '#ffffff');
+    [[8, 8], [23, 8], [8, 23], [23, 23]].forEach(([a, b]) => R(a, b, 1, 1, '#fff2c0'));
+    return c;
+  }
+  // golden sparks from a door as it opens
+  function burst(btn, big) {
+    if (U().reducedMotion()) return;
+    const r = btn.getBoundingClientRect(), n = big ? 28 : 14;
+    for (let i = 0; i < n; i++) {
+      const p = el('span', 'adv-spark');
+      const a = Math.random() * Math.PI * 2, d = (big ? 70 : 40) + Math.random() * (big ? 90 : 45);
+      p.style.left = (r.left + r.width / 2) + 'px'; p.style.top = (r.top + r.height / 2) + 'px';
+      p.style.setProperty('--dx', Math.cos(a) * d + 'px'); p.style.setProperty('--dy', Math.sin(a) * d - 20 + 'px');
+      p.style.animationDelay = (Math.random() * 0.12) + 's';
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 1200);
+    }
+  }
+  // what the title banner says today
+  function banner(st) {
+    const d = today(), y = d.getFullYear(), start = AD.adventStart(y), n = opened(st.year).length;
+    const days = Math.ceil((new Date(start.getFullYear(), start.getMonth(), start.getDate()) - new Date(y, d.getMonth(), d.getDate())) / 864e5);
+    const dayName = es() ? 'domingo ' + start.getDate() + ' de noviembre' : 'Sunday, November ' + start.getDate();
+    if (d.getMonth() === 0 || (d.getMonth() === 11 && d.getDate() > 25)) return { line: es() ? '¡Feliz Navidad! Las 25 puertas están abiertas.' : 'Merry Christmas! All 25 doors are open.', fresh: false };
+    if (st.mode === 'advent') {
+      const todayOpen = opened(st.year).indexOf(st.upTo) >= 0;
+      if (st.upTo === 25) return { line: todayOpen ? (es() ? 'Navidad. Cristo ha nacido.' : 'Christmas Day. Christ is born.') : (es() ? 'Navidad: abre la última puerta' : 'Christmas Day: open the last door'), fresh: !todayOpen };
+      if (!todayOpen) return { line: (es() ? st.upTo + ' de diciembre · la puerta de hoy te espera' : 'December ' + st.upTo + ' · today’s door is waiting'), fresh: true };
+      return { line: es() ? 'Abriste la puerta de hoy. Vuelve mañana.' : 'Today’s door is open. Come back tomorrow.', fresh: false };
+    }
+    if (st.mode === 'waiting') return { line: es() ? 'El Adviento ha comenzado. La primera puerta se abre el 1 de diciembre.' : 'Advent has begun. The first door opens on December 1.', fresh: false };
+    if (days > 0) return { line: es() ? 'El Adviento empieza el ' + dayName + (days > 1 ? ' · faltan ' + days + ' días' : ' · mañana') : 'Advent begins ' + dayName + (days > 1 ? ' · ' + days + ' days to go' : ' · tomorrow'), fresh: false };
+    return { line: n ? (es() ? n + ' de 25 puertas abiertas' : n + ' of 25 doors opened') : (es() ? 'Veinticinco puertas hasta Navidad' : 'Twenty-five doors to Christmas'), fresh: false };
+  }
+  // on the title, from November to Epiphany: a window onto the night sky with the wreath, today's news, and the doors
   AD.titleButton = function () {
+    const slot = document.getElementById('adv-slot');
     const box = document.querySelector('.title-actions');
-    if (!box) return;
-    const old = box.querySelector('.adv-btn'); if (old) old.remove();
-    if (AD.inSeason()) box.appendChild(AD.button('btn adv-btn'));
+    if (box) { const old = box.querySelector('.adv-btn'); if (old) old.remove(); }
+    if (!slot) return;
+    slot.innerHTML = '';
+    if (!AD.inSeason()) return;
+    const st = AD.state(), done = opened(st.year), info = banner(st);
+    const b = el('button', 'adv-banner' + (info.fresh ? ' fresh' : '')); b.type = 'button';
+    b.setAttribute('aria-label', (es() ? 'Calendario de Adviento. ' : 'Advent calendar. ') + info.line);
+    const left = el('span', 'adv-banner-wreath');
+    left.appendChild(candles(st));
+    left.appendChild(el('span', 'adv-greens'));
+    b.appendChild(left);
+    const right = el('span', 'adv-banner-text');
+    right.appendChild(el('span', 'adv-banner-kicker', es() ? 'Temporada de Adviento' : 'The season of Advent'));
+    right.appendChild(el('span', 'adv-banner-title', es() ? 'Calendario de Adviento' : 'Advent Calendar'));
+    right.appendChild(el('span', 'adv-banner-line', info.line));
+    const dots = el('span', 'adv-dots');
+    for (let i = 1; i <= 25; i++) dots.appendChild(el('span', 'adv-dot' + (done.indexOf(i) >= 0 ? ' on' : '') + (st.mode === 'advent' && i === st.upTo && done.indexOf(i) < 0 ? ' now' : '')));
+    right.appendChild(dots);
+    b.appendChild(right);
+    if (info.fresh) b.appendChild(el('span', 'adv-new', es() ? 'Nueva' : 'New'));
+    b.addEventListener('click', () => { TW.Audio && TW.Audio.sfx('bells'); AD.open(); });
+    slot.appendChild(b);
   };
   TW.Advent = AD;
 })(window.TW);

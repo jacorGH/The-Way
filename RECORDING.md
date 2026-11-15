@@ -162,7 +162,11 @@ Scripture recordings belong to their Bible's language, not the screen's: `s-WEB-
   Bible version installed in the game: open the published game with `?dev`, download the Reina-Valera in Settings →
   Bible translation, then Settings → Recorded voices → "Scripture batch: Reina-Valera 1909". It saves
   `scripture-es-RV1909.json`: put it in the game's `dub/es/` folder, unchanged, and push. TTS Studio lists it as its own
-  batch. Other versions work the same way (`scripture-en-KJV.json` in `dub/en/`, and so on).
+  batch. Other versions work the same way (`scripture-en-KJV.json` in `dub/en/`, and so on). The four shipped
+  batches (WEB, KJV, ASV, Reina-Valera 1909) are already in `dub/`, rebuilt from complete Bible files: every passage the
+  game reads, including the Birth of Jesus, plus the "verse to keep" of each episode (the `verses-by-heart` refs at the
+  end of `dub/scripture-refs.json`). Where a text changed, its recording gets a new name, so TTS Studio shows those
+  lines as not yet recorded; the old recordings are removed by **Tidy audio**.
 - **Re-recording a whole part:** TTS Studio's "Re-record batch" on any row.
 - Lines the Seven assembles while you play (the widows' names and loaves left) are read by the device voice.
 
@@ -178,8 +182,8 @@ Phones that already saved recordings for offline play keep their old copies unti
 
 The game only plays recordings from `audio/en/` and `audio/es/`. The **Tidy audio** workflow puts them there: recordings
 pushed to `en/` or `es/` at the top of the repository move into `audio/`, Scripture recordings move to their Bible's
-language (`s-WEB`, `s-KJV`, `s-ASV` to English; `s-RV1909` to Spanish), copies already in place are removed, and
-everything is compressed. It runs by itself when recordings land in `en/` or `es/`, and from the Actions tab (or
+language (`s-WEB`, `s-KJV`, `s-ASV` to English; `s-RV1909` to Spanish), copies already in place are removed,
+Scripture recordings whose text is no longer in their Bible's batch are removed, and everything is compressed. It runs by itself when recordings land in `en/` or `es/`, and from the Actions tab (or
 GitMobile → Run a workflow) any time.
 
 ## Recordings cut short

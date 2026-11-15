@@ -128,6 +128,7 @@ window.TW = window.TW || {};
     setRole(pickRole);
     $('#btn-continue').hidden = !s.started;
     $('#btn-begin').classList.toggle('primary', !s.started);
+    resumeButton();
     if (TW.Advent) TW.Advent.titleButton();
     const c = $('#title-vista'), ctx = c.getContext('2d');
     titleRunning = true;
@@ -159,6 +160,29 @@ window.TW = window.TW || {};
     game.region = 'galilee';
     persist();
     game.show('prologue');
+  });
+  // "Pick up where you left off": straight back into the episode you were in the middle of
+  function resumeButton() {
+    const b = $('#btn-resume'), s = game.save;
+    const last = s.started && TW.Progress && TW.Progress.latest ? TW.Progress.latest() : null;
+    b.hidden = !last;
+    $('#btn-continue').classList.toggle('primary', !last);
+    if (!last) return;
+    const E = TW.D.episodes[last.ep], es = TW.Settings.get('lang') === 'es';
+    b.innerHTML = '';
+    b.appendChild(el('span', 'resume-main', es ? 'Seguir donde lo dejaste' : 'Pick up where you left off'));
+    b.appendChild(el('span', 'resume-sub', (E.num ? E.num + '. ' : '') + (TW.tr ? TW.tr(E.title) : E.title)));
+    b.dataset.ep = last.ep; b.dataset.who = last.who || '';
+  }
+  document.addEventListener('click', (e) => { if (e.target && e.target.closest && e.target.closest('#btn-title-lang')) setTimeout(resumeButton, 60); });
+  $('#btn-resume').addEventListener('click', () => {
+    if (pickRole !== (game.save.role || 'scribe')) setRole(game.save.role || 'scribe');
+    game.save.name = game.save.name || readName();
+    persist();
+    if (TW.Progress) TW.Progress.autoResume = true;
+    // in the mixed account, go back through the same eyes, without asking again
+    if (TW.Role.both() && $('#btn-resume').dataset.who) { game.save.cur = $('#btn-resume').dataset.who; game.skipVoice = true; }
+    game.enterEpisode($('#btn-resume').dataset.ep);
   });
   $('#btn-continue').addEventListener('click', () => {
     if (pickRole !== (game.save.role || 'scribe')) { setRole(game.save.role || 'scribe'); $('#role-note').textContent = 'Your saved journey is as ' + game.save.name + '. To play as the other character, begin a new journey.'; return; }
@@ -540,7 +564,7 @@ window.TW = window.TW || {};
   };
   // In the mixed account, ask whose eyes this scene is seen through.
   function chooseVoice(key, title, go) {
-    if (!TW.Role.both()) { go(); return; }
+    if (!TW.Role.both() || game.skipVoice) { game.skipVoice = false; go(); return; }
     const V = TW.Role.VIEW[key] || ['scribe', 'Eleazar asks the questions', 'Elisheva asks the questions'];
     const wrap = el('div', 'voice-card');
     wrap.appendChild(el('p', 'voice-kicker', 'Whose account?'));
@@ -1135,6 +1159,7 @@ window.TW = window.TW || {};
     };
   };
 
+  game.openStudy = (ep) => openStudy(ep);
   function openStudy(ep, fresh, newly) {
     const E = D.episodes[ep];
     openOverlay('#o-study');
@@ -1185,6 +1210,7 @@ window.TW = window.TW || {};
       li.appendChild(ta); ol.appendChild(li);
     });
     b.appendChild(ol);
+    if (TW.Verses) TW.Verses.studyCard(ep, b, el);
     const q = game.save.questions.find((x) => x.id === E.question.id);
     if (q) {
       const d = el('div', 'open-q');

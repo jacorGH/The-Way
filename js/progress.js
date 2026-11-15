@@ -7,7 +7,11 @@ window.TW = window.TW || {};
 (function (TW) {
   const SC = TW.Scene;
   const PR = {};
-  let inFree = 0;        // > 0 while a free walk or look-around is waiting: what happens then is a conversation, not the main line
+  // Free walks and look-arounds still waiting, with the stage they belong to: while one is open, what happens is a
+  // conversation, not the main line. A walk is over once the story moves to another stage, or opens a different walk
+  // (a walk can end by tapping a door or walking somewhere, and then its button is never pressed).
+  let frees = [];
+  const inFree = () => frees.some((f) => f.stage === SC.stage);
   let rec = null;        // this run's record
   let FF = null;         // catching up: { target: { key, occ }, choices: [...], used: {}, n: 0, cap }
   const es = () => TW.Settings && TW.Settings.get('lang') === 'es';
@@ -35,14 +39,14 @@ window.TW = window.TW || {};
     if (!FF) {
       const p = store(), sl = p[slot(rec.ep)] || (p[slot(rec.ep)] = { marks: [], choices: [] });
       if (!sl.marks.some((m) => m.key === key && m.occ === occ)) sl.marks.push({ key, occ, kind, text: extra && extra.label ? extra.label : text });
-      sl.resume = { key, occ };
+      sl.resume = { key, occ }; sl.at = Date.now();
       persist();
     }
     return { key, occ };
   }
   const say1 = SC.say, choose1 = SC.choose, prompt1 = SC.prompt;
   SC.choose = function (prompt, options, label) {
-    if (!episodeOn() || inFree > 0) return choose1.call(SC, prompt, options, label);
+    if (!episodeOn() || inFree()) return choose1.call(SC, prompt, options, label);
     const m = mark('choose', prompt);
     if (FF) {
       const c = FF.choices.find((x) => x.key === m.key && x.occ === m.occ);
@@ -55,20 +59,28 @@ window.TW = window.TW || {};
     });
   };
   SC.prompt = function (text, label, mode) {
-    if (!episodeOn() || inFree > 0) return prompt1.call(SC, text, label, mode);
-    mark('prompt', text, { label: text });
+    if (!episodeOn()) return prompt1.call(SC, text, label, mode);
     const free = mode === 'free' || mode === 'observe';
+    const clear = () => { frees = frees.filter((f) => f.text !== text); };
+    const again = free && frees.some((f) => f.text === text && f.stage === SC.stage);
+    if (inFree() && (!free || again)) {
+      // inside a walk: a conversation's prompt, or the same walk offered again after a conversation
+      const p0 = prompt1.call(SC, text, label, mode);
+      if (again) Promise.resolve(p0).then(clear, clear);
+      return p0;
+    }
+    if (free) frees = frees.filter((f) => f.stage !== SC.stage);   // a different walk here: the last one is over
+    mark('prompt', text, { label: text });
     const p = prompt1.call(SC, text, label, mode);
     if (!free || FF) return p;
-    inFree++;
-    const done = () => { inFree = Math.max(0, inFree - 1); };
-    return Promise.resolve(p).then((v) => { done(); return v; }, (e) => { done(); throw e; });
+    frees.push({ stage: SC.stage, text });
+    return Promise.resolve(p).then((v) => { clear(); return v; }, (e) => { clear(); throw e; });
   };
   // A remembered scene is a place to come back to as well (some episodes, like the Birth of Jesus, are mostly memories).
   // Its bookmark is labeled with the first line spoken in it.
   let labelNext = null;
   PR.memory = function (id, witness) {
-    if (!episodeOn() || inFree > 0) return;
+    if (!episodeOn() || inFree()) return;
     const m = mark('memory', id, { label: witness ? T('As remembered by ', 'Como lo recuerda ') + (TW.tr ? TW.tr(witness) : witness) : id });
     if (!FF) labelNext = m;
   };
@@ -85,10 +97,22 @@ window.TW = window.TW || {};
   PR.finished = (ep) => { const sl = store()[slot(ep)]; if (sl) { delete sl.resume; persist(); } };
 
   // Before an episode starts: offer to continue, start from a moment, or start over. Calls go(ff) with a target or null.
+  // the episode you were last in the middle of (for the title's "Pick up where you left off")
+  PR.latest = function () {
+    const p = store(), r = role(), any = TW.Role && TW.Role.both && TW.Role.both(); let best = null;
+    Object.keys(p).forEach((k) => {
+      const [ep, who] = k.split(':'), sl = p[k];
+      if ((who !== r && !any) || !sl || !sl.resume || !TW.D.episodes[ep] || (TW.game.save.completed || {})[ep]) return;
+      if (!best || (sl.at || 0) > (best.at || 0)) best = { ep, who, at: sl.at || 0 };
+    });
+    return best;
+  };
+  PR.autoResume = false;   // set by the title: go straight back to the bookmark without asking
   PR.offer = function (ep, go) {
-    rec = { ep, count: {} }; inFree = 0; labelNext = null; stopFF();
+    rec = { ep, count: {} }; frees = []; labelNext = null; stopFF();
     if (TW.TURBO) { go(null); return; }
     const sl = store()[slot(ep)];
+    if (PR.autoResume) { PR.autoResume = false; if (sl && sl.resume) { go(sl.resume); return; } }
     const moments = sl ? sl.marks.filter((m) => m.kind === 'choose' || m.kind === 'prompt' || m.kind === 'memory') : [];
     if (!sl || moments.length < 2) { if (sl) { sl.marks = []; sl.choices = []; delete sl.resume; } go(null); return; }
     const box = document.createElement('div'); box.className = 'resume-sheet'; box.setAttribute('role', 'dialog');

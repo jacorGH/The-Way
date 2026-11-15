@@ -228,6 +228,10 @@ Translations may give masculine and feminine forms, `{ m: '…', f: '…' }`, fo
 3. Put the saved file (for example `RV1909.js` or `ASV.js`) in the `bible/` folder and push.
 `bible/versions.js` loads ASV, KJV, RV1909 and RV1858 if their files are present. A shipped version needs no download,
 and the title screen's Español button uses a shipped Spanish version at once.
+The shipped `ASV.js`, `KJV.js` and `RV1909.js` hold every verse the game reads (all 1,567). The download services
+lacked the Birth of Jesus chapters and a few others, so those verses were filled in from the public-domain texts in
+[seven1m/open-bibles](https://github.com/seven1m/open-bibles). A version missing a verse still falls back to the WEB
+for that verse; to check one, compare `TW.Bible.count('<ID>')` with `TW.Bible.needed().length` in the console.
 
 ## Discoveries
 `js/discover.js` holds, in English and Spanish:
@@ -317,13 +321,26 @@ angels: each angel touched sings the next note of the "Gloria" of *Angels We Hav
 turns from sepia to full color. The button sings the rest for anyone who would rather listen. Finishing it counts as a
 hands-on moment. (`VG.bth_field` in `js/vignettes.js`.)
 
+## A verse to keep
+
+`js/verses.js`: every episode has one key verse (`TW.Verses.REF`), shown on its study page in the Bible you chose. "Learn
+it by heart" opens three short rounds of tapping the missing words back in order: a few words, then half, then the whole
+verse. Learned verses are kept in the save (`save.verses`) and listed in the journal to practice again.
+
+## Pick up where you left off
+
+The title screen offers the episode you were last in the middle of (`TW.Progress.latest()`); it goes straight back to the
+bookmark without the "Continue / Start from a moment" sheet. In the mixed account it returns through the same narrator.
+
 ## Advent calendar
 
 `js/advent.js`: twenty-five doors, December 1 to Christmas Day, each opening a reading from the Birth of Jesus (the same
 ranges the game reads, so their recordings play), a short thought, its carol, and the memory it belongs to. In December
 one door opens a day; the rest of the year all are open. Advent candles (hope, peace, joy, love, and Christ) light with
-the Sundays of Advent. Shown on the title screen from mid-November to Epiphany, and always on the Birth of Jesus in the
-timeline. Opened doors are kept per year in the save (`save.advent`). In the store apps it can schedule a reminder each
+the Sundays of Advent. From November 1 to Epiphany the title screen shows it as a night-sky banner (the wreath with
+its lit candles, a countdown to Advent or today's door, and a dot for each door opened); it is always on the Birth of
+Jesus in the timeline. The calendar itself sits under a night sky with the star over Bethlehem, and doors open in a burst
+of gold. Opened doors are kept per year in the save (`save.advent`). In the store apps it can schedule a reminder each
 morning of Advent.
 
 ## Sound settings

@@ -511,3 +511,95 @@ canvas.portrait { float: left; width: 52px; height: auto; margin: 0.1rem 0.55rem
 .adv-fine { text-align: center; margin-top: 0.8rem; }
 @media (prefers-reduced-motion: reduce) { .adv-door { transition: none; } .adv-candle.lit .flame, .adv-door.today { animation: none; } }
 .adv .fine, .adv .adv-fine { color: var(--ink-soft); }
+
+/* ---------- pick up where you left off ---------- */
+.btn.resume-btn { display: flex; flex-direction: column; align-items: center; gap: 0.1rem; line-height: 1.2; }
+.resume-btn .resume-sub { font-size: 0.8em; font-style: italic; opacity: 0.85; font-family: inherit; }
+
+/* ---------- a verse to keep ---------- */
+.verse-card { margin: 1.4rem 0 1rem; padding: 0.9rem 1rem; border: 1px solid rgba(90, 60, 30, 0.25); border-left: 4px solid var(--ochre, #b88a3d); background: rgba(255, 250, 235, 0.45); border-radius: 3px; }
+.verse-card.learned { border-left-color: #5a7a4a; }
+.verse-card.small { margin: 0.6rem 0; }
+.verse-text { margin: 0.3rem 0; font-size: 1.12rem; line-height: 1.5; color: var(--lapis, #2c4a7a); font-style: normal; }
+.verse-ref { margin: 0 0 0.6rem; font-size: 0.9rem; color: var(--ink-soft, #5d4a39); font-style: italic; }
+.verse-kept { margin: 0.5rem 0 0; color: #4a6a3a !important; }
+.verse-game { position: fixed; inset: 0; z-index: 80; background: rgba(20, 16, 12, 0.72); display: flex; align-items: center; justify-content: center; padding: 1rem; padding-top: max(1rem, env(safe-area-inset-top)); padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+.verse-game-card { width: 100%; max-width: 34rem; max-height: 100%; overflow-y: auto; background: #e8d9b0; color: #2a1f17; border-radius: 6px; padding: 1rem 1.1rem 1.2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); }
+.vg-head { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #5d4a39; font-style: italic; }
+.vg-line { font-size: 1.25rem; line-height: 1.9; margin: 0.8rem 0; color: #2c4a7a; }
+.vg-word.blank { display: inline-block; border-bottom: 2px solid #8a6a3a; min-width: 2.2em; color: transparent; }
+.vg-word.blank.next { border-bottom-color: #c8862a; background: rgba(232, 195, 90, 0.3); }
+.vg-word.filled { color: #2f6a3a; animation: vg-pop 0.35s ease; }
+@keyframes vg-pop { 0% { transform: scale(1.25); } 100% { transform: scale(1); } }
+.vg-hint { font-size: 0.9rem; color: #5d4a39; margin: 0 0 0.6rem; }
+.vg-pool { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.vg-chip { padding: 0.55rem 0.8rem; border: 1px solid #8a6a3a; border-radius: 4px; background: #f6ecd2; color: #2a1f17; font: inherit; font-size: 1.05rem; min-height: 44px; }
+.vg-chip:active { background: #ead9ae; }
+.vg-chip.wrong { animation: vg-shake 0.35s ease; border-color: #a83a2a; }
+@keyframes vg-shake { 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
+.vg-done { margin: 0.4rem 0 0.6rem; font-family: Cinzel, serif; color: #4a6a3a; }
+.vg-actions { display: flex; gap: 0.5rem; margin-top: 0.8rem; }
+@media (prefers-reduced-motion: reduce) { .vg-word.filled, .vg-chip.wrong { animation: none; } }
+
+/* ---- Advent: the title banner ---- */
+#adv-slot { display: flex; justify-content: center; margin: -0.4rem auto 1rem; padding: 0 0.2rem; }
+#adv-slot:empty { display: none; }
+.adv-banner {
+  position: relative; display: flex; align-items: center; gap: 0.9rem; width: 100%; max-width: 23rem; padding: 0.75rem 0.9rem 0.7rem 0.7rem;
+  border: 1.5px solid #c9a85a; border-radius: 10px; text-align: left; cursor: pointer; color: #f6e8c8; font: inherit; overflow: hidden;
+  background:
+    radial-gradient(1px 1px at 12% 22%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 34% 70%, #fff8d8 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 58% 18%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 76% 64%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 90% 30%, #ffe9b0 50%, transparent 51%), radial-gradient(1px 1px at 46% 88%, #fff 50%, transparent 51%),
+    radial-gradient(120% 140% at 85% -20%, rgba(255, 214, 120, 0.28), transparent 55%),
+    linear-gradient(160deg, #2a1d4e 0%, #3b1f5c 55%, #1b1636 100%);
+  box-shadow: 0 0 0 3px rgba(201, 168, 90, 0.18), 0 8px 26px rgba(10, 6, 30, 0.55), inset 0 0 30px rgba(120, 80, 200, 0.25);
+  animation: adv-banner-in 0.7s ease-out both;
+}
+.adv-banner::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(110deg, transparent 30%, rgba(255, 236, 180, 0.16) 45%, transparent 60%); transform: translateX(-120%); animation: adv-sheen 6s ease-in-out 1.2s infinite; }
+.adv-banner.fresh { border-color: #f3cf5a; animation: adv-banner-in 0.7s ease-out both, adv-banner-glow 1.8s ease-in-out 0.7s infinite alternate; }
+.adv-banner:active { transform: scale(0.98); }
+.adv-banner-wreath { position: relative; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; }
+.adv-banner .adv-candles { gap: 0.28rem; margin: 0; }
+.adv-banner .adv-candle { width: 0.75rem; }
+.adv-banner .adv-candle .wax { width: 0.42rem; height: 1.35rem; }
+.adv-banner .adv-candle.christ .wax { width: 0.5rem; height: 1.75rem; }
+.adv-banner .adv-candle .flame { width: 0.3rem; height: 0.5rem; margin-bottom: 0.08rem; }
+.adv-banner .adv-candle.lit .flame { box-shadow: 0 0 9px 4px rgba(255, 200, 90, 0.5); }
+.adv-banner .adv-cname { display: none; }
+.adv-greens { display: block; width: 5.4rem; height: 0.7rem; margin-top: -0.25rem; border-radius: 50%;
+  background: radial-gradient(circle at 18% 40%, #c8323a 0 2px, transparent 3px), radial-gradient(circle at 52% 70%, #c8323a 0 2px, transparent 3px),
+    radial-gradient(circle at 84% 40%, #c8323a 0 2px, transparent 3px), radial-gradient(ellipse at 50% 50%, #3f7a3a 0 55%, #2a5a2a 70%, transparent 72%); }
+.adv-banner-text { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.adv-banner-kicker { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: #c9a85a; }
+.adv-banner-title { font-family: Cinzel, "Trajan Pro", Georgia, serif; font-weight: 700; font-size: 1.22rem; letter-spacing: 0.04em; color: #f3cf5a; text-shadow: 0 0 12px rgba(243, 207, 90, 0.45); line-height: 1.2; }
+.adv-banner-line { font-style: italic; font-size: 0.92rem; color: #efe2c8; line-height: 1.3; margin-top: 0.1rem; }
+.adv-dots { display: flex; flex-wrap: nowrap; gap: 2px; margin-top: 0.45rem; }
+.adv-dot { flex: 0 0 auto; width: 5px; height: 6px; border-radius: 1px; background: rgba(255, 255, 255, 0.16); }
+.adv-dot:nth-child(25) { width: 9px; }
+.adv-dot.on { background: #e8c35a; box-shadow: 0 0 4px rgba(232, 195, 90, 0.8); }
+.adv-dot.now { background: #fff0b0; animation: adv-blink 1s ease-in-out infinite alternate; }
+.adv-new { position: absolute; top: 0.45rem; left: 0.55rem; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.1rem 0.4rem; border-radius: 99px; background: #f3cf5a; color: #2a1d4e; font-weight: 700; }
+@keyframes adv-banner-in { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: none; } }
+@keyframes adv-banner-glow { to { box-shadow: 0 0 0 3px rgba(243, 207, 90, 0.45), 0 0 26px rgba(243, 207, 90, 0.55), inset 0 0 30px rgba(120, 80, 200, 0.25); } }
+@keyframes adv-sheen { 0%, 70% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+@keyframes adv-blink { to { opacity: 0.35; } }
+
+/* ---- Advent: the calendar under a night sky ---- */
+.adv-sky { position: relative; margin: 0.4rem -0.4rem 0.8rem; padding: 2.4rem 0.7rem 0.9rem; border-radius: 10px; border: 1.5px solid #c9a85a;
+  background:
+    radial-gradient(1px 1px at 8% 12%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 22% 30%, #fff8d8 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 70% 10%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 88% 24%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 40% 6%, #ffe9b0 50%, transparent 51%), radial-gradient(1px 1px at 60% 34%, #fff 50%, transparent 51%),
+    radial-gradient(60% 30% at 50% 0%, rgba(255, 220, 130, 0.35), transparent 70%),
+    linear-gradient(180deg, #1b1636 0%, #2c1f52 45%, #3b2560 100%);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.45), 0 6px 20px rgba(20, 10, 40, 0.35); }
+.adv-bigstar { position: absolute; top: -0.9rem; left: 50%; width: 3.2rem; height: 3.2rem; margin-left: -1.6rem; image-rendering: pixelated; filter: drop-shadow(0 0 10px rgba(255, 220, 120, 0.85)); animation: adv-star 2.4s ease-in-out infinite alternate; }
+@keyframes adv-star { to { filter: drop-shadow(0 0 18px rgba(255, 230, 150, 1)); transform: scale(1.06); } }
+.adv-sky .adv-note { color: #e8dcc0; }
+.adv-sky .adv-cname { color: #c9b890; }
+.adv-sky .adv-door { box-shadow: inset 0 0 0 2px rgba(255, 220, 160, 0.15), 0 2px 6px rgba(0, 0, 0, 0.45); }
+.adv-sky .adv-door.locked { background: linear-gradient(135deg, #4a3e5e, #3a3050); color: #9c90b0; border-color: #5a4a6e; }
+.adv-spark { position: fixed; z-index: 99; width: 5px; height: 5px; margin: -2px; background: #ffe9a0; box-shadow: 0 0 6px #ffd860; pointer-events: none; animation: adv-spark 1s ease-out forwards; }
+@keyframes adv-spark { from { transform: translate(0, 0); opacity: 1; } to { transform: translate(var(--dx), var(--dy)) scale(0.3); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .adv-banner, .adv-banner.fresh, .adv-banner::after, .adv-dot.now, .adv-bigstar { animation: none; } }

@@ -3,6 +3,9 @@
 #    top level (en/ and es/ next to index.html) is moved into audio/; a copy that is already in audio/ is removed.
 #  · Scripture belongs to its Bible's language: s-WEB, s-KJV and s-ASV recordings go to audio/en/,
 #    s-RV1909 recordings to audio/es/, whichever folder they were saved in.
+#  · A Scripture recording whose text is no longer in its Bible's batch (dub/<lang>/scripture-<lang>-<BIBLE>.json) is
+#    removed: the text changed, so the game asks for a new recording under a new name and never plays the old one.
+#    Bibles without a batch file are left alone.
 # Runs by itself when recordings land in en/ or es/, and from the Actions tab (or GitMobile → Run a workflow) any time.
 name: Tidy audio
 on:
@@ -51,6 +54,21 @@ jobs:
           echo "Moved $moved recordings into audio/, removed $dropped copies that were already there."
           echo "MOVED=$moved" >> "$GITHUB_ENV"; echo "DROPPED=$dropped" >> "$GITHUB_ENV"
           ls audio/en | wc -l | xargs echo "audio/en now holds"; ls audio/es | wc -l | xargs echo "audio/es now holds"
+      - name: Remove Scripture recordings no batch uses
+        run: |
+          python3 - <<'PY'
+          import glob, json, os, re, subprocess
+          keep, bibles = set(), set()
+          for f in glob.glob('dub/*/scripture-*-*.json'):
+              bibles.add(re.match(r'scripture-\w+-(\w+)\.json', os.path.basename(f)).group(1))
+              d = json.load(open(f, encoding='utf-8'))
+              keep.update(i['id'] for i in (d.get('items', []) if isinstance(d, dict) else d))
+          gone = [f for f in glob.glob('audio/*/s-*.mp3')
+                  if os.path.basename(f).split('-')[1] in bibles and os.path.basename(f)[:-4] not in keep]
+          for f in gone: subprocess.run(['git', 'rm', '-q', f], check=True)
+          print('Removed', len(gone), 'Scripture recordings whose text changed; Bibles with batches:', ', '.join(sorted(bibles)))
+          open(os.environ['GITHUB_ENV'], 'a').write('UNUSED=%d\n' % len(gone))
+          PY
       - name: Install ffmpeg
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Compress recordings above ${{ env.KBPS }} kbps
@@ -61,5 +79,5 @@ jobs:
           if git diff --cached --quiet; then echo "Everything was already in place."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Tidy audio: move ${MOVED} recordings into audio/, remove ${DROPPED} duplicates, compress"
+          git commit -m "Tidy audio: move ${MOVED} recordings into audio/, remove ${DROPPED} duplicates and ${UNUSED} unused Scripture, compress"
           git push
