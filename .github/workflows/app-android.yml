@@ -71,8 +71,15 @@ jobs:
             cp android/app/build/outputs/apk/debug/app-debug.apk out/the-way-debug-${{ github.run_number }}.apk
           fi
           ls -la out
+      # two downloads, so you only fetch the one you need: the .apk to install on a phone, the .aab for Google Play
       - uses: actions/upload-artifact@v4
         with:
-          name: the-way-android-${{ github.run_number }}
-          path: app/out/
+          name: the-way-apk-${{ github.run_number }}
+          path: app/out/*.apk
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: the-way-google-play-${{ github.run_number }}
+          path: app/out/*.aab
+          if-no-files-found: ignore
           retention-days: 30

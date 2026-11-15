@@ -41,7 +41,7 @@ build number goes up by itself.
 
 1. Push this repository with the `app` folder and `.github/workflows`.
 2. GitHub → **Actions** → **App · Android** → **Run workflow**. It takes about 8 minutes.
-3. Open the finished run. Under **Artifacts**, download `the-way-android-…`. Inside is `the-way-debug-….apk`, which any
+3. Open the finished run. Under **Artifacts**, download `the-way-apk-…`. Inside is `the-way-debug-….apk`, which any
    Android phone can install (it will ask to allow installs from that app).
 
 ### 2. The upload key (once)
@@ -52,8 +52,9 @@ build number goes up by itself.
 2. **Actions → App · Android upload key (run once) → Run workflow.** It adds `app/keys/android-upload.jks.enc` to the
    repository: the key, encrypted with your password, useless to anyone without it.
 3. Keep that file in the repository from now on (pushing a new zip of the game does not remove it). Then run
-   **App · Android** again. Now the artifact
-   holds `the-way-….aab` (for Google Play) and a signed `the-way-….apk`.
+   **App · Android** again. Now there are two artifacts: `the-way-google-play-…` holds the `.aab` to upload to Google
+   Play, and `the-way-apk-…` a signed `.apk` to install on a phone. Each is about 290 MB; download only the one you
+   need.
 
 ### 3. Google Play
 
