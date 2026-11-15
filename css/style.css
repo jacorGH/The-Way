@@ -614,3 +614,16 @@ canvas.portrait { float: left; width: 52px; height: auto; margin: 0.1rem 0.55rem
 .support-link:active { opacity: 0.7; }
 .support-note { margin: 1.2rem 0; padding: 0.8rem 1rem; border: 1px solid #c9a85a; border-left: 4px solid #b88a3d; background: rgba(255, 248, 228, 0.45); border-radius: 4px; }
 .support-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.4rem 0; }
+/* ---- the tip jar (store apps) ---- */
+.tip-jar { position: fixed; inset: 0; z-index: 85; background: rgba(20, 16, 12, 0.72); display: flex; align-items: center; justify-content: center; padding: 1rem; padding-top: max(1rem, env(safe-area-inset-top)); padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+.tip-card { width: 100%; max-width: 26rem; max-height: 100%; overflow-y: auto; background: #e8d9b0; color: #2a1f17; border-radius: 8px; padding: 1rem 1.1rem 1.2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); border-top: 4px solid #b88a3d; }
+.tip-head { display: flex; justify-content: space-between; align-items: center; }
+.tip-head h3, .tip-thanks { margin: 0.2rem 0; font-family: Cinzel, Georgia, serif; letter-spacing: 0.04em; color: #6a3a1a; }
+.tip-lead { margin: 0.4rem 0 0.8rem; }
+.tip-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.tip-btn { display: flex; justify-content: space-between; align-items: center; gap: 1rem; width: 100%; padding: 0.75rem 0.9rem; font: inherit; font-size: 1.05rem; text-align: left; color: #2a1f17; background: #f6ecd2; border: 1.5px solid #b88a3d; border-radius: 6px; cursor: pointer; }
+.tip-btn:active { transform: scale(0.98); }
+.tip-btn:disabled { opacity: 0.55; }
+.tip-btn.busy { opacity: 1; background: #fff6dc; box-shadow: 0 0 0 3px rgba(184, 138, 61, 0.35); }
+.tip-price { font-weight: 600; color: #6a3a1a; white-space: nowrap; }
+.tip-fine { margin-top: 0.8rem; }

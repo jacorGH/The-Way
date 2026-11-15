@@ -87,6 +87,34 @@ window.TW = window.TW || {};
   // a lock asked for without a tap can be refused, so ask again on every tap
   document.addEventListener('pointerup', () => { if (wanted()) hold(true); }, { passive: true });
 
+  // Tips: optional gifts through the App Store or Google Play (consumable in-app products; the @capgo/native-purchases
+  // plugin). A tip unlocks nothing. Products that do not exist in the store yet simply come back empty, and then the
+  // game shows no tip jar at all.
+  const IAP = () => (N.is() ? plugin('NativePurchases') : null);
+  let tipCache = null;
+  N.tips = async function (ids) {
+    if (tipCache) return tipCache;
+    const P = IAP(); if (!P || !ids || !ids.length) return (tipCache = []);
+    try {
+      const ok = await P.isBillingSupported();
+      if (ok && ok.isBillingSupported === false) return (tipCache = []);
+      const r = await P.getProducts({ productIdentifiers: ids, productType: 'inapp' });
+      const list = (r && r.products) || [];
+      // keep the order of ids (the stores return them in any order)
+      tipCache = ids.map((id) => list.find((p) => p.identifier === id || p.productIdentifier === id)).filter(Boolean)
+        .map((p) => ({ id: p.identifier || p.productIdentifier, price: p.priceString || '', value: p.price || 0 }));
+    } catch (e) { tipCache = []; }
+    return tipCache;
+  };
+  // resolves true when the tip went through, false when cancelled or failed
+  N.tip = async function (id) {
+    const P = IAP(); if (!P) return false;
+    try {
+      const t = await P.purchaseProduct({ productIdentifier: id, productType: 'inapp', quantity: 1, isConsumable: true });
+      return !!(t && (t.transactionId || t.purchaseToken || t.productIdentifier));
+    } catch (e) { return false; }
+  };
+
   // the app's status bar matches the dark frame of the game
   if (N.is()) {
     document.documentElement.classList.add('native', 'native-' + N.platform());

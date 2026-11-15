@@ -6,7 +6,7 @@ download what it makes. On a public repository these builds cost nothing.
 
 The whole game goes inside the app (Bibles and recorded voices too), so it plays offline from the first launch. The app
 also does a few things a web page cannot: haptics, saving your book through the share sheet, keeping the screen on
-while an episode plays or a voice reads, and an optional reminder each morning of Advent.
+while an episode plays or a voice reads, an optional reminder each morning of Advent, and optional tips.
 
 | Workflow (Actions tab) | What it does | When |
 |---|---|---|
@@ -116,6 +116,58 @@ Then choose the TestFlight build and **Submit for Review**.
 
 **One licensing note.** The King James Version is under Crown copyright in the United Kingdom. Either leave the KJV out
 of the copy you publish in the UK store, or publish outside the UK only (App Store Connect → Pricing and Availability).
+
+---
+
+## Tips (optional gifts, from version 1.1)
+
+The apps are free. Players who want to can leave a tip from Settings → Support The Way, from the line under the title
+screen's buttons, or from the one-time note after their third episode. A tip unlocks nothing. Apple and Google require
+tips inside an app to go through their in-app purchase, so the apps use four **consumable** products:
+
+| Product ID | Name in the game | Price |
+|---|---|---|
+| `com.jacobcooper.theway.tip1` | A cup of cold water / Un vaso de agua fría | $0.99 |
+| `com.jacobcooper.theway.tip3` | Bread for the road / Pan para el camino | $2.99 |
+| `com.jacobcooper.theway.tip5` | Oil for the lamp / Aceite para la lámpara | $4.99 |
+| `com.jacobcooper.theway.tip10` | A gift for the journey / Un regalo para el camino | $9.99 |
+
+The code is already in place (`js/support.js`, `js/native.js`, plugin `@capgo/native-purchases`). The apps ask the store
+which of these products exist and show their prices in the player's own currency. **Until you create them, the apps show
+no tip jar at all**, so the first release can go out without tips. The IDs live in `tips` in `js/about.js`; set it to
+`false` to turn tips off.
+
+Tip: send version 1.0 for review without tips, and do the steps below while it is in review. Then release 1.1 with them.
+
+### Apple
+
+1. **App Store Connect → Business** (Agreements, Tax, and Banking): sign the **Paid Apps Agreement**, add your bank
+   account and the tax form (W-9 in the United States). Wait until it shows **Active**; in-app purchases do not work
+   before that, even in testing.
+2. Join the **App Store Small Business Program** (developer.apple.com → App Store Small Business Program). Apple then
+   keeps 15% of each tip instead of 30%.
+3. Your app → **Monetization → In-App Purchases → +**, type **Consumable**. Reference name `Tip 1`, Product ID
+   `com.jacobcooper.theway.tip1`, price $0.99. Add a localization: display name *A cup of cold water*, description
+   *An optional tip to support the game. It unlocks nothing.* Add Spanish too (*Un vaso de agua fría* / *Una propina
+   opcional para apoyar el juego. No desbloquea nada.*). Review information: a screenshot of the tip jar and the note in
+   `app/store/listing.md`. Repeat for the other three.
+4. Build version 1.1 (raise `"version"` in `app/package.json`), run **App · iPhone (TestFlight)**, and try a tip in
+   TestFlight: purchases there are free test purchases.
+5. On the 1.1 version page, under **In-App Purchases**, add the four tips, then submit. Apple reviews the first tips
+   together with that version.
+
+### Google Play
+
+1. **Play Console → Settings → Payments profile**: set it up (bank account and tax details).
+2. Upload a 1.1 build (it carries Google's billing library) to a testing track. Play only lets you create products after
+   such a build has been uploaded.
+3. **Monetize with Play → Products → One-time products → Create**: product ID `com.jacobcooper.theway.tip1`, name, a
+   description, price $0.99, then **Activate**. Repeat for the other three. (The app marks each tip as used up after
+   it goes through, so the same tip can be given again.)
+4. **Settings → License testing**: add your Google account and your testers', so you can try tips without being charged.
+   Testers must install the app from Play (the testing track), not from a downloaded `.apk`.
+
+Google keeps 15% of the first $1 million a year.
 
 ---
 

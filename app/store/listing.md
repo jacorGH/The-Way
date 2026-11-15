@@ -52,8 +52,8 @@ IN ENGLISH AND SPANISH
 • Recorded voices throughout.
 • Four public-domain Bibles: World English Bible, King James Version, American Standard Version and Reina-Valera 1909.
 
-FREE, WITH NOTHING ELSE
-No ads, no accounts, no purchases, no tracking. Everything is inside the app and plays offline.
+FREE, AND STAYS FREE
+No ads, no accounts, nothing to unlock, no tracking. Everything is inside the app and plays offline. If you'd like to support the game, you can leave an optional tip; it unlocks nothing.
 
 ---
 
@@ -112,8 +112,8 @@ CALENDARIO DE ADVIENTO
 EN ESPAÑOL E INGLÉS
 • Voces grabadas en todo el juego. Reina-Valera 1909 y tres Biblias en inglés de dominio público.
 
-GRATIS, SIN NADA MÁS
-Sin anuncios, sin cuentas, sin compras, sin seguimiento. Todo está dentro de la aplicación y funciona sin conexión.
+GRATIS, Y SIEMPRE GRATIS
+Sin anuncios, sin cuentas, nada que desbloquear, sin seguimiento. Todo está dentro de la aplicación y funciona sin conexión. Si quieres apoyar el juego, puedes dejar una propina opcional; no desbloquea nada.
 
 ---
 
@@ -122,7 +122,13 @@ Sin anuncios, sin cuentas, sin compras, sin seguimiento. Todo está dentro de la
 **App Privacy (Apple)**: Data Not Collected.
 **Data safety (Google)**: No data collected, no data shared. Encrypted in transit: not applicable.
 **Ads**: No ads.
-**In-app purchases**: None.
+**In-app purchases**: Four optional tips (consumable), from version 1.1. They unlock nothing. Apple's App Privacy
+answer stays **Data Not Collected**: Apple and Google handle the payment, and the game keeps only a count of tips on the
+device.
+
+**In-app purchase review notes (Apple, for each tip)**: "An optional tip to support the developer. It unlocks no
+content or features; the whole game is free. Found in Settings → Support The Way, and under the buttons on the title
+screen." Review screenshot: the tip jar (Settings → Support The Way → Leave a tip).
 
 **Age rating (Apple)**: answer honestly. Expected result: 9+ or 12+ for "Infrequent/Mild Cartoon or Fantasy Violence"
 (the crucifixion, Stephen's stoning and a shipwreck are shown in pixel art, without blood or gore) and "Infrequent/Mild

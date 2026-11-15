@@ -323,11 +323,12 @@ hands-on moment. (`VG.bth_field` in `js/vignettes.js`.)
 
 ## Gifts
 
-The game is free; `js/support.js` invites players to give. Put the address of your giving page (Ko-fi, Buy Me a Coffee,
-PayPal, GitHub Sponsors…) in `donate` in `js/about.js`. Then the title screen shows "♥ Support it with a gift" under its
-buttons, Settings gets a "Support The Way" section, and after the third finished episode the study page shows a short
-note once. With `donate` empty, none of it appears. The store apps never show it: Apple requires tips to a developer
-inside an iPhone app to go through its own in-app purchase.
+The game is free; `js/support.js` invites players to give. Put your Ko-fi address (`https://ko-fi.com/yourname`) in `donate` in `js/about.js`. Then the title screen shows "♥ Buy it a
+coffee on Ko-fi" under its buttons, Settings gets a "Support The Way" section, and after the third finished episode the study page shows a short
+note once. With `donate` empty, none of it appears. The store apps never show the web link: Apple requires tips to a developer
+inside an iPhone app to go through its own in-app purchase, so the apps open a tip jar instead: four optional tips
+(consumable in-app products, `tips` in `js/about.js`). The tip jar appears only once those products exist in App Store
+Connect and Google Play; `app/README.md` → Tips walks through creating them.
 
 ## Fonts
 
