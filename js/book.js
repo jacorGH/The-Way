@@ -50,21 +50,58 @@ window.TW = window.TW || {};
       '.letter{margin:.8rem 0;padding:.7rem .9rem;border:1px solid #d8c8a4;border-radius:6px;background:#fbf6e8;font-style:italic}.letter p{margin:.25rem 0}.sign{text-align:right}' +
       '.word{margin:.6rem 0;padding:.4rem .7rem;border-left:3px solid #4a6a7a}.q{margin:.5rem 0 0;font-style:italic;color:#5a4a32}.a{margin:.1rem 0 .4rem;padding-left:.8rem;border-left:2px solid #b89f74}.badge{font-size:.75rem;padding:.05rem .4rem;border:1px solid #b89f74;border-radius:9px;color:#6a5a42}' +
       'section{break-inside:avoid}footer{margin-top:2.5rem;border-top:1px solid #d8c8a4;padding-top:1rem}@media print{body{background:#fff}main{padding:0}}';
-    return '<!DOCTYPE html><html lang="' + (es() ? 'es' : 'en') + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>' + esc(T('The account of ', 'El relato de ') + name) + '</title><style>' + css + '</style></head><body><main>' + parts.join('\n') + '</main></body></html>';
+    B.last = { css, body: parts.join('\n'), title: T('The account of ', 'El relato de ') + name };
+    return '<!DOCTYPE html><html lang="' + (es() ? 'es' : 'en') + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>' + esc(B.last.title) + '</title><style>' + css + '</style></head><body><main>' + B.last.body + '</main></body></html>';
   };
-  B.save = function () {
-    const html = B.html();
-    const name = (TW.game.save.name || 'account').replace(/[^\w-]+/g, '-');
-    // in the store apps, through the share sheet (save to Files, print, send)
-    if (TW.Native && TW.Native.is()) { TW.Native.shareFile((es() ? 'relato-' : 'account-') + name + '.html', html, T('The account of ', 'El relato de ') + name); return; }
+  // The book opens inside the game, never as a page of its own: on an iPhone (above all from the home screen) a page
+  // opened that way has no back button, and the player is stuck. From the viewer: print, save or share, close.
+  const fileName = () => (es() ? 'relato-' : 'account-') + (TW.game.save.name || 'account').replace(/[^\w-]+/g, '-') + '.html';
+  B.saveFile = async function (html) {
+    const name = fileName();
+    if (TW.Native && TW.Native.is()) { TW.Native.shareFile(name, html, B.last ? B.last.title : name); return; }
+    try {
+      const f = new File([html], name, { type: 'text/html' });
+      if (navigator.canShare && navigator.canShare({ files: [f] })) { await navigator.share({ files: [f], title: B.last ? B.last.title : name }); return; }
+    } catch (e) { if (e && e.name === 'AbortError') return; }
+    // a computer: download the file (this never leaves the game)
+    if (/iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) return;
     try {
       const a = document.createElement('a');
-      a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
-      a.download = (es() ? 'relato-' : 'account-') + name + '.html';
+      a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' })); a.download = name;
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(() => URL.revokeObjectURL(a.href), 60000);
     } catch (e) { /* ignore */ }
-    try { const w = window.open('', '_blank'); if (w) { w.document.write(html); w.document.close(); } } catch (e) { /* popup blocked */ }
+  };
+  // print just the book: a copy of it in the page, shown only to the printer
+  B.print = function () {
+    if (!B.last) B.html();
+    let box = document.getElementById('print-book');
+    if (!box) { box = document.createElement('div'); box.id = 'print-book'; document.body.appendChild(box); }
+    const scoped = B.last.css.replace(/(^|})\s*([^{}@]+)\{/g, (m, end, sel) => end + sel.split(',').map((x) => '#print-book ' + x.trim().replace(/^body\b/, '').replace(/^main\b/, 'main')).join(',') + '{');
+    box.innerHTML = '<style>' + scoped + '</style><main>' + B.last.body + '</main>';
+    document.body.classList.add('printing-book');
+    const done = () => { document.body.classList.remove('printing-book'); window.removeEventListener('afterprint', done); };
+    window.addEventListener('afterprint', done);
+    setTimeout(() => { try { window.print(); } catch (e) { /* no printing here */ } setTimeout(done, 1500); }, 60);
+  };
+  B.save = function () {
+    const html = B.html();
+    const ov = document.createElement('div'); ov.className = 'book-view'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-label', B.last.title);
+    const bar = document.createElement('div'); bar.className = 'book-bar';
+    const btn = (label, cls, fn) => { const b = document.createElement('button'); b.type = 'button'; b.className = cls; b.textContent = label; b.addEventListener('click', fn); bar.appendChild(b); return b; };
+    const close = () => { ov.remove(); document.removeEventListener('keydown', esc1); };
+    const esc1 = (e) => { if (e.key === 'Escape') close(); };
+    btn(T('‹ Back to the game', '‹ Volver al juego'), 'btn small', close);
+    const sp = document.createElement('span'); sp.className = 'book-sp'; bar.appendChild(sp);
+    const native = TW.Native && TW.Native.is();
+    if (!native) btn(T('Print', 'Imprimir'), 'btn small', B.print);
+    btn(native ? T('Save, print or share', 'Guardar, imprimir o compartir') : T('Save', 'Guardar'), 'btn small primary', () => B.saveFile(html));
+    ov.appendChild(bar);
+    const fr = document.createElement('iframe'); fr.className = 'book-frame'; fr.title = B.last.title;
+    fr.setAttribute('sandbox', 'allow-same-origin'); fr.srcdoc = html;
+    ov.appendChild(fr);
+    document.body.appendChild(ov);
+    document.addEventListener('keydown', esc1);
   };
   B.button = function (el, cls) {
     const b = el('button', cls || 'btn', T('Your book: save or print your account', 'Tu libro: guarda o imprime tu relato'));

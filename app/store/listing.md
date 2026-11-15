@@ -32,7 +32,7 @@ Walk through the Gospels and the early church as an eyewitness: from the night o
 PLAY AS A WITNESS
 • Choose your narrator: Eleazar, a young scribe trained in the Law, or Elisheva, Nicodemus's niece. Or play both accounts.
 • Walk the streets of Capernaum, stand in the crowd, talk with the people who were there, and note what you see.
-• Live remembered scenes: Mary on the night of the birth, the shepherds' field where you sweep your finger across the angels and they sing, the boy Jesus among the teachers.
+• Live remembered scenes: Mary on the night of the birth, the shepherds' field where the angels sing Silent Night and blaze with light at your touch, the boy Jesus among the teachers.
 • At the end of each episode, write your report and decide what you believe about what you saw.
 
 STUDY AS YOU GO
@@ -95,7 +95,7 @@ Recorre los Evangelios y la iglesia primitiva como testigo: desde la noche de su
 JUEGA COMO TESTIGO
 • Elige a tu narrador: Eleazar, un joven escriba instruido en la Ley, o Elisheva, sobrina de Nicodemo. O juega los dos relatos.
 • Recorre las calles de Capernaum, habla con quienes estuvieron allí y anota lo que ves.
-• Vive escenas recordadas: María la noche del nacimiento, el campo de los pastores donde pasas el dedo sobre los ángeles y cantan, el niño Jesús entre los maestros.
+• Vive escenas recordadas: María la noche del nacimiento, el campo de los pastores donde los ángeles cantan Noche de paz y se encienden al tocarlos, el niño Jesús entre los maestros.
 • Al final de cada episodio, escribe tu informe y decide qué crees de lo que viste.
 
 ESTUDIA MIENTRAS JUEGAS
@@ -140,7 +140,7 @@ qualifies (no ads, no data), but it takes longer.
 **Notes for Review (Apple)**:
 No account or sign-in. A Bible study game: walk through the Gospels and Acts as an eyewitness. Fully offline; all
 Scripture, voices and music are inside the app. Try The Birth of Jesus first (timeline → ✦), the Advent calendar on the
-title screen, and the shepherds' field, where you sweep your finger across the angels to make them sing.
+title screen, and the shepherds' field, where the angels sing and light up when you touch them.
 
 ---
 

@@ -14,6 +14,7 @@
   });
   Object.assign(TW.Lines.translations.es, {
     'd-1fe4a829': "Una multitud de los ejércitos celestiales. Pasa el dedo sobre los ángeles, y cantarán.",
+    'd-08f48a73': "Una multitud de los ejércitos celestiales, que alababan a Dios. Toca a los ángeles mientras cantan.",
     'd-a0f04827': "Gloria en las alturas a Dios",
   });
 })(window.TW);

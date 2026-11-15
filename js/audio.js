@@ -171,7 +171,7 @@ window.TW = window.TW || {};
     advent: { root: 67, mode: MAJ, bpm: 56, drone: [43, 50], lyre: 0.35, flute: 0, drum: 0, pad: true, carol: 'faithful' },
     manger: { root: 60, mode: MAJ, bpm: 50, drone: [36, 43], lyre: 0.25, flute: 0, drum: 0, pad: true, carol: 'silent' },
     gloria: { root: 65, mode: MAJ, bpm: 60, drone: [41, 48], lyre: 0.4, flute: 0, drum: 0, pad: true, carol: 'angels' },
-    host: { root: 65, mode: MAJ, bpm: 60, drone: [41, 48, 53], lyre: 0.12, flute: 0, drum: 0, pad: true },
+    host: { root: 60, mode: MAJ, bpm: 60, drone: [36, 43], lyre: 0, flute: 0, drum: 0 },   // only a low C under the host's song
     child: { root: 69, mode: AEO, bpm: 54, drone: [45, 52], lyre: 0.3, flute: 0, drum: 0, pad: true, carol: 'child' },
     kings: { root: 64, mode: AEO, bpm: 58, drone: [40, 47], lyre: 0.35, flute: 0, drum: 0.25, pad: true, carol: 'kings' },
   };
@@ -287,7 +287,7 @@ window.TW = window.TW || {};
     if (ctx) musicBus.gain.setTargetAtTime(musicBase, ctx.currentTime, 0.4);
   };
   // a choir voice: detuned saws through the formants of an open "ah", with a slow swell and vibrato
-  function choirNote(m, t, d, v) {
+  function choirNote(m, t, d, v, dest) {
     const f = mtof(m), out = gain(0.0001), body = gain(1);
     [[800, 6, 1], [1150, 8, 0.55], [2900, 10, 0.18]].forEach(([ff, q, a]) => { const b = filt('bandpass', ff, q), g = gain(a); body.connect(b); b.connect(g); g.connect(out); });
     const lp = filt('lowpass', 1600), lg = gain(0.35); body.connect(lp); lp.connect(lg); lg.connect(out);
@@ -299,7 +299,7 @@ window.TW = window.TW || {};
     });
     out.gain.setValueAtTime(0.0001, t); out.gain.linearRampToValueAtTime(v, t + 0.14); out.gain.setValueAtTime(v, t + d);
     out.gain.exponentialRampToValueAtTime(0.0001, t + d + 0.9);
-    out.connect(musicBus); toRev(out, 1.4);
+    out.connect(dest || musicBus); toRev(out, 1.4);
     oscs.concat([vib]).forEach((o) => { o.start(t); o.stop(t + d + 1); });
   }
   A.choir = function (m, d, v) {
@@ -311,6 +311,58 @@ window.TW = window.TW || {};
     if (!ctx || !A.on || ctx.state !== 'running') return;
     const t = ctx.currentTime + 0.02;
     notes.forEach((m, i) => choirNote(m, t + i * 0.04, d || 3, (v || 0.05)));
+  };
+  // The heavenly host sings a carol: the melody in a choir, a softer voice a third below, and the chords held under it.
+  // onNote(i, midi, seconds) is called as each melody note begins (for the angels to light up), even with the sound off.
+  // Returns { done (a promise), boost(0..1) louder while the player touches the host, descant(on) a voice above, stop(s) }.
+  const SONG_CHORDS = { silent: [['C', 4], ['G', 2], ['C', 2], ['F', 2], ['C', 2], ['F', 2], ['C', 2], ['G', 1], ['G7', 1], ['C', 3], ['G7', 1], ['C', 1.5]] };
+  const CHORD = { C: [48, 55, 60, 64], G: [43, 55, 59, 62], G7: [43, 53, 59, 62], F: [41, 53, 57, 60] };
+  const CMAJ = [0, 2, 4, 5, 7, 9, 11];
+  const third = (m, dir) => {   // the diatonic third above (dir 1) or below (-1), in C major
+    const pc = ((m % 12) + 12) % 12; let i = CMAJ.indexOf(pc); if (i < 0) return m - 3 * dir;
+    const j = i + 2 * dir, oct = Math.floor(j / 7); return m - pc + CMAJ[((j % 7) + 7) % 7] + 12 * oct;
+  };
+  A.song = function (name, opts) {
+    opts = opts || {};
+    const C = CAROLS[name], spb = opts.spb || 0.32, timers = [];
+    let total = 0; C.notes.forEach((n) => { total += n[1] * spb; });
+    let doneRes; const done = new Promise((r) => { doneRes = r; });
+    const live = !!(ctx && A.on && ctx.state === 'running');
+    let bus = null, desc = false, stopped = false;
+    const t0 = live ? ctx.currentTime + 0.25 : 0;
+    if (live) {
+      bus = gain(0.0001); bus.connect(musicBus);
+      bus.gain.setValueAtTime(0.0001, ctx.currentTime); bus.gain.linearRampToValueAtTime(0.75, t0 + 0.6);
+      // the chords: six eighths to a bar
+      let tc = t0; (SONG_CHORDS[name] || []).forEach(([ch, bars]) => {
+        const d = bars * 6 * spb; CHORD[ch].forEach((m, k) => choirNote(m, tc + k * 0.03, d - 0.2, 0.022, bus)); tc += d;
+      });
+    }
+    let tt = 0;
+    C.notes.forEach((n, i) => {
+      const d = n[1] * spb, at = tt;
+      if (live && n[0]) {
+        choirNote(n[0], t0 + at, d * 0.94, 0.075, bus);
+        choirNote(third(n[0], -1), t0 + at, d * 0.94, 0.035, bus);
+      }
+      timers.push(setTimeout(() => {
+        if (stopped) return;
+        if (desc && live && n[0]) choirNote(third(n[0], 1) + 0, ctx.currentTime + 0.01, d * 0.9, 0.04, bus);
+        if (opts.onNote && n[0]) opts.onNote(i, n[0], d);
+      }, (live ? (t0 - ctx.currentTime) : 0) * 1000 + at * 1000));
+      tt += d;
+    });
+    timers.push(setTimeout(() => doneRes('song'), (total + 0.8) * 1000));
+    return {
+      done, length: total,
+      boost: (x) => { if (bus && !stopped) bus.gain.setTargetAtTime(0.75 + 0.6 * Math.max(0, Math.min(1, x)), ctx.currentTime, 0.25); },
+      descant: (on) => { desc = !!on; },
+      stop: (sec) => {
+        if (stopped) return; stopped = true; timers.forEach(clearTimeout);
+        if (bus) { bus.gain.cancelScheduledValues(ctx.currentTime); bus.gain.setTargetAtTime(0.0001, ctx.currentTime, (sec || 1) / 3); }
+        doneRes('stopped');
+      },
+    };
   };
   A.memory = function (on) {
     if (!ctx) return;

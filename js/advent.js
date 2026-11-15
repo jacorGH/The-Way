@@ -211,7 +211,7 @@ window.TW = window.TW || {};
     }
     b.appendChild(acts);
     if (d.day === 25) {
-      const sing = el('p', 'adv-fine fine', es() ? 'En el recuerdo de los pastores puedes pasar el dedo sobre los ángeles y cantar con ellos.' : 'In the shepherds’ memory you can sweep your finger across the angels and sing with them.');
+      const sing = el('p', 'adv-fine fine', es() ? 'En el recuerdo de los pastores, los ángeles cantan Noche de paz: tócalos mientras cantan.' : 'In the shepherds’ memory the angels sing Silent Night: touch them as they sing.');
       b.appendChild(sing);
     }
     ov.scrollTop = 0;

@@ -896,7 +896,7 @@ window.TW = window.TW || {};
       angelFig(fc, 132 - cam, 104 + Math.sin(t * 1.3) * 1.5, s.a, 0, t, 0, 3);
       angels.forEach((a) => {
         a.x += (a.tx - a.x) * Math.min(1, dt * 7); a.y += (a.ty - a.y) * Math.min(1, dt * 7);
-        a.flash = Math.max(0, a.flash - dt * 1.4);
+        a.flash = Math.max(0, a.flash - dt * 0.9);
         const nd = finger ? Math.max(0, 1 - Math.hypot(a.x - finger.x, a.y - 4 - finger.y) / 46) : 0;
         a.near += (nd - a.near) * Math.min(1, dt * 8);
         angelFig(fc, a.x - cam, a.y + Math.sin(t * 1.6 + a.ph) * 1.2, host.a, Math.min(1, a.flash + a.near * 0.4), t, a.ph, 2);
@@ -912,49 +912,47 @@ window.TW = window.TW || {};
       st.lights.push(L);
     });
     const sh = [0, 1, 2].map((i) => add(S.person({ skin: '#9a6440', hair: '#2a1a12', beard: i === 2 ? null : '#2a1a12', tunic: ['#6a5a42', '#7a6a4a', '#5a4a3a'][i], mantle: ['#4a3e30', '#3a3226', '#5a4e40'][i] }), 112 + i * 16, 148, { pose: 'sit', facing: i ? -1 : 1, speed: 24 }));
-    // Swept by a finger, the host sings the long "Gloria" of Angels We Have Heard on High, one note per angel touched;
-    // the touched angel follows the finger and blazes, and the music swells as the song goes on.
+    // The host sings Silent Night ("heavenly hosts sing Alleluia") by itself, in time. Each note lights the angel singing
+    // it, the light passing across the host and back. Touch the angels while they sing: the one under your finger blazes
+    // and follows it, a voice above joins the song, and the whole host grows louder while you touch it.
     const sing = async () => {
       if (TW.TURBO) return;
-      const AU = TW.Audio, G = AU && AU.GLORIA ? AU.GLORIA : [72, 74, 72, 70, 69, 70, 72, 69];
+      const AU = TW.Audio;
       const fx = SC.fx, ta0 = fx.style.touchAction;
       fx.style.touchAction = 'none'; SC.mode = 'sweep';
       // the memory comes alive: full color, and the music no longer muffled
       SC.el.stage.classList.add('vivid'); if (AU) AU.memory(false);
-      let idx = 0, down = false, last = null, finishRes = null;
-      const finished = new Promise((r) => { finishRes = r; });
+      let down = false, held = null;
+      const order = angels.slice().sort((p, q) => p.hx - q.hx);
+      const path = order.concat(order.slice(1, -1).reverse());   // across the host and back
+      const song = AU && AU.song ? AU.song('silent', {
+        onNote: (i, m, d) => {
+          const a = path[i % path.length];
+          a.flash = Math.max(a.flash, a === held ? 1 : 0.75);
+          if (a === held && TW.Native) TW.Native.haptic('light');
+        },
+      }) : { done: W(30000).then(() => 'song'), boost() {}, descant() {}, stop() {} };
       const pt = (ev) => { const r = fx.getBoundingClientRect(); return { x: ((ev.clientX - r.left) / r.width) * SC.W + SC.cam, y: ((ev.clientY - r.top) / r.height) * SC.H }; };
-      const nearest = (p) => { let best = null, bd = 20; angels.forEach((a) => { const d = Math.hypot(a.x - p.x, a.y - 4 - p.y); if (d < bd) { bd = d; best = a; } }); return best; };
-      const singOn = (a) => {
-        if (idx >= G.length) return;
-        const m = G[idx++];
-        if (AU) { AU.choir(m, 0.45, 0.06 + 0.05 * (idx / G.length)); AU.swell(idx / G.length); }
-        a.flash = 1;
-        if (TW.Native) TW.Native.haptic('light');
-        if (idx >= G.length) finishRes('song');
-      };
-      const onDown = (ev) => { down = true; try { fx.setPointerCapture(ev.pointerId); } catch (e) { /* ignore */ } const p = pt(ev); finger = p; const a = nearest(p); if (a) { last = a; singOn(a); } };
+      const nearest = (p) => { let best = null, bd = 22; angels.forEach((a) => { const d = Math.hypot(a.x - p.x, a.y - 4 - p.y); if (d < bd) { bd = d; best = a; } }); return best; };
+      const touch = (a) => { if (!a) return; if (a !== held) { held = a; a.flash = 1; TW.Native && TW.Native.haptic('light'); } song.boost(1); song.descant(true); };
+      const onDown = (ev) => { down = true; try { fx.setPointerCapture(ev.pointerId); } catch (e) { /* ignore */ } const p = pt(ev); finger = p; touch(nearest(p)); };
       const onMove = (ev) => {
         const p = pt(ev); finger = p;
         if (!down) return;
-        const a = nearest(p);
-        if (a && a !== last) { last = a; singOn(a); }
-        if (last) { last.tx = Math.max(8, Math.min(248, p.x)); last.ty = Math.max(14, Math.min(76, p.y + 4)); }
+        const a = nearest(p); if (a && a !== held) touch(a);
+        if (held) { held.tx = Math.max(8, Math.min(248, p.x)); held.ty = Math.max(14, Math.min(76, p.y + 4)); held.flash = Math.max(held.flash, 0.9); }
       };
-      const onUp = () => { down = false; finger = null; last = null; angels.forEach((a) => { a.tx = a.hx; a.ty = a.hy; }); };
+      const onUp = () => { down = false; finger = null; held = null; song.boost(0); song.descant(false); angels.forEach((a) => { a.tx = a.hx; a.ty = a.hy; }); };
       fx.addEventListener('pointerdown', onDown); fx.addEventListener('pointermove', onMove);
       fx.addEventListener('pointerup', onUp); fx.addEventListener('pointercancel', onUp); fx.addEventListener('pointerleave', onUp);
-      const how = await Promise.race([finished, SC.prompt('A multitude of the heavenly host. Sweep your finger across the angels, and they will sing.', 'Glory to God in the highest').then(() => 'button')]);
-      SC.el.choices.innerHTML = ''; SC.mode = 'sweep';
-      if (how === 'button') {
-        // the rest of the song, sung across the whole host
-        while (idx < G.length) { singOn(angels[idx % angels.length]); await W(330); }
-      }
+      const how = await Promise.race([song.done, SC.prompt('A multitude of the heavenly host, praising God. Touch the angels as they sing.', 'Glory to God in the highest', 'sweep').then(() => 'button')]);
+      SC.el.choices.innerHTML = ''; SC.mode = 'sweep';   // (in 'script' mode a touch on the stage would press the button)
+      if (how === 'button') song.stop(1.4);
       fx.removeEventListener('pointerdown', onDown); fx.removeEventListener('pointermove', onMove);
       fx.removeEventListener('pointerup', onUp); fx.removeEventListener('pointercancel', onUp); fx.removeEventListener('pointerleave', onUp);
       onUp();
       // all together: the whole chord, every angel ablaze
-      if (AU) { AU.chorus([53, 57, 60, 65, 69, 72, 77], 3.2, 0.05); AU.sfx('shimmer'); }
+      if (AU) { AU.chorus([48, 55, 60, 64, 67, 72, 76], 3.4, 0.05); AU.sfx('shimmer'); }
       angels.forEach((a) => { a.flash = 1; });
       sh.forEach((x) => { x.pose = 'raise'; });
       await W(2800);
