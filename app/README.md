@@ -20,6 +20,16 @@ chooses: circle, squircle, rounded square) is built from `icons/android-foregrou
 every shape keeps) over `icons/android-background.png` (a soft, enlarged copy of it). To change the icon, replace those
 files and run the workflows again.
 
+**What the apps do that the web game does not.** They are iPhone-sized and held upright (portrait); an iPad runs the
+iPhone app, so the store needs no iPad screenshots. Android's back button closes what is open, then steps back a screen
+(scene → map → timeline → title), then leaves the app. The journey is also copied into the app's own storage as you
+play and put back if the phone ever clears the web storage. Music and voices play with the silent switch on, like a
+podcast app. Backups, your book and the leader's guide are saved through the share sheet. About shows the version and
+build number, which helps when testers report something.
+
+**Size.** The recordings make the app about 300 MB. Google Play allows 500 MB for an app like this; the App Store has
+no limit, but above 200 MB an iPhone on mobile data asks before downloading.
+
 The version people see comes from `"version"` in `app/package.json` (now 1.0.0). Raise it for each store release; the
 build number goes up by itself.
 

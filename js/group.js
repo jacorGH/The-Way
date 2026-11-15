@@ -51,12 +51,14 @@ window.TW = window.TW || {};
       parts.push('</section>');
     });
     const css = 'body{margin:0;background:#fff;color:#222;font:16px/1.55 Georgia,"Times New Roman",serif}main{max-width:44rem;margin:0 auto;padding:1.6rem 1.2rem 3rem}h1{margin:.2rem 0;font-size:1.8rem}h2{margin:2rem 0 .1rem;padding-top:1rem;border-top:2px solid #b89f74;font-size:1.3rem}h4{margin:.9rem 0 .2rem;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:#6a5a42}.kick{margin:0;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#7a6a52}.ref{color:#555;font-style:italic;margin:.1rem 0}.big{font-size:1.15rem}section{break-inside:avoid-page}ol,ul{padding-left:1.3rem}li{margin:.2rem 0}';
+    G.last = { css, body: parts.join('\n'), title: T('Leader’s guide', 'Guía para el líder') };
     return '<!DOCTYPE html><html lang="' + (es() ? 'es' : 'en') + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>' + esc(T('Leader’s guide', 'Guía para el líder')) + '</title><style>' + css + '</style></head><body><main>' + parts.join('\n') + '</main></body></html>';
   };
+  // opens in the game's own reader (print, save or share, back): a page of its own would strand an iPhone player
   G.openGuide = function (keys) {
     const html = G.guide(keys);
-    try { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' })); a.download = (es() ? 'guia-' : 'leader-guide-') + (keys.length === 1 ? keys[0] : 'all') + '.html'; document.body.appendChild(a); a.click(); a.remove(); } catch (e) { /* ignore */ }
-    try { const w = window.open('', '_blank'); if (w) { w.document.write(html); w.document.close(); } } catch (e) { /* popup blocked */ }
+    const file = (es() ? 'guia-' : 'leader-guide-') + (keys.length === 1 ? keys[0] : 'all') + '.html';
+    if (TW.Book && TW.Book.view) TW.Book.view({ html, css: G.last.css, body: G.last.body, title: G.last.title, file });
   };
 
   // on the study page, in group mode: show the questions to the room, and the leader's guide for this episode

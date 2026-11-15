@@ -56,12 +56,12 @@ window.TW = window.TW || {};
   // The book opens inside the game, never as a page of its own: on an iPhone (above all from the home screen) a page
   // opened that way has no back button, and the player is stuck. From the viewer: print, save or share, close.
   const fileName = () => (es() ? 'relato-' : 'account-') + (TW.game.save.name || 'account').replace(/[^\w-]+/g, '-') + '.html';
-  B.saveFile = async function (html) {
-    const name = fileName();
-    if (TW.Native && TW.Native.is()) { TW.Native.shareFile(name, html, B.last ? B.last.title : name); return; }
+  B.saveFile = async function (html, file, title) {
+    const name = file || fileName(); title = title || (B.last ? B.last.title : name);
+    if (TW.Native && TW.Native.is()) { TW.Native.shareFile(name, html, title); return; }
     try {
       const f = new File([html], name, { type: 'text/html' });
-      if (navigator.canShare && navigator.canShare({ files: [f] })) { await navigator.share({ files: [f], title: B.last ? B.last.title : name }); return; }
+      if (navigator.canShare && navigator.canShare({ files: [f] })) { await navigator.share({ files: [f], title }); return; }
     } catch (e) { if (e && e.name === 'AbortError') return; }
     // a computer: download the file (this never leaves the game)
     if (/iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) return;
@@ -73,20 +73,22 @@ window.TW = window.TW || {};
     } catch (e) { /* ignore */ }
   };
   // print just the book: a copy of it in the page, shown only to the printer
-  B.print = function () {
-    if (!B.last) B.html();
+  B.print = function (doc) {
+    doc = doc || B.last || (B.html(), B.last);
     let box = document.getElementById('print-book');
     if (!box) { box = document.createElement('div'); box.id = 'print-book'; document.body.appendChild(box); }
-    const scoped = B.last.css.replace(/(^|})\s*([^{}@]+)\{/g, (m, end, sel) => end + sel.split(',').map((x) => '#print-book ' + x.trim().replace(/^body\b/, '').replace(/^main\b/, 'main')).join(',') + '{');
-    box.innerHTML = '<style>' + scoped + '</style><main>' + B.last.body + '</main>';
+    const scoped = doc.css.replace(/(^|})\s*([^{}@]+)\{/g, (m, end, sel) => end + sel.split(',').map((x) => '#print-book ' + x.trim().replace(/^body\b/, '').replace(/^main\b/, 'main')).join(',') + '{');
+    box.innerHTML = '<style>' + scoped + '</style><main>' + doc.body + '</main>';
     document.body.classList.add('printing-book');
     const done = () => { document.body.classList.remove('printing-book'); window.removeEventListener('afterprint', done); };
     window.addEventListener('afterprint', done);
     setTimeout(() => { try { window.print(); } catch (e) { /* no printing here */ } setTimeout(done, 1500); }, 60);
   };
-  B.save = function () {
-    const html = B.html();
-    const ov = document.createElement('div'); ov.className = 'book-view'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-label', B.last.title);
+  B.save = function () { const html = B.html(); B.view({ html, css: B.last.css, body: B.last.body, title: B.last.title }); };
+  // any printable page of the game (your book, the leader's guide), read inside the game
+  B.view = function (doc) {
+    const html = doc.html;
+    const ov = document.createElement('div'); ov.className = 'book-view'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-label', doc.title);
     const bar = document.createElement('div'); bar.className = 'book-bar';
     const btn = (label, cls, fn) => { const b = document.createElement('button'); b.type = 'button'; b.className = cls; b.textContent = label; b.addEventListener('click', fn); bar.appendChild(b); return b; };
     const close = () => { ov.remove(); document.removeEventListener('keydown', esc1); };
@@ -94,10 +96,10 @@ window.TW = window.TW || {};
     btn(T('‹ Back to the game', '‹ Volver al juego'), 'btn small', close);
     const sp = document.createElement('span'); sp.className = 'book-sp'; bar.appendChild(sp);
     const native = TW.Native && TW.Native.is();
-    if (!native) btn(T('Print', 'Imprimir'), 'btn small', B.print);
-    btn(native ? T('Save, print or share', 'Guardar, imprimir o compartir') : T('Save', 'Guardar'), 'btn small primary', () => B.saveFile(html));
+    if (!native) btn(T('Print', 'Imprimir'), 'btn small', () => B.print(doc));
+    btn(native ? T('Save, print or share', 'Guardar, imprimir o compartir') : T('Save', 'Guardar'), 'btn small primary', () => B.saveFile(html, doc.file, doc.title));
     ov.appendChild(bar);
-    const fr = document.createElement('iframe'); fr.className = 'book-frame'; fr.title = B.last.title;
+    const fr = document.createElement('iframe'); fr.className = 'book-frame'; fr.title = doc.title;
     fr.setAttribute('sandbox', 'allow-same-origin'); fr.srcdoc = html;
     ov.appendChild(fr);
     document.body.appendChild(ov);

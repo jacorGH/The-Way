@@ -1,7 +1,7 @@
 /* Copyright © 2026 Jacob Cooper. All rights reserved; see LICENSE.md. */
 /* The Way — the few things the store apps (iPhone and Android, built with Capacitor; see app/README.md) do that a web
-   page cannot: a light touch of the phone's haptics, the share sheet for files, Advent reminders, and keeping the screen
-   on during play.
+   page cannot: a light touch of the phone's haptics, the share sheet for files, Advent reminders, keeping the screen
+   on during play, tips, a safe copy of your journey in the app's own storage, and Android's back button.
    On the web every call here quietly does the web's best (or nothing). */
 window.TW = window.TW || {};
 (function (TW) {
@@ -114,6 +114,80 @@ window.TW = window.TW || {};
       return !!(t && (t.transactionId || t.purchaseToken || t.productIdentifier));
     } catch (e) { return false; }
   };
+
+  // ---------- keeping your journey safe ----------
+  // An app's web storage can be cleared by the phone when space runs low. In the apps, the journey (and your settings)
+  // is copied into the app's own preferences as you play; if web storage ever comes back empty, it is put back.
+  const KEEP = ['the-way.save.v1', 'the-way.settings', 'the-way.sound', 'the-way.read', 'the-way.voices', 'the-way.recorded'];
+  const BACKUP = 'the-way.backup';
+  let lastBackup = '';
+  N.backup = async function () {
+    const P = N.is() && plugin('Preferences'); if (!P) return;
+    const o = {};
+    try { KEEP.forEach((k) => { const v = localStorage.getItem(k); if (v != null) o[k] = v; }); } catch (e) { return; }
+    if (!o['the-way.save.v1']) return;          // never write an empty journey over a good one
+    const v = JSON.stringify(o); if (v === lastBackup) return;
+    try { await P.set({ key: BACKUP, value: v }); lastBackup = v; } catch (e) { /* try again later */ }
+  };
+  N.restore = async function () {
+    const P = N.is() && plugin('Preferences'); if (!P) return false;
+    let have = null; try { have = localStorage.getItem('the-way.save.v1'); } catch (e) { return false; }
+    if (have) return false;
+    try {
+      const r = await P.get({ key: BACKUP }); if (!r || !r.value) return false;
+      const o = JSON.parse(r.value); if (!o['the-way.save.v1']) return false;
+      Object.keys(o).forEach((k) => localStorage.setItem(k, o[k]));
+      location.reload(); return true;
+    } catch (e) { return false; }
+  };
+  if (N.is()) {
+    N.restore().then((back) => { if (!back) { N.backup(); setInterval(N.backup, 15000); } });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) N.backup(); });
+  }
+
+  // ---------- Android's back button ----------
+  // Close whatever is open on top, then step back one screen (scene → map → timeline → title); from the title, the app
+  // goes to the background, as Android apps do.
+  N.back = function () {
+    const vis = (e) => e && !e.hidden && e.getClientRects().length > 0;
+    const top = [...document.querySelectorAll('.room, .book-view, .tip-jar, .verse-game, #o-voice, .resume-sheet')].filter(vis).pop();   // the last opened is on top
+    if (top) {
+      const b = top.querySelector('[data-close], .room-close, .vg-close, .book-bar .btn, .tip-head .btn-text, .btn-text');
+      if (b) b.click(); else top.remove();
+      return true;
+    }
+    const ov = [...document.querySelectorAll('.overlay')].filter((o) => !o.hidden).pop();
+    if (ov) {
+      if (ov.id === 'o-advent' && TW.Advent && TW.Advent.close) { TW.Advent.close(); return true; }
+      if (ov.id === 'o-study') { const b = [...ov.querySelectorAll('button.btn')].find((x) => /^(Back to|Volver a)/.test(x.textContent)); if (b) { b.click(); return true; } }
+      const b = ov.querySelector('[data-close]');
+      if (b) { b.click(); return true; }
+      if (ov.id === 'o-report') return true;     // a report is finished with its own buttons
+      ov.hidden = true; return true;
+    }
+    const g = TW.game, sc = g && g.screen;
+    const click = (q) => { const b = document.querySelector(q); if (b) { b.click(); return true; } return false; };
+    if (sc === 'scene') return click('#btn-leave');
+    if (sc === 'map') return click('#s-map [data-go="timeline"]');
+    if (sc === 'timeline') return click('#s-timeline [data-go="title"]');
+    if (sc === 'prologue') { g.show('title'); return true; }
+    return false;
+  };
+  if (N.is() && N.platform() === 'android') {
+    const A = plugin('App');
+    if (A && A.addListener) A.addListener('backButton', () => { if (!N.back()) { try { A.minimizeApp(); } catch (e) { /* ignore */ } } });
+  }
+
+  // ---------- the app's version, for About ----------
+  N.version = async function () {
+    const A = N.is() && plugin('App'); if (!A) return '';
+    try { const i = await A.getInfo(); return i.version + ' (' + i.build + ')'; } catch (e) { return ''; }
+  };
+
+  // ---------- sound with the ring/silent switch on ----------
+  // Web audio on an iPhone follows the silent switch, so a phone left on silent heard no music. As a game whose voices
+  // and music are the point, The Way plays like a video or a podcast app: through the speaker even on silent.
+  try { if (navigator.audioSession && N.platform() !== 'android') navigator.audioSession.type = 'playback'; } catch (e) { /* not supported */ }
 
   // the app's status bar matches the dark frame of the game
   if (N.is()) {

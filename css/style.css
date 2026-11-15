@@ -641,3 +641,9 @@ canvas.portrait { float: left; width: 52px; height: auto; margin: 0.1rem 0.55rem
 }
 .book-bar .btn { color: #f4ecd8; background: transparent; border: 1px solid #b89f74; }
 .book-bar .btn.primary { background: #d9b968; color: #2a2016; border-color: #d9b968; }
+
+/* ---- feeling like an app ---- */
+html { touch-action: manipulation; }                 /* no double-tap zoom while tapping quickly through lines */
+canvas, .stage, .map-holder { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }   /* no "Save image" on a long press */
+html.native { -webkit-tap-highlight-color: transparent; }
+html.native button, html.native .bar, html.native .screen:not(.paper-screen), html.native .title-block { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }

@@ -38,7 +38,7 @@ platform :ios do
       configuration: "Release",
       export_method: "app-store",
       export_options: { provisioningProfiles: { app_id => profile } },
-      xcargs: "CURRENT_PROJECT_VERSION=#{ENV.fetch('BUILD_NUMBER')} MARKETING_VERSION=#{ENV.fetch('APP_VERSION')}",
+      xcargs: "CURRENT_PROJECT_VERSION=#{ENV.fetch('BUILD_NUMBER')} MARKETING_VERSION=#{ENV.fetch('APP_VERSION')} TARGETED_DEVICE_FAMILY=1",
       output_directory: "build",
       output_name: "TheWay.ipa"
     )

@@ -719,6 +719,8 @@ window.TW = window.TW || {};
     return box;
   }
   function download(name, text, type) {
+    // in the apps a download link does nothing: the share sheet saves the file instead (Save to Files, Drive, Mail…)
+    if (TW.Native && TW.Native.is()) { TW.Native.shareFile(name, text, name); return; }
     try {
       const a = document.createElement('a');
       a.href = URL.createObjectURL(new Blob([text], { type: type || 'application/json' }));
@@ -818,6 +820,7 @@ window.TW = window.TW || {};
     body.appendChild(el('p', '', (TW.Settings.get('lang') === 'es' ? 'El Camino: Relato de un testigo' : TW.ABOUT.title) + ' · © ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '.'));
     body.appendChild(el('p', '', TW.ABOUT.summary));
     body.appendChild(el('p', 'empty', (TW.Settings.get('lang') === 'es' ? 'Los términos completos están en LICENSE.md, junto con el juego. Para permisos: ' : 'Full terms are in LICENSE.md with the game. For permissions: ') + TW.ABOUT.contact + '.'));
+    if (TW.Native && TW.Native.is()) { const vp = el('p', 'fine'); body.appendChild(vp); TW.Native.version().then((v) => { if (v) vp.textContent = (TW.Settings.get('lang') === 'es' ? 'Versión ' : 'Version ') + v; }); }
     section(body, 'Your progress');
     const row = el('div', 'set-buttons');
     const back = el('button', 'btn small', T('Back up progress')); back.type = 'button';
