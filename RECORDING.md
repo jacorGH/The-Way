@@ -173,3 +173,19 @@ originals), keeping the same file names, and commits the result. Files already a
 the quality, edit `KBPS` at the top of the workflow (56 or 64 sound a little fuller). You can also run it by hand from
 the repository's Actions tab (Compress audio → Run workflow). The script itself is `tools/compress-audio.sh`.
 Phones that already saved recordings for offline play keep their old copies until they are cleared.
+
+## If recordings land in the wrong folder
+
+The game only plays recordings from `audio/en/` and `audio/es/`. The **Tidy audio** workflow puts them there: recordings
+pushed to `en/` or `es/` at the top of the repository move into `audio/`, Scripture recordings move to their Bible's
+language (`s-WEB`, `s-KJV`, `s-ASV` to English; `s-RV1909` to Spanish), copies already in place are removed, and
+everything is compressed. It runs by itself when recordings land in `en/` or `es/`, and from the Actions tab (or
+GitMobile → Run a workflow) any time.
+
+## Recordings cut short
+
+Now and then the voice model leaves off the end of a line. TTS Studio checks every take: a line that comes back much
+shorter than its text should take is recorded again (up to three takes, keeping the longest), and any that still sound
+short are listed under the progress line for you to listen to. `dub/en/zz-recheck.json` and `dub/es/zz-recheck.json`
+list the existing recordings that measured short (18 English, 25 Spanish); tap Re-record on that row in TTS Studio.
+

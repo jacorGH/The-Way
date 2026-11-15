@@ -468,6 +468,12 @@
    "title": "Testimony: Zacchaeus",
    "lines": 13,
    "characters": 1738
+  },
+  {
+   "file": "zz-recheck.json",
+   "title": "Check: recordings that may be cut short (re-record)",
+   "lines": 18,
+   "characters": 2581
   }
  ]
 }

@@ -1,0 +1,65 @@
+# Puts recordings where the game looks for them, then compresses them.
+#  · audio/en/ and audio/es/ are the only places the game plays from. A TTS Studio ZIP pushed into the repository's
+#    top level (en/ and es/ next to index.html) is moved into audio/; a copy that is already in audio/ is removed.
+#  · Scripture belongs to its Bible's language: s-WEB, s-KJV and s-ASV recordings go to audio/en/,
+#    s-RV1909 recordings to audio/es/, whichever folder they were saved in.
+# Runs by itself when recordings land in en/ or es/, and from the Actions tab (or GitMobile → Run a workflow) any time.
+name: Tidy audio
+on:
+  push:
+    paths:
+      - 'en/**/*.mp3'
+      - 'es/**/*.mp3'
+  workflow_dispatch:
+env:
+  KBPS: 48
+permissions:
+  contents: write
+concurrency:
+  group: compress-audio
+  cancel-in-progress: false
+jobs:
+  tidy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Move recordings into audio/
+        run: |
+          moved=0; dropped=0
+          mkdir -p audio/en audio/es
+          place() {  # place <file> <lang>: move it into audio/<lang>/, or drop it if a copy is already there
+            local f="$1" lang="$2" name; name=$(basename "$f")
+            if [ "$f" = "audio/$lang/$name" ]; then return; fi
+            if [ -e "audio/$lang/$name" ]; then git rm -q "$f"; dropped=$((dropped + 1));
+            else git mv "$f" "audio/$lang/$name"; moved=$((moved + 1)); fi
+          }
+          langof() {  # the folder a recording belongs in: Scripture by its Bible, everything else by where it was saved
+            case "$(basename "$1")" in
+              s-RV*) echo es ;;
+              s-WEB-*|s-KJV-*|s-ASV-*) echo en ;;
+              *) echo "$2" ;;
+            esac
+          }
+          for lang in en es; do
+            if [ -d "$lang" ]; then
+              while IFS= read -r -d '' f; do place "$f" "$(langof "$f" "$lang")"; done < <(find "$lang" -type f -name '*.mp3' -print0)
+            fi
+            while IFS= read -r -d '' f; do
+              want=$(langof "$f" "$lang"); [ "$want" != "$lang" ] && place "$f" "$want"
+            done < <(find "audio/$lang" -type f -name 's-*.mp3' -print0)
+          done
+          echo "Moved $moved recordings into audio/, removed $dropped copies that were already there."
+          echo "MOVED=$moved" >> "$GITHUB_ENV"; echo "DROPPED=$dropped" >> "$GITHUB_ENV"
+          ls audio/en | wc -l | xargs echo "audio/en now holds"; ls audio/es | wc -l | xargs echo "audio/es now holds"
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Compress recordings above ${{ env.KBPS }} kbps
+        run: bash tools/compress-audio.sh "$KBPS" audio
+      - name: Commit
+        run: |
+          git add -A audio en es 2>/dev/null || git add -A audio
+          if git diff --cached --quiet; then echo "Everything was already in place."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Tidy audio: move ${MOVED} recordings into audio/, remove ${DROPPED} duplicates, compress"
+          git push

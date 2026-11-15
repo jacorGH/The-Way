@@ -469,6 +469,12 @@
    "characters": 850
   },
   {
+   "file": "zz-recheck.json",
+   "title": "Check: recordings that may be cut short (re-record)",
+   "lines": 25,
+   "characters": 3374
+  },
+  {
    "file": "scripture-es-RV1909.json",
    "title": "Escritura (Reina-Valera 1909)",
    "lines": 730,
