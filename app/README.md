@@ -14,6 +14,12 @@ while an episode plays or a voice reads, and an optional reminder each morning o
 | **App · Android upload key (run once)** | Makes your Android upload key, encrypts it with your password, saves it in `app/keys/` | Once |
 | **App · iPhone (TestFlight)** | Builds the iPhone app on GitHub's Mac, signs it and sends it to TestFlight | Every release |
 
+**Icons.** `icons/icon-1024.png` is the master: full square, no transparency, because iPhone and Android round the
+corners themselves. The iPhone icon and Android's older icon come from it. Android's adaptive icon (the shape each phone
+chooses: circle, squircle, rounded square) is built from `icons/android-foreground.png` (the artwork, inside the area
+every shape keeps) over `icons/android-background.png` (a soft, enlarged copy of it). To change the icon, replace those
+files and run the workflows again.
+
 The version people see comes from `"version"` in `app/package.json` (now 1.0.0). Raise it for each store release; the
 build number goes up by itself.
 
@@ -44,8 +50,8 @@ build number goes up by itself.
 1. Make a developer account at [play.google.com/console](https://play.google.com/console) ($25, once). Choose a
    personal account.
 2. **Create app**: name *The Way: An Eyewitness Account*, game, free.
-3. Fill in the store listing: short and full description, the icon (`icons/icon-512.png`), a feature graphic
-   (1024 × 500), and phone screenshots. Privacy policy URL: `https://<you>.github.io/<repo>/privacy.html`.
+3. Fill in the store listing: short and full description, the icon (`icons/icon-512.png`), the feature graphic
+   (`app/store/feature-graphic.png`, 1024 × 500), and phone screenshots. Privacy policy URL: `https://<you>.github.io/<repo>/privacy.html`.
 4. **App content**: privacy policy, no ads, content rating questionnaire (answer honestly: it shows Bible events,
    including the crucifixion, without gore), target audience, data safety (the app collects and shares **no data**).
 5. **Testing → Closed testing → Create track.** Upload the `.aab`. Add testers by email (12 or more: friends, family,
