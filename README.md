@@ -321,6 +321,19 @@ angels: each angel touched sings the next note of the "Gloria" of *Angels We Hav
 turns from sepia to full color. The button sings the rest for anyone who would rather listen. Finishing it counts as a
 hands-on moment. (`VG.bth_field` in `js/vignettes.js`.)
 
+## Gifts
+
+The game is free; `js/support.js` invites players to give. Put the address of your giving page (Ko-fi, Buy Me a Coffee,
+PayPal, GitHub Sponsors…) in `donate` in `js/about.js`. Then the title screen shows "♥ Support it with a gift" under its
+buttons, Settings gets a "Support The Way" section, and after the third finished episode the study page shows a short
+note once. With `donate` empty, none of it appears. The store apps never show it: Apple requires tips to a developer
+inside an iPhone app to go through its own in-app purchase.
+
+## Fonts
+
+Cinzel and EB Garamond are in `fonts/` (SIL Open Font License, `fonts/OFL-*.txt`), trimmed to the Latin and Greek
+letters the game uses, so the lettering is the same offline and in the apps. Nothing is loaded from Google.
+
 ## A verse to keep
 
 `js/verses.js`: every episode has one key verse (`TW.Verses.REF`), shown on its study page in the Bible you chose. "Learn

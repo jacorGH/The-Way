@@ -7,15 +7,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#2e2a27">
 <title>The Way: An Eyewitness Account</title>
+<meta name="description" content="A Bible study you play: walk the Gospels and the early church as an eyewitness. Free, no ads, in English and Spanish.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Way: An Eyewitness Account">
+<meta property="og:description" content="A Bible study you play: walk the Gospels and the early church as an eyewitness. Free, no ads, in English and Spanish.">
+<meta property="og:url" content="https://jacorgh.github.io/The-Way/">
+<meta property="og:image" content="https://jacorgh.github.io/The-Way/app/store/feature-graphic.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="The Way">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/EBGaramond.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/Cinzel.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -52,6 +60,7 @@
         <button id="btn-title-lang" class="btn-text" type="button" lang="es">Español</button>
       </div>
       <p id="lang-status" class="fine" hidden></p>
+      <p class="support-line" id="support-line" hidden></p>
       <p class="fine" id="copyright"></p>
       <p class="fine" id="bible-credit">Scripture quotations are from the World English Bible, which is in the public domain.</p>
     </div>
@@ -324,6 +333,7 @@
 <script src="js/birth-study.js"></script>
 <script src="js/advent.js"></script>
 <script src="js/verses.js"></script>
+<script src="js/support.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

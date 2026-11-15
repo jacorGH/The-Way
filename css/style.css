@@ -1,4 +1,8 @@
 /* The Way — basalt, papyrus, iron-gall ink, lapis, madder, ochre */
+/* The game's lettering travels with it (SIL Open Font License; see fonts/OFL-*.txt), so it looks the same offline. */
+@font-face { font-family: "EB Garamond"; src: url("../fonts/EBGaramond.woff") format("woff"); font-weight: 400 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "EB Garamond"; src: url("../fonts/EBGaramond-Italic.woff") format("woff"); font-weight: 400 800; font-style: italic; font-display: swap; }
+@font-face { font-family: Cinzel; src: url("../fonts/Cinzel.woff") format("woff"); font-weight: 400 900; font-style: normal; font-display: swap; }
 :root {
   --basalt: #2e2a27;
   --basalt-2: #3d3835;
@@ -603,3 +607,10 @@ canvas.portrait { float: left; width: 52px; height: auto; margin: 0.1rem 0.55rem
 .adv-spark { position: fixed; z-index: 99; width: 5px; height: 5px; margin: -2px; background: #ffe9a0; box-shadow: 0 0 6px #ffd860; pointer-events: none; animation: adv-spark 1s ease-out forwards; }
 @keyframes adv-spark { from { transform: translate(0, 0); opacity: 1; } to { transform: translate(var(--dx), var(--dy)) scale(0.3); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .adv-banner, .adv-banner.fresh, .adv-banner::after, .adv-dot.now, .adv-bigstar { animation: none; } }
+
+/* ---- support: a quiet invitation to give ---- */
+.support-line { margin: 0.9rem auto 0.2rem; max-width: 24rem; font-size: 0.95rem; color: var(--on-basalt-soft); }
+.support-link { color: #f3cf5a; text-decoration: none; border-bottom: 1px solid rgba(243, 207, 90, 0.5); white-space: nowrap; }
+.support-link:active { opacity: 0.7; }
+.support-note { margin: 1.2rem 0; padding: 0.8rem 1rem; border: 1px solid #c9a85a; border-left: 4px solid #b88a3d; background: rgba(255, 248, 228, 0.45); border-radius: 4px; }
+.support-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.4rem 0; }

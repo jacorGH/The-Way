@@ -6,5 +6,7 @@ TW.ABOUT = {
   holder: 'Jacob Cooper',
   year: 2026,
   contact: 'jacoblc22@gmail.com',
+  // the page where people can give a gift (Ko-fi, Buy Me a Coffee, PayPal, GitHub Sponsors…); empty hides every ask
+  donate: '',
   summary: 'Free to play and to share unchanged with others. The code, art, music and story may not be copied, changed, reused or sold without permission. Scripture texts are public domain and are not covered by this license.',
 };

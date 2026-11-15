@@ -813,6 +813,7 @@ window.TW = window.TW || {};
     renderVoices(body);
     section(body, 'Recorded voices');
     renderStudio(body);
+    if (TW.Support) TW.Support.settings(body, el, section);
     section(body, 'About and license');
     body.appendChild(el('p', '', (TW.Settings.get('lang') === 'es' ? 'El Camino: Relato de un testigo' : TW.ABOUT.title) + ' · © ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '.'));
     body.appendChild(el('p', '', TW.ABOUT.summary));
@@ -985,6 +986,7 @@ window.TW = window.TW || {};
     if (rn && cur && ROLE_NOTE[cur.dataset.role]) rn.textContent = TW.t(ROLE_NOTE[cur.dataset.role]);
     const lb = $('#btn-title-lang');
     if (lb) { lb.textContent = TW.Settings.get('lang') === 'es' ? 'English' : 'Español'; lb.setAttribute('lang', TW.Settings.get('lang') === 'es' ? 'en' : 'es'); }
+    if (TW.Support) TW.Support.titleLine();
     $('#copyright').textContent = '© ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '. ' + (TW.Settings.get('lang') === 'es' ? 'Libre para jugar y compartir. Todos los demás derechos reservados.' : 'Free to play and share. All other rights reserved.');
   }
   function openJournal(tab) {
@@ -1211,6 +1213,7 @@ window.TW = window.TW || {};
     });
     b.appendChild(ol);
     if (TW.Verses) TW.Verses.studyCard(ep, b, el);
+    if (TW.Support) TW.Support.studyNote(b, el, fresh);
     const q = game.save.questions.find((x) => x.id === E.question.id);
     if (q) {
       const d = el('div', 'open-q');
