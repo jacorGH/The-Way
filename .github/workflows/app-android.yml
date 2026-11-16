@@ -10,11 +10,11 @@ jobs:
   android:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '21'
@@ -72,12 +72,12 @@ jobs:
           fi
           ls -la out
       # two downloads, so you only fetch the one you need: the .apk to install on a phone, the .aab for Google Play
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: the-way-apk-${{ github.run_number }}
           path: app/out/*.apk
           retention-days: 30
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: the-way-google-play-${{ github.run_number }}
           path: app/out/*.aab

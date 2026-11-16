@@ -9,7 +9,7 @@ jobs:
   key:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Check the password secret
         env:
           PW: ${{ secrets.ANDROID_KEY_PASSWORD }}
@@ -17,7 +17,7 @@ jobs:
           if [ -z "$PW" ]; then echo "::error::Add the ANDROID_KEY_PASSWORD secret first (Settings → Secrets and variables → Actions)."; exit 1; fi
           if [ ${#PW} -lt 12 ]; then echo "::error::ANDROID_KEY_PASSWORD should be at least 12 characters."; exit 1; fi
           if [ -f app/keys/android-upload.jks.enc ]; then echo "::error::An upload key already exists. Delete app/keys/android-upload.jks.enc only if you mean to replace it (Google Play would then need to be told)."; exit 1; fi
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '21'

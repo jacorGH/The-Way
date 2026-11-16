@@ -27,7 +27,7 @@ jobs:
   tidy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Move recordings into audio/
         run: |
           moved=0; dropped=0
@@ -67,7 +67,7 @@ jobs:
               keep.update(i['id'] for i in (d.get('items', []) if isinstance(d, dict) else d))
           gone = [f for f in glob.glob('audio/*/s-*.mp3')
                   if os.path.basename(f).split('-')[1] in bibles and os.path.basename(f)[:-4] not in keep]
-          for f in gone: subprocess.run(['git', 'rm', '-q', f], check=True)
+          for f in gone: subprocess.run(['git', 'rm', '-q', '-f', '--ignore-unmatch', f], check=True)   # -f: it may have just been moved into place
           print('Removed', len(gone), 'Scripture recordings whose text changed; Bibles with batches:', ', '.join(sorted(bibles)))
           open(os.environ['GITHUB_ENV'], 'a').write('UNUSED=%d\n' % len(gone))
           PY
