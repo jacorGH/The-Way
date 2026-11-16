@@ -611,6 +611,24 @@ window.TW = window.TW || {};
   }
   game.enterEpisode = enterEpisode;
   $('#btn-leave').addEventListener('click', () => game.show('map'));
+  // the Greek under the title: what it means, in a word and a few verses
+  $('#btn-greek').addEventListener('click', () => {
+    const b = $('#btn-greek'), n = $('#greek-note'), open = n.hidden;
+    if (open) {
+      const es = TW.Settings.get('lang') === 'es';
+      n.innerHTML = '';
+      const h = document.createElement('p'); h.className = 'greek-say';
+      h.innerHTML = '<b lang="grc">ἡ ὁδός</b> · <i>hē hodós</i> (' + (es ? 'se dice' : 'say') + ' <i>' + (es ? 'je jo-DÓS' : 'hay ho-DOSS') + '</i>) · ' + (es ? '“el Camino”' : '“the Way”');
+      n.appendChild(h);
+      const p = document.createElement('p');
+      p.textContent = es
+        ? 'Antes de que nadie los llamara cristianos, así llamaban los primeros creyentes a su fe. Saulo fue a Damasco a arrestar a los que seguían el Camino (Hechos 9:2), y Pablo le dijo al gobernador Félix que servía al Dios de sus padres según el Camino (Hechos 24:14). Viene de las palabras de Jesús: “Yo soy el camino, y la verdad, y la vida” (Juan 14:6).'
+        : 'Before anyone called them Christians, this is what the first believers called their faith. Saul went to Damascus to arrest “any who were of the Way” (Acts 9:2), and Paul told the governor Felix, “after the Way, which they call a sect, so I serve the God of our fathers” (Acts 24:14). It goes back to Jesus’ words: “I am the way, the truth, and the life” (John 14:6).';
+      n.appendChild(p);
+      AU.sfx && AU.sfx('chime');
+    }
+    n.hidden = !open; b.setAttribute('aria-expanded', String(open));
+  });
 
   game.observe = function (ep, id, text, showText, auto) {
     text = TW.Role.G(text);
