@@ -1193,7 +1193,7 @@ window.TW = window.TW || {};
     openOverlay('#o-study');
     const b = $('#study-body');
     b.innerHTML = '';
-    b.appendChild(el('p', 'study-kicker', fresh ? (TW.Role.is() ? 'Your letter is sealed. Now read the passage.' : 'Your report is sealed. Now read the passage.') : 'Study'));
+    b.appendChild(el('p', 'study-kicker', fresh ? (TW.Role.is() ? 'Your letter is sealed. Now read the passage.' : 'Your report is sealed. Now read the passage.') : (TW.Settings.get('lang') === 'es' ? 'Estudio' : 'Study')));
     b.appendChild(el('h2', 'scroll-title', E.title));
     if (TW.Discover) { TW.Discover.study(ep, fresh, b, el, newly); if (ep === 'allnew' && game.save.completed.allnew) { TW.Discover.endingPage(b, el); if (TW.Book) b.appendChild(TW.Book.button(el, 'btn primary')); } }
     { const es = TW.Settings.get('lang') === 'es', ver = TW.Bible ? TW.Bible.version().name : 'World English Bible', par = TR(E.parallels);
@@ -1243,7 +1243,7 @@ window.TW = window.TW || {};
     const q = game.save.questions.find((x) => x.id === E.question.id);
     if (q) {
       const d = el('div', 'open-q');
-      d.appendChild(el('p', 'plabel', 'Still open in your scroll'));
+      d.appendChild(el('p', 'plabel', TW.t('Still open in your scroll')));
       d.appendChild(el('p', '', '“' + TR(q.text) + '” (' + REF(q.ref) + ')'));
       d.appendChild(el('p', 'fine', TW.t('Your journey will return to this question.')));
       b.appendChild(d);
@@ -1251,26 +1251,26 @@ window.TW = window.TW || {};
     const acts = el('div', 'study-actions');
     if (fresh && fresh.length && E.reveal) {
       const d = el('div', 'reveal-note');
-      d.appendChild(el('p', 'plabel', 'Your map has grown'));
-      d.appendChild(el('p', '', E.reveal));
-      const names = fresh.map((id) => D.regions.land.places.find((p) => p.id === id)).filter(Boolean).map((p) => p.short || p.name);
-      d.appendChild(el('p', 'fine', 'New: ' + names.join(', ') + '.'));
+      d.appendChild(el('p', 'plabel', TW.t('Your map has grown')));
+      d.appendChild(el('p', '', TW.t(E.reveal)));
+      const names = fresh.map((id) => D.regions.land.places.find((p) => p.id === id)).filter(Boolean).map((p) => TR(p.short || p.name));
+      d.appendChild(el('p', 'fine', (TW.Settings.get('lang') === 'es' ? 'Nuevo: ' : 'New: ') + names.join(', ') + '.'));
       b.appendChild(d);
-      const land = el('button', 'btn primary', 'See the map of the Land');
+      const land = el('button', 'btn primary', TW.t('See the map of the Land'));
       land.addEventListener('click', () => { closeOverlays(); game.region = 'galilee'; game.switchRegion('land', fresh[0]); });
       acts.appendChild(land);
     }
     if (fresh && E.final) {
       const d = el('div', 'reveal-note');
       if (E.final === 'church') {
-        d.appendChild(el('p', 'plabel', 'The Jerusalem Church'));
-        d.appendChild(el('p', '', 'You were baptized, served the widows and the sick, and watched Stephen die. The believers are scattering. Era IV, The Way Spreads, follows them into Samaria and out to the nations, and a light on the Damascus road is coming.'));
+        d.appendChild(el('p', 'plabel', TR('The Jerusalem Church')));
+        d.appendChild(el('p', '', TW.t('You were baptized, served the widows and the sick, and watched Stephen die. The believers are scattering. Era IV, The Spreading Word, follows them into Samaria and out to the nations, and a light on the Damascus road is coming.')));
       } else if (E.final === 'passion') {
-        d.appendChild(el('p', 'plabel', 'The Road to Jerusalem'));
-        d.appendChild(el('p', '', 'You watched him die, helped to bury him, stood at an empty tomb, and heard from those who saw him alive. Era III, The Jerusalem Church, begins at Pentecost.'));
+        d.appendChild(el('p', 'plabel', TR('The Road to Jerusalem')));
+        d.appendChild(el('p', '', TW.t('You watched him die, helped to bury him, stood at an empty tomb, and heard from those who saw him alive. Era III, The Jerusalem Church, begins at Pentecost.')));
       } else {
-        d.appendChild(el('p', 'plabel', 'Era I complete'));
-        d.appendChild(el('p', '', 'You have finished The Ministry in Galilee. Your road now turns south, toward Jerusalem.'));
+        d.appendChild(el('p', 'plabel', TW.t('Era I complete')));
+        d.appendChild(el('p', '', TW.t('You have finished The Ministry in Galilee. Your road now turns south, toward Jerusalem.')));
       }
       b.appendChild(d);
     }

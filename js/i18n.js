@@ -30,7 +30,7 @@ window.TW = window.TW || {};
     'Your heart': 'Tu corazón', 'Added to your scroll': 'Añadido a tu rollo', 'A question in your scroll is answered': 'Una pregunta de tu rollo ha sido respondida',
     'Whose account?': '¿El relato de quién?', 'Study notes': 'Notas de estudio', 'To reflect on': 'Para reflexionar', 'Back to the timeline': 'Volver a la cronología',
     'Recorded voices': 'Voces grabadas', 'Play recorded voices when available': 'Usar voces grabadas cuando las haya', 
-    'Test': 'Probar', 'About and license': 'Acerca de y licencia', 'Narrator': 'Narrador', 'Remove': 'Quitar', 'Go': 'Ir', 'Again': 'Otra vez',
+    'Background': 'Trasfondo', 'Test': 'Probar', 'About and license': 'Acerca de y licencia', 'Narrator': 'Narrador', 'Remove': 'Quitar', 'Go': 'Ir', 'Again': 'Otra vez',
   };
   const DICT = { es: ES };
   const I = {

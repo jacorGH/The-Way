@@ -40,7 +40,7 @@ window.TW = window.TW || {};
       'Lucas cuenta la historia desde el lado de María; Mateo, desde el de José. Marcos comienza con Juan en el Jordán, y Juan se remonta a antes del principio: “aquel Verbo fue hecho carne, y habitó entre nosotros” (Juan 1:14). Este es el orden habitual, con las partes de este episodio marcadas.')));
     const tb = el('table', 'harmony-table');
     const head = el('tr'); [T('Event', 'Suceso'), 'Luke', 'Matthew'].forEach((h, i) => head.appendChild(el('th', '', i === 1 ? T('Luke', 'Lucas') : i === 2 ? T('Matthew', 'Mateo') : h))); tb.appendChild(head);
-    const ref = (r) => (r && TW.tr ? TW.tr(r) : r) || '';
+    const ref = (r) => (r && TW.Bible && TW.Bible.localRef ? TW.Bible.localRef(r) : r) || '';
     B.harmony.forEach((h) => {
       const tr = el('tr', h.ep === ep ? 'here' : '');
       const cv = (r) => (r ? r.replace(/^[A-Za-z]+\s+/, '') : '—');

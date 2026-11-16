@@ -2,6 +2,17 @@
 /* The Way — Spanish: sound settings, the heavenly host, the Advent calendar. */
 (function (TW) {
   TW.I18n.add('es', {
+    // the study page after a report is sealed
+    'Your map has grown': 'Tu mapa ha crecido',
+    'See the map of the Land': 'Ver el mapa de la Tierra',
+    'Roads to the coast and to Samaria are now on your map of the Land.': 'Los caminos hacia la costa y hacia Samaria ya están en tu mapa de la Tierra.',
+    'Crowds came from Judea, Idumaea, beyond the Jordan, Tyre and Sidon. Those lands are now on your map.': 'Vinieron multitudes de Judea, de Idumea, del otro lado del Jordán, de Tiro y de Sidón. Esas tierras ya están en tu mapa.',
+    'The healed man told his story across the Decapolis. Its cities are now on your map.': 'El hombre sanado contó su historia por toda la Decápolis. Sus ciudades ya están en tu mapa.',
+    'The report spread through all Judea. The whole land is now on your map.': 'La noticia se extendió por toda Judea. Toda la tierra ya está en tu mapa.',
+    'Era I complete': 'Era I completada',
+    'You have finished The Ministry in Galilee. Your road now turns south, toward Jerusalem.': 'Has terminado El ministerio en Galilea. Ahora tu camino gira hacia el sur, hacia Jerusalén.',
+    'You watched him die, helped to bury him, stood at an empty tomb, and heard from those who saw him alive. Era III, The Jerusalem Church, begins at Pentecost.': 'Lo viste morir, ayudaste a sepultarlo, estuviste ante una tumba vacía y oíste a quienes lo vieron vivo. La Era III, La iglesia de Jerusalén, comienza en Pentecostés.',
+    'You were baptized, served the widows and the sick, and watched Stephen die. The believers are scattering. Era IV, The Spreading Word, follows them into Samaria and out to the nations, and a light on the Damascus road is coming.': 'Recibiste el bautismo, serviste a las viudas y a los enfermos, y viste morir a Esteban. Los creyentes se dispersan. La Era IV, La palabra se extiende, los sigue a Samaria y hasta las naciones, y se acerca una luz en el camino de Damasco.',
     'Music and sounds': 'Música y sonidos',
     'Music': 'Música',
     'Background sounds': 'Sonidos de fondo',
