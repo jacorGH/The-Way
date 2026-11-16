@@ -88,8 +88,24 @@ window.TW = window.TW || {};
       return U.defaultSave();
     }
   };
+  // If the journey cannot be saved (the phone's storage is full, or the browser blocks it), say so once, plainly:
+  // playing on and losing it all later would be worse.
+  let warned = false;
   U.store = (s) => {
-    try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) { /* storage unavailable */ }
+    try { localStorage.setItem(KEY, JSON.stringify(s)); }
+    catch (e) {
+      if (warned || typeof document === 'undefined' || !document.body) return;
+      warned = true;
+      const es = (() => { try { return (JSON.parse(localStorage.getItem('the-way.settings') || '{}').lang) === 'es'; } catch (x) { return false; } })();
+      const full = e && /quota/i.test(e.name + ' ' + e.message);
+      const b = document.createElement('div'); b.className = 'save-warn'; b.setAttribute('role', 'alert');
+      b.textContent = es
+        ? (full ? 'El almacenamiento del teléfono está lleno: tu progreso no se puede guardar. Libera espacio, o haz una copia en Ajustes → Guardar copia del progreso.' : 'Este navegador no deja guardar tu progreso (¿modo privado?). Juega en una ventana normal, o haz una copia en Ajustes.')
+        : (full ? 'Your phone’s storage is full, so your progress can’t be saved. Free some space, or make a backup in Settings → Back up progress.' : 'This browser won’t let the game save your progress (private browsing?). Play in a normal window, or back up from Settings.');
+      const x = document.createElement('button'); x.type = 'button'; x.textContent = '×'; x.setAttribute('aria-label', es ? 'Cerrar' : 'Close');
+      x.addEventListener('click', () => b.remove()); b.appendChild(x);
+      document.body.appendChild(b);
+    }
   };
   U.wipe = () => {
     try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ }

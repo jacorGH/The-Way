@@ -1273,7 +1273,7 @@ window.TW = window.TW || {};
       b.appendChild(d);
     }
     const home = E.region || 'galilee';
-    const m = el('button', 'btn' + (fresh && fresh.length && E.reveal ? '' : ' primary'), (TW.Settings.get('lang') === 'es' ? 'Volver a ' : 'Back to ') + TR(D.regions[home].title).replace(/^The /, 'the '));
+    const m = el('button', 'btn' + (fresh && fresh.length && E.reveal ? '' : ' primary'), (TW.Settings.get('lang') === 'es' ? ('Volver a ' + TR(D.regions[home].title)).replace(/^Volver a El /, 'Volver al ').replace(/^Volver a (La|Los|Las) /, (m, a) => 'Volver a ' + a.toLowerCase() + ' ') : 'Back to ' + TR(D.regions[home].title).replace(/^The /, 'the ')));
     m.addEventListener('click', () => { closeOverlays(); game.region = home; game.switchRegion(home); });
     const t = el('button', 'btn', 'Timeline');
     t.addEventListener('click', () => { closeOverlays(); game.show('timeline'); });

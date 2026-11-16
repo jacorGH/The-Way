@@ -684,3 +684,18 @@ html.native button, html.native .bar, html.native .screen:not(.paper-screen), ht
 .greek-note p { margin: 0.2rem 0; }
 .greek-say { color: #f3cf5a; }
 .greek-btn { color: #f6ead0; text-shadow: 0 1px 3px rgba(20, 12, 6, 0.7); }
+
+/* the journey could not be saved: say so once, at the top */
+.save-warn { position: fixed; left: 50%; top: calc(env(safe-area-inset-top, 0px) + 0.5rem); transform: translateX(-50%); z-index: 120; width: min(26rem, calc(100% - 1rem));
+  padding: 0.7rem 2.2rem 0.7rem 0.9rem; background: #8e3b26; color: #fff4e0; border-radius: 6px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45); font-size: 0.98rem; line-height: 1.35; }
+.save-warn button { position: absolute; right: 0.3rem; top: 0.2rem; background: none; border: 0; color: inherit; font-size: 1.4rem; line-height: 1; padding: 0.2rem 0.4rem; cursor: pointer; }
+
+/* a phone held sideways (the web game; the apps stay upright): the scene and its words side by side, all on screen */
+@media (orientation: landscape) and (max-height: 560px) {
+  .scene-col { flex-direction: row; max-width: none; align-items: stretch; }
+  .stage { width: min(62vw, calc((100dvh - 3.2rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) * 1.6)); align-self: center; }
+  .dialog { min-height: 0; border-top: 0; border-left: 3px solid var(--ink-soft); padding: 0.6rem 1rem 1.2rem; padding-right: max(1rem, env(safe-area-inset-right, 0px)); }
+  .dialog.kind-scripture { border-left-color: var(--lapis); }
+  .dialog.kind-drama { border-left-color: var(--ochre); }
+  .dialog.kind-history { border-left-color: var(--olive); }
+}
