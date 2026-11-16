@@ -945,6 +945,11 @@ window.TW = window.TW || {};
       const onUp = () => { down = false; finger = null; held = null; song.boost(0); song.descant(false); angels.forEach((a) => { a.tx = a.hx; a.ty = a.hy; }); };
       fx.addEventListener('pointerdown', onDown); fx.addEventListener('pointermove', onMove);
       fx.addEventListener('pointerup', onUp); fx.addEventListener('pointercancel', onUp); fx.addEventListener('pointerleave', onUp);
+      const unhook = () => {
+        fx.removeEventListener('pointerdown', onDown); fx.removeEventListener('pointermove', onMove);
+        fx.removeEventListener('pointerup', onUp); fx.removeEventListener('pointercancel', onUp); fx.removeEventListener('pointerleave', onUp);
+      };
+      SC.onReset(() => { unhook(); song.stop(0.4); fx.style.touchAction = ta0; });
       const how = await Promise.race([song.done, SC.prompt('A multitude of the heavenly host, praising God. Touch the angels as they sing.', 'Glory to God in the highest', 'sweep').then(() => 'button')]);
       SC.el.choices.innerHTML = ''; SC.mode = 'sweep';   // (in 'script' mode a touch on the stage would press the button)
       if (how === 'button') song.stop(1.4);

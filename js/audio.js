@@ -92,7 +92,8 @@ window.TW = window.TW || {};
   A.unlock = function () {
     if (!A.on) return;
     if (!ctx && !build()) return;
-    if (ctx.state === 'suspended') ctx.resume();
+    // 'interrupted' is an iPhone's state after a phone call or Siri: the next tap brings the sound back
+    if (ctx.state !== 'running') ctx.resume();
     try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) { /* not supported */ }
     if (Object.keys(base).length) applyLevels(travelLevels());
     if (pending) { const p = pending; pending = null; A.scene(p); }
@@ -107,6 +108,8 @@ window.TW = window.TW || {};
     if (!ctx) return;
     if (document.hidden) ctx.suspend(); else if (A.on) ctx.resume();
   });
+  // after a call or an alarm, the next touch resumes the music (iPhone leaves it 'interrupted')
+  document.addEventListener('pointerdown', () => { if (ctx && A.on && ctx.state !== 'running') ctx.resume(); }, { capture: true, passive: true });
 
   // ---------- ambience ----------
   // Continuous layers are only low, soft textures (brown noise, never hiss). Everything you can pick out is a distinct
@@ -353,7 +356,7 @@ window.TW = window.TW || {};
       tt += d;
     });
     timers.push(setTimeout(() => doneRes('song'), (total + 0.8) * 1000));
-    return {
+    const handle = {
       done, length: total,
       boost: (x) => { if (bus && !stopped) bus.gain.setTargetAtTime(0.75 + 0.6 * Math.max(0, Math.min(1, x)), ctx.currentTime, 0.25); },
       descant: (on) => { desc = !!on; },
@@ -363,7 +366,11 @@ window.TW = window.TW || {};
         doneRes('stopped');
       },
     };
+    if (A.songNow) A.songNow.stop(0.3);
+    A.songNow = handle; done.then(() => { if (A.songNow === handle) A.songNow = null; });
+    return handle;
   };
+  A.stopSong = () => { if (A.songNow) A.songNow.stop(0.6); };
   A.memory = function (on) {
     if (!ctx) return;
     musicFilter.frequency.setTargetAtTime(on ? 1100 : 16000, ctx.currentTime, 0.5);

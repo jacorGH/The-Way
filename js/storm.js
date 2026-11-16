@@ -48,6 +48,7 @@ window.TW = window.TW || {};
     const me = SC.add({ id: 'player', frames: P0.player, x: 140, y: deckY, z: 121, facing: -1 });
     const bob = () => { const t = SC.t || 0, amp = 8 * (1 - ST.calm) + 1, dy = Math.round(Math.sin(t * 1.6 + 2.9) * amp); [p2, me].concat(crew).forEach((e) => { e.y = deckY + dy; }); };
     const bobber = setInterval(bob, 50);
+    SC.onReset(() => clearInterval(bobber));
     const flash = () => { ST.flash = 0.8; AU() && AU().sfx('thunder'); };
     flash();
     SC.shake(900);

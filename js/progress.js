@@ -152,5 +152,6 @@ window.TW = window.TW || {};
     setTimeout(() => { if (FF) stopFF(); }, 12000);
   };
   PR.active = () => !!FF;
+  PR.stop = stopFF;
   TW.Progress = PR;
 })(window.TW);

@@ -81,7 +81,7 @@ window.TW = window.TW || {};
   game.show = function (name) {
     if (name !== 'scene' && TW.Speech) TW.Speech.stop();
     if (game.screen === 'map' && name !== 'map') MV.stop();
-    if (game.screen === 'scene' && name !== 'scene') { SC.stop(); SC.begin(); }
+    if (game.screen === 'scene' && name !== 'scene') { SC.stop(); SC.begin(); SC.reset(); }
     if (game.screen === 'title' && name !== 'title') titleRunning = false;
     screens.forEach((s) => $('#s-' + s).classList.toggle('active', s === name));
     closeOverlays();
@@ -599,8 +599,8 @@ window.TW = window.TW || {};
       game.current = id;
       $('#scene-title').textContent = D.episodes[id].scene;
       SC.init(sceneEls);
-      // a memory left halfway (by leaving for the map, or a story picked up later) must not tint the next scene
-      if (TW.Vignettes && TW.Vignettes.reset) TW.Vignettes.reset();
+      // nothing left halfway in the last scene (a memory's sepia, a dark veil, a carol) carries into this one
+      SC.reset();
       SC.begin();
       SC.start();
       if (target && TW.Progress) TW.Progress.fastForward(id, target);
@@ -610,7 +610,7 @@ window.TW = window.TW || {};
     if (TW.Progress) TW.Progress.offer(id, run); else run(null);
   }
   game.enterEpisode = enterEpisode;
-  $('#btn-leave').addEventListener('click', () => { if (TW.Vignettes && TW.Vignettes.reset) TW.Vignettes.reset(); game.show('map'); });
+  $('#btn-leave').addEventListener('click', () => game.show('map'));
 
   game.observe = function (ep, id, text, showText, auto) {
     text = TW.Role.G(text);

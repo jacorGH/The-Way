@@ -68,6 +68,22 @@ window.TW = window.TW || {};
     requestAnimationFrame(loop);
   };
   SC.stop = () => { SC.running = false; };
+  // Everything a scene may leave behind when it is left halfway (for the map, or the next episode): a memory's sepia and
+  // its label, a fade's dark veil, a note on screen, a carol still singing, listeners added for a moment of play, the
+  // catching-up cover. Called on leaving the scene and before every episode starts.
+  SC.cleanups = [];
+  SC.onReset = (fn) => { SC.cleanups.push(fn); };
+  SC.reset = function () {
+    const run = SC.cleanups.splice(0); run.forEach((fn) => { try { fn(); } catch (e) { /* keep going */ } });
+    if (TW.Vignettes && TW.Vignettes.reset) TW.Vignettes.reset();
+    const el = SC.el || {};
+    if (el.veil) el.veil.classList.remove('on');
+    if (el.toast) el.toast.classList.remove('show');
+    if (el.fx) el.fx.style.touchAction = '';
+    SC.mode = 'script';
+    if (TW.Audio) { if (TW.Audio.stopSong) TW.Audio.stopSong(); if (TW.Audio.duck) TW.Audio.duck(false); }
+    if (TW.Progress && TW.Progress.stop) TW.Progress.stop();
+  };
 
   // ---------- movement ----------
   SC.walk = function (e, x, y) {
