@@ -8,12 +8,12 @@ Everything below is ready to paste. Character counts are within each store's lim
 
 **Name** (30 max): The Way: An Eyewitness Account
 
-**Subtitle** (30 max): Walk the Gospels as a witness
+**Subtitle** (30 max): Investigate the Gospels & Acts
 
 **Category**: Primary: Education. Secondary: Games → Adventure. (Choose the reverse if you'd rather appear among games.)
 
 **Promotional text** (170 max):
-Advent is here: open a door each day of December, live the night the angels sang, and learn a verse by heart from every episode. Free, no ads, fully offline.
+Advent begins November 29: open a door each day of December, live the night the angels sang, and learn a verse by heart from every episode. Free, no ads, fully offline.
 
 **Keywords** (100 max, commas, no spaces):
 bible,gospel,jesus,christian,scripture,acts,study,christmas,advent,church,faith,family,homeschool
@@ -29,7 +29,7 @@ The Way is a Bible study you play. You are not yet convinced. Your teacher Nicod
 
 Walk through the Gospels and the early church as an eyewitness: from the night of his birth, through Galilee, the road to Jerusalem, the cross and the empty tomb, to Pentecost, Paul's journeys, the fall of the Temple and John's vision on Patmos. Over fifty episodes, and every word of Scripture in them is quoted exactly.
 
-PLAY AS A WITNESS
+PLAY AS AN EYEWITNESS
 • Choose your narrator: Eleazar, a young scribe trained in the Law, or Elisheva, Nicodemus's niece. Or play both accounts.
 • Walk the streets of Capernaum, stand in the crowd, talk with the people who were there, and note what you see.
 • Live remembered scenes: Mary on the night of the birth, the shepherds' field where the angels sing Silent Night and blaze with light at your touch, the boy Jesus among the teachers.
@@ -53,7 +53,8 @@ IN ENGLISH AND SPANISH
 • Four public-domain Bibles: World English Bible, King James Version, American Standard Version and Reina-Valera 1909.
 
 FREE, AND STAYS FREE
-No ads, no accounts, nothing to unlock, no tracking. Everything is inside the app and plays offline. If you'd like to support the game, you can leave an optional tip; it unlocks nothing.
+No ads, no accounts, nothing to buy, no tracking. Everything is inside the app and plays offline.
+(From version 1.1, when tips are added: "No ads, no accounts, nothing to unlock, no tracking. Everything is inside the app and plays offline. If you'd like to support the game, you can leave an optional tip; it unlocks nothing.")
 
 ---
 
@@ -62,7 +63,7 @@ No ads, no accounts, nothing to unlock, no tracking. Everything is inside the ap
 **App name** (30 max): The Way: An Eyewitness Account
 
 **Short description** (80 max):
-A Bible study you play: walk the Gospels and Acts as a witness. Free, no ads.
+A Bible study you play: investigate the Gospels and Acts. Free, no ads.
 
 **Full description**: use the App Store description above.
 
@@ -75,7 +76,7 @@ A Bible study you play: walk the Gospels and Acts as a witness. Free, no ads.
 
 ## Spanish (add Spanish (Mexico) and Spanish (Spain) as localizations)
 
-**Subtítulo**: Los Evangelios como testigo
+**Subtítulo**: Investiga los Evangelios
 
 **Texto promocional**:
 Llegó el Adviento: abre una puerta cada día de diciembre, vive la noche en que cantaron los ángeles y aprende de memoria un versículo de cada episodio. Sin anuncios.
@@ -84,15 +85,15 @@ Llegó el Adviento: abre una puerta cada día de diciembre, vive la noche en que
 biblia,evangelio,jesús,cristiano,escrituras,hechos,estudio,navidad,adviento,iglesia,fe,familia
 
 **Descripción breve (Google Play)**:
-Un estudio bíblico que se juega: recorre los Evangelios y Hechos como testigo.
+Un estudio bíblico que se juega: investiga los Evangelios y Hechos.
 
 **Descripción**:
 
 The Way es un estudio bíblico que se juega. Todavía no estás convencido. Tu maestro Nicodemo te envía al norte a observar al hombre de Nazaret y a escribir lo que veas.
 
-Recorre los Evangelios y la iglesia primitiva como testigo: desde la noche de su nacimiento, por Galilea, el camino a Jerusalén, la cruz y la tumba vacía, hasta Pentecostés, los viajes de Pablo, la caída del Templo y la visión de Juan en Patmos. Más de cincuenta episodios, y cada palabra de la Escritura se cita tal como está escrita.
+Recorre los Evangelios y la iglesia primitiva como testigo presencial: desde la noche de su nacimiento, por Galilea, el camino a Jerusalén, la cruz y la tumba vacía, hasta Pentecostés, los viajes de Pablo, la caída del Templo y la visión de Juan en Patmos. Más de cincuenta episodios, y cada palabra de la Escritura se cita tal como está escrita.
 
-JUEGA COMO TESTIGO
+JUEGA COMO TESTIGO PRESENCIAL
 • Elige a tu narrador: Eleazar, un joven escriba instruido en la Ley, o Elisheva, sobrina de Nicodemo. O juega los dos relatos.
 • Recorre las calles de Capernaum, habla con quienes estuvieron allí y anota lo que ves.
 • Vive escenas recordadas: María la noche del nacimiento, el campo de los pastores donde los ángeles cantan Noche de paz y se encienden al tocarlos, el niño Jesús entre los maestros.
