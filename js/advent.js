@@ -2,7 +2,10 @@
 /* The Way — the Advent calendar: twenty-five doors, December 1 to Christmas Day. Each door opens on a passage from
    the Birth of Jesus (the same readings the game uses, so their recordings play), a short thought, a carol, and the
    memory it belongs to. In December one door opens each day; the rest of the year every door is open.
-   Advent candles (hope, peace, joy, love, and Christ on Christmas Day) light with the Sundays of Advent. */
+   Advent candles (hope, peace, joy, love, and Christ on Christmas Day) light with the Sundays of Advent.
+   After Christmas, one more door: Three Kings Day (January 6, Epiphany; Día de Reyes), with two of its traditions to
+   play: leaving your shoes out for the Kings on the night of January 5, and the rosca de Reyes with the Child hidden
+   inside. */
 window.TW = window.TW || {};
 (function (TW) {
   const AD = {};
@@ -39,15 +42,25 @@ window.TW = window.TW || {};
     D(24, 'Luke 2:7', 'No room', 'No había lugar', 'Christmas Eve. The Lord of everything, laid where the animals ate.', 'Nochebuena. El Señor de todo, acostado donde comían los animales.', 'manger', 'nativity', 'manger'),
     D(25, 'Luke 2:13–14', 'Glory to God in the highest', 'Gloria en las alturas a Dios', 'Christmas Day. Sing it with the angels.', 'Navidad. Cántalo con los ángeles.', 'gloria', 'nativity', 'angel'),
   ];
+  // Three Kings Day, January 6
+  AD.reyes = {
+    day: 'reyes', ref: 'Matthew 2:11', title: { en: 'Three Kings Day', es: 'Día de Reyes' },
+    thought: {
+      en: 'January 6, Epiphany: the church remembers the Magi, the first of the nations to worship Jesus. In Spain, Mexico, Puerto Rico and across Latin America it is Día de Reyes, as big a feast as Christmas. Matthew never says how many came or that they were kings; three gifts gave us three Kings, and tradition named them Melchior, Caspar and Balthazar.',
+      es: '6 de enero, Epifanía: la iglesia recuerda a los Magos, los primeros de las naciones en adorar a Jesús. En España, México, Puerto Rico y toda Latinoamérica es el Día de Reyes, una fiesta tan grande como la Navidad. Mateo nunca dice cuántos vinieron ni que fueran reyes; tres regalos nos dieron tres Reyes, y la tradición los llamó Melchor, Gaspar y Baltasar.',
+    },
+    mood: 'kings', ep: 'magi', icon: 'kings',
+  };
 
   // ---------- the season ----------
   const today = () => (AD.now ? AD.now() : new Date());
   // the first Sunday of Advent: four Sundays before Christmas
   AD.adventStart = (year) => { const x = new Date(year, 11, 25), back = x.getDay() === 0 ? 7 : x.getDay(); return new Date(year, 11, 25 - back - 21); };
   AD.state = function () {
-    const d = today(), y = d.getFullYear(), m = d.getMonth(), day = d.getDate();
+    const d = today(), m = d.getMonth(), day = d.getDate(), y = m === 0 ? d.getFullYear() - 1 : d.getFullYear();   // early January belongs to last December
     const start = AD.adventStart(y);
     if (DEV) return { mode: 'open', year: y, upTo: 25, sundays: 0 };
+    if ((m === 11 && day > 25) || (m === 0 && day <= 6)) return { mode: 'christmas', year: y, upTo: 25, sundays: 5, reyesIn: m === 0 ? 6 - day : 31 - day + 6 };
     if (m === 11 && day <= 25) {
       const sundays = Math.min(4, Math.floor((new Date(y, m, day) - start) / (7 * 864e5)) + 1);
       return { mode: 'advent', year: y, upTo: day, sundays: day === 25 ? 5 : sundays };
@@ -55,10 +68,13 @@ window.TW = window.TW || {};
     if (d >= start && m === 10) return { mode: 'waiting', year: y, upTo: 0, sundays: 1 };
     return { mode: 'open', year: y, upTo: 25, sundays: 0 };
   };
+  // the Kings' door opens on January 6 (and stays open outside the season, like the others)
+  AD.reyesOpen = (st) => { st = st || AD.state(); return st.mode === 'open' || (st.mode === 'christmas' && st.reyesIn <= 1); };   // from the eve, for the shoes
   AD.inSeason = () => { const m = today().getMonth(), day = today().getDate(); return m === 10 || m === 11 || (m === 0 && day <= 6); };
 
   const save = () => (TW.game && TW.game.save) || {};
   const opened = (year) => { const s = save(); s.advent = s.advent || {}; return (s.advent[year] = s.advent[year] || []); };
+  const rey = (year) => { const s = save(); s.reyes = s.reyes || {}; return (s.reyes[year] = s.reyes[year] || {}); };
   const persist = () => { try { TW.U && TW.U.store && TW.game && TW.U.store(TW.game.save); } catch (e) { /* storage unavailable */ } };
 
   // ---------- little pictures for the doors (16 by 16, drawn in pixels) ----------
@@ -74,6 +90,13 @@ window.TW = window.TW || {};
     gift(R) { R(2, 7, 12, 7, '#a8323a'); R(1, 5, 14, 2, '#c4404a'); R(7, 5, 2, 9, '#e8c35a'); R(5, 3, 3, 2, '#e8c35a'); R(9, 3, 3, 2, '#e8c35a'); },
     sheep(R) { R(2, 7, 10, 5, '#efe8da'); R(3, 6, 8, 1, '#fffaf0'); R(11, 6, 3, 3, '#3a3028'); R(3, 12, 1, 2, '#3a3028'); R(10, 12, 1, 2, '#3a3028'); R(12, 2, 2, 2, '#fffbe8'); },
     manger(R) { R(2, 10, 12, 3, '#8a8070'); R(2, 13, 2, 2, '#6e6658'); R(12, 13, 2, 2, '#6e6658'); R(3, 9, 10, 1, '#d9b85a'); R(5, 7, 6, 3, '#f6efe0'); R(10, 7, 2, 2, '#f0d8b8'); R(7, 1, 2, 2, '#fffbe8'); R(7, 3, 2, 3, 'rgba(255,240,190,0.5)'); },
+    kings(R) {
+      [[0, '#d9a93a', '#b8323a'], [5, '#e8c35a', '#2a7a5a'], [10, '#d9a93a', '#2a5a9a']].forEach(([x, g, j], i) => {
+        const y = i === 1 ? 6 : 8;
+        R(x + 1, y + 2, 5, 3, g); R(x + 1, y, 1, 2, g); R(x + 3, y - 1, 1, 3, g); R(x + 5, y, 1, 2, g); R(x + 3, y + 3, 1, 1, j);
+      });
+      R(7, 1, 2, 2, '#fffbe8'); R(8, 0, 1, 1, '#fff4c8'); R(2, 14, 12, 1, '#a87a22');
+    },
   };
   function iconCanvas(name) {
     const c = document.createElement('canvas'); c.width = 16; c.height = 16; c.className = 'adv-icon';
@@ -117,6 +140,7 @@ window.TW = window.TW || {};
   function note(st) {
     const names = es() ? ['Esperanza', 'Paz', 'Gozo', 'Amor'] : ['Hope', 'Peace', 'Joy', 'Love'];
     const ord = es() ? ['Primera', 'Segunda', 'Tercera', 'Cuarta'] : ['First', 'Second', 'Third', 'Fourth'];
+    if (st.mode === 'christmas') return st.reyesIn > 0 ? (es() ? 'Feliz Navidad. Doce días hasta Reyes: la última puerta se abre el 6 de enero.' : 'Merry Christmas. Twelve days to the Kings: the last door opens on January 6.') : (es() ? '¡Feliz Día de Reyes! La puerta de los Reyes está abierta.' : 'Happy Three Kings Day! The Kings’ door is open.');
     if (st.mode === 'advent' && st.sundays >= 5) return es() ? 'Navidad. Cristo ha nacido.' : 'Christmas Day. Christ is born.';
     if (st.mode === 'advent') return es() ? ord[st.sundays - 1] + ' semana de Adviento: ' + names[st.sundays - 1] + '. Se abre una puerta cada día.' : ord[st.sundays - 1] + ' week of Advent: ' + names[st.sundays - 1] + '. One door opens each day.';
     if (st.mode === 'waiting') return es() ? 'El Adviento ha comenzado. La primera puerta se abre el 1 de diciembre.' : 'Advent has begun. The first door opens on December 1.';
@@ -155,6 +179,25 @@ window.TW = window.TW || {};
       });
       g.appendChild(btn);
     });
+    // January 6: the Kings' door
+    {
+      const R = AD.reyes, can = AD.reyesOpen(st), isOpen = !!rey(st.year).opened;
+      const btn = el('button', 'adv-door xmas reyes' + (isOpen ? ' opened' : '') + (can ? '' : ' locked') + (can && !isOpen && st.mode === 'christmas' ? ' today' : ''));
+      btn.type = 'button';
+      btn.setAttribute('aria-label', L(R.title) + (can ? '' : (es() ? ', se abre el 6 de enero' : ', opens on January 6')));
+      if (isOpen) btn.appendChild(iconCanvas('kings'));
+      btn.appendChild(el('span', 'adv-day reyes-label', can ? L(R.title) : (es() ? '6 de enero · Reyes' : 'January 6 · Three Kings')));
+      btn.disabled = !can;
+      btn.addEventListener('click', () => {
+        if (!isOpen) {
+          rey(st.year).opened = Date.now(); persist();
+          btn.classList.add('opening'); burst(btn, true);
+          TW.Audio && TW.Audio.sfx('joy'); TW.Native && TW.Native.haptic('medium');
+          setTimeout(() => door(R), U().reducedMotion() ? 0 : 520);
+        } else door(R);
+      });
+      g.appendChild(btn);
+    }
     sky.appendChild(g);
     b.appendChild(sky);
     // in the store apps: a reminder each morning of Advent
@@ -162,11 +205,14 @@ window.TW = window.TW || {};
       const s = save(), row = el('label', 'set-check adv-remind'), box = el('input');
       box.type = 'checkbox'; box.checked = !!s.adventRemind;
       box.addEventListener('change', async () => {
-        const ok = await TW.Native.adventReminders(box.checked, AD.doors, es());
+        const ok = await TW.Native.adventReminders(box.checked, AD.doors, es(), [
+          { id: 1301, month: 0, day: 5, hour: 19, title: es() ? 'Víspera de Reyes' : 'The eve of Three Kings Day', body: es() ? 'Esta noche, deja tus zapatos para los Reyes (con hierba para los camellos).' : 'Tonight, leave your shoes out for the Kings (with hay for the camels).' },
+          { id: 1302, month: 0, day: 6, hour: 8, title: es() ? '¡Feliz Día de Reyes!' : 'Happy Three Kings Day!', body: es() ? 'La puerta de los Reyes está abierta.' : 'The Kings’ door is open.' },
+        ]);
         if (!ok && box.checked) box.checked = false;
         s.adventRemind = box.checked; persist();
       });
-      row.appendChild(box); row.appendChild(el('span', '', es() ? 'Recuérdame cada mañana de Adviento (8:00)' : 'Remind me each morning of Advent (8:00)'));
+      row.appendChild(box); row.appendChild(el('span', '', es() ? 'Recuérdame cada mañana de Adviento (8:00) y el Día de Reyes' : 'Remind me each morning of Advent (8:00) and on Three Kings Day'));
       b.appendChild(row);
     }
     b.appendChild(el('p', 'fine adv-fine', es() ? 'Cada puerta abre una lectura de El nacimiento de Jesús, con su villancico y el recuerdo al que pertenece.' : 'Each door opens a reading from The Birth of Jesus, with its carol and the memory it belongs to.'));
@@ -184,7 +230,7 @@ window.TW = window.TW || {};
     const top = el('div', 'adv-door-head');
     const ic = iconCanvas(d.icon); ic.classList.add('big'); top.appendChild(ic);
     const tt = el('div');
-    tt.appendChild(el('p', 'adv-date', (es() ? d.day + ' de diciembre' : 'December ' + d.day)));
+    tt.appendChild(el('p', 'adv-date', d.day === 'reyes' ? (es() ? '6 de enero · Epifanía' : 'January 6 · Epiphany') : (es() ? d.day + ' de diciembre' : 'December ' + d.day)));
     tt.appendChild(el('h3', 'adv-title', L(d.title)));
     top.appendChild(tt);
     b.appendChild(top);
@@ -210,11 +256,156 @@ window.TW = window.TW || {};
       acts.appendChild(play);
     }
     b.appendChild(acts);
+    if (d.day === 'reyes') traditions(b);
     if (d.day === 25) {
       const sing = el('p', 'adv-fine fine', es() ? 'En el recuerdo de los pastores, los ángeles cantan Noche de paz: tócalos mientras cantan.' : 'In the shepherds’ memory the angels sing Silent Night: touch them as they sing.');
       b.appendChild(sing);
     }
     ov.scrollTop = 0;
+  }
+  // ---------- Día de Reyes: two traditions to play ----------
+  function traditions(b) {
+    const st = AD.state(), r = rey(st.year);
+    const eve = st.mode === 'christmas' && st.reyesIn > 0;   // before the morning of January 6
+    b.appendChild(el('h3', 'adv-trad-h', es() ? 'Las tradiciones' : 'The traditions'));
+
+    // 1. the shoes
+    const sh = el('div', 'adv-trad');
+    sh.appendChild(el('h4', '', es() ? 'Los zapatos para los Reyes' : 'Shoes for the Kings'));
+    sh.appendChild(el('p', '', es()
+      ? 'La noche del 5 de enero, los niños dejan sus zapatos junto a la puerta o el árbol, con hierba o paja y agua para los camellos. Por la mañana, los Reyes han dejado regalos, como los Magos dejaron los suyos ante el Niño.'
+      : 'On the night of January 5, children leave their shoes by the door or the tree, with grass or hay and water for the camels. In the morning, the Kings have left gifts, as the Magi left theirs before the Child.'));
+    const cv = document.createElement('canvas'); cv.width = 96; cv.height = 44; cv.className = 'adv-scene'; sh.appendChild(cv);
+    const info = el('p', 'adv-gift-note fine'); sh.appendChild(info);
+    const row = el('div', 'adv-actions'); sh.appendChild(row);
+    const GIFTS = [
+      { x: 10, en: ['Gold', 'for a king'], es: ['Oro', 'para un rey'] },
+      { x: 30, en: ['Frankincense', 'for worship, for God'], es: ['Incienso', 'para la adoración, para Dios'] },
+      { x: 50, en: ['Myrrh', 'for a burial: he came to die for us'], es: ['Mirra', 'para una sepultura: vino a morir por nosotros'] },
+    ];
+    const drawShoes = () => {
+      const x = cv.getContext('2d'), R = (a, c, w, h, col) => { x.fillStyle = col; x.fillRect(a, c, w, h); };
+      x.clearRect(0, 0, 96, 44);
+      R(0, 0, 96, 30, eve || !r.shoes ? '#241d3a' : '#5a4a6a');                   // the wall: night, or morning light
+      R(0, 30, 96, 14, '#6a5240'); R(0, 30, 96, 1, '#8a6a50');
+      R(70, 4, 20, 26, '#3a2a1e'); R(72, 6, 16, 24, eve || !r.shoes ? '#1a1428' : '#d8c08a');   // the door (a window of dawn)
+      R(6, 6, 2, 2, '#fff4c8'); R(20, 3, 1, 1, '#fff'); R(50, 8, 1, 1, '#fff'); R(36, 2, 2, 2, '#ffe9a0');
+      if (!r.shoes) { x.fillStyle = '#c9b890'; x.font = '6px serif'; return; }
+      // two pairs of shoes, hay for the camels, a bowl of water
+      [[6, '#7a3a2a', '#9a5a3a'], [26, '#2a4a7a', '#4a6a9a']].forEach(([sx, col, hi]) => {
+        [0, 7].forEach((o) => { R(sx + o, 34, 6, 4, col); R(sx + o, 32, 3, 2, col); R(sx + o + 1, 32, 1, 1, hi); R(sx + o, 38, 7, 1, '#2a1e16'); R(sx + o + 3, 35, 2, 1, hi); });
+      });
+      for (let i = 0; i < 10; i++) R(44 + i * 1.6 | 0, 35 - (i % 3), 1, 4 + (i % 3), i % 2 ? '#d9b85a' : '#c4a040');
+      R(60, 36, 8, 3, '#8a8a9a'); R(61, 36, 6, 1, '#7ab8e8');
+      if (!eve) GIFTS.forEach((gf, i) => {
+        const gx = gf.x, gy = 24;
+        if (i === 0) { R(gx, gy + 2, 8, 7, '#e8c35a'); R(gx, gy + 2, 8, 1, '#fff4c8'); R(gx + 3, gy + 2, 2, 7, '#c8323a'); R(gx + 2, gy, 4, 2, '#c8323a'); }
+        if (i === 1) { R(gx + 1, gy + 3, 6, 6, '#d8d0c0'); R(gx, gy + 3, 8, 1, '#b8b0a0'); R(gx + 3, gy - 1, 1, 3, 'rgba(240,240,255,0.7)'); R(gx + 4, gy - 4, 1, 3, 'rgba(240,240,255,0.5)'); R(gx + 3, gy - 6, 1, 2, 'rgba(240,240,255,0.3)'); }
+        if (i === 2) { R(gx + 2, gy + 2, 3, 2, '#8a3a5a'); R(gx + 1, gy + 4, 5, 5, '#8a3a5a'); R(gx + 2, gy + 1, 3, 1, '#c9a85a'); R(gx + 2, gy + 5, 1, 2, '#b85a7a'); }
+        R(gx - 1, gy + 9, 10, 1, 'rgba(255,240,190,0.4)');
+      });
+    };
+    const render = () => {
+      drawShoes(); row.innerHTML = '';
+      if (!r.shoes) {
+        info.textContent = '';
+        const put = el('button', 'btn primary', es() ? 'Dejar mis zapatos' : 'Leave my shoes out'); put.type = 'button';
+        put.addEventListener('click', () => {
+          r.shoes = Date.now(); persist(); TW.Audio && TW.Audio.sfx(eve ? 'tap' : 'joy'); TW.Native && TW.Native.haptic('light');
+          if (!eve) burst(cv, true);
+          render();
+        });
+        row.appendChild(put);
+      } else if (eve) {
+        info.textContent = es() ? 'Tus zapatos esperan junto a la puerta, con paja para los camellos. Vuelve el 6 de enero.' : 'Your shoes wait by the door, with hay for the camels. Come back on January 6.';
+      } else {
+        info.textContent = es() ? 'Los Reyes vinieron por la noche. Toca cada regalo.' : 'The Kings came in the night. Touch each gift.';
+        GIFTS.forEach((gf) => {
+          const t = el('button', 'btn small', L({ en: gf.en[0], es: gf.es[0] })); t.type = 'button';
+          t.addEventListener('click', () => { info.textContent = L({ en: gf.en[0] + ': ' + gf.en[1] + '.', es: gf.es[0] + ': ' + gf.es[1] + '.' }) + (es() ? ' (Mateo 2:11)' : ' (Matthew 2:11)'); TW.Audio && TW.Audio.sfx('tap'); });
+          row.appendChild(t);
+        });
+      }
+    };
+    render();
+    b.appendChild(sh);
+
+    // 2. the rosca
+    const ro = el('div', 'adv-trad');
+    ro.appendChild(el('h4', '', es() ? 'La rosca de Reyes' : 'The rosca de Reyes'));
+    ro.appendChild(el('p', '', es()
+      ? 'Un pan dulce en forma de corona, con frutas como joyas. Dentro se esconde un Niño Jesús: escondido como cuando José huyó con él a Egipto. Quien lo encuentra invita los tamales el 2 de febrero, Día de la Candelaria, cuando Jesús fue presentado en el templo.'
+      : 'A sweet bread shaped like a crown, with candied fruit for jewels. Hidden inside is a tiny figure of the Christ Child, hidden as he was when Joseph fled with him to Egypt. Whoever finds him brings the tamales on February 2, Candlemas, when Jesus was presented in the Temple.'));
+    const rc = document.createElement('canvas'); rc.width = 96; rc.height = 52; rc.className = 'adv-scene rosca'; ro.appendChild(rc);
+    const rn = el('p', 'adv-gift-note fine'); ro.appendChild(rn);
+    const N = 8;
+    r.rosca = r.rosca || { cut: [], baby: Math.floor(Math.random() * N), found: false };
+    const k = r.rosca;
+    const cx = 48, cy = 26, A = 44, B = 23;
+    const drawRosca = () => {
+      const x = rc.getContext('2d'); x.clearRect(0, 0, 96, 52);
+      for (let py = 0; py < 52; py++) for (let px = 0; px < 96; px++) {
+        const nx = (px + 0.5 - cx) / A, ny = (py + 0.5 - cy) / B, rr = Math.hypot(nx, ny);
+        if (rr > 1 || rr < 0.5) continue;
+        const ang = (Math.atan2(ny, nx) + Math.PI * 2) % (Math.PI * 2), sec = Math.floor(ang / (Math.PI * 2 / N));
+        const edge = Math.abs(((ang / (Math.PI * 2 / N)) % 1)) < 0.04;
+        let col;
+        if (k.cut.indexOf(sec) >= 0) {
+          col = edge ? '#5a3a22' : (rr > 0.92 || rr < 0.57 ? '#9a5a2a' : (rr > 0.86 || rr < 0.63 ? '#e0b070' : '#f6dca0'));   // the crumb, inside the crust
+          if (sec === k.baby && !k.found && Math.abs(rr - 0.75) < 0.1 && Math.abs((ang / (Math.PI * 2 / N)) % 1 - 0.5) < 0.14) col = '#fffaf0';
+        } else {
+          col = rr > 0.92 ? '#8a5228' : '#c4803e';
+          if (Math.abs(rr - 0.74) < 0.07 && Math.floor(ang * 9) % 3 === 0) col = '#f0e2c0';          // stripes of sugar paste
+          if (Math.abs(rr - 0.74) < 0.06 && Math.floor(ang * 9) % 3 === 1 && (px + py) % 7 === 0) col = ['#c8323a', '#3a8a3a', '#e88a2a'][sec % 3];   // candied fruit
+        }
+        x.fillStyle = col; x.fillRect(px, py, 1, 1);
+      }
+      if (k.found) {   // the Child, lifted out into the middle of the crown, shining
+        const R = (a, c, w, h, col) => { x.fillStyle = col; x.fillRect(a, c, w, h); };
+        R(cx - 11, cy - 7, 22, 14, 'rgba(255,236,170,0.35)'); R(cx - 9, cy - 5, 18, 10, 'rgba(255,236,170,0.45)');
+        R(cx - 7, cy - 2, 11, 5, '#fffaf0'); R(cx - 6, cy - 3, 9, 1, '#fffaf0'); R(cx - 7, cy + 3, 10, 1, '#d8ccb8');   // swaddled
+        R(cx + 4, cy - 3, 4, 4, '#f0d0a8'); R(cx + 5, cy - 4, 2, 1, '#8a5a32'); R(cx + 6, cy - 2, 1, 1, '#5a3a22');      // his face
+        R(cx - 4, cy - 1, 6, 1, '#e8dcc8'); R(cx - 4, cy + 1, 6, 1, '#e8dcc8');
+        [[-13, -6], [12, -7], [-10, 6], [13, 5]].forEach(([a, c]) => R(cx + a, cy + c, 1, 1, '#ffe9a0'));
+      }
+    };
+    const say = () => {
+      if (k.found) rn.textContent = es() ? '¡Encontraste al Niño! Te tocan los tamales el 2 de febrero.' : 'You found the Child! The tamales are yours to bring on February 2.';
+      else if (!k.cut.length) rn.textContent = es() ? 'Toca la rosca para cortar una rebanada.' : 'Tap the rosca to cut a slice.';
+      else rn.textContent = es() ? 'Todavía no... corta otra.' : 'Not yet... cut another.';
+    };
+    rc.addEventListener('click', (ev) => {
+      if (k.found) return;
+      const rect = rc.getBoundingClientRect();
+      const px = ((ev.clientX - rect.left) / rect.width) * 96, py = ((ev.clientY - rect.top) / rect.height) * 52;
+      const nx = (px - cx) / A, ny = (py - cy) / B;
+      if (Math.hypot(nx, ny) > 1.1) return;
+      const sec = Math.floor(((Math.atan2(ny, nx) + Math.PI * 2) % (Math.PI * 2)) / (Math.PI * 2 / N));
+      if (k.cut.indexOf(sec) >= 0) return;
+      k.cut.push(sec);
+      TW.Audio && TW.Audio.sfx('tap'); TW.Native && TW.Native.haptic('light');
+      if (sec === k.baby) { k.found = Date.now(); TW.Audio && TW.Audio.sfx('joy'); TW.Native && TW.Native.haptic('firm'); setTimeout(() => burst(rc, true), 150); renderLink(); }
+      persist(); drawRosca(); say();
+    });
+    const links = el('div', 'adv-actions'); ro.appendChild(links);
+    const renderLink = () => {
+      links.innerHTML = '';
+      if (!k.found) return;
+      const ep = TW.D && TW.D.episodes.presentation;
+      if (ep && TW.game && TW.game.enterEpisode) {
+        const go = el('button', 'btn', (es() ? 'Vivir el recuerdo: ' : 'Live the memory: ') + (TW.tr ? TW.tr(ep.title) : ep.title)); go.type = 'button';
+        go.addEventListener('click', () => { AD.close(true); TW.game.enterEpisode('presentation'); });
+        links.appendChild(go);
+      }
+      const again = el('button', 'btn small', es() ? 'Otra rosca' : 'Another rosca'); again.type = 'button';
+      again.addEventListener('click', () => { r.rosca = { cut: [], baby: Math.floor(Math.random() * N), found: false }; persist(); door(AD.reyes); });
+      links.appendChild(again);
+    };
+    drawRosca(); say(); renderLink();
+    b.appendChild(ro);
+    b.appendChild(el('p', 'fine adv-fine', es()
+      ? 'En muchos lugares hay también cabalgatas de Reyes por las calles la tarde del 5 de enero. Y en Puerto Rico los niños llenan una caja de zapatos con hierba para los camellos.'
+      : 'In many towns the Kings ride through the streets in parades (cabalgatas) on the evening of January 5. In Puerto Rico, children fill a shoebox with grass for the camels.'));
   }
   function $(s) { return document.querySelector(s); }
   function U() { return TW.U || { reducedMotion: () => false }; }
@@ -224,7 +415,7 @@ window.TW = window.TW || {};
     document.querySelectorAll('.overlay').forEach((o) => { o.hidden = true; });
     ov.hidden = false; ov.scrollTop = 0;
     const st = AD.state();
-    TW.Audio && TW.Audio.music(st.mode === 'advent' && st.upTo >= 22 ? 'gloria' : 'advent');
+    TW.Audio && TW.Audio.music(st.mode === 'christmas' ? 'kings' : st.mode === 'advent' && st.upTo >= 22 ? 'gloria' : 'advent');
     grid();
   };
   AD.close = function (quiet) {
@@ -274,7 +465,13 @@ window.TW = window.TW || {};
     const d = today(), y = d.getFullYear(), start = AD.adventStart(y), n = opened(st.year).length;
     const days = Math.ceil((new Date(start.getFullYear(), start.getMonth(), start.getDate()) - new Date(y, d.getMonth(), d.getDate())) / 864e5);
     const dayName = es() ? 'domingo ' + start.getDate() + ' de noviembre' : 'Sunday, November ' + start.getDate();
-    if (d.getMonth() === 0 || (d.getMonth() === 11 && d.getDate() > 25)) return { line: es() ? '¡Feliz Navidad! Las 25 puertas están abiertas.' : 'Merry Christmas! All 25 doors are open.', fresh: false };
+    if (st.mode === 'christmas') {
+      const r = rey(st.year);
+      if (st.reyesIn <= 0) return { line: r.opened ? (es() ? '¡Feliz Día de Reyes!' : 'Happy Three Kings Day!') : (es() ? '¡Feliz Día de Reyes! Abre la puerta de los Reyes' : 'Happy Three Kings Day! Open the Kings’ door'), fresh: !r.opened, kings: true };
+      if (st.reyesIn === 1) return { line: es() ? 'Esta noche, deja tus zapatos para los Reyes' : 'Tonight, leave your shoes out for the Kings', fresh: !r.shoes, kings: true };
+      return { line: es() ? '¡Feliz Navidad! Día de Reyes: faltan ' + st.reyesIn + ' días' : 'Merry Christmas! Three Kings Day in ' + st.reyesIn + ' days', fresh: false, kings: true };
+    }
+    if (d.getMonth() === 0) return { line: es() ? '¡Feliz Navidad! Las 25 puertas están abiertas.' : 'Merry Christmas! All 25 doors are open.', fresh: false };
     if (st.mode === 'advent') {
       const todayOpen = opened(st.year).indexOf(st.upTo) >= 0;
       if (st.upTo === 25) return { line: todayOpen ? (es() ? 'Navidad. Cristo ha nacido.' : 'Christmas Day. Christ is born.') : (es() ? 'Navidad: abre la última puerta' : 'Christmas Day: open the last door'), fresh: !todayOpen };
@@ -301,11 +498,12 @@ window.TW = window.TW || {};
     left.appendChild(el('span', 'adv-greens'));
     b.appendChild(left);
     const right = el('span', 'adv-banner-text');
-    right.appendChild(el('span', 'adv-banner-kicker', es() ? 'Temporada de Adviento' : 'The season of Advent'));
-    right.appendChild(el('span', 'adv-banner-title', es() ? 'Calendario de Adviento' : 'Advent Calendar'));
+    right.appendChild(el('span', 'adv-banner-kicker', info.kings ? (es() ? 'Tiempo de Navidad' : 'Christmastide') : (es() ? 'Temporada de Adviento' : 'The season of Advent')));
+    right.appendChild(el('span', 'adv-banner-title', info.kings ? (es() ? 'Día de Reyes' : 'Three Kings Day') : (es() ? 'Calendario de Adviento' : 'Advent Calendar')));
     right.appendChild(el('span', 'adv-banner-line', info.line));
     const dots = el('span', 'adv-dots');
     for (let i = 1; i <= 25; i++) dots.appendChild(el('span', 'adv-dot' + (done.indexOf(i) >= 0 ? ' on' : '') + (st.mode === 'advent' && i === st.upTo && done.indexOf(i) < 0 ? ' now' : '')));
+    dots.appendChild(el('span', 'adv-dot kings' + (rey(st.year).opened ? ' on' : '') + (st.mode === 'christmas' && st.reyesIn <= 0 && !rey(st.year).opened ? ' now' : '')));
     right.appendChild(dots);
     b.appendChild(right);
     if (info.fresh) b.appendChild(el('span', 'adv-new', es() ? 'Nueva' : 'New'));

@@ -34,10 +34,11 @@ window.TW = window.TW || {};
 
   // Advent reminders: one each morning, December 1 to 25, at 8:00
   N.canRemind = () => N.is() && !!plugin('LocalNotifications');
-  N.adventReminders = async function (on, doors, es) {
+  N.adventReminders = async function (on, doors, es, extra) {
     const LN = plugin('LocalNotifications');
     if (!LN) return false;
-    const ids = doors.map((d) => ({ id: 1200 + d.day }));
+    extra = extra || [];
+    const ids = doors.map((d) => ({ id: 1200 + d.day })).concat(extra.map((x) => ({ id: x.id })));
     try { await LN.cancel({ notifications: ids }); } catch (e) { /* none yet */ }
     if (!on) return true;
     try {
@@ -51,6 +52,10 @@ window.TW = window.TW || {};
       title: es ? 'Calendario de Adviento · ' + d.day + ' de diciembre' : 'Advent calendar · December ' + d.day,
       body: (es ? d.title.es : d.title.en) + (es ? '. Hoy se abre una puerta nueva.' : '. Today a new door opens.'),
       schedule: { at: new Date(year, 11, d.day, 8, 0, 0), allowWhileIdle: true },
+    })).concat(extra.map((x) => {
+      // a January day belongs to the January after this December
+      const y = now.getMonth() === 0 ? now.getFullYear() : now.getFullYear() + 1;
+      return { id: x.id, title: x.title, body: x.body, schedule: { at: new Date(y, x.month, x.day, x.hour, 0, 0), allowWhileIdle: true } };
     })).filter((n) => n.schedule.at > now);
     try { if (list.length) await LN.schedule({ notifications: list }); return true; } catch (e) { return false; }
   };

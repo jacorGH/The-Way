@@ -647,3 +647,17 @@ html { touch-action: manipulation; }                 /* no double-tap zoom while
 canvas, .stage, .map-holder { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }   /* no "Save image" on a long press */
 html.native { -webkit-tap-highlight-color: transparent; }
 html.native button, html.native .bar, html.native .screen:not(.paper-screen), html.native .title-block { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+
+/* ---- Three Kings Day ---- */
+.adv-door.reyes { background: linear-gradient(135deg, #2a4a7a, #1a2a54); border-color: #c9a85a; gap: 0.6rem; margin-top: 0.3rem; }
+.adv-door.reyes.opened { background: radial-gradient(circle at 50% 40%, #2a3a70, #141a34); }
+.adv-door.reyes .reyes-label { font-size: 1rem; letter-spacing: 0.04em; }
+.adv-sky .adv-door.reyes.locked { background: linear-gradient(135deg, #3a4460, #2a3048); }
+.adv-dot.kings { width: 9px; margin-left: 3px; background: rgba(120, 160, 255, 0.25); }
+.adv-dot.kings.on { background: #9ab8ff; box-shadow: 0 0 4px rgba(154, 184, 255, 0.9); }
+.adv-trad-h { margin: 1.4rem 0 0.4rem; font-family: Cinzel, Georgia, serif; letter-spacing: 0.04em; }
+.adv-trad { margin: 0.8rem 0 1.2rem; padding: 0.8rem 0.9rem; border: 1px solid #c9a85a; border-radius: 6px; background: rgba(255, 248, 228, 0.5); }
+.adv-trad h4 { margin: 0 0 0.3rem; }
+.adv-scene { display: block; width: 100%; max-width: 24rem; margin: 0.6rem auto 0.3rem; image-rendering: pixelated; border-radius: 4px; border: 1px solid #8a6a40; background: #241d3a; }
+.adv-scene.rosca { background: #efe2c0; cursor: pointer; touch-action: manipulation; }
+.adv-gift-note { min-height: 1.4em; text-align: center; }

@@ -46,7 +46,7 @@ FOR FAMILIES, CLASSES AND CHURCHES
 • Gentle on young players: the crucifixion and other hard events are told truthfully and without gore.
 
 ADVENT CALENDAR
-• Twenty-five doors from December 1 to Christmas Day, each opening a reading, a thought, a carol and the memory it belongs to.
+• Twenty-five doors from December 1 to Christmas Day, each opening a reading, a thought, a carol and the memory it belongs to, and one more for Three Kings Day: leave your shoes out for the Kings and find the Child in the rosca de Reyes.
 
 IN ENGLISH AND SPANISH
 • Recorded voices throughout.
@@ -107,7 +107,7 @@ PARA FAMILIAS, CLASES E IGLESIAS
 • Modo de grupo: lean la Escritura por turnos, decidan juntos y muestren las preguntas de conversación a todos.
 
 CALENDARIO DE ADVIENTO
-• Veinticinco puertas del 1 de diciembre a Navidad.
+• Veinticinco puertas del 1 de diciembre a Navidad, y una más para el Día de Reyes: deja tus zapatos para los Reyes y encuentra al Niño en la rosca.
 
 EN ESPAÑOL E INGLÉS
 • Voces grabadas en todo el juego. Reina-Valera 1909 y tres Biblias en inglés de dominio público.

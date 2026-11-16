@@ -354,7 +354,10 @@ one door opens a day; the rest of the year all are open. Advent candles (hope, p
 the Sundays of Advent. From November 1 to Epiphany the title screen shows it as a night-sky banner (the wreath with
 its lit candles, a countdown to Advent or today's door, and a dot for each door opened); it is always on the Birth of
 Jesus in the timeline. The calendar itself sits under a night sky with the star over Bethlehem, and doors open in a burst
-of gold. Opened doors are kept per year in the save (`save.advent`). In the store apps it can schedule a reminder each
+of gold. After Christmas the banner counts down to **Three Kings Day** (January 6, Día de Reyes): its door opens on the
+eve, to leave your shoes out for the Kings, and on the 6th the shoes hold gold, frankincense and myrrh; the rosca de
+Reyes hides the Christ Child in one slice (whoever finds him brings the tamales on Candlemas, linked to the
+Presentation). The reminders in the apps include the eve and the day. Opened doors are kept per year in the save (`save.advent`). In the store apps it can schedule a reminder each
 morning of Advent.
 
 ## Sound settings
