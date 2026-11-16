@@ -377,6 +377,7 @@ window.TW = window.TW || {};
     t.classList.remove('show');
     void t.offsetWidth;
     t.classList.add('show');
+    clearTimeout(SC.toastTimer); SC.toastTimer = setTimeout(() => t.classList.remove('show'), 4700);
   };
 
   SC.wait = (ms) => U.wait(U.reducedMotion() ? Math.min(ms, 150) : ms);

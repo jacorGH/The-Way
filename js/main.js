@@ -599,6 +599,8 @@ window.TW = window.TW || {};
       game.current = id;
       $('#scene-title').textContent = D.episodes[id].scene;
       SC.init(sceneEls);
+      // a memory left halfway (by leaving for the map, or a story picked up later) must not tint the next scene
+      if (TW.Vignettes && TW.Vignettes.reset) TW.Vignettes.reset();
       SC.begin();
       SC.start();
       if (target && TW.Progress) TW.Progress.fastForward(id, target);
@@ -608,7 +610,7 @@ window.TW = window.TW || {};
     if (TW.Progress) TW.Progress.offer(id, run); else run(null);
   }
   game.enterEpisode = enterEpisode;
-  $('#btn-leave').addEventListener('click', () => game.show('map'));
+  $('#btn-leave').addEventListener('click', () => { if (TW.Vignettes && TW.Vignettes.reset) TW.Vignettes.reset(); game.show('map'); });
 
   game.observe = function (ep, id, text, showText, auto) {
     text = TW.Role.G(text);
@@ -877,7 +879,8 @@ window.TW = window.TW || {};
     if (!(TW.Native && TW.Native.is())) { const st = el('p', 'empty', ''); const ob = el('button', 'btn small', T('Save recordings for offline play')); ob.type = 'button';
       ob.addEventListener('click', () => saveRecordingsOffline(TW.Settings.get('lang') === 'es' ? 'es' : 'en', st)); body.appendChild(ob); body.appendChild(st); }
     pickRow(body, 'Voice speed', 'voiceSpeed', [['0.8', '0.8×'], ['0.9', '0.9×'], ['1', '1×'], ['1.1', '1.1×'], ['1.25', '1.25×'], ['1.5', '1.5×']], (v) => TW.Settings.set('voiceSpeed', Number(v)));
-    checkRow(body, 'Even out voice volume (experimental; turn off if recordings go silent)', 'voiceLeveler');
+    // (the recordings themselves are now evened out by Tidy audio; this extra leveler only works in a browser)
+    if (!(TW.Native && TW.Native.is())) checkRow(body, 'Even out voice volume (experimental; turn off if recordings go silent)', 'voiceLeveler');
     if (!DEV) { body.appendChild(el('p', 'empty', 'Recorded voices play wherever they exist. Any other line is read by your device’s voice.')); return; }
     body.appendChild(el('p', '', 'Developer tools (shown because the address has ?dev). Recordings in the game’s audio/' + lang + ' folder play automatically, line by line; any line without one is read by the device. Ready-made batches for TTS Studio, one per episode, are in the dub folder (dub/index.html on your published copy). You can also record your own with the iPhone’s Shortcuts app; see RECORDING.md.'));
     if (!keys.length) {

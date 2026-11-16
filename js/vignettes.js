@@ -1083,5 +1083,14 @@ window.TW = window.TW || {};
     });
   };
 
+  // out of any memory at once: no sepia, no "As remembered by", the music no longer muffled
+  VG.reset = function () {
+    saved = null;
+    const st = SC.el && SC.el.stage;
+    if (st) { st.classList.remove('memory'); st.classList.remove('vivid'); }
+    if (SC.el && SC.el.memchip) SC.el.memchip.textContent = '';
+    if (TW.Audio) { TW.Audio.memory(false); if (TW.Audio.swell) TW.Audio.swell(0); }
+  };
+
   TW.Vignettes = VG;
 })(window.TW);

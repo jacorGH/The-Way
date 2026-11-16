@@ -183,7 +183,9 @@ Phones that already saved recordings for offline play keep their old copies unti
 The game only plays recordings from `audio/en/` and `audio/es/`. The **Tidy audio** workflow puts them there: recordings
 pushed to `en/` or `es/` at the top of the repository move into `audio/`, Scripture recordings move to their Bible's
 language (`s-WEB`, `s-KJV`, `s-ASV` to English; `s-RV1909` to Spanish), copies already in place are removed,
-Scripture recordings whose text is no longer in their Bible's batch are removed, and everything is compressed. It runs by itself when recordings land in `en/` or `es/`, and from the Actions tab (or
+Scripture recordings whose text is no longer in their Bible's batch are removed, everything is compressed, and
+every recording is brought to the same loudness (`tools/even-audio.sh`, -24 LUFS), so Scripture is as loud as the
+voices around it. It runs by itself when recordings land in `en/` or `es/`, and from the Actions tab (or
 GitMobile → Run a workflow) any time.
 
 ## Recordings cut short

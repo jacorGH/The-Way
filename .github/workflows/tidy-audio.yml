@@ -6,6 +6,8 @@
 #  · A Scripture recording whose text is no longer in its Bible's batch (dub/<lang>/scripture-<lang>-<BIBLE>.json) is
 #    removed: the text changed, so the game asks for a new recording under a new name and never plays the old one.
 #    Bibles without a batch file are left alone.
+#  · Every recording is brought to the same loudness (-24 LUFS), so Scripture plays as loud as the voices around it.
+#    Recordings already at that level are left as they are.
 # Runs by itself when recordings land in en/ or es/, and from the Actions tab (or GitMobile → Run a workflow) any time.
 name: Tidy audio
 on:
@@ -73,11 +75,13 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Compress recordings above ${{ env.KBPS }} kbps
         run: bash tools/compress-audio.sh "$KBPS" audio
+      - name: Even out the loudness of every recording
+        run: bash tools/even-audio.sh -24 audio "$KBPS"
       - name: Commit
         run: |
           git add -A audio en es 2>/dev/null || git add -A audio
           if git diff --cached --quiet; then echo "Everything was already in place."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Tidy audio: move ${MOVED} recordings into audio/, remove ${DROPPED} duplicates and ${UNUSED} unused Scripture, compress"
+          git commit -m "Tidy audio: move ${MOVED} recordings into audio/, remove ${DROPPED} duplicates and ${UNUSED} unused Scripture, compress, even out ${EVENED} volumes"
           git push
