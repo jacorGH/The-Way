@@ -174,7 +174,6 @@ window.TW = window.TW || {};
     b.appendChild(el('span', 'resume-sub', (E.num ? E.num + '. ' : '') + (TW.tr ? TW.tr(E.title) : E.title)));
     b.dataset.ep = last.ep; b.dataset.who = last.who || '';
   }
-  document.addEventListener('click', (e) => { if (e.target && e.target.closest && e.target.closest('#btn-title-lang')) setTimeout(resumeButton, 60); });
   $('#btn-resume').addEventListener('click', () => {
     if (pickRole !== (game.save.role || 'scribe')) setRole(game.save.role || 'scribe');
     game.save.name = game.save.name || readName();
@@ -1011,6 +1010,9 @@ window.TW = window.TW || {};
     const lb = $('#btn-title-lang');
     if (lb) { lb.textContent = TW.Settings.get('lang') === 'es' ? 'English' : 'Español'; lb.setAttribute('lang', TW.Settings.get('lang') === 'es' ? 'en' : 'es'); }
     if (TW.Support) TW.Support.titleLine();
+    // the title's live pieces are rebuilt in the new language straight away
+    if ($('#btn-resume')) resumeButton();
+    if (TW.Advent) TW.Advent.titleButton();
     $('#copyright').textContent = '© ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '. ' + (TW.Settings.get('lang') === 'es' ? 'Libre para jugar y compartir. Todos los demás derechos reservados.' : 'Free to play and share. All other rights reserved.');
   }
   function openJournal(tab) {

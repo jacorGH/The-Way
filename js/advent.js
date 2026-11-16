@@ -512,5 +512,3 @@ window.TW = window.TW || {};
   };
   TW.Advent = AD;
 })(window.TW);
-// keep the title button in the chosen language
-document.addEventListener('click', (e) => { if (e.target && e.target.closest && e.target.closest('#btn-title-lang') && TW.Advent) setTimeout(() => TW.Advent.titleButton(), 60); });
