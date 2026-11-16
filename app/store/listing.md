@@ -8,7 +8,7 @@ Everything below is ready to paste. Character counts are within each store's lim
 
 **Name** (30 max): The Way: An Eyewitness Account
 
-**Subtitle** (30 max): Investigate the Gospels & Acts
+**Subtitle** (30 max): Walk the Gospels as you study
 
 **Category**: Primary: Education. Secondary: Games → Adventure. (Choose the reverse if you'd rather appear among games.)
 
@@ -76,7 +76,9 @@ A Bible study you play: investigate the Gospels and Acts. Free, no ads.
 
 ## Spanish (add Spanish (Mexico) and Spanish (Spain) as localizations)
 
-**Subtítulo**: Investiga los Evangelios
+**Nombre** (30 máx.): The Way: Relato presencial
+
+**Subtítulo**: Recorre el Evangelio y estudia
 
 **Texto promocional**:
 Llegó el Adviento: abre una puerta cada día de diciembre, vive la noche en que cantaron los ángeles y aprende de memoria un versículo de cada episodio. Sin anuncios.

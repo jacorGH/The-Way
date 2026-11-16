@@ -837,7 +837,7 @@ window.TW = window.TW || {};
     renderStudio(body);
     if (TW.Support) TW.Support.settings(body, el, section);
     section(body, 'About and license');
-    body.appendChild(el('p', '', (TW.Settings.get('lang') === 'es' ? 'El Camino: Relato de un testigo' : TW.ABOUT.title) + ' · © ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '.'));
+    body.appendChild(el('p', '', (TW.Settings.get('lang') === 'es' ? 'The Way: Relato presencial' : TW.ABOUT.title) + ' · © ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '.'));
     body.appendChild(el('p', '', TW.ABOUT.summary));
     body.appendChild(el('p', 'empty', (TW.Settings.get('lang') === 'es' ? 'Los términos completos están en LICENSE.md, junto con el juego. Para permisos: ' : 'Full terms are in LICENSE.md with the game. For permissions: ') + TW.ABOUT.contact + '.'));
     if (TW.Native && TW.Native.is()) { const vp = el('p', 'fine'); body.appendChild(vp); TW.Native.version().then((v) => { if (v) vp.textContent = (TW.Settings.get('lang') === 'es' ? 'Versión ' : 'Version ') + v; }); }

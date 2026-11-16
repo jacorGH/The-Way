@@ -14,7 +14,7 @@ window.TW = window.TW || {};
     const name = s.name || (TW.Role.is() ? 'Elisheva' : 'Eleazar');
     const parts = [];
     const eps = D.eraOrder.filter((k) => s.completed[k]);
-    parts.push('<header><p class="kick">' + esc(T('The Way: An Eyewitness Account', 'El Camino: Relato de un testigo')) + '</p><h1>' + esc(T('The account of ', 'El relato de ') + name) + '</h1>');
+    parts.push('<header><p class="kick">' + esc(T('The Way: An Eyewitness Account', 'The Way: Relato presencial')) + '</p><h1>' + esc(T('The account of ', 'El relato de ') + name) + '</h1>');
     if (X && X.endingLine) parts.push('<p class="sum">' + esc(X.endingLine()) + '</p>');
     parts.push('<p class="date">' + esc(new Date().toLocaleDateString(es() ? 'es' : 'en', { year: 'numeric', month: 'long', day: 'numeric' })) + '</p></header>');
     if (!eps.length) parts.push('<p>' + esc(T('No accounts written yet. Finish an episode and seal your report.', 'Todavía no hay relatos escritos. Termina un episodio y sella tu informe.')) + '</p>');

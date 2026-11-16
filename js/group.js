@@ -34,7 +34,7 @@ window.TW = window.TW || {};
   G.guide = function (keys) {
     const D = TW.D, X = TW.Discover;
     const parts = [];
-    parts.push('<header><p class="kick">' + esc(T('The Way: An Eyewitness Account', 'El Camino: Relato de un testigo')) + '</p><h1>' + esc(T('Leader’s guide', 'Guía para el líder')) + '</h1>');
+    parts.push('<header><p class="kick">' + esc(T('The Way: An Eyewitness Account', 'The Way: Relato presencial')) + '</p><h1>' + esc(T('Leader’s guide', 'Guía para el líder')) + '</h1>');
     parts.push('<p class="ref">' + esc(T('For families and groups. Play an episode together, taking turns to read Scripture aloud, then talk it over with these questions. About 20–30 minutes each.', 'Para familias y grupos. Jueguen un episodio juntos, turnándose para leer la Escritura en voz alta, y luego conversen con estas preguntas. Unos 20–30 minutos cada uno.')) + '</p></header>');
     keys.forEach((k) => {
       const E = D.episodes[k]; if (!E) return;

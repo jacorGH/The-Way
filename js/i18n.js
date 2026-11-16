@@ -11,7 +11,7 @@ window.TW = window.TW || {};
     'Service': 'Servicio', 'Reports': 'Informes', 'Letters': 'Cartas', 'Questions': 'Preguntas', 'Settings': 'Ajustes',
     'Map': 'Mapa', 'Scroll': 'Rollo', 'Timeline': 'Cronología', 'Galilee': 'Galilea', 'The Land': 'La Tierra',
     'Jerusalem': 'Jerusalén', 'The East': 'El Oriente', 'Back to the map': 'Volver al mapa',
-    'An Eyewitness Account': 'Relato de un testigo', 'a young scribe': 'un joven escriba', 'Nicodemus’s niece': 'sobrina de Nicodemo',
+    'An Eyewitness Account': 'Relato presencial', 'a young scribe': 'un joven escriba', 'Nicodemus’s niece': 'sobrina de Nicodemo',
     'two accounts': 'dos relatos', 'Both': 'Ambos',
     'Walk through the Gospels and the early church as one who was not yet convinced.': 'Recorre los Evangelios y la iglesia primitiva como alguien que aún no estaba convencido.',
     'Scripture quotations are from the World English Bible, which is in the public domain.': 'Las citas bíblicas provienen de la versión elegida en Ajustes. La World English Bible y la Reina-Valera 1909 son de dominio público.',
