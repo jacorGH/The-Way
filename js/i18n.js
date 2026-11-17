@@ -37,6 +37,8 @@ window.TW = window.TW || {};
     lang: () => (TW.Settings ? TW.Settings.get('lang') : 'en'),
     t(en) { const d = DICT[I.lang()]; return (d && d[en]) || en; },
     add(lang, map) { DICT[lang] = Object.assign(DICT[lang] || {}, map); },
+    // the English a translation came from (for text saved in another language by an earlier version)
+    reverse(lang, text) { const d = DICT[lang] || {}; for (const k in d) if (d[k] === text) return k; return null; },
     // translate static labels marked with data-i18n (the English is kept in data-en)
     apply(root) {
       (root || document).querySelectorAll('[data-i18n]').forEach((n) => {
@@ -60,10 +62,24 @@ window.TW = window.TW || {};
       if (tr !== key) { const out = raw.replace(key, tr); original.set(node, { en: en, shown: out }); node.nodeValue = out; }
       return;
     }
-    if (node.nodeType !== 1 || /^(SCRIPT|STYLE|TEXTAREA|INPUT|SELECT|OPTION|CANVAS)$/.test(node.tagName)) return;
+    if (node.nodeType !== 1) return;
+    // what screen readers say and long-press shows: aria-label, title and placeholder, the same way
+    if (node.hasAttribute && (node.hasAttribute('aria-label') || node.hasAttribute('title') || node.hasAttribute('placeholder'))) visitAttrs(node);
+    if (/^(SCRIPT|STYLE|TEXTAREA|INPUT|SELECT|OPTION|CANVAS)$/.test(node.tagName)) return;
     // Scripture is never translated here: it comes from the chosen Bible version
     if (node.classList && (node.classList.contains('passage') || node.classList.contains('kind-scripture') || node.classList.contains('verse'))) return;
     for (let c = node.firstChild; c; c = c.nextSibling) visit(c);
+  }
+  const originalAttr = new WeakMap();
+  function visitAttrs(node) {
+    let mem = originalAttr.get(node);
+    ['aria-label', 'title', 'placeholder'].forEach((a) => {
+      const raw = node.getAttribute(a); if (!raw) return;
+      const m = mem && mem[a];
+      const en = m && m.shown === raw ? m.en : raw;
+      const tr = TW.tr ? TW.tr(en) : en;
+      if (tr !== raw) { if (!mem) { mem = {}; originalAttr.set(node, mem); } mem[a] = { en, shown: tr }; node.setAttribute(a, tr); }
+    });
   }
   let watcher = null;
   I.sweep = function () {

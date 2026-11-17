@@ -239,7 +239,9 @@ window.TW = window.TW || {};
   let pending = null, typing = null;
 
   const G = (x) => (TW.Role ? TW.Role.G(x) : x);
+  let cur = null; // the line on screen, as the story gave it, so a language change can redraw it
   SC.say = function (o) {
+    const orig = o;
     if (o && o.kind !== 'scripture') o = Object.assign({}, o, { text: G(o.text), speaker: G(o.speaker) });
     // Scripture references follow the chosen Bible's language; a verse that version lacks is shown from the WEB, marked
     if (o && o.kind === 'scripture' && TW.Bible) { o = Object.assign({}, o, { ref: TW.Bible.localRef(o.ref) + (TW.Bible.lastFallback ? ' · WEB' : '') }); TW.Bible.lastFallback = false; }
@@ -263,7 +265,8 @@ window.TW = window.TW || {};
     if (o.speaker && TW.Portrait && !TW.TURBO) { const pc = TW.Portrait.canvas(o.speaker); if (pc) el.speaker.parentNode.insertBefore(pc, el.speaker); }
     el.choices.innerHTML = '';
     el.next.hidden = true;
-    const full = o.text;
+    let full = o.text;
+    cur = { orig, lineId, set: (t) => { full = t; } };
     return new Promise((res) => {
       const finish = () => {
         clearInterval(typing); typing = null;
@@ -290,6 +293,20 @@ window.TW = window.TW || {};
       }, delay);
       pending = finish;
     });
+  };
+
+  // the language changed while a line is on screen: show it again in the new language (Scripture keeps its version)
+  SC.relang = function () {
+    const el = SC.el;
+    if (!cur || !el || !el.dialog || el.dialog.dataset.line !== (cur.lineId || '')) return;
+    const o = cur.orig;
+    if (o.kind === 'scripture') { el.label.textContent = LABELS.scripture(TW.Bible ? TW.Bible.localRef(o.ref) : o.ref); return; }
+    const text = G(o.text), sp = G(o.speaker);
+    const t = cur.lineId && TW.Lines ? TW.Lines.translate(cur.lineId, text) : text;
+    el.label.textContent = LABELS[o.kind](o.ref || '');
+    if (sp) el.speaker.textContent = T(sp);
+    cur.set(t);
+    if (!typing) el.text.textContent = t;
   };
 
   function onDialogTap(e) {

@@ -2,6 +2,15 @@
 /* The Way — Spanish: sound settings, the heavenly host, the Advent calendar. */
 (function (TW) {
   TW.I18n.add('es', {
+    // labels screen readers say and long-press shows
+    'Who you play': 'Tu personaje', 'Relief map. Tap a place to see it.': 'Mapa en relieve. Toca un lugar para verlo.', 'Which map': 'Elige el mapa',
+    'The scale widens after AD 36': 'La escala se amplía después del 36 d. C.', 'AD 25 to AD 100': 'Del 25 al 100 d. C.',
+    'Hope': 'Esperanza', 'Peace': 'Paz', 'Joy': 'Gozo', 'Love': 'Amor',
+    // “Whose account?”
+    'Testimony': 'Testimonio', 'Recommended': 'Recomendado', 'Back': 'Volver',
+    'Eleazar asks the questions': 'Eleazar hace las preguntas', 'Elisheva asks the questions': 'Elisheva hace las preguntas',
+    // witnesses named in “As remembered by …”
+    'John': 'Juan', 'Peter': 'Pedro', 'Saul of Tarsus': 'Saulo de Tarso',
     // the study page after a report is sealed
     'Your map has grown': 'Tu mapa ha crecido',
     'See the map of the Land': 'Ver el mapa de la Tierra',

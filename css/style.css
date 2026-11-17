@@ -59,6 +59,10 @@ canvas.pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
 .screen { position: absolute; inset: 0; display: none; flex-direction: column; }
 .screen.active { display: flex; }
 
+/* parchment stays light in dark mode, so the phone draws its checkboxes, menus and text boxes light on it too
+   (in dark mode iPhone drew an unchecked box as a solid black square) */
+.paper-screen, .scroll, .sheet, .dialog, .voice-card, .resume-card, .verse-game-card { color-scheme: light; }
+
 /* papyrus texture: fibres crossing at right angles, as papyrus is made */
 .paper-screen, .scroll, .sheet, .dialog {
   background-color: var(--papyrus);

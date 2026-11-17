@@ -38,7 +38,7 @@ window.TW = window.TW || {};
     }
     if (!FF) {
       const p = store(), sl = p[slot(rec.ep)] || (p[slot(rec.ep)] = { marks: [], choices: [] });
-      if (!sl.marks.some((m) => m.key === key && m.occ === occ)) sl.marks.push({ key, occ, kind, text: extra && extra.label ? extra.label : text });
+      if (!sl.marks.some((m) => m.key === key && m.occ === occ)) sl.marks.push(Object.assign({ key, occ, kind, text: extra && extra.label ? extra.label : text }, extra && extra.witness ? { witness: extra.witness } : {}));
       sl.resume = { key, occ }; sl.at = Date.now();
       persist();
     }
@@ -81,7 +81,8 @@ window.TW = window.TW || {};
   let labelNext = null;
   PR.memory = function (id, witness) {
     if (!episodeOn() || inFree()) return;
-    const m = mark('memory', id, { label: witness ? T('As remembered by ', 'Como lo recuerda ') + (TW.tr ? TW.tr(witness) : witness) : id });
+    // the witness is kept as written in the story, so the label follows the language chosen when it's shown
+    const m = mark('memory', id, { label: witness ? 'As remembered by ' + witness : id, witness: witness || '' });
     if (!FF) labelNext = m;
   };
   SC.say = function (o) {
@@ -95,6 +96,25 @@ window.TW = window.TW || {};
 
   // the report is written: the episode is finished, so there is no place to continue from (the bookmarks stay)
   PR.finished = (ep) => { const sl = store()[slot(ep)]; if (sl) { delete sl.resume; persist(); } };
+
+  // A bookmark's label in the language and Bible chosen now, whatever was on when it was saved:
+  // Scripture is read again from its reference, and "As remembered by …" is put together again.
+  function momentLabel(m, G) {
+    const tr = (x) => (TW.tr ? TW.tr(x) : x);
+    const verse = TW.Bible && TW.Bible.reread ? TW.Bible.reread(m.text) : null;
+    if (verse) return verse;
+    const rem = /^(?:As remembered by|Como lo recuerda) (.+)$/.exec(m.text || '');
+    if (rem) {
+      const who = m.witness || rem[1];
+      return T('As remembered by ', 'Como lo recuerda ') + tr(es() ? who : englishName(who));
+    }
+    return tr(G(m.text));
+  }
+  // names saved in Spanish by an earlier version of the game, back to the story's English
+  function englishName(who) {
+    if (!TW.I18n || !TW.I18n.reverse) return who;
+    return TW.I18n.reverse('es', who) || who;
+  }
 
   // Before an episode starts: offer to continue, start from a moment, or start over. Calls go(ff) with a target or null.
   // the episode you were last in the middle of (for the title's "Pick up where you left off")
@@ -127,7 +147,7 @@ window.TW = window.TW || {};
     const G = (x) => (TW.Role && TW.Role.G ? TW.Role.G(x) : x);
     moments.forEach((m, i) => {
       if (i === 0) return;
-      let t = G(m.text); t = TW.tr ? TW.tr(t) : t;
+      const t = momentLabel(m, G);
       const b = document.createElement('button'); b.type = 'button'; b.className = 'resume-moment';
       b.textContent = (t.length > 90 ? t.slice(0, 88) + '…' : t);
       b.addEventListener('click', () => { box.remove(); go({ key: m.key, occ: m.occ }); });

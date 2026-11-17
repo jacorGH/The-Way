@@ -9,7 +9,7 @@ window.TW = window.TW || {};
   const TR = (x) => (TW.tr ? TW.tr(x) : x);
   const REF = (x) => (TW.Bible ? TW.Bible.localRef(x) : x);
   // "c. AD 28" → "h. 28 d. C." in Spanish
-  const AD = (x) => (TW.Settings && TW.Settings.get('lang') === 'es' && typeof x === 'string' ? x.replace(/^(c\. )?AD (.+)$/, (s, c, y) => (c ? 'h. ' : '') + y + ' d. C.') : x);
+  const AD = (x) => (TW.Settings && TW.Settings.get('lang') === 'es' && typeof x === 'string' ? x.replace(/^Passover, /, 'Pascua, ').replace(/(c\. )?AD (.+)$/, (s, c, y) => (c ? 'h. ' : '') + y + ' d. C.') : x);
   const $ = (s) => document.querySelector(s);
   const el = (tag, cls, text) => {
     const e = document.createElement(tag);
@@ -202,24 +202,37 @@ window.TW = window.TW || {};
     const b = $('#prologue-body');
     b.innerHTML = '';
     const n = game.save.name;
+    // the player's name is inside the first paragraph, so each paragraph is written out in both languages
+    const L = (en, es) => (TW.Settings.get('lang') === 'es' ? es : en);
+    const word = L('Word has come south of a teacher from Nazareth named Jesus, who heals the sick in Galilee and casts out unclean spirits. People say something about him that unsettles the teachers of Jerusalem.',
+      'Ha llegado al sur la noticia de un maestro de Nazaret llamado Jesús, que sana a los enfermos en Galilea y echa fuera espíritus inmundos. La gente dice de él algo que inquieta a los maestros de Jerusalén.');
+    const city = L('Jerusalem, in the reign of Tiberius Caesar.', 'Jerusalén, en el reinado de Tiberio César.');
+    const verse = () => block('scripture', TW.t('Scripture') + ', ' + TW.Bible.localRef('Mark 1:22'), TW.P.singleText('Mark 1:22'), 'verse');
+    const nico = L('Nicodemus was a Pharisee and a ruler of the Jews (John 3:1).', 'Nicodemo era fariseo y principal entre los judíos (Juan 3:1).');
     if (TW.Role.both()) {
-      b.appendChild(block('drama', 'Dramatization', 'Jerusalem, in the reign of Tiberius Caesar. Word has come south of a teacher from Nazareth named Jesus, who heals the sick in Galilee and casts out unclean spirits. People say something about him that unsettles the teachers of Jerusalem.'));
-      b.appendChild(block('scripture', TW.t('Scripture') + ', ' + TW.Bible.localRef('Mark 1:22'), TW.P.singleText('Mark 1:22'), 'verse'));
-      b.appendChild(block('history', 'History', 'Nicodemus was a Pharisee and a ruler of the Jews (John 3:1). Mark records scribes coming down from Jerusalem to observe Jesus (Mark 3:22), and Luke records women who followed Jesus in Galilee and supported him (Luke 8:1–3).'));
-      b.appendChild(block('drama', 'Dramatization', 'Nicodemus sends two people north. Eleazar, a young scribe who studies under him, goes with the other teachers of the Law. Elisheva, his niece, whom he taught to read and write, goes to stay with his cousin’s family in Capernaum. “Watch him closely,” he tells them both. “Write to me what you see. Only what you see.”'));
+      b.appendChild(block('drama', 'Dramatization', city + ' ' + word));
+      b.appendChild(verse());
+      b.appendChild(block('history', 'History', nico + ' ' + L('Mark records scribes coming down from Jerusalem to observe Jesus (Mark 3:22), and Luke records women who followed Jesus in Galilee and supported him (Luke 8:1–3).',
+        'Marcos cuenta que bajaron escribas de Jerusalén para observar a Jesús (Marcos 3:22), y Lucas habla de mujeres que siguieron a Jesús en Galilea y lo sostenían (Lucas 8:1–3).')));
+      b.appendChild(block('drama', 'Dramatization', L('Nicodemus sends two people north. Eleazar, a young scribe who studies under him, goes with the other teachers of the Law. Elisheva, his niece, whom he taught to read and write, goes to stay with his cousin’s family in Capernaum. “Watch him closely,” he tells them both. “Write to me what you see. Only what you see.”',
+        'Nicodemo envía a dos personas al norte. Eleazar, un joven escriba que estudia con él, va con los otros maestros de la Ley. Elisheva, su sobrina, a quien él enseñó a leer y escribir, va a quedarse con la familia de su primo en Capernaúm. “Obsérvenlo de cerca”, les dice a los dos. “Escríbanme lo que vean. Solo lo que vean.”')));
       return;
     }
     if (TW.Role.is()) {
-      b.appendChild(block('drama', 'Dramatization', 'Jerusalem, in the reign of Tiberius Caesar. You are ' + n + ', niece of Nicodemus. You grew up in his house, and he taught you to read and write so that you could keep his accounts and copy his letters. Word has come south of a teacher from Nazareth named Jesus, who heals the sick in Galilee and casts out unclean spirits. People say something about him that unsettles the teachers of Jerusalem.'));
-      b.appendChild(block('scripture', TW.t('Scripture') + ', ' + TW.Bible.localRef('Mark 1:22'), TW.P.singleText('Mark 1:22'), 'verse'));
-      b.appendChild(block('history', 'History', 'Nicodemus was a Pharisee and a ruler of the Jews (John 3:1). Few women in Judea could read and write, but some in learned households did. Luke records that women followed Jesus in Galilee and supported him from their own means (Luke 8:1–3).'));
-      b.appendChild(block('drama', 'Dramatization', 'Nicodemus sends you north to stay with his cousin’s family in Capernaum. “Watch him closely,” he says. “Write to me what you see. Only what you see.”'));
+      b.appendChild(block('drama', 'Dramatization', city + ' ' + L('You are ' + n + ', niece of Nicodemus. You grew up in his house, and he taught you to read and write so that you could keep his accounts and copy his letters.',
+        'Eres ' + n + ', sobrina de Nicodemo. Creciste en su casa, y él te enseñó a leer y escribir para que llevaras sus cuentas y copiaras sus cartas.') + ' ' + word));
+      b.appendChild(verse());
+      b.appendChild(block('history', 'History', nico + ' ' + L('Few women in Judea could read and write, but some in learned households did. Luke records that women followed Jesus in Galilee and supported him from their own means (Luke 8:1–3).',
+        'Pocas mujeres en Judea sabían leer y escribir, pero algunas de casas instruidas sí. Lucas cuenta que hubo mujeres que siguieron a Jesús en Galilea y lo sostenían con sus bienes (Lucas 8:1–3).')));
+      b.appendChild(block('drama', 'Dramatization', L('Nicodemus sends you north to stay with his cousin’s family in Capernaum. “Watch him closely,” he says. “Write to me what you see. Only what you see.”',
+        'Nicodemo te envía al norte, a quedarte con la familia de su primo en Capernaúm. “Obsérvalo de cerca”, te dice. “Escríbeme lo que veas. Solo lo que veas.”')));
       return;
     }
-    b.appendChild(block('drama', 'Dramatization', 'Jerusalem, in the reign of Tiberius Caesar. You are ' + n + ', a young scribe trained in the Law of Moses. Word has come south of a teacher from Nazareth named Jesus, who heals the sick in Galilee and casts out unclean spirits. People say something about him that unsettles the teachers of Jerusalem.'));
-    b.appendChild(block('scripture', TW.t('Scripture') + ', ' + TW.Bible.localRef('Mark 1:22'), TW.P.singleText('Mark 1:22'), 'verse'));
-    b.appendChild(block('history', 'History', 'Nicodemus was a Pharisee and a ruler of the Jews (John 3:1). Mark records scribes coming down from Jerusalem to observe Jesus (Mark 3:22).'));
-    b.appendChild(block('drama', 'Dramatization', 'Nicodemus sends you north with other teachers of the Law. “Watch him closely,” he says. “Write down what you see. Only what you see.”'));
+    b.appendChild(block('drama', 'Dramatization', city + ' ' + L('You are ' + n + ', a young scribe trained in the Law of Moses.', 'Eres ' + n + ', un joven escriba instruido en la Ley de Moisés.') + ' ' + word));
+    b.appendChild(verse());
+    b.appendChild(block('history', 'History', nico + ' ' + L('Mark records scribes coming down from Jerusalem to observe Jesus (Mark 3:22).', 'Marcos cuenta que bajaron escribas de Jerusalén para observar a Jesús (Marcos 3:22).')));
+    b.appendChild(block('drama', 'Dramatization', L('Nicodemus sends you north with other teachers of the Law. “Watch him closely,” he says. “Write down what you see. Only what you see.”',
+      'Nicodemo te envía al norte con otros maestros de la Ley. “Obsérvalo de cerca”, te dice. “Escribe lo que veas. Solo lo que veas.”')));
   }
   $('#btn-prologue').addEventListener('click', () => game.show('timeline'));
 
@@ -236,23 +249,23 @@ window.TW = window.TW || {};
       bar.appendChild(t);
     });
     { const t = el('span', 'tl-tick', TW.Settings.get('lang') === 'es' ? '5 a. C.' : '5 BC'); t.style.left = '0.5%'; bar.appendChild(t);
-      const b0 = el('span', 'tl-break'); b0.style.left = '7%'; b0.title = 'About thirty years pass'; bar.appendChild(b0); }
+      const b0 = el('span', 'tl-break'); b0.style.left = '7%'; b0.title = TW.t('About thirty years pass'); bar.appendChild(b0); }
     const brk = el('span', 'tl-break');
     brk.style.left = yearPct(36) + 2 + '%';
-    brk.title = 'The scale widens after AD 36';
+    brk.title = TW.t('The scale widens after AD 36');
     bar.appendChild(brk);
     D.eras.forEach((e) => {
       const s = el('button', 'tl-era' + (e.open ? ' open' : '') + (game.era === e.id ? ' sel' : ''), e.num);
       s.style.left = yearPct(e.span[0]) + '%';
       s.style.width = (e.span[1] < 0 ? 5.5 : Math.max(yearPct(e.span[1]) - yearPct(e.span[0]), 3.2)) + '%';
-      s.setAttribute('aria-label', 'Era ' + e.num + ', ' + e.title);
+      s.setAttribute('aria-label', 'Era ' + e.num + ', ' + TR(e.title));
       s.addEventListener('click', () => { game.era = e.id; renderTimeline(); });
       bar.appendChild(s);
     });
     D.events.forEach((ev, i) => {
       const d = el('button', 'tl-event');
       d.style.left = yearPct(ev.year) + '%';
-      d.setAttribute('aria-label', TW.t(ev.label));
+      d.setAttribute('aria-label', TR(ev.label));
       d.addEventListener('click', () => setCaption(i));
       bar.appendChild(d);
     });
@@ -349,18 +362,22 @@ window.TW = window.TW || {};
 
   // ---------- map ----------
   game.region = game.save.region || 'galilee';
+  function mapLabels() {
+    const R = D.regions[game.region];
+    $('#map-title').textContent = TR(R.title) + ', ' + AD(R.subtitle);
+    $('#map-hint').textContent = TW.t(game.region === 'land'
+      ? 'Blank parchment marks lands you have not heard of yet.'
+      : game.region === 'jerusalem' ? 'Your home city at Passover. Tap a place.' : 'Tap a place. Drag to look around.');
+  }
   function showMap() {
     AU.travel('');
     MV.init($('#map-canvas'));
     hideCard();
     const R = D.regions[game.region];
     AU.scene(REGION_SOUND[game.region]);
-    $('#map-title').textContent = TR(R.title) + ', ' + AD(R.subtitle);
+    mapLabels();
     document.querySelectorAll('.region-switch button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.region === game.region));
     $('#map-hint').hidden = false;
-    $('#map-hint').textContent = TW.t(game.region === 'land'
-      ? 'Blank parchment marks lands you have not heard of yet.'
-      : game.region === 'jerusalem' ? 'Your home city at Passover. Tap a place.' : 'Tap a place. Drag to look around.');
     clearTimeout(game.hintTimer);
     game.hintTimer = setTimeout(() => { $('#map-hint').hidden = true; }, 5000);
     MV.start({
@@ -529,7 +546,7 @@ window.TW = window.TW || {};
     game.observe('s:' + id, 'log', D.service[id].log, false, true);
     persist();
   };
-  game.enterService = function (id) { chooseVoice('s:' + id, 'Service: ' + D.service[id].title, () => startService(id)); };
+  game.enterService = function (id) { chooseVoice('s:' + id, epTitle('s:' + id), () => startService(id)); };
   function startService(id) {
     game.show('scene');
     game.current = 's:' + id;
@@ -542,7 +559,7 @@ window.TW = window.TW || {};
     game.save.heard[id] = Math.max(game.save.heard[id] || 0, n || 1); persist();
     if (before) { const now = TW.Discover.snapshot(); if ([...now].some((x) => !before.has(x)) && SC.toast) SC.toast(TW.t('New in your Discoveries')); }
   };
-  game.enterTestimony = function (id) { chooseVoice('t:' + id, 'Testimony: ' + D.testimonies[id].title, () => startTestimony(id)); };
+  game.enterTestimony = function (id) { chooseVoice('t:' + id, epTitle('t:' + id), () => startTestimony(id)); };
   function startTestimony(id) {
     const T = D.testimonies[id];
     game.show('scene');
@@ -553,7 +570,7 @@ window.TW = window.TW || {};
     SC.start();
     TW.Testimony.run(game, id);
   }
-  const epTitle = (k) => (k.startsWith('t:') ? 'Testimony: ' + D.testimonies[k.slice(2)].title : k.startsWith('s:') ? 'Service: ' + D.service[k.slice(2)].title : D.episodes[k].title);
+  const epTitle = (k) => (k.startsWith('t:') ? TW.t('Testimony') + ': ' + TR(D.testimonies[k.slice(2)].title) : k.startsWith('s:') ? TW.t('Service') + ': ' + TR(D.service[k.slice(2)].title) : TR(D.episodes[k].title));
 
   // ---------- episodes ----------
   const sceneEls = {
@@ -566,17 +583,17 @@ window.TW = window.TW || {};
     if (!TW.Role.both() || game.skipVoice) { game.skipVoice = false; go(); return; }
     const V = TW.Role.VIEW[key] || ['scribe', 'Eleazar asks the questions', 'Elisheva asks the questions'];
     const wrap = el('div', 'voice-card');
-    wrap.appendChild(el('p', 'voice-kicker', 'Whose account?'));
+    wrap.appendChild(el('p', 'voice-kicker', TW.t('Whose account?')));
     wrap.appendChild(el('h2', 'voice-title', title));
     [['scribe', 'Eleazar', V[1]], ['niece', 'Elisheva', V[2]]].forEach((o) => {
       const b = el('button', 'voice-btn' + (V[0] === o[0] ? ' rec' : ''));
       b.type = 'button';
-      b.appendChild(el('span', 'voice-name', o[1] + (V[0] === o[0] ? '  ·  Recommended' : '')));
-      b.appendChild(el('span', 'voice-where', o[2]));
+      b.appendChild(el('span', 'voice-name', o[1] + (V[0] === o[0] ? '  ·  ' + TW.t('Recommended') : '')));
+      b.appendChild(el('span', 'voice-where', TR(o[2])));
       b.addEventListener('click', () => { game.save.cur = o[0]; persist(); ov.remove(); go(); });
       wrap.appendChild(b);
     });
-    const back = el('button', 'btn-text', 'Back');
+    const back = el('button', 'btn-text', TW.t('Back'));
     back.type = 'button';
     back.addEventListener('click', () => ov.remove());
     wrap.appendChild(back);
@@ -590,7 +607,7 @@ window.TW = window.TW || {};
     if (TW.TURBO && SC.turboReset) SC.turboReset();
     const ep = TW.Episodes[id];
     if (!ep) return;
-    chooseVoice(id, D.episodes[id].title, () => startEpisode(id, ep));
+    chooseVoice(id, TR(D.episodes[id].title), () => startEpisode(id, ep));
   }
   function startEpisode(id, ep) {
     const run = (target) => {
@@ -611,21 +628,21 @@ window.TW = window.TW || {};
   game.enterEpisode = enterEpisode;
   $('#btn-leave').addEventListener('click', () => game.show('map'));
   // the Greek under the title: what it means, in a word and a few verses
+  function renderGreek(n) {
+    const es = TW.Settings.get('lang') === 'es';
+    n.innerHTML = '';
+    const h = document.createElement('p'); h.className = 'greek-say';
+    h.innerHTML = '<b lang="grc">ἡ ὁδός</b> · <i>hē hodós</i> (' + (es ? 'se dice' : 'say') + ' <i>' + (es ? 'je jo-DÓS' : 'hay ho-DOSS') + '</i>) · ' + (es ? '“el Camino”' : '“the Way”');
+    n.appendChild(h);
+    const p = document.createElement('p');
+    p.textContent = es
+      ? 'Antes de que nadie los llamara cristianos, así llamaban los primeros creyentes a su fe. Saulo fue a Damasco a arrestar a los que seguían el Camino (Hechos 9:2), y Pablo le dijo al gobernador Félix que servía al Dios de sus padres según el Camino (Hechos 24:14). Viene de las palabras de Jesús: “Yo soy el camino, y la verdad, y la vida” (Juan 14:6).'
+      : 'Before anyone called them Christians, this is what the first believers called their faith. Saul went to Damascus to arrest “any who were of the Way” (Acts 9:2), and Paul told the governor Felix, “after the Way, which they call a sect, so I serve the God of our fathers” (Acts 24:14). It goes back to Jesus’ words: “I am the way, the truth, and the life” (John 14:6).';
+    n.appendChild(p);
+  }
   $('#btn-greek').addEventListener('click', () => {
     const b = $('#btn-greek'), n = $('#greek-note'), open = n.hidden;
-    if (open) {
-      const es = TW.Settings.get('lang') === 'es';
-      n.innerHTML = '';
-      const h = document.createElement('p'); h.className = 'greek-say';
-      h.innerHTML = '<b lang="grc">ἡ ὁδός</b> · <i>hē hodós</i> (' + (es ? 'se dice' : 'say') + ' <i>' + (es ? 'je jo-DÓS' : 'hay ho-DOSS') + '</i>) · ' + (es ? '“el Camino”' : '“the Way”');
-      n.appendChild(h);
-      const p = document.createElement('p');
-      p.textContent = es
-        ? 'Antes de que nadie los llamara cristianos, así llamaban los primeros creyentes a su fe. Saulo fue a Damasco a arrestar a los que seguían el Camino (Hechos 9:2), y Pablo le dijo al gobernador Félix que servía al Dios de sus padres según el Camino (Hechos 24:14). Viene de las palabras de Jesús: “Yo soy el camino, y la verdad, y la vida” (Juan 14:6).'
-        : 'Before anyone called them Christians, this is what the first believers called their faith. Saul went to Damascus to arrest “any who were of the Way” (Acts 9:2), and Paul told the governor Felix, “after the Way, which they call a sect, so I serve the God of our fathers” (Acts 24:14). It goes back to Jesus’ words: “I am the way, the truth, and the life” (John 14:6).';
-      n.appendChild(p);
-      AU.sfx && AU.sfx('chime');
-    }
+    if (open) { renderGreek(n); AU.sfx && AU.sfx('chime'); }
     n.hidden = !open; b.setAttribute('aria-expanded', String(open));
   });
 
@@ -1013,6 +1030,11 @@ window.TW = window.TW || {};
     // the title's live pieces are rebuilt in the new language straight away
     if ($('#btn-resume')) resumeButton();
     if (TW.Advent) TW.Advent.titleButton();
+    if (!$('#greek-note').hidden) renderGreek($('#greek-note'));
+    if (game.screen === 'timeline') renderTimeline();
+    if (game.screen === 'map') mapLabels();
+    if (game.screen === 'prologue') renderPrologue();
+    if (game.screen === 'scene' && SC.relang) SC.relang();
     $('#copyright').textContent = '© ' + TW.ABOUT.year + ' ' + TW.ABOUT.holder + '. ' + (TW.Settings.get('lang') === 'es' ? 'Libre para jugar y compartir. Todos los demás derechos reservados.' : 'Free to play and share. All other rights reserved.');
   }
   function openJournal(tab) {
@@ -1045,12 +1067,12 @@ window.TW = window.TW || {};
       const all = Object.keys(D.service || {});
       const done = all.filter((k) => s.served[k]);
       if (!done.length) { body.appendChild(el('p', 'empty', game.save.completed.seven ? 'No one served yet. Look for people who need you on the Jerusalem map.' : 'Service opens in Era III, after the Seven are chosen.')); return; }
-      body.appendChild(el('p', 'empty', 'Served ' + done.length + ' of ' + all.length + '. You cannot make God heal. You can listen, care, and pray.'));
+      body.appendChild(el('p', 'empty', TW.Settings.get('lang') === 'es' ? 'Has servido a ' + done.length + ' de ' + all.length + '. No puedes hacer que Dios sane. Puedes escuchar, cuidar y orar.' : 'Served ' + done.length + ' of ' + all.length + '. You cannot make God heal. You can listen, care, and pray.'));
       done.forEach((k) => {
         const V = D.service[k], r = s.served[k];
         body.appendChild(el('h3', '', V.title));
         body.appendChild(el('p', '', V.log));
-        body.appendChild(el('p', 'heart', 'You chose to: ' + [r.listen, r.care, r.pray].map((x) => x.replace(/\.$/, '').toLowerCase()).join('; ') + '.'));
+        body.appendChild(el('p', 'heart', (TW.Settings.get('lang') === 'es' ? 'Elegiste: ' : 'You chose to: ') + [r.listen, r.care, r.pray].map((x) => TR(x).replace(/\.$/, '').replace(/^./, (c) => c.toLowerCase())).join('; ') + '.'));
       });
     } else if (tab === 'testimonies') {
       const all = Object.keys(D.testimonies);
@@ -1069,8 +1091,8 @@ window.TW = window.TW || {};
       s.questions.forEach((q) => {
         const li = el('li', q.open ? 'open' : 'answered');
         li.appendChild(el('span', 'q-text', q.text));
-        li.appendChild(el('span', 'q-ref', q.ref + (q.open ? ', still open' : ', answered')));
-        if (!q.open && q.answer) li.appendChild(el('span', 'q-answer', q.answer + ' (' + q.answerRef + ')'));
+        li.appendChild(el('span', 'q-ref', TW.Bible.localRef(q.ref) + (TW.Settings.get('lang') === 'es' ? (q.open ? ', todavía abierta' : ', respondida') : (q.open ? ', still open' : ', answered'))));
+        if (!q.open && q.answer) li.appendChild(el('span', 'q-answer', TR(q.answer) + ' (' + TW.Bible.localRef(q.answerRef) + ')'));
         ul.appendChild(li);
       });
       body.appendChild(ul);
@@ -1079,13 +1101,13 @@ window.TW = window.TW || {};
       if (!eps.length) { body.appendChild(el('p', 'empty', TW.Role.is() ? 'No letters sealed yet. Finish an episode to write one.' : 'No reports sealed yet. Finish an episode to write one.')); return; }
       eps.forEach((id) => {
         const E = D.episodes[id], r = s.reports[id];
-        body.appendChild(el('h3', '', E.num + '. ' + E.title));
-        if (s.heart[id] !== undefined) body.appendChild(el('p', 'heart', TW.Role.G(E.hearts[s.heart[id]])));
+        body.appendChild(el('h3', '', E.num + '. ' + TR(E.title)));
+        if (s.heart[id] !== undefined) body.appendChild(el('p', 'heart', TR(TW.Role.G(E.hearts[s.heart[id]]))));
         const ul = el('ul', 'notes');
-        r.obs.forEach((t) => ul.appendChild(el('li', '', t)));
+        r.obs.forEach((t) => ul.appendChild(el('li', '', TR(t))));
         body.appendChild(ul);
-        body.appendChild(el('p', 'conclusion', '“' + r.conclusion + '”'));
-        const b = el('button', 'btn small', 'Study ' + E.ref);
+        body.appendChild(el('p', 'conclusion', '“' + TR(r.conclusion) + '”'));
+        const b = el('button', 'btn small', TW.t('Study') + ' ' + TW.Bible.localRef(E.ref));
         b.addEventListener('click', () => openStudy(id));
         body.appendChild(b);
       });

@@ -67,6 +67,25 @@ window.TW = window.TW || {};
   // turn "Mark 2:1–12" into "Marcos 2:1–12" when a Spanish version is chosen
   const NAME_RE = new RegExp('\\b(' + BOOKS.map((b) => b[1].replace(/ /g, '\\s')).sort((a, b) => b.length - a.length).join('|') + ')\\b(?=\\s+\\d)', 'g');
   B.localRef = (ref) => (ref && spanish() ? String(ref).replace(NAME_RE, (n) => ES[n.replace(/\s+/g, ' ')] || n) : ref);
+  // A saved label like "Lucas 2:16–18 · Y vinieron…" (written in whatever language was on then), read again in the
+  // version and language chosen now. Returns null for anything that isn't a Scripture label.
+  const ANY_BOOK = new Map(); BOOKS.forEach((b) => { ANY_BOOK.set(b[1], b[1]); ANY_BOOK.set(b[2], b[1]); });
+  B.reread = function (label) {
+    const m = String(label || '').match(/^(.+?)\s+(\d+):(\d+)(?:[–-](?:(\d+):)?(\d+))?\s+·\s/);
+    if (!m || !ANY_BOOK.has(m[1])) return null;
+    const book = ANY_BOOK.get(m[1]), c0 = +m[2], v0 = +m[3], c1 = m[4] ? +m[4] : c0, v1 = m[5] ? +m[5] : v0;
+    const out = [];
+    for (let c = c0; c <= c1 && c - c0 < 3; c++) {
+      for (let v = c === c0 ? v0 : 1; v <= (c === c1 ? v1 : 200); v++) {
+        const t = B.verse(book, c + ':' + v).text;
+        if (!t) { if (c < c1) break; continue; }
+        out.push(t);
+      }
+    }
+    if (!out.length) return null;
+    const cv = m[0].slice(m[1].length).replace(/\s+·\s$/, '').trim();
+    return B.bookName(book) + ' ' + cv + ' · ' + out.join(' ');
+  };
   B.needed = () => { const out = []; Object.keys(WEB).forEach((bk) => Object.keys(WEB[bk]).forEach((cv) => out.push([bk, cv]))); return out; };
   B.list = () => Object.values(B.versions);
   B.count = (id) => { const t = (B.versions[id] || {}).text || {}; return Object.values(t).reduce((n, b) => n + Object.keys(b).length, 0); };
