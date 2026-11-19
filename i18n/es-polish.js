@@ -2,6 +2,9 @@
 /* The Way — Spanish: sound settings, the heavenly host, the Advent calendar. */
 (function (TW) {
   TW.I18n.add('es', {
+    // the map
+    'Tap a place. Drag to look around, pinch to zoom.': 'Toca un lugar. Arrastra para mirar alrededor y pellizca para acercar o alejar.',
+    'Zoom in': 'Acercar', 'Zoom out': 'Alejar', 'Show where you are': 'Mostrar dónde estás',
     // labels screen readers say and long-press shows
     'Who you play': 'Tu personaje', 'Relief map. Tap a place to see it.': 'Mapa en relieve. Toca un lugar para verlo.', 'Which map': 'Elige el mapa',
     'The scale widens after AD 36': 'La escala se amplía después del 36 d. C.', 'AD 25 to AD 100': 'Del 25 al 100 d. C.',

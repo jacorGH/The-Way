@@ -237,6 +237,20 @@ canvas.pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
 }
 .region-switch button { border: 0; background: none; color: var(--on-basalt); padding: 0.4rem 0.75rem; font-size: 0.95rem; }
 .region-switch button[aria-pressed="true"] { background: var(--papyrus); color: var(--ink); font-weight: 600; }
+/* zoom and "where am I", down the right edge under the compass */
+.map-tools {
+  position: absolute; right: 0.7rem; top: 3.6rem; display: flex; flex-direction: column; gap: 0.45rem; z-index: 2;
+}
+.map-tools button {
+  width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 1.5px solid var(--on-basalt-soft); padding: 0;
+  background: rgba(36, 30, 26, 0.82); color: var(--on-basalt); font: 600 1.45rem/1 Georgia, serif;
+  display: grid; place-items: center; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35); cursor: pointer;
+}
+.map-tools button svg { width: 1.3rem; height: 1.3rem; }
+.map-tools button:disabled { opacity: 0.35; cursor: default; }
+.map-tools button:active:not(:disabled) { transform: scale(0.94); }
+/* lights up when the view has wandered away from you */
+#map-me.away { background: var(--papyrus); color: var(--ink); border-color: var(--ochre); }
 .map-hint {
   position: absolute; top: 0.8rem; left: 50%; transform: translateX(-50%); margin: 0; padding: 0.3rem 0.8rem; max-width: 86%; text-align: center; white-space: normal !important;
   background: rgba(36, 30, 26, 0.78); color: var(--on-basalt); border-radius: 3px; font-style: italic; font-size: 0.95rem;

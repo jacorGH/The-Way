@@ -229,6 +229,7 @@ window.TW = window.TW || {};
   const V = {
     R: null, G: null, canvas: null, ctx: null, running: false, cam: { x: 0, y: 0 }, follow: true, scale: 2, dpr: 1,
     pos: { x: 0, y: 0 }, path: [], node: null, moving: false, t: 0, selected: null,
+    base: 2, minS: 1, maxS: 6, zooms: {}, inset: 0, anim: null, pan: null, fling: null,
   };
 
   function regionData(id) {
@@ -277,7 +278,10 @@ window.TW = window.TW || {};
     V.pos.x = p[0]; V.pos.y = p[1];
     V.cam.x = p[0]; V.cam.y = p[1];
     V.follow = true; V.path = []; V.moving = false; V.selected = null;
+    V.anim = null; V.pan = null; V.fling = null;
     resize();
+    V.cam.y = V.pos.y + V.inset / 2 / V.scale;
+    V.dragging = true; update(0); V.dragging = false;   // start already inside the map's edges
     if (V.running) return;
     V.running = true;
     let last = performance.now();
@@ -291,12 +295,68 @@ window.TW = window.TW || {};
     requestAnimationFrame(loop);
   };
   V.stop = () => { V.running = false; };
+  const placePt = (id) => {
+    const pl = V.R.places.find((x) => x.id === id) || V.R.nodes[id];
+    return pl ? llToT(V.R, pl.lon, pl.lat) : null;
+  };
   V.focus = function (id) {
-    const n = V.R.nodes[id];
-    if (!n) return;
-    const p = llToT(V.R, n.lon, n.lat);
+    const p = placePt(id);
+    if (!p) return;
     V.follow = false;
-    V.cam.x = p[0]; V.cam.y = p[1] + (V.cssH || 600) * 0.22 / V.scale;
+    V.cam.x = p[0]; V.cam.y = p[1] + V.inset / 2 / V.scale;
+  };
+
+  // ---------- zoom ----------
+  // The map is pixel art, so at rest the zoom settles where every texel is a whole number of screen pixels.
+  const crisp = (s) => U.clamp(Math.round(s * V.dpr) / V.dpr, Math.ceil(V.minS * V.dpr - 1e-6) / V.dpr, V.maxS);
+  const limits = () => {
+    const fit = Math.min(V.cssW / V.R.w, V.cssH / V.R.h);
+    V.minS = Math.max(1, Math.min(V.base, fit * 0.98));
+    V.maxS = Math.round(V.base * 2);
+  };
+  // change the zoom keeping the point under (ax, ay) (css px in the canvas) where it is
+  function scaleAt(s, ax, ay) {
+    const wx = (ax - V.cssW / 2) / V.scale + V.cam.x, wy = (ay - V.cssH / 2) / V.scale + V.cam.y;
+    V.scale = s;
+    V.cam.x = wx - (ax - V.cssW / 2) / s; V.cam.y = wy - (ay - V.cssH / 2) / s;
+    V.zooms[V.R.id] = s;
+  }
+  function zoomTo(s, ax, ay) {
+    s = crisp(s);
+    if (Math.abs(s - V.scale) < 1e-3) return;
+    V.fling = null; V.pan = null;
+    V.anim = { s0: V.scale, s1: s, ax: ax === undefined ? V.cssW / 2 : ax, ay: ay === undefined ? (V.cssH - V.inset) / 2 : ay, t: 0 };
+  }
+  V.zoomBy = function (f, ax, ay) {
+    if (V.follow) { const p = toScreenCss(V.pos.x, V.pos.y); ax = p[0]; ay = p[1]; }
+    zoomTo(V.scale * f, ax, ay);
+  };
+  V.canZoom = (dir) => (dir > 0 ? V.scale < V.maxS - 1e-3 : V.scale > crisp(V.minS) + 1e-3);
+
+  // back to the traveller, wherever the view has wandered
+  V.followMe = function () { V.follow = true; V.pan = null; V.fling = null; };
+  // the part of the map hidden under the place card, so what matters stays above it
+  V.setInset = function (px) { V.inset = Math.max(0, Math.min(px || 0, (V.cssH || 600) * 0.75)); };
+  // make sure a place is in view above the card
+  V.reveal = function (id) {
+    const p = placePt(id);
+    if (!p) return;
+    const q = toScreenCss(p[0], p[1]), top = 56, bottom = V.cssH - V.inset - 36;
+    if (q[0] > 30 && q[0] < V.cssW - 30 && q[1] > top && q[1] < bottom) return;
+    V.follow = false; V.fling = null;
+    V.pan = { x: p[0], y: p[1] + V.inset / 2 / V.scale };
+  };
+  // show both the traveller and a place, zooming out if they don't fit
+  V.showBoth = function (id) {
+    const p = placePt(id);
+    if (!p) return;
+    const visH = Math.max(120, V.cssH - V.inset - 110), visW = V.cssW - 90;
+    const dx = Math.abs(p[0] - V.pos.x), dy = Math.abs(p[1] - V.pos.y);
+    let s = V.scale;
+    if (dx * s > visW || dy * s > visH) s = Math.max(V.minS, Math.min(visW / Math.max(dx, 1), visH / Math.max(dy, 1)));
+    V.scale = crisp(s); V.zooms[V.R.id] = V.scale;
+    V.follow = false; V.anim = null; V.fling = null; V.pan = null;
+    V.cam.x = (p[0] + V.pos.x) / 2; V.cam.y = (p[1] + V.pos.y) / 2 + V.inset / 2 / V.scale;
   };
 
   function resize() {
@@ -305,7 +365,9 @@ window.TW = window.TW || {};
     V.canvas.width = Math.round(r.width * V.dpr);
     V.canvas.height = Math.round(r.height * V.dpr);
     V.cssW = r.width; V.cssH = r.height;
-    V.scale = U.clamp(Math.round(Math.max(r.width / V.R.w, r.height / V.R.h) + 0.2), 2, V.R.city ? 3 : 5);
+    V.base = U.clamp(Math.round(Math.max(r.width / V.R.w, r.height / V.R.h) + 0.2), 2, V.R.city ? 3 : 5);
+    limits();
+    V.scale = crisp(V.zooms[V.R.id] || V.base);
   }
   window.addEventListener('resize', () => { if (V.running) resize(); });
 
@@ -363,16 +425,37 @@ window.TW = window.TW || {};
     if (V._ambT > 0.8 && V.onPos) { V._ambT = 0; const RR = V.R; V.onPos(RR.lon0 + (V.pos.x / RR.w) * (RR.lon1 - RR.lon0), RR.lat1 - (V.pos.y / RR.h) * (RR.lat1 - RR.lat0), RR.id); }
     const snd = V.moving ? (V.boat ? 'boat' : 'walk') : '';
     if (snd !== V._snd && TW.Audio) { V._snd = snd; TW.Audio.travel(snd); }
+    if (V.anim) {
+      const a = V.anim; a.t = Math.min(1, a.t + dt / (U.reducedMotion() ? 0.01 : 0.22));
+      const e = 1 - Math.pow(1 - a.t, 3);
+      scaleAt(a.s0 + (a.s1 - a.s0) * e, a.ax, a.ay);
+      if (a.t >= 1) V.anim = null;
+    }
     if (V.follow) {
       const k = 1 - Math.pow(0.002, dt);
-      V.cam.x += (V.pos.x - V.cam.x) * k; V.cam.y += (V.pos.y - V.cam.y) * k;
+      const ty = V.pos.y + V.inset / 2 / V.scale;
+      V.cam.x += (V.pos.x - V.cam.x) * k; V.cam.y += (ty - V.cam.y) * k;
+    } else if (V.pan) {
+      const k = 1 - Math.pow(0.004, dt);
+      V.cam.x += (V.pan.x - V.cam.x) * k; V.cam.y += (V.pan.y - V.cam.y) * k;
+      if (Math.hypot(V.pan.x - V.cam.x, V.pan.y - V.cam.y) < 0.3) V.pan = null;
+      else if (V.pan.last && Math.hypot(V.pan.last[0] - V.cam.x, V.pan.last[1] - V.cam.y) < 0.002) V.pan = null;   // held at the map's edge
+      if (V.pan) V.pan.last = [V.cam.x, V.cam.y];
+    } else if (V.fling) {
+      V.cam.x -= V.fling.vx * dt / V.scale; V.cam.y -= V.fling.vy * dt / V.scale;
+      const f = Math.pow(0.02, dt); V.fling.vx *= f; V.fling.vy *= f;
+      if (Math.hypot(V.fling.vx, V.fling.vy) < 12) V.fling = null;
     }
+    syncTools();
+    // keep the map in view. What counts as "the view" is the part above the place card, when one is open:
+    // a map shorter than that space sits centred in it, a taller one can't be dragged past its own edges.
     const s = V.scale, halfW = V.cssW / 2 / s, halfH = V.cssH / 2 / s, pad = 6;
-    V.cam.x = halfW * 2 >= V.R.w + pad * 2 ? V.R.w / 2 : U.clamp(V.cam.x, halfW - pad, V.R.w - halfW + pad);
-    // allow scrolling past the bottom edge by the height of the place card, so a place can sit above it
-    const padB = (V.cssH * 0.3) / s;
-    if (halfH * 2 >= V.R.h + pad * 2) V.cam.y = U.clamp(V.cam.y, V.R.h / 2, V.R.h / 2 + padB);
-    else V.cam.y = U.clamp(V.cam.y, halfH - pad, V.R.h - halfH + pad + padB);
+    const visH = (V.cssH - V.inset) / s;
+    const cx = halfW * 2 >= V.R.w + pad * 2 ? V.R.w / 2 : U.clamp(V.cam.x, halfW - pad, V.R.w - halfW + pad);
+    const cy = visH >= V.R.h + pad * 2 ? halfH - visH / 2 + V.R.h / 2 : U.clamp(V.cam.y, halfH - pad, V.R.h + pad + halfH - visH);
+    // while a finger is on the map the edges are firm; otherwise (the card opening or closing) the map eases into place
+    const ease = V.dragging ? 1 : 1 - Math.pow(0.0005, dt);
+    V.cam.x += (cx - V.cam.x) * ease; V.cam.y += (cy - V.cam.y) * ease;
   }
 
   const toScreen = (x, y) => {
@@ -380,6 +463,21 @@ window.TW = window.TW || {};
     return [Math.round((x - V.cam.x) * k + V.canvas.width / 2), Math.round((y - V.cam.y) * k + V.canvas.height / 2)];
   };
   const toWorld = (cx, cy) => [(cx - V.cssW / 2) / V.scale + V.cam.x, (cy - V.cssH / 2) / V.scale + V.cam.y];
+  const toScreenCss = (x, y) => [(x - V.cam.x) * V.scale + V.cssW / 2, (y - V.cam.y) * V.scale + V.cssH / 2];
+  // size of one pixel of a marker or of the traveller: grows a little when zooming in, shrinks a little zooming out
+  const unit = () => V.dpr * U.clamp(V.scale, V.base * 0.7, V.base * 1.35);
+
+  // the zoom and "where am I" buttons on the map
+  let toolsState = '';
+  function syncTools() {
+    const st = (V.follow ? 'f' : 'n') + (V.canZoom(1) ? 1 : 0) + (V.canZoom(-1) ? 1 : 0);
+    if (st === toolsState) return;
+    toolsState = st;
+    const me = document.getElementById('map-me'), zi = document.getElementById('map-zoom-in'), zo = document.getElementById('map-zoom-out');
+    if (me) me.classList.toggle('away', !V.follow);
+    if (zi) zi.disabled = !V.canZoom(1);
+    if (zo) zo.disabled = !V.canZoom(-1);
+  }
 
   function draw() {
     const ctx = V.ctx, k = V.scale * V.dpr, cw = V.canvas.width, ch = V.canvas.height, g = V.G.geo, R = V.R;
@@ -425,21 +523,25 @@ window.TW = window.TW || {};
       ctx.fillText(R.boxLabel || 'Tap to open the Galilee map', pa[0] + 4 * V.dpr, pb[1] + 3 * V.dpr);
     }
 
+    const u = unit();
     drawLabels(ctx, k);
-    drawMarkers(ctx, k);
+    drawMarkers(ctx, u);
 
-    const p = toScreen(V.pos.x, V.pos.y);
+    drawTraveller(ctx, toScreen(V.pos.x, V.pos.y), u);
+    drawChrome(ctx);
+  }
+
+  function drawTraveller(ctx, p, k) {
     if (V.boat) {
       const b = V.boatSprite, bob = Math.round(Math.sin(V.t * 4)) * V.dpr;
       ctx.drawImage(b, p[0] - (b.width * k) / 2, p[1] - b.height * k + 2 * k + bob, b.width * k, b.height * k);
-    } else {
-      const fr = V.moving ? V.walker[Math.floor(V.t * 6) % 2] : V.walker[0];
-      ctx.save();
-      if (V.facing === -1) { ctx.translate(p[0], 0); ctx.scale(-1, 1); ctx.translate(-p[0], 0); }
-      ctx.drawImage(fr, p[0] - (fr.width * k) / 2, p[1] - fr.height * k + k, fr.width * k, fr.height * k);
-      ctx.restore();
+      return;
     }
-    drawChrome(ctx);
+    const fr = V.moving ? V.walker[Math.floor(V.t * 6) % 2] : V.walker[0];
+    ctx.save();
+    if (V.facing === -1) { ctx.translate(p[0], 0); ctx.scale(-1, 1); ctx.translate(-p[0], 0); }
+    ctx.drawImage(fr, p[0] - (fr.width * k) / 2, p[1] - fr.height * k + k, fr.width * k, fr.height * k);
+    ctx.restore();
   }
 
   function drawMarkers(ctx, k) {
@@ -536,22 +638,85 @@ window.TW = window.TW || {};
     if (V.bound) return;
     V.bound = true;
     const c = V.canvas;
-    let down = null;
-    c.addEventListener('pointerdown', (e) => { down = { x: e.clientX, y: e.clientY, cx: V.cam.x, cy: V.cam.y, drag: false }; c.setPointerCapture(e.pointerId); });
+    const pts = new Map();
+    let down = null, pinch = null, lastTap = null, wheelT = null;
+    const local = (e) => { const r = c.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+    const pair = () => { const a = [...pts.values()]; return { d: Math.hypot(a[0][0] - a[1][0], a[0][1] - a[1][1]), m: [(a[0][0] + a[1][0]) / 2, (a[0][1] + a[1][1]) / 2] }; };
+    c.addEventListener('pointerdown', (e) => {
+      try { c.setPointerCapture(e.pointerId); } catch (err) { /* already released */ }
+      pts.set(e.pointerId, local(e));
+      V.anim = null; V.fling = null; V.pan = null;
+      if (pts.size === 2) {
+        // two fingers: pinch to zoom, keeping the spot between them under them
+        const q = pair();
+        pinch = { d0: Math.max(q.d, 1), s0: V.scale, w: toWorld(q.m[0], q.m[1]), m: q.m };
+        V.dragging = true;
+        down = null; V.follow = false;
+        return;
+      }
+      if (pts.size > 2) return;
+      down = { x: e.clientX, y: e.clientY, cx: V.cam.x, cy: V.cam.y, drag: false, hist: [[performance.now(), e.clientX, e.clientY]] };
+      V.dragging = true;
+    });
     c.addEventListener('pointermove', (e) => {
+      if (!pts.has(e.pointerId)) return;
+      pts.set(e.pointerId, local(e));
+      if (pinch && pts.size >= 2) {
+        const q = pair();
+        const s = U.clamp(pinch.s0 * q.d / pinch.d0, V.minS * 0.85, V.maxS * 1.15);
+        V.scale = s; V.zooms[V.R.id] = s;
+        V.cam.x = pinch.w[0] - (q.m[0] - V.cssW / 2) / s; V.cam.y = pinch.w[1] - (q.m[1] - V.cssH / 2) / s;
+        pinch.m = q.m;
+        return;
+      }
       if (!down) return;
       const dx = e.clientX - down.x, dy = e.clientY - down.y;
       if (!down.drag && Math.hypot(dx, dy) > 7) { down.drag = true; V.follow = false; }
-      if (down.drag) { V.cam.x = down.cx - dx / V.scale; V.cam.y = down.cy - dy / V.scale; }
+      if (down.drag) {
+        V.cam.x = down.cx - dx / V.scale; V.cam.y = down.cy - dy / V.scale;
+        down.hist.push([performance.now(), e.clientX, e.clientY]);
+        if (down.hist.length > 6) down.hist.shift();
+      }
     });
-    c.addEventListener('pointerup', (e) => {
+    const lift = (e, cancelled) => {
+      if (!pts.has(e.pointerId)) return;
+      pts.delete(e.pointerId);
+      if (!pts.size) V.dragging = false;
+      if (pinch) {
+        if (pts.size < 2) {
+          zoomTo(V.scale, pinch.m[0], pinch.m[1]);       // settle on a sharp zoom
+          pinch = null;
+          // a finger still down carries on dragging from here, without counting as a tap
+          const rest = [...pts.values()][0];
+          if (rest) { const r = c.getBoundingClientRect(); down = { x: rest[0] + r.left, y: rest[1] + r.top, cx: V.cam.x, cy: V.cam.y, drag: true, hist: [] }; }
+        }
+        return;
+      }
       if (!down) return;
-      const wasDrag = down.drag;
-      down = null;
-      if (wasDrag) return;
-      const r = c.getBoundingClientRect();
-      const w = toWorld(e.clientX - r.left, e.clientY - r.top);
-      let best = null, bd = 9;
+      const d = down; down = null;
+      if (cancelled) return;
+      if (d.drag) {
+        // let go mid-swipe: the map glides on a little
+        const h = d.hist, now = performance.now();
+        if (h.length >= 2 && now - h[h.length - 1][0] < 80 && !U.reducedMotion()) {
+          const a = h[0], b = h[h.length - 1], dt = Math.max(16, b[0] - a[0]) / 1000;
+          const vx = (b[1] - a[1]) / dt, vy = (b[2] - a[2]) / dt;
+          if (Math.hypot(vx, vy) > 120) V.fling = { vx: U.clamp(vx, -2500, 2500), vy: U.clamp(vy, -2500, 2500) };
+        }
+        return;
+      }
+      const [lx, ly] = local(e);
+      // a quick second tap zooms in on that spot
+      const now = performance.now();
+      if (lastTap && now - lastTap.t < 320 && Math.hypot(lx - lastTap.x, ly - lastTap.y) < 30) {
+        lastTap = null;
+        V.follow = false;
+        zoomTo(V.scale * 2, lx, ly);
+        return;
+      }
+      lastTap = { t: now, x: lx, y: ly };
+      const w = toWorld(lx, ly);
+      let best = null, bd = Math.max(26 / V.scale, 2);   // about a fingertip, at any zoom
       V.R.places.forEach((pl) => {
         if (!V.revealed(pl.id)) return;
         const t = llToT(V.R, pl.lon, pl.lat), dd = Math.hypot(t[0] - w[0], t[1] - w[1]);
@@ -562,8 +727,18 @@ window.TW = window.TW || {};
         const a = llToT(V.R, V.R.box.lon0, V.R.box.lat1), b = llToT(V.R, V.R.box.lon1, V.R.box.lat0);
         if (w[0] >= a[0] && w[0] <= b[0] && w[1] >= a[1] && w[1] <= b[1]) V.onBox && V.onBox();
       }
-    });
-    c.addEventListener('pointercancel', () => { down = null; });
+    };
+    c.addEventListener('pointerup', (e) => lift(e, false));
+    c.addEventListener('pointercancel', (e) => lift(e, true));
+    // mouse wheel and trackpad pinch on the web
+    c.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const [lx, ly] = local(e);
+      V.anim = null; V.follow = false; V.fling = null; V.pan = null;
+      const f = Math.exp(-U.clamp(e.deltaY, -60, 60) * (e.ctrlKey ? 0.012 : 0.004));
+      scaleAt(U.clamp(V.scale * f, V.minS, V.maxS), lx, ly);
+      clearTimeout(wheelT); wheelT = setTimeout(() => zoomTo(V.scale, lx, ly), 160);
+    }, { passive: false });
   }
 
   TW.MapView = V;

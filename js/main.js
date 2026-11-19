@@ -367,7 +367,7 @@ window.TW = window.TW || {};
     $('#map-title').textContent = TR(R.title) + ', ' + AD(R.subtitle);
     $('#map-hint').textContent = TW.t(game.region === 'land'
       ? 'Blank parchment marks lands you have not heard of yet.'
-      : game.region === 'jerusalem' ? 'Your home city at Passover. Tap a place.' : 'Tap a place. Drag to look around.');
+      : game.region === 'jerusalem' ? 'Your home city at Passover. Tap a place.' : 'Tap a place. Drag to look around, pinch to zoom.');
   }
   function showMap() {
     AU.travel('');
@@ -382,7 +382,7 @@ window.TW = window.TW || {};
     game.hintTimer = setTimeout(() => { $('#map-hint').hidden = true; }, 5000);
     MV.start({
       region: game.region,
-      node: game.region === 'land' ? game.save.landNode : game.region === 'jerusalem' ? game.save.jerNode : game.save.mapNode,
+      node: game.nodeFor(game.region),
       revealed: revealedSet(),
       onPlace: (id, arrived) => game.previewPlace(id, arrived),
       onBox: () => game.switchRegion(D.regions[game.region].boxZoom || 'galilee'),
@@ -390,18 +390,42 @@ window.TW = window.TW || {};
       status: placeStatus,
       badge: (pl) => game.badge(game.region, pl),
     });
-    if (game.pendingPlace) { const p = game.pendingPlace; game.pendingPlace = null; MV.focus(p); game.previewPlace(p); }
+    // arriving with a place in mind: open its card and show it together with where you are
+    if (game.pendingPlace) { const p = game.pendingPlace; game.pendingPlace = null; game.previewPlace(p); MV.showBoth(p); }
   }
+  // ---- where you stand on each map ----
+  // Each map keeps its own spot (older saves kept one spot shared by Galilee, the East, the Aegean and Rome).
+  game.nodeFor = function (rid) {
+    const s = game.save, R = D.regions[rid];
+    s.nodes = s.nodes || {};
+    let n = s.nodes[rid];
+    if (!n) n = rid === 'land' ? s.landNode : rid === 'jerusalem' ? s.jerNode : s.mapNode;
+    return n && R.nodes[n] ? n : R.start;
+  };
+  game.setMapNode = (region, id) => {
+    const s = game.save;
+    s.nodes = s.nodes || {};
+    s.nodes[region] = id;
+    if (region === 'land') s.landNode = id; else if (region === 'jerusalem') s.jerNode = id; else if (region === 'galilee') s.mapNode = id;
+    persist();
+  };
+  const kmApart = (a, b) => { const x = (b.lon - a.lon) * 111.32 * Math.cos(((a.lat + b.lat) / 2) * Math.PI / 180), y = (b.lat - a.lat) * 110.57; return Math.hypot(x, y); };
+  // Moving from one map to another that shows the same ground: stand at the matching spot.
+  // If you were already close to there on the new map (as after a quick look out and back), stay where you were.
+  function carryOver(from, to) {
+    const A = D.regions[from], B = D.regions[to];
+    const a = A.nodes[game.nodeFor(from)];
+    if (!a || a.lon < B.lon0 || a.lon > B.lon1 || a.lat < B.lat0 || a.lat > B.lat1) return;
+    let best = null, bd = Infinity;
+    Object.keys(B.nodes).forEach((k) => { const d = kmApart(a, B.nodes[k]); if (d < bd) { bd = d; best = k; } });
+    const cur = B.nodes[game.nodeFor(to)];
+    if (cur && kmApart(a, cur) <= bd * 1.5 + 4 * (A.texelKm || 1) + 1) return;
+    if (best) game.setMapNode(to, best);
+  }
+
   game.switchRegion = function (id, place) {
-    if (id === game.region && game.screen === 'map') { if (place) game.previewPlace(place); return; }
-    // keep the traveller in the same spot when both maps share it
-    if (id === game.region || id === 'jerusalem') { /* nothing to sync */ } else if (id === 'land') {
-      const n = game.region === 'jerusalem' ? 'jerusalem' : D.sameNode[game.save.mapNode];
-      if (n) game.save.landNode = n;
-    } else {
-      const back = Object.keys(D.sameNode).find((k) => D.sameNode[k] === game.save.landNode);
-      if (back) game.save.mapNode = back;
-    }
+    if (id === game.region && game.screen === 'map') { if (place) { game.previewPlace(place); MV.showBoth(place); } return; }
+    if (id !== game.region) carryOver(game.region, id);
     game.region = id; game.save.region = id; persist();
     game.pendingPlace = place || null;
     if (game.screen === 'map') showMap(); else game.show('map');
@@ -410,10 +434,6 @@ window.TW = window.TW || {};
   document.querySelectorAll('.region-switch button').forEach((b) =>
     b.addEventListener('click', () => game.switchRegion(b.dataset.region)));
 
-  game.setMapNode = (region, id) => {
-    if (region === 'land') game.save.landNode = id; else if (region === 'jerusalem') game.save.jerNode = id; else game.save.mapNode = id;
-    persist();
-  };
   function placeStatus(pl) {
     if (!pl.episodes) return null;
     const next = nextEpisode();
@@ -518,13 +538,18 @@ window.TW = window.TW || {};
       if (!here && pl.kind !== 'episode' && !act.querySelector('.btn')) act.appendChild(travelBtn(pl, true));
     }
     $('#place-card').hidden = false;
+    MV.setInset($('#place-card').offsetHeight);
+    if (!arrived) MV.reveal(id);
   };
   function travelBtn(pl, primary) {
     const b = el('button', 'btn' + (primary ? ' primary' : ''), (TW.Settings.get('lang') === 'es' ? 'Viajar a ' : 'Travel to ') + TR(pl.short || pl.name));
     b.addEventListener('click', () => { hideCard(); MV.travelTo(pl.id); });
     return b;
   }
-  function hideCard() { $('#place-card').hidden = true; MV.selected = null; }
+  function hideCard() { $('#place-card').hidden = true; MV.selected = null; MV.setInset(0); }
+  $('#map-zoom-in').addEventListener('click', () => MV.zoomBy(1.6));
+  $('#map-zoom-out').addEventListener('click', () => MV.zoomBy(1 / 1.6));
+  $('#map-me').addEventListener('click', () => { MV.followMe(); TW.Native && TW.Native.haptic && TW.Native.haptic('light'); });
   $('#card-close').addEventListener('click', hideCard);
 
   // ---------- testimonies ----------
@@ -1198,8 +1223,8 @@ window.TW = window.TW || {};
       const ci = +rc.querySelector('input:checked').value;
       game.save.reports[ep] = { obs: picked, conclusion: TW.Role.G(E.conclusions[ci]), ci: ci, ordered: ordered === true || !!(game.save.reports[ep] && game.save.reports[ep].ordered) };
       game.save.completed[ep] = true;
-      if (E.endNode) { game.save.mapNode = E.endNode; game.save.region = game.region = 'galilee'; }
-      if (E.region === 'jerusalem') { game.save.jerNode = E.place; game.save.region = game.region = 'jerusalem'; }
+      if (E.endNode) { game.setMapNode('galilee', E.endNode); game.save.region = game.region = 'galilee'; }
+      if (E.region === 'jerusalem') { game.setMapNode('jerusalem', E.place); game.save.region = game.region = 'jerusalem'; }
       persist();
       const after = revealedSet();
       const fresh = [...after].filter((x) => !before.has(x));
