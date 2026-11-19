@@ -834,47 +834,114 @@ window.TW = window.TW || {};
     };
   };
   // an angel of the heavenly host: a robe of light, arms raised in praise, wings that move with the song
+  // ---- the angels: hand-drawn pixel figures, arms raised in a Y with open hands, wings spread behind ----
+  // One letter per pixel: W robe, w its shade, H where the light falls, G the gold sash, Y hair, S/s skin.
+  const ANGEL_PAL = { W: [240, 233, 214], w: [214, 202, 176], H: [255, 252, 242], G: [226, 196, 120], Y: [232, 198, 120], S: [242, 216, 184], s: [212, 178, 142] };
+  const ANGEL = [
+    'SS.............SS',
+    'SSS...........SSS',
+    'SSS...........SSS',
+    'sS.............Ss',
+    'HWWw.........wWWH',
+    '.HWWw..YYY..wWWH.',
+    '..HWWwYYYYYwWWH..',
+    '...HWWYSSSYWWH...',
+    '...HWWYSSSYWWH...',
+    '....HWwsSswWH....',
+    '....HWWWWWWWH....',
+    '....wWWHHWWWWw...',
+    '.....wWHHWWWw....',
+    '.....wWHHWWWw....',
+    '.....GGGGGGGG....',
+    '.....wWHHWWWw....',
+    '....wWWHHWWWWw...',
+    '....wWWHHWWWWw...',
+    '...wWWWHHWWWWWw..',
+    '...wWWWHHWWWWWw..',
+    '..wWWWWHHWWWWWWw.',
+    '..wWWWWHHWWWWWWw.',
+    '.wWWWWWHHWWWWWWWw',
+    '.wwwwwwwwwwwwwwww',
+  ];
+  const ANGEL_SHOULDER = 10;   // the row where the wings leave the back
+  // the same figure with the arms lifted higher, for when the song swells
+  const ANGEL_LIFT = [
+    '.SS...........SS.',
+    '.SSS.........SSS.',
+    '.SSS.........SSS.',
+    '.sS...........Ss.',
+    '.HWWw.......wWWH.',
+    '.HWWw..YYY..wWWH.',
+    '..HWWwYYYYYwWWH..',
+    '...HWWYSSSYWWH...',
+    '...HWWYSSSYWWH...',
+    '....HWwsSswWH....',
+    '....HWWWWWWWH....',
+    '....wWWHHWWWWw...',
+    '.....wWHHWWWw....',
+    '.....wWHHWWWw....',
+    '.....GGGGGGGG....',
+    '.....wWHHWWWw....',
+    '....wWWHHWWWWw...',
+    '....wWWHHWWWWw...',
+    '...wWWWHHWWWWWw..',
+    '...wWWWHHWWWWWw..',
+    '..wWWWWHHWWWWWWw.',
+    '..wWWWWHHWWWWWWw.',
+    '.wWWWWWHHWWWWWWWw',
+    '.wwwwwwwwwwwwwwww',
+  ];
+  const angelSprites = {};
+  // big: the angel of the Lord, half as large again, still in single pixels
+  function angelSprite(lift, big) {
+    const key = (lift ? 'l' : 'n') + (big ? 'b' : 's');
+    if (angelSprites[key]) return angelSprites[key];
+    const g = lift ? ANGEL_LIFT : ANGEL, sw = g[0].length, sh = g.length;
+    const W = big ? Math.round(sw * 1.5) | 1 : sw, H = big ? Math.round(sh * 1.5) : sh;
+    const c = document.createElement('canvas'); c.width = W; c.height = H;
+    const x = c.getContext('2d'), img = x.createImageData(W, H);
+    for (let yy = 0; yy < H; yy++) for (let xx = 0; xx < W; xx++) {
+      const ch = g[Math.floor(yy * sh / H)][Math.floor(xx * sw / W)], col = ANGEL_PAL[ch];
+      if (!col) continue;
+      const i = (yy * W + xx) * 4; img.data[i] = col[0]; img.data[i + 1] = col[1]; img.data[i + 2] = col[2]; img.data[i + 3] = 255;
+    }
+    x.putImageData(img, 0, 0);
+    return (angelSprites[key] = { c, W, H, shoulder: Math.round(ANGEL_SHOULDER * H / sh) });
+  }
+  // wings: one solid, feathered sweep each side, rising from the shoulders and beating slowly with the song
+  function angelWings(ctx, cx, shY, span, h, beat, a) {
+    // solid and a shade darker than the robe, so the raised white sleeves stand out in front of them
+    const A = Math.min(1, a);
+    const fill = 'rgba(224,212,184,' + A + ')', lite = 'rgba(240,231,208,' + A + ')', edge = 'rgba(252,247,232,' + A + ')', quill = 'rgba(196,181,148,' + A + ')';
+    for (let j = 3; j <= span; j++) {
+      const u = j / span;
+      // the top edge lifts away from the shoulder to a rounded peak and falls to the tip; the lower edge is feathered
+      const top = Math.round(shY - h * beat * (0.05 + 0.5 * Math.sin(u * Math.PI * 0.85)));
+      const bot = Math.round(shY + h * Math.pow(1 - u, 0.6) - (j % 2 ? 0 : 1));
+      if (bot - top < 2) continue;
+      [-1, 1].forEach((side) => {
+        const x = cx + side * j;
+        R(ctx, x, top, 1, bot - top, fill);
+        R(ctx, x, top + 1, 1, Math.max(1, Math.round((bot - top) * 0.35)), lite);   // the soft upper coverts
+        R(ctx, x, top, 1, 1, edge);
+        if (j % 3 === 0) R(ctx, x, bot - Math.min(4, bot - top - 1), 1, Math.min(4, bot - top - 1), quill);   // the long feathers
+      });
+    }
+  }
   const angelFig = (ctx, sx, y, a, flash, t, ph, size) => {
     if (a <= 0.01) return;
-    const k = size || 1, A2 = (v) => Math.max(0, Math.min(1, v * a));
-    const robe = (r) => 'rgba(' + (r % 3 ? '244,238,222,' : '255,251,240,') + A2(1) + ')';
-    const wing = 'rgba(255,240,200,' + A2(0.75 + flash * 0.25) + ')', wing2 = 'rgba(255,250,232,' + A2(0.5 + flash * 0.5) + ')';
+    const big = size > 2;
+    const sp = angelSprite(flash > 0.35, big);
     sx = Math.round(sx); y = Math.round(y);
-    for (let j = 1; j <= 6 * k; j++) {
-      const f = Math.round(Math.sin(t * 2.2 + ph) * 1.6 * (j / (6 * k)) * (1 + flash));
-      const top = y - 6 * k - Math.floor(j * 0.7) - f, h = Math.max(2, 6 * k - Math.floor(j * 0.8));
-      R(ctx, sx - 2 - j, top, 1, h, j % 2 ? wing : wing2); R(ctx, sx + 2 + j, top, 1, h, j % 2 ? wing : wing2);
-    }
-    // the robe: one fall of white, lit down the middle and shaded at its edges
-    for (let r = 0; r < 11 * k; r++) {
-      const w = 1 + 2 * k + Math.floor(r / 2), x0 = sx - Math.floor(w / 2), yy = y - 6 * k + r;
-      R(ctx, x0, yy, w, 1, 'rgba(240,233,214,' + A2(1) + ')');
-      R(ctx, x0, yy, 1, 1, 'rgba(214,202,176,' + A2(1) + ')'); R(ctx, x0 + w - 1, yy, 1, 1, 'rgba(214,202,176,' + A2(1) + ')');
-      R(ctx, sx - (k > 1 ? 1 : 0), yy, k > 1 ? 2 : 1, 1, 'rgba(255,252,242,' + A2(1) + ')');
-    }
-    if (k > 1) R(ctx, sx - Math.floor((1 + 2 * k) / 2), y - 6 * k + 3 * k, 1 + 2 * k, 1, 'rgba(226,196,120,' + A2(0.9) + ')');
-    R(ctx, sx - k, y - 6 * k - 3 * k, 2 * k + 1, 3 * k, 'rgba(246,232,206,' + A2(1) + ')');
-    R(ctx, sx - k, y - 6 * k - 3 * k - 1, 2 * k + 1, 1 + (k > 1 ? 1 : 0), 'rgba(236,204,128,' + A2(1) + ')');
-    // arms raised in a Y, open hands lifted up: sleeves from the shoulders, swaying with the song, higher when it swells
-    const sway = Math.sin(t * 2.2 + ph) * 0.06 - flash * 0.08, L = 4 * k + 1, shY = y - 6 * k + 1;
-    const skin = 'rgba(240,214,182,' + A2(1) + ')', skin2 = 'rgba(214,184,150,' + A2(1) + ')';
-    [-1, 1].forEach((side) => {
-      const th = 0.6 + sway * side;   // the angle from upright
-      let px = sx, py = shY;
-      for (let i = 0; i < L; i++) {
-        px = sx + side * (k + 1 + Math.round(i * Math.sin(th))); py = shY - Math.round(i * Math.cos(th));
-        const wdt = i < k ? k + 1 : k;   // a wider sleeve at the shoulder
-        R(ctx, side < 0 ? px - wdt + 1 : px, py, wdt, k, robe(i + 1));
-        if (i === L - 2) R(ctx, side < 0 ? px - wdt + 1 : px, py, wdt, 1, 'rgba(214,202,176,' + A2(1) + ')');   // the cuff
-      }
-      // the hand: an open palm lifted up, rounded at the fingertips, the thumb turned in toward the head
-      const hw = k + 1, hh = k + 2, hx = side < 0 ? px + k - hw : px, hy = py - hh + 1;
-      R(ctx, hx, hy + 1, hw, hh - 1, skin);
-      R(ctx, hx + (side < 0 ? 0 : 1), hy, hw - 1, 1, skin);             // fingertips, rounded on the outer corner
-      R(ctx, side < 0 ? hx + hw : hx - 1, hy + Math.ceil(hh / 2), 1, k > 1 ? 2 : 1, skin);   // the thumb
-      R(ctx, side < 0 ? hx : hx + hw - 1, hy + 1, 1, hh - 1, skin2);     // shade on the outer edge
-    });
-    if (flash > 0.05) for (let i = 0; i < 8; i++) { const an = i * Math.PI / 4 + t; R(ctx, Math.round(sx + Math.cos(an) * (8 + flash * 6)), Math.round(y - 4 + Math.sin(an) * (8 + flash * 6)), 1, 1, 'rgba(255,252,236,' + A2(flash) + ')'); }
+    const bottom = y + (big ? 15 : 10), left = sx - Math.floor(sp.W / 2), top = bottom - sp.H;
+    const beat = 1 + Math.sin(t * 2.2 + ph) * 0.12 + flash * 0.2;
+    angelWings(ctx, sx, top + sp.shoulder, big ? 17 : 12, big ? 14 : 10, beat, a);
+    ctx.save(); ctx.globalAlpha = Math.min(1, a);
+    ctx.drawImage(sp.c, left, top);
+    // touched, or as the song swells: the figure brightens
+    if (flash > 0.05) { ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = Math.min(1, a) * flash * 0.45; ctx.drawImage(sp.c, left, top); }
+    ctx.restore();
+    if (flash > 0.05) for (let i = 0; i < 8; i++) { const an = i * Math.PI / 4 + t; R(ctx, Math.round(sx + Math.cos(an) * (8 + flash * 6)), Math.round(y - 4 + Math.sin(an) * (8 + flash * 6)), 1, 1, 'rgba(255,252,236,' + Math.max(0, Math.min(1, flash * a)) + ')'); }
   };
   VG.bth_field = () => {
     const st = load('field', { night: true });
