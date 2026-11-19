@@ -152,3 +152,23 @@ title screen, and the shepherds' field, where the angels sing and light up when 
 iPhone (6.9″ or 6.7″, portrait): title screen with the Advent banner · the shepherds' field with the angels · Capernaum
 street · the map · a study page with the verse card · the Advent calendar. Add Spanish ones for the Spanish listing.
 Android: 2–8 phone screenshots; the same set works.
+
+## Play Store App Release Notes
+
+<en-US>
+The first release of The Way: An Eyewitness Account.
+• Walk the Gospels and Acts as an eyewitness, in 53 episodes
+• Write reports, study each passage, and learn a verse by heart
+• Advent calendar from November 29, and Three Kings Day
+• English and Spanish, four Bible translations
+• Free, no ads, works offline
+</en-US>
+<es-US>
+Primera versión de The Way: Relato presencial.
+• Recorre los Evangelios y Hechos como testigo, en 53 episodios
+• Escribe informes, estudia cada pasaje y aprende un versículo de memoria
+• Calendario de Adviento desde el 29 de noviembre, y el Día de Reyes
+• Español e inglés, cuatro traducciones de la Biblia
+• Gratis, sin anuncios, funciona sin conexión
+</es-US>
+
